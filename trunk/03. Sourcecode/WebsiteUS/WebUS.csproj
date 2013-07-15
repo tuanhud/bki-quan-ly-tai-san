@@ -64,7 +64,6 @@
     <Compile Include="US_HT_QUYEN_GROUP.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_V_DM_GIANG_VIEN.cs" />
-    <Compile Include="US_V_DM_HOP_DONG_KHUNG.cs" />
     <Compile Include="US_V_GD_THANH_TOAN.cs" />
     <Compile Include="US_V_GD_THANH_TOAN_DETAIL.cs" />
     <Compile Include="US_V_HT_USER_DV_QUAN_LY.cs" />
