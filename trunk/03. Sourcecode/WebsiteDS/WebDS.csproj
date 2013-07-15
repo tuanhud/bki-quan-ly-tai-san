@@ -59,60 +59,10 @@
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
     <Compile Include="CValidatePaymentStates.cs" />
-    <Compile Include="DS_DM_DON_VI_THANH_TOAN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_DON_VI_THANH_TOAN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_DM_HOP_DONG_KHUNG.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_DM_HO_SO_GIANG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_HO_SO_GIANG_VIEN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_DM_MON_HOC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_MON_HOC.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_DM_NOI_DUNG_THANH_TOAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_NOI_DUNG_THANH_TOAN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_DM_SU_KIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_SU_KIEN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_GD_GV_CONG_VIEC_MOI.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_GV_CONG_VIEC_MOI.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_GD_HO_SO_GV_DETAIL.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_HO_SO_GV_DETAIL.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_GD_LOP_MON.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_LOP_MON.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_GD_LOP_MON_DETAIL.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_LOP_MON_DETAIL.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_HT_CHUC_NANG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -129,46 +79,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_TBL_GD_THANH_TOAN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_TBL_GD_THANH_TOAN.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_V_DM_DOT_THANH_TOAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,35 +89,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_V_DM_HOP_DONG_KHUNG.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_V_DM_NOI_DUNG_THANH_TOAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_NOI_DUNG_THANH_TOAN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_GD_GV_CONG_VIEC_MOI.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_GD_GV_CONG_VIEC_MOI.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_GD_HOP_DONG_NOI_DUNG_TT.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_GD_HOP_DONG_NOI_DUNG_TT.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_GD_LOAI_HD_DV_QUAN_LY.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_GD_LOAI_HD_DV_QUAN_LY.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_GD_THANH_TOAN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -233,50 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DS_DM_DON_VI_THANH_TOAN.xsc">
-      <DependentUpon>DS_DM_DON_VI_THANH_TOAN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_DON_VI_THANH_TOAN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_DON_VI_THANH_TOAN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_DON_VI_THANH_TOAN.xss">
-      <DependentUpon>DS_DM_DON_VI_THANH_TOAN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_HOP_DONG_KHUNG.xsc">
-      <DependentUpon>DS_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_HOP_DONG_KHUNG.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_HOP_DONG_KHUNG.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_HOP_DONG_KHUNG.xss">
-      <DependentUpon>DS_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_HO_SO_GIANG_VIEN.xsc">
-      <DependentUpon>DS_DM_HO_SO_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_HO_SO_GIANG_VIEN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_HO_SO_GIANG_VIEN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_HO_SO_GIANG_VIEN.xss">
-      <DependentUpon>DS_DM_HO_SO_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_MON_HOC.xsc">
-      <DependentUpon>DS_DM_MON_HOC.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_MON_HOC.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_MON_HOC.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_MON_HOC.xss">
-      <DependentUpon>DS_DM_MON_HOC.xsd</DependentUpon>
-    </None>
     <None Include="DS_DM_NOI_DUNG_THANH_TOAN.xsc">
       <DependentUpon>DS_DM_NOI_DUNG_THANH_TOAN.xsd</DependentUpon>
     </None>
@@ -287,72 +128,6 @@
     </None>
     <None Include="DS_DM_NOI_DUNG_THANH_TOAN.xss">
       <DependentUpon>DS_DM_NOI_DUNG_THANH_TOAN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_SU_KIEN.xsc">
-      <DependentUpon>DS_DM_SU_KIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_SU_KIEN.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_SU_KIEN.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DS_DM_SU_KIEN.xss">
-      <DependentUpon>DS_DM_SU_KIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsc">
-      <DependentUpon>DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xss">
-      <DependentUpon>DS_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_GV_CONG_VIEC_MOI.xsc">
-      <DependentUpon>DS_GD_GV_CONG_VIEC_MOI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_GV_CONG_VIEC_MOI.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_GV_CONG_VIEC_MOI.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DS_GD_GV_CONG_VIEC_MOI.xss">
-      <DependentUpon>DS_GD_GV_CONG_VIEC_MOI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_HO_SO_GV_DETAIL.xsc">
-      <DependentUpon>DS_GD_HO_SO_GV_DETAIL.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_HO_SO_GV_DETAIL.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_HO_SO_GV_DETAIL.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_HO_SO_GV_DETAIL.xss">
-      <DependentUpon>DS_GD_HO_SO_GV_DETAIL.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_LOP_MON.xsc">
-      <DependentUpon>DS_GD_LOP_MON.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_LOP_MON.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_LOP_MON.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_LOP_MON.xss">
-      <DependentUpon>DS_GD_LOP_MON.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_LOP_MON_DETAIL.xsc">
-      <DependentUpon>DS_GD_LOP_MON_DETAIL.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_LOP_MON_DETAIL.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_LOP_MON_DETAIL.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_LOP_MON_DETAIL.xss">
-      <DependentUpon>DS_GD_LOP_MON_DETAIL.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_CHUC_NANG.xsc">
       <DependentUpon>DS_HT_CHUC_NANG.xsd</DependentUpon>
@@ -387,94 +162,6 @@
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </None>
-    <None Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.xsc">
-      <DependentUpon>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.xss">
-      <DependentUpon>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.xsc">
-      <DependentUpon>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.xss">
-      <DependentUpon>DS_RPT_BAO_CAO_SO_LUONG_TRANG_THAI_HD_TONG_HOP.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.xsc">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.xss">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_HD_THANH_TOAN_GV_TONG_HOP.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.xsc">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.xss">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_HOP_DONG_THANH_TOAN_GV.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.xsc">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.xss">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_SO_TIEN_THANH_TOAN_HD_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.xsc">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.xss">
-      <DependentUpon>DS_RPT_BAO_CAO_THONG_KE_TRANG_THAI_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.xsc">
-      <DependentUpon>DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.xsd</DependentUpon>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.xss">
-      <DependentUpon>DS_RPT_BAO_CAO_TONG_HOP_CONG_VIEC_GVCM.xsd</DependentUpon>
-    </None>
-    <None Include="DS_TBL_GD_THANH_TOAN.xsc">
-      <DependentUpon>DS_TBL_GD_THANH_TOAN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_TBL_GD_THANH_TOAN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_TBL_GD_THANH_TOAN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_TBL_GD_THANH_TOAN.xss">
-      <DependentUpon>DS_TBL_GD_THANH_TOAN.xsd</DependentUpon>
-    </None>
     <None Include="DS_V_DM_DOT_THANH_TOAN.xsc">
       <DependentUpon>DS_V_DM_DOT_THANH_TOAN.xsd</DependentUpon>
     </None>
@@ -497,17 +184,6 @@
     <None Include="DS_V_DM_GIANG_VIEN.xss">
       <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
     </None>
-    <None Include="DS_V_DM_HOP_DONG_KHUNG.xsc">
-      <DependentUpon>DS_V_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_HOP_DONG_KHUNG.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_DM_HOP_DONG_KHUNG.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_DM_HOP_DONG_KHUNG.xss">
-      <DependentUpon>DS_V_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
-    </None>
     <None Include="DS_V_DM_NOI_DUNG_THANH_TOAN.xsc">
       <DependentUpon>DS_V_DM_NOI_DUNG_THANH_TOAN.xsd</DependentUpon>
     </None>
@@ -518,50 +194,6 @@
     </None>
     <None Include="DS_V_DM_NOI_DUNG_THANH_TOAN.xss">
       <DependentUpon>DS_V_DM_NOI_DUNG_THANH_TOAN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsc">
-      <DependentUpon>DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xss">
-      <DependentUpon>DS_V_GD_ASSIGN_SU_KIEN_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_GV_CONG_VIEC_MOI.xsc">
-      <DependentUpon>DS_V_GD_GV_CONG_VIEC_MOI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_GV_CONG_VIEC_MOI.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_GV_CONG_VIEC_MOI.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_GD_GV_CONG_VIEC_MOI.xss">
-      <DependentUpon>DS_V_GD_GV_CONG_VIEC_MOI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_HOP_DONG_NOI_DUNG_TT.xsc">
-      <DependentUpon>DS_V_GD_HOP_DONG_NOI_DUNG_TT.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_HOP_DONG_NOI_DUNG_TT.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_HOP_DONG_NOI_DUNG_TT.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_GD_HOP_DONG_NOI_DUNG_TT.xss">
-      <DependentUpon>DS_V_GD_HOP_DONG_NOI_DUNG_TT.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_LOAI_HD_DV_QUAN_LY.xsc">
-      <DependentUpon>DS_V_GD_LOAI_HD_DV_QUAN_LY.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_LOAI_HD_DV_QUAN_LY.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_LOAI_HD_DV_QUAN_LY.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_GD_LOAI_HD_DV_QUAN_LY.xss">
-      <DependentUpon>DS_V_GD_LOAI_HD_DV_QUAN_LY.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_THANH_TOAN.xsc">
       <DependentUpon>DS_V_GD_THANH_TOAN.xsd</DependentUpon>
