@@ -74,13 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_V_DM_DOT_THANH_TOAN.Designer.cs" />
     <Compile Include="DS_V_DM_GIANG_VIEN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_V_DM_HOP_DONG_KHUNG.Designer.cs" />
     <Compile Include="DS_V_GD_THANH_TOAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,13 +136,6 @@
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </None>
-    <None Include="DS_V_DM_DOT_THANH_TOAN.xsc">
-      <DependentUpon>DS_V_DM_DOT_THANH_TOAN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_DOT_THANH_TOAN.xsd" />
-    <None Include="DS_V_DM_DOT_THANH_TOAN.xss">
-      <DependentUpon>DS_V_DM_DOT_THANH_TOAN.xsd</DependentUpon>
-    </None>
     <None Include="DS_V_DM_GIANG_VIEN.xsc">
       <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
     </None>
@@ -155,13 +146,6 @@
     </None>
     <None Include="DS_V_DM_GIANG_VIEN.xss">
       <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_HOP_DONG_KHUNG.xsc">
-      <DependentUpon>DS_V_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_HOP_DONG_KHUNG.xsd" />
-    <None Include="DS_V_DM_HOP_DONG_KHUNG.xss">
-      <DependentUpon>DS_V_DM_HOP_DONG_KHUNG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_THANH_TOAN.xsc">
       <DependentUpon>DS_V_GD_THANH_TOAN.xsd</DependentUpon>
