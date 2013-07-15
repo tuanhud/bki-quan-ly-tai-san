@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+<%@ Import Namespace ="IP.Core.IPCommon" %>
+<%@ Import Namespace ="WebUS" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Admin.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                <asp:Label runat="server" ID="m_lbl_user_name0" CssClass="cssLabelTitle">PHẦN MỀM QUẢN LÝ TÀI SẢN- PRM</asp:Label>
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:HyperLink ID="m_lhk_user_name" runat="server" CssClass="accountInfo">m_lhk_user_name</asp:HyperLink>
+                &nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="m_lnk_logout" runat="server" CssClass="accountInfo" NavigateUrl="/QuanLyTaiSan/Account/Logout.aspx">Đăng xuất</asp:HyperLink>
+            </div>
+         </div>
+         <div id='wapper'>
+             <ul id='nav'> 
+                  <asp:Repeater ID="rptMainMenu" runat="server"
+                     OnItemDataBound="rptCategory_ItemDataBound"> 	
+                     <ItemTemplate> 
+                     <li><asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                      <ul> 
+                      <asp:Repeater ID="rpt_child_Menu" runat="server" OnItemDataBound="rptCategory_ItemDataBound_cap_ba"> 
+                      <ItemTemplate> 
+                        <li><asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                         <ul>
+                            <asp:Repeater ID="rpt_child_Menu_cap_ba" runat="server" OnItemDataBound="rptCategory_ItemDataBound_cap_bon"> 
+                              <ItemTemplate> 
+                              <li><asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                                 <ul> 
+                                      <asp:Repeater ID="rpt_child_Menu_cap_bon" runat="server" > 
+                                      <ItemTemplate> 
+                                      <li><asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                                      </li> 
+                                      </ItemTemplate> 
+                                      </asp:Repeater> 
+                                 </ul>
+                              </li> 
+                              </ItemTemplate> 
+                              </asp:Repeater> 
+                         </ul> 
+                      </li> 
+                      </ItemTemplate> 
+                      </asp:Repeater> 
+                      </ul> 
+                    </li> 
+                    </ItemTemplate> 
+                </asp:Repeater> 
+                <li><a href='#'>Trợ giúp</a>
+                    <ul>
+                    <%
+                        if (Session["QuyenGV"] != null)
+                        {
+                            if (CIPConvert.ToDecimal(Session["QuyenGV"]) == LOAI_USER_QUYEN.GIANG_VIEN)
+                            {
+                    %> 
+                         <li><a href='/QuanLyTaiSan/Help/'>Tài liệu hướng dẫn sử dụng</a></li>
+                    <%
+                            }
+                        }
+                        else
+                        {
+                    %>
+                        <li><a href='https://docs.google.com/a/topica.edu.vn/spreadsheet/ccc?key=0Agnkt26l1vAndHhBRVZWQTg4Y1l3M3JMMEV4RXBxTnc#gid=2'>01. Comment, yêu cầu phát sinh</a></li>
+                        <li><a href='/QuanLyTaiSan/Help/TRM_Helpv2012.05.09.doc'>02. Tài liệu hướng dẫn sử dụng</a></li>
+                        <li><a href='#'>03. Quy trình luân chuyển chứng từ, trạng thái đợt thanh toán và trạng thái chứng từ</a></li>
+                        <% } %>
+                    </ul>
+                </li>
+             </ul>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
