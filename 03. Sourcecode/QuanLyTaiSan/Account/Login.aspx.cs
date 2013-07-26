@@ -52,7 +52,7 @@ public partial class Account_Login : System.Web.UI.Page
             Session["user_quyen"] = v_dc_quyen;
             if (v_dc_quyen == LOAI_USER_QUYEN.GIANG_VIEN)
             {
-                Response.Redirect("/QuanLyTaiSan/CongTTGV/Welcome.aspx", false);
+                Response.Redirect("/QuanLyTaiSan", false);
                 Session["QuyenGV"] = load_user_quyen(strUserName);
             }
             else Response.Redirect("../Default.aspx", false);
