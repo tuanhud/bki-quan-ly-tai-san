@@ -80,7 +80,7 @@
                         {
                     %>
                         <li><a href='https://docs.google.com/a/bkindex.com/document/d/1ZmsrFPD4mOnqdB4q17any2FW9DLQBRqVUuR-LU8kO-o/edit'>01. Comment, yêu cầu phát sinh</a></li>
-                        <li><a href='https://google.com.vn'>02. Tài liệu hướng dẫn sử dụng</a></li>
+                        <li><a href='http://google.com.vn'>02. Tài liệu hướng dẫn sử dụng</a></li>
                         <li><a href='#'>03. Quy trình luân chuyển chứng từ, trạng thái đợt thanh toán và trạng thái chứng từ</a></li>
                         <% } %>
                     </ul>
