@@ -99,7 +99,7 @@ first child of the left and right table columns */
     position: relative;
     margin: 0px;
     padding: 0px;
-    background: #810C15;
+    background: #3563c1;
     width: 100%;
 }
 
@@ -165,7 +165,7 @@ line-height:2em;
  {
      margin-bottom:10px;
      height:34px;
-     background:#3A4F63;
+     background:#007acf;
  }
  
 #nav a{
@@ -175,7 +175,7 @@ font-weight: bold;
 border:1px solid #333;
 color:white;
 text-decoration:none;
-background-color:#3A4F63;
+background-color:#007acf;
 height:30px;
 }
 
