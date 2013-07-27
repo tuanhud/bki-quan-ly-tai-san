@@ -180,3 +180,24 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\IPExcelReport.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\IPExcelReport.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\IPExcelReport.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\Interop.Excel.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\Interop.Office.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\IPCommon.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\C1.Common.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\IPCommon.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\bin\IPCommon.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.pdb

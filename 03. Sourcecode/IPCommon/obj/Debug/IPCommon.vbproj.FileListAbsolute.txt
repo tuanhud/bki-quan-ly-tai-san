@@ -312,3 +312,35 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\IPCommon.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\IPCommon.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\IPCommon.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\C1.Common.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\C1.Win.C1FlexGrid.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\CrystalDecisions.ReportSource.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\CrystalDecisions.Shared.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\CrystalDecisions.Web.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\CrystalDecisions.Windows.Forms.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\bin\CrystalReportPluginLib.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.vbprojResolveAssemblyReference.cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.ctlButton2.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.ctlButton3.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.ctlClock.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.MessageForms.MsgButtonYes_No_Cancel.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.MessageForms.MsgBtn_Yes_No.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.DataGrid_Custom.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.f370_REPORT_VIEW.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.frmEditText.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.frmIcons.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.frmSearchDate.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.frmSearchNumeric.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.frmSearchString.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.MessageForms.MsgBoxForm_Yes_No.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.MessageForms.MsgBoxFormYes_No_Cancel.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IP.Core.IPCommon.MessageForms.MsgBoxForm_OK.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.vbproj.GenerateResource.Cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPCommon\obj\Debug\IPCommon.pdb

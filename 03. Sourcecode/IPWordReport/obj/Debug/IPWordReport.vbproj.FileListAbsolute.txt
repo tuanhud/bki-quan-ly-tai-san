@@ -148,3 +148,18 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\bin\Interop.Word.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\bin\Interop.VBIDE.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\bin\Interop.Microsoft.Office.Interop.Word.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\IPWordReport.vbprojResolveAssemblyReference.cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Interop.Word.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
