@@ -357,3 +357,39 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\C1.Common.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPCommon.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPData.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPException.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPUserService.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\SiSButton.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\SiSMenu.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.Shared.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.Windows.Forms.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.ReportSource.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPCommon.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPCommon.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPData.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPData.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPException.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPException.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPUserService.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\bin\IPUserService.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb

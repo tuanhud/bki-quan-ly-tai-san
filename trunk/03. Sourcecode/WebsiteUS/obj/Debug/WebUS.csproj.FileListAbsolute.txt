@@ -260,3 +260,6 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteUS\obj\Debug\ResolveAssemblyReference.cache
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.csprojResolveAssemblyReference.cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.pdb

@@ -230,3 +230,29 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPUserService\obj\Debug\IPUserService.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPUserService\obj\Debug\IPUserService.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPUserService\obj\Debug\IPUserService.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPUserService.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPUserService.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPUserService.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPBusinessService.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPCommon.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPData.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPException.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\CrystalDecisions.Shared.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\CrystalDecisions.Windows.Forms.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\C1.Common.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\CrystalDecisions.ReportSource.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPBusinessService.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPBusinessService.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPCommon.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPCommon.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPData.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPData.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPException.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\bin\IPException.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\obj\Debug\IPUserService.vbprojResolveAssemblyReference.cache
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\obj\Debug\IPUserService.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\obj\Debug\IPUserService.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPUserService\obj\Debug\IPUserService.pdb

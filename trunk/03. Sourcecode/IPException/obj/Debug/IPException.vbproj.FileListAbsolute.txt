@@ -67,3 +67,9 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPException\obj\Debug\IPException.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPException\obj\Debug\IPException.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPException\obj\Debug\IPException.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPException\bin\IPException.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPException\bin\IPException.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPException\bin\IPException.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPException\obj\Debug\IPException.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPException\obj\Debug\IPException.xml
+D:\bki-quan-ly-tai-san\03. Sourcecode\IPException\obj\Debug\IPException.pdb
