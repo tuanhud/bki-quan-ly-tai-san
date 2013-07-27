@@ -76,10 +76,3 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPData\obj\Debug\IPData.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPData\obj\Debug\IPData.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPData\obj\Debug\IPData.pdb
-D:\bki-quan-ly-tai-san\03. Sourcecode\IPData\bin\IPData.dll.config
-D:\bki-quan-ly-tai-san\03. Sourcecode\IPData\bin\IPData.dll
-D:\bki-quan-ly-tai-san\03. Sourcecode\IPData\bin\IPData.pdb
-D:\bki-quan-ly-tai-san\03. Sourcecode\IPData\bin\IPData.xml
-D:\bki-quan-ly-tai-san\03. Sourcecode\IPData\obj\Debug\IPData.dll
-D:\bki-quan-ly-tai-san\03. Sourcecode\IPData\obj\Debug\IPData.xml
-D:\bki-quan-ly-tai-san\03. Sourcecode\IPData\obj\Debug\IPData.pdb
