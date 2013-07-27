@@ -177,14 +177,14 @@ body
     display: inline-block;
     width:24px;
     height: 24px;
-    background: url('../images/Button/Arrowhead-01.png') no-repeat center;
+    background: url('../Images/Button/Arrowhead-01.png') no-repeat center;
     float: right;
     margin: 4px 4px 4px 0;
 }
 
 .initial-expand
 {
-    background-image: url('../images/Button/Arrowhead-Down-01.png');
+    background-image: url('../Images/Button/Arrowhead-Down-01.png');
 }
 /*End PageTitle*/
 
