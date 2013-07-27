@@ -162,13 +162,28 @@ body
 	font-size: 12px;
 	font-family:Tahoma;		font-size:13px;	
 	color: White;			font-weight:bold;
-	text-align:left;	
+	text-align:left;
+	display: inline-block;	
 }
 .cssPageTitleBG
 {	
 	border:solid 1px #b4b4b4; 
 	background-color: #007acf;
 	height:26px;	
+}
+.expand-collapse-text
+{
+    display: inline-block;
+    width:24px;
+    height: 24px;
+    background: url('../images/Button/Arrowhead-01.png') no-repeat center;
+    float: right;
+    margin: 4px 4px 4px 0;
+}
+
+.initial-expand
+{
+    background-image: url('../images/Button/Arrowhead-Down-01.png');
 }
 /*End PageTitle*/
 
