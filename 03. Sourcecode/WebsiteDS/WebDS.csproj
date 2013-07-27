@@ -59,6 +59,11 @@
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
     <Compile Include="CValidatePaymentStates.cs" />
+    <Compile Include="DS_DM_NHA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_NHA.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_CHUC_NANG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,11 +78,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_DM_GIANG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_GD_THANH_TOAN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -103,6 +103,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DS_DM_NHA.xsc">
+      <DependentUpon>DS_DM_NHA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_NHA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_NHA.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_DM_NHA.xss">
+      <DependentUpon>DS_DM_NHA.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_CHUC_NANG.xsc">
       <DependentUpon>DS_HT_CHUC_NANG.xsd</DependentUpon>
     </None>
@@ -135,17 +146,6 @@
     </None>
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_GIANG_VIEN.xsc">
-      <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_GIANG_VIEN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_DM_GIANG_VIEN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_DM_GIANG_VIEN.xss">
-      <DependentUpon>DS_V_DM_GIANG_VIEN.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_THANH_TOAN.xsc">
       <DependentUpon>DS_V_GD_THANH_TOAN.xsd</DependentUpon>
