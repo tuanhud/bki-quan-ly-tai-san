@@ -63,3 +63,7 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.pdb
 D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll.config
+D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll
+D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.pdb
+D:\bki-quan-ly-tai-san\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.pdb
