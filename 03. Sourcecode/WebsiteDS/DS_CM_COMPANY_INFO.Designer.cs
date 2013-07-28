@@ -20,17 +20,17 @@ namespace WebDS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_DE_XUAT_XU_LI_DETAILS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_CM_COMPANY_INFO")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DS_DE_XUAT_XU_LI_DETAILS : global::System.Data.DataSet {
+    public partial class DS_CM_COMPANY_INFO : global::System.Data.DataSet {
         
-        private GD_DE_XUAT_XU_LI_DETAILSDataTable tableGD_DE_XUAT_XU_LI_DETAILS;
+        private CM_COMPANY_INFODataTable tableCM_COMPANY_INFO;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DS_DE_XUAT_XU_LI_DETAILS() {
+        public DS_CM_COMPANY_INFO() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace WebDS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DS_DE_XUAT_XU_LI_DETAILS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_CM_COMPANY_INFO(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace WebDS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["GD_DE_XUAT_XU_LI_DETAILS"] != null)) {
-                    base.Tables.Add(new GD_DE_XUAT_XU_LI_DETAILSDataTable(ds.Tables["GD_DE_XUAT_XU_LI_DETAILS"]));
+                if ((ds.Tables["CM_COMPANY_INFO"] != null)) {
+                    base.Tables.Add(new CM_COMPANY_INFODataTable(ds.Tables["CM_COMPANY_INFO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace WebDS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GD_DE_XUAT_XU_LI_DETAILSDataTable GD_DE_XUAT_XU_LI_DETAILS {
+        public CM_COMPANY_INFODataTable CM_COMPANY_INFO {
             get {
-                return this.tableGD_DE_XUAT_XU_LI_DETAILS;
+                return this.tableCM_COMPANY_INFO;
             }
         }
         
@@ -127,7 +127,7 @@ namespace WebDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DS_DE_XUAT_XU_LI_DETAILS cln = ((DS_DE_XUAT_XU_LI_DETAILS)(base.Clone()));
+            DS_CM_COMPANY_INFO cln = ((DS_CM_COMPANY_INFO)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace WebDS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["GD_DE_XUAT_XU_LI_DETAILS"] != null)) {
-                    base.Tables.Add(new GD_DE_XUAT_XU_LI_DETAILSDataTable(ds.Tables["GD_DE_XUAT_XU_LI_DETAILS"]));
+                if ((ds.Tables["CM_COMPANY_INFO"] != null)) {
+                    base.Tables.Add(new CM_COMPANY_INFODataTable(ds.Tables["CM_COMPANY_INFO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace WebDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGD_DE_XUAT_XU_LI_DETAILS = ((GD_DE_XUAT_XU_LI_DETAILSDataTable)(base.Tables["GD_DE_XUAT_XU_LI_DETAILS"]));
+            this.tableCM_COMPANY_INFO = ((CM_COMPANY_INFODataTable)(base.Tables["CM_COMPANY_INFO"]));
             if ((initTable == true)) {
-                if ((this.tableGD_DE_XUAT_XU_LI_DETAILS != null)) {
-                    this.tableGD_DE_XUAT_XU_LI_DETAILS.InitVars();
+                if ((this.tableCM_COMPANY_INFO != null)) {
+                    this.tableCM_COMPANY_INFO.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace WebDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_DE_XUAT_XU_LI_DETAILS";
+            this.DataSetName = "DS_CM_COMPANY_INFO";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_DE_XUAT_XU_LI_DETAILS.xsd";
+            this.Namespace = "http://tempuri.org/DS_CM_COMPANY_INFO.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGD_DE_XUAT_XU_LI_DETAILS = new GD_DE_XUAT_XU_LI_DETAILSDataTable();
-            base.Tables.Add(this.tableGD_DE_XUAT_XU_LI_DETAILS);
+            this.tableCM_COMPANY_INFO = new CM_COMPANY_INFODataTable();
+            base.Tables.Add(this.tableCM_COMPANY_INFO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeGD_DE_XUAT_XU_LI_DETAILS() {
+        private bool ShouldSerializeCM_COMPANY_INFO() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace WebDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DS_DE_XUAT_XU_LI_DETAILS ds = new DS_DE_XUAT_XU_LI_DETAILS();
+            DS_CM_COMPANY_INFO ds = new DS_CM_COMPANY_INFO();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,29 +270,25 @@ namespace WebDS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void GD_DE_XUAT_XU_LI_DETAILSRowChangeEventHandler(object sender, GD_DE_XUAT_XU_LI_DETAILSRowChangeEvent e);
+        public delegate void CM_COMPANY_INFORowChangeEventHandler(object sender, CM_COMPANY_INFORowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GD_DE_XUAT_XU_LI_DETAILSDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class CM_COMPANY_INFODataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnMA_PHIEU;
+            private global::System.Data.DataColumn columnCOMPANY_NAME;
             
-            private global::System.Data.DataColumn columnID_LOAI_TAI_SAN;
-            
-            private global::System.Data.DataColumn columnID_TAI_SAN;
-            
-            private global::System.Data.DataColumn columnNOI_DUNG;
+            private global::System.Data.DataColumn columnCOMPANY_ADDRESS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_DE_XUAT_XU_LI_DETAILSDataTable() {
-                this.TableName = "GD_DE_XUAT_XU_LI_DETAILS";
+            public CM_COMPANY_INFODataTable() {
+                this.TableName = "CM_COMPANY_INFO";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +296,7 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal GD_DE_XUAT_XU_LI_DETAILSDataTable(global::System.Data.DataTable table) {
+            internal CM_COMPANY_INFODataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,7 +313,7 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected GD_DE_XUAT_XU_LI_DETAILSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CM_COMPANY_INFODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -332,33 +328,17 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MA_PHIEUColumn {
+            public global::System.Data.DataColumn COMPANY_NAMEColumn {
                 get {
-                    return this.columnMA_PHIEU;
+                    return this.columnCOMPANY_NAME;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_LOAI_TAI_SANColumn {
+            public global::System.Data.DataColumn COMPANY_ADDRESSColumn {
                 get {
-                    return this.columnID_LOAI_TAI_SAN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_TAI_SANColumn {
-                get {
-                    return this.columnID_TAI_SAN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NOI_DUNGColumn {
-                get {
-                    return this.columnNOI_DUNG;
+                    return this.columnCOMPANY_ADDRESS;
                 }
             }
             
@@ -373,49 +353,47 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_DE_XUAT_XU_LI_DETAILSRow this[int index] {
+            public CM_COMPANY_INFORow this[int index] {
                 get {
-                    return ((GD_DE_XUAT_XU_LI_DETAILSRow)(this.Rows[index]));
+                    return ((CM_COMPANY_INFORow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GD_DE_XUAT_XU_LI_DETAILSRowChangeEventHandler GD_DE_XUAT_XU_LI_DETAILSRowChanging;
+            public event CM_COMPANY_INFORowChangeEventHandler CM_COMPANY_INFORowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GD_DE_XUAT_XU_LI_DETAILSRowChangeEventHandler GD_DE_XUAT_XU_LI_DETAILSRowChanged;
+            public event CM_COMPANY_INFORowChangeEventHandler CM_COMPANY_INFORowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GD_DE_XUAT_XU_LI_DETAILSRowChangeEventHandler GD_DE_XUAT_XU_LI_DETAILSRowDeleting;
+            public event CM_COMPANY_INFORowChangeEventHandler CM_COMPANY_INFORowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GD_DE_XUAT_XU_LI_DETAILSRowChangeEventHandler GD_DE_XUAT_XU_LI_DETAILSRowDeleted;
+            public event CM_COMPANY_INFORowChangeEventHandler CM_COMPANY_INFORowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddGD_DE_XUAT_XU_LI_DETAILSRow(GD_DE_XUAT_XU_LI_DETAILSRow row) {
+            public void AddCM_COMPANY_INFORow(CM_COMPANY_INFORow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_DE_XUAT_XU_LI_DETAILSRow AddGD_DE_XUAT_XU_LI_DETAILSRow(string MA_PHIEU, decimal ID_LOAI_TAI_SAN, decimal ID_TAI_SAN, string NOI_DUNG) {
-                GD_DE_XUAT_XU_LI_DETAILSRow rowGD_DE_XUAT_XU_LI_DETAILSRow = ((GD_DE_XUAT_XU_LI_DETAILSRow)(this.NewRow()));
+            public CM_COMPANY_INFORow AddCM_COMPANY_INFORow(string COMPANY_NAME, string COMPANY_ADDRESS) {
+                CM_COMPANY_INFORow rowCM_COMPANY_INFORow = ((CM_COMPANY_INFORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        MA_PHIEU,
-                        ID_LOAI_TAI_SAN,
-                        ID_TAI_SAN,
-                        NOI_DUNG};
-                rowGD_DE_XUAT_XU_LI_DETAILSRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGD_DE_XUAT_XU_LI_DETAILSRow);
-                return rowGD_DE_XUAT_XU_LI_DETAILSRow;
+                        COMPANY_NAME,
+                        COMPANY_ADDRESS};
+                rowCM_COMPANY_INFORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCM_COMPANY_INFORow);
+                return rowCM_COMPANY_INFORow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_DE_XUAT_XU_LI_DETAILSRow FindByID(decimal ID) {
-                return ((GD_DE_XUAT_XU_LI_DETAILSRow)(this.Rows.Find(new object[] {
+            public CM_COMPANY_INFORow FindByID(decimal ID) {
+                return ((CM_COMPANY_INFORow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
@@ -428,7 +406,7 @@ namespace WebDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GD_DE_XUAT_XU_LI_DETAILSDataTable cln = ((GD_DE_XUAT_XU_LI_DETAILSDataTable)(base.Clone()));
+                CM_COMPANY_INFODataTable cln = ((CM_COMPANY_INFODataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -436,17 +414,15 @@ namespace WebDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GD_DE_XUAT_XU_LI_DETAILSDataTable();
+                return new CM_COMPANY_INFODataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnMA_PHIEU = base.Columns["MA_PHIEU"];
-                this.columnID_LOAI_TAI_SAN = base.Columns["ID_LOAI_TAI_SAN"];
-                this.columnID_TAI_SAN = base.Columns["ID_TAI_SAN"];
-                this.columnNOI_DUNG = base.Columns["NOI_DUNG"];
+                this.columnCOMPANY_NAME = base.Columns["COMPANY_NAME"];
+                this.columnCOMPANY_ADDRESS = base.Columns["COMPANY_ADDRESS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -454,14 +430,10 @@ namespace WebDS {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnMA_PHIEU = new global::System.Data.DataColumn("MA_PHIEU", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMA_PHIEU);
-                this.columnID_LOAI_TAI_SAN = new global::System.Data.DataColumn("ID_LOAI_TAI_SAN", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_LOAI_TAI_SAN);
-                this.columnID_TAI_SAN = new global::System.Data.DataColumn("ID_TAI_SAN", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_TAI_SAN);
-                this.columnNOI_DUNG = new global::System.Data.DataColumn("NOI_DUNG", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNOI_DUNG);
+                this.columnCOMPANY_NAME = new global::System.Data.DataColumn("COMPANY_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOMPANY_NAME);
+                this.columnCOMPANY_ADDRESS = new global::System.Data.DataColumn("COMPANY_ADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOMPANY_ADDRESS);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -470,38 +442,36 @@ namespace WebDS {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
-                this.columnMA_PHIEU.AllowDBNull = false;
-                this.columnMA_PHIEU.MaxLength = 15;
-                this.columnID_LOAI_TAI_SAN.AllowDBNull = false;
-                this.columnID_TAI_SAN.AllowDBNull = false;
-                this.columnNOI_DUNG.AllowDBNull = false;
-                this.columnNOI_DUNG.MaxLength = 250;
+                this.columnCOMPANY_NAME.AllowDBNull = false;
+                this.columnCOMPANY_NAME.MaxLength = 50;
+                this.columnCOMPANY_ADDRESS.AllowDBNull = false;
+                this.columnCOMPANY_ADDRESS.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_DE_XUAT_XU_LI_DETAILSRow NewGD_DE_XUAT_XU_LI_DETAILSRow() {
-                return ((GD_DE_XUAT_XU_LI_DETAILSRow)(this.NewRow()));
+            public CM_COMPANY_INFORow NewCM_COMPANY_INFORow() {
+                return ((CM_COMPANY_INFORow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GD_DE_XUAT_XU_LI_DETAILSRow(builder);
+                return new CM_COMPANY_INFORow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GD_DE_XUAT_XU_LI_DETAILSRow);
+                return typeof(CM_COMPANY_INFORow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GD_DE_XUAT_XU_LI_DETAILSRowChanged != null)) {
-                    this.GD_DE_XUAT_XU_LI_DETAILSRowChanged(this, new GD_DE_XUAT_XU_LI_DETAILSRowChangeEvent(((GD_DE_XUAT_XU_LI_DETAILSRow)(e.Row)), e.Action));
+                if ((this.CM_COMPANY_INFORowChanged != null)) {
+                    this.CM_COMPANY_INFORowChanged(this, new CM_COMPANY_INFORowChangeEvent(((CM_COMPANY_INFORow)(e.Row)), e.Action));
                 }
             }
             
@@ -509,8 +479,8 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GD_DE_XUAT_XU_LI_DETAILSRowChanging != null)) {
-                    this.GD_DE_XUAT_XU_LI_DETAILSRowChanging(this, new GD_DE_XUAT_XU_LI_DETAILSRowChangeEvent(((GD_DE_XUAT_XU_LI_DETAILSRow)(e.Row)), e.Action));
+                if ((this.CM_COMPANY_INFORowChanging != null)) {
+                    this.CM_COMPANY_INFORowChanging(this, new CM_COMPANY_INFORowChangeEvent(((CM_COMPANY_INFORow)(e.Row)), e.Action));
                 }
             }
             
@@ -518,8 +488,8 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GD_DE_XUAT_XU_LI_DETAILSRowDeleted != null)) {
-                    this.GD_DE_XUAT_XU_LI_DETAILSRowDeleted(this, new GD_DE_XUAT_XU_LI_DETAILSRowChangeEvent(((GD_DE_XUAT_XU_LI_DETAILSRow)(e.Row)), e.Action));
+                if ((this.CM_COMPANY_INFORowDeleted != null)) {
+                    this.CM_COMPANY_INFORowDeleted(this, new CM_COMPANY_INFORowChangeEvent(((CM_COMPANY_INFORow)(e.Row)), e.Action));
                 }
             }
             
@@ -527,14 +497,14 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GD_DE_XUAT_XU_LI_DETAILSRowDeleting != null)) {
-                    this.GD_DE_XUAT_XU_LI_DETAILSRowDeleting(this, new GD_DE_XUAT_XU_LI_DETAILSRowChangeEvent(((GD_DE_XUAT_XU_LI_DETAILSRow)(e.Row)), e.Action));
+                if ((this.CM_COMPANY_INFORowDeleting != null)) {
+                    this.CM_COMPANY_INFORowDeleting(this, new CM_COMPANY_INFORowChangeEvent(((CM_COMPANY_INFORow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveGD_DE_XUAT_XU_LI_DETAILSRow(GD_DE_XUAT_XU_LI_DETAILSRow row) {
+            public void RemoveCM_COMPANY_INFORow(CM_COMPANY_INFORow row) {
                 this.Rows.Remove(row);
             }
             
@@ -543,7 +513,7 @@ namespace WebDS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_DE_XUAT_XU_LI_DETAILS ds = new DS_DE_XUAT_XU_LI_DETAILS();
+                DS_CM_COMPANY_INFO ds = new DS_CM_COMPANY_INFO();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -561,7 +531,7 @@ namespace WebDS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GD_DE_XUAT_XU_LI_DETAILSDataTable";
+                attribute2.FixedValue = "CM_COMPANY_INFODataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -605,69 +575,47 @@ namespace WebDS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GD_DE_XUAT_XU_LI_DETAILSRow : global::System.Data.DataRow {
+        public partial class CM_COMPANY_INFORow : global::System.Data.DataRow {
             
-            private GD_DE_XUAT_XU_LI_DETAILSDataTable tableGD_DE_XUAT_XU_LI_DETAILS;
+            private CM_COMPANY_INFODataTable tableCM_COMPANY_INFO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal GD_DE_XUAT_XU_LI_DETAILSRow(global::System.Data.DataRowBuilder rb) : 
+            internal CM_COMPANY_INFORow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGD_DE_XUAT_XU_LI_DETAILS = ((GD_DE_XUAT_XU_LI_DETAILSDataTable)(this.Table));
+                this.tableCM_COMPANY_INFO = ((CM_COMPANY_INFODataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID {
                 get {
-                    return ((decimal)(this[this.tableGD_DE_XUAT_XU_LI_DETAILS.IDColumn]));
+                    return ((decimal)(this[this.tableCM_COMPANY_INFO.IDColumn]));
                 }
                 set {
-                    this[this.tableGD_DE_XUAT_XU_LI_DETAILS.IDColumn] = value;
+                    this[this.tableCM_COMPANY_INFO.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MA_PHIEU {
+            public string COMPANY_NAME {
                 get {
-                    return ((string)(this[this.tableGD_DE_XUAT_XU_LI_DETAILS.MA_PHIEUColumn]));
+                    return ((string)(this[this.tableCM_COMPANY_INFO.COMPANY_NAMEColumn]));
                 }
                 set {
-                    this[this.tableGD_DE_XUAT_XU_LI_DETAILS.MA_PHIEUColumn] = value;
+                    this[this.tableCM_COMPANY_INFO.COMPANY_NAMEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ID_LOAI_TAI_SAN {
+            public string COMPANY_ADDRESS {
                 get {
-                    return ((decimal)(this[this.tableGD_DE_XUAT_XU_LI_DETAILS.ID_LOAI_TAI_SANColumn]));
+                    return ((string)(this[this.tableCM_COMPANY_INFO.COMPANY_ADDRESSColumn]));
                 }
                 set {
-                    this[this.tableGD_DE_XUAT_XU_LI_DETAILS.ID_LOAI_TAI_SANColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ID_TAI_SAN {
-                get {
-                    return ((decimal)(this[this.tableGD_DE_XUAT_XU_LI_DETAILS.ID_TAI_SANColumn]));
-                }
-                set {
-                    this[this.tableGD_DE_XUAT_XU_LI_DETAILS.ID_TAI_SANColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NOI_DUNG {
-                get {
-                    return ((string)(this[this.tableGD_DE_XUAT_XU_LI_DETAILS.NOI_DUNGColumn]));
-                }
-                set {
-                    this[this.tableGD_DE_XUAT_XU_LI_DETAILS.NOI_DUNGColumn] = value;
+                    this[this.tableCM_COMPANY_INFO.COMPANY_ADDRESSColumn] = value;
                 }
             }
         }
@@ -676,22 +624,22 @@ namespace WebDS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class GD_DE_XUAT_XU_LI_DETAILSRowChangeEvent : global::System.EventArgs {
+        public class CM_COMPANY_INFORowChangeEvent : global::System.EventArgs {
             
-            private GD_DE_XUAT_XU_LI_DETAILSRow eventRow;
+            private CM_COMPANY_INFORow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_DE_XUAT_XU_LI_DETAILSRowChangeEvent(GD_DE_XUAT_XU_LI_DETAILSRow row, global::System.Data.DataRowAction action) {
+            public CM_COMPANY_INFORowChangeEvent(CM_COMPANY_INFORow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_DE_XUAT_XU_LI_DETAILSRow Row {
+            public CM_COMPANY_INFORow Row {
                 get {
                     return this.eventRow;
                 }
@@ -707,7 +655,7 @@ namespace WebDS {
         }
     }
 }
-namespace WebDS.DS_DE_XUAT_XU_LI_DETAILSTableAdapters {
+namespace WebDS.DS_CM_COMPANY_INFOTableAdapters {
     
     
     /// <summary>
@@ -719,7 +667,7 @@ namespace WebDS.DS_DE_XUAT_XU_LI_DETAILSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GD_DE_XUAT_XU_LI_DETAILSTableAdapter : global::System.ComponentModel.Component {
+    public partial class CM_COMPANY_INFOTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -733,7 +681,7 @@ namespace WebDS.DS_DE_XUAT_XU_LI_DETAILSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public GD_DE_XUAT_XU_LI_DETAILSTableAdapter() {
+        public CM_COMPANY_INFOTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -830,48 +778,38 @@ namespace WebDS.DS_DE_XUAT_XU_LI_DETAILSTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "GD_DE_XUAT_XU_LI_DETAILS";
+            tableMapping.DataSetTable = "CM_COMPANY_INFO";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("MA_PHIEU", "MA_PHIEU");
-            tableMapping.ColumnMappings.Add("ID_LOAI_TAI_SAN", "ID_LOAI_TAI_SAN");
-            tableMapping.ColumnMappings.Add("ID_TAI_SAN", "ID_TAI_SAN");
-            tableMapping.ColumnMappings.Add("NOI_DUNG", "NOI_DUNG");
+            tableMapping.ColumnMappings.Add("COMPANY_NAME", "COMPANY_NAME");
+            tableMapping.ColumnMappings.Add("COMPANY_ADDRESS", "COMPANY_ADDRESS");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[GD_DE_XUAT_XU_LI_DETAILS] WHERE (([ID] = @Original_ID) AND ([M" +
-                "A_PHIEU] = @Original_MA_PHIEU) AND ([ID_LOAI_TAI_SAN] = @Original_ID_LOAI_TAI_SA" +
-                "N) AND ([ID_TAI_SAN] = @Original_ID_TAI_SAN) AND ([NOI_DUNG] = @Original_NOI_DUN" +
-                "G))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[CM_COMPANY_INFO] WHERE (([ID] = @Original_ID) AND ([COMPANY_NA" +
+                "ME] = @Original_COMPANY_NAME) AND ([COMPANY_ADDRESS] = @Original_COMPANY_ADDRESS" +
+                "))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_PHIEU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHIEU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_TAI_SAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TAI_SAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOI_DUNG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOI_DUNG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COMPANY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COMPANY_ADDRESS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_ADDRESS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_DE_XUAT_XU_LI_DETAILS] ([MA_PHIEU], [ID_LOAI_TAI_SAN], [ID_TAI_SAN], [NOI_DUNG]) VALUES (@MA_PHIEU, @ID_LOAI_TAI_SAN, @ID_TAI_SAN, @NOI_DUNG);
-SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI_DETAILS WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[CM_COMPANY_INFO] ([COMPANY_NAME], [COMPANY_ADDRESS]) VALUES (@" +
+                "COMPANY_NAME, @COMPANY_ADDRESS);\r\nSELECT ID, COMPANY_NAME, COMPANY_ADDRESS FROM " +
+                "CM_COMPANY_INFO WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHIEU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHIEU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_LOAI_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_TAI_SAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TAI_SAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOI_DUNG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOI_DUNG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COMPANY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COMPANY_ADDRESS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_ADDRESS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GD_DE_XUAT_XU_LI_DETAILS] SET [MA_PHIEU] = @MA_PHIEU, [ID_LOAI_TAI_SAN] = @ID_LOAI_TAI_SAN, [ID_TAI_SAN] = @ID_TAI_SAN, [NOI_DUNG] = @NOI_DUNG WHERE (([ID] = @Original_ID) AND ([MA_PHIEU] = @Original_MA_PHIEU) AND ([ID_LOAI_TAI_SAN] = @Original_ID_LOAI_TAI_SAN) AND ([ID_TAI_SAN] = @Original_ID_TAI_SAN) AND ([NOI_DUNG] = @Original_NOI_DUNG));
-SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI_DETAILS WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CM_COMPANY_INFO] SET [COMPANY_NAME] = @COMPANY_NAME, [COMPANY_ADDRESS] = @COMPANY_ADDRESS WHERE (([ID] = @Original_ID) AND ([COMPANY_NAME] = @Original_COMPANY_NAME) AND ([COMPANY_ADDRESS] = @Original_COMPANY_ADDRESS));
+SELECT ID, COMPANY_NAME, COMPANY_ADDRESS FROM CM_COMPANY_INFO WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHIEU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHIEU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_LOAI_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_TAI_SAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TAI_SAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOI_DUNG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOI_DUNG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COMPANY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COMPANY_ADDRESS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_ADDRESS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_PHIEU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHIEU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_TAI_SAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_TAI_SAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TAI_SAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOI_DUNG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOI_DUNG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COMPANY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COMPANY_ADDRESS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMPANY_ADDRESS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -888,8 +826,7 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM dbo.GD_DE_XUAT_XU" +
-                "_LI_DETAILS";
+            this._commandCollection[0].CommandText = "SELECT ID, COMPANY_NAME, COMPANY_ADDRESS FROM dbo.CM_COMPANY_INFO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -897,7 +834,7 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_DE_XUAT_XU_LI_DETAILS.GD_DE_XUAT_XU_LI_DETAILSDataTable dataTable) {
+        public virtual int Fill(DS_CM_COMPANY_INFO.CM_COMPANY_INFODataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -910,9 +847,9 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_DE_XUAT_XU_LI_DETAILS.GD_DE_XUAT_XU_LI_DETAILSDataTable GetData() {
+        public virtual DS_CM_COMPANY_INFO.CM_COMPANY_INFODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_DE_XUAT_XU_LI_DETAILS.GD_DE_XUAT_XU_LI_DETAILSDataTable dataTable = new DS_DE_XUAT_XU_LI_DETAILS.GD_DE_XUAT_XU_LI_DETAILSDataTable();
+            DS_CM_COMPANY_INFO.CM_COMPANY_INFODataTable dataTable = new DS_CM_COMPANY_INFO.CM_COMPANY_INFODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -920,15 +857,15 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_DE_XUAT_XU_LI_DETAILS.GD_DE_XUAT_XU_LI_DETAILSDataTable dataTable) {
+        public virtual int Update(DS_CM_COMPANY_INFO.CM_COMPANY_INFODataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_DE_XUAT_XU_LI_DETAILS dataSet) {
-            return this.Adapter.Update(dataSet, "GD_DE_XUAT_XU_LI_DETAILS");
+        public virtual int Update(DS_CM_COMPANY_INFO dataSet) {
+            return this.Adapter.Update(dataSet, "CM_COMPANY_INFO");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -950,21 +887,19 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_MA_PHIEU, decimal Original_ID_LOAI_TAI_SAN, decimal Original_ID_TAI_SAN, string Original_NOI_DUNG) {
+        public virtual int Delete(decimal Original_ID, string Original_COMPANY_NAME, string Original_COMPANY_ADDRESS) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
-            if ((Original_MA_PHIEU == null)) {
-                throw new global::System.ArgumentNullException("Original_MA_PHIEU");
+            if ((Original_COMPANY_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_COMPANY_NAME");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_MA_PHIEU));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_COMPANY_NAME));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ID_LOAI_TAI_SAN));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_ID_TAI_SAN));
-            if ((Original_NOI_DUNG == null)) {
-                throw new global::System.ArgumentNullException("Original_NOI_DUNG");
+            if ((Original_COMPANY_ADDRESS == null)) {
+                throw new global::System.ArgumentNullException("Original_COMPANY_ADDRESS");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_NOI_DUNG));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_COMPANY_ADDRESS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -986,20 +921,18 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MA_PHIEU, decimal ID_LOAI_TAI_SAN, decimal ID_TAI_SAN, string NOI_DUNG) {
-            if ((MA_PHIEU == null)) {
-                throw new global::System.ArgumentNullException("MA_PHIEU");
+        public virtual int Insert(string COMPANY_NAME, string COMPANY_ADDRESS) {
+            if ((COMPANY_NAME == null)) {
+                throw new global::System.ArgumentNullException("COMPANY_NAME");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MA_PHIEU));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(COMPANY_NAME));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ID_LOAI_TAI_SAN));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(ID_TAI_SAN));
-            if ((NOI_DUNG == null)) {
-                throw new global::System.ArgumentNullException("NOI_DUNG");
+            if ((COMPANY_ADDRESS == null)) {
+                throw new global::System.ArgumentNullException("COMPANY_ADDRESS");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(NOI_DUNG));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(COMPANY_ADDRESS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1021,37 +954,33 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_PHIEU, decimal ID_LOAI_TAI_SAN, decimal ID_TAI_SAN, string NOI_DUNG, decimal Original_ID, string Original_MA_PHIEU, decimal Original_ID_LOAI_TAI_SAN, decimal Original_ID_TAI_SAN, string Original_NOI_DUNG, decimal ID) {
-            if ((MA_PHIEU == null)) {
-                throw new global::System.ArgumentNullException("MA_PHIEU");
+        public virtual int Update(string COMPANY_NAME, string COMPANY_ADDRESS, decimal Original_ID, string Original_COMPANY_NAME, string Original_COMPANY_ADDRESS, decimal ID) {
+            if ((COMPANY_NAME == null)) {
+                throw new global::System.ArgumentNullException("COMPANY_NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(MA_PHIEU));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(COMPANY_NAME));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ID_LOAI_TAI_SAN));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(ID_TAI_SAN));
-            if ((NOI_DUNG == null)) {
-                throw new global::System.ArgumentNullException("NOI_DUNG");
+            if ((COMPANY_ADDRESS == null)) {
+                throw new global::System.ArgumentNullException("COMPANY_ADDRESS");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(NOI_DUNG));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(COMPANY_ADDRESS));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID));
-            if ((Original_MA_PHIEU == null)) {
-                throw new global::System.ArgumentNullException("Original_MA_PHIEU");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_MA_PHIEU));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_ID_LOAI_TAI_SAN));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_ID_TAI_SAN));
-            if ((Original_NOI_DUNG == null)) {
-                throw new global::System.ArgumentNullException("Original_NOI_DUNG");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Original_ID));
+            if ((Original_COMPANY_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_COMPANY_NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_NOI_DUNG));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_COMPANY_NAME));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(ID));
+            if ((Original_COMPANY_ADDRESS == null)) {
+                throw new global::System.ArgumentNullException("Original_COMPANY_ADDRESS");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_COMPANY_ADDRESS));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1072,8 +1001,8 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_PHIEU, decimal ID_LOAI_TAI_SAN, decimal ID_TAI_SAN, string NOI_DUNG, decimal Original_ID, string Original_MA_PHIEU, decimal Original_ID_LOAI_TAI_SAN, decimal Original_ID_TAI_SAN, string Original_NOI_DUNG) {
-            return this.Update(MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG, Original_ID, Original_MA_PHIEU, Original_ID_LOAI_TAI_SAN, Original_ID_TAI_SAN, Original_NOI_DUNG, Original_ID);
+        public virtual int Update(string COMPANY_NAME, string COMPANY_ADDRESS, decimal Original_ID, string Original_COMPANY_NAME, string Original_COMPANY_ADDRESS) {
+            return this.Update(COMPANY_NAME, COMPANY_ADDRESS, Original_ID, Original_COMPANY_NAME, Original_COMPANY_ADDRESS, Original_ID);
         }
     }
     
@@ -1089,7 +1018,7 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         
         private UpdateOrderOption _updateOrder;
         
-        private GD_DE_XUAT_XU_LI_DETAILSTableAdapter _gD_DE_XUAT_XU_LI_DETAILSTableAdapter;
+        private CM_COMPANY_INFOTableAdapter _cM_COMPANY_INFOTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1111,12 +1040,12 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public GD_DE_XUAT_XU_LI_DETAILSTableAdapter GD_DE_XUAT_XU_LI_DETAILSTableAdapter {
+        public CM_COMPANY_INFOTableAdapter CM_COMPANY_INFOTableAdapter {
             get {
-                return this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter;
+                return this._cM_COMPANY_INFOTableAdapter;
             }
             set {
-                this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter = value;
+                this._cM_COMPANY_INFOTableAdapter = value;
             }
         }
         
@@ -1139,9 +1068,9 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null) 
-                            && (this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Connection != null))) {
-                    return this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Connection;
+                if (((this._cM_COMPANY_INFOTableAdapter != null) 
+                            && (this._cM_COMPANY_INFOTableAdapter.Connection != null))) {
+                    return this._cM_COMPANY_INFOTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1156,7 +1085,7 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null)) {
+                if ((this._cM_COMPANY_INFOTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1168,14 +1097,14 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DS_DE_XUAT_XU_LI_DETAILS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_CM_COMPANY_INFO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GD_DE_XUAT_XU_LI_DETAILS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cM_COMPANY_INFOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CM_COMPANY_INFO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Update(updatedRows));
+                    result = (result + this._cM_COMPANY_INFOTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1187,13 +1116,13 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DS_DE_XUAT_XU_LI_DETAILS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_CM_COMPANY_INFO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GD_DE_XUAT_XU_LI_DETAILS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cM_COMPANY_INFOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CM_COMPANY_INFO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Update(addedRows));
+                    result = (result + this._cM_COMPANY_INFOTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1205,13 +1134,13 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DS_DE_XUAT_XU_LI_DETAILS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_CM_COMPANY_INFO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GD_DE_XUAT_XU_LI_DETAILS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cM_COMPANY_INFOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CM_COMPANY_INFO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Update(deletedRows));
+                    result = (result + this._cM_COMPANY_INFOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1247,15 +1176,15 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DS_DE_XUAT_XU_LI_DETAILS dataSet) {
+        public virtual int UpdateAll(DS_CM_COMPANY_INFO dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Connection) == false))) {
+            if (((this._cM_COMPANY_INFOTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cM_COMPANY_INFOTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1291,13 +1220,13 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null)) {
-                    revertConnections.Add(this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter, this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Connection);
-                    this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Adapter);
+                if ((this._cM_COMPANY_INFOTableAdapter != null)) {
+                    revertConnections.Add(this._cM_COMPANY_INFOTableAdapter, this._cM_COMPANY_INFOTableAdapter.Connection);
+                    this._cM_COMPANY_INFOTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cM_COMPANY_INFOTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cM_COMPANY_INFOTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cM_COMPANY_INFOTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cM_COMPANY_INFOTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1358,9 +1287,9 @@ SELECT ID, MA_PHIEU, ID_LOAI_TAI_SAN, ID_TAI_SAN, NOI_DUNG FROM GD_DE_XUAT_XU_LI
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter != null)) {
-                    this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter]));
-                    this._gD_DE_XUAT_XU_LI_DETAILSTableAdapter.Transaction = null;
+                if ((this._cM_COMPANY_INFOTableAdapter != null)) {
+                    this._cM_COMPANY_INFOTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cM_COMPANY_INFOTableAdapter]));
+                    this._cM_COMPANY_INFOTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
