@@ -15,7 +15,7 @@ using System.Data;
 using WebDS;
 
 
-namespace AuctionUS{
+namespace WebUS{
 
 public class US_HT_QUAN_HE_SU_DUNG_DU_LIEU : US_Object
 {

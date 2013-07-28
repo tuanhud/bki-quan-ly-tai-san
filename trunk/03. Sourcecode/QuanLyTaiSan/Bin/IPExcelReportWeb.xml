@@ -6,20 +6,7 @@ IPExcelReportWeb
 </name>
 </assembly>
 <members>
-<member name="P:IPExcelReportWeb.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:IPExcelReportWeb.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:IPExcelReportWeb.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="M:IPExcelReportWeb.CExportColumnFactory.CreateExportColumnAsp(System.Int32,System.Int32,System.Int32)">
+<member name="M:IPExcelReportWeb.CExportColumnFactory.CreateExportColumnAsp(System.Int32,System.Int32,System.Int32)">
 	<summary>
  Dùng trong ASP.NET
  </summary>
@@ -33,6 +20,19 @@ IPExcelReportWeb
  Dùng trong ASP.NET
  </summary>
 	<remarks></remarks>
+</member><member name="P:IPExcelReportWeb.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:IPExcelReportWeb.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:IPExcelReportWeb.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
 </member>
 </members>
 </doc>
