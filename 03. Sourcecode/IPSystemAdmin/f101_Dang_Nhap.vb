@@ -59,18 +59,18 @@ Public Class f101_Dang_Nhap
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
-        Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(f101_Dang_Nhap))
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.m_btnOK = New SIS.Controls.Button.SiSButton
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(f101_Dang_Nhap))
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.m_btnOK = New SIS.Controls.Button.SiSButton()
         Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
-        Me.m_btnCancel = New SIS.Controls.Button.SiSButton
-        Me.m_txtMatKhau = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.m_txtTenTruyNhap = New System.Windows.Forms.TextBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.m_btnCancel = New SIS.Controls.Button.SiSButton()
+        Me.m_txtMatKhau = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.m_txtTenTruyNhap = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -81,9 +81,9 @@ Public Class f101_Dang_Nhap
         Me.Panel1.Controls.Add(Me.m_btnOK)
         Me.Panel1.Controls.Add(Me.m_btnCancel)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.DockPadding.All = 3
         Me.Panel1.Location = New System.Drawing.Point(3, 123)
         Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(3)
         Me.Panel1.Size = New System.Drawing.Size(296, 36)
         Me.Panel1.TabIndex = 4
         '
@@ -91,7 +91,7 @@ Public Class f101_Dang_Nhap
         '
         Me.m_btnOK.AdjustImageLocation = New System.Drawing.Point(0, 0)
         Me.m_btnOK.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle
-        Me.m_btnOK.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default
+        Me.m_btnOK.BtnStyle = SIS.Controls.Button.emunType.XPStyle.[Default]
         Me.m_btnOK.Dock = System.Windows.Forms.DockStyle.Right
         Me.m_btnOK.ForeColor = System.Drawing.SystemColors.ControlText
         Me.m_btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -105,15 +105,16 @@ Public Class f101_Dang_Nhap
         '
         'ImageList
         '
-        Me.ImageList.ImageSize = New System.Drawing.Size(16, 16)
         Me.ImageList.ImageStream = CType(resources.GetObject("ImageList.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList.Images.SetKeyName(0, "")
+        Me.ImageList.Images.SetKeyName(1, "")
         '
         'm_btnCancel
         '
         Me.m_btnCancel.AdjustImageLocation = New System.Drawing.Point(0, 0)
         Me.m_btnCancel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle
-        Me.m_btnCancel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default
+        Me.m_btnCancel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.[Default]
         Me.m_btnCancel.Dock = System.Windows.Forms.DockStyle.Right
         Me.m_btnCancel.ForeColor = System.Drawing.SystemColors.ControlText
         Me.m_btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -131,10 +132,9 @@ Public Class f101_Dang_Nhap
         Me.m_txtMatKhau.Location = New System.Drawing.Point(114, 77)
         Me.m_txtMatKhau.MaxLength = 12
         Me.m_txtMatKhau.Name = "m_txtMatKhau"
-        Me.m_txtMatKhau.PasswordChar = Microsoft.VisualBasic.ChrW(42)
+        Me.m_txtMatKhau.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.m_txtMatKhau.Size = New System.Drawing.Size(98, 20)
         Me.m_txtMatKhau.TabIndex = 3
-        Me.m_txtMatKhau.Text = ""
         '
         'Label2
         '
@@ -166,7 +166,6 @@ Public Class f101_Dang_Nhap
         Me.m_txtTenTruyNhap.Name = "m_txtTenTruyNhap"
         Me.m_txtTenTruyNhap.Size = New System.Drawing.Size(147, 20)
         Me.m_txtTenTruyNhap.TabIndex = 1
-        Me.m_txtTenTruyNhap.Text = ""
         '
         'GroupBox1
         '
@@ -181,7 +180,7 @@ Public Class f101_Dang_Nhap
         Me.GroupBox1.Size = New System.Drawing.Size(302, 162)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Đăng nhập - Hệ thống quản lý đấu thầu"
+        Me.GroupBox1.Text = "Đăng nhập - Hệ thống quản lý tài sản"
         '
         'Panel2
         '
@@ -206,6 +205,7 @@ Public Class f101_Dang_Nhap
         Me.Text = "M001-Đăng nhập"
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -264,8 +264,8 @@ Public Class f101_Dang_Nhap
     End Function
     Private Sub Form2UsObject()
         m_us_user.strTEN_TRUY_CAP = m_txtTenTruyNhap.Text.Trim
-        'm_us_user.strMAT_KHAU = m_txtMatKhau.Text.Trim
-        m_us_user.strMAT_KHAU = CIPConvert.Encoding(m_txtMatKhau.Text.Trim)
+        m_us_user.strMAT_KHAU = m_txtMatKhau.Text.Trim
+        'm_us_user.strMAT_KHAU = CIPConvert.Encoding(m_txtMatKhau.Text.Trim)
     End Sub
     Private Function SubmitLogonIsOK() As Boolean
         '*********************************************************************   
