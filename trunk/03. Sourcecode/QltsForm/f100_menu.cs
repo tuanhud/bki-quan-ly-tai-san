@@ -37,5 +37,16 @@ namespace QltsForm {
 
         IPConstants.HowUserWantTo_Exit_MainForm m_exitMode = IPConstants.HowUserWantTo_Exit_MainForm.ExitFromSystem;
         #endregion
+
+        private void kêKhaiÔTôToolStripMenuItem_Click(object sender, EventArgs e) {
+            try {
+                f400_bao_cao_danh_muc_o_to v_frm400 = new f400_bao_cao_danh_muc_o_to();
+                v_frm400.display();
+            }
+            catch (Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

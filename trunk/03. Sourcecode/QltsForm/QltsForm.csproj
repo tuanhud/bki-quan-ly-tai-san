@@ -69,11 +69,26 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid, Version=2.5.20044.189, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.Classic, Version=2.5.20044.189, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.Classic.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input">
+      <HintPath>..\DLL\C1.Win.C1Input.dll</HintPath>
+    </Reference>
+    <Reference Include="SiSButton, Version=1.0.1494.35082, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SiSButton.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -88,7 +103,28 @@
     <Compile Include="f100_menu.Designer.cs">
       <DependentUpon>f100_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="f400_bao_cao_danh_muc_o_to.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f401_bao_cao_danh_muc_tai_san_khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f402_bao_cao_danh_muc_tru_so_lam_viec.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="f100_menu.resx">
+      <DependentUpon>f100_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f400_bao_cao_danh_muc_o_to.resx">
+      <DependentUpon>f400_bao_cao_danh_muc_o_to.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f401_bao_cao_danh_muc_tai_san_khac.resx">
+      <DependentUpon>f401_bao_cao_danh_muc_tai_san_khac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f402_bao_cao_danh_muc_tru_so_lam_viec.resx">
+      <DependentUpon>f402_bao_cao_danh_muc_tru_so_lam_viec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,6 +154,14 @@
     <ProjectReference Include="..\IPCommon\IPCommon.vbproj">
       <Project>{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}</Project>
       <Name>IPCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPData\IPData.vbproj">
+      <Project>{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}</Project>
+      <Name>IPData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPException\IPException.vbproj">
+      <Project>{B73156C2-7034-4DEA-A308-5E1782FF8DB4}</Project>
+      <Name>IPException</Name>
     </ProjectReference>
     <ProjectReference Include="..\IPSystemAdmin\IPSystemAdmin.vbproj">
       <Project>{455CD3A5-79BA-480A-B9BD-D4A7DDA397A8}</Project>
