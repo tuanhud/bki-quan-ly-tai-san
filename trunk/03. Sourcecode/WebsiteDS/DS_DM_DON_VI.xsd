@@ -141,7 +141,7 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, LOAI_HINH_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CA
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_DM_DON_VI_DM_DON_VI1" msdata:parent="DM_DON_VI" msdata:child="DM_DON_VI" msdata:parentkey="ID" msdata:childkey="ID_DON_VI_CAP_TREN" msprop:Generator_UserChildTable="DM_DON_VI" msprop:Generator_ChildPropName="GetDM_DON_VIRows" msprop:Generator_UserParentTable="DM_DON_VI" msprop:Generator_UserRelationName="FK_DM_DON_VI_DM_DON_VI1" msprop:Generator_RelationVarName="relationFK_DM_DON_VI_DM_DON_VI1" msprop:Generator_ParentPropName="DM_DON_VIRowParent" />
+      <msdata:Relationship name="FK_DM_DON_VI_DM_DON_VI1" msdata:parent="DM_DON_VI" msdata:child="DM_DON_VI" msdata:parentkey="ID" msdata:childkey="ID_DON_VI_CAP_TREN" msprop:Generator_UserChildTable="DM_DON_VI" msprop:Generator_ChildPropName="GetDM_DON_VIRows" msprop:Generator_ParentPropName="DM_DON_VIRowParent" msprop:Generator_UserRelationName="FK_DM_DON_VI_DM_DON_VI1" msprop:Generator_RelationVarName="relationFK_DM_DON_VI_DM_DON_VI1" msprop:Generator_UserParentTable="DM_DON_VI" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

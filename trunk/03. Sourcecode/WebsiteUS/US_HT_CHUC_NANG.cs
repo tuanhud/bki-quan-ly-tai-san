@@ -191,5 +191,28 @@ public class US_HT_CHUC_NANG : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    #region Additional Methods
+    public void get_parent_table(string ip_str_user_name, DS_HT_CHUC_NANG ip_ds_ht_chuc_nang) {
+        CStoredProc v_cstore = new CStoredProc("pr_HT_CHUC_NANG_GetQuyenChucNang");
+        v_cstore.addNVarcharInputParam("@USER_NAME", ip_str_user_name);
+        v_cstore.fillDataSetByCommand(this, ip_ds_ht_chuc_nang);
+    }
+    public void get_child_menu(decimal ip_dc_parent_id, string ip_str_user_name, DS_HT_CHUC_NANG ip_ds_ht_chuc_nang_con) {
+        CStoredProc v_cstore = new CStoredProc("pr_HT_CHUC_NANG_GetQuyenChucNang_Con");
+        v_cstore.addNVarcharInputParam("@PARENT_ID", ip_dc_parent_id);
+        v_cstore.fillDataSetByCommand(this, ip_ds_ht_chuc_nang_con);
+    }
+    public void load_all_data_by_root_parent_id(decimal ip_dc_root_parent_id, DS_HT_CHUC_NANG ip_ds_ht_chuc_nang) {
+        CStoredProc v_cstore = new CStoredProc("pr_HT_CHUC_NANG_Select_by_Root_ParentId");
+        v_cstore.addDecimalInputParam("@CHUC_NANG_PARENT_ID", ip_dc_root_parent_id);
+        v_cstore.fillDataSetByCommand(this, ip_ds_ht_chuc_nang);
+    }
+    public void load_chuc_nang_max_vi_tri_by_parent_id(decimal ip_dc_chuc_nang_parent_id, DS_HT_CHUC_NANG ip_ds_ht_chuc_nang) {
+        CStoredProc v_cstore = new CStoredProc("pr_HT_CHUC_NANG_Select_Chuc_Nang_Max_Vi_Tri");
+        v_cstore.addDecimalInputParam("@CHUC_NANG_PARENT_ID", ip_dc_chuc_nang_parent_id);
+        v_cstore.fillDataSetByCommand(this, ip_ds_ht_chuc_nang);
+    }
+    #endregion
 	}
 }

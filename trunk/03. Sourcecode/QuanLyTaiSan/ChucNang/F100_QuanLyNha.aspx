@@ -119,7 +119,7 @@
                         </td>
                         <td align="left" style="width: 30%;">
                             <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"
-                                TextMode="Date"></asp:TextBox>
+                                ></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             (*)

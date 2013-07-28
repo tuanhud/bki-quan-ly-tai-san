@@ -109,5 +109,16 @@ public class US_HT_USER_GROUP : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    #region "Addtional"
+    public void Insert_nhom_nguoi_dung() {
+        CStoredProc v_cstore = new CStoredProc("pr_HT_USER_GROUP_Insert");
+        v_cstore.addNVarcharInputParam("@USER_GROUP_NAME", this.strUSER_GROUP_NAME);
+        v_cstore.addNVarcharInputParam("@DESCRIPTION", this.strDESCRIPTION);
+        v_cstore.ExecuteCommand(this);
+    }
+    #endregion
+
+
+}
 }

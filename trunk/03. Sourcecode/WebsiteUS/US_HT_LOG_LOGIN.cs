@@ -10,6 +10,7 @@
 using System;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
+using IP.Core.IPData;
 using System.Data.SqlClient;
 using System.Data;
 using WebDS;

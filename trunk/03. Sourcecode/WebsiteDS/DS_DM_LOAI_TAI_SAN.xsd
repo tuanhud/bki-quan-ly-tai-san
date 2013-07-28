@@ -101,7 +101,7 @@ SELECT ID, TEN_LOAI_TAI_SAN, ID_LOAI_TAI_SAN_PARENT, ID_PHAN_LOAI FROM DM_LOAI_T
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msdata:parent="DM_LOAI_TAI_SAN" msdata:child="DM_LOAI_TAI_SAN" msdata:parentkey="ID" msdata:childkey="ID_LOAI_TAI_SAN_PARENT" msprop:Generator_UserChildTable="DM_LOAI_TAI_SAN" msprop:Generator_ChildPropName="GetDM_LOAI_TAI_SANRows" msprop:Generator_UserParentTable="DM_LOAI_TAI_SAN" msprop:Generator_UserRelationName="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_RelationVarName="relationFK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_ParentPropName="DM_LOAI_TAI_SANRowParent" />
+      <msdata:Relationship name="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msdata:parent="DM_LOAI_TAI_SAN" msdata:child="DM_LOAI_TAI_SAN" msdata:parentkey="ID" msdata:childkey="ID_LOAI_TAI_SAN_PARENT" msprop:Generator_UserChildTable="DM_LOAI_TAI_SAN" msprop:Generator_ChildPropName="GetDM_LOAI_TAI_SANRows" msprop:Generator_ParentPropName="DM_LOAI_TAI_SANRowParent" msprop:Generator_UserRelationName="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_RelationVarName="relationFK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_UserParentTable="DM_LOAI_TAI_SAN" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
