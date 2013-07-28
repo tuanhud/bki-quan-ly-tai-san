@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-<table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
+    <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
                 <span class="cssPageTitle">Quản lý nhà</span> <span class="expand-collapse-text initial-expand">
@@ -44,7 +44,7 @@
                             <span class="cssManField">Đơn vị sử dụng</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="DropDownList2" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -64,7 +64,7 @@
                             <span class="cssManField">Thuộc khu đất</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="DropDownList1" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_ddl_thuoc_khu_dat" runat="server" Width="85%">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -118,8 +118,7 @@
                             <span class="cssManField">Ngày, tháng, năm sử dụng</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"
-                                ></asp:TextBox>
+                            <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             (*)
@@ -432,87 +431,6 @@
         </tr>
         <tr>
             <td align="center" colspan="3" style="height: 450px;" valign="top">
-                <table border="1" cellspacing="0" cellpadding="0" width="100%" style="background-color: #810c15;
-                    color: White; font-weight: bold; text-align: center; border-collapse: collapse;">
-                    <tr>
-                        <td rowspan="3" style="width: 2%;">
-                            Xóa
-                        </td>
-                        <td rowspan="3" style="width: 2%;">
-                            Sửa
-                        </td>
-                        <td rowspan="3" style="width: 14%;">
-                            Tên tài sản
-                        </td>
-                        <td rowspan="3" style="width: 14%;">
-                            Địa chỉ
-                        </td>
-                        <td rowspan="3" style="width: 4%;">
-                            Cấp hạng
-                        </td>
-                        <td rowspan="3" style="width: 4%;">
-                            Năm xây dựng
-                        </td>
-                        <td rowspan="3" style="width: 8%;">
-                            Ngày, tháng, năm sử dụng
-                        </td>
-                        <td colspan="3" style="width: 12%;">
-                            Giá trị theo sổ kế toán
-                        </td>
-                        <td rowspan="3" style="width: 4%;">
-                            Số tầng
-                        </td>
-                        <td rowspan="3" style="width: 4%;">
-                            Diện tích xây dựng (m2)
-                        </td>
-                        <td rowspan="3" style="width: 4%;">
-                            Tổng diện tích xây dựng (m2)
-                        </td>
-                        <td colspan="7" style="width: 28%;">
-                            Hiện trạng sử dụng (m2)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="width: 10%;">
-                            Nguyên giá
-                        </td>
-                        <td rowspan="2" style="width: 4%;">
-                            Giá trị còn lại
-                        </td>
-                        <td rowspan="2" style="width: 4%;">
-                            Trụ sở làm việc
-                        </td>
-                        <td rowspan="2" style="width: 4%;">
-                            Cơ sở HĐSN
-                        </td>
-                        <td colspan="5" style="width: 20%;">
-                            Sử dụng khác
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 4%;">
-                            Nguồn NS
-                        </td>
-                        <td style="width: 4%;">
-                            Nguồn khác
-                        </td>
-                        <td style="width: 4%;">
-                            Làm nhà ở
-                        </td>
-                        <td style="width: 4%;">
-                            Cho thuê
-                        </td>
-                        <td style="width: 4%;">
-                            Bỏ trống
-                        </td>
-                        <td style="width: 4%;">
-                            Bị lấn chiếm
-                        </td>
-                        <td style="width: 4%;">
-                            Khác
-                        </td>
-                    </tr>
-                </table>
                 <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
                     PageSize="15" ShowHeader="true">
@@ -592,6 +510,19 @@
                                     </tr>
                                 </table>
                             </HeaderTemplate>
+                            <ItemTemplate>
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                	<tr>
+                                		<td><%# Eval("TRU_SO_LAM_VIEC") %></td>
+                                        <td><%# Eval("CO_SO_HDSN") %></td>
+                                        <td><%# Eval("LAM_NHA_O") %></td>
+                                        <td><%# Eval("CHO_THUE") %></td>
+                                        <td><%# Eval("BO_TRONG") %></td>
+                                        <td><%# Eval("BI_LAN_CHIEM") %></td>
+                                        <td><%# Eval("KHAC") %></td>
+                                	</tr>
+                                </table>
+                            </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                     <AlternatingRowStyle BackColor="White" />
