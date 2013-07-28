@@ -125,6 +125,7 @@
     <EmbeddedResource Include="f402_bao_cao_danh_muc_tru_so_lam_viec.resx">
       <DependentUpon>f402_bao_cao_danh_muc_tru_so_lam_viec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

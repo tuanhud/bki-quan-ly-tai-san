@@ -61,6 +61,7 @@
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem.Name = "kêKhaiTrụSởLàmViệcToolStripMenuItem";
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem.Text = "Trụ sở làm việc";
+            this.kêKhaiTrụSởLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.kêKhaiTrụSởLàmViệcToolStripMenuItem_Click);
             // 
             // kêKhaiÔTôToolStripMenuItem
             // 
@@ -74,6 +75,7 @@
             this.kêKhaiTàiSảnKhácToolStripMenuItem.Name = "kêKhaiTàiSảnKhácToolStripMenuItem";
             this.kêKhaiTàiSảnKhácToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.kêKhaiTàiSảnKhácToolStripMenuItem.Text = "Tài sản khác";
+            this.kêKhaiTàiSảnKhácToolStripMenuItem.Click += new System.EventHandler(this.kêKhaiTàiSảnKhácToolStripMenuItem_Click);
             // 
             // đềNghịXửLýToolStripMenuItem
             // 

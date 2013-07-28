@@ -48,5 +48,27 @@ namespace QltsForm {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void kêKhaiTrụSởLàmViệcToolStripMenuItem_Click(object sender, EventArgs e) {
+            try {
+                f402_bao_cao_danh_muc_tru_so_lam_viec v_frm402 = new f402_bao_cao_danh_muc_tru_so_lam_viec();
+                v_frm402.display();
+            }
+            catch (Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void kêKhaiTàiSảnKhácToolStripMenuItem_Click(object sender, EventArgs e) {
+            try {
+                f401_bao_cao_danh_muc_tai_san_khac v_frm401 = new f401_bao_cao_danh_muc_tai_san_khac();
+                v_frm401.display();
+            }
+            catch (Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
