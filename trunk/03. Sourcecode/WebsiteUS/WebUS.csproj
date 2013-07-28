@@ -94,6 +94,9 @@
     <Compile Include="US_HT_QUYEN_USER.cs" />
     <Compile Include="US_HT_THAM_SO_HE_THONG.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
+    <Compile Include="US_V_DM_NHA.cs" />
+    <Compile Include="US_V_DM_OTO.cs" />
+    <Compile Include="US_V_DM_TAI_SAN_KHAC.cs" />
     <Compile Include="US_V_HT_USER_DV_QUAN_LY.cs" />
   </ItemGroup>
   <ItemGroup>
