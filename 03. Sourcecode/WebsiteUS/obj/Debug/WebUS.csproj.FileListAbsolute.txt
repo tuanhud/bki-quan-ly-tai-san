@@ -260,3 +260,32 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteUS\obj\Debug\ResolveAssemblyReference.cache
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPException.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.Shared.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPData.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\C1.Common.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPException.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPException.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPData.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\bin\Debug\IPData.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.csprojResolveAssemblyReference.cache
