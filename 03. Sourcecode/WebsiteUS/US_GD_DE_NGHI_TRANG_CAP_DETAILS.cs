@@ -15,7 +15,7 @@ using System.Data;
 using WebDS;
 
 
-namespace AuctionUS{
+namespace WebUS{
 
 public class US_GD_DE_NGHI_TRANG_CAP_DETAILS : US_Object
 {

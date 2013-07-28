@@ -15,7 +15,7 @@ using System.Data;
 using WebDS;
 
 
-namespace AuctionUS{
+namespace WebUS{
 
 public class US_CM_DM_LOAI_TD : US_Object
 {

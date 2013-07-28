@@ -98,3 +98,13 @@ D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03.
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.dll
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.xml
 D:\00. BKIndex\01. Project\01. Projects\01. Web projects\15. Quan ly tai san\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\bin\IPBusinessService.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\bin\IPBusinessService.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\bin\IPBusinessService.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\bin\IPException.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\bin\IPException.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\bin\IPException.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.dll
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.xml
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+F:\00. bki-quan-ly-tai-san\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache

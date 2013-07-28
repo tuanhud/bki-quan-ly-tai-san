@@ -15,7 +15,7 @@ using System.Data;
 using WebDS;
 
 
-namespace AuctionUS{
+namespace WebUS{
 
 public class US_GD_TANG_GIAM_TAI_SAN : US_Object
 {

@@ -15,7 +15,7 @@ using System.Data;
 using WebDS;
 
 
-namespace AuctionUS{
+namespace WebUS{
 
 public class US_DOC_TABLE_COMMENT : US_Object
 {

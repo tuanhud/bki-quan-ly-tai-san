@@ -18,30 +18,30 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["AccounLogin"] != null)
-        {
-            if (Session["AccounLogin"].ToString().Equals("Y"))
-            {
-                m_lhk_user_name.Text = "Xin chào: "+Session["UserName"].ToString();
-            }
-            else
-            {
-                Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
-            }
-        }
-        else
-        {
-            Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
-        }
+        //if (Session["AccounLogin"] != null)
+        //{
+        //    if (Session["AccounLogin"].ToString().Equals("Y"))
+        //    {
+        //        m_lhk_user_name.Text = "Xin chào: "+Session["UserName"].ToString();
+        //    }
+        //    else
+        //    {
+        //        Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
+        //    }
+        //}
+        //else
+        //{
+        //    Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
+        //}
 
-        m_str_user_name = CIPConvert.ToStr(Session["UserName"]);
-        if (!IsPostBack)
-        {
-            m_us_ht_chuc_nang.get_parent_table(m_str_user_name, m_ds_ht_chuc_nang);
-            // Lấy toàn bộ các menu cấp 1 được cấp quyền và được hiển thị
-            rptMainMenu.DataSource = m_ds_ht_chuc_nang.HT_CHUC_NANG.Select("CHUC_NANG_PARENT_ID =0 AND HIEN_THI_YN='Y'","VI_TRI");
-            rptMainMenu.DataBind();
-        }
+        //m_str_user_name = CIPConvert.ToStr(Session["UserName"]);
+        //if (!IsPostBack)
+        //{
+        //    m_us_ht_chuc_nang.get_parent_table(m_str_user_name, m_ds_ht_chuc_nang);
+        //    // Lấy toàn bộ các menu cấp 1 được cấp quyền và được hiển thị
+        //    rptMainMenu.DataSource = m_ds_ht_chuc_nang.HT_CHUC_NANG.Select("CHUC_NANG_PARENT_ID =0 AND HIEN_THI_YN='Y'","VI_TRI");
+        //    rptMainMenu.DataBind();
+        //}
 
     }
     protected void rptCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
