@@ -32,7 +32,7 @@
          <div>
             <div class="header">
             <asp:Image runat="server"  Height='88px' Width = '526px' 
-            ImageUrl="~/Images/MenuTop/tongcucduongbo.jpg"/>
+            ImageUrl="~/Images/MenuTop/tcdb.jpg"/>
             </div>
          </div>
          <div id='wapper'>
