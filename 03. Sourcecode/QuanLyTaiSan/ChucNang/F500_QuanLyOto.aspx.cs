@@ -21,8 +21,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     US_DM_OTO m_us_dm_oto = new US_DM_OTO();
     DS_DM_OTO m_ds_dm_oto = new DS_DM_OTO();
 
-    US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-    DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+    IP.Core.IPUserService.US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+    IP.Core.IPData.DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
     DataEntryFormMode m_init_mode = DataEntryFormMode.ViewDataState;
     //private void load_2_cbo_dv_chu_quan()
     //{
@@ -153,13 +153,13 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private void form_2_us_object(US_DM_OTO ip_us_oto)
     {
-        ip_us_oto.dcTAI_TRONG = CIPConvert.ToDecimal(m_txt_tai_trong.Text);
+        //ip_us_oto.dcTAI_TRONG = CIPConvert.ToDecimal(m_txt_tai_trong.Text);
         ip_us_oto.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
-        ip_us_oto.datNAM_SU_DUNG= m_dt_ngay_su_dung.SelectedDate;
-        ip_us_oto.datNAM_SAN_XUAT=CIPConvert.ToDatetime(m_txt_nam_san_xuat.Text);
+        //ip_us_oto.datNAM_SU_DUNG= m_dt_ngay_su_dung.SelectedDate;
+        //ip_us_oto.datNAM_SAN_XUAT=CIPConvert.ToDatetime(m_txt_nam_san_xuat.Text);
         ip_us_oto.dcGIA_TRI_CON_LAI = CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text);
         ip_us_oto.dcHD_KHAC = CIPConvert.ToDecimal(m_txt_hd_khac.Text);
-        ip_us_oto.dcKHONG_KINH_DOANH = CIPConvert.ToDecimal(m_txt_khong_kinh_doanh.Text);
+        //ip_us_oto.dcKHONG_KINH_DOANH = CIPConvert.ToDecimal(m_txt_khong_kinh_doanh.Text);
         ip_us_oto.dcKINH_DOANH = CIPConvert.ToDecimal(m_txt_kinh_doanh.Text);
         ip_us_oto.dcNGUON_KHAC = CIPConvert.ToDecimal(m_txt_nguon_khac.Text);
         ip_us_oto.dcNGUON_NS = CIPConvert.ToDecimal(m_txt_nguon_ns.Text);
@@ -175,12 +175,12 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     /// <param name="ip_dm_noi_dung_thanh_toan"></param>
     private void us_obj_2_form(US_DM_OTO ip_us_oto)
     {
-        m_txt_tai_trong.Text=ip_us_oto.dcTAI_TRONG.ToString();
-        m_dt_ngay_su_dung.SelectedDate=ip_us_oto.datNAM_SU_DUNG;
-        m_txt_nam_san_xuat.Text=ip_us_oto.datNAM_SAN_XUAT.ToString();
+        //m_txt_tai_trong.Text=ip_us_oto.dcTAI_TRONG.ToString();
+        //m_dt_ngay_su_dung.SelectedDate=ip_us_oto.datNAM_SU_DUNG;
+        //m_txt_nam_san_xuat.Text=ip_us_oto.datNAM_SAN_XUAT.ToString();
         m_txt_gia_tri_con_lai.Text=ip_us_oto.dcGIA_TRI_CON_LAI.ToString();
         m_txt_hd_khac.Text = ip_us_oto.dcHD_KHAC.ToString();
-        m_txt_khong_kinh_doanh.Text = ip_us_oto.dcKHONG_KINH_DOANH.ToString();
+        //m_txt_khong_kinh_doanh.Text = ip_us_oto.dcKHONG_KINH_DOANH.ToString();
         m_txt_kinh_doanh.Text=ip_us_oto.dcKINH_DOANH.ToString();
         m_txt_nguon_khac.Text = ip_us_oto.dcNGUON_KHAC.ToString();
         m_txt_nguon_ns.Text=ip_us_oto.dcNGUON_NS.ToString();

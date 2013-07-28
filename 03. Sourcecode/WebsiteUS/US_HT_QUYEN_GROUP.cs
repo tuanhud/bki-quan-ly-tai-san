@@ -107,5 +107,14 @@ public class US_HT_QUYEN_GROUP : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    #region Additional Function
+    public void update_quyen_group(decimal i_dc_id_user_group, string i_str_chuc_nangs) {
+        CStoredProc v_cstore = new CStoredProc("pr_HT_QUYEN_GROUP_UpdateQuyen4Group");
+        v_cstore.addDecimalInputParam("@ID_USER_GROUP", i_dc_id_user_group);
+        v_cstore.addNVarcharInputParam("@ID_CHUC_NANG", i_str_chuc_nangs);
+        v_cstore.ExecuteCommand(this);
+    }
+    #endregion
 	}
 }
