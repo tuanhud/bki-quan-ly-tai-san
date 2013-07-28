@@ -5,7 +5,7 @@
 
     $("td.cssPageTitleBG").click(function () {
         $(this).children(".expand-collapse-text").toggle();
-        $(this).parent("tr").siblings("tr").slideToggle();
+        $(this).parent("tr").siblings("tr").toggle();
     });
 
     //Content boxes expand/collapse 2
