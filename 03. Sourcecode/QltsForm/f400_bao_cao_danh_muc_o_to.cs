@@ -257,7 +257,7 @@ namespace QltsForm {
 
             US_CM_DM_TU_DIEN v_us_td = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds_td = new DS_CM_DM_TU_DIEN();
-            v_us_td.fill_tu_dien_cung_loai_ds(
+            
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
