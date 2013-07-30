@@ -57,7 +57,8 @@
     </table>
     <div id="gridViewContent">
         <asp:GridView ID="m_grv_bao_cao_oto" AllowPaging="True" runat="server" AutoGenerateColumns="False"
-            Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" PageSize="30">
+            Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" 
+            PageSize="30" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField HeaderText="TÀI SẢN" ItemStyle-HorizontalAlign="Center" DataField="TEN_TAI_SAN"
