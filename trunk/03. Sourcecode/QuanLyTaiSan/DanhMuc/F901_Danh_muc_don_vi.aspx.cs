@@ -116,7 +116,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     }
     private void us_object_2_form(US_DM_DON_VI i_us_don_vi)
     {
-        if (i_us_don_vi.dcID_DON_VI_CAP_TREN.ToString() != "")
+        if (i_us_don_vi.dcID_DON_VI_CAP_TREN != 0)
             m_cbo_don_vi_cap_tren.SelectedValue = CIPConvert.ToStr(i_us_don_vi.dcID_DON_VI_CAP_TREN);
         else
             m_cbo_don_vi_cap_tren.SelectedValue = "1";//Bug
@@ -266,5 +266,11 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             // de su dung CsystemLog_301 bat buoc Site phai dat trong thu muc cap 1. Vi du: DanhMuc/Dictionary.aspx
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
+    }
+    protected void m_grv_dm_don_vi_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        load_data_2_grid();
+        m_grv_dm_don_vi.PageIndex = e.NewPageIndex;
+        m_grv_dm_don_vi.DataBind();
     }
 }

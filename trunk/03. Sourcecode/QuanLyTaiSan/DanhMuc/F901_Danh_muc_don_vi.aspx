@@ -3,6 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
@@ -111,7 +115,8 @@
                 Width="80%" DataKeyNames="ID" AllowPaging="true" PageSize="15"
                 CellPadding="4" ForeColor="#333333" CssClass="cssGrid" 
                     onrowdeleting="m_grv_dm_don_vi_RowDeleting" 
-                    onselectedindexchanging="m_grv_dm_don_vi_SelectedIndexChanging">
+                    onselectedindexchanging="m_grv_dm_don_vi_SelectedIndexChanging" 
+                    onpageindexchanging="m_grv_dm_don_vi_PageIndexChanging">
                     <PagerSettings Position="TopAndBottom" />
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
@@ -148,8 +153,7 @@
             </td>
         </tr>
 </table>
-            
-		    
-            
+                        </ContentTemplate>
+                </asp:UpdatePanel>            
             </asp:Content>
 
