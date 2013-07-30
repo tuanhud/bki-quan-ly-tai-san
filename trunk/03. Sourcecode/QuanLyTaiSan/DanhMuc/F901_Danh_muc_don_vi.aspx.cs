@@ -46,6 +46,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             m_cbo_don_vi_cap_tren.DataTextField = DM_DON_VI.TEN_DON_VI;
             m_cbo_don_vi_cap_tren.DataValueField = DM_DON_VI.ID;
             m_cbo_don_vi_cap_tren.DataBind();
+            m_cbo_don_vi_cap_tren.Items.Add("Không có");
         }
         catch (Exception v_e)
         {
@@ -115,7 +116,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     }
     private void us_object_2_form(US_DM_DON_VI i_us_don_vi)
     {
-        if (i_us_don_vi.dcID_DON_VI_CAP_TREN != null)
+        if (i_us_don_vi.dcID_DON_VI_CAP_TREN.ToString() != "")
             m_cbo_don_vi_cap_tren.SelectedValue = CIPConvert.ToStr(i_us_don_vi.dcID_DON_VI_CAP_TREN);
         else
             m_cbo_don_vi_cap_tren.SelectedValue = "1";//Bug
