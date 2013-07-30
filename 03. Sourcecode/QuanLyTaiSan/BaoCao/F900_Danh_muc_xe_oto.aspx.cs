@@ -105,6 +105,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         try
         {
             load_data_2_grid_by_command();
+            m_txt_tu_khoa.Text = "";
         }
         catch (Exception v_e)
         {

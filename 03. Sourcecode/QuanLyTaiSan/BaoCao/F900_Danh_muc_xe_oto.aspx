@@ -5,7 +5,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <%# Eval("GIA_TRI_CON_LAI") %>
+    <asp:ScriptManager runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel runat="server">
+    <ContentTemplate>
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
@@ -197,4 +200,6 @@
             <PagerSettings Position="TopAndBottom" />
         </asp:GridView>
     </div>
+    </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>
