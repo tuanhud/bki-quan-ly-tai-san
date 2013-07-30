@@ -5,24 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <%--<script type="text/javascript">
-        $(document).ready(function () {
-            $("#<%= m_cbo_trang_thai.ClientID %>").on('change', function () {
-                $.ajax({
-                    url: "/QuanLyTaiSan/Services/LoadCombo.ashx",
-                    type: "html",
-                    data: "5",
-                    type: "POST",
-                    success: function (d) {
-                        $("#gridViewContent").html(d);
-                    },
-                    fail: function() {
-                    }
-                })
-            })
-        })
-       
-    </script>--%>
+    <%# Eval("GIA_TRI_CON_LAI") %>
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
@@ -35,7 +18,8 @@
                 <span class="cssManField">Từ khóa</span>
             </td>
             <td align="left" style="width: 30%">
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" 
+                    Width="85%"></asp:TextBox>
             </td>
             <td align="right">
                 <span class="cssManField">Trạng thái</span>
@@ -49,11 +33,12 @@
             <td align="right">
             </td>
             <td align="left" colspan="2">
-                <asp:Button ID="Button1" runat="server" AccessKey="s" CssClass="cssButton" Height="24px"
-                    Text="Tìm kiếm" Width="98px" />
+                <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" 
+                    CssClass="cssButton" Height="24px"
+                    Text="Tìm kiếm" Width="98px" onclick="m_cmd_tim_kiem_Click"/>
             </td>
             <td align="left">
-                <asp:Button ID="Button2" runat="server" CausesValidation="False" CssClass="cssButton"
+                <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
                     Height="25px" Text="Xuất Excel" Width="98px" />
             </td>
         </tr>
