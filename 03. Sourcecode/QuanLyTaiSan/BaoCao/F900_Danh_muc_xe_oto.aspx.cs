@@ -30,7 +30,10 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             {
                 load_cbo_user_group();   
             }
-            load_data_2_grid();
+            if (m_txt_tu_khoa.Text == "")
+                load_data_2_grid();
+            else
+                load_data_2_grid_by_command();
         }
         catch (Exception v_e)
         {
@@ -77,9 +80,39 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             throw v_e;
         }
     }
+    private void load_data_2_grid_by_command()
+    {
+        try
+        {   
+            string tu_khoa = m_txt_tu_khoa.Text.Trim();
+            string command = "SELECT * FROM DM_OTO WHERE TEN_TAI_SAN LIKE '%" + tu_khoa + "%' or NHAN_HIEU like '%" + tu_khoa + "%' or BIEN_KIEM_SOAT like '%" + tu_khoa + "%' or SO_CHO_NGOI like '%" + tu_khoa + "%'";
+            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(command);
+            m_us_dm_oto.FillDatasetByCommand(m_ds_dm_oto,cmd);
+            m_grv_bao_cao_oto.DataSource = m_ds_dm_oto.DM_OTO;
+            m_grv_bao_cao_oto.DataBind();
+        }
+        catch (Exception v_e)
+        {
+            throw v_e;
+        }
+    }
 
     #endregion
 
     #region Events
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_2_grid_by_command();
+        }
+        catch (Exception v_e)
+        {
+
+            throw v_e;
+        }
+    }
     #endregion
+
+
 }
