@@ -2,14 +2,15 @@
 <xs:schema id="DS_DM_DON_VI" targetNamespace="http://tempuri.org/DS_DM_DON_VI.xsd" xmlns:mstns="http://tempuri.org/DS_DM_DON_VI.xsd" xmlns="http://tempuri.org/DS_DM_DON_VI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_QLTSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_QLTSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WebDS.Properties.Settings.GlobalReference.Default.BKI_QLTSConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLTSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLTSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WebDS.Properties.Settings.GlobalReference.Default.QLTSConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DM_DON_VITableAdapter" GeneratorDataComponentClassName="DM_DON_VITableAdapter" Name="DM_DON_VI" UserDataComponentName="DM_DON_VITableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_QLTSConnectionString (Settings)" DbObjectName="BKI_QLTS.dbo.DM_DON_VI" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLTSConnectionString (Settings)" DbObjectName="QLTS.dbo.DM_DON_VI" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[DM_DON_VI] WHERE (([ID] = @Original_ID) AND ([MA_DON_VI] = @Original_MA_DON_VI) AND ([TEN_DON_VI] = @Original_TEN_DON_VI) AND ((@IsNull_LOAI_HINH_DON_VI = 1 AND [LOAI_HINH_DON_VI] IS NULL) OR ([LOAI_HINH_DON_VI] = @Original_LOAI_HINH_DON_VI)) AND ([ID_LOAI_DON_VI] = @Original_ID_LOAI_DON_VI) AND ((@IsNull_ID_DON_VI_CAP_TREN = 1 AND [ID_DON_VI_CAP_TREN] IS NULL) OR ([ID_DON_VI_CAP_TREN] = @Original_ID_DON_VI_CAP_TREN)) AND ((@IsNull_STT = 1 AND [STT] IS NULL) OR ([STT] = @Original_STT)) AND ((@IsNull_LEVEL_MODE = 1 AND [LEVEL_MODE] IS NULL) OR ([LEVEL_MODE] = @Original_LEVEL_MODE)))</CommandText>
@@ -141,7 +142,7 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, LOAI_HINH_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CA
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_DM_DON_VI_DM_DON_VI1" msdata:parent="DM_DON_VI" msdata:child="DM_DON_VI" msdata:parentkey="ID" msdata:childkey="ID_DON_VI_CAP_TREN" msprop:Generator_UserChildTable="DM_DON_VI" msprop:Generator_ChildPropName="GetDM_DON_VIRows" msprop:Generator_ParentPropName="DM_DON_VIRowParent" msprop:Generator_UserRelationName="FK_DM_DON_VI_DM_DON_VI1" msprop:Generator_RelationVarName="relationFK_DM_DON_VI_DM_DON_VI1" msprop:Generator_UserParentTable="DM_DON_VI" />
+      <msdata:Relationship name="FK_DM_DON_VI_DM_DON_VI1" msdata:parent="DM_DON_VI" msdata:child="DM_DON_VI" msdata:parentkey="ID" msdata:childkey="ID_DON_VI_CAP_TREN" msprop:Generator_UserChildTable="DM_DON_VI" msprop:Generator_ChildPropName="GetDM_DON_VIRows" msprop:Generator_UserParentTable="DM_DON_VI" msprop:Generator_UserRelationName="FK_DM_DON_VI_DM_DON_VI1" msprop:Generator_RelationVarName="relationFK_DM_DON_VI_DM_DON_VI1" msprop:Generator_ParentPropName="DM_DON_VIRowParent" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

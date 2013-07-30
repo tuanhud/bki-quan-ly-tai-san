@@ -2,14 +2,15 @@
 <xs:schema id="DS_DM_LOAI_TAI_SAN" targetNamespace="http://tempuri.org/DS_DM_LOAI_TAI_SAN.xsd" xmlns:mstns="http://tempuri.org/DS_DM_LOAI_TAI_SAN.xsd" xmlns="http://tempuri.org/DS_DM_LOAI_TAI_SAN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_QLTSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_QLTSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WebDS.Properties.Settings.GlobalReference.Default.BKI_QLTSConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLTSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLTSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WebDS.Properties.Settings.GlobalReference.Default.QLTSConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DM_LOAI_TAI_SANTableAdapter" GeneratorDataComponentClassName="DM_LOAI_TAI_SANTableAdapter" Name="DM_LOAI_TAI_SAN" UserDataComponentName="DM_LOAI_TAI_SANTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_QLTSConnectionString (Settings)" DbObjectName="BKI_QLTS.dbo.DM_LOAI_TAI_SAN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLTSConnectionString (Settings)" DbObjectName="QLTS.dbo.DM_LOAI_TAI_SAN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[DM_LOAI_TAI_SAN] WHERE (([ID] = @Original_ID) AND ((@IsNull_TEN_LOAI_TAI_SAN = 1 AND [TEN_LOAI_TAI_SAN] IS NULL) OR ([TEN_LOAI_TAI_SAN] = @Original_TEN_LOAI_TAI_SAN)) AND ((@IsNull_ID_LOAI_TAI_SAN_PARENT = 1 AND [ID_LOAI_TAI_SAN_PARENT] IS NULL) OR ([ID_LOAI_TAI_SAN_PARENT] = @Original_ID_LOAI_TAI_SAN_PARENT)) AND ([ID_PHAN_LOAI] = @Original_ID_PHAN_LOAI))</CommandText>
@@ -101,7 +102,7 @@ SELECT ID, TEN_LOAI_TAI_SAN, ID_LOAI_TAI_SAN_PARENT, ID_PHAN_LOAI FROM DM_LOAI_T
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msdata:parent="DM_LOAI_TAI_SAN" msdata:child="DM_LOAI_TAI_SAN" msdata:parentkey="ID" msdata:childkey="ID_LOAI_TAI_SAN_PARENT" msprop:Generator_UserChildTable="DM_LOAI_TAI_SAN" msprop:Generator_ChildPropName="GetDM_LOAI_TAI_SANRows" msprop:Generator_ParentPropName="DM_LOAI_TAI_SANRowParent" msprop:Generator_UserRelationName="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_RelationVarName="relationFK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_UserParentTable="DM_LOAI_TAI_SAN" />
+      <msdata:Relationship name="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msdata:parent="DM_LOAI_TAI_SAN" msdata:child="DM_LOAI_TAI_SAN" msdata:parentkey="ID" msdata:childkey="ID_LOAI_TAI_SAN_PARENT" msprop:Generator_UserChildTable="DM_LOAI_TAI_SAN" msprop:Generator_ChildPropName="GetDM_LOAI_TAI_SANRows" msprop:Generator_UserParentTable="DM_LOAI_TAI_SAN" msprop:Generator_UserRelationName="FK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_RelationVarName="relationFK_DM_LOAI_TAI_SAN_DM_LOAI_TAI_SAN" msprop:Generator_ParentPropName="DM_LOAI_TAI_SANRowParent" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
