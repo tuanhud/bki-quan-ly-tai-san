@@ -66,7 +66,8 @@
                 Text="Bộ, Tỉnh" />
                          </td>
                 <td align="left" colspan="3">
-                    <asp:DropDownList ID="m_dll_bo_tinh" runat="server" Width="265px">
+                    <asp:DropDownList ID="m_ddl_bo_tinh" runat="server" Width="265px" 
+                        onselectedindexchanged="m_ddl_bo_tinh_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td align="right" colspan="4">
@@ -79,7 +80,8 @@
                 Text="Đơn vị chủ quản" />
                          </td>
                 <td align="left" colspan="3">
-                    <asp:DropDownList ID="m_ddl_dv_chu_quan" runat="server" Width="265px">
+                    <asp:DropDownList ID="m_ddl_dv_chu_quan" runat="server" Width="265px" 
+                        onselectedindexchanged="m_ddl_dv_chu_quan_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td align="right" colspan="4">
@@ -92,7 +94,8 @@
                 Text="Đơn vị sử dụng tài sản" />
                          </td>
                 <td align="left" colspan="3">
-                    <asp:DropDownList ID="m_ddl_dv_sd_ts" runat="server" Width="265px">
+                    <asp:DropDownList ID="m_ddl_dv_sd_ts" runat="server" Width="265px" 
+                        onselectedindexchanged="m_ddl_dv_sd_ts_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td align="right" colspan="4">
@@ -114,7 +117,8 @@
                 Text="&lt;U&gt;L&lt;/U&gt;oại xe" />
                          </td>
                 <td align="left" colspan="3">
-                    <asp:DropDownList ID="m_ddl_loai_xe" runat="server" Width="265px">
+                    <asp:DropDownList ID="m_ddl_loai_xe" runat="server" Width="265px" 
+                        onselectedindexchanged="m_ddl_loai_xe_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td align="right" colspan="4">
@@ -383,7 +387,7 @@
                     <asp:Button ID="btnCancel" runat="server" accessKey="r" CssClass="cssButton" 
                         onclick="btnCancel_Click" Text="Xóa trắng(r)" Width="98px" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <%--<asp:LinkButton id="m_lbt_advanced_search" PostBackUrl="/QuanLyTaiSan/ChucNang/F205_AdvanceSearchGiangVien.aspx" runat="server" CausesValidation="false" Text= "Tìm kiếm nâng cao"></asp:LinkButton>--%>
+                        <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
 			    </td>
                 <td align="left" >    
 			        &nbsp;</td>
@@ -413,58 +417,106 @@
 	<tr>
 		<td align="center" colspan="3" style="height:450px;" valign="top">
 		    &nbsp;
-   <asp:GridView ID="m_grv_dm_oto" AllowPaging="True" 
-                runat="server" AutoGenerateColumns="False" 
-                Width="101%" DataKeyNames="ID"
-                CellPadding="4" ForeColor="#333333" 
-            AllowSorting="True" 
-            onpageindexchanging="m_grv_dm_oto_PageIndexChanging" 
-            onrowdeleting="m_grv_dm_oto_RowDeleting" PageSize="15" >
-                  <AlternatingRowStyle BackColor="White" />
-                <Columns>
-                    <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
-                       <ItemTemplate><asp:Label ID="m_lbl_stt" runat="server" Text="<%# Container.DataItemIndex + 1 %>"></asp:Label></ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                    </asp:TemplateField>
-                 <asp:TemplateField HeaderText="Bộ, Tỉnh" >
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="ĐV chủ quản">
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="ĐV sử dụng tài sản">
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Loại xe">
-                    </asp:TemplateField>      
-                    <asp:BoundField DataField="NHAN_HIEU" HeaderText="Nhãn hiệu" />
-                    <asp:BoundField DataField="BIEN_KIEM_SOAT" HeaderText="Biển kiểm soát" />
-                    <asp:BoundField DataField="TAI_TRONG" HeaderText="Tải trọng" />
-                    <asp:BoundField DataField="NUOC_SAN_XUAT" HeaderText="Nước sản xuất" />
-                    <asp:BoundField DataField="NAM_SAN_XUAT" HeaderText="Năm sản xuất" />
-                    <asp:BoundField DataField="NAM_SU_DUNG" HeaderText="Năm sử dụng" />
-                    <asp:BoundField DataField="CONG_SUAT_XE" HeaderText="Công suất " />
-                    <asp:BoundField DataField="CHUC_DANH_SU_DUNG_XE" 
-                        HeaderText="Chức danh sử dụng xe" />
-                    <asp:BoundField DataField="NGUON_GOC_XE" HeaderText="Nguồn gốc" />
-                    <asp:BoundField DataField="NGUON_NS" HeaderText="Nguồn NS" />
-                    <asp:BoundField DataField="NGUON_KHAC" HeaderText="Nguồn khác" />
-                    <asp:BoundField DataField="GIA_TRI_CON_LAI" HeaderText="Giá trị còn lại" />
-                    <asp:BoundField DataField="QLNN" HeaderText="QLNN" />
-                    <asp:BoundField DataField="KINH_DOANH" HeaderText="Kinh doanh" />
-                    <asp:BoundField DataField="KHONG_KINH_DOANH" HeaderText="Không kinh doanh" />
-                    <asp:BoundField DataField="HD_KHAC" HeaderText="HĐ khác" />
-                      <asp:CommandField ShowEditButton="True" />
-
-                    <asp:CommandField ShowDeleteButton="True" />
-
-                </Columns>
-                  <EditRowStyle BackColor="#7C6F57" />
-                  <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                  <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
-                  <PagerSettings Position="TopAndBottom" />
-                  <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                  <RowStyle BackColor="#E3EAEB" />
-                <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True" 
-                      ForeColor="#333333"></SelectedRowStyle>
-            </asp:GridView>
+   <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                    Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
+                    PageSize="15" ShowHeader="true">
+                    <Columns>
+                    <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
+                                    OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
+                     <img src="../Images/Button/deletered.png" alt="Delete" />
+                                </asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Sửa">
+                            <ItemTemplate>
+                                <asp:HyperLink ToolTip="Sửa" ImageUrl="../Images/Button/edit.png" ID="lbt_edit" runat="server"
+                                    NavigateUrl=''></asp:HyperLink>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
+                            <ItemTemplate>
+                                <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
+                                    ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl=""/>
+                        <asp:BoundField HeaderText="Nhãn hiệu" DataField="NHAN_HIEU"/>
+                        <asp:BoundField HeaderText="Biển kiểm soát" DataField="BIEN_KIEM_SOAT"/>
+                        <asp:BoundField HeaderText="Tải trọng" DataField="SO_CHO_NGOI"/>
+                        <asp:BoundField HeaderText="Công suất xe" DataField="CONG_SUAT_XE"/>
+                        <asp:BoundField HeaderText="Chức danh sử dụng" DataField="CHUC_DANH_SU_DUNG"/>
+                        <asp:BoundField HeaderText="Nguồn gốc xe" DataField="NGUON_GOC_XE"/>
+                        <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT"/>
+                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT"/>
+                        <asp:BoundField HeaderText="Ngày/tháng/năm sử dụng" DataField="NAM_SU_DUNG"/>
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                                	<tr>
+                                		<td colspan="3">Giá trị theo sổ kế toán</td>
+                                	</tr>
+                                    <tr>
+                                        <td colspan="2" style = "width: 66%">Nguyên giá</td>
+                                        <td rowspan="2" style = "width: 33%">Giá trị còn lại</td>
+                                    </tr>
+                                    <tr>
+                                        <td style = "width: 33%">Nguồn NS</td>
+                                        <td style = "width: 33%">Nguồn khác</td>
+                                    </tr>
+                                </table>
+                            </HeaderTemplate>
+                            <HeaderStyle CssClass=""/>
+                            <ItemTemplate>
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                	<tr>
+                                		<td style = "width: 33%"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
+                                        <td style = "width: 33%"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
+                                        <td style = "width: 33%"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
+                                	</tr>
+                                </table>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                	<tr>
+                                		<td colspan="7">Hiện trạng sử dụng</td>
+                                	</tr>
+                                    <tr>
+                                        <td rowspan="2" style = "width: 25%">Quản lý nhà nước</td>
+                                        <td colspan="2" style = "width: 50%">Hoạt đông sự nghiệp</td>
+                                        <td rowspan="2" style = "width: 25%">Khác</td>
+                                    </tr>
+                                    <tr>
+                                        <td style = "width: 25%">Kinh doanh</td>
+                                        <td style = "width: 25%">Không kinh doanh</td>
+                                    </tr>
+                                </table>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                	<tr>
+                                		<td style = "width: 25%"><%# Eval("QLNN") %></td>
+                                        <td style = "width: 25%"><%# Eval("KINH_DOANH") %></td>
+                                        <td style = "width: 25%"><%# Eval("KHONG_KINH_DOANH") %></td>
+                                        <td style = "width: 25%"><%# Eval("HD_KHAC") %></td>
+                                	</tr>
+                                </table>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <AlternatingRowStyle BackColor="White" />
+                    <EditRowStyle BackColor="#7C6F57" />
+                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
+                    <PagerSettings Position="TopAndBottom" />
+                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#E3EAEB" />
+                    <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
+                        ForeColor="#333333"></SelectedRowStyle>
+                </asp:GridView>
             </td>
 	</tr>	
 

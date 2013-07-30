@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-
 using WebUS;
 using WebDS;
 using WebDS.CDBNames;
@@ -24,28 +23,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     IP.Core.IPUserService.US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
     IP.Core.IPData.DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
     DataEntryFormMode m_init_mode = DataEntryFormMode.ViewDataState;
-    //private void load_2_cbo_dv_chu_quan()
-    //{
-    //    try
-    //    {
-    //        DS_CM_DM_TU_DIEN v_ds_cm_tu_dien = new DS_CM_DM_TU_DIEN();
-    //        US_CM_DM_TU_DIEN v_us_cm_tu_dien = new US_CM_DM_TU_DIEN();
-    //        // DataRow v_dr_all = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
-    //        // Đổ dữ liệu vào DS 
-    //        v_us_cm_tu_dien.FillDataset(v_ds_cm_tu_dien, " WHERE ID_LOAI_TU_DIEN = " + (int)e_loai_tu_dien.TRANG_THAI_GIANG_VIEN); // Đây là lấy theo điều kiện
 
-    //        m_cbo_trang_thai_g_vien.Items.Add(new ListItem("Tất cả", "0"));
-    //        for (int i = 0; i < v_ds_cm_tu_dien.CM_DM_TU_DIEN.Rows.Count; i++)
-    //        {
-    //            m_cbo_trang_thai_g_vien.Items.Add(new ListItem(v_ds_cm_tu_dien.CM_DM_TU_DIEN[i][CM_DM_TU_DIEN.TEN].ToString(), v_ds_cm_tu_dien.CM_DM_TU_DIEN[i][CM_DM_TU_DIEN.ID].ToString()));
-    //        }
-    //    }
-
-    //    catch (Exception v_e)
-    //    {
-    //        throw v_e;
-    //    }
-    //}
     private void load_2_cbo_loaits()
     {
         try
@@ -54,13 +32,11 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             US_DM_LOAI_TAI_SAN v_us_dm_loaits = new US_DM_LOAI_TAI_SAN();
             // DataRow v_dr_all = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
             // Đổ dữ liệu vào DS 
-            v_us_dm_loaits.FillDataset(v_ds_dm_loaits); // Đây là lấy theo điều kiện
-
-            m_ddl_loai_xe.Items.Add(new ListItem("Tất cả", "0"));
-            for (int i = 0; i < v_ds_dm_loaits.DM_LOAI_TAI_SAN.Rows.Count; i++)
-            {
-                m_ddl_loai_xe.Items.Add(new ListItem(v_ds_dm_loaits.DM_LOAI_TAI_SAN[i][DM_LOAI_TAI_SAN.TEN_LOAI_TAI_SAN].ToString(), v_ds_dm_loaits.DM_LOAI_TAI_SAN[i][DM_LOAI_TAI_SAN.ID].ToString()));
-            }
+            v_us_dm_loaits.FillDataset(v_ds_dm_loaits, "where ID_PHAN_LOAI = 592"); // Đây là lấy theo điều kiện
+            m_ddl_loai_xe.DataSource = v_ds_dm_loaits.DM_LOAI_TAI_SAN;
+            m_ddl_loai_xe.DataTextField = "TEN_LOAI_TAI_SAN";
+            m_ddl_loai_xe.DataValueField = "ID";
+            m_ddl_loai_xe.DataBind();
         }
 
         catch (Exception v_e)
@@ -68,22 +44,40 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             throw v_e;
         }
     }
-   
+    private void load_2_cbo_bo_tinh()
+    {
+        try
+        {
+            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 574");
+            m_ddl_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+            m_ddl_bo_tinh.DataTextField = "TEN_DON_VI";
+            m_ddl_bo_tinh.DataValueField = "ID";
+            m_ddl_bo_tinh.DataBind();
+        }
+
+        catch (Exception v_e)
+        {
+            throw v_e;
+        }
+    }
     private void load_2_cbo_dv_chu_quan()
     {
         try
         {
-            DS_DM_DON_VI v_ds_dm_donvi = new DS_DM_DON_VI();
-            US_DM_DON_VI v_us_dm_donvi = new US_DM_DON_VI();
-            // DataRow v_dr_all = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
-            // Đổ dữ liệu vào DS 
-            v_us_dm_donvi.FillDataset(v_ds_dm_donvi); // Đây là lấy theo điều kiện
+            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
-            m_ddl_dv_chu_quan.Items.Add(new ListItem("Tất cả", "0"));
-            for (int i = 0; i < v_ds_dm_donvi.DM_DON_VI.Rows.Count; i++)
-            {
-                m_ddl_dv_chu_quan.Items.Add(new ListItem(v_ds_dm_donvi.DM_DON_VI[i][DM_DON_VI.TEN_DON_VI].ToString(), v_ds_dm_donvi.DM_DON_VI[i][DM_DON_VI.MA_DON_VI].ToString()));
-            }
+            string v_id_bo_tinh = m_ddl_bo_tinh.SelectedValue;
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 575 and ID_DON_VI_CAP_TREN LIKE '%"
+                + v_id_bo_tinh + "%'");
+            m_ddl_dv_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+            m_ddl_dv_chu_quan.DataTextField = "TEN_DON_VI";
+            m_ddl_dv_chu_quan.DataValueField = "ID";
+            m_ddl_dv_chu_quan.DataBind();
+            m_ddl_dv_chu_quan.Items.Insert(0, new ListItem("Tất cả đơn vị trực thuộc", ""));
         }
 
         catch (Exception v_e)
@@ -95,17 +89,16 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
-            DS_DM_DON_VI v_ds_dm_donvi = new DS_DM_DON_VI();
-            US_DM_DON_VI v_us_dm_donvi = new US_DM_DON_VI();
-            // DataRow v_dr_all = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
-            // Đổ dữ liệu vào DS 
-            v_us_dm_donvi.FillDataset(v_ds_dm_donvi, " WHERE ID_DON_VI_CAP_TREN = " + Convert.ToInt32(m_ddl_dv_chu_quan.SelectedValue)); // Đây là lấy theo điều kiện
+            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
-            m_ddl_dv_sd_ts.Items.Add(new ListItem("Tất cả", "0"));
-            for (int i = 0; i < v_ds_dm_donvi.DM_DON_VI.Rows.Count; i++)
-            {
-                m_ddl_dv_sd_ts.Items.Add(new ListItem(v_ds_dm_donvi.DM_DON_VI[i][DM_DON_VI.TEN_DON_VI].ToString(), v_ds_dm_donvi.DM_DON_VI[i][DM_DON_VI.MA_DON_VI].ToString()));
-            }
+            string v_id_don_vi_chu_quan = m_ddl_dv_chu_quan.SelectedValue;
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 576 and ID_DON_VI_CAP_TREN LIKE '%" + v_id_don_vi_chu_quan
+                + "%'");
+            m_ddl_dv_sd_ts.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+            m_ddl_dv_sd_ts.DataTextField = "TEN_DON_VI";
+            m_ddl_dv_sd_ts.DataValueField = "ID";
+            m_ddl_dv_sd_ts.DataBind();
         }
 
         catch (Exception v_e)
@@ -127,6 +120,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         if (!IsPostBack)
         {
             load_data_to_grid();
+            load_2_cbo_bo_tinh();
             load_2_cbo_dv_chu_quan();
             load_2_cbo_dv_sdts();
             load_2_cbo_loaits();
@@ -340,5 +334,22 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
+    }
+    protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        load_2_cbo_bo_tinh();
+    }
+    protected void m_ddl_dv_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        load_2_cbo_dv_chu_quan();
+
+    }
+    protected void m_ddl_dv_sd_ts_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        load_2_cbo_dv_sdts();
+    }
+    protected void m_ddl_loai_xe_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        load_2_cbo_loaits();
     }
 }
