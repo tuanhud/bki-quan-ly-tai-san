@@ -265,9 +265,7 @@
             <td colspan="15">
                 <asp:GridView ID="m_grv_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-                    PageSize="5" 
-                    
-                    onpageindexchanging="m_grv_oto_PageIndexChanging">
+                    PageSize="5" OnPageIndexChanging="m_grv_oto_PageIndexChanging">
                     <Columns>
                         <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
                             NavigateUrl="" />
@@ -286,16 +284,16 @@
                         <asp:BoundField HeaderText="NĂM SẢN XUẤT" HeaderStyle-Width="4%" DataField="NAM_SAN_XUAT">
                             <ItemStyle HorizontalAlign="center" />
                         </asp:BoundField>
-                         <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NAM_SU_DUNG">
+                        <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NAM_SU_DUNG">
                             <ItemStyle HorizontalAlign="center" />
                         </asp:BoundField>
-                         <asp:BoundField HeaderText="CÔNG SUẤT XE" HeaderStyle-Width="5%" DataField="CONG_SUAT_XE">
+                        <asp:BoundField HeaderText="CÔNG SUẤT XE" HeaderStyle-Width="5%" DataField="CONG_SUAT_XE">
                             <ItemStyle HorizontalAlign="center" />
                         </asp:BoundField>
-                         <asp:BoundField HeaderText="CHỨC DANH SỬ DỤNG XE" HeaderStyle-Width="8%" DataField="CHUC_DANH_SU_DUNG">
+                        <asp:BoundField HeaderText="CHỨC DANH SỬ DỤNG XE" HeaderStyle-Width="8%" DataField="CHUC_DANH_SU_DUNG">
                             <ItemStyle HorizontalAlign="center" />
                         </asp:BoundField>
-                         <asp:BoundField HeaderText="NGUỒN GỐC XE" HeaderStyle-Width="8%" DataField="NGUON_GOC_XE">
+                        <asp:BoundField HeaderText="NGUỒN GỐC XE" HeaderStyle-Width="8%" DataField="NGUON_GOC_XE">
                             <ItemStyle HorizontalAlign="center" />
                         </asp:BoundField>
                         <asp:TemplateField HeaderStyle-Width="18%">
@@ -343,8 +341,6 @@
                                 </table>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        
-                        
                         <asp:TemplateField HeaderStyle-Width="12%">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="3" width="100%">
@@ -356,15 +352,14 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        
                                         <td rowspan="2" colspan="1" style="width: 25%">
                                             QLNN
                                         </td>
                                         <td rowspan="1" colspan="2">
                                             HĐ sự nghiệp
                                         </td>
-                                        <td colspan="1" rowspan="2" STYLE="WIDTH:25%">
-                                        HĐ khác
+                                        <td colspan="1" rowspan="2" style="width: 25%">
+                                            HĐ khác
                                         </td>
                                     </tr>
                                     <tr>
@@ -374,7 +369,6 @@
                                         <td style="width: 25%">
                                             Không KD
                                         </td>
-                                        
                                     </tr>
                                 </table>
                             </HeaderTemplate>
@@ -394,8 +388,144 @@
                                         <td style="width: 25%" align="right">
                                             <%# Eval("HD_KHAC") %>
                                         </td>
-                                        
-                                        
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <AlternatingRowStyle BackColor="White" />
+                    <EditRowStyle BackColor="#7C6F57" />
+                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
+                    <PagerSettings Position="Bottom" />
+                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#E3EAEB" />
+                    <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
+                        ForeColor="#333333"></SelectedRowStyle>
+                </asp:GridView>
+            </td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
+        <tr style="width: 100%">
+            <td class="cssPageTitleBG" colspan="3">
+                <span class="cssPageTitle">TÀI SẢN KHÁC</span> <span class="expand-collapse-text initial-expand">
+                </span><span class="expand-collapse-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="12">
+                <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                    Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
+                    PageSize="5" onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging">
+                    <Columns>
+                        <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
+                            NavigateUrl="" />
+                        <asp:BoundField HeaderText="KÝ HIỆU" HeaderStyle-Width="8%" DataField="KY_HIEU">
+                            <ItemStyle HorizontalAlign="center" />
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="NƯỚC SẢN XUẤT" HeaderStyle-Width="8%" DataField="NUOC_SAN_XUAT">
+                            <ItemStyle HorizontalAlign="center" />
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="NĂM SẢN XUẤT" HeaderStyle-Width="4%" DataField="NAM_SAN_XUAT">
+                            <ItemStyle HorizontalAlign="center" />
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NAM_SU_DUNG">
+                            <ItemStyle HorizontalAlign="center" />
+                        </asp:BoundField>
+                       
+                        <asp:TemplateField HeaderStyle-Width="18%">
+                            <HeaderTemplate>
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                                    <tr>
+                                        <td colspan="3">
+                                            GIÁ TRỊ THEO SỔ KẾ TOÁN
+                                            <br />
+                                            (ngàn đồng)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" rowspan="1">
+                                            Nguyên giá
+                                        </td>
+                                        <td rowspan="2" style="width: 33.33%">
+                                            Giá trị còn lại
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 33.33%">
+                                            Nguồn NS
+                                        </td>
+                                        <td style="width: 33.33%">
+                                            Nguồn khác
+                                        </td>
+                                    </tr>
+                                </table>
+                            </HeaderTemplate>
+                            <HeaderStyle CssClass="" />
+                            <ItemTemplate>
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                    <tr>
+                                        <td style="width: 33.33%" align="right">
+                                            <%# Eval("NGUON_NS", "{0:#,###.00}")%>
+                                        </td>
+                                        <td style="width: 33.33%" align="right">
+                                            <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
+                                        </td>
+                                        <td style="width: 33.33%" align="right">
+                                            <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderStyle-Width="12%">
+                            <HeaderTemplate>
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                                    <tr>
+                                        <td colspan="4">
+                                            HIỆN TRẠNG SỬ DỤNG
+                                            <br />
+                                            (cái, chiếc ))
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2" colspan="1" style="width: 25%">
+                                            QLNN
+                                        </td>
+                                        <td rowspan="1" colspan="2">
+                                            HĐ sự nghiệp
+                                        </td>
+                                        <td colspan="1" rowspan="2" style="width: 25%">
+                                            HĐ khác
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 25%">
+                                            Kinh doanh
+                                        </td>
+                                        <td style="width: 25%">
+                                            Không KD
+                                        </td>
+                                    </tr>
+                                </table>
+                            </HeaderTemplate>
+                            <HeaderStyle CssClass="" />
+                            <ItemTemplate>
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                    <tr>
+                                        <td style="width: 25%" align="right">
+                                            <%# Eval("QLNN") %>
+                                        </td>
+                                        <td style="width: 25%" align="right">
+                                            <%# Eval("KINH_DOANH") %>
+                                        </td>
+                                        <td style="width: 25%" align="right">
+                                            <%# Eval("KHONG_KINH_DOANH") %>
+                                        </td>
+                                        <td style="width: 25%" align="right">
+                                            <%# Eval("HD_KHAC") %>
+                                        </td>
                                     </tr>
                                 </table>
                             </ItemTemplate>
