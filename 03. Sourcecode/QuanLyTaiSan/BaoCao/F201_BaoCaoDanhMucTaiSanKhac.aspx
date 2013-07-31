@@ -50,7 +50,8 @@
             <span class="cssManField">Trạng thái tài sản</span></td>
             <td style="width: 20%;">
             <asp:DropDownList ID="m_cbo_trang_thai_tai_san" runat="server" Width="96%" 
-                    CssClass="cssDorpdownlist" AutoPostBack="True">
+                    CssClass="cssDorpdownlist" AutoPostBack="True" 
+                    onselectedindexchanged="m_cbo_trang_thai_tai_san_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -67,7 +68,7 @@
             </td>
             <td colspan="2" align="left">
                 <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" />&nbsp;
+                    Width="98px" Text="Lọc dữ liệu(l)" onclick="m_cmd_tim_kiem_Click" />&nbsp;
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
                     Width="98px" Text="Xuất Excel (x)" />&nbsp;
                 </td>

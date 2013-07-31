@@ -10,6 +10,7 @@ using WebDS;
 using IP.Core.IPCommon;
 using WebUS;
 
+
 public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -20,7 +21,10 @@ public partial class Default2 : System.Web.UI.Page
                 {
                     load_data_2_cbo_trang_thai_tai_san();
                 }
-                load_data_2_grid_by_id_trang_thai();
+                if (m_txt_tim_kiem.Text == "")
+                    load_data_2_grid();
+                else
+                    load_data_2_grid_for_search();
             }
             catch (Exception v_e)
             {
@@ -50,6 +54,26 @@ public partial class Default2 : System.Web.UI.Page
         for (int i = 1; i < 3; i++)
         {
             CalcTotal(e.Rows[1].Cells[5].Text);
+        }
+    }
+    private void load_data_2_grid_for_search()
+    {
+        try
+        {
+            string cmd = "select * from DM_TAI_SAN_KHAC Where TEN_TAI_SAN like '%"+m_txt_tim_kiem.Text+
+                "%' or KY_HIEU like '%"+m_txt_tim_kiem.Text+
+                "%' or NUOC_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
+                "%' or NAM_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
+                "%' or NAM_SU_DUNG like '%"+m_txt_tim_kiem.Text+
+                "%'";
+            System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
+            m_us_tai_san_khac.FillDatasetByCommand(m_ds_tai_san_khac,command);
+            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
+            m_grv_danh_sach_tai_san_khac.DataBind();
+        }
+        catch (Exception v_e)
+        {
+            throw v_e;
         }
     }
     private void load_data_2_grid()
@@ -88,4 +112,26 @@ public partial class Default2 : System.Web.UI.Page
         m_cbo_trang_thai_tai_san.DataBind();
     }
     #endregion
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_2_grid_for_search();
+        }
+        catch (Exception v_e)
+        {
+            throw v_e;
+        }
+    }
+    protected void m_cbo_trang_thai_tai_san_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_2_grid_by_id_trang_thai();
+        }
+        catch (Exception v_e)
+        {
+            throw v_e;
+        }
+    }
 }
