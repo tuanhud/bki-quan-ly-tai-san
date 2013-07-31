@@ -19,24 +19,20 @@
             </td>
         </tr>
         <tr>
-            <td align="right" colspan="1" width="25%">
+            <td align="right" colspan="1" style="width: 20%">
                 <span class="cssManField">Bộ, tỉnh:</span>
             </td>
-            <td width="25%">
-                <asp:DropDownList ID="m_cbo_bo_tinh" Width="96%" runat="Server">
+            <td style="width: 30%">
+                <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
+                    OnSelectedIndexChanged="m_cbo_bo_tinh_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
-            <td colspan="1" width="25%">
-            </td>
-            <td colspan="1" width="25%">
-            </td>
-        </tr>
-        <tr>
-            <td align="right">
+            <td align="right" style="width: 20%">
                 <span class="cssManField">Đơn vị chủ quản:</span>
             </td>
-            <td>
-                <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="96%" runat="Server">
+            <td style="width: 30%">
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
+                    OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -45,7 +41,15 @@
                 <span class="cssManField">Đơn vị sử dụng tài sản:</span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="96%" runat="Server">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
+                    OnSelectedIndexChanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+            <td align="right">
+                <span class="cssManField">Đại chỉ: </span>
+            </td>
+            <td>
+                <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="90%">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -57,11 +61,14 @@
                 <asp:Label ID="m_lbl_loai_hinh_don_vi" runat="Server" CssClass="cssManField"></asp:Label>
             </td>
         </tr>
-        <tr style="height: 10px">
+        <tr style="height: 30px">
             <td>
             </td>
             <td>
-                <asp:HiddenField ID="hdf_id" runat="server" />
+            </td>
+            <td>
+            </td>
+            <td>
             </td>
         </tr>
         <tr>
@@ -70,12 +77,14 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" />
+                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" OnClick="m_cmd_loc_du_lieu_Click" />
                 <asp:Button ID="Button2" AccessKey="x" CssClass="cssButton" runat="server" Width="98px"
                     Text="Xuất Excel (x)" Height="22px" />
             </td>
             <td>
                 &nbsp;
+            </td>
+            <td>
             </td>
         </tr>
     </table>
@@ -98,9 +107,9 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" align="left">
-                <span class="cssManField">Địa chỉ:</span>
-                <asp:Label ID="m_lbl_dia_chi" runat="Server"></asp:Label>
+            <td colspan="2" align="left" class="cssManField">
+                <span>Địa chỉ:</span>
+                <asp:Label ID="m_lbl_dia_chi" runat="Server" ForeColor="blue"></asp:Label>
             </td>
             <td>
                 &nbsp;
@@ -116,10 +125,12 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="cssManField" align="left">
+            <td colspan="1" class="cssManField" align="left">
                 <span>a-Diện tích khuôn viên đất: </span>
-                <asp:Label ID="m_lbl_dien_tich_khuon_vien_dat" runat="server" />
+                <asp:Label ID="m_lbl_dien_tich_khuon_vien_dat" runat="server" ForeColor="blue" />
                 <span>m2</span>
+            </td>
+            <td class="cssManField" align="left">
             </td>
         </tr>
         <tr>
@@ -128,86 +139,91 @@
             </td>
         </tr>
         <tr class="cssManField">
-            <td align="right" style="width:20%">
+            <td align="right">
                 Làm trụ sở làm việc:
             </td>
-            <td style="width:20%">
-                <asp:Label ID="m_lbl_hien_trang_su_dung" runat="server" />
+            <td>
+                <asp:Label ID="m_lbl_lam_tru_so_lam_viec" runat="server" ForeColor="blue" />
                 <span>m2</span>
-            </td style="width:20%">
-            <td align="right">
-                </span> <span>Làm cơ sở HĐ sự nghiệp:</span>
             </td>
-            <td style="width:20%">
-                <asp:Label ID="m_lbl_lam_co_so_hd_du_nghiep" runat="Server"></asp:Label>
+            <td align="right">
+                <span>Làm cơ sở HĐ sự nghiệp:</span>
+            </td>
+            <td style="width: 20%">
+                <asp:Label ID="m_lbl_lam_co_so_hd_du_nghiep" runat="Server" ForeColor="blue"></asp:Label>
                 <span>m2</span>
             </td>
         </tr>
         <tr class="cssManField">
             <td align="right">
                 <span>Làm nhà ở:</span>
-                </td>
-                <td>
-                <asp:Label ID="m_lbl_lam_nha_o" runat="Server"></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="m_lbl_lam_nha_o" runat="Server" ForeColor="blue"></asp:Label>
                 <span>m2</span>
             </td>
             <td align="right">
                 <span>Cho thuê:</span>
-                </td><td>
-                <asp:Label ID="m_lbl_cho_thue" runat="Server"></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="m_lbl_cho_thue" runat="Server" ForeColor="blue"></asp:Label>
                 <span>m2</span>
             </td>
         </tr>
         <tr class="cssManField">
             <td align="right">
-                <span >Bỏ trống:</span>
-                </td><td>
-                <asp:Label ID="m_lbl_bo_trong" runat="Server"></asp:Label>
+                <span>Bỏ trống:</span>
+            </td>
+            <td>
+                <asp:Label ID="m_lbl_bo_trong" runat="Server" ForeColor="blue"></asp:Label>
                 <span>m2</span>
             </td>
             <td align="right">
                 <span>Bị lấn chiếm:</span>
-                </td>
-                <td>
-                <asp:Label ID="m_lbl_bi_lan_chiem" runat="Server"></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="m_lbl_bi_lan_chiem" runat="Server" ForeColor="blue"></asp:Label>
                 <span>m2</span>
             </td>
         </tr>
         <tr class="cssManField">
             <td align="right">
                 <span>Sử dụng vào mục đích khác:</span>
-                </td>
-                <td>
-                <asp:Label ID="m_lbl_su_dung_vao_muc_dich_khac" runat="Server"></asp:Label>
-                <span>m2</span>
+            </td>
+            <td>
+                <asp:Label ID="m_lbl_su_dung_vao_muc_dich_khac" runat="Server" ForeColor="blue"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="cssManField" colspan="2">
                 <span>c-Giá trị theo sổ kế toán: </span>
-                <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server"></asp:Label>
+                <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue"></asp:Label>
                 <span>ngàn đồng.</span>
             </td>
         </tr>
         <tr class="cssManField">
-            <td><span>II-Về nhà</span></td>
+            <td>
+                <span>II-Về nhà</span>
+            </td>
         </tr>
-    </table>
-    <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+        <tr>
+        <td colspan="4" style="width:10%">
+         <asp:GridView ID="m_grv_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
         Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-        PageSize="15" ShowHeader="true">
+        PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
         <Columns>
-            <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
-                <ItemTemplate>
-                    <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
-                        ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:HyperLinkField HeaderText="TÀI SẢN" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
-            <asp:BoundField HeaderText="CẤP HẠNG" DataField="CAP_HANG" />
-            <asp:BoundField HeaderText="NĂM SỬ DỤNG" DataField="NAM_SU_DUNG" />
-            <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" DataField="NAM_SU_DUNG" />
-            <asp:TemplateField>
+            <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
+                NavigateUrl="" />
+            <asp:BoundField HeaderText="CẤP HẠNG" HeaderStyle-Width="3%" DataField="CAP_HANG">
+                <ItemStyle HorizontalAlign="center" />
+            </asp:BoundField>
+            <asp:BoundField HeaderText="NĂM XÂY DỰNG" HeaderStyle-Width="3%" DataField="NAM_XAY_DUNG">
+                <ItemStyle HorizontalAlign="center" />
+            </asp:BoundField>
+            <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NGAY_THANG_NAM_SU_DUNG">
+                <ItemStyle HorizontalAlign="center" />
+            </asp:BoundField>
+            <asp:TemplateField HeaderStyle-Width="31%">
                 <HeaderTemplate>
                     <table border="1" cellspacing="0" cellpadding="3" width="100%">
                         <tr>
@@ -221,15 +237,15 @@
                             <td colspan="2" rowspan="1">
                                 Nguyên giá
                             </td>
-                            <td rowspan="2">
+                            <td rowspan="2" style="width: 33.33%">
                                 Giá trị còn lại
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="width: 33.33%">
                                 Nguồn NS
                             </td>
-                            <td>
+                            <td style="width: 33.33%">
                                 Nguồn khác
                             </td>
                         </tr>
@@ -239,37 +255,44 @@
                 <ItemTemplate>
                     <table border="1" cellspacing="0" cellpadding="2" width="100%">
                         <tr>
-                            <td>
-                                <%# Eval("NGUON_NS") %>
+                            <td style="width: 33.33%" align="right">
+                                <%# Eval("NGUON_NS", "{0:#,###.00}")%>
                             </td>
-                            <td>
-                                <%# Eval("NGUON_KHAC") %>
+                            <td style="width: 33.33%" align="right">
+                                <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
                             </td>
-                            <td>
-                                <%# Eval("GIA_TRI_CON_LAI") %>
+                            <td style="width: 33.33%" align="right">
+                                <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
                             </td>
                         </tr>
                     </table>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField HeaderText="SỐ TĂNG" DataField="SO_TANG" />
-            <asp:BoundField HeaderText="DT XÂY DỰNG (m2)" DataField="DT_XAY_DUNG" />
-            <asp:BoundField HeaderText="TỔNG DT SÀN XÂY DỰNG (m2)" DataField="TONG_DT_SAN_XAY_DUNG" />
-            <asp:TemplateField>
+            <asp:BoundField HeaderText="SỐ TẦNG" DataField="SO_TANG" HeaderStyle-Width="3%">
+                <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField HeaderText="DIỆN TÍCH XÂY DỰNG (m2)" DataField="DT_XAY_DUNG" HeaderStyle-Width="5%">
+                <ItemStyle HorizontalAlign="right" />
+            </asp:BoundField>
+            <asp:BoundField HeaderText="TỔNG DT SÀN XÂY DỰNG (m2)" DataField="TONG_DT_SAN_XD"
+                HeaderStyle-Width="5%">
+                <ItemStyle HorizontalAlign="right" />
+            </asp:BoundField>
+            <asp:TemplateField HeaderStyle-Width="35%">
                 <HeaderTemplate>
                     <table border="1" cellspacing="0" cellpadding="3" width="100%">
                         <tr>
                             <td colspan="7">
                                 HIỆN TRẠNG SỬ DỤNG
                                 <br />
-                                (cái, chiếc))
+                                (m2)
                             </td>
                         </tr>
                         <tr>
-                            <td rowspan="2">
+                            <td rowspan="2" style="width: 14.28%">
                                 Trụ sở làm việc
                             </td>
-                            <td rowspan="2">
+                            <td rowspan="2" style="width: 14.28%">
                                 Cơ sở HĐSN
                             </td>
                             <td rowspan="1" colspan="5">
@@ -277,19 +300,19 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="width: 14.28%">
                                 Làm nhà ở
                             </td>
-                            <td>
+                            <td style="width: 14.28%">
                                 Cho thuê
                             </td>
-                            <td>
+                            <td style="width: 14.28%">
                                 Bỏ trống
                             </td>
-                            <td>
-                                Bị xâm chiếm
+                            <td style="width: 14.28%">
+                                Bị lấn chiếm
                             </td>
-                            <td>
+                            <td style="width: 14.28%">
                                 Khác
                             </td>
                         </tr>
@@ -299,25 +322,25 @@
                 <ItemTemplate>
                     <table border="1" cellspacing="0" cellpadding="2" width="100%">
                         <tr>
-                            <td>
+                            <td style="width: 14.28%" align="right">
                                 <%# Eval("TRU_SO_LAM_VIEC") %>
                             </td>
-                            <td>
+                            <td style="width: 14.28%" align="right">
                                 <%# Eval("CO_SO_HDSN") %>
                             </td>
-                            <td>
+                            <td style="width: 14.28%" align="right">
                                 <%# Eval("LAM_NHA_O") %>
                             </td>
-                            <td>
+                            <td style="width: 14.28%" align="right">
                                 <%# Eval("CHO_THUE") %>
                             </td>
-                            <td>
-                                <%# Eval("BO_TRONG")%>
+                            <td style="width: 14.28%" align="right">
+                                <%# Eval("BO_TRONG") %>
                             </td>
-                            <td>
-                                <%# Eval("BI_XAM_CHIEM") %>
+                            <td style="width: 14.28%" align="right">
+                                <%# Eval("BI_LAN_CHIEM") %>
                             </td>
-                            <td>
+                            <td style="width: 14.28%" align="right">
                                 <%# Eval("KHAC") %>
                             </td>
                         </tr>
@@ -329,10 +352,14 @@
         <EditRowStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
-        <PagerSettings Position="TopAndBottom" />
+        <PagerSettings Position="Bottom" />
         <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#E3EAEB" />
         <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
             ForeColor="#333333"></SelectedRowStyle>
     </asp:GridView>
+    </td>
+        </tr>
+    </table>
+   
 </asp:Content>
