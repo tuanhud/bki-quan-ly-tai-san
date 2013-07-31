@@ -48,6 +48,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPExcelReportWeb", "IPExcel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QltsForm", "QltsForm\QltsForm.csproj", "{47241F9C-DC8E-4200-9D2E-340D87E74688}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPExcelWebReport", "IPExcelWebReport\IPExcelWebReport.vbproj", "{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		BondDebug|.NET = BondDebug|.NET
@@ -544,6 +546,42 @@ Global
 		{47241F9C-DC8E-4200-9D2E-340D87E74688}.SIPDebug|Mixed Platforms.Build.0 = Debug|x86
 		{47241F9C-DC8E-4200-9D2E-340D87E74688}.SIPDebug|x86.ActiveCfg = Debug|x86
 		{47241F9C-DC8E-4200-9D2E-340D87E74688}.SIPDebug|x86.Build.0 = Debug|x86
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.BondDebug|.NET.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.BondDebug|Any CPU.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.BondDebug|Any CPU.Build.0 = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.BondDebug|Mixed Platforms.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.BondDebug|Mixed Platforms.Build.0 = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.BondDebug|x86.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.iFASDebug|.NET.ActiveCfg = iFASDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.iFASDebug|Any CPU.ActiveCfg = iFASDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.iFASDebug|Any CPU.Build.0 = iFASDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.iFASDebug|Mixed Platforms.ActiveCfg = iFASDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.iFASDebug|Mixed Platforms.Build.0 = iFASDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.iFASDebug|x86.ActiveCfg = iFASDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.PersonalBuild|.NET.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.PersonalBuild|Any CPU.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.PersonalBuild|Any CPU.Build.0 = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.PersonalBuild|Mixed Platforms.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.PersonalBuild|Mixed Platforms.Build.0 = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.PersonalBuild|x86.ActiveCfg = BondDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Release|.NET.ActiveCfg = Release|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.Release|x86.ActiveCfg = Release|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|.NET.ActiveCfg = SIPDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|Any CPU.ActiveCfg = SIPDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|Any CPU.Build.0 = SIPDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|Mixed Platforms.ActiveCfg = SIPDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|Mixed Platforms.Build.0 = SIPDebug|Any CPU
+		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|x86.ActiveCfg = SIPDebug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
