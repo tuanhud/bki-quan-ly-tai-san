@@ -18,6 +18,7 @@ public partial class Default2 : System.Web.UI.Page
         if (!IsPostBack)
         {
             load_data();
+            load_data_to_cbo_trang_thai();
         }
 
     }
@@ -34,6 +35,9 @@ public partial class Default2 : System.Web.UI.Page
 
     DS_DM_NHA m_ds_dm_nha = new DS_DM_NHA();
     US_DM_NHA m_us_dm_nha = new US_DM_NHA();
+
+    DS_DM_OTO m_ds_dm_oto = new DS_DM_OTO();
+    US_DM_OTO m_us_dm_oto = new US_DM_OTO();
 
 
 
@@ -94,9 +98,10 @@ public partial class Default2 : System.Web.UI.Page
         try
         {
             load_data_to_cbo_bo_tinh();
-            load_data_to_cbo_don_vi_chu_quan();
-            load_data_to_cbo_don_vi_su_dung();
-            load_data_to_grid_nha();
+            //load_data_to_cbo_don_vi_chu_quan();
+            //load_data_to_cbo_don_vi_su_dung();
+            //load_data_to_grid_nha();
+            //load_data_cbo_trang_thai();
 
         }
         catch (System.Exception ex)
@@ -108,10 +113,30 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
             string v_id_don_vi_su_dung = m_cbo_don_vi_su_dung_tai_san.SelectedValue;
-            m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_don_vi_su_dung like '%" + v_id_don_vi_su_dung + "%'");
+            string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
+            m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_don_vi_su_dung like '%" + v_id_don_vi_su_dung + "%' and id_don_vi_chu_quan like '%"+v_id_don_vi_chu_quan+"%' and id_trang_thai ="+v_id_trang_thai);
             m_grv_nha.DataSource = m_ds_dm_nha.DM_NHA;
             m_grv_nha.DataBind();
+
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+    private void load_data_to_grid_oto()
+    {
+        try
+        {
+            string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
+            string v_id_don_vi_su_dung = m_cbo_don_vi_su_dung_tai_san.SelectedValue;
+            string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
+            m_us_dm_oto.FillDataset(m_ds_dm_oto,"where id_don_vi_su_dung="+v_id_don_vi_su_dung+" and id_don_vi_chu_quan="+v_id_don_vi_chu_quan+" and id_trang_thai="+v_id_trang_thai);
+            m_grv_oto.DataSource = m_ds_dm_oto.DM_OTO;
+            m_grv_oto.DataBind();
+            
         }
         catch (System.Exception ex)
         {
@@ -119,6 +144,24 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
+    private void load_data_to_cbo_trang_thai()
+    {
+        try
+        {
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where id_loai_tu_dien=6");
+            m_cbo_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+            m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
+            m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
+            m_cbo_trang_thai.DataBind();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+       
+    }
 
     #endregion
 
@@ -127,7 +170,9 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+
             load_data_to_cbo_don_vi_chu_quan();
+
         }
         catch (System.Exception ex)
         {
@@ -138,7 +183,9 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            load_data_to_cbo_don_vi_chu_quan();
+
+            load_data_to_cbo_don_vi_su_dung();
+
         }
         catch (System.Exception ex)
         {
@@ -146,23 +193,14 @@ public partial class Default2 : System.Web.UI.Page
         }
 
     }
-    protected void m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            load_data_to_cbo_don_vi_su_dung();
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-    }
+   
 
     protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e)
     {
         try
         {
             load_data_to_grid_nha();
+            load_data_to_grid_oto();
         }
         catch (System.Exception ex)
         {
@@ -170,5 +208,34 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
- 
+
+    protected void m_grv_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            load_data_to_grid_nha();
+            m_grv_nha.PageIndex = e.NewPageIndex;
+            m_grv_nha.DataBind();
+
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+
+  
+    protected void m_grv_oto_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            load_data_to_grid_oto();
+            m_grv_oto.PageIndex = e.NewPageIndex;
+            m_grv_oto.DataBind();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
 }
