@@ -92,6 +92,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -159,6 +160,10 @@
     <ProjectReference Include="..\IPData\IPData.vbproj">
       <Project>{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}</Project>
       <Name>IPData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPExcelReport\IPExcelReport.vbproj">
+      <Project>{957C06D0-FF42-4C7A-B5E8-7E15C1522B59}</Project>
+      <Name>IPExcelReport</Name>
     </ProjectReference>
     <ProjectReference Include="..\IPExcelWebReport\IPExcelWebReport.vbproj">
       <Project>{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}</Project>
