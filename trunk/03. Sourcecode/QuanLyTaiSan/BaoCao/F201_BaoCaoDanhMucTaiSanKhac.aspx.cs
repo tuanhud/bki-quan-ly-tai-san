@@ -17,14 +17,15 @@ public partial class Default2 : System.Web.UI.Page
     {
             try
             {
+                
                 if (!IsPostBack)
                 {
+                    load_data_2_grid();
                     if (m_txt_tim_kiem.Text == "")
                         load_data_2_cbo_trang_thai_tai_san();
                     else
                         load_data_2_grid_for_search();
                 }
-                
             }
             catch (Exception v_e)
             {
