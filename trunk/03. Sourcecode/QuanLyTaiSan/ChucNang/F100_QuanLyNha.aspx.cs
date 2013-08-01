@@ -67,7 +67,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
         v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN
-            + " AND ID_DON_VI_CAP_TREN LIKE '%" + ip_str_id_bo_tinh + "%'");
+            + " AND ID_DON_VI_CAP_TREN LIKE '%" + ip_str_id_don_vi_chu_quan + "%'");
         m_ddl_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
         m_ddl_don_vi_chu_quan.DataTextField = "TEN_DON_VI";
         m_ddl_don_vi_chu_quan.DataValueField = "ID";
