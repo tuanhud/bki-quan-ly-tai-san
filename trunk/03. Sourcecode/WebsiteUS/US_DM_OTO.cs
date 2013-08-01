@@ -9,8 +9,8 @@
 
 using System;
 using WebDS;
-using Core.IPCommon;
-using Core.IPUserService;
+using IP.Core.IPCommon;
+using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using WebDS;
