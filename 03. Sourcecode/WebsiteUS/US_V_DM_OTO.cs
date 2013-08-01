@@ -13,7 +13,7 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using WebDS;
-
+using WebDS.CDBNames;
 
 namespace WebUS {
 
@@ -597,5 +597,27 @@ public class US_V_DM_OTO : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    #region Addtional
+    public void FillDataset(
+        decimal ip_dc_don_vi_chu_quan
+        , DS_V_DM_OTO op_ds_v_oto) {
+
+            IMakeSelectCmd v_obj_mak_cmd = new CMakeAndSelectCmd(op_ds_v_oto, this.pm_strTableName);
+
+            v_obj_mak_cmd.AddCondition(
+                V_DM_OTO.ID_DON_VI_SU_DUNG
+                , ip_dc_don_vi_chu_quan
+                , eKieuDuLieu.KieuNumber
+                , eKieuSoSanh.Bang);
+            SqlCommand v_obj_sql_cmd = v_obj_mak_cmd.getSelectCmd();
+            v_obj_sql_cmd.CommandText += " ORDER BY " + V_DM_OTO.ID_LOAI_TAI_SAN;
+
+            this.FillDatasetByCommand(op_ds_v_oto, v_obj_sql_cmd);
+
+    }
+
+    #endregion
+
+}
 }
