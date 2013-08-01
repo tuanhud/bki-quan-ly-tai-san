@@ -271,14 +271,14 @@ namespace WebDS.CDBNames
     /// <summary>
     /// 
     /// </summary>
-   class CM_COMPANY_INFO
+   public class CM_COMPANY_INFO
    {
        public const string ID = "ID";
        public const string COMPANY_NAME = "COMPANY_NAME";
        public const string COMPANY_ADDRESS = "COMPANY_ADDRESS";
    }
    
-   class DM_DAT
+   public class DM_DAT
    {
        public const string ID = "ID";
        public const string MA_TAI_SAN = "MA_TAI_SAN";
@@ -303,7 +303,7 @@ namespace WebDS.CDBNames
    }
    
   
-   class DM_NHA
+   public class DM_NHA
    {
        public const string ID = "ID";
        public const string TEN_TAI_SAN = "TEN_TAI_SAN";
@@ -335,7 +335,7 @@ namespace WebDS.CDBNames
        public const string ID_DON_VI_DAU_TU = "ID_DON_VI_DAU_TU";
    }
   
-   class DM_TAI_SAN_KHAC
+   public class DM_TAI_SAN_KHAC
    {
        public const string ID = "ID";
        public const string MA_TAI_SAN = "MA_TAI_SAN";
@@ -358,7 +358,7 @@ namespace WebDS.CDBNames
        public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
        public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
    }
-   class GD_DE_NGHI
+   public class GD_DE_NGHI
    {
        public const string ID = "ID";
        public const string MA_PHIEU = "MA_PHIEU";
@@ -371,7 +371,7 @@ namespace WebDS.CDBNames
        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
        public const string NGAY_DUYET = "NGAY_DUYET";
    }
-   class GD_DE_NGHI_TRANG_CAP_DETAILS
+   public class GD_DE_NGHI_TRANG_CAP_DETAILS
    {
        public const string ID = "ID";
        public const string MA_PHIEU = "MA_PHIEU";
@@ -384,7 +384,7 @@ namespace WebDS.CDBNames
        public const string MO_TA = "MO_TA";
        public const string GHI_CHU = "GHI_CHU";
    }
-   class GD_DE_XUAT_XU_LI_DETAILS
+   public class GD_DE_XUAT_XU_LI_DETAILS
    {
        public const string ID = "ID";
        public const string MA_PHIEU = "MA_PHIEU";
@@ -392,7 +392,7 @@ namespace WebDS.CDBNames
        public const string ID_TAI_SAN = "ID_TAI_SAN";
        public const string NOI_DUNG = "NOI_DUNG";
    }
-   class GD_KHAU_HAO
+   public class GD_KHAU_HAO
    {
        public const string ID = "ID";
        public const string MA_PHIEU = "MA_PHIEU";
@@ -405,7 +405,7 @@ namespace WebDS.CDBNames
        public const string GIA_TRI_KHAU_HAO = "GIA_TRI_KHAU_HAO";
        public const string NGAY_DUYET = "NGAY_DUYET";
    }
-   class GD_TANG_GIAM_TAI_SAN
+   public class GD_TANG_GIAM_TAI_SAN
    {
        public const string ID = "ID";
        public const string MA_PHIEU = "MA_PHIEU";
