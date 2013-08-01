@@ -73,11 +73,27 @@ namespace WebUS
         public const decimal KHONG_XAC_DINH = 475;
     }
 
+
     public class ID_TRANG_THAI_NHA
     {
         public const decimal DE_NGHI_XU_LY = 577;
         public const decimal DA_THANH_LY = 578;
         public const decimal DE_NGHI_TRANG_CAP = 579;
         public const decimal DANG_SU_DUNG = 580;
+    }
+
+    public class ID_LOAI_DON_VI
+    {
+        public const decimal BO_TINH = 574;
+        public const decimal DV_CHU_QUAN = 575;
+        public const decimal DV_SU_DUNG = 576;
+    }
+
+    public class ID_LOAI_TAI_SAN
+    {
+        public const decimal DAT = 1;
+        public const decimal NHA = 2;
+        public const decimal OTO = 3;
+        public const decimal TAI_SAN_KHAC = 4;
     }
 }
