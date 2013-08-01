@@ -17,6 +17,7 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPExcelReport;
+using IP.Core.IPExcelWebReport;
 
 
 using WebUS;
@@ -401,6 +402,37 @@ namespace QltsForm {
 		public void display(){			
 			this.ShowDialog();
 		}
+
+        public void expor_excel(
+            eFormMode ip_form_mode
+            , decimal ip_dc_don_vi_su_dung
+            , ref string op_str_excel_file_name) {
+            //1. Đưa dữ liệu lên trên grid
+                m_obj_trans = get_trans_object(m_fg);
+                load_data_2_grid(ip_dc_don_vi_su_dung);
+                m_e_form_mode = ip_form_mode;
+            //2. Xuất dữ liệu ra file excel
+                CExcelWebReport v_obj_exe = new CExcelWebReport("BC-002 Bao cao ke khai xe o to.xls", 13, 1);
+                v_obj_exe.AddFindAndReplaceItem("<BO_TINH>", m_cbo_bo_tinh.Text);
+                v_obj_exe.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_cbo_don_vi_chu_quan.Text);
+                v_obj_exe.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_cbo_don_vi_su_dung.Text);
+                v_obj_exe.AddFindAndReplaceItem("<MA_DON_VI>", m_txt_ma_don_vi.Text);
+                v_obj_exe.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", m_txt_loai_hinh_don_vi.Text);
+
+                v_obj_exe.FindAndReplace(false);
+                v_obj_exe.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true); v_obj_exe = new CExcelReport("BC-002 Bao cao ke khai xe o to.xls", 13, 1);
+                v_obj_exe.AddFindAndReplaceItem("<BO_TINH>", m_cbo_bo_tinh.Text);
+                v_obj_exe.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_cbo_don_vi_chu_quan.Text);
+                v_obj_exe.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_cbo_don_vi_su_dung.Text);
+                v_obj_exe.AddFindAndReplaceItem("<MA_DON_VI>", m_txt_ma_don_vi.Text);
+                v_obj_exe.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", m_txt_loai_hinh_don_vi.Text);
+
+                v_obj_exe.FindAndReplace(false);
+                v_obj_exe.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+            //3. Trả về địa chỉ file
+                op_str_excel_file_name = v_obj_exe.GetStrOutputFileNameWithPath();
+        }
+
 		#endregion
 
 		#region Data Structure
@@ -460,10 +492,10 @@ namespace QltsForm {
             load_data_2_cbo_don_vi_chu_quan();
             load_data_2_cbo_don_vi_su_dung();
 
-			load_data_2_grid();
+            if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
+			load_data_2_grid(
+                CIPConvert.ToDecimal( m_cbo_don_vi_su_dung.SelectedValue));
 
-            US_CM_DM_TU_DIEN v_us_td = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds_td = new DS_CM_DM_TU_DIEN();
             
 		}
 
@@ -541,13 +573,10 @@ namespace QltsForm {
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds_v_oto.V_DM_OTO.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){
-            if (m_cbo_don_vi_su_dung.SelectedValue == null) {
-                CGridUtils.ClearDataInGrid(m_fg);
-                return;
-            }
+		private void load_data_2_grid(decimal ip_dc_don_vi_su_dung){
+           
             m_ds_v_oto.V_DM_OTO.Clear();
-			m_us_v_oto.FillDataset(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue), m_ds_v_oto);
+			m_us_v_oto.FillDataset(ip_dc_don_vi_su_dung, m_ds_v_oto);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds_v_oto, m_fg, m_obj_trans);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None
@@ -657,7 +686,9 @@ namespace QltsForm {
         void m_cbo_don_vi_chu_quan_SelectedValueChanged(object sender, EventArgs e) {
             try {
                 load_data_2_cbo_don_vi_su_dung();
-                load_data_2_grid();
+                if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
+                load_data_2_grid(
+                    CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue));
             }
             catch (Exception v_e) {
                 
@@ -690,7 +721,9 @@ namespace QltsForm {
             try {
                 load_data_2_cbo_don_vi_chu_quan();
                 load_data_2_cbo_don_vi_su_dung();
-                load_data_2_grid();
+                if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
+                load_data_2_grid(
+                    CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue));
 
             }
             catch (Exception v_e) {
