@@ -111,7 +111,7 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Cấp hạng       
+                            <span class="cssManField">Cấp hạng</span>    
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:TextBox ID="m_txt_cap_hang" runat="server" CssClass="cssTextBox" 
@@ -228,7 +228,8 @@
                             <span class="cssManField">Số tầng</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_so_tang" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_so_tang" runat="server" CssClass="cssTextBox cssNumber" 
+                                Width="85%"  ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_so_tang" runat="server" ControlToValidate="m_txt_so_tang"
@@ -238,7 +239,8 @@
                             <span class="cssManField">Diện tích xây dựng (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_dien_tich_xay_dung" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_dien_tich_xay_dung" runat="server" 
+                                CssClass="cssTextBox cssNumber" Width="85%"  ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_dien_tich_xay_dung" runat="server" ControlToValidate="m_txt_dien_tich_xay_dung"
@@ -250,7 +252,7 @@
                             <span class="cssManField">Tổng diện tích sàn xây dựng (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_tong_dien_tich_xay_dung" runat="server" CssClass="cssTextBox"
+                            <asp:TextBox ID="m_txt_tong_dien_tich_xay_dung" runat="server" CssClass="cssTextBox cssNumber"
                                 Width="85%"  ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -284,7 +286,8 @@
                             <span class="cssManField">Trụ sở làm việc (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_tru_so_lam_viec" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                            <asp:TextBox ID="m_txt_tru_so_lam_viec" runat="server" 
+                                CssClass="cssTextBox cssNumber" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_tru_so_lam_viec" runat="server" ControlToValidate="m_txt_tru_so_lam_viec"
@@ -294,7 +297,8 @@
                             <span class="cssManField">Cơ sở HĐSN (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_co_so_hdsn" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                            <asp:TextBox ID="m_txt_co_so_hdsn" runat="server" 
+                                CssClass="cssTextBox cssNumber" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_co_so_hdsn" runat="server" ControlToValidate="m_txt_co_so_hdsn"
@@ -306,7 +310,8 @@
                             <span class="cssManField">Làm nhà ở (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_lam_nha_o" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                            <asp:TextBox ID="m_txt_lam_nha_o" runat="server" 
+                                CssClass="cssTextBox cssNumber" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_lam_nha_o" runat="server" ControlToValidate="m_txt_lam_nha_o"
@@ -316,7 +321,8 @@
                             <span class="cssManField">Cho thuê (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_cho_thue" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                            <asp:TextBox ID="m_txt_cho_thue" runat="server" CssClass="cssTextBox cssNumber" 
+                                Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_cho_thue" runat="server" ControlToValidate="m_txt_cho_thue"
@@ -328,7 +334,8 @@
                             <span class="cssManField">Bỏ trống (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_bo_trong" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                            <asp:TextBox ID="m_txt_bo_trong" runat="server" CssClass="cssTextBox cssNumber" 
+                                Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_bo_trong" runat="server" ControlToValidate="m_txt_bo_trong"
@@ -338,7 +345,8 @@
                             <span class="cssManField">Bị lấn chiếm (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_bi_lan_chiem" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                            <asp:TextBox ID="m_txt_bi_lan_chiem" runat="server" 
+                                CssClass="cssTextBox cssNumber" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_bi_lan_chiem" runat="server" ControlToValidate="m_txt_bi_lan_chiem"
@@ -350,7 +358,8 @@
                             <span class="cssManField">Khác (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox" Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox cssNumber" 
+                                Width="85%"  ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_khac" runat="server" ControlToValidate="m_txt_khac"
