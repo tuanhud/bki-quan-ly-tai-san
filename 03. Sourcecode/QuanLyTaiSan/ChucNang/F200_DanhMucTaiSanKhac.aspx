@@ -25,7 +25,8 @@
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:DropDownList ID="m_cbo_bo_tinh" runat="server" Width="85%" 
-                                AutoPostBack="True">
+                                AutoPostBack="True" 
+                                onselectedindexchanged="m_cbo_bo_tinh_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -34,7 +35,8 @@
                             <span class="cssManField">Đơn vị chủ quản</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan" runat="server" Width="85%" 
+                                onselectedindexchanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -66,17 +68,25 @@
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:TextBox ID="m_txt_ten_tai_san" runat="server" CssClass="cssTextBox" 
-                                Width="85%"></asp:TextBox>
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
+                        (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_ten_tai_San" runat="server" ControlToValidate="m_txt_ten_tai_san"
+                                ErrorMessage="Bạn phải nhập Tên tài sản" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Mã tài sản</span></td>
                         <td align="left" style="width: 30%;">
                             <asp:TextBox ID="m_txt_ma_tai_san" runat="server" CssClass="cssTextBox" 
-                                Width="85%"></asp:TextBox>
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
+                        (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_ma_tai_san" runat="server" ControlToValidate="m_txt_ma_tai_san"
+                                ErrorMessage="Bạn phải nhập Mã Tài sản" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -84,36 +94,56 @@
                             <span class="cssManField">Ký hiệu</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_ky_hieu" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_ky_hieu" runat="server" CssClass="cssTextBox" 
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_ky_hieu" runat="server" ControlToValidate="m_txt_ky_hieu"
+                                ErrorMessage="Bạn phải nhập Ký hiệu" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Nước sản xuất</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_nuoc_sx" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_nuoc_sx" runat="server" CssClass="cssTextBox" 
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_nuoc_sx" runat="server" ControlToValidate="m_txt_nuoc_sx"
+                                ErrorMessage="Bạn phải nhập Nước sản xuất" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Năm sản xuất</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox" Width="85%" 
+                                ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                        (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_nam_sx" runat="server" ControlToValidate="m_txt_nam_sx"
+                                ErrorMessage="Bạn phải nhập Mã Tài sản" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Ngày, tháng, năm sử dụng</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" 
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_ngay_su_dung" runat="server" ControlToValidate="m_txt_ngay_su_dung"
+                                ErrorMessage="Bạn phải nhập Ngày sử dụng" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -136,19 +166,27 @@
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:TextBox ID="m_txt_nguyen_gia_nguon_ns" runat="server" CssClass="cssTextBox csscurrency"
-                                Width="85%"></asp:TextBox>
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_nguon_ngan_sách" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
+                                ErrorMessage="Bạn phải nhập Nguồn ngân sách" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Nguyên giá nguồn khác (VNĐ)</span>
                         </td>
                         <td align="left" style="width: 30%;">
                             <asp:TextBox ID="m_txt_nguyen_gia_nguon_khac" runat="server" CssClass="cssTextBox csscurrency"
-                                Width="85%"></asp:TextBox>
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
+                                ErrorMessage="Bạn phải nhập Nguồn khác" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
@@ -156,10 +194,14 @@
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:TextBox ID="m_txt_gia_tri_con_lai" runat="server" CssClass="cssTextBox csscurrency"
-                                Width="85%"></asp:TextBox>
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_gia_tri_con_lai" runat="server" ControlToValidate="m_txt_gia_tri_con_lai"
+                                ErrorMessage="Bạn phải nhập Giá trị còn lại" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                         <td align="right">
                         </td>
                         <td align="left" style="width: 30%;">
@@ -202,10 +244,15 @@
                             <span class="cssManField">Quản lý nhà nước</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox" 
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_quan_ly_nha_nuoc" runat="server" ControlToValidate="m_txt_quan_ly_nha_nuoc"
+                                ErrorMessage="Bạn phải nhập Quản lý nhà nước" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                         <td align="right" style="width: 15%">
                         </td>
                         <td align="left" style="width: 30%;">
@@ -218,28 +265,43 @@
                             <span class="cssManField">Hoạt động sự nghiệp (Kinh doanh)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox" 
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_kinh_doanh" runat="server" ControlToValidate="m_txt_ma_tai_san"
+                                ErrorMessage="Bạn phải nhập Kinh doanh" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Hoạt động sự nghiệp (Không kinh doanh)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox" 
+                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
+                                ErrorMessage="Bạn phải nhập Không kinh doanh" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Khác</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox" Width="85%" 
+                                ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;</td>
+                            (*)
+                            <asp:RequiredFieldValidator ID="m_rfv_khac" runat="server" ControlToValidate="m_txt_khac"
+                                ErrorMessage="Bạn phải nhập Khác" Text="*"  
+                                ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                        </td>
                         <td align="right">
                         </td>
                         <td align="left" style="width: 30%;">
@@ -268,9 +330,11 @@
                         </td>
                         <td colspan="4" align="left">
                             <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Tạo mới(c)" onclick="m_cmd_tao_moi_Click"/>&nbsp;
+                                Width="98px" Text="Tạo mới(c)" onclick="m_cmd_tao_moi_Click" 
+                                ValidationGroup="m_vlg_tsk"/>&nbsp;
                             <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Cập nhật(u)" onclick="m_cmd_cap_nhat_Click"/>&nbsp;
+                                Width="98px" Text="Cập nhật(u)" onclick="m_cmd_cap_nhat_Click" 
+                                ValidationGroup="m_vlg_tsk"/>&nbsp;
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                 Width="98px" Text="Xóa trắng(r)"/>
                             <asp:HiddenField ID="hdf_id" runat="server" Value="" />
@@ -329,7 +393,8 @@
 		    <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
                     PageSize="15" ShowHeader="true" 
-                onrowupdating="m_grv_tai_san_khac_RowUpdating">
+                onrowupdating="m_grv_tai_san_khac_RowUpdating" 
+                onrowdeleting="m_grv_tai_san_khac_RowDeleting">
                     <Columns>
                     <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>

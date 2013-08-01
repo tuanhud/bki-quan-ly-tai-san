@@ -48,7 +48,7 @@ public partial class Default2 : System.Web.UI.Page
     private void load_data_2_cbo_don_vi_chu_quan()
     {
         m_ds_don_vi.DM_DON_VI.Clear();
-        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_DON_VI_CAP_TREN = "+m_cbo_bo_tinh.SelectedValue+"");
+        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_LOAI_DON_VI = 575");
         m_cbo_don_vi_chu_quan.DataSource = m_ds_don_vi.DM_DON_VI;
         m_cbo_don_vi_chu_quan.DataTextField = DM_DON_VI.TEN_DON_VI;
         m_cbo_don_vi_chu_quan.DataValueField = DM_DON_VI.ID;
@@ -57,7 +57,7 @@ public partial class Default2 : System.Web.UI.Page
     private void load_data_2_cbo_don_vi_su_dung()
     {
         m_ds_don_vi.DM_DON_VI.Clear();
-        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_DON_VI_CAP_TREN = " + m_cbo_don_vi_chu_quan.SelectedValue + "");
+        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_LOAI_DON_VI = 576");
         m_cbo_don_vi_su_dung.DataSource = m_ds_don_vi.DM_DON_VI;
         m_cbo_don_vi_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
         m_cbo_don_vi_su_dung.DataValueField = DM_DON_VI.ID;
@@ -121,8 +121,7 @@ public partial class Default2 : System.Web.UI.Page
     }
     private void reset_control()
     {
-        m_cbo_don_vi_chu_quan.Items.Clear();
-        m_cbo_don_vi_su_dung.Items.Clear();
+       
     }
     #endregion
     protected void Page_Load(object sender, EventArgs e)
@@ -184,6 +183,38 @@ public partial class Default2 : System.Web.UI.Page
             form_2_us_object();
             m_us_tai_san_khac.Insert();
             load_data_2_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(v_e);
+        }
+    }
+    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        m_ds_don_vi.DM_DON_VI.Clear();
+        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_DON_VI_CAP_TREN = "+m_cbo_bo_tinh.SelectedValue+"");
+        m_cbo_don_vi_chu_quan.DataSource = m_ds_don_vi.DM_DON_VI;
+        m_cbo_don_vi_chu_quan.DataTextField = DM_DON_VI.TEN_DON_VI;
+        m_cbo_don_vi_chu_quan.DataValueField = DM_DON_VI.ID;
+        m_cbo_don_vi_chu_quan.DataBind();
+    }
+    protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        m_ds_don_vi.DM_DON_VI.Clear();
+        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_DON_VI_CAP_TREN = " + m_cbo_don_vi_chu_quan.SelectedValue + "");
+        m_cbo_don_vi_su_dung.DataSource = m_ds_don_vi.DM_DON_VI;
+        m_cbo_don_vi_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
+        m_cbo_don_vi_su_dung.DataValueField = DM_DON_VI.ID;
+        m_cbo_don_vi_su_dung.DataBind();
+    }
+    protected void m_grv_tai_san_khac_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        try
+        {
+            decimal dc_id_tai_san_khac = CIPConvert.ToDecimal(m_grv_tai_san_khac.DataKeys[e.RowIndex].Value);
+            m_us_tai_san_khac.DeleteByID(dc_id_tai_san_khac);
+            load_data_2_grid();
+            m_lbl_mess.Text = "Xoa thanh cong";
         }
         catch (Exception v_e)
         {
