@@ -417,7 +417,7 @@
 	<tr>
 		<td align="center" colspan="3" style="height:450px;" valign="top">
 		    &nbsp;
-   <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+   <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
                     PageSize="15" ShowHeader="true">
                     <Columns>
