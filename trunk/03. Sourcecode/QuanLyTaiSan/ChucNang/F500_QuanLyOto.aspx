@@ -15,6 +15,8 @@
         {
             width: 1%;
         }
+        .cssTextBox
+        {}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -33,7 +35,7 @@
             <tr>
                 <td align="right" style="width:7%;">
 			        &nbsp;</td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" 
                         Font-Bold="true" />
                 </td>
@@ -45,7 +47,7 @@
                 <td align="right" style="width:7%;">
 			        <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                          </td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     &nbsp;</td>
                 <td align="right" colspan="4">
 			        &nbsp;</td>
@@ -54,7 +56,7 @@
             <tr>
                 <td align="right" style="width:7%;">
 			        &nbsp;</td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     &nbsp;</td>
                 <td align="right" colspan="4">
 			        &nbsp;</td>
@@ -65,9 +67,10 @@
 			<asp:label id="lblFullName14" CssClass="cssManField" runat="server" 
                 Text="Bộ, Tỉnh" />
                          </td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     <asp:DropDownList ID="m_ddl_bo_tinh" runat="server" Width="265px" 
-                        onselectedindexchanged="m_ddl_bo_tinh_SelectedIndexChanged">
+                        onselectedindexchanged="m_ddl_bo_tinh_SelectedIndexChanged" 
+                        AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
                 <td align="right" colspan="4">
@@ -79,9 +82,10 @@
 			<asp:label id="lblFullName15" CssClass="cssManField" runat="server" 
                 Text="Đơn vị chủ quản" />
                          </td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     <asp:DropDownList ID="m_ddl_dv_chu_quan" runat="server" Width="265px" 
-                        onselectedindexchanged="m_ddl_dv_chu_quan_SelectedIndexChanged">
+                        onselectedindexchanged="m_ddl_dv_chu_quan_SelectedIndexChanged" 
+                        AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
                 <td align="right" colspan="4">
@@ -93,9 +97,10 @@
 			<asp:label id="lblFullName16" CssClass="cssManField" runat="server" 
                 Text="Đơn vị sử dụng tài sản" />
                          </td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     <asp:DropDownList ID="m_ddl_dv_sd_ts" runat="server" Width="265px" 
-                        onselectedindexchanged="m_ddl_dv_sd_ts_SelectedIndexChanged">
+                        onselectedindexchanged="m_ddl_dv_sd_ts_SelectedIndexChanged" 
+                        AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
                 <td align="right" colspan="4">
@@ -105,7 +110,7 @@
             <tr>
                 <td align="right" style="width:7%;">
 			        &nbsp;</td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     &nbsp;</td>
                 <td align="right" colspan="4">
 			        &nbsp;</td>
@@ -116,10 +121,43 @@
 			<asp:label id="lblFullName13" CssClass="cssManField" runat="server" 
                 Text="&lt;U&gt;L&lt;/U&gt;oại xe" />
                          </td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                     <asp:DropDownList ID="m_ddl_loai_xe" runat="server" Width="265px" 
                         onselectedindexchanged="m_ddl_loai_xe_SelectedIndexChanged">
                     </asp:DropDownList>
+                </td>
+                <td align="right" colspan="4">
+			<asp:label id="lblFullName19" CssClass="cssManField" runat="server" 
+                Text="Trạng thái ô tô" />
+                         </td>
+                <td align="left" class="style1">
+                    <asp:DropDownList ID="m_ddl_trang_thai_oto" runat="server" Width="265px" 
+                        onselectedindexchanged="m_ddl_dv_sd_ts_SelectedIndexChanged" 
+                        AutoPostBack="True">
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="width:7%;">
+			<asp:label id="lblFullName17" CssClass="cssManField" runat="server" 
+                Text="Mã tài sản" />
+                         </td>
+                <td align="left" colspan="6">
+                        <asp:TextBox ID="m_txt_ma_ts" runat="server" CssClass="cssTextBox" 
+                        Width="265px"></asp:TextBox>
+                </td>
+                <td align="right" colspan="4">
+			        &nbsp;</td>
+                <td align="left" class="style1">&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right" style="width:7%;">
+			<asp:label id="lblFullName18" CssClass="cssManField" runat="server" 
+                Text="Tên tài sản" />
+                         </td>
+                <td align="left" colspan="6">
+                        <asp:TextBox ID="m_txt_ten_ts" runat="server" CssClass="cssTextBox" 
+                        Width="265px"></asp:TextBox>
                 </td>
                 <td align="right" colspan="4">
 			        &nbsp;</td>
@@ -130,10 +168,10 @@
 			<asp:label id="lblFullName" CssClass="cssManField" runat="server" 
                 Text="Nhãn hiệu" />
                          </td>
-                <td align="left" colspan="3">
-                &nbsp;<asp:TextBox ID="m_txt_ten_nhan_hieu" runat="server" CssClass="cssTextBox" 
-                        Width="84%"></asp:TextBox>
-		            &nbsp;</td>
+                <td align="left" colspan="6">
+                        <asp:TextBox ID="m_txt_ten_nhan_hieu" runat="server" CssClass="cssTextBox" 
+                        Width="265px"></asp:TextBox>
+                    </td>
                 <td align="right" colspan="4">
 			<asp:label id="lblFullName2" CssClass="cssManField" runat="server" 
                 Text="Giá trị theo số kế toán (ngàn đồng)" />
@@ -144,9 +182,9 @@
                 <td align="right" style="width:5%;">
                     <asp:label id="Label17" CssClass="cssManField" runat="server" 
                 Text="Biển kiểm soát" /></td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                         <asp:TextBox ID="m_txt_bien_kiem_soat" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
                     </td>
                 <td align="left" style="width:7%;" rowspan="2">
 			<asp:label id="lblFullName3" CssClass="cssManField" runat="server" 
@@ -158,48 +196,48 @@
                 </td>
                 <td align="left" class="style1">
                     <asp:TextBox ID="m_txt_nguon_ns" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
 		            </td>
             </tr>                   
             <tr>
                 <td align="right" style="width:5%;">
                     <asp:label id="Label14" CssClass="cssManField" runat="server" 
                 Text="Số chỗ ngồi/Tải trọng" /></td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                      <asp:TextBox ID="m_txt_tai_trong" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox></td>
+                        Width="265px"></asp:TextBox></td>
                 <td align="right" colspan="3" style="margin-left: 40px">
 			<asp:label id="lblFullName5" CssClass="cssManField" runat="server" 
                 Text="Nguồn khác" />
                 </td>
                 <td align="left" class="style1">
                     <asp:TextBox ID="m_txt_nguon_khac" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
 		            </td>
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
                     <asp:label id="Label15" CssClass="cssManField" runat="server" 
                 Text="Nước sản xuất" /></td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                      <asp:TextBox ID="m_txt_nuoc_san_xuat" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox></td>
+                        Width="265px"></asp:TextBox></td>
                 <td align="left" colspan="4">
 			<asp:label id="lblFullName6" CssClass="cssManField" runat="server" 
                 Text="Giá trị còn lại" />
                          </td>
                 <td align="left" class="style1">
                     <asp:TextBox ID="m_txt_gia_tri_con_lai" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
 		            </td>
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
                     <asp:label id="Label4" CssClass="cssManField" runat="server" 
                 Text="Năm sản xuất" /></td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                      <asp:TextBox ID="m_txt_nam_san_xuat" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox></td>
+                        Width="265px"></asp:TextBox></td>
                 <td  align="right" colspan="4">
 			<asp:label id="lblFullName7" CssClass="cssManField" runat="server" 
                 Text="Hiện trạng sử dụng (chiếc)" />
@@ -211,25 +249,25 @@
                 <td align="right" style="width:5%;">
                     <asp:label id="Label19" CssClass="cssManField" runat="server" 
                 Text="Cống suất xe" /></td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                      <asp:TextBox ID="m_txt_cong_suat_xe" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox></td>
+                        Width="265px"></asp:TextBox></td>
                 <td align="left" colspan="4">
 			<asp:label id="lblFullName8" CssClass="cssManField" runat="server" 
                 Text="QLNN" />
                          </td>
                 <td align="left" class="style1">
                     <asp:TextBox ID="m_txt_qlnn" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
 		            </td>
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
                     <asp:label id="Label20" CssClass="cssManField" runat="server" 
                 Text="Chức danh sử dụng xe" /></td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                      <asp:TextBox ID="m_txt_chuc_danh_sd_xe" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox></td>
+                        Width="265px"></asp:TextBox></td>
                 <td align="left" style="width:7%;"  rowspan="2">
 			<asp:label id="lblFullName9" CssClass="cssManField" runat="server" 
                 Text="HĐ sự nghiệp" />
@@ -240,101 +278,90 @@
                 </td>
                 <td align="left" class="style1">
                     <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
 		            </td>
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
                     <asp:label id="Label21" CssClass="cssManField" runat="server" 
                 Text="Nguồn gốc xe" /></td>
-                <td align="left" colspan="3">
+                <td align="left" colspan="6">
                      <asp:TextBox ID="m_txt_nguon_goc_xe" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox></td>
+                        Width="265px"></asp:TextBox></td>
                 <td align="right" colspan="3" style="margin-left: 40px">
 			<asp:label id="lblFullName12" CssClass="cssManField" runat="server" 
                 Text="Không kinh doanh" />
                 </td>
                 <td align="left" class="style1">
                     <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
 		            </td>
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
-                    &nbsp;</td>
-                <td align="left" colspan="3">
-                     &nbsp;</td>
+                    <asp:label id="Label18" CssClass="cssManField" runat="server" 
+                Text="Năm sử dụng" /></td>
+                <td align="left" colspan="6">
+                     <asp:TextBox ID="m_txt_nam_su_dung" runat="server" CssClass="cssTextBox" 
+                        Width="265px"></asp:TextBox></td>
                 <td align="left" colspan="4">
 			<asp:label id="lblFullName10" CssClass="cssManField" runat="server" 
                 Text="HĐ khác" />
                          </td>
                 <td align="left" class="style1">
                     <asp:TextBox ID="m_txt_hd_khac" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox>
+                        Width="265px"></asp:TextBox>
 		            </td>
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
-                    <asp:label id="Label18" CssClass="cssManField" runat="server" 
-                Text="Ngày tháng năm sử dụng" /></td>
-                <td align="left" colspan="3">
-                     <asp:Calendar ID="m_dt_ngay_su_dung" runat="server" BackColor="#FFFFCC" 
-                         BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" 
-                         Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" 
-                         ShowGridLines="True" Width="220px">
-                         <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
-                         <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-                         <OtherMonthDayStyle ForeColor="#CC9966" />
-                         <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
-                         <SelectorStyle BackColor="#FFCC66" />
-                         <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" 
-                             ForeColor="#FFFFCC" />
-                         <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
-                     </asp:Calendar>
-                </td>
+                    &nbsp;</td>
+                <td align="left" colspan="6">
+                     &nbsp;</td>
                 <td style="width:7%;" class="csscurrency">
                     &nbsp;</td>
                 <td align="right" colspan="3" style="margin-left: 40px">
-                    <asp:label id="Label22" CssClass="cssManField" runat="server" 
-                Text="Ngày cập nhật" /></td>
+                    &nbsp;</td>
                 <td align="left" class="style1">
-                     <asp:Calendar ID="m_dt_ngay_sd" runat="server" BackColor="#FFFFCC" 
-                         BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" 
-                         Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" 
-                         ShowGridLines="True" Width="220px">
-                         <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
-                         <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-                         <OtherMonthDayStyle ForeColor="#CC9966" />
-                         <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
-                         <SelectorStyle BackColor="#FFCC66" />
-                         <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" 
-                             ForeColor="#FFFFCC" />
-                         <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
-                     </asp:Calendar>
-                </td>
+                     &nbsp;</td>
             </tr>
             <tr>
-                <td align="left" colspan="5">
+                <td align="left" colspan="2">
 
-                &nbsp;&nbsp;&nbsp;
+                    &nbsp;</td>
+                <td align="left" colspan="2">
 
-                <asp:label id="lblFullName1" CssClass="cssLabel" runat="server" 
-                
-                
-                        Text="(Từ khóa tìm kiếm: Nhãn hiệu, Biển kiểm soát , Tải trọng, Nước sản xuất, Năm sản xuất, Công suất xe...)" />
+                    <asp:Button ID="m_cmd_tao_moi" runat="server" accessKey="c" 
+                        CssClass="cssButton" onclick="m_cmd_tao_moi_Click" Text="Tạo mới(c)" 
+                        Width="98px" />
+                    <asp:Button ID="m_cmd_cap_nhat" runat="server" accessKey="u" 
+                        CssClass="cssButton" onclick="m_cmd_cap_nhat_Click" Text="Cập nhật(u)" 
+                        Width="98px" />
+                    <asp:Button ID="btnCancel" runat="server" accessKey="r" CssClass="cssButton" 
+                        onclick="btnCancel_Click" Text="Xóa trắng(r)" Width="98px" />
 
 		        </td>
+                <td align="left" colspan="2">
+
+                    &nbsp;</td>
+                <td align="left" colspan="2">
+
+                    &nbsp;</td>
+                <td align="left" colspan="3" style="margin-left: 40px">
+                 <asp:HiddenField id="m_hdf_id" runat="server"/></td>
+            </tr>
+            <tr>
+                <td align="left" colspan="8">
+
+                    &nbsp;</td>
                 <td align="left" colspan="3" style="margin-left: 40px">
 			        &nbsp;</td>
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
-			        <asp:Label ID="lbl_ghi_chu0" runat="server" CssClass="cssManField" 
-                        Text="Từ khóa tìm kiếm" />
-                </td>
-                <td align="left" colspan="3">          
-                     <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" 
-                        Width="85%"></asp:TextBox></td>
+			        &nbsp;</td>
+                <td align="left" colspan="6">          
+                     &nbsp;</td>
                 <td align="left" style="width:7%;">     
 			        &nbsp;</td>     
                     <td align="left" style="width:1%;"></td>
@@ -344,12 +371,12 @@
             <tr>
                 <td align="right" style="width:5%;">
 			        &nbsp;</td>
-                <td align="left" style="width:10%;">          
+                <td align="left" style="width:10%;" colspan="2">          
 			        &nbsp;</td>
-			    <td align="left" style="width:1%;">
+			    <td align="left" style="width:1%;" colspan="2">
                     &nbsp;</td>
 			
-                <td align="left" style="width:5%;">
+                <td align="left" class="style2" colspan="2">
 			        &nbsp;</td>
                 <td align="left" style="width:7%;">     
 			        &nbsp;</td>     
@@ -359,33 +386,23 @@
             </tr>
             <tr>
                 <td align="right" style="width:5%;">
-			        &nbsp;</td>
-                <td align="left" style="width:10%;">          
-			        &nbsp;</td>
-			    <td align="left" style="width:1%;">
-                    &nbsp;</td>
-			
-                <td align="left" style="width:5%;">
-			        &nbsp;</td>
+			        <asp:Label ID="lbl_ghi_chu0" runat="server" CssClass="cssManField" 
+                        Text="Từ khóa tìm kiếm" />
+                </td>
+                <td align="left" colspan="6">          
+                     <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" 
+                        Width="85%"></asp:TextBox></td>
                 <td align="left" style="width:7%;">     
-			        &nbsp;</td>     
+			        <asp:Button ID="m_cmd_tim_kiem" runat="server" accessKey="c" 
+                        CssClass="cssButton" onclick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" 
+                        Width="98px" />
+                    </td>     
                     <td align="left" style="width:1%;">&nbsp;</td>
                  <td align="right" style="width:5%;">&nbsp;</td>
                 <td align="left" class="style2">&nbsp;</td>     <td align="left" class="style1">&nbsp;</td>
             </tr>
             <tr>
-                <td align="right" colspan="4" >
-			        <asp:Button ID="m_cmd_tim_kiem" runat="server" accessKey="c" 
-                        CssClass="cssButton" onclick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" 
-                        Width="98px" />
-                    <asp:Button ID="m_cmd_tao_moi" runat="server" accessKey="c" 
-                        CssClass="cssButton" onclick="m_cmd_tao_moi_Click" Text="Tạo mới(c)" 
-                        Width="98px" />
-                    <asp:Button ID="m_cmd_cap_nhat" runat="server" accessKey="u" 
-                        CssClass="cssButton" onclick="m_cmd_cap_nhat_Click" Text="Cập nhật(u)" 
-                        Width="98px" />
-                    <asp:Button ID="btnCancel" runat="server" accessKey="r" CssClass="cssButton" 
-                        onclick="btnCancel_Click" Text="Xóa trắng(r)" Width="98px" />
+                <td align="right" colspan="7" >
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
 			    </td>
@@ -393,7 +410,7 @@
 			        &nbsp;</td>
                              <td align="left" >&nbsp;</td>
                  <td align="right" >
-                 <asp:HiddenField id="hdf_id" runat="server"/></td>
+                     &nbsp;</td>
                 <td align="left" class="style2" ></td>    
                 <td align="left" class="style1" >&nbsp;</td>
             </tr>
@@ -419,20 +436,23 @@
 		    &nbsp;
    <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-                    PageSize="15" ShowHeader="true">
+                    PageSize="15" ShowHeader="true" 
+                onpageindexchanging="m_grv_dm_oto_PageIndexChanging" 
+                onrowcommand="m_grv_danh_sach_nha_RowCommand">
                     <Columns>
                     <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>
-                                <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
-                                    OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
+                                <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="DeleteComp" ToolTip="Xóa"
+                                    OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
                      <img src="../Images/Button/deletered.png" alt="Delete" />
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Sửa">
                             <ItemTemplate>
-                                <asp:HyperLink ToolTip="Sửa" ImageUrl="../Images/Button/edit.png" ID="lbt_edit" runat="server"
-                                    NavigateUrl=''></asp:HyperLink>
+                                <asp:LinkButton ID="m_lbt_edit" runat="server" CommandName="EditComp" ToolTip="Sửa" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
+                     <img src="../Images/Button/edit.png" alt="Edit" />
+                                </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
@@ -444,7 +464,7 @@
                         <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl=""/>
                         <asp:BoundField HeaderText="Nhãn hiệu" DataField="NHAN_HIEU"/>
                         <asp:BoundField HeaderText="Biển kiểm soát" DataField="BIEN_KIEM_SOAT"/>
-                        <asp:BoundField HeaderText="Tải trọng" DataField="SO_CHO_NGOI"/>
+                        <asp:BoundField HeaderText="Số chỗ ngồi" DataField="SO_CHO_NGOI"/>
                         <asp:BoundField HeaderText="Công suất xe" DataField="CONG_SUAT_XE"/>
                         <asp:BoundField HeaderText="Chức danh sử dụng" DataField="CHUC_DANH_SU_DUNG"/>
                         <asp:BoundField HeaderText="Nguồn gốc xe" DataField="NGUON_GOC_XE"/>
