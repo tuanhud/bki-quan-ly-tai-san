@@ -397,7 +397,7 @@ namespace QltsForm {
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 131);
+            this.label6.Location = new System.Drawing.Point(22, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 13);
             this.label6.TabIndex = 12;
@@ -593,8 +593,8 @@ namespace QltsForm {
             DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_OTO, v_ds_cm_dm_tu_dien);
 
-            m_cbo_trang_thai_tai_san.DisplayMember = CM_DM_TU_DIEN.ID;
-            m_cbo_trang_thai_tai_san.ValueMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_trang_thai_tai_san.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_trang_thai_tai_san.ValueMember = CM_DM_TU_DIEN.ID;
             m_cbo_trang_thai_tai_san.SelectedValueChanged -= new EventHandler(m_cbo_bo_tinh_SelectedValueChanged);
             m_cbo_trang_thai_tai_san.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
             m_cbo_trang_thai_tai_san.SelectedValueChanged += new EventHandler(m_cbo_bo_tinh_SelectedValueChanged);
