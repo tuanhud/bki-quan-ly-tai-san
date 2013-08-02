@@ -49,7 +49,10 @@
                             <span class="cssManField">Đơn vị sử dụng</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%"  ValidationGroup="m_vlg_nha">
+                            <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%"  
+                                ValidationGroup="m_vlg_nha" 
+                                onselectedindexchanged="m_ddl_don_vi_su_dung_SelectedIndexChanged" 
+                                AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -156,7 +159,7 @@
                         <td>
                         </td>
                         <td>
-                            GIÁ TRỊ THEO SỔ KẾ TOÁN           <td>
+                            GIÁ TRỊ THEO SỔ KẾ TOÁN<td>
                         </td>
                         <td>
                         </td>
@@ -453,7 +456,7 @@
         <tr>
             <td align="center" colspan="3" style="height: 450px;" valign="top">
                 <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                    Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
+                    Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True" EmptyDataText="Không có dữ liệu phù hợp"
                     PageSize="15" ShowHeader="true"
                     OnRowCommand="m_grv_danh_sach_nha_RowCommand" 
                     onpageindexchanging="m_grv_danh_sach_nha_PageIndexChanging" >
@@ -479,11 +482,10 @@
                                     ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
-                        <asp:BoundField HeaderText="Địa chỉ" DataField="" />
-                        <asp:BoundField HeaderText="Cấp hạng" DataField="CAP_HANG" />
-                        <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" />
-                        <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG" />
+                        <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl=""/>
+                        <asp:BoundField HeaderText="Cấp hạng" DataField="CAP_HANG" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center"/>
                         <asp:TemplateField HeaderStyle-Width="20%">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="4" width="100%" style="border-collapse:collapse;">
@@ -515,21 +517,21 @@
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="text-align: right; border-collapse:collapse;">
                                     <tr>
                                         <td style="width: 33%; height: 100%">
-                                            <%# Eval("NGUON_NS","{0:#,###.00}") %>
+                                            <%# Eval("NGUON_NS","{0:#,###.##}") %>
                                         </td>
                                         <td style="width: 33%">
-                                            <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
+                                            <%# Eval("NGUON_KHAC", "{0:#,###.##}")%>
                                         </td>
                                         <td style="width: 33%">
-                                            <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
+                                            <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.##}")%>
                                         </td>
                                     </tr>
                                 </table>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField HeaderText="Số tầng" DataField="SO_TANG" />
-                        <asp:BoundField HeaderText="DT xây dựng" DataField="DT_XAY_DUNG" />
-                        <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" />
+                        <asp:BoundField HeaderText="Số tầng" DataField="SO_TANG" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="DT xây dựng" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right"/>
+                        <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right"/>
                         <asp:TemplateField ItemStyle-CssClass="" HeaderStyle-CssClass="">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse;">
