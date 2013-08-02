@@ -413,7 +413,7 @@
                                         <td colspan="3">
                                             GIÁ TRỊ THEO SỔ KẾ TOÁN
                                             <br />
-                                            (ngàn đồng)
+                                            (VNĐ)
                                         </td>
                                     </tr>
                                     <tr>
