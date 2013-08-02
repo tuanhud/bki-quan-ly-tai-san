@@ -592,6 +592,7 @@ namespace QltsForm {
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_OTO, v_ds_cm_dm_tu_dien);
+            
 
             m_cbo_trang_thai_tai_san.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_trang_thai_tai_san.ValueMember = CM_DM_TU_DIEN.ID;
