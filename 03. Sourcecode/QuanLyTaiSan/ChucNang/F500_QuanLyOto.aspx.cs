@@ -277,10 +277,10 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private void search_oto(string ip_str_tu_khoa)
     {
-        //m_us_dm_oto(ip_str_tu_khoa, m_ds_oto);
-        //m_grv_dm_oto.DataSource = m_ds_oto.DM_oto;
-        //m_grv_dm_oto.DataBind();
-        //if (m_ds_oto.DM_oto.Rows.Count == 0) m_lbl_thong_bao.Text = "Không có môn nào thỏa mãn!";
+        m_us_dm_oto.search_oto(ip_str_tu_khoa, m_ds_dm_oto);
+        m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
+        m_grv_dm_oto.DataBind();
+        if (m_ds_dm_oto.DM_OTO.Rows.Count == 0) m_lbl_thong_bao.Text = "Không có môn nào thỏa mãn!";
     }
 
 
@@ -406,4 +406,5 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
 
     }
+
 }
