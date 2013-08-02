@@ -46,20 +46,7 @@
                 </asp:DropDownList>
             </td>
         </tr>
-        <tr style="height: 10px">
-            <td>
-                <asp:HiddenField ID="m_hdf_id_bo_tinh" runat="server" />
-            </td>
-            <td>
-                <asp:HiddenField ID="m_hdf_id_don_vi_chu_quan" runat="Server" />
-            </td>
-            <td>
-                <asp:HiddenField ID="m_hdf_id_don_vi_su_dung_tai_san" runat="Server" />
-            </td>
-            <td>
-                <asp:HiddenField ID="m_hdf_id_trang_thai" runat="Server" />
-            </td>
-        </tr>
+        
         <tr>
             <td>
                 &nbsp;
@@ -75,22 +62,7 @@
             </td>
         </tr>
     </table>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
-        <tr>
-            <td class="cssPageTitleBG" colspan="3">
-                <span class="cssPageTitle">DANH SÁCH TÀI SẢN CÓ NGUYÊN GIÁ TỪ 500 TRIỆU TRỞ LÊN</span>
-            </td>
-        </tr>
-        <tr>
-            <td align="left">
-                <asp:Label ID="m_lbl_thong_bao" Visible="false" runat="server" CssClass="cssManField" />
-            </td>
-            <td align="left">
-            </td>
-            <td align="left">
-            </td>
-        </tr>
-    </table>
+  
    <%-- <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr style="width: 100%">
             <td class="cssPageTitleBG" colspan="3">
@@ -409,7 +381,7 @@
     <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr style="width: 100%">
             <td class="cssPageTitleBG" colspan="3">
-                <span class="cssPageTitle">TÀI SẢN KHÁC</span> <span class="expand-collapse-text initial-expand">
+                <span class="cssPageTitle">DANH SÁCH CHI TIẾT TÀI SẢN</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
@@ -535,7 +507,7 @@
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
-                    <PagerSettings Position="Bottom" />
+                    <PagerSettings Position="TopAndBottom" />
                     <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#E3EAEB" />
                     <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
