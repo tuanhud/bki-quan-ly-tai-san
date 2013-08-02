@@ -621,6 +621,12 @@ namespace WebUS
             this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
+        public void search_oto(string ip_str_tu_khoa, DS_DM_OTO op_ds_dm_oto)
+        {
+            CStoredProc v_store = new CStoredProc("pr_DM_OTO_Search");
+            v_store.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+            v_store.fillDataSetByCommand(this, op_ds_dm_oto);
+        }
         #endregion
     }
 }
