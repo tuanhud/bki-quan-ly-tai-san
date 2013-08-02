@@ -22,6 +22,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             if (!IsPostBack)
             {
                 form_title();
+                format_label_disable();
                 load_data_to_cbo_bo_tinh();
             }
         }
@@ -119,20 +120,20 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
         {
 
             string v_id_dat = m_cbo_dia_chi.SelectedValue;
-            DS_DM_DAT v_ds_dm_dat= new DS_DM_DAT();
+            DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
             US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(v_id_dat));
             m_lbl_dia_chi.Text = v_us_dm_dat.strDIA_CHI;
-            if(v_us_dm_dat.dcDT_KHUON_VIEN!=0)
+            if (v_us_dm_dat.dcDT_KHUON_VIEN != 0)
             {
                 m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN) + "   ";
             }
-            else 
+            else
             {
-            m_lbl_dien_tich_khuon_vien_dat.Text ="0  ";
+                m_lbl_dien_tich_khuon_vien_dat.Text = "0  ";
             }
-            if(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC!=0)
+            if (v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC != 0)
             {
-                m_lbl_lam_tru_so_lam_viec.Text=CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC);
+                m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC);
             }
             else
             {
@@ -175,7 +176,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
                 m_lbl_cho_thue.Text = "0  ";
             }
 
-            if (v_us_dm_dat.dcDT_BO_TRONG!= 0)
+            if (v_us_dm_dat.dcDT_BO_TRONG != 0)
             {
                 m_lbl_bo_trong.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BO_TRONG);
             }
@@ -211,7 +212,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
                 m_lbl_gia_tri_theo_so_ke_toan.Text = "0  ";
             }
 
-            
+
 
         }
         catch (System.Exception ex)
@@ -223,8 +224,8 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            string v_id_dat =m_cbo_dia_chi.SelectedValue;
-            string id_loai_bao_cao ="";
+            string v_id_dat = m_cbo_dia_chi.SelectedValue;
+            string id_loai_bao_cao = "";
             if (Request.QueryString["id_loai_bao_cao"] != null)
             {
                 id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
@@ -233,19 +234,19 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             switch (id_loai_bao_cao)
             {
                 case "1":
-                   // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+v_id_dat);
+                    // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
+                    m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_dat = " + v_id_dat);
                     break;
                 case "2":
-                   // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
+                    // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
                     m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
                     break;
                 //case "3":
                 //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
                 //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
             }
-           
-            
+
+
             m_grv_nha.DataSource = m_ds_dm_nha;
             m_grv_nha.DataBind();
 
@@ -288,6 +289,33 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             CSystemLog_301.ExceptionHandle(ex);
         }
     }
+
+    private void format_label_disable()
+    {
+        try
+        {
+            m_pnl_thong_tin_nha_dat.Visible = false;
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+
+    private void format_label_able()
+    {
+        try
+        {
+            m_pnl_thong_tin_nha_dat.Visible = true;
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+
+
+
     #endregion
 
     #region events
@@ -347,6 +375,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
+            format_label_able();
             load_data_to_thong_tin_nha_dat();
             load_data_to_grid_nha();
         }

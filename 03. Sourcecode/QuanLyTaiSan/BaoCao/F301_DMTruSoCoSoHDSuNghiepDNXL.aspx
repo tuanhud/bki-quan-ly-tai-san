@@ -91,12 +91,15 @@
     </table>
     <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr>
-            <td class="cssPageTitleBG" colspan="6">
+            <td class="cssPageTitleBG">
                 <span class="cssPageTitle">THÔNG TIN NHÀ ĐẤT</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
+        
         <tr>
+            <asp:Panel ID="m_pnl_thong_tin_nha_dat" runat="Server">
+               <tr>
             <td colspan="1" style="width: 5%">
             </td>
             <td colspan="1" style="width: 30%">
@@ -178,9 +181,11 @@
                 <asp:Label ID="m_lbl_lam_nha_o" runat="Server" ForeColor="blue"></asp:Label>
                 <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
             </td>
-            </tr>
-            <tr class="cssManField">
-            <td></td>>
+        </tr>
+        <tr class="cssManField">
+            <td>
+            </td>
+            >
             <td align="right" colspan="1">
                 <span>Cho thuê:</span>
             </td>
@@ -203,9 +208,10 @@
                 <asp:Label ID="m_lbl_bo_trong" runat="Server" ForeColor="blue"></asp:Label>
                 <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
             </td>
-            </tr>
-            <tr class="cssManField">
-            <td></td>
+        </tr>
+        <tr class="cssManField">
+            <td>
+            </td>
             <td align="right">
                 <span>Bị lấn chiếm:</span>
             </td>
@@ -250,7 +256,7 @@
             </td>
             <td>
             </td>
-        </tr>
+        </tr> 
         <tr class="cssManField">
             <td>
             </td>
@@ -262,8 +268,11 @@
             <td>
             </td>
         </tr>
+            </asp:Panel>
+        </tr>
+        
         <tr>
-            <td colspan="6" style="width: 10%">
+            <td style="width: 10%">
                 <asp:GridView ID="m_grv_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="4"
                     ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
