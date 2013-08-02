@@ -294,7 +294,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            m_pnl_thong_tin_nha_dat.Visible = false;
+           m_pnl_thong_tin_nha_dat.Visible = false;
         }
         catch (System.Exception ex)
         {
@@ -306,7 +306,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            m_pnl_thong_tin_nha_dat.Visible = true;
+           m_pnl_thong_tin_nha_dat.Visible = true;
         }
         catch (System.Exception ex)
         {
