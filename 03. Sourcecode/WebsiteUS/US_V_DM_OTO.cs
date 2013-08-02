@@ -601,6 +601,7 @@ public class US_V_DM_OTO : US_Object
     #region Addtional
     public void FillDataset(
         decimal ip_dc_don_vi_chu_quan
+        , decimal ip_dc_trang_thai
         , DS_V_DM_OTO op_ds_v_oto) {
 
             IMakeSelectCmd v_obj_mak_cmd = new CMakeAndSelectCmd(op_ds_v_oto, this.pm_strTableName);
@@ -610,6 +611,11 @@ public class US_V_DM_OTO : US_Object
                 , ip_dc_don_vi_chu_quan
                 , eKieuDuLieu.KieuNumber
                 , eKieuSoSanh.Bang);
+            v_obj_mak_cmd.AddCondition(
+                    V_DM_OTO.ID_TRANG_THAI
+                    , ip_dc_trang_thai
+                    , eKieuDuLieu.KieuNumber
+                    , eKieuSoSanh.Bang);
             SqlCommand v_obj_sql_cmd = v_obj_mak_cmd.getSelectCmd();
             v_obj_sql_cmd.CommandText += " ORDER BY " + V_DM_OTO.ID_LOAI_TAI_SAN;
 
