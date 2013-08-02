@@ -91,7 +91,33 @@ public partial class Default2 : System.Web.UI.Page
         m_cbo_don_vi_su_dung_tai_san.DataValueField = "ID";
         m_cbo_don_vi_su_dung_tai_san.DataBind();
     }
+    private void load_data_to_cbo_trang_thai()
+    {
+        try
+        {
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            //string cmd = "select distinct ma_tu_dien from cm_dm_tu_dien where id_loai_tu_dien=6 or id_loai_tu_dien=7 or id_loai_tu_dien=8";
+            //System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);  
+            //"select * from DM_TAI_SAN_KHAC Where TEN_TAI_SAN like '%"+m_txt_tim_kiem.Text+
+            //"%' or KY_HIEU like '%"+m_txt_tim_kiem.Text+
+            //"%' or NUOC_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
+            //"%' or NAM_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
+            //"%' or NAM_SU_DUNG like '%"+m_txt_tim_kiem.Text+
+            //"%'";
+            v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where id_loai_tu_dien=8");
 
+            m_cbo_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+            m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
+            m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
+            m_cbo_trang_thai.DataBind();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+
+    }
 
     private void load_data()
     {
@@ -109,77 +135,51 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(ex);
         }
     }
-    private void load_data_to_grid_nha()
-    {
-        try
-        {
-            string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
-            string v_id_don_vi_su_dung = m_cbo_don_vi_su_dung_tai_san.SelectedValue;
-            string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
-            //m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_don_vi_su_dung like '%" + v_id_don_vi_su_dung + "%' and id_don_vi_chu_quan like '%" + v_id_don_vi_chu_quan + "%' and id_trang_thai =" + v_id_trang_thai);
-            string cmd = "select dm_nha.* from cm_dm_tu_dien join dm_nha on cm_dm_tu_dien.id=dm_nha.id_trang_thai where dm_nha.id_trang_thai in (select id from cm_dm_TU_DIEN where ma_tu_dien='" + m_cbo_trang_thai.SelectedValue + "')";
-            System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
-            m_us_dm_nha.FillDatasetByCommand(m_ds_dm_nha, command);
+    //private void load_data_to_grid_nha()
+    //{
+    //    try
+    //    {
+    //        string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
+    //        string v_id_don_vi_su_dung = m_cbo_don_vi_su_dung_tai_san.SelectedValue;
+    //        string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
+    //        //m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_don_vi_su_dung like '%" + v_id_don_vi_su_dung + "%' and id_don_vi_chu_quan like '%" + v_id_don_vi_chu_quan + "%' and id_trang_thai =" + v_id_trang_thai);
+    //        string cmd = "select dm_nha.* from cm_dm_tu_dien join dm_nha on cm_dm_tu_dien.id=dm_nha.id_trang_thai where (dm_nha.nguon_ns+dm_nha.nguon_khac >=500000000) and dm_nha.id_trang_thai in (select id from cm_dm_TU_DIEN where ma_tu_dien='" + m_cbo_trang_thai.SelectedValue + "')";
+    //        System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
+    //        m_us_dm_nha.FillDatasetByCommand(m_ds_dm_nha, command);
 
-            m_grv_nha.DataSource = m_ds_dm_nha.DM_NHA;
-            m_grv_nha.DataBind();
+    //        m_grv_nha.DataSource = m_ds_dm_nha.DM_NHA;
+    //        m_grv_nha.DataBind();
 
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-    }
-    private void load_data_to_grid_oto()
-    {
-        try
-        {
-            string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
-            string v_id_don_vi_su_dung = m_cbo_don_vi_su_dung_tai_san.SelectedValue;
-            string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
+    //    }
+    //    catch (System.Exception ex)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(ex);
+    //    }
+    //}
+    //private void load_data_to_grid_oto()
+    //{
+    //    try
+    //    {
+    //        string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
+    //        string v_id_don_vi_su_dung = m_cbo_don_vi_su_dung_tai_san.SelectedValue;
+    //        string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
 
-            //m_us_dm_oto.FillDataset(m_ds_dm_oto, "where id_don_vi_su_dung=" + v_id_don_vi_su_dung + " and id_don_vi_chu_quan=" + v_id_don_vi_chu_quan + " and id_trang_thai=" + v_id_trang_thai);
-            string cmd = "select dm_oto.* from cm_dm_tu_dien join dm_oto on cm_dm_tu_dien.id=dm_oto.id_trang_thai where dm_oto.id_trang_thai in (select id from cm_dm_TU_DIEN where ma_tu_dien='" + m_cbo_trang_thai.SelectedValue + "')";
-            System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
-            m_us_dm_oto.FillDatasetByCommand(m_ds_dm_oto, command);
+    //        //m_us_dm_oto.FillDataset(m_ds_dm_oto, "where id_don_vi_su_dung=" + v_id_don_vi_su_dung + " and id_don_vi_chu_quan=" + v_id_don_vi_chu_quan + " and id_trang_thai=" + v_id_trang_thai);
+    //        string cmd = "select dm_oto.* from cm_dm_tu_dien join dm_oto on cm_dm_tu_dien.id=dm_oto.id_trang_thai where (dm_oto.nguon_ns+dm_oto.nguon_khac >=500000000) and dm_oto.id_trang_thai in (select id from cm_dm_TU_DIEN where ma_tu_dien='" + m_cbo_trang_thai.SelectedValue + "')";
+    //        System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
+    //        m_us_dm_oto.FillDatasetByCommand(m_ds_dm_oto, command);
 
-            m_grv_oto.DataSource = m_ds_dm_oto.DM_OTO;
-            m_grv_oto.DataBind();
+    //        m_grv_oto.DataSource = m_ds_dm_oto.DM_OTO;
+    //        m_grv_oto.DataBind();
 
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-    }
+    //    }
+    //    catch (System.Exception ex)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(ex);
+    //    }
+    //}
 
-    private void load_data_to_cbo_trang_thai()
-    {
-        try
-        {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            //string cmd = "select distinct ma_tu_dien from cm_dm_tu_dien where id_loai_tu_dien=6 or id_loai_tu_dien=7 or id_loai_tu_dien=8";
-            //System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);  
-            //"select * from DM_TAI_SAN_KHAC Where TEN_TAI_SAN like '%"+m_txt_tim_kiem.Text+
-            //"%' or KY_HIEU like '%"+m_txt_tim_kiem.Text+
-            //"%' or NUOC_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
-            //"%' or NAM_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
-            //"%' or NAM_SU_DUNG like '%"+m_txt_tim_kiem.Text+
-            //"%'";
-            v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where id_loai_tu_dien=6");
-
-            m_cbo_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-            m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.MA_TU_DIEN;
-            m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
-            m_cbo_trang_thai.DataBind();
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-
-    }
+   
 
     private void load_data_to_grid_tai_san_khac()
     {
@@ -190,10 +190,11 @@ public partial class Default2 : System.Web.UI.Page
             string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
             DS_DM_TAI_SAN_KHAC v_ds_dm_tai_san_khac = new DS_DM_TAI_SAN_KHAC();
             US_DM_TAI_SAN_KHAC v_us_dm_tai_san_khac = new US_DM_TAI_SAN_KHAC();
-            //v_us_dm_tai_san_khac.FillDataset(v_ds_dm_tai_san_khac, "where id_don_vi_su_dung=" + v_id_don_vi_su_dung + " and id_don_vi_chu_quan=" + v_id_don_vi_chu_quan + " and id_trang_thai=" + v_id_trang_thai);
-            string cmd = "select dm_tai_san_khac.* from cm_dm_tu_dien join dm_tai_san_khac on cm_dm_tu_dien.id=dm_tai_san_khac.id_trang_thai where dm_tai_san_khac.id_trang_thai in (select id from cm_dm_TU_DIEN where ma_tu_dien='" + m_cbo_trang_thai.SelectedValue + "')";
-            System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
-            v_us_dm_tai_san_khac.FillDatasetByCommand(v_ds_dm_tai_san_khac, command);
+            v_us_dm_tai_san_khac.FillDataset(v_ds_dm_tai_san_khac, "where id_don_vi_su_dung=" + v_id_don_vi_su_dung + " and id_don_vi_chu_quan=" + v_id_don_vi_chu_quan + " and id_trang_thai=" + v_id_trang_thai);
+            //string cmd = "select dm_tai_san_khac.* from cm_dm_tu_dien join dm_tai_san_khac on cm_dm_tu_dien.id=dm_tai_san_khac.id_trang_thai where ( dm_tai_san_khac.nguon_ns+dm_tai_san_khac.nguon_khac >=500000000) and dm_tai_san_khac.id_trang_thai in (select id from cm_dm_TU_DIEN where ma_tu_dien='" + m_cbo_trang_thai.SelectedValue + "')";
+            //System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
+            //v_us_dm_tai_san_khac.FillDatasetByCommand(v_ds_dm_tai_san_khac, command);
+           
             m_grv_tai_san_khac.DataSource = v_ds_dm_tai_san_khac.DM_TAI_SAN_KHAC;
             m_grv_tai_san_khac.DataBind();
         }
@@ -239,8 +240,8 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            load_data_to_grid_nha();
-            load_data_to_grid_oto();
+            //load_data_to_grid_nha();
+            //load_data_to_grid_oto();
             load_data_to_grid_tai_san_khac();
         }
         catch (System.Exception ex)
@@ -250,35 +251,35 @@ public partial class Default2 : System.Web.UI.Page
     }
 
 
-    protected void m_grv_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
-    {
-        try
-        {
-            load_data_to_grid_nha();
-            m_grv_nha.PageIndex = e.NewPageIndex;
-            m_grv_nha.DataBind();
+    //protected void m_grv_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    //{
+    //    try
+    //    {
+    //        load_data_to_grid_nha();
+    //        m_grv_nha.PageIndex = e.NewPageIndex;
+    //        m_grv_nha.DataBind();
 
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-    }
+    //    }
+    //    catch (System.Exception ex)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(ex);
+    //    }
+    //}
 
 
-    protected void m_grv_oto_PageIndexChanging(object sender, GridViewPageEventArgs e)
-    {
-        try
-        {
-            load_data_to_grid_oto();
-            m_grv_oto.PageIndex = e.NewPageIndex;
-            m_grv_oto.DataBind();
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-    }
+    //protected void m_grv_oto_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    //{
+    //    try
+    //    {
+    //        load_data_to_grid_oto();
+    //        m_grv_oto.PageIndex = e.NewPageIndex;
+    //        m_grv_oto.DataBind();
+    //    }
+    //    catch (System.Exception ex)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(ex);
+    //    }
+    //}
     protected void m_grv_tai_san_khac_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try

@@ -91,7 +91,7 @@
             </td>
         </tr>
     </table>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
+   <%-- <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr style="width: 100%">
             <td class="cssPageTitleBG" colspan="3">
                 <span class="cssPageTitle">TÀI SẢN LÀ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP</span>
@@ -253,8 +253,8 @@
                 </asp:GridView>
             </td>
         </tr>
-    </table>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
+    </table>--%>
+   <%-- <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr style="width: 100%">
             <td class="cssPageTitleBG" colspan="3">
                 <span class="cssPageTitle">TÀI SẢN LÀ Ô TÔ</span> <span class="expand-collapse-text initial-expand">
@@ -405,7 +405,7 @@
                 </asp:GridView>
             </td>
         </tr>
-    </table>
+    </table>--%>
     <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr style="width: 100%">
             <td class="cssPageTitleBG" colspan="3">
@@ -415,7 +415,7 @@
         </tr>
         <tr>
             <td colspan="12">
-                <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False" EmptyDataText="Không có dữ liệu phù hợp!"
                     Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
                     PageSize="5" onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging">
                     <Columns>
@@ -486,7 +486,7 @@
                                         <td colspan="4">
                                             HIỆN TRẠNG SỬ DỤNG
                                             <br />
-                                            (cái, chiếc ))
+                                            (cái, chiếc)
                                         </td>
                                     </tr>
                                     <tr>
