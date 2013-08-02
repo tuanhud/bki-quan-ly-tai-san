@@ -204,6 +204,18 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
+    private void format_lable_disable()
+    {
+        try
+        {
+
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+
     #endregion
 
 
