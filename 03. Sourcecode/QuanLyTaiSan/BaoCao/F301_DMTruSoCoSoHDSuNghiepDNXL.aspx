@@ -98,10 +98,9 @@
         </tr>
         <tr>
             <td colspan="1" style="width: 5%">
-               
             </td>
             <td colspan="1" style="width: 30%">
-             <span class="cssManField">I-Về đất:</span>
+                <span class="cssManField">I-Về đất:</span>
             </td>
             <td colspan="1" style="width: 15%">
             </td>
@@ -134,10 +133,10 @@
                 <asp:Label ID="m_lbl_dien_tich_khuon_vien_dat" runat="server" ForeColor="blue" />
                 <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
             </td>
-            
         </tr>
         <tr>
-            <td></td>
+            <td>
+            </td>
             <td colspan="4" class="cssManField">
                 <span>b-Hiện trạng sử dụng: </span>
             </td>
@@ -153,16 +152,20 @@
                 <asp:Label ID="m_lbl_lam_tru_so_lam_viec" runat="server" ForeColor="blue" />
                 <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
             </td>
-            <td align="right" colspan="1">
-                <span>Làm cơ sở HĐ sự nghiệp:</span>
-            </td>
-            <td colspan="1" align="right">
-                <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                <asp:Label ID="m_lbl_lam_co_so_hd_du_nghiep" runat="Server" ForeColor="blue"></asp:Label>
-                <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-            </td>
-            <td>
-            </td>
+            <tr class="cssManField">
+                <td>
+                </td>
+                <td align="right" colspan="1">
+                    <span>Làm cơ sở HĐ sự nghiệp:</span>
+                </td>
+                <td colspan="1" align="right">
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <asp:Label ID="m_lbl_lam_co_so_hd_du_nghiep" runat="Server" ForeColor="blue"></asp:Label>
+                    <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                </td>
+                <td>
+                </td>
+            </tr>
         </tr>
         <tr class="cssManField">
             <td>
@@ -175,6 +178,9 @@
                 <asp:Label ID="m_lbl_lam_nha_o" runat="Server" ForeColor="blue"></asp:Label>
                 <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
             </td>
+            </tr>
+            <tr class="cssManField">
+            <td></td>>
             <td align="right" colspan="1">
                 <span>Cho thuê:</span>
             </td>
@@ -197,6 +203,9 @@
                 <asp:Label ID="m_lbl_bo_trong" runat="Server" ForeColor="blue"></asp:Label>
                 <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
             </td>
+            </tr>
+            <tr class="cssManField">
+            <td></td>
             <td align="right">
                 <span>Bị lấn chiếm:</span>
             </td>
@@ -229,7 +238,7 @@
         <tr class="cssManField">
             <td>
             </td>
-            <td class="cssManField" colspan="1" align="right">
+            <td class="cssManField" colspan="1" align="left">
                 <span>c-Giá trị theo sổ kế toán: </span>
             </td>
             <td colspan="1" align="right">
@@ -244,10 +253,9 @@
         </tr>
         <tr class="cssManField">
             <td>
-                
             </td>
             <td>
-            <span>II-Về nhà</span>
+                <span>II-Về nhà</span>
             </td>
             <td>
             </td>
