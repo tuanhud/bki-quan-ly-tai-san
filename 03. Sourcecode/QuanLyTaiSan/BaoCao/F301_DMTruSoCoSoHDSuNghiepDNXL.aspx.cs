@@ -123,7 +123,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             m_lbl_dia_chi.Text = v_us_dm_dat.strDIA_CHI;
             if(v_us_dm_dat.dcDT_KHUON_VIEN!=0)
             {
-                 m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN) +"   ";
+                m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN) + "   ";
             }
             else 
             {
@@ -222,8 +222,29 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            string v_id_dat = m_cbo_dia_chi.SelectedValue;
-            m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_dat = " + v_id_dat +" and id_trang_thai = 577");
+            string v_id_dat =m_cbo_dia_chi.SelectedValue;
+            string id_loai_bao_cao ="";
+            if (Request.QueryString["id_loai_bao_cao"] != null)
+            {
+                id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+            }
+
+            switch (id_loai_bao_cao)
+            {
+                case "1":
+                    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỐNG SỰ NGHIỆP";
+                    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+v_id_dat);
+                    break;
+                case "2":
+                    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỐNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
+                    m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
+                    break;
+                //case "3":
+                //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
+                //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
+            }
+           
+            
             m_grv_nha.DataSource = m_ds_dm_nha;
             m_grv_nha.DataBind();
 
@@ -267,6 +288,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
         {
             
             load_data_to_cbo_don_vi_su_dung();
+            load_data_to_cbo_dia_chi();
 
         }
         catch (System.Exception ex)
