@@ -26,11 +26,13 @@
                     Width="85%"></asp:TextBox>
             </td>
             <td align="right">
-                <span class="cssManField">Trạng thái</span>
-            </td>
+                <asp:Label ID="m_lbl_trang_thai" runat="server" CssClass="cssManField" 
+                    Visible="False">Trạng thái</asp:Label>
+&nbsp;</td>
             <td align="left">
                 <asp:DropDownList ID="m_cbo_trang_thai" runat="server" Width="264px" 
-                    CssClass="cssDorpdownlist" AutoPostBack="True" />
+                    CssClass="cssDorpdownlist" AutoPostBack="True" 
+                    onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged" />
             </td>
         </tr>
         <tr>
