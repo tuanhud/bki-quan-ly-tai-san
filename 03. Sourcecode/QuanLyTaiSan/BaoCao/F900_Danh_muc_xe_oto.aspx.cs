@@ -26,14 +26,20 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            if (!this.IsPostBack)
+            if (Request.QueryString["ID"] == null)
             {
-                load_cbo_user_group();   
+                if (!this.IsPostBack)
+                {
+                    load_cbo_trang_thai();
+                    load_data_2_grid_by_command();
+                }
             }
-            if (m_txt_tu_khoa.Text == "")
-                load_data_2_grid();
             else
-                load_data_2_grid_by_command();
+            {
+                m_cbo_trang_thai.Visible = false;
+                m_lbl_trang_thai.Visible = false;
+                load_data_2_grid();
+            }
         }
         catch (Exception v_e)
         {
@@ -41,7 +47,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
     }
     
-    private void load_cbo_user_group()
+    private void load_cbo_trang_thai()
     {
         try
         {
@@ -52,6 +58,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN_NGAN;
             m_cbo_trang_thai.DataValueField = CM_DM_LOAI_TD.ID;
             m_cbo_trang_thai.DataBind();
+            ListItem m_item_tat_ca = new ListItem("Tất cả", "0");
+            m_cbo_trang_thai.Items.Add(m_item_tat_ca);
         }
         catch (Exception v_e)
         {
@@ -63,15 +71,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            decimal id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            if (id_trang_thai != 594)
-            {
-                m_us_dm_oto.FillDataset(m_ds_dm_oto, " WHERE ID_TRANG_THAI =" + id_trang_thai);
-            }
-            else
-            {
-                m_us_dm_oto.FillDataset(m_ds_dm_oto);
-            }
+            string v_str_tu_khoa = m_txt_tu_khoa.Text.Trim();
+            m_us_dm_oto.FillDatasetSearch(m_ds_dm_oto, v_str_tu_khoa);
             m_grv_bao_cao_oto.DataSource = m_ds_dm_oto.DM_OTO;
             m_grv_bao_cao_oto.DataBind();
         }
@@ -84,13 +85,13 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {   
-            string tu_khoa = m_txt_tu_khoa.Text.Trim();
-            string command = "SELECT * FROM DM_OTO WHERE TEN_TAI_SAN LIKE '%" + tu_khoa + "%' or NHAN_HIEU like '%" + tu_khoa + "%' or BIEN_KIEM_SOAT like '%" + tu_khoa + "%' or SO_CHO_NGOI like '%" + tu_khoa + "%'";
-            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(command);
-            m_us_dm_oto.FillDatasetByCommand(m_ds_dm_oto,cmd);
+            string v_str_tu_khoa = m_txt_tu_khoa.Text.Trim();
+            decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            m_us_dm_oto.FillDatasetBySearch(m_ds_dm_oto,v_str_tu_khoa,v_dc_id_trang_thai);
             m_grv_bao_cao_oto.DataSource = m_ds_dm_oto.DM_OTO;
             m_grv_bao_cao_oto.DataBind();
         }
+
         catch (Exception v_e)
         {
             throw v_e;
@@ -104,6 +105,24 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
+            if (Request.QueryString["ID"] == null)
+            {
+                load_data_2_grid_by_command();
+            }
+            else
+                load_data_2_grid();
+        }
+        catch (Exception v_e)
+        {
+
+            throw v_e;
+        }
+    }
+    #endregion
+    protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             load_data_2_grid_by_command();
             m_txt_tu_khoa.Text = "";
         }
@@ -113,5 +132,4 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             throw v_e;
         }
     }
-    #endregion
 }
