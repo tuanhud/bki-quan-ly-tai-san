@@ -47,7 +47,8 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_don_vi_cap_tren" runat="server" Width="264px" CssClass="cssDorpdownlist"
-                            AutoPostBack="true" />
+                            AutoPostBack="true" 
+                            onselectedindexchanged="m_cbo_don_vi_cap_tren_SelectedIndexChanged" />
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +72,8 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_loai_don_vi" runat="server" Width="264px" CssClass="cssDorpdownlist"
-                            AutoPostBack="true" />
+                            AutoPostBack="true" 
+                            onselectedindexchanged="m_cbo_loai_don_vi_SelectedIndexChanged" />
                     </td>
                 </tr>
                 <tr>

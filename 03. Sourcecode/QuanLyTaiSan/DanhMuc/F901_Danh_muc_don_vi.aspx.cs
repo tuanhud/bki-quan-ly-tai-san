@@ -28,8 +28,9 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             {
                 load_cbo_don_vi_cap_tren();
                 load_cbo_loai_don_vi();
+                load_data_2_grid();
             }
-            load_data_2_grid();
+            
         }
         catch (Exception v_e)
         {
@@ -76,9 +77,14 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
-            m_us_don_vi.FillDataset(m_ds_don_vi);
-            m_grv_dm_don_vi.DataSource = m_ds_don_vi.DM_DON_VI;
-            m_grv_dm_don_vi.DataBind();
+            if (Request.QueryString["ID"] != null)
+            {
+                string v_dc_id_loai_don_vi = Request.QueryString["ID"].ToString();
+                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("select * from DM_DON_VI where ID_LOAI_DON_VI = 574");
+                m_us_don_vi.FillDatasetByCommand(m_ds_don_vi,cmd);
+                m_grv_dm_don_vi.DataSource = m_ds_don_vi.DM_DON_VI;
+                m_grv_dm_don_vi.DataBind();
+            }
         }
         catch (Exception v_e)
         {
@@ -272,5 +278,29 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         load_data_2_grid();
         m_grv_dm_don_vi.PageIndex = e.NewPageIndex;
         m_grv_dm_don_vi.DataBind();
+    }
+    protected void m_cbo_don_vi_cap_tren_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_2_grid();
+        }
+        catch (Exception v_e)
+        {
+
+            throw v_e;
+        }
+    }
+    protected void m_cbo_loai_don_vi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_2_grid();
+        }
+        catch (Exception v_e)
+        {
+
+            throw v_e;
+        }
     }
 }
