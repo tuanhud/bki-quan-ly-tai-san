@@ -105,6 +105,8 @@ namespace QltsForm {
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_cbo_trang_thai_tai_san = new System.Windows.Forms.ComboBox();
             this.m_txt_loai_hinh_don_vi = new System.Windows.Forms.TextBox();
             this.m_txt_ma_don_vi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -116,8 +118,6 @@ namespace QltsForm {
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_cbo_trang_thai_tai_san = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -162,7 +162,7 @@ namespace QltsForm {
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 448);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(885, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(796, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_export_excel
@@ -189,7 +189,7 @@ namespace QltsForm {
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(529, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(440, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -204,7 +204,7 @@ namespace QltsForm {
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(617, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(528, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -234,7 +234,7 @@ namespace QltsForm {
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(705, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(616, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -249,7 +249,7 @@ namespace QltsForm {
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(793, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(704, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -261,7 +261,7 @@ namespace QltsForm {
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 150);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(885, 298);
+            this.m_fg.Size = new System.Drawing.Size(796, 298);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -283,10 +283,28 @@ namespace QltsForm {
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(885, 150);
+            this.groupBox1.Size = new System.Drawing.Size(796, 150);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thong tin tìm kiếm";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Trạng thái tài sản";
+            // 
+            // m_cbo_trang_thai_tai_san
+            // 
+            this.m_cbo_trang_thai_tai_san.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_trang_thai_tai_san.FormattingEnabled = true;
+            this.m_cbo_trang_thai_tai_san.Location = new System.Drawing.Point(117, 123);
+            this.m_cbo_trang_thai_tai_san.Name = "m_cbo_trang_thai_tai_san";
+            this.m_cbo_trang_thai_tai_san.Size = new System.Drawing.Size(228, 21);
+            this.m_cbo_trang_thai_tai_san.TabIndex = 11;
             // 
             // m_txt_loai_hinh_don_vi
             // 
@@ -326,7 +344,7 @@ namespace QltsForm {
             this.m_lbl_ten_bao_cao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_bao_cao.Location = new System.Drawing.Point(3, 16);
             this.m_lbl_ten_bao_cao.Name = "m_lbl_ten_bao_cao";
-            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(879, 31);
+            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(790, 31);
             this.m_lbl_ten_bao_cao.TabIndex = 6;
             this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI XE Ô TÔ";
             this.m_lbl_ten_bao_cao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,28 +403,10 @@ namespace QltsForm {
             this.label1.TabIndex = 0;
             this.label1.Text = "Bộ/Tỉnh";
             // 
-            // m_cbo_trang_thai_tai_san
-            // 
-            this.m_cbo_trang_thai_tai_san.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_trang_thai_tai_san.FormattingEnabled = true;
-            this.m_cbo_trang_thai_tai_san.Location = new System.Drawing.Point(117, 123);
-            this.m_cbo_trang_thai_tai_san.Name = "m_cbo_trang_thai_tai_san";
-            this.m_cbo_trang_thai_tai_san.Size = new System.Drawing.Size(228, 21);
-            this.m_cbo_trang_thai_tai_san.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Trạng thái tài sản";
-            // 
             // f400_bao_cao_danh_muc_o_to
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(885, 484);
+            this.ClientSize = new System.Drawing.Size(796, 484);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
