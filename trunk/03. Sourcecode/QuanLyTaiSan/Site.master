@@ -83,9 +83,9 @@
                         else
                         {
                     %>
-                        <li><a href='https://docs.google.com/a/bkindex.com/document/d/1ZmsrFPD4mOnqdB4q17any2FW9DLQBRqVUuR-LU8kO-o/edit'>01. Comment, yêu cầu phát sinh</a></li>
-                        <li><a href='http://google.com.vn'>02. Tài liệu hướng dẫn sử dụng</a></li>
-                        <li><a href='#'>03. Quy trình luân chuyển chứng từ, trạng thái đợt thanh toán và trạng thái chứng từ</a></li>
+                        <li><a href='https://docs.google.com/a/bkindex.com/spreadsheet/ccc?key=0Au4XXPI0St3hdFRhR085TWVnT1ltbnhGYUg0d2JTTUE#gid=0'>01. Comment, yêu cầu phát sinh</a></li>
+                        <li><a href='http://www.drvn.gov.vn'>02. Website tổng cục đường bộ</a></li>
+                        <li><a href='#'>03. Giới thiệu</a></li>
                         <% } %>
                     </ul>
                 </li>
