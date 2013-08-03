@@ -628,5 +628,20 @@ namespace WebUS
             v_store.fillDataSetByCommand(this, op_ds_dm_oto);
         }
         #endregion
+
+        public void FillDatasetBySearch(WebDS.DS_DM_OTO m_ds_dm_oto, string v_str_tu_khoa, decimal v_dc_id_trang_thai)
+        {
+            CStoredProc cstored = new CStoredProc("pr_DM_OTO_Search");
+            cstored.addNVarcharInputParam("@TU_KHOA", v_str_tu_khoa);
+            cstored.addDecimalInputParam("@ID_TRANG_THAI", v_dc_id_trang_thai);
+            cstored.fillDataSetByCommand(this, m_ds_dm_oto);
+        }
+
+        public void FillDatasetSearch(WebDS.DS_DM_OTO m_ds_dm_oto, string v_str_tu_khoa)
+        {
+            CStoredProc cstored = new CStoredProc("pr_DM_OTO_get_search");
+            cstored.addNVarcharInputParam("@TU_KHOA", v_str_tu_khoa);
+            cstored.fillDataSetByCommand(this, m_ds_dm_oto);
+        }
     }
 }
