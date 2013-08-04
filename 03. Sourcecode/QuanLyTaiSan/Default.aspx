@@ -36,7 +36,7 @@
 					<table border="0" width="200" cellpadding="0" cellspacing="3" align="left">
 					<tbody><tr>
 						<td>
-						<a href="modules.php?name=News&amp;op=viewst&amp;sid=745" title="Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?">
+						<a href="#" title="Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?">
                             <img border="0" src="Images/pager/dat.jpg" width="200"></a></td>
 						</tr>
 					</tbody></table>
@@ -44,7 +44,7 @@
 			</tr>
 			<tr><td style="height: 5px;"></td>
 			</tr>
-			<tr><td><p class="link_news_hot" style="margin-top: 0px; margin-bottom: 5px"><a href="modules.php?name=News&amp;op=viewst&amp;sid=745">Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?</a></p>
+			<tr><td><p class="link_news_hot" style="margin-top: 0px; margin-bottom: 5px"><a href="#">Quản lý đất đai</a></p>
 			</td></tr><tr>
 			<td>
 			<table border="0" cellpadding="0" cellspacing="0" width="98%">
@@ -71,10 +71,10 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
 	<tbody><tr>
 	<td class="OtherNews_td">
-	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=745">Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?</a>
+	    <a href="#">Danh mục đất</a>
 	<br>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-31 14:45:58</span></td>
+	<span class="HotNews_DateText">Ngày cập nhật:</span>
+	<span  class="HotNews_date">2013-07-31 14:45:58</span></td>
 	</tr>
 	</tbody></table>
 	</td>
@@ -83,10 +83,10 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
 	<tbody><tr>
 	<td class="OtherNews_td">
-	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=744">Thông báo mở khóa học " Microsoft Excel cơ bản và nâng cao 06/2013"</a>
+	<a class="link_OtherNews" href="#">Đề nghị xử lý đất</a>
 	<br>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-29 15:05:17</span></td>
+	<span class="HotNews_DateText">Ngày cập nhật:</span>
+	<span  class="HotNews_date">2013-07-29 15:05:17</span></td>
 	</tr>
 	</tbody></table>
 	</td>
@@ -95,10 +95,10 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
 	<tbody><tr>
 	<td class="OtherNews_td">
-	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=743">Buổi khai giảng sôi động của khóa MS EXCEL 04/2013</a>
+	<a class="link_OtherNews" href="#">Đề nghị trang cấp đất</a>
 	<br>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-29 14:10:57</span></td>
+	<span class="HotNews_DateText">Ngày cập nhật:</span>
+	<span  class="HotNews_date">2013-07-29 14:10:57</span></td>
 	</tr>
 	</tbody></table>
 	</td>
@@ -107,10 +107,10 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
 	<tbody><tr>
 	<td class="OtherNews_td">
-	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=742">Những tác phẩm nghệ thuật đỉnh cao được làm từ...Excel</a>
+	<a class="link_OtherNews" href="#">Kê khai đất</a>
 	<br>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-21 23:17:05</span></td>
+	<span  class="HotNews_DateText">Ngày cập nhật:</span>
+	<span class="HotNews_date">2013-07-21 23:17:05</span></td>
 	</tr>
 	</tbody></table>
 	</td>
@@ -119,10 +119,10 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
 	<tbody><tr>
 	<td class="OtherNews_td">
-	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=741">Mất hơn 6 tỷ USD vì lỗi Excel</a>
+	<a  class="link_OtherNews" href="#">Đề nghị xử lý đất</a>
 	<br>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-16 23:27:22</span></td>
+	<span  class="HotNews_DateText">Ngày cập nhật:</span>
+	<span  class="HotNews_date">2013-07-16 23:27:22</span></td>
 	</tr>
 	</tbody></table>
 	</td>
@@ -131,10 +131,10 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
 	<tbody><tr>
 	<td class="OtherNews_td">
-	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=740">Vô địch MS Office World Champion Excel cấp quốc gia năm 2013 với chỉ 11 phút 45 giây</a>
+	<a  class="link_OtherNews" href="#">Khấu hao đất</a>
 	<br>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
-	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-16 23:22:17</span></td>
+	<span class="HotNews_DateText">Ngày cập nhật:</span>
+	<span  class="HotNews_date">2013-07-16 23:22:17</span></td>
 	</tr>
 	</tbody></table>
 	</td>
