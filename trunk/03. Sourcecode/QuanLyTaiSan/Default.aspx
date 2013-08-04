@@ -3,13 +3,7 @@
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" TagPrefix="asp" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <style type="text/css">
-        .style2
-        {
-            width: 712px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div>
         <asp:ScriptManager runat="server">
@@ -26,40 +20,129 @@
             </Triggers>
         </asp:UpdatePanel>
     </div>
-    <table align="center" width="100%">
-        <tr>
-            <td width="30%" align="right"><a>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/pager/dat.jpg" 
-                    Width="30%"/>
-                    </a></td>
-        </tr>
-        <tr><td></td>
-            <td></td>
-            </tr>
-        <tr><td align="right"><a>
-                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/pager/nha.jpg" Width="30%"/>
-                </a></td>
-            <td></td>
-            </tr>
-        <tr><td></td>
-            <td></td>
-            </tr>
-        <tr><td align="right"><a href="ChucNang/F500_QuanLyOto.aspx">
-                <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/pager/oto.jpg" 
-                    Width="30%"/></a></td>
-            <td></td>
-            </tr>
-        <tr><td></td>
-            <td></td>
-            </tr>
-        <tr><td align="right">
-<a href="ChucNang/F200_DanhMucTaiSanKhac.aspx"><asp:Image ID="Image4" runat="server" ImageUrl="~/Images/pager/can-truc.jpg" 
-                    Width="30%" />
-                    </a></td>
-            <td></td>
-            </tr>
-        <tr><td></td>
-            <td></td>
-            </tr>
-    </table>
-</asp:Content>
+
+    <!-- Bang tin tuc -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+		<tr>
+			<td style="padding-top: 8px; height: 8px;"></td>
+		</tr>
+		
+		<tr><td style="padding-left: 8px; padding-right: 5px;" valign="top">
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="300">
+			<tbody>
+				<tr><td valign="top">
+					<table border="0" width="200" cellpadding="0" cellspacing="3" align="left">
+					<tbody><tr>
+						<td>
+						<a href="modules.php?name=News&amp;op=viewst&amp;sid=745" title="Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?">
+                            <img border="0" src="Images/pager/dat.jpg" width="200"></a></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+			<tr><td style="height: 5px;"></td>
+			</tr>
+			<tr><td><p class="link_news_hot" style="margin-top: 0px; margin-bottom: 5px"><a href="modules.php?name=News&amp;op=viewst&amp;sid=745">Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?</a></p>
+			</td></tr><tr>
+			<td>
+			<table border="0" cellpadding="0" cellspacing="0" width="98%">
+			<tbody>
+			<tr>
+			<td><span class="indexhometext">Vì sao cùng một xuất phát điểm và cùng có mong muốn đổi đời, nhưng có những người thành đạt và trở nên giàu có, trong khi nhiều người...</span></td>
+			</tr>
+			</tbody></table>
+			</td>
+			</tr>
+			<tr>
+			<td style="height: 5px;">
+			</td>
+			</tr>
+			</tbody>
+		</table>
+	</td>
+	<td style="width: 100%; padding-left: 5px; padding-right: 8px; 
+	border-left: 1px solid rgb(229, 229, 229);" valign="top">
+	<table id="dnn_ctr698_newsHot_drgOtherNews" style="width: 
+	100%; border-collapse: collapse;" border="0" cellspacing="0">
+	<tbody><tr>
+	<td>
+	<table cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	<td class="OtherNews_td">
+	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=745">Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?</a>
+	<br>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-31 14:45:58</span></td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr><tr>
+	<td>
+	<table cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	<td class="OtherNews_td">
+	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=744">Thông báo mở khóa học " Microsoft Excel cơ bản và nâng cao 06/2013"</a>
+	<br>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-29 15:05:17</span></td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr><tr>
+	<td>
+	<table cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	<td class="OtherNews_td">
+	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=743">Buổi khai giảng sôi động của khóa MS EXCEL 04/2013</a>
+	<br>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-29 14:10:57</span></td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr><tr>
+	<td>
+	<table cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	<td class="OtherNews_td">
+	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=742">Những tác phẩm nghệ thuật đỉnh cao được làm từ...Excel</a>
+	<br>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-21 23:17:05</span></td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr><tr>
+	<td>
+	<table cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	<td class="OtherNews_td">
+	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=741">Mất hơn 6 tỷ USD vì lỗi Excel</a>
+	<br>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-16 23:27:22</span></td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr><tr>
+	<td>
+	<table cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	<td class="OtherNews_td">
+	<a id="dnn_ctr698_newsHot_drgOtherNews_ctl00_hplOtherNews" class="link_OtherNews" href="modules.php?name=News&amp;op=viewst&amp;sid=740">Vô địch MS Office World Champion Excel cấp quốc gia năm 2013 với chỉ 11 phút 45 giây</a>
+	<br>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDateText" class="HotNews_DateText">Ngày cập nhật:</span>
+	<span id="dnn_ctr698_newsHot_drgOtherNews_ctl00_lbDate" class="HotNews_date">2013-07-16 23:22:17</span></td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr>
+	</tbody>
+</table>
+
+    </asp:Content>
