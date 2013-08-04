@@ -20,6 +20,7 @@ public partial class Default2 : System.Web.UI.Page
                 
                 if (!IsPostBack)
                 {
+                    form_title();
                     load_data_2_grid();
                     if (m_txt_tim_kiem.Text == "")
                         load_data_2_cbo_trang_thai_tai_san();
@@ -57,6 +58,38 @@ public partial class Default2 : System.Web.UI.Page
             CalcTotal(e.Rows[1].Cells[5].Text);
         }
     }
+    private void form_title()
+    {
+        try
+        {
+            string id_loai_bao_cao = "";
+            if (Request.QueryString["ID"] != null)
+            {
+                id_loai_bao_cao = Request.QueryString["ID"];
+            }
+
+            switch (id_loai_bao_cao)
+            {
+
+                case "120":
+                    m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ) ĐỀ NGHỊ XỬ LÝ";
+
+                    break;
+                case "123":
+                    m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC";
+
+                    break;
+                //case "3":
+                //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
+                //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
+            }
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+
     private void load_data_2_grid_for_search()
     {
         try
