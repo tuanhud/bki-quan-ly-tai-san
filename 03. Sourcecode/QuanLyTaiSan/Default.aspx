@@ -3,6 +3,12 @@
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" TagPrefix="asp" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <style type="text/css">
+        .style2
+        {
+            width: 712px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div>
@@ -20,28 +26,40 @@
             </Triggers>
         </asp:UpdatePanel>
     </div>
-    <table align="center">
+    <table align="center" width="100%">
         <tr>
-            <td align="right">
+            <td width="30%" align="right"><a>
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/pager/dat.jpg" 
-                    Width="50%" Height="50%" />
-            </td>
-            <td>
-                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/pager/nha.jpg" Width="50%" Height="50%"/>
-            </td>
+                    Width="30%"/>
+                    </a></td>
         </tr>
-        <tr>
-            <td align="right">
-                <a href="ChucNang/F500_QuanLyOto.aspx">
+        <tr><td></td>
+            <td></td>
+            </tr>
+        <tr><td align="right"><a>
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/pager/nha.jpg" Width="30%"/>
+                </a></td>
+            <td></td>
+            </tr>
+        <tr><td></td>
+            <td></td>
+            </tr>
+        <tr><td align="right"><a href="ChucNang/F500_QuanLyOto.aspx">
                 <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/pager/oto.jpg" 
-                    Width="50%" Height="50%"/>
-            </td>
-            <td>
-                <a href="ChucNang/F200_DanhMucTaiSanKhac.aspx"><asp:Image ID="Image4" runat="server" ImageUrl="~/Images/pager/can-truc.jpg" 
-                    Width="50%" Height="50%" 
-                    DescriptionUrl="~/ChucNang/F200_DanhMucTaiSanKhac.aspx"/>
-                    </a>
-            </td>
-        </tr>
+                    Width="30%"/></a></td>
+            <td></td>
+            </tr>
+        <tr><td></td>
+            <td></td>
+            </tr>
+        <tr><td align="right">
+<a href="ChucNang/F200_DanhMucTaiSanKhac.aspx"><asp:Image ID="Image4" runat="server" ImageUrl="~/Images/pager/can-truc.jpg" 
+                    Width="30%" />
+                    </a></td>
+            <td></td>
+            </tr>
+        <tr><td></td>
+            <td></td>
+            </tr>
     </table>
 </asp:Content>
