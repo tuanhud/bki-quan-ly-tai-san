@@ -6,7 +6,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <div>
+    <div style="margin-left: 5%">
         <asp:ScriptManager runat="server">
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -22,7 +22,19 @@
         </asp:UpdatePanel>
     </div>
 
-    <div style="clip: rect(auto, auto, auto, auto); margin-left:10%" id="TrongHV_Table" >
+    <div style="clip: rect(auto, auto, auto, auto); margin-left: 5%; padding-right: 5%;" >
+     
+     <table width = "100%" >
+        <tr class="title_ttql">
+            <td >
+              THÔNG TIN QUẢN LÝ  
+            </td>
+        </tr>
+     </table>
+     
+     
+
+     
         
     <!-- Bang Dat -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -62,7 +74,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Mô tả quản lý đất
+                                                    Tập hợp các thông tin về đất của đơn vị chủ quản, theo dõi sử dụng đất, báo cáo cho chủ quản
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -230,7 +242,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Mô tả quản lý nhà
+                                                    Tập hợp các thông tin về nhà của đơn vị chủ quản, theo dõi sử dụng nhà, báo cáo cho chủ quản
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -398,7 +410,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <span class="indexhometext">Mô tả quản lý Oto</span>
+                                                    Tập hợp các thông tin về oto của đơn vị chủ quản, theo dõi sử dụng oto, báo cáo cho chủ quản
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -566,7 +578,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <span class="indexhometext">Mô tả quản lý tài sản khác</span>
+                                                    Tập hợp các thông tin về các tài sản khác của đơn vị chủ quản, theo dõi sử dụng tài sản này, báo cáo cho chủ quản
                                                 </td>
                                             </tr>
                                         </tbody>
