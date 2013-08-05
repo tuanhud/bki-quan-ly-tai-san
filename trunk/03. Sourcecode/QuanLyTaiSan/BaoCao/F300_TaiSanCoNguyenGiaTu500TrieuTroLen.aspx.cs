@@ -129,11 +129,13 @@ public partial class Default2 : System.Web.UI.Page
             //"%' or NAM_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
             //"%' or NAM_SU_DUNG like '%"+m_txt_tim_kiem.Text+
             //"%'";
+            
             v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
 
             m_cbo_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
             m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
             m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
+            m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
             m_cbo_trang_thai.DataBind();
         }
         catch (System.Exception ex)
