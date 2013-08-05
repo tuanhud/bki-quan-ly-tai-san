@@ -41,7 +41,7 @@ public partial class Account_ChangePassword : System.Web.UI.Page
     {
         try
         {
-            string v_str_ten_dang_nhap = CIPConvert.ToStr(Session["Username"]);
+            string v_str_ten_dang_nhap = CIPConvert.ToStr(Session[SESSION.UserName]);
             // Kiểm tra mật khẩu cũ nhập vào đã chuẩn chưa?
             if (!m_txt_old_password.Text.Equals(get_current_password(v_str_ten_dang_nhap)))
             {

@@ -39,6 +39,7 @@ public partial class Account_Login : System.Web.UI.Page
         v_us_nguoi_su_dung.check_user(strUserName, strPassWord, ref v_log_result);
         if (v_log_result == US_HT_NGUOI_SU_DUNG.LogonResult.OK_Login_Succeeded)
         {
+            v_us_nguoi_su_dung.InitByTenTruyCap(strUserName);
             if (this.cbxRememberPassword.Checked)
             {
                 Response.Cookies["UserName"].Expires = DateTime.Now.AddMonths(1);
@@ -46,14 +47,15 @@ public partial class Account_Login : System.Web.UI.Page
                 Response.Cookies["UserName"].Value = strUserName;
                 Response.Cookies["PassWord"].Value = strPassWord;
             }
-            Session["AccounLogin"] = "Y";
-            Session["Username"] = strUserName;
+            Session[SESSION.AccounLogin] = "Y";
+            Session[SESSION.UserName] = strUserName;
+            
             decimal v_dc_quyen = load_user_quyen(strUserName);
-            Session["user_quyen"] = v_dc_quyen;
+            Session[SESSION.UserQuyen] = v_dc_quyen;
             if (v_dc_quyen == LOAI_USER_QUYEN.GROUP30)
             {
                 Response.Redirect("/QuanLyTaiSan", false);
-                Session["QuyenGV"] = load_user_quyen(strUserName);
+                Session[SESSION.QuyenGV] = load_user_quyen(strUserName);
             }
             else Response.Redirect("../Default.aspx", false);
             
