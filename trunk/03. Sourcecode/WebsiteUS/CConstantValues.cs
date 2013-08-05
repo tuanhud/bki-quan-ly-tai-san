@@ -7,7 +7,7 @@ namespace WebUS
 
     public class SESSION {
         public const string UserName = "UserName";
-        public const string AccounLogin = "AccounLogin";
+        public const string AccounLoginYN = "AccounLoginYN";
         public const string UserQuyen = "user_quyen";
         public const string QuyenGV = "QuyenGV";
         
