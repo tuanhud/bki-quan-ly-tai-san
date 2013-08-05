@@ -131,7 +131,7 @@
                     <ItemTemplate>
                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                             <tr>
-                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px">
+                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px; height:35px">
                                     <%# Eval("NGUON_NS", "{0:#,###.00}")%>
                                 </td>
                                 <td style="width: 33.5% ; border-right:solid; border-right-width:1px">
@@ -184,7 +184,7 @@
                                 <td style="width: 25 ; border-right:solid; border-right-width:1px">
                                     <%# Eval("KINH_DOANH") %>
                                 </td>
-                                <td style="width: 25% ; border-right:solid; border-right-width:1px">
+                                <td style="width: 25% ; border-right:solid; border-right-width:1px;height:35px" >
                                     <%# Eval("KHONG_KINH_DOANH") %>
                                 </td>
                                 <td style="width: 25%">
