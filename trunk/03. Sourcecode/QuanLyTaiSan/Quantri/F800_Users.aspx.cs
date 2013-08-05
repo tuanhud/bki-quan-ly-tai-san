@@ -223,7 +223,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         m_us_user.dcID_USER_GROUP = CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue);
         m_us_user.strTEN_TRUY_CAP = m_txt_ten_dang_nhap.Text.TrimEnd();
         m_us_user.strTEN = m_txt_ho_va_ten.Text.TrimEnd();
-        m_us_user.strNGUOI_TAO = Session["UserName"].ToString();
+        m_us_user.strNGUOI_TAO = Session[SESSION.UserName].ToString();
         if (m_chk_lock_yn.Checked) m_us_user.strTRANG_THAI = "1";
         else m_us_user.strTRANG_THAI = "0";
         if (m_txt_mat_khau.Text.Length > 0) m_us_user.strMAT_KHAU = m_txt_mat_khau.Text.TrimEnd();
