@@ -24,7 +24,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     {
         load_data_bo_tinh();
         load_data_don_vi_chu_quan("");
-        load_data_don_vi_su_dung("","");
+        load_data_don_vi_su_dung("", "");
         load_data_dat("");
         load_data_trang_thai();
         load_data_don_vi_dau_tu();
@@ -40,6 +40,11 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         if (ip_tu_khoa.Equals(String.Empty))
         {
             m_us_dm_nha.FillDataset(v_ds_dm_nha);
+        }
+        else
+        {
+            string v_str_query = "where TEN_TAI_SAN LIKE %" + ip_tu_khoa + "% OR MA_TAI_SAN LIKE %" + ip_tu_khoa + "%";
+            m_us_dm_nha.FillDataset(v_ds_dm_nha, v_str_query);
         }
         m_grv_danh_sach_nha.DataSource = v_ds_dm_nha.DM_NHA;
         m_grv_danh_sach_nha.DataBind();
@@ -59,27 +64,27 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     }
 
     // Load dữ liệu vào combo đơn vị chủ quản
-    private void load_data_don_vi_chu_quan(string ip_str_id_don_vi_chu_quan)
+    private void load_data_don_vi_chu_quan(string ip_str_id_bo_tinh)
     {
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
         DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
-        if (ip_str_id_don_vi_chu_quan.Equals(String.Empty))
+        if (ip_str_id_bo_tinh.Equals(String.Empty))
         {
             v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN);
         }
         else
         {
-            decimal v_dc_id_don_vi_chu_quan = CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan);
+            decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
             v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN
-            + " AND ID_DON_VI_CAP_TREN = " + v_dc_id_don_vi_chu_quan);
+            + " AND ID_DON_VI_CAP_TREN = " + v_dc_id_bo_tinh);
         }
 
         m_ddl_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
         m_ddl_don_vi_chu_quan.DataTextField = "TEN_DON_VI";
         m_ddl_don_vi_chu_quan.DataValueField = "ID";
         m_ddl_don_vi_chu_quan.DataBind();
-        m_ddl_don_vi_chu_quan.Items.Insert(0, new ListItem("Tất cả các đơn vị", ""));
+        //m_ddl_don_vi_chu_quan.Items.Insert(0, new ListItem("Tất cả các đơn vị", ""));
     }
 
     // Load dữ liệu vào combo đơn vị sử dụng
@@ -90,27 +95,28 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
 
         if (ip_str_id_bo_tinh.Equals(String.Empty))
         {
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi);
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "WHERE ID_LOAI_DON_VI IN (" + ID_LOAI_DON_VI.DV_SU_DUNG + "," + ID_LOAI_DON_VI.DV_CHU_QUAN + ")");
         }
-        else if(ip_str_id_don_vi_chu_quan.Equals(String.Empty)) 
+        else if (ip_str_id_don_vi_chu_quan.Equals(String.Empty))
         {
             decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN in (select * from DM_DON_VI where ID_DON_VI_CAP_TREN = " 
-                + v_dc_id_bo_tinh + ")");
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN in (select ID from DM_DON_VI where ID_DON_VI_CAP_TREN = "
+                + v_dc_id_bo_tinh + ") or ID_DON_VI_CAP_TREN = " + v_dc_id_bo_tinh);
         }
         else
         {
             decimal v_dc_id_don_vi_chu_quan = CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan);
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN = " + v_dc_id_don_vi_chu_quan);
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN = " + v_dc_id_don_vi_chu_quan + " or ID = " + v_dc_id_don_vi_chu_quan);
         }
 
         m_ddl_don_vi_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
         m_ddl_don_vi_su_dung.DataTextField = "TEN_DON_VI";
         m_ddl_don_vi_su_dung.DataValueField = "ID";
         m_ddl_don_vi_su_dung.DataBind();
-        m_ddl_don_vi_su_dung.Items.Insert(0, new ListItem("Tất cả các đơn vị", ""));
+        //m_ddl_don_vi_su_dung.Items.Insert(0, new ListItem("Tất cả các đơn vị", ""));
     }
 
+    // Load dữ liệu vào combo đơn vị đầu tư
     private void load_data_don_vi_dau_tu()
     {
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
@@ -219,8 +225,9 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             m_us_dm_nha.dcKHAC = CIPConvert.ToDecimal(m_txt_khac.Text);
             m_us_dm_nha.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_ddl_trang_thai_nha.SelectedValue);
             m_us_dm_nha.dcID_DAT = CIPConvert.ToDecimal(m_ddl_thuoc_khu_dat.SelectedValue);
-            m_us_dm_nha.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_ddl_don_vi_chu_quan.SelectedValue);
             m_us_dm_nha.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_ddl_don_vi_su_dung.SelectedValue);
+            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(m_us_dm_nha.dcID_DON_VI_SU_DUNG);
+            m_us_dm_nha.dcID_DON_VI_CHU_QUAN = v_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
             m_us_dm_nha.dcID_DON_VI_DAU_TU = CIPConvert.ToDecimal(m_ddl_don_vi_dau_tu.SelectedValue);
             m_us_dm_nha.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
         }
@@ -263,6 +270,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     #region Public Interfaces
     #endregion
 
+    #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -301,10 +309,12 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     {
         Response.Redirect("~/ChucNang/F100_QuanLyNha.aspx");
     }
+
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
-        // TODO
+        load_form_data();
     }
+
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
         // TODO
@@ -348,6 +358,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     protected void m_ddl_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
         load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        load_data_dat(m_ddl_don_vi_su_dung.SelectedValue);
     }
 
     protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
@@ -355,8 +366,10 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
         load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
     }
+
     protected void m_ddl_don_vi_su_dung_SelectedIndexChanged(object sender, EventArgs e)
     {
         load_data_dat(m_ddl_don_vi_su_dung.SelectedValue);
     }
+    #endregion
 }

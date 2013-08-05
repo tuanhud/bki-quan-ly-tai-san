@@ -459,7 +459,7 @@
                             <ItemTemplate>
                                 <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="DeleteComp" ToolTip="Xóa"
                                     OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
-                     <img src="../Images/Button/deletered.png" alt="Delete" />
+                                    <img src="../Images/Button/deletered.png" alt="Delete" />
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -467,7 +467,7 @@
                             <ItemTemplate>
                                 <asp:LinkButton ID="m_lbt_edit" runat="server" CommandName="EditComp" ToolTip="Sửa"
                                     CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
-                     <img src="../Images/Button/edit.png" alt="Edit" />
+                                    <img src="../Images/Button/edit.png" alt="Edit" />
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -508,13 +508,14 @@
                                     </tr>
                                 </table>
                             </HeaderTemplate>
-                            <ItemStyle Height="60px"/>
+                            <ItemStyle Height="60px" />
                             <ItemTemplate>
-                                <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;text-align: right">
-                                    <td style="width: 33%; height: 60px; border-right:1px solid gray;">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
+                                    text-align: right">
+                                    <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
                                         <%# Eval("NGUON_NS","{0:0,000.00}") %>
                                     </td>
-                                    <td style="width: 33%; height: 60px; border-right:1px solid gray;">
+                                    <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
                                         <%# Eval("NGUON_KHAC", "{0:0,000.00}")%>
                                     </td>
                                     <td style="width: 33%; height: 50px;">
@@ -568,22 +569,22 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%" style="text-align: right;
                                     border-collapse: collapse;">
                                     <tr>
-                                        <td style="width: 14%; height: 60px; border-right:1px solid gray;">
+                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
                                             <%# Eval("TRU_SO_LAM_VIEC", "{0:#,###}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right:1px solid gray;">
+                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
                                             <%# Eval("CO_SO_HDSN", "{0:#,###}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right:1px solid gray;">
+                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
                                             <%# Eval("LAM_NHA_O", "{0:#,###}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right:1px solid gray;">
+                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
                                             <%# Eval("CHO_THUE", "{0:#,###}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right:1px solid gray;">
+                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
                                             <%# Eval("BO_TRONG", "{0:#,###}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right:1px solid gray;">
+                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
                                             <%# Eval("BI_LAN_CHIEM", "{0:#,###}")%>
                                         </td>
                                         <td style="width: 14%">
