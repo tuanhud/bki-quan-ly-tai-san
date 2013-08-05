@@ -53,7 +53,7 @@
                 </asp:DropDownList>
             </td>
         </tr>
-        <tr>
+       <%-- <tr>
             <td align="right">
                 <span class="cssManField">Loại hình đơn vị:</span>
             </td>
@@ -61,8 +61,8 @@
                 <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%">
                 </asp:DropDownList>
             </td>
-        </tr>
-        <tr style="height: 30px">
+        </tr>--%>
+        <tr style="height: 10px">
             <td>
             </td>
             <td>
@@ -246,7 +246,9 @@
                 </td>
                 <td colspan="1" align="right">
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue"></asp:Label>
+                    <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue" >
+                    
+                    </asp:Label>
                     <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VNĐ</span>
                 </td>
                 <td colspan="1">
