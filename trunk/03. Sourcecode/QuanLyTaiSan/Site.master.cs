@@ -18,8 +18,8 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session[SESSION.AccounLogin] != null) {
-            if (Session[SESSION.AccounLogin].ToString().Equals("Y")) {
+        if (Session[SESSION.AccounLoginYN] != null) {
+            if (Session[SESSION.AccounLoginYN].ToString().Equals("Y")) {
                 m_lhk_user_name.Text = "Xin chào: " + Session[SESSION.UserName].ToString();
             }
             else {
