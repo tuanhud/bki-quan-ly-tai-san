@@ -49,6 +49,8 @@ public partial class Account_Login : System.Web.UI.Page
             }
             Session[SESSION.AccounLoginYN] = "Y";
             Session[SESSION.UserName] = strUserName;
+            Session[SESSION.UserFullName] = v_us_nguoi_su_dung.strTEN;
+
             
             decimal v_dc_quyen = load_user_quyen(strUserName);
             Session[SESSION.UserQuyen] = v_dc_quyen;
