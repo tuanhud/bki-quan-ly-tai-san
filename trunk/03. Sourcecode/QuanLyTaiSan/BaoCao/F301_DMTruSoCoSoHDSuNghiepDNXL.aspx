@@ -265,6 +265,17 @@
                 <td>
                 </td>
             </tr>
+            <tr class="cssManField">
+                <td>
+                    <br />
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
         </asp:Panel>
         <tr>
             <td style="width: 10%" colspan="6">
@@ -283,7 +294,7 @@
                         <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NGAY_THANG_NAM_SU_DUNG">
                             <ItemStyle HorizontalAlign="center" />
                         </asp:BoundField>
-                        <asp:TemplateField HeaderStyle-Width="32%">
+                        <asp:TemplateField HeaderStyle-Width="25%">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse:collapse">
                                     <tr>
@@ -315,13 +326,13 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
                                         <td style="width: 33.33%; height:40px; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("NGUON_NS", "{0:#,###.00}")%>
+                                            <%# Eval("NGUON_NS", "{0:0,000.00}")%>
                                         </td>
                                         <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
+                                            <%# Eval("NGUON_KHAC", "{0:0,000.00}")%>
                                         </td>
                                         <td style="width: 33.33%" align="right">
-                                            <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
+                                            <%# Eval("GIA_TRI_CON_LAI", "{0:0,000.00}")%>
                                         </td>
                                     </tr>
                                 </table>
@@ -337,7 +348,7 @@
                             HeaderStyle-Width="5%">
                             <ItemStyle HorizontalAlign="right" />
                         </asp:BoundField>
-                        <asp:TemplateField HeaderStyle-Width="35%">
+                        <asp:TemplateField HeaderStyle-Width="30%">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="3" width="100%">
                                     <tr>
@@ -379,24 +390,24 @@
                             </HeaderTemplate>
                             <HeaderStyle CssClass="" />
                             <ItemTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
-                                        <td style="width: 14.28%" align="right">
+                                        <td style="width: 14.28%; height:40px; border-right: 1px solid gray;" align="right">
                                             <%# Eval("TRU_SO_LAM_VIEC") %>
                                         </td>
-                                        <td style="width: 14.28%" align="right">
+                                        <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
                                             <%# Eval("CO_SO_HDSN") %>
                                         </td>
-                                        <td style="width: 14.28%" align="right">
+                                        <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
                                             <%# Eval("LAM_NHA_O") %>
                                         </td>
-                                        <td style="width: 14.28%" align="right">
+                                        <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
                                             <%# Eval("CHO_THUE") %>
                                         </td>
-                                        <td style="width: 14.28%" align="right">
+                                        <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
                                             <%# Eval("BO_TRONG") %>
                                         </td>
-                                        <td style="width: 14.28%" align="right">
+                                        <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
                                             <%# Eval("BI_LAN_CHIEM") %>
                                         </td>
                                         <td style="width: 14.28%" align="right">
@@ -413,7 +424,7 @@
                     <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
                     <PagerSettings Position="Bottom" />
                     <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#E3EAEB" />
+                    <RowStyle BackColor="#E3EAEB"/>
                     <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
                         ForeColor="#333333"></SelectedRowStyle>
                 </asp:GridView>
