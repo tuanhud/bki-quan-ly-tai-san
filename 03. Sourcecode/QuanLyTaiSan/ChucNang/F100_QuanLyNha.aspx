@@ -156,7 +156,7 @@
                         <td>
                         </td>
                         <td>
-                        GIÁ TRỊ THEO SỔ KẾ TOÁn
+                        GIÁ TRỊ THEO SỔ KẾ TOÁN
                         </td>
                         <td>
                         </td>
@@ -240,7 +240,7 @@
                             <span class="cssManField">Diện tích xây dựng (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_dien_tich_xay_dung" runat="server" CssClass="cssTextBox cssNumber"
+                            <asp:TextBox ID="m_txt_dien_tich_xay_dung" runat="server" CssClass="cssTextBox csscurrency"
                                 Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -253,7 +253,7 @@
                             <span class="cssManField">Tổng diện tích sàn xây dựng (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_tong_dien_tich_xay_dung" runat="server" CssClass="cssTextBox cssNumber"
+                            <asp:TextBox ID="m_txt_tong_dien_tich_xay_dung" runat="server" CssClass="cssTextBox csscurrency"
                                 Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -287,7 +287,7 @@
                             <span class="cssManField">Trụ sở làm việc (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_tru_so_lam_viec" runat="server" CssClass="cssTextBox cssNumber"
+                            <asp:TextBox ID="m_txt_tru_so_lam_viec" runat="server" CssClass="cssTextBox csscurrency"
                                 Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -298,7 +298,7 @@
                             <span class="cssManField">Cơ sở HĐSN (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_co_so_hdsn" runat="server" CssClass="cssTextBox cssNumber"
+                            <asp:TextBox ID="m_txt_co_so_hdsn" runat="server" CssClass="cssTextBox csscurrency"
                                 Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -311,7 +311,7 @@
                             <span class="cssManField">Làm nhà ở (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_lam_nha_o" runat="server" CssClass="cssTextBox cssNumber"
+                            <asp:TextBox ID="m_txt_lam_nha_o" runat="server" CssClass="cssTextBox csscurrency"
                                 Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -322,7 +322,7 @@
                             <span class="cssManField">Cho thuê (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_cho_thue" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
+                            <asp:TextBox ID="m_txt_cho_thue" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -335,7 +335,7 @@
                             <span class="cssManField">Bỏ trống (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_bo_trong" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
+                            <asp:TextBox ID="m_txt_bo_trong" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -346,7 +346,7 @@
                             <span class="cssManField">Bị lấn chiếm (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_bi_lan_chiem" runat="server" CssClass="cssTextBox cssNumber"
+                            <asp:TextBox ID="m_txt_bi_lan_chiem" runat="server" CssClass="cssTextBox csscurrency"
                                 Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -359,7 +359,7 @@
                             <span class="cssManField">Khác (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
+                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -442,7 +442,7 @@
             <td align="right">
             </td>
             <td align="left">
-                <asp:Label ID="m_lbl_thong_bao" Visible="false" runat="server" CssClass="cssManField" />
+                <asp:Label ID="m_lbl_thong_bao" Visible="false" runat="server" CssClass="cssManField"/>
             </td>
             <td align="left">
             </td>
@@ -464,7 +464,7 @@
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Sửa">
+                        <asp:TemplateField HeaderText="Sửa" ItemStyle-Width="2%">
                             <ItemTemplate>
                                 <asp:LinkButton ID="m_lbt_edit" runat="server" CommandName="EditComp" ToolTip="Sửa"
                                     CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
@@ -483,11 +483,11 @@
                         <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
                         <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
                             ItemStyle-HorizontalAlign="Center" />
-                        <asp:TemplateField HeaderStyle-Width="20%">
+                        <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="4" width="100%" style="border-collapse: collapse;">
                                     <tr>
-                                        <td colspan="3">
+                                        <td colspan="3" style="height: 20px">
                                             Giá trị theo sổ kế toán
                                         </td>
                                     </tr>
@@ -495,7 +495,7 @@
                                         <td colspan="2">
                                             Nguyên giá
                                         </td>
-                                        <td rowspan="2" style="width: 33%">
+                                        <td rowspan="2" style="width: 33%;">
                                             Giá trị còn lại
                                         </td>
                                     </tr>
@@ -513,13 +513,13 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                     text-align: right">
                                     <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                        <%# Eval("NGUON_NS", "{0:0,000.00}")%>
+                                        <%# Eval("NGUON_NS", "{0:#,###.00}")%>
                                     </td>
                                     <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                        <%# Eval("NGUON_KHAC", "{0:0,000.00}")%>
+                                        <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
                                     </td>
                                     <td style="width: 33%; height: 50px;">
-                                        <%# Eval("GIA_TRI_CON_LAI", "{0:0,000.00}")%>
+                                        <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
                                     </td>
                                 </table>
                             </ItemTemplate>
@@ -527,7 +527,7 @@
                         <asp:BoundField HeaderText="Số tầng" DataField="SO_TANG" ItemStyle-HorizontalAlign="Center" />
                         <asp:BoundField HeaderText="DT xây dựng" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right" />
                         <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" />
-                        <asp:TemplateField ItemStyle-CssClass="">
+                        <asp:TemplateField HeaderStyle-Height="75px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
@@ -570,25 +570,25 @@
                                     border-collapse: collapse;">
                                     <tr>
                                         <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("TRU_SO_LAM_VIEC", "{0:#,###}")%>
+                                            <%# Eval("TRU_SO_LAM_VIEC", "{0:#,###.##}")%>
                                         </td>
                                         <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("CO_SO_HDSN", "{0:#,###}")%>
+                                            <%# Eval("CO_SO_HDSN", "{0:#,###.##}")%>
                                         </td>
                                         <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("LAM_NHA_O", "{0:#,###}")%>
+                                            <%# Eval("LAM_NHA_O", "{0:#,###.##}")%>
                                         </td>
                                         <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("CHO_THUE", "{0:#,###}")%>
+                                            <%# Eval("CHO_THUE", "{0:#,###.##}")%>
                                         </td>
                                         <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("BO_TRONG", "{0:#,###}")%>
+                                            <%# Eval("BO_TRONG", "{0:#,###.##}")%>
                                         </td>
                                         <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("BI_LAN_CHIEM", "{0:#,###}")%>
+                                            <%# Eval("BI_LAN_CHIEM", "{0:#,###.##}")%>
                                         </td>
                                         <td style="width: 14%">
-                                            <%# Eval("KHAC", "{0:#,###}")%>
+                                            <%# Eval("KHAC", "{0:#,###.##}")%>
                                         </td>
                                     </tr>
                                 </table>
