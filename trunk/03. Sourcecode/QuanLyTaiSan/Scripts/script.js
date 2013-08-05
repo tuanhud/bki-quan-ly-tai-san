@@ -41,3 +41,28 @@ function getNumber(ip_str_number) {
         ip_str_number = "0";
     return ip_str_number;
 }
+
+function pageLoad(sender, args) {
+    if (args.get_isPartialLoad()) {
+        //Thu gọn/mở rộng giao diện
+        $(".initial-expand").hide();
+
+        $("td.cssPageTitleBG").click(function () {
+            $(this).children(".expand-collapse-text").toggle();
+            $(this).parent("tr").siblings("tr").toggle();
+        });
+
+        //Content boxes expand/collapse 2
+        /*$("span.expand-collapse-text").click(function () {
+        $(this).toggle();
+        $(this).siblings(".expand-collapse-text").toggle();
+        $(this).parent("td").parent("tr").siblings("tr").slideToggle();
+        });*/
+
+        //Định dạng chuối ký tự kiểu tiền tệ
+        $(".csscurrency").bind({
+            blur: function () { $(this).val(getFormatedNumberString($(this).val())); },
+            focus: function () { $(this).val(getNumber($(this).val())); }
+        });
+    }
+}
