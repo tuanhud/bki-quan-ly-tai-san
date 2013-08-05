@@ -48,7 +48,7 @@
                 </asp:DropDownList>
             </td>
             <td align="right">
-                <span class="cssManField">Địa chỉ: </span>
+                <span class="cssManField">Địa chỉ đất: </span>
             </td>
             <td>
                 <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="90%" TabIndex="4">
@@ -252,7 +252,7 @@
                     <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue" >
                     
                     </asp:Label>
-                    <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VNĐ</span>
+                    <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ngàn đồng</span>
                 </td>
                 <td colspan="1">
                 </td>
@@ -306,7 +306,7 @@
                                         <td colspan="3">
                                             GIÁ TRỊ THEO SỔ KẾ TOÁN
                                             <br />
-                                            (VNĐ)
+                                            (ngàn đồng)
                                         </td>
                                     </tr>
                                     <tr>

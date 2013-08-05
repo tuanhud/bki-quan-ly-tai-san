@@ -57,6 +57,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             m_cbo_bo_tinh.DataValueField = CIPConvert.ToStr(DM_DON_VI.ID);
             m_cbo_bo_tinh.DataTextField = CIPConvert.ToStr(DM_DON_VI.TEN_DON_VI);
             m_cbo_bo_tinh.DataBind();
+            load_data_to_cbo_don_vi_chu_quan();
           
         }
         catch (System.Exception ex)
