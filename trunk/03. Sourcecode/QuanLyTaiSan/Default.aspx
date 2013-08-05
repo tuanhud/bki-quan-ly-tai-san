@@ -24,7 +24,7 @@
 
     <div style="clip: rect(auto, auto, auto, auto); margin-left: 5%; padding-right: 5%;" >
      
-     <table width = "100%" >
+     <table width = "315px" >
         <tr class="title_ttql">
             <td >
               THÔNG TIN QUẢN LÝ  
@@ -32,10 +32,6 @@
         </tr>
      </table>
      
-     
-
-     
-        
     <!-- Bang Dat -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tbody>
@@ -114,6 +110,46 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai đất</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
+                                                        23:17:05</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao đất</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
+                                                        23:22:17</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>  
+                          
+                        </tbody>
+                    </table>
+                </td>
+                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
+                    valign="top">
+                    <table id="Table6" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
                                                     <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý đất</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
@@ -140,63 +176,7 @@
                                     </table>
                                 </td>
                             </tr>
-                          
-                        </tbody>
-                    </table>
-                </td>
-                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
-                    valign="top">
-                    <table id="Table6" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
-                        <tbody>
                             
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai đất</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
-                                                        23:17:05</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý đất</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:27:22</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao đất</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:22:17</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </td>
@@ -276,6 +256,46 @@
                                     </table>
                                 </td>
                             </tr>
+                             <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai nhà</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
+                                                        23:17:05</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao nhà</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
+                                                        23:22:17</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </td>
+                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
+                    valign="top">
+                    <table id="Table4" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
+                        <tbody>
                             <tr>
                                 <td>
                                     <table cellpadding="0" cellspacing="0" width="100%">
@@ -309,62 +329,6 @@
                                 </td>
                             </tr>
                           
-                        </tbody>
-                    </table>
-                </td>
-                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
-                    valign="top">
-                    <table id="Table4" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
-                        <tbody>
-                            
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai nhà</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
-                                                        23:17:05</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý nhà</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:27:22</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao nhà</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:22:17</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </td>
@@ -450,6 +414,47 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai Oto</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
+                                                        23:17:05</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao Oto</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
+                                                        23:22:17</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </td>
+
+                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
+                    valign="top">
+                    <table id="Table7" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
+                        <tbody>
+                        <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
                                                     <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý Oto</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
@@ -476,63 +481,7 @@
                                     </table>
                                 </td>
                             </tr>
-                           
-                        </tbody>
-                    </table>
-                </td>
-
-                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
-                    valign="top">
-                    <table id="Table7" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai Oto</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
-                                                        23:17:05</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý Oto</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:27:22</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao Oto</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:22:17</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </td>
@@ -618,6 +567,46 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai tài sản khác</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
+                                                        23:17:05</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao tài sản khác</a>
+                                                    <br>
+                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
+                                                        23:22:17</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+
+                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
+                    valign="top">
+                    <table id="Table8" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="OtherNews_td">
                                                     <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý tài sản khác</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
@@ -639,63 +628,6 @@
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         14:10:57</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                          
-                        </tbody>
-                    </table>
-                </td>
-
-                <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
-                    valign="top">
-                    <table id="Table8" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai tài sản khác</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
-                                                        23:17:05</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý tài sản khác</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:27:22</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao tài sản khác</a>
-                                                    <br>
-                                                    <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
-                                                        23:22:17</span>
                                                 </td>
                                             </tr>
                                         </tbody>
