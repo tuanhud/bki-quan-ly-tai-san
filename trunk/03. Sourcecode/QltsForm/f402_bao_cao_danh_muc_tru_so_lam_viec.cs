@@ -333,6 +333,7 @@ namespace QltsForm
             this.m_cbo_don_vi_su_dung.Name = "m_cbo_don_vi_su_dung";
             this.m_cbo_don_vi_su_dung.Size = new System.Drawing.Size(256, 22);
             this.m_cbo_don_vi_su_dung.TabIndex = 8;
+            //this.m_cbo_don_vi_su_dung.SelectedValueChanged -= new System.EventHandler(this.m_cbo_don_vi_su_dung_SelectedValueChanged);
             this.m_cbo_don_vi_su_dung.SelectedValueChanged += new System.EventHandler(this.m_cbo_don_vi_su_dung_SelectedValueChanged);
             // 
             // m_cbo_don_vi_chu_quan
@@ -342,6 +343,7 @@ namespace QltsForm
             this.m_cbo_don_vi_chu_quan.Name = "m_cbo_don_vi_chu_quan";
             this.m_cbo_don_vi_chu_quan.Size = new System.Drawing.Size(256, 22);
             this.m_cbo_don_vi_chu_quan.TabIndex = 8;
+            // this.m_cbo_don_vi_chu_quan.SelectedValueChanged -= new System.EventHandler(this.m_cbo_don_vi_chu_quan_SelectedValueChanged);
             this.m_cbo_don_vi_chu_quan.SelectedValueChanged += new System.EventHandler(this.m_cbo_don_vi_chu_quan_SelectedValueChanged);
             // 
             // m_cbo_bo_tinh
@@ -352,6 +354,7 @@ namespace QltsForm
             this.m_cbo_bo_tinh.Size = new System.Drawing.Size(256, 22);
             this.m_cbo_bo_tinh.TabIndex = 8;
             this.m_cbo_bo_tinh.SelectedValueChanged += new System.EventHandler(this.m_cbo_bo_tinh_SelectedValueChanged);
+            // this.m_cbo_bo_tinh.SelectedValueChanged -= new System.EventHandler(this.m_cbo_bo_tinh_SelectedValueChanged);
             // 
             // m_lbl_ten_bao_cao
             // 
@@ -707,15 +710,14 @@ namespace QltsForm
 
         #region Members
         ITransferDataRow m_obj_trans;
-        DS_DM_DON_VI m_ds_dm_don_vi = new DS_DM_DON_VI();
-        US_DM_DON_VI m_us_dm_don_vi = new US_DM_DON_VI();
+
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-        DS_V_DM_NHA m_ds = new DS_V_DM_NHA();
-        US_V_DM_NHA m_us = new US_V_DM_NHA();
+        DS_DM_NHA m_ds = new DS_DM_NHA();
+        US_DM_NHA m_us = new US_DM_NHA();
         DS_DM_DAT m_ds_dm_dat = new DS_DM_DAT();
         US_DM_DAT m_us_dm_dat = new US_DM_DAT();
-       // eFormMode m_e_form_mode = eFormMode.DANH_MUC_TRU_SU_LAM_VIEC;
+        // eFormMode m_e_form_mode = eFormMode.DANH_MUC_TRU_SU_LAM_VIEC;
         #endregion
 
         #region Private Methods
@@ -730,10 +732,14 @@ namespace QltsForm
         {
             try
             {
-                m_us_dm_don_vi.FillDataset(m_ds_dm_don_vi, "where id_loai_don_vi = " + ID_LOAI_DON_VI.BO_TINH);
-                m_cbo_bo_tinh.DataSource = m_ds_dm_don_vi.DM_DON_VI;
-                m_cbo_bo_tinh.DisplayMember = DM_DON_VI.TEN_DON_VI;
+                DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+                US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "WHERE ID_LOAI_DON_VI = 574");
+                m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
                 m_cbo_bo_tinh.ValueMember = DM_DON_VI.ID;
+                m_cbo_bo_tinh.DisplayMember = DM_DON_VI.TEN_DON_VI;
+                
+                
 
             }
             catch (System.Exception ex)
@@ -745,11 +751,21 @@ namespace QltsForm
         {
             try
             {
-                m_us_dm_don_vi.FillDataset(m_ds_dm_don_vi, "where ID_LOAI_DON_VI = 575 and ID_DON_VI_CAP_TREN LIKE = "
-            + m_cbo_bo_tinh.SelectedValue);
-                m_cbo_don_vi_chu_quan.DataSource = m_ds_dm_don_vi.DM_DON_VI;
-                m_cbo_don_vi_chu_quan.DisplayMember = DM_DON_VI.TEN_DON_VI;
+                if (m_cbo_bo_tinh.SelectedValue == null)
+                {
+                    m_cbo_don_vi_chu_quan.DataSource = null;
+                    m_cbo_don_vi_su_dung.DataSource = null;
+                    m_cbo_dia_chi.DataSource = null;
+                    return;
+                }
+                DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+                US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+
+                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 575 and ID_DON_VI_CAP_TREN  = " + CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue));
+                m_cbo_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
                 m_cbo_don_vi_chu_quan.ValueMember = DM_DON_VI.ID;
+                m_cbo_don_vi_chu_quan.DisplayMember = DM_DON_VI.TEN_DON_VI;
+
             }
             catch (System.Exception ex)
             {
@@ -760,8 +776,17 @@ namespace QltsForm
         {
             try
             {
-                m_us_dm_don_vi.FillDataset(m_ds_dm_don_vi, "where ID_LOAI_DON_VI = 576 and ID_DON_VI_CAP_TREN = " + m_cbo_don_vi_chu_quan.SelectedValue);
-                m_cbo_don_vi_su_dung.DataSource = m_ds_dm_don_vi.DM_DON_VI;
+                if (m_cbo_don_vi_chu_quan.SelectedValue == null)
+                {
+                    m_cbo_don_vi_su_dung.DataSource = null;
+                    m_cbo_dia_chi.DataSource = null;
+                    return;
+
+                }
+                DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+                US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 576 and ID_DON_VI_CAP_TREN = " + CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue));
+                m_cbo_don_vi_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
                 m_cbo_don_vi_su_dung.DisplayMember = DM_DON_VI.TEN_DON_VI;
                 m_cbo_don_vi_su_dung.ValueMember = DM_DON_VI.ID;
             }
@@ -774,8 +799,13 @@ namespace QltsForm
         {
             try
             {
-                m_us_dm_dat.FillDataset(m_ds_dm_dat,"where ID_DON_VI_CHU_QUAN = " + m_cbo_don_vi_chu_quan.SelectedValue +
-            " and id_don_vi_su_dung = " + m_cbo_don_vi_su_dung.SelectedValue );
+                if (m_cbo_don_vi_chu_quan.SelectedValue == null || m_cbo_don_vi_su_dung.SelectedValue == null)
+                {
+                    m_cbo_dia_chi.DataSource = null;
+                    return;
+                }
+                m_us_dm_dat.FillDataset(m_ds_dm_dat, "where ID_DON_VI_CHU_QUAN = " + CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue) +
+            " and id_don_vi_su_dung = " + CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue));
                 m_cbo_dia_chi.DataSource = m_ds_dm_dat.DM_DAT;
                 m_cbo_dia_chi.DisplayMember = DM_DAT.DIA_CHI;
                 m_cbo_dia_chi.ValueMember = DM_DAT.ID;
@@ -803,10 +833,10 @@ namespace QltsForm
         {
             m_obj_trans = get_trans_object(m_fg);
             load_data_to_cbo_bo_tinh();
-            //load_data_to_cbo_don_vi_chu_quan();
-            //load_data_to_cbo_don_vi_su_dung();
-            //load_data_to_cbo_trang_thai();
-            //load_data_2_grid();
+            load_data_to_cbo_don_vi_chu_quan();
+            load_data_to_cbo_don_vi_su_dung();
+            load_data_to_cbo_trang_thai();
+            load_data_2_grid();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -830,18 +860,18 @@ namespace QltsForm
             v_htb.Add(V_DM_NHA.TONG_DT_SAU_XD, e_col_Number.TONG_DT_SAU_XD);
             v_htb.Add(V_DM_NHA.NGUON_KHAC, e_col_Number.NGUON_KHAC);
 
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_NHA.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.DM_NHA.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
-            m_ds = new DS_V_DM_NHA();
+            m_ds = new DS_DM_NHA();
             m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
         }
-        private void grid2us_object(US_V_DM_NHA i_us
+        private void grid2us_object(US_DM_NHA i_us
             , int i_grid_row)
         {
             DataRow v_dr;
@@ -882,7 +912,7 @@ namespace QltsForm
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
-            US_V_DM_NHA v_us = new US_V_DM_NHA();
+            US_DM_NHA v_us = new US_DM_NHA();
             grid2us_object(v_us, m_fg.Row);
             try
             {
@@ -1034,10 +1064,10 @@ namespace QltsForm
 
         private void m_cbo_don_vi_su_dung_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
             try
             {
-                load_data_to_cbo_dia_chi_dat();
+                //load_data_to_cbo_dia_chi_dat();
             }
             catch (System.Exception ex)
             {
