@@ -107,7 +107,7 @@
                                         <td colspan="3" style="height:35px">
                                             GIÁ TRỊ THEO SỔ KẾ TOÁN
                                             <br />
-                                            (VNĐ)
+                                            (ngàn đồng)
                                         </td>
                                     </tr>
                                     <tr>
