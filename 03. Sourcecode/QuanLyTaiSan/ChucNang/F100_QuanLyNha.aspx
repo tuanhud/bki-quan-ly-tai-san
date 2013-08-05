@@ -511,13 +511,13 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                     text-align: right">
                                     <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                        <%# Eval("NGUON_NS", "{0:#,###.00}")%>
+                                        <%# Eval("NGUON_NS", "{0:#,##0.00}")%>
                                     </td>
                                     <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                        <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
+                                        <%# Eval("NGUON_KHAC", "{0:#,##0.00}")%>
                                     </td>
                                     <td style="width: 33%; height: 50px;">
-                                        <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
+                                        <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0.00}")%>
                                     </td>
                                 </table>
                             </ItemTemplate>
@@ -568,25 +568,25 @@
                                     border-collapse: collapse;">
                                     <tr>
                                         <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("TRU_SO_LAM_VIEC", "{0:#,###.##}")%>
+                                            <%# Eval("TRU_SO_LAM_VIEC", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("CO_SO_HDSN", "{0:#,###.##}")%>
+                                        <td style="width: 14%;border-right: 1px solid gray;">
+                                            <%# Eval("CO_SO_HDSN", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("LAM_NHA_O", "{0:#,###.##}")%>
+                                        <td style="width: 14%; border-right: 1px solid gray;">
+                                            <%# Eval("LAM_NHA_O", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("CHO_THUE", "{0:#,###.##}")%>
+                                        <td style="width: 14%;border-right: 1px solid gray;">
+                                            <%# Eval("CHO_THUE", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("BO_TRONG", "{0:#,###.##}")%>
+                                        <td style="width: 14%;border-right: 1px solid gray;">
+                                            <%# Eval("BO_TRONG", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                            <%# Eval("BI_LAN_CHIEM", "{0:#,###.##}")%>
+                                        <td style="width: 14%;border-right: 1px solid gray;">
+                                            <%# Eval("BI_LAN_CHIEM", "{0:#,##0.00}")%>
                                         </td>
                                         <td style="width: 14%">
-                                            <%# Eval("KHAC", "{0:#,###.##}")%>
+                                            <%# Eval("KHAC", "{0:#,##0.00}")%>
                                         </td>
                                     </tr>
                                 </table>
