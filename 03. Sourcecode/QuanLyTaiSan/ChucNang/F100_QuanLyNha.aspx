@@ -509,12 +509,11 @@
                                     </tr>
                                 </table>
                             </HeaderTemplate>
-                            <ItemStyle Height="60px" />
                             <ItemTemplate>
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                     text-align: right">
                                     <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                        <%# Eval("NGUON_NS","{0:0,000.00}") %>
+                                        <%# Eval("NGUON_NS", "{0:0,000.00}")%>
                                     </td>
                                     <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
                                         <%# Eval("NGUON_KHAC", "{0:0,000.00}")%>
