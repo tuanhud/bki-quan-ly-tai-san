@@ -11,7 +11,7 @@
     <table cellspacing="0" cellpadding="2" style="width:99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
-                <span class="cssPageTitle">Quản lý nhà</span> <span class="expand-collapse-text initial-expand">
+                <span class="cssPageTitle">Quản lý tài sản khác</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
@@ -361,7 +361,7 @@
                 <span class="cssManField">Từ khóa</span>
             </td>
             <td align="left" style="width: 30%">
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
             </td>
             <td align="left">
             </td>
@@ -373,7 +373,7 @@
             </td>
             <td align="left">
                 <asp:Button ID="Button1" runat="server" AccessKey="s" CssClass="cssButton"
-                    Height="24px" Text="Tìm kiếm" Width="98px"/>
+                    Height="24px" Text="Tìm kiếm" Width="98px" onclick="Button1_Click"/>
             </td>
             <td align="left">
                 <asp:Button ID="Button2" runat="server" CausesValidation="False" CssClass="cssButton"
@@ -395,11 +395,11 @@
         </tr>	
 	<tr>
 		<td align="center" colspan="4" style="height:450px;" valign="top">
-		    <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                    Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-                    PageSize="15" ShowHeader="true" 
+		    <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False" 
+                    Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
+                    PageSize="15" ShowHeader="true"
                 onrowupdating="m_grv_tai_san_khac_RowUpdating" 
-                onrowdeleting="m_grv_tai_san_khac_RowDeleting">
+                onrowdeleting="m_grv_tai_san_khac_RowDeleting" EmptyDataText="Không có dữ liệu.">
                     <Columns>
                     <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>
@@ -425,16 +425,16 @@
                         <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl=""/>
                         <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU"/>
                         <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT"/>
-                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT"/>
-                        <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG"/>
-                        <asp:TemplateField>
+                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Right"/>
+                        <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Right"/>
+                        <asp:TemplateField HeaderStyle-Width="25%">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="3" width="100%">
                                 	<tr>
                                 		<td colspan="3">Giá trị theo sổ kế toán</td>
                                 	</tr>
                                     <tr>
-                                        <td colspan="2" style = "width: 66%">Nguyên giá</td>
+                                        <td colspan="2" style = "width: 66%; height:24px">Nguyên giá</td>
                                         <td rowspan="2" style = "width: 33%">Giá trị còn lại</td>
                                     </tr>
                                     <tr>
@@ -445,18 +445,18 @@
                             </HeaderTemplate>
                             <HeaderStyle CssClass=""/>
                             <ItemTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                 	<tr>
-                                		<td style = "width: 33%"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
-                                        <td style = "width: 33%"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
-                                        <td style = "width: 33%"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
+                                		<td style = "width: 33%; border-right: 1px solid gray "; align="right";><%# Eval("NGUON_NS", "{0:#,###}")%></td>
+                                        <td style = "width: 33%; border-right: 1px solid gray "; align="right";><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
+                                        <td style = "width: 33%; border-right: 1px solid gray "; align="right";><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse">
                                 	<tr>
                                 		<td colspan="7">Hiện trạng sử dụng</td>
                                 	</tr>
@@ -472,12 +472,12 @@
                                 </table>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse">
                                 	<tr>
-                                		<td style = "width: 25%"><%# Eval("QLNN") %></td>
-                                        <td style = "width: 25%"><%# Eval("KINH_DOANH") %></td>
-                                        <td style = "width: 25%"><%# Eval("KHONG_KINH_DOANH") %></td>
-                                        <td style = "width: 25%"><%# Eval("HD_KHAC") %></td>
+                                		<td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("QLNN") %></td>
+                                        <td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("KINH_DOANH") %></td>
+                                        <td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("KHONG_KINH_DOANH") %></td>
+                                        <td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("HD_KHAC") %></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>
@@ -496,7 +496,7 @@
         </td>
 	</tr>
 </table>
-</ContentTemplate>
+    </ContentTemplate>
     </asp:UpdatePanel>
 </div>
 </asp:Content>

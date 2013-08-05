@@ -95,7 +95,6 @@ public partial class Default2 : System.Web.UI.Page
     }
     private void us_object_2_form(US_DM_TAI_SAN_KHAC ip_us_m_dm_tai_san_khac)
     {
-        reset_control();
         hdf_id.Value = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID);
         m_txt_ten_tai_san.Text = ip_us_m_dm_tai_san_khac.strTEN_TAI_SAN;
         m_cbo_don_vi_chu_quan.SelectedValue = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID_DON_VI_CHU_QUAN);
@@ -119,9 +118,16 @@ public partial class Default2 : System.Web.UI.Page
         hdf_id.Value = CIPConvert.ToStr(dc_id_tai_san_khac);
         m_us_tai_san_khac = new US_DM_TAI_SAN_KHAC(dc_id_tai_san_khac);
     }
-    private void reset_control()
+    private void load_data_trang_thai()
     {
-       
+        DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+        US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+
+        v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_NHA", CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
+        m_cbo_trang_thai_tai_san.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+        m_cbo_trang_thai_tai_san.DataTextField = "TEN";
+        m_cbo_trang_thai_tai_san.DataValueField = "ID";
+        m_cbo_trang_thai_tai_san.DataBind();
     }
     #endregion
     protected void Page_Load(object sender, EventArgs e)
@@ -220,5 +226,12 @@ public partial class Default2 : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(v_e);
         }
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        m_us_tai_san_khac.search(m_txt_tim_kiem.Text, m_ds_tai_san_khac);
+        m_grv_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
+        m_grv_tai_san_khac.DataBind();
     }
 }
