@@ -427,13 +427,13 @@
                         <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl=""/>
                         <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU"/>
                         <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT"/>
-                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:TemplateField HeaderStyle-Width="25%">
+                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="3" width="100%">
                                 	<tr>
-                                		<td colspan="3">Giá trị theo sổ kế toán</td>
+                                		<td colspan="3" style="height:35px">Giá trị theo sổ kế toán</td>
                                 	</tr>
                                     <tr>
                                         <td colspan="2" style = "width: 66%; height:24px">Nguyên giá</td>
@@ -449,9 +449,9 @@
                             <ItemTemplate>
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                 	<tr>
-                                		<td style = "width: 33%; border-right: 1px solid gray "; align="right";><%# Eval("NGUON_NS", "{0:#,###}")%></td>
-                                        <td style = "width: 33%; border-right: 1px solid gray "; align="right";><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
-                                        <td style = "width: 33%; border-right: 1px solid gray "; align="right";><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
+                                		<td style = "width: 33% ; border-right:solid; border-right-width:1px" height="40px" align="right"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
+                                        <td style = "width: 33% ; border-right:solid; border-right-width:1px" align="right"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
+                                        <td style = "width: 33% ; border-right:solid; border-right-width:1px" align="right"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>
@@ -460,7 +460,7 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse">
                                 	<tr>
-                                		<td colspan="7">Hiện trạng sử dụng</td>
+                                		<td colspan="7" style="height:39px">Hiện trạng sử dụng</td>
                                 	</tr>
                                     <tr>
                                         <td rowspan="2" style = "width: 25%">Quản lý nhà nước</td>
@@ -476,10 +476,10 @@
                             <ItemTemplate>
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse">
                                 	<tr>
-                                		<td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("QLNN") %></td>
-                                        <td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("KINH_DOANH") %></td>
-                                        <td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("KHONG_KINH_DOANH") %></td>
-                                        <td style = "width: 25%; border-right: 1px solid gray "; align="right";><%# Eval("HD_KHAC") %></td>
+                                		<td style = "width: 25% ; border-right:solid; border-right-width:1px" height="40px" align="right"><%# Eval("QLNN") %></td>
+                                        <td style = "width: 25% ; border-right:solid; border-right-width:1px" align="right"><%# Eval("KINH_DOANH") %></td>
+                                        <td style = "width: 25% ; border-right:solid; border-right-width:1px" align="right"><%# Eval("KHONG_KINH_DOANH") %></td>
+                                        <td style = "width: 25% ; border-right:solid; border-right-width:1px" align="right"><%# Eval("HD_KHAC") %></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>

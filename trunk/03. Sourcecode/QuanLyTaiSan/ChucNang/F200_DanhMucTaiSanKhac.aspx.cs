@@ -100,13 +100,14 @@ public partial class Default2 : System.Web.UI.Page
         m_cbo_don_vi_chu_quan.SelectedValue = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID_DON_VI_CHU_QUAN);
         m_cbo_don_vi_su_dung.SelectedValue = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID_DON_VI_SU_DUNG);
         m_cbo_trang_thai_tai_san.SelectedValue = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID_TRANG_THAI);
+        m_txt_ma_tai_san.Text = ip_us_m_dm_tai_san_khac.strMA_TAI_SAN;
         m_txt_ky_hieu.Text = ip_us_m_dm_tai_san_khac.strKY_HIEU;
         m_txt_nuoc_sx.Text = ip_us_m_dm_tai_san_khac.strNUOC_SAN_XUAT;
         m_txt_nam_sx.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNAM_SAN_XUAT);
         m_txt_ngay_su_dung.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNAM_SU_DUNG);
-        m_txt_nguyen_gia_nguon_ns.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_NS);
-        m_txt_nguyen_gia_nguon_khac.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_KHAC);
-        m_txt_gia_tri_con_lai.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcGIA_TRI_CON_LAI);
+        m_txt_nguyen_gia_nguon_ns.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_NS, "#,##0.00");
+        m_txt_nguyen_gia_nguon_khac.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_KHAC, "#,##0.00");
+        m_txt_gia_tri_con_lai.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcGIA_TRI_CON_LAI, "#,##0.00");
         m_txt_quan_ly_nha_nuoc.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcQLNN);
         m_txt_kinh_doanh.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcKINH_DOANH);
         m_txt_khong_kinh_doanh.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcKHONG_KINH_DOANH);
@@ -128,6 +129,21 @@ public partial class Default2 : System.Web.UI.Page
         m_cbo_trang_thai_tai_san.DataTextField = "TEN";
         m_cbo_trang_thai_tai_san.DataValueField = "ID";
         m_cbo_trang_thai_tai_san.DataBind();
+    }
+    private void reset_control()
+    {
+        m_txt_ma_tai_san.Text = "";
+        m_txt_ky_hieu.Text = "";
+        m_txt_nuoc_sx.Text = "";
+        m_txt_nam_sx.Text = "";
+        m_txt_ngay_su_dung.Text = "";
+        m_txt_nguyen_gia_nguon_ns.Text = "";
+        m_txt_nguyen_gia_nguon_khac.Text = "";
+        m_txt_gia_tri_con_lai.Text = "";
+        m_txt_quan_ly_nha_nuoc.Text = "";
+        m_txt_kinh_doanh.Text = "";
+        m_txt_khong_kinh_doanh.Text = "";
+        m_txt_khac.Text = "";
     }
     #endregion
     protected void Page_Load(object sender, EventArgs e)
@@ -159,11 +175,12 @@ public partial class Default2 : System.Web.UI.Page
                 m_lbl_mess.Text = "Chua chon dong de cap nhat";
                 return;
             }
-            form_2_us_object();
+            form_2_us_object(); 
             m_us_tai_san_khac.dcID = CIPConvert.ToDecimal(hdf_id.Value);
             m_us_tai_san_khac.Update();
             load_data_2_grid();
             hdf_id.Value = "";
+            reset_control();
         }
         catch (Exception v_e)
         {
