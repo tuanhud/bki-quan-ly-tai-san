@@ -75,7 +75,7 @@
             <td colspan="12">
                 <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False" EmptyDataText="Không có dữ liệu phù hợp!"
                     Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    PageSize="5" onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging">
+                    PageSize="20" onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging">
                     <Columns>
                         <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
                             NavigateUrl="" />
@@ -92,25 +92,25 @@
                             <ItemStyle HorizontalAlign="center" />
                         </asp:BoundField>
                        
-                        <asp:TemplateField HeaderStyle-Width="18%">
+                        <asp:TemplateField HeaderStyle-Width="20%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="0" width="100%" style="border-collapse:collapse">
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse">
                                     <tr>
-                                        <td colspan="3">
+                                        <td colspan="3" style="height:35px">
                                             GIÁ TRỊ THEO SỔ KẾ TOÁN
                                             <br />
                                             (VNĐ)
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" rowspan="1">
+                                        <td colspan="2" rowspan="1" style="height: 27px;">
                                             Nguyên giá
-                                        <td rowspan="2" style="width: 33.33%">
+                                        <td rowspan="2" style="width: 33.33%; height: 57px;">
                                             Giá trị còn lại
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 33.33%">
+                                        <td style="width: 33.33%;">
                                             Nguồn NS
                                         </td>
                                         <td style="width: 33.33%">
@@ -119,41 +119,40 @@
                                     </tr>
                                 </table>
                             </HeaderTemplate>
-                            <HeaderStyle CssClass="" />
                             <ItemTemplate>
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
+                                        <td style="width: 33.33%;border-right:1px solid gray; height: 45px" align="right">
+                                            <%# Eval("NGUON_NS", "{0:0,000.00}")%>
+                                        </td>
                                         <td style="width: 33.33%;border-right:1px solid gray" align="right">
-                                            <%# Eval("NGUON_NS", "{0:#,###.00}")%>
+                                            <%# Eval("NGUON_KHAC", "{0:0,000.00}")%>
                                         </td>
-                                        <td style="width: 33.33%;border-right:1px solid gray"" align="right">
-                                            <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
-                                        </td>
-                                        <td style="width: 33.33%;border-right:1px solid gray"" align="right">
-                                            <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
+                                        <td style="width: 33.33%;" align="right">
+                                            <%# Eval("GIA_TRI_CON_LAI", "{0:0,000.00}")%>
                                         </td>
                                     </tr>
                                 </table>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderStyle-Width="12%">
+                        <asp:TemplateField HeaderStyle-Width="12%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%"  style="border-collapse:collapse">
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%"  style="border-collapse:collapse">
                                     <tr>
-                                        <td colspan="4">
+                                        <td colspan="4" style="height:35px">
                                             HIỆN TRẠNG SỬ DỤNG
                                             <br />
                                             (cái, chiếc)
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td rowspan="2" colspan="1" style="width: 25%">
+                                        <td rowspan="2" colspan="1" style="width: 25%; height:57px">
                                             QLNN
                                         </td>
                                         <td rowspan="1" colspan="2">
                                             HĐ sự nghiệp
                                         </td>
-                                        <td colspan="1" rowspan="2" style="width: 25%">
+                                        <td colspan="1" rowspan="2" style="width: 25%;">
                                             HĐ khác
                                         </td>
                                     </tr>
@@ -169,18 +168,18 @@
                             </HeaderTemplate>
                             <HeaderStyle CssClass="" />
                             <ItemTemplate>
-                                <table border="0" cellspacing="2"  width="100%">
+                                <table border="0" cellpadding="2" cellspacing="0" width="100%">
                                     <tr>
-                                        <td style="width: 25%;border-right:1px solid gray"" align="right">
+                                        <td style="width: 25%;border-right:1px solid gray; height:45px" align="right">
                                             <%# Eval("QLNN") %>
                                         </td>
-                                        <td style="width: 25%;border-right:1px solid gray"" align="right">
+                                        <td style="width: 25%;border-right:1px solid gray" align="right">
                                             <%# Eval("KINH_DOANH") %>
                                         </td>
-                                        <td style="width: 25%;border-right:1px solid gray"" align="right">
+                                        <td style="width: 25%;border-right:1px solid gray" align="right">
                                             <%# Eval("KHONG_KINH_DOANH") %>
                                         </td>
-                                        <td style="width: 25%;border-right:1px solid gray"" align="right">
+                                        <td style="width: 25%;border-right:1px solid gray" align="right">
                                             <%# Eval("HD_KHAC") %>
                                         </td>
                                     </tr>
