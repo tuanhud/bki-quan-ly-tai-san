@@ -111,11 +111,15 @@
                                     ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:HyperLinkField HeaderText="Tên tài sản" FooterText="Tổng cộng" DataTextField="TEN_TAI_SAN" NavigateUrl=""/>
+                        <asp:HyperLinkField HeaderText="Tên tài sản" FooterText="Tổng cộng" DataTextField="TEN_TAI_SAN" NavigateUrl="" HeaderStyle-Width="20%"/>
                         <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU"/>
-                        <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT"/>
-                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT"/>
-                        <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG"/>
+                        <%--<asp:TemplateField>
+                        <HeaderTemplate HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT"HeaderStyle-Width="3.5%"/></asp:TemplateField>--%>
+                        <asp:BoundField HeaderText="Năm sản xuất" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
+                        HeaderStyle-Width="3.5%">
+                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="năm sử dụng" DataField="NAM_SU_DUNG" HeaderStyle-Width="3.5%"/>
                         <asp:TemplateField>
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="3" width="100%">
@@ -149,10 +153,10 @@
                             </FooterTemplate>
                             <HeaderStyle CssClass=""/>
                             <ItemTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                 	<tr>
-                                		<td style = "width: 33%"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
-                                        <td style = "width: 33%"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
+                                		<td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
+                                        <td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
                                         <td style = "width: 33%"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
                                 	</tr>
                                 </table>
@@ -194,11 +198,11 @@
                                 </table>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                 	<tr>
-                                		<td style = "width: 25%"><%# Eval("QLNN") %></td>
-                                        <td style = "width: 25%"><%# Eval("KINH_DOANH") %></td>
-                                        <td style = "width: 25%"><%# Eval("KHONG_KINH_DOANH") %></td>
+                                		<td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("QLNN") %></td>
+                                        <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KINH_DOANH") %></td>
+                                        <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KHONG_KINH_DOANH") %></td>
                                         <td style = "width: 25%"><%# Eval("HD_KHAC") %></td>
                                 	</tr>
                                 </table>
