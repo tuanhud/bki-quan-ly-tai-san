@@ -15,23 +15,18 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-            try
+        try
+        {
+            if (!IsPostBack)
             {
-                
-                if (!IsPostBack)
-                {
-                    form_title();
-                    load_data_2_grid();
-                    if (m_txt_tim_kiem.Text == "")
-                        load_data_2_cbo_trang_thai_tai_san();
-                    else
-                        load_data_2_grid_for_search();
-                }
+                form_title();
+                load_data_to_cbo_bo_tinh();
             }
-            catch (Exception v_e)
-            {
-                throw v_e;
-            }
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
     }
     #region Member
     US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
@@ -71,12 +66,12 @@ public partial class Default2 : System.Web.UI.Page
             switch (id_loai_bao_cao)
             {
 
-                case "120":
-                    m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ) ĐỀ NGHỊ XỬ LÝ";
+                case "1":
+                    m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC";
 
                     break;
-                case "123":
-                    m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC";
+                case "2":
+                    m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ) ĐỀ NGHỊ XỬ LÝ";
 
                     break;
                 //case "3":
@@ -90,82 +85,169 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
-    private void load_data_2_grid_for_search()
+    private void load_data_to_grid()
     {
         try
         {
-            string cmd = "select * from DM_TAI_SAN_KHAC Where TEN_TAI_SAN like '%"+m_txt_tim_kiem.Text+
-                "%' or KY_HIEU like '%"+m_txt_tim_kiem.Text+
-                "%' or NUOC_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
-                "%' or NAM_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
-                "%' or NAM_SU_DUNG like '%"+m_txt_tim_kiem.Text+
-                "%'";
-            System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
-            m_us_tai_san_khac.FillDatasetByCommand(m_ds_tai_san_khac,command);
-            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
+            US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
+            DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
+            string id_loai_bao_cao = "";
+            if (Request.QueryString["ID"] != null)
+            {
+                id_loai_bao_cao = Request.QueryString["ID"];
+            }
+
+            switch (id_loai_bao_cao)
+            {
+                case "1":
+                    // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
+                    m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac,"where ID_DON_VI_SU_DUNG = " + m_cbo_don_vi_su_dung_tai_san.SelectedValue);
+                    break;
+                case "2":
+                    // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
+                    m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, " where ID_TRANG_THAI = " + ID_TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY);
+                    break;
+                //case "3":
+                //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
+                //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
+            }
+
+
+            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_tai_san_khac;
             m_grv_danh_sach_tai_san_khac.DataBind();
+
         }
-        catch (Exception v_e)
+        catch (System.Exception ex)
         {
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(ex);
         }
     }
-    private void load_data_2_grid()
+
+    private void load_data_to_cbo_bo_tinh()
     {
         try
         {
-            m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac);
-            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
-            m_grv_danh_sach_tai_san_khac.DataBind();
+            US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
+            DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
+            m_us_don_vi.FillDataset(m_ds_don_vi, "Where id_loai_don_vi = " + ID_LOAI_DON_VI.BO_TINH);
+            m_cbo_bo_tinh.DataSource = m_ds_don_vi.DM_DON_VI;
+            m_cbo_bo_tinh.DataValueField = CIPConvert.ToStr(DM_DON_VI.ID);
+            m_cbo_bo_tinh.DataTextField = CIPConvert.ToStr(DM_DON_VI.TEN_DON_VI);
+            m_cbo_bo_tinh.DataBind();
         }
-        catch (Exception v_e)
+        catch (System.Exception ex)
         {
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(ex);
         }
     }
-    private void load_data_2_grid_by_id_trang_thai()
+    private void load_data_to_cbo_don_vi_chu_quan()
     {
-        try
+        US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
+        DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
+        string v_id_bo_tinh = m_cbo_bo_tinh.SelectedValue;
+        m_us_don_vi.FillDataset(m_ds_don_vi, "where ID_LOAI_DON_VI = 575 and ID_DON_VI_CAP_TREN LIKE '%"
+            + v_id_bo_tinh + "%'");
+        if (m_ds_don_vi.DM_DON_VI.Count != 0)
         {
-            m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, "WHERE ID_TRANG_THAI=" + m_cbo_trang_thai_tai_san.SelectedValue);
-            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
-            m_grv_danh_sach_tai_san_khac.DataBind();
+            m_cbo_don_vi_chu_quan.DataSource = m_ds_don_vi.DM_DON_VI;
+            m_cbo_don_vi_chu_quan.DataTextField = "TEN_DON_VI";
+            m_cbo_don_vi_chu_quan.DataValueField = "ID";
+            m_cbo_don_vi_chu_quan.DataBind();
+            //m_cbo_don_vi_chu_quan.Items.Insert(0, new ListItem("Tất cả đơn vị trực thuộc", ""));
+            load_data_to_cbo_don_vi_su_dung();
         }
-        catch (Exception v_e)
+        else//ta
         {
-            throw v_e;
+            m_cbo_don_vi_chu_quan.Items.Clear();
+            m_cbo_don_vi_su_dung_tai_san.Items.Clear();
         }
     }
-    private void load_data_2_cbo_trang_thai_tai_san()
+    private void load_data_to_cbo_don_vi_su_dung()
     {
-        m_ds_tu_dien.CM_DM_TU_DIEN.Clear();
-        m_us_tu_dien.FillDataset(m_ds_tu_dien, "Where ID_LOAI_TU_DIEN=8");
-        m_cbo_trang_thai_tai_san.DataSource = m_ds_tu_dien.CM_DM_TU_DIEN;
-        m_cbo_trang_thai_tai_san.DataTextField = CM_DM_TU_DIEN.TEN;
-        m_cbo_trang_thai_tai_san.DataValueField = CM_DM_TU_DIEN.ID;
-        m_cbo_trang_thai_tai_san.DataBind();
+        if (m_cbo_bo_tinh.SelectedValue == null || m_cbo_don_vi_chu_quan.SelectedValue == null)
+        {
+            return;
+        }
+        else
+        {
+            US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
+            DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
+
+            string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
+            m_us_don_vi.FillDataset(m_ds_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_SU_DUNG + " and ID_DON_VI_CAP_TREN LIKE '%" + v_id_don_vi_chu_quan
+                + "%'");
+            if (m_ds_don_vi.DM_DON_VI.Count != 0)
+            {
+                m_cbo_don_vi_su_dung_tai_san.DataSource = m_ds_don_vi.DM_DON_VI;
+                m_cbo_don_vi_su_dung_tai_san.DataTextField = "TEN_DON_VI";
+                m_cbo_don_vi_su_dung_tai_san.DataValueField = "ID";
+                m_cbo_don_vi_su_dung_tai_san.DataBind();
+            }
+            else
+            {
+                //m_cbo_don_vi_chu_quan.Items.Clear();
+                m_cbo_don_vi_su_dung_tai_san.Items.Clear();
+            }
+        }
     }
     #endregion
+
+    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_cbo_don_vi_chu_quan();
+            m_grv_danh_sach_tai_san_khac.Visible = false;
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+
+    }
+    protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+
+            load_data_to_cbo_don_vi_su_dung();
+            m_grv_danh_sach_tai_san_khac.Visible = false;
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+
+    }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         try
         {
-            load_data_2_grid_for_search();
+            if (m_cbo_don_vi_chu_quan.SelectedValue == "")
+            {
+                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị chủ quản";
+                return;
+            }
+            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == "")
+            {
+                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị sử dụng";
+                return;
+            }
+            else
+            {
+                m_grv_danh_sach_tai_san_khac.Visible = true;
+                load_data_to_grid();
+            }
         }
-        catch (Exception v_e)
+        catch (System.Exception ex)
         {
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(ex);
         }
+        
     }
-    protected void m_cbo_trang_thai_tai_san_SelectedIndexChanged(object sender, EventArgs e)
+    protected void m_grv_danh_sach_tai_san_khac_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-        try
-        {
-            load_data_2_grid_by_id_trang_thai();
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
+        m_grv_danh_sach_tai_san_khac.PageIndex = e.NewPageIndex;
+        load_data_to_grid();
     }
 }

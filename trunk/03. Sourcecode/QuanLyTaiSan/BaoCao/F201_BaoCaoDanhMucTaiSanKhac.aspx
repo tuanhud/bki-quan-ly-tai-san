@@ -1,21 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F201_BaoCaoDanhMucTaiSanKhac.aspx.cs" Inherits="Default2" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <style type="text/css">
-    .style1
-    {
-        width: 15%;
-        height: 26px;
-    }
-    .style2
-    {
-        width: 20%;
-        height: 26px;
-    }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-<div>
+    <div>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -45,21 +33,38 @@
             <td style="width: 20%;">
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td align="right" style="width: 15%;">
-                <span class="cssManField">Tìm kiếm</span>
+<tr>
+            <td align="right" colspan="1" style="width: 15%">
+                <span class="cssManField">Bộ, tỉnh:</span>
             </td>
-            <td style="width: 20%;">
-                <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
-            </td>
-            <td align="right" style="width: 15%;">
-            <span class="cssManField">Trạng thái tài sản</span></td>
-            <td style="width: 20%;">
-            <asp:DropDownList ID="m_cbo_trang_thai_tai_san" runat="server" Width="96%" 
-                    CssClass="cssDorpdownlist" AutoPostBack="True" 
-                    onselectedindexchanged="m_cbo_trang_thai_tai_san_SelectedIndexChanged">
+            <td style="width: 35%">
+                <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
+                    OnSelectedIndexChanged="m_cbo_bo_tinh_SelectedIndexChanged" TabIndex="1">
                 </asp:DropDownList>
             </td>
+            <td align="right" style="width: 15%">
+                <span class="cssManField">Đơn vị chủ quản:</span>
+            </td>
+            <td style="width: 35%">
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
+                    OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged" 
+                    TabIndex="2">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
+            </td>
+            <td>
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True" 
+                    TabIndex="3">
+                </asp:DropDownList>
+            </td>
+            <td align="right">
+            </td>
+            <td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td align="right">
@@ -101,9 +106,12 @@
         </tr>
         <tr>
             <td align="center" colspan="3" style="height: 450px;" valign="top">
-                <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                    Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-                    PageSize="15" ShowHeader="true" ShowFooter="true">
+                <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" 
+                    AllowPaging="True" AutoGenerateColumns="False"
+                    Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
+                    PageSize="15" ShowHeader="true" ShowFooter="true" 
+                    EmptyDataText="Không có dữ liệu phù hợp"
+                    onpageindexchanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                     <Columns>
                         <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
                             <ItemTemplate>
@@ -113,18 +121,16 @@
                         </asp:TemplateField>
                         <asp:HyperLinkField HeaderText="Tên tài sản" FooterText="Tổng cộng" DataTextField="TEN_TAI_SAN" NavigateUrl="" HeaderStyle-Width="20%"/>
                         <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU"/>
-                        <%--<asp:TemplateField>
-                        <HeaderTemplate HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT"HeaderStyle-Width="3.5%"/></asp:TemplateField>--%>
                         <asp:BoundField HeaderText="Năm sản xuất" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
                         HeaderStyle-Width="3.5%">
                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField HeaderText="năm sử dụng" DataField="NAM_SU_DUNG" HeaderStyle-Width="3.5%"/>
-                        <asp:TemplateField>
+                        <asp:BoundField HeaderText="Năm sử dụng" ItemStyle-HorizontalAlign="Center" DataField="NAM_SU_DUNG" HeaderStyle-Width="3.5%"/>
+                        <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;">
                                 	<tr>
-                                		<td colspan="3">Giá trị theo sổ kế toán</td>
+                                		<td colspan="3" style="height:35px">Giá trị theo sổ kế toán</td>
                                 	</tr>
                                     <tr>
                                         <td colspan="2" style = "width: 66%">Nguyên giá</td>
@@ -136,37 +142,22 @@
                                     </tr>
                                 </table>
                             </HeaderTemplate>
-                            <FooterTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
-                                	<tr>
-                                		<td style = "width: 33%">
-                                            <asp:Label ID="m_lbl_nguon_ns" runat="server"></asp:Label>
-                                        </td>
-                                        <td style = "width: 33%">
-                                            <asp:Label ID="m_lbl_nguon_khac" runat="server"></asp:Label>
-                                        </td>
-                                        <td style = "width: 33%">
-                                        <asp:Label ID="m_lbl_gia_tri_con_lai" runat="server"></asp:Label>
-                                        </td>
-                                	</tr>
-                                </table>
-                            </FooterTemplate>
                             <HeaderStyle CssClass=""/>
                             <ItemTemplate>
-                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; text-align: right">
                                 	<tr>
                                 		<td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
                                         <td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
-                                        <td style = "width: 33%"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
+                                        <td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                 	<tr>
-                                		<td colspan="7">Hiện trạng sử dụng</td>
+                                		<td colspan="7" style="height:39px">Hiện trạng sử dụng</td>
                                 	</tr>
                                     <tr>
                                         <td rowspan="2" style = "width: 25%">Quản lý nhà nước</td>
@@ -179,31 +170,14 @@
                                     </tr>
                                 </table>
                             </HeaderTemplate>
-                            <FooterTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
-                                	<tr>
-                                		<td style = "width: 25%">
-                                            <asp:Label ID="m_lbl_quan_ly_nha_nuoc" runat="server"></asp:Label>
-                                        </td>
-                                        <td style = "width: 25%">
-                                            <asp:Label ID="m_lbl_kinh_doanh" runat="server"></asp:Label>
-                                        </td>
-                                        <td style = "width: 25%">
-                                        <asp:Label ID="m_lbl_khong_kinh_doanh" runat="server"></asp:Label>
-                                        </td>
-                                        <td style = "width: 25%">
-                                        <asp:Label ID="m_lbl_hoat_dong_khac" runat="server"></asp:Label>
-                                        </td>
-                                	</tr>
-                                </table>
-                            </FooterTemplate>
                             <ItemTemplate>
-                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%"  style="text-align: right;
+                                    border-collapse: collapse;">
                                 	<tr>
                                 		<td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("QLNN") %></td>
                                         <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KINH_DOANH") %></td>
                                         <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KHONG_KINH_DOANH") %></td>
-                                        <td style = "width: 25%"><%# Eval("HD_KHAC") %></td>
+                                        <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("HD_KHAC") %></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>
