@@ -45,11 +45,11 @@ namespace WebUS
     }
 
     public class LOAI_USER_QUYEN {
-        public const decimal GIANG_VIEN = 6;
         public const decimal ADMIN = 5;
-        public const decimal TRUONG_NHOM_PO = 3;
-        public const decimal PO_VAN_HANH = 4;
-        public const decimal PO_VAN_HANH_CAC_TRUONG = 7;
+        public const decimal CAN_BO_CHU_QUAN = 3;
+        public const decimal CAN_BO_TONG_CUC = 4;
+        public const decimal GROUP30 = 7;
+        
     }
     public class ID_TRANG_THAI_TAI_SAN_KHAC
     {
