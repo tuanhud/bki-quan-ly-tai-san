@@ -74,7 +74,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về đất của đơn vị chủ quản, theo dõi sử dụng đất, báo cáo cho chủ quản
+                                                    Tập hợp các thông tin về đất của đơn vị chủ quản, theo dõi sử dụng đất, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -242,7 +242,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về nhà của đơn vị chủ quản, theo dõi sử dụng nhà, báo cáo cho chủ quản
+                                                    Tập hợp các thông tin về nhà của đơn vị chủ quản, theo dõi sử dụng nhà, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -410,7 +410,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về oto của đơn vị chủ quản, theo dõi sử dụng oto, báo cáo cho chủ quản
+                                                    Tập hợp các thông tin về oto của đơn vị chủ quản, theo dõi sử dụng oto, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -578,7 +578,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về các tài sản khác của đơn vị chủ quản, theo dõi sử dụng tài sản này, báo cáo cho chủ quản
+                                                    Tập hợp các thông tin về các tài sản khác của đơn vị chủ quản, theo dõi sử dụng tài sản này, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
