@@ -20,7 +20,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
     {
         if (Session[SESSION.AccounLoginYN] != null) {
             if (Session[SESSION.AccounLoginYN].ToString().Equals("Y")) {
-                m_lhk_user_name.Text = "Xin chào: " + Session[SESSION.UserName].ToString();
+                m_lhk_user_name.Text = "Xin chào anh(chị): " + Session[SESSION.UserFullName].ToString();
             }
             else {
                 Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
