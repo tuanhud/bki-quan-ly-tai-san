@@ -59,8 +59,8 @@
         </tr>
     </table>
     <div id="gridViewContent">
-        <asp:GridView ID="m_grv_bao_cao_oto" AllowPaging="True" runat="server" AutoGenerateColumns="False"
-            Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" 
+        <asp:GridView ID="m_grv_bao_cao_oto" AllowPaging="true" runat="server" AutoGenerateColumns="False"
+            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" 
             PageSize="30" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
@@ -69,7 +69,7 @@
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                 </asp:BoundField>
                 <asp:BoundField HeaderText="NHÃN HIỆU" ItemStyle-HorizontalAlign="Center" DataField="NHAN_HIEU"
-                    HeaderStyle-Width="6.667%">
+                    HeaderStyle-Width="3.5%">
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                 </asp:BoundField>
                 <asp:BoundField HeaderText="BIỂN KIỂM SOÁT" ItemStyle-HorizontalAlign="Center" DataField="BIEN_KIEM_SOAT"
@@ -77,7 +77,7 @@
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                 </asp:BoundField>
                 <asp:BoundField HeaderText="SỐ CHỖ NGỒI/TẢI TRỌNG" ItemStyle-HorizontalAlign="Center"
-                    DataField="SO_CHO_NGOI" HeaderStyle-Width="6.667%">
+                    DataField="SO_CHO_NGOI" HeaderStyle-Width="3.5%">
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                 </asp:BoundField>
                 <asp:BoundField HeaderText="NƯỚC SẢN XUẤT" ItemStyle-HorizontalAlign="Center" DataField="NUOC_SAN_XUAT"
@@ -100,7 +100,7 @@
                     HeaderStyle-Width="6.667%">
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                 </asp:BoundField>
-                <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="20%">
+                <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="25%">
                     <HeaderTemplate>
                         <table border="1" cellspacing="0" cellpadding="3" width="100%">
                             <tr>
@@ -129,16 +129,16 @@
                         </table>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
                             <tr>
-                                <td style="width: 33.5%">
-                                    <%# Eval("NGUON_NS") %>
+                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px">
+                                    <%# Eval("NGUON_NS", "{0:#,###.00}")%>
                                 </td>
-                                <td style="width: 33.5%">
-                                    <%# Eval("NGUON_KHAC") %>
+                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px">
+                                    <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
                                 </td>
                                 <td style="width: 33%">
-                                    <%# Eval("GIA_TRI_CON_LAI") %>
+                                    <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
                                 </td>
                             </tr>
                         </table>
@@ -176,15 +176,15 @@
                         </table>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
                             <tr>
-                                <td style="width: 25%">
+                                <td style="width: 25% ; border-right:solid; border-right-width:1px">
                                     <%# Eval("QLNN") %>
                                 </td>
-                                <td style="width: 25%">
+                                <td style="width: 25 ; border-right:solid; border-right-width:1px">
                                     <%# Eval("KINH_DOANH") %>
                                 </td>
-                                <td style="width: 25%">
+                                <td style="width: 25% ; border-right:solid; border-right-width:1px">
                                     <%# Eval("KHONG_KINH_DOANH") %>
                                 </td>
                                 <td style="width: 25%">
