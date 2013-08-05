@@ -18,9 +18,9 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["AccounLogin"] != null) {
-            if (Session["AccounLogin"].ToString().Equals("Y")) {
-                m_lhk_user_name.Text = "Xin chào: " + Session["UserName"].ToString();
+        if (Session[SESSION.AccounLogin] != null) {
+            if (Session[SESSION.AccounLogin].ToString().Equals("Y")) {
+                m_lhk_user_name.Text = "Xin chào: " + Session[SESSION.UserName].ToString();
             }
             else {
                 Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
@@ -30,7 +30,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
         }
 
-        m_str_user_name = CIPConvert.ToStr(Session["UserName"]);
+        m_str_user_name = CIPConvert.ToStr(Session[SESSION.UserName]);
         if (!IsPostBack) {
             m_us_ht_chuc_nang.get_parent_table(m_str_user_name, m_ds_ht_chuc_nang);
             // Lấy toàn bộ các menu cấp 1 được cấp quyền và được hiển thị

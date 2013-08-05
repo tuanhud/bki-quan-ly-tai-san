@@ -71,9 +71,9 @@
                 <li><a href='#'>Trợ giúp</a>
                     <ul>
                     <%
-                        if (Session["QuyenGV"] != null)
+                        if (Session[SESSION.QuyenGV] != null)
                         {
-                            if (CIPConvert.ToDecimal(Session["QuyenGV"]) == LOAI_USER_QUYEN.GROUP30)
+                            if (CIPConvert.ToDecimal(Session[SESSION.QuyenGV]) == LOAI_USER_QUYEN.GROUP30)
                             {
                     %> 
                          <li><a href='/QuanLyTaiSan/Help/'>Tài liệu hướng dẫn sử dụng</a></li>
