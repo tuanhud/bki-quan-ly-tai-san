@@ -33,17 +33,17 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     }
 
     // Load dữ liệu vào grid
-    private void load_data_to_grid(string ip_tu_khoa)
+    private void load_data_to_grid(string ip_str_tu_khoa)
     {
         DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
 
-        if (ip_tu_khoa.Equals(String.Empty))
+        if (ip_str_tu_khoa.Equals(String.Empty))
         {
             m_us_dm_nha.FillDataset(v_ds_dm_nha);
         }
         else
         {
-            string v_str_query = "where TEN_TAI_SAN LIKE %" + ip_tu_khoa + "% OR MA_TAI_SAN LIKE %" + ip_tu_khoa + "%";
+            string v_str_query = "where TEN_TAI_SAN LIKE '%" + ip_str_tu_khoa + "%' OR MA_TAI_SAN LIKE '%" + ip_str_tu_khoa + "%'";
             m_us_dm_nha.FillDataset(v_ds_dm_nha, v_str_query);
         }
         m_grv_danh_sach_nha.DataSource = v_ds_dm_nha.DM_NHA;
@@ -260,9 +260,9 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         m_txt_ma_tai_san.Text = "";
     }
 
-    private void edit_grv_nha(decimal ip_us_dm_nha_id)
+    private void edit_grv_nha(decimal ip_dc_id_nha)
     {
-        load_data_to_us_by_id(ip_us_dm_nha_id);
+        load_data_to_us_by_id(ip_dc_id_nha);
     }
 
     #endregion
@@ -327,17 +327,17 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             if (!e.CommandName.Equals(String.Empty))
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
-                decimal v_ud_dm_nha_id = CIPConvert.ToDecimal(m_grv_danh_sach_nha.DataKeys[rowIndex].Value);
+                decimal v_dc_id_nha = CIPConvert.ToDecimal(m_grv_danh_sach_nha.DataKeys[rowIndex].Value);
 
                 switch (e.CommandName)
                 {
                     case "EditComp":
-                        load_data_to_us_by_id(v_ud_dm_nha_id);
+                        load_data_to_us_by_id(v_dc_id_nha);
                         load_form_data();
                         load_data_from_us();
                         break;
                     case "DeleteComp":
-                        m_us_dm_nha.DeleteByID(v_ud_dm_nha_id);
+                        m_us_dm_nha.DeleteByID(v_dc_id_nha);
                         load_form_data();
                         break;
                 }

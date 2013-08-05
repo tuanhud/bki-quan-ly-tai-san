@@ -156,14 +156,15 @@
                         <td>
                         </td>
                         <td>
-                            GIÁ TRỊ THEO SỔ KẾ TOÁN<td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
+                        GIÁ TRỊ THEO SỔ KẾ TOÁn
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
