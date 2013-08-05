@@ -354,7 +354,7 @@
                                     ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField HeaderText="Tên tài sản" DataField="MA_TAI_SAN"/>
+                        <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN"/>
                         <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI"/>
                         <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
                         <asp:BoundField HeaderText="DT Trụ sở làm việc (m2)" DataField="DT_TRU_SO_LAM_VIEC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
