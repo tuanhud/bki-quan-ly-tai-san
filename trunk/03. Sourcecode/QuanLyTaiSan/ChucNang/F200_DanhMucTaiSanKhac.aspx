@@ -399,7 +399,9 @@
                     Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
                     PageSize="15" ShowHeader="true"
                 onrowupdating="m_grv_tai_san_khac_RowUpdating" 
-                onrowdeleting="m_grv_tai_san_khac_RowDeleting" EmptyDataText="Không có dữ liệu.">
+                onrowdeleting="m_grv_tai_san_khac_RowDeleting" 
+                EmptyDataText="Không có dữ liệu." 
+                onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging">
                     <Columns>
                     <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>

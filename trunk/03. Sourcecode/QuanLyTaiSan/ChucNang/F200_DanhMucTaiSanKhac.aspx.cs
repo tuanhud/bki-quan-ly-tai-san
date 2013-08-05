@@ -234,4 +234,9 @@ public partial class Default2 : System.Web.UI.Page
         m_grv_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
         m_grv_tai_san_khac.DataBind();
     }
+    protected void m_grv_tai_san_khac_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        m_grv_tai_san_khac.PageIndex = e.NewPageIndex;
+        load_data_2_grid();
+    }
 }
