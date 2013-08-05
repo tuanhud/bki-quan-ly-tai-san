@@ -54,25 +54,27 @@ namespace QltsForm
         internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
         private Label label1;
         private Label label2;
-        private Label label7;
+        private Label m_lbl_dien_tich_khuon_vien_dat;
         private Label label8;
         private Label label15;
-        private Label label14;
+        private Label m_lbl_bo_trong;
         private Label label13;
-        private Label label12;
+        private Label m_lbl_cho_thue;
         private Label label11;
-        private Label label10;
+        private Label m_lbl_lam_nha_o;
         private Label label9;
-        private Label label6;
+        private Label m_lbl_lam_tru_so_lam_viec;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label17;
         private Label label16;
-        private Label label19;
-        private Label label18;
-        private Label label21;
+        private Label m_lbl_su_dung_vao_muc_dich_khac;
+        private Label m_lbl_bi_lan_chiem;
+        private Label m_lbl_gia_tri_theo_so_ke_toan;
         private Label label20;
+        private Label label6;
+        private Label m_lbl_lam_co_so_hd_su_nghiep;
         private System.ComponentModel.IContainer components;
 
         public f402_bao_cao_danh_muc_tru_so_lam_viec()
@@ -134,26 +136,28 @@ namespace QltsForm
             this.m_lbl_bo_tinh = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.m_lbl_dien_tich_khuon_vien_dat = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.m_lbl_bo_trong = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.m_lbl_cho_thue = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.m_lbl_lam_nha_o = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.m_lbl_su_dung_vao_muc_dich_khac = new System.Windows.Forms.Label();
+            this.m_lbl_gia_tri_theo_so_ke_toan = new System.Windows.Forms.Label();
+            this.m_lbl_bi_lan_chiem = new System.Windows.Forms.Label();
+            this.m_lbl_lam_tru_so_lam_viec = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_lbl_lam_co_so_hd_su_nghiep = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -333,7 +337,6 @@ namespace QltsForm
             this.m_cbo_don_vi_su_dung.Name = "m_cbo_don_vi_su_dung";
             this.m_cbo_don_vi_su_dung.Size = new System.Drawing.Size(256, 22);
             this.m_cbo_don_vi_su_dung.TabIndex = 8;
-            //this.m_cbo_don_vi_su_dung.SelectedValueChanged -= new System.EventHandler(this.m_cbo_don_vi_su_dung_SelectedValueChanged);
             this.m_cbo_don_vi_su_dung.SelectedValueChanged += new System.EventHandler(this.m_cbo_don_vi_su_dung_SelectedValueChanged);
             // 
             // m_cbo_don_vi_chu_quan
@@ -343,7 +346,6 @@ namespace QltsForm
             this.m_cbo_don_vi_chu_quan.Name = "m_cbo_don_vi_chu_quan";
             this.m_cbo_don_vi_chu_quan.Size = new System.Drawing.Size(256, 22);
             this.m_cbo_don_vi_chu_quan.TabIndex = 8;
-            // this.m_cbo_don_vi_chu_quan.SelectedValueChanged -= new System.EventHandler(this.m_cbo_don_vi_chu_quan_SelectedValueChanged);
             this.m_cbo_don_vi_chu_quan.SelectedValueChanged += new System.EventHandler(this.m_cbo_don_vi_chu_quan_SelectedValueChanged);
             // 
             // m_cbo_bo_tinh
@@ -354,7 +356,6 @@ namespace QltsForm
             this.m_cbo_bo_tinh.Size = new System.Drawing.Size(256, 22);
             this.m_cbo_bo_tinh.TabIndex = 8;
             this.m_cbo_bo_tinh.SelectedValueChanged += new System.EventHandler(this.m_cbo_bo_tinh_SelectedValueChanged);
-            // this.m_cbo_bo_tinh.SelectedValueChanged -= new System.EventHandler(this.m_cbo_bo_tinh_SelectedValueChanged);
             // 
             // m_lbl_ten_bao_cao
             // 
@@ -414,21 +415,23 @@ namespace QltsForm
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.m_lbl_dien_tich_khuon_vien_dat);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.m_lbl_bo_trong);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.m_lbl_cho_thue);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.m_lbl_lam_nha_o);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.m_lbl_su_dung_vao_muc_dich_khac);
+            this.groupBox2.Controls.Add(this.m_lbl_gia_tri_theo_so_ke_toan);
+            this.groupBox2.Controls.Add(this.m_lbl_lam_co_so_hd_su_nghiep);
+            this.groupBox2.Controls.Add(this.m_lbl_bi_lan_chiem);
+            this.groupBox2.Controls.Add(this.m_lbl_lam_tru_so_lam_viec);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -452,28 +455,28 @@ namespace QltsForm
             this.label2.TabIndex = 0;
             this.label2.Text = "Địa chỉ:";
             // 
-            // label7
+            // m_lbl_dien_tich_khuon_vien_dat
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(174, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 14);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "0";
+            this.m_lbl_dien_tich_khuon_vien_dat.AutoSize = true;
+            this.m_lbl_dien_tich_khuon_vien_dat.Location = new System.Drawing.Point(174, 76);
+            this.m_lbl_dien_tich_khuon_vien_dat.Name = "m_lbl_dien_tich_khuon_vien_dat";
+            this.m_lbl_dien_tich_khuon_vien_dat.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_dien_tich_khuon_vien_dat.TabIndex = 0;
+            this.m_lbl_dien_tich_khuon_vien_dat.Text = "0";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(151, 103);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 14);
+            this.label8.Size = new System.Drawing.Size(101, 14);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Làm trụ sở HĐ sự nghiệp:";
+            this.label8.Text = "Làm trụ sở làm việc";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(296, 132);
+            this.label17.Location = new System.Drawing.Point(487, 139);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(154, 14);
             this.label17.TabIndex = 0;
@@ -482,101 +485,101 @@ namespace QltsForm
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(151, 132);
+            this.label15.Location = new System.Drawing.Point(326, 139);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 14);
             this.label15.TabIndex = 0;
             this.label15.Text = "Bị lấn chiếm:";
             // 
-            // label14
+            // m_lbl_bo_trong
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(652, 103);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(13, 14);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "1";
+            this.m_lbl_bo_trong.AutoSize = true;
+            this.m_lbl_bo_trong.Location = new System.Drawing.Point(209, 139);
+            this.m_lbl_bo_trong.Name = "m_lbl_bo_trong";
+            this.m_lbl_bo_trong.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_bo_trong.TabIndex = 0;
+            this.m_lbl_bo_trong.Text = "1";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(594, 103);
+            this.label13.Location = new System.Drawing.Point(151, 139);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 14);
             this.label13.TabIndex = 0;
             this.label13.Text = "; Bỏ trống:";
             // 
-            // label12
+            // m_lbl_cho_thue
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(532, 103);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 14);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "1";
+            this.m_lbl_cho_thue.AutoSize = true;
+            this.m_lbl_cho_thue.Location = new System.Drawing.Point(783, 103);
+            this.m_lbl_cho_thue.Name = "m_lbl_cho_thue";
+            this.m_lbl_cho_thue.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_cho_thue.TabIndex = 0;
+            this.m_lbl_cho_thue.Text = "1";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(467, 103);
+            this.label11.Location = new System.Drawing.Point(718, 103);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 14);
             this.label11.TabIndex = 0;
             this.label11.Text = "; Cho thuê:";
             // 
-            // label10
+            // m_lbl_lam_nha_o
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(406, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 14);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "1";
+            this.m_lbl_lam_nha_o.AutoSize = true;
+            this.m_lbl_lam_nha_o.Location = new System.Drawing.Point(657, 103);
+            this.m_lbl_lam_nha_o.Name = "m_lbl_lam_nha_o";
+            this.m_lbl_lam_nha_o.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_lam_nha_o.TabIndex = 0;
+            this.m_lbl_lam_nha_o.Text = "1";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(342, 103);
+            this.label9.Location = new System.Drawing.Point(593, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 14);
             this.label9.TabIndex = 0;
             this.label9.Text = "; Làm nhà ở:";
             // 
-            // label19
+            // m_lbl_su_dung_vao_muc_dich_khac
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(456, 132);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(13, 14);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "1";
+            this.m_lbl_su_dung_vao_muc_dich_khac.AutoSize = true;
+            this.m_lbl_su_dung_vao_muc_dich_khac.Location = new System.Drawing.Point(647, 139);
+            this.m_lbl_su_dung_vao_muc_dich_khac.Name = "m_lbl_su_dung_vao_muc_dich_khac";
+            this.m_lbl_su_dung_vao_muc_dich_khac.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_su_dung_vao_muc_dich_khac.TabIndex = 0;
+            this.m_lbl_su_dung_vao_muc_dich_khac.Text = "1";
             // 
-            // label21
+            // m_lbl_gia_tri_theo_so_ke_toan
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(161, 161);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(13, 14);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "1";
+            this.m_lbl_gia_tri_theo_so_ke_toan.AutoSize = true;
+            this.m_lbl_gia_tri_theo_so_ke_toan.Location = new System.Drawing.Point(161, 161);
+            this.m_lbl_gia_tri_theo_so_ke_toan.Name = "m_lbl_gia_tri_theo_so_ke_toan";
+            this.m_lbl_gia_tri_theo_so_ke_toan.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_gia_tri_theo_so_ke_toan.TabIndex = 0;
+            this.m_lbl_gia_tri_theo_so_ke_toan.Text = "1";
             // 
-            // label18
+            // m_lbl_bi_lan_chiem
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(224, 132);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(13, 14);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "1";
+            this.m_lbl_bi_lan_chiem.AutoSize = true;
+            this.m_lbl_bi_lan_chiem.Location = new System.Drawing.Point(415, 139);
+            this.m_lbl_bi_lan_chiem.Name = "m_lbl_bi_lan_chiem";
+            this.m_lbl_bi_lan_chiem.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_bi_lan_chiem.TabIndex = 0;
+            this.m_lbl_bi_lan_chiem.Text = "1";
             // 
-            // label6
+            // m_lbl_lam_tru_so_lam_viec
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(285, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 14);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "1";
+            this.m_lbl_lam_tru_so_lam_viec.AutoSize = true;
+            this.m_lbl_lam_tru_so_lam_viec.Location = new System.Drawing.Point(285, 103);
+            this.m_lbl_lam_tru_so_lam_viec.Name = "m_lbl_lam_tru_so_lam_viec";
+            this.m_lbl_lam_tru_so_lam_viec.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_lam_tru_so_lam_viec.TabIndex = 0;
+            this.m_lbl_lam_tru_so_lam_viec.Text = "1";
             // 
             // label20
             // 
@@ -631,6 +634,24 @@ namespace QltsForm
             this.label1.Size = new System.Drawing.Size(43, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "Địa chỉ:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(326, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 14);
+            this.label6.TabIndex = 1;
+            this.label6.Text = ";Làm cơ cở HĐ sự nghệp:";
+            // 
+            // m_lbl_lam_co_so_hd_su_nghiep
+            // 
+            this.m_lbl_lam_co_so_hd_su_nghiep.AutoSize = true;
+            this.m_lbl_lam_co_so_hd_su_nghiep.Location = new System.Drawing.Point(464, 103);
+            this.m_lbl_lam_co_so_hd_su_nghiep.Name = "m_lbl_lam_co_so_hd_su_nghiep";
+            this.m_lbl_lam_co_so_hd_su_nghiep.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_lam_co_so_hd_su_nghiep.TabIndex = 0;
+            this.m_lbl_lam_co_so_hd_su_nghiep.Text = "1";
             // 
             // f402_bao_cao_danh_muc_tru_so_lam_viec
             // 
@@ -728,18 +749,19 @@ namespace QltsForm
             set_define_events();
             this.KeyPreview = true;
         }
+        
         private void load_data_to_cbo_bo_tinh()
         {
             try
             {
                 DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
                 US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "WHERE ID_LOAI_DON_VI = 574");
+                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "Where id_loai_don_vi = " + ID_LOAI_DON_VI.BO_TINH);
                 m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-                m_cbo_bo_tinh.ValueMember = DM_DON_VI.ID;
-                m_cbo_bo_tinh.DisplayMember = DM_DON_VI.TEN_DON_VI;
-                
-                
+                m_cbo_bo_tinh.ValueMember = CIPConvert.ToStr(DM_DON_VI.ID);
+                m_cbo_bo_tinh.DisplayMember = CIPConvert.ToStr(DM_DON_VI.TEN_DON_VI);
+               
+                load_data_to_cbo_don_vi_chu_quan();
 
             }
             catch (System.Exception ex)
@@ -747,96 +769,177 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
+
         private void load_data_to_cbo_don_vi_chu_quan()
         {
-            try
+            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+            if (m_cbo_bo_tinh.SelectedValue == null)
+                return;
+            else
             {
-                if (m_cbo_bo_tinh.SelectedValue == null)
+                string v_id_bo_tinh = m_cbo_bo_tinh.ValueMember;
+
+                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN + "and ID_DON_VI_CAP_TREN LIKE '%"
+                    + v_id_bo_tinh + "%'");
+                if (v_ds_dm_don_vi.DM_DON_VI.Count != 0)
                 {
-                    m_cbo_don_vi_chu_quan.DataSource = null;
-                    m_cbo_don_vi_su_dung.DataSource = null;
-                    m_cbo_dia_chi.DataSource = null;
-                    return;
+                    m_cbo_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+                    m_cbo_don_vi_chu_quan.DisplayMember = "TEN_DON_VI";
+                    m_cbo_don_vi_chu_quan.ValueMember = "ID";
+                    
+                    // m_cbo_don_vi_chu_quan.Items.Insert(0, new ListItem("Tất cả đơn vị trực thuộc", ""));
+                    load_data_to_cbo_don_vi_su_dung();
                 }
-                DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-                US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+                else
+                {
+                    m_cbo_don_vi_chu_quan.Items.Clear();
+                    m_cbo_don_vi_su_dung.Items.Clear();
+                    m_cbo_dia_chi.Items.Clear();
 
-                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 575 and ID_DON_VI_CAP_TREN  = " + CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue));
-                m_cbo_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-                m_cbo_don_vi_chu_quan.ValueMember = DM_DON_VI.ID;
-                m_cbo_don_vi_chu_quan.DisplayMember = DM_DON_VI.TEN_DON_VI;
+
+                }
+
+
+
+
 
             }
-            catch (System.Exception ex)
-            {
-                CSystemLog_301.ExceptionHandle(ex);
-            }
+
         }
         private void load_data_to_cbo_don_vi_su_dung()
         {
-            try
+            if (m_cbo_bo_tinh.SelectedValue == null || m_cbo_don_vi_chu_quan.SelectedValue == null)
             {
-                if (m_cbo_don_vi_chu_quan.SelectedValue == null)
+                return;
+            }
+            else
+            {
+                US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+                DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+
+                string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.ValueMember;
+                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_SU_DUNG + " and ID_DON_VI_CAP_TREN LIKE '%" + v_id_don_vi_chu_quan
+                    + "%'");
+                if (v_ds_dm_don_vi.DM_DON_VI.Count != 0)
                 {
-                    m_cbo_don_vi_su_dung.DataSource = null;
-                    m_cbo_dia_chi.DataSource = null;
-                    return;
+                    m_cbo_don_vi_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+                    m_cbo_don_vi_su_dung.DisplayMember = "TEN_DON_VI";
+                    m_cbo_don_vi_su_dung.ValueMember = "ID";
+                    
+                    load_data_to_cbo_dia_chi();
+                }
+                else
+                {
+                    //m_cbo_don_vi_chu_quan.Items.Clear();
+                    m_cbo_don_vi_su_dung.Items.Clear();
+                    m_cbo_dia_chi.Items.Clear();
 
                 }
-                DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-                US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-                v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 576 and ID_DON_VI_CAP_TREN = " + CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue));
-                m_cbo_don_vi_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-                m_cbo_don_vi_su_dung.DisplayMember = DM_DON_VI.TEN_DON_VI;
-                m_cbo_don_vi_su_dung.ValueMember = DM_DON_VI.ID;
+
+
+
+
             }
-            catch (System.Exception ex)
-            {
-                CSystemLog_301.ExceptionHandle(ex);
-            }
+
+
+
         }
-        private void load_data_to_cbo_dia_chi_dat()
+
+        private void load_data_to_cbo_dia_chi()
         {
-            try
+            DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
+            US_DM_DAT v_us_dm_dat = new US_DM_DAT();
+            if (m_cbo_don_vi_chu_quan.SelectedValue == null || m_cbo_don_vi_su_dung.SelectedValue == null)
             {
-                if (m_cbo_don_vi_chu_quan.SelectedValue == null || m_cbo_don_vi_su_dung.SelectedValue == null)
+                return;
+            }
+            else
+            {
+                try
                 {
-                    m_cbo_dia_chi.DataSource = null;
-                    return;
+                    string v_id_don_vi_chu_quan = CIPConvert.ToStr(m_cbo_don_vi_chu_quan.SelectedValue);
+                    string v_id_don_vi_su_dung = CIPConvert.ToStr(m_cbo_don_vi_su_dung.SelectedValue);
+                    v_us_dm_dat.FillDataset(v_ds_dm_dat, "where ID_DON_VI_CHU_QUAN = " + v_id_don_vi_chu_quan
+                    + " and id_don_vi_su_dung = " + v_id_don_vi_su_dung);
+                    if (v_ds_dm_dat.DM_DAT.Count != 0)
+                    {
+                        m_cbo_dia_chi.DataSource = v_ds_dm_dat.DM_DAT;
+                        m_cbo_dia_chi.ValueMember = DM_DAT.ID;
+                        m_cbo_dia_chi.DisplayMember = DM_DAT.DIA_CHI;
+                       
+                    }
+                    else
+                    {
+                        //m_cbo_don_vi_chu_quan.Items.Clear();
+                        //m_cbo_don_vi_su_dung_tai_san.Items.Clear();
+                        m_cbo_dia_chi.Items.Clear();
+                    }
+
+
+
+                    //m_cbo_dia_chi.DataTextField=DM_NHA.d
+
                 }
-                m_us_dm_dat.FillDataset(m_ds_dm_dat, "where ID_DON_VI_CHU_QUAN = " + CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue) +
-            " and id_don_vi_su_dung = " + CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue));
-                m_cbo_dia_chi.DataSource = m_ds_dm_dat.DM_DAT;
-                m_cbo_dia_chi.DisplayMember = DM_DAT.DIA_CHI;
-                m_cbo_dia_chi.ValueMember = DM_DAT.ID;
+                catch (System.Exception ex)
+                {
+                    CSystemLog_301.ExceptionHandle(ex);
+                }
             }
-            catch (System.Exception ex)
-            {
-                CSystemLog_301.ExceptionHandle(ex);
-            }
+
+
         }
-        private void load_data_to_cbo_trang_thai()
+
+        private void load_data_to_thong_tin_nha_dat()
         {
+
             try
             {
-                m_us_cm_dm_tu_dien.FillDataset(m_ds_cm_dm_tu_dien, "where id_loai_tu_dien = 8");
-                m_cbo_trang_thai.DataSource = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-                m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
-                m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
+
+                string v_id_dat = CIPConvert.ToStr(m_cbo_dia_chi.SelectedValue);
+                DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
+                US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(v_id_dat));
+                m_lbl_dia_chi.Text = v_us_dm_dat.strDIA_CHI;
+
+                m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN, "#,##0.00") + "   ";
+
+             m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
+
+
+
+                m_lbl_lam_nha_o.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
+
+
+
+                m_lbl_lam_co_so_hd_su_nghiep.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP, "#,##0.00");
+
+
+
+                m_lbl_lam_nha_o.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_LAM_NHA_O, "#,##0.00");
+
+                m_lbl_cho_thue.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_CHO_THUE, "#,##0.00");
+
+
+
+
+                m_lbl_bo_trong.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BO_TRONG, "#,##0.00");
+
+
+                m_lbl_bi_lan_chiem.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BI_LAN_CHIEM, "#,##0.00");
+
+
+                m_lbl_su_dung_vao_muc_dich_khac.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC, "#,##0.00");
+
+
+                m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(v_us_dm_dat.dcGT_THEO_SO_KE_TOAN, "#,##0.00");
+
+
+
             }
             catch (System.Exception ex)
             {
                 CSystemLog_301.ExceptionHandle(ex);
             }
-        }
-        private void set_initial_form_load()
-        {
-            m_obj_trans = get_trans_object(m_fg);
-            load_data_to_cbo_bo_tinh();
-            load_data_to_cbo_don_vi_chu_quan();
-            load_data_to_cbo_don_vi_su_dung();
-            load_data_to_cbo_trang_thai();
-            load_data_2_grid();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -957,7 +1060,7 @@ namespace QltsForm
         {
             try
             {
-                set_initial_form_load();
+                load_data_to_cbo_bo_tinh();
             }
             catch (Exception v_e)
             {
@@ -1080,7 +1183,7 @@ namespace QltsForm
         {
             try
             {
-                load_data_to_cbo_trang_thai();
+                load_data_to_cbo_dia_chi();
                 load_data_2_grid();
 
             }
