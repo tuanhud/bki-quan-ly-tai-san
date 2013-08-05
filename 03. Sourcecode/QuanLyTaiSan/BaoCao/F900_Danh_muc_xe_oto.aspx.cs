@@ -71,8 +71,9 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
+            string v_str_trang_thai = Request.QueryString["ID"].ToString();
             string v_str_tu_khoa = m_txt_tu_khoa.Text.Trim();
-            m_us_dm_oto.FillDatasetSearch(m_ds_dm_oto, v_str_tu_khoa);
+            m_us_dm_oto.FillDatasetSearch(m_ds_dm_oto, v_str_tu_khoa,v_str_trang_thai);
             m_grv_bao_cao_oto.DataSource = m_ds_dm_oto.DM_OTO;
             m_grv_bao_cao_oto.DataBind();
         }
@@ -133,3 +134,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
     }
 }
+
+
+//cach goi ra
+//kiem tra
