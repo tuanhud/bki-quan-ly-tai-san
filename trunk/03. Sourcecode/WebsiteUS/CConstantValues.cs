@@ -5,6 +5,16 @@ using System.Text;
 namespace WebUS
 {
 
+    public class SESSION {
+        public const string UserName = "UserName";
+        public const string AccounLogin = "AccounLogin";
+        public const string UserQuyen = "user_quyen";
+        public const string QuyenGV = "QuyenGV";
+        
+        
+        
+    }
+
     public class MA_LOAI_TU_DIEN {
         public const string DIA_DIEM_QUAN_LY = "DIA_DIEM_QUAN_LY";
         public const string DON_VI_TINH = "DON_VI_TINH";
