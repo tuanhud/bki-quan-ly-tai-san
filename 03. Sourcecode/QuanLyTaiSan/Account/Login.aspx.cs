@@ -50,7 +50,7 @@ public partial class Account_Login : System.Web.UI.Page
             Session["Username"] = strUserName;
             decimal v_dc_quyen = load_user_quyen(strUserName);
             Session["user_quyen"] = v_dc_quyen;
-            if (v_dc_quyen == LOAI_USER_QUYEN.GIANG_VIEN)
+            if (v_dc_quyen == LOAI_USER_QUYEN.GROUP30)
             {
                 Response.Redirect("/QuanLyTaiSan", false);
                 Session["QuyenGV"] = load_user_quyen(strUserName);
