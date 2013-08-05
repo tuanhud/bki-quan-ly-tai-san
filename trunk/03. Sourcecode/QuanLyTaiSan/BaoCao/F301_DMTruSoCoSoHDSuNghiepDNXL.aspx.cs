@@ -37,11 +37,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
     US_CM_DM_TU_DIEN m_us_dm_dm_tu_dien = new US_CM_DM_TU_DIEN();
 
-    //DS_DM_DON_VI m_ds_dm_don_vi = new DS_DM_DON_VI();
-    //US_DM_DON_VI m_us_dm_don_vi = new US_DM_DON_VI();
-
-    DS_DM_NHA m_ds_dm_nha = new DS_DM_NHA();
-    US_DM_NHA m_us_dm_nha = new US_DM_NHA();
+    
 
 
 
@@ -244,6 +240,8 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
+            DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
+            US_DM_NHA v_us_dm_nha = new US_DM_NHA();
             string v_id_dat = m_cbo_dia_chi.SelectedValue;
             string id_loai_bao_cao = "";
             if (Request.QueryString["id_loai_bao_cao"] != null)
@@ -255,11 +253,11 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             {
                 case "1":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                    m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_dat = " + v_id_dat);
+                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat);
                     break;
                 case "2":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
-                    m_us_dm_nha.FillDataset(m_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
+                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
                     break;
                 //case "3":
                 //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
@@ -267,7 +265,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             }
 
 
-            m_grv_nha.DataSource = m_ds_dm_nha;
+            m_grv_nha.DataSource = v_ds_dm_nha.DM_NHA;
             m_grv_nha.DataBind();
 
         }
