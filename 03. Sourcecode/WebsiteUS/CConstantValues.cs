@@ -51,7 +51,13 @@ namespace WebUS
         public const decimal PO_VAN_HANH = 4;
         public const decimal PO_VAN_HANH_CAC_TRUONG = 7;
     }
-
+    public class ID_TRANG_THAI_TAI_SAN_KHAC
+    {
+        public const decimal DE_NGHI_XU_LY = 585;
+        public const decimal DA_THANH_LY = 586;
+        public const decimal DE_NGHI_TRANG_CAP = 587;
+        public const decimal DANG_SU_DUNG = 588;
+    }
   
 
    
