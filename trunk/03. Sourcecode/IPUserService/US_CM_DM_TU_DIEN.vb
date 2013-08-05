@@ -124,6 +124,19 @@ Public Class US_CM_DM_TU_DIEN
         v_cmd = v_MakeSelCommand.getSelectCmd()
         Me.FillDatasetByCommand(i_ds_tu_dien, v_cmd)
     End Sub
+
+    Public Sub fill_tu_dien_cung_loai_ds(ByVal i_strMaLoaiTD As String, _
+                                         ByVal i_strSortField As String, _
+                                 ByVal i_ds_tu_dien As DS_CM_DM_TU_DIEN)
+        Dim v_usLoaiTD As New US_CM_DM_LOAI_TD(i_strMaLoaiTD)
+        Dim v_cmd As SqlClient.SqlCommand
+        Dim v_MakeSelCommand As IMakeSelectCmd
+        v_MakeSelCommand = New CMakeAndSelectCmd(pm_objDS, c_TableName)
+        v_MakeSelCommand.AddCondition("ID_LOAI_TU_DIEN", v_usLoaiTD.dcID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang)
+        v_cmd = v_MakeSelCommand.getSelectCmd()
+        v_cmd.CommandText += " ORDER BY " + i_strSortField
+        Me.FillDatasetByCommand(i_ds_tu_dien, v_cmd)
+    End Sub
     Public Function check_exist_ma_tu_dien(ByVal i_strMaTuDien As String) As Boolean
         Dim i_ds_tu_dien As New DS_CM_DM_TU_DIEN()
         Dim v_cmd As SqlClient.SqlCommand
