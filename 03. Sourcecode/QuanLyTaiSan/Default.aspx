@@ -38,7 +38,7 @@
 					<tbody><tr>
 						<td>
 						<a href="#" title="Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?">
-                            <img border="0" src="Images/pager/dat.jpg" width="200"></a></td>
+                            <img border="0" src="Images/pager/dat1.jpg" width="200"></a></td>
 						</tr>
 					</tbody></table>
 				</td>
@@ -284,7 +284,7 @@
 					<tbody><tr>
 						<td>
 						<a href="#" title="Suy ngẫm: Vì sao anh giàu? Vì sao tôi nghèo?">
-                            <img border="0" src="Images/pager/oto.jpg" width="200"></a></td>
+                            <img border="0" src="Images/pager/oto1.jpg" width="200"></a></td>
 						</tr>
 					</tbody></table>
 				</td>
