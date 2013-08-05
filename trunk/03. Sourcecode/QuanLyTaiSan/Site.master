@@ -73,7 +73,7 @@
                     <%
                         if (Session["QuyenGV"] != null)
                         {
-                            if (CIPConvert.ToDecimal(Session["QuyenGV"]) == LOAI_USER_QUYEN.GIANG_VIEN)
+                            if (CIPConvert.ToDecimal(Session["QuyenGV"]) == LOAI_USER_QUYEN.GROUP30)
                             {
                     %> 
                          <li><a href='/QuanLyTaiSan/Help/'>Tài liệu hướng dẫn sử dụng</a></li>
