@@ -11,6 +11,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPException;
+using WebDS.CDBNames;
 
 public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
 {
@@ -160,17 +161,11 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
 
-        v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_NHA", v_ds_cm_dm_tu_dien);
+        v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_NHA", CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
         m_ddl_trang_thai_nha.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
         m_ddl_trang_thai_nha.DataTextField = "TEN";
         m_ddl_trang_thai_nha.DataValueField = "ID";
         m_ddl_trang_thai_nha.DataBind();
-    }
-
-    private void load_data_to_us_by_id(decimal ip_dc_id_nha)
-    {
-        m_us_dm_nha = new US_DM_NHA(ip_dc_id_nha);
-        load_data_from_us();
     }
 
     private void load_data_from_us()
@@ -272,11 +267,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         m_txt_ma_tai_san.Text = "";
     }
 
-    private void edit_grv_nha(decimal ip_dc_id_nha)
-    {
-        load_data_to_us_by_id(ip_dc_id_nha);
-    }
-
     private decimal get_id_bo_tinh(decimal ip_dc_id_don_vi_chu_quan)
     {
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(ip_dc_id_don_vi_chu_quan);
@@ -350,7 +340,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
                 switch (e.CommandName)
                 {
                     case "EditComp":
-                        load_data_to_us_by_id(v_dc_id_nha);
+                        m_us_dm_nha = new US_DM_NHA(v_dc_id_nha);
                         load_form_data();
                         load_data_from_us();
                         break;

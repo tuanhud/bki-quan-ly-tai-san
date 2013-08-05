@@ -353,8 +353,8 @@
                                     ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField HeaderText="Tên tài sản" DataField="MA_TAI_SAN" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" ItemStyle-HorizontalAlign="Right"/>
+                        <asp:BoundField HeaderText="Tên tài sản" DataField="MA_TAI_SAN"/>
+                        <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI"/>
                         <asp:BoundField HeaderText="DT Khuôn viên" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"/>
                         <asp:BoundField HeaderText="DT Trụ sở làm việc" DataField="DT_TRU_SO_LAM_VIEC" ItemStyle-HorizontalAlign="Right"/>
                         <asp:BoundField HeaderText="DT Cơ sở hoạt động sự nghiệp" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP" ItemStyle-HorizontalAlign="Right"/>
