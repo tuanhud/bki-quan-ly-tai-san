@@ -83,7 +83,7 @@
             <td colspan="12">
                 <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False" EmptyDataText="Không có dữ liệu phù hợp!"
                     Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    PageSize="20" onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging">
+                    PageSize="10" onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging">
                     <Columns>
                         <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
                             NavigateUrl="" />
