@@ -146,7 +146,7 @@
                             <ItemTemplate>
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; text-align: right">
                                 	<tr>
-                                		<td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
+                                		<td style = "width: 33% ; border-right:solid; border-right-width:1px" height="40px"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
                                         <td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
                                         <td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
                                 	</tr>
@@ -174,7 +174,7 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%"  style="text-align: right;
                                     border-collapse: collapse;">
                                 	<tr>
-                                		<td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("QLNN") %></td>
+                                		<td style = "width: 25% ; border-right:solid; border-right-width:1px" height="40px"><%# Eval("QLNN") %></td>
                                         <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KINH_DOANH") %></td>
                                         <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KHONG_KINH_DOANH") %></td>
                                         <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("HD_KHAC") %></td>
