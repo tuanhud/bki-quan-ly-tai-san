@@ -12,13 +12,16 @@
                 </span>
             </td>
         </tr>
+        <tr>
+        <td class="cssManField"><asp:label ID="m_lbl_mess" runat="Server"></asp:label></td>
+        </tr>
         <tr style="width: 100%">
             <td align="right" colspan="1" style="width: 18%">
                 <span class="cssManField">Bộ, tỉnh:</span>
             </td>
             <td colspan="1" style="width: 25%">
                 <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" OnSelectedIndexChanged="m_cbo_bo_tinh_SelectedIndexChanged"
-                    AutoPostBack="True">
+                    AutoPostBack="True" TabIndex="1">
                 </asp:DropDownList>
             </td>
             <td align="right" colspan="1" style="width: 18%">
@@ -26,7 +29,7 @@
             </td>
             <td style="width: 25%">
                 <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged"
-                    AutoPostBack="True">
+                    AutoPostBack="True" TabIndex="2">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -35,14 +38,15 @@
                 <span class="cssManField">Đơn vị sử dụng tài sản:</span>
             </td>
             <td style="width: 25%">
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" 
+                    TabIndex="3">
                 </asp:DropDownList>
             </td>
             <td align="right">
                 <span class="cssManField">Trạng thái: </span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%">
+                <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" TabIndex="4">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -53,9 +57,10 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" OnClick="m_cmd_loc_du_lieu_Click" />
+                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" 
+                    OnClick="m_cmd_loc_du_lieu_Click" TabIndex="5" />
                 <asp:Button ID="Button2" AccessKey="x" CssClass="cssButton" runat="server" Width="98px"
-                    Text="Xuất Excel (x)" Height="22px" />
+                    Text="Xuất Excel (x)" Height="22px" TabIndex="6" />
             </td>
             <td>
                 &nbsp;
@@ -70,6 +75,9 @@
                 <span class="cssPageTitle">DANH SÁCH CHI TIẾT TÀI SẢN</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
+        </tr>
+        <tr>
+        <td class="cssManField"><asp:label ID="m_lbl_thong_bao" runat="Server"></asp:label></td>
         </tr>
         <tr>
             <td colspan="12">
