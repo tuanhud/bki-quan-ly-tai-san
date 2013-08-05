@@ -365,7 +365,7 @@
                             <tr>
                                 <td>
                                     <p class="link_news_hot" style="margin-top: 0px; margin-bottom: 5px">
-                                        <a href="#">Quản lý Oto</a></p>
+                                        <a href="#">Quản lý Ô tô </a></p>
                                 </td>
                             </tr>
                             <tr>
@@ -398,8 +398,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a href="#" style="font-weight: bold">Danh mục Oto</a>
-                                                    <br>
+                                                    <a href="#" style="font-weight: bold">Danh mục Ô tô </a>&nbsp;<br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-31
                                                         14:45:58</span>
                                                 </td>
@@ -414,7 +413,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai Oto</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
                                                         23:17:05</span>
@@ -430,7 +429,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao Oto</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
                                                         23:22:17</span>
@@ -455,7 +454,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý Oto</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         15:05:17</span>
@@ -471,7 +470,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị trang cấp Oto</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị trang cấp Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         14:10:57</span>
