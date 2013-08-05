@@ -629,18 +629,20 @@ namespace WebUS
         }
         #endregion
 
-        public void FillDatasetBySearch(WebDS.DS_DM_OTO m_ds_dm_oto, string v_str_tu_khoa, decimal v_dc_id_trang_thai)
+        public void FillDatasetBySearch(WebDS.DS_DM_OTO m_ds_dm_oto, string v_str_tu_khoa, decimal v_dc_id_trang_thai,decimal v_dc_id_dv_su_dung)
         {
             CStoredProc cstored = new CStoredProc("pr_DM_OTO_Search");
             cstored.addNVarcharInputParam("@TU_KHOA", v_str_tu_khoa);
             cstored.addDecimalInputParam("@ID_TRANG_THAI", v_dc_id_trang_thai);
+            cstored.addDecimalInputParam("@ID_DV_SU_DUNG", v_dc_id_dv_su_dung);
             cstored.fillDataSetByCommand(this, m_ds_dm_oto);
         }
 
-        public void FillDatasetSearch(WebDS.DS_DM_OTO m_ds_dm_oto, string v_str_tu_khoa)
+        public void FillDatasetSearch(WebDS.DS_DM_OTO m_ds_dm_oto, string v_str_tu_khoa, string v_str_query)
         {
             CStoredProc cstored = new CStoredProc("pr_DM_OTO_get_search");
             cstored.addNVarcharInputParam("@TU_KHOA", v_str_tu_khoa);
+            cstored.addNVarcharInputParam("@QUERY",v_str_query);
             cstored.fillDataSetByCommand(this, m_ds_dm_oto);
         }
     }
