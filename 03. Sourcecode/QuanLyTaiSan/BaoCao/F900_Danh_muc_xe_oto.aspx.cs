@@ -80,9 +80,13 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             }
             else
             {
-                m_cbo_trang_thai.Visible = false;
-                m_lbl_trang_thai.Visible = false;
-                load_data_2_grid();
+                if (!this.IsPostBack)
+                {
+                    m_cbo_trang_thai.Visible = false;
+                    m_lbl_trang_thai.Visible = false;
+                    load_data_to_cbo_bo_tinh();
+                    load_data_2_grid();
+                }                
             }
         }
         catch (Exception v_e)
