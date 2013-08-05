@@ -473,5 +473,13 @@ public class US_DM_TAI_SAN_KHAC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+    #region Addtional
+    public void search(string ip_str_tu_khoa, DS_DM_TAI_SAN_KHAC ip_ds_dm_tai_san_khac)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Search");
+        v_cstore.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_cstore.fillDataSetByCommand(this, ip_ds_dm_tai_san_khac);
+    #endregion
+    }
+}
 }
