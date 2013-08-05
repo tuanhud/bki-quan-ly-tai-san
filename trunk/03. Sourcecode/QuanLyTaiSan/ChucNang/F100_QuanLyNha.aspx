@@ -146,10 +146,8 @@
                         <td align="right" style="width: 15%">
                         </td>
                         <td align="left" style="width: 30%;">
-                            &nbsp;
                         </td>
                         <td align="left" style="width: 1%;">
-                            &nbsp;
                         </td>
                     </tr>
                     <tr>
