@@ -51,8 +51,10 @@ namespace QltsForm {
 
         private void kêKhaiTrụSởLàmViệcToolStripMenuItem_Click(object sender, EventArgs e) {
             try {
-                f402_bao_cao_danh_muc_tru_so_lam_viec v_frm402 = new f402_bao_cao_danh_muc_tru_so_lam_viec();
-                v_frm402.display();
+                //f402_bao_cao_danh_muc_tru_so_lam_viec v_frm402 = new f402_bao_cao_danh_muc_tru_so_lam_viec();
+                //v_frm402.display();
+                f399_bao_cao_danh_muc_tru_so_lam_viec v_frm = new f399_bao_cao_danh_muc_tru_so_lam_viec();
+                v_frm.display();
             }
             catch (Exception v_e) {
                 
