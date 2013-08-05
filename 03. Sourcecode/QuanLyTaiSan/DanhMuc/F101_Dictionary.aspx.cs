@@ -44,7 +44,7 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
             m_grv_dm_tu_dien.DataBind();
             if (m_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.Count == 0)
             {
-                m_lbl_thong_bao.Text = "Chưa có nội dung thanh toán cho lọai hợp đồng này";
+                m_lbl_thong_bao.Text = "Chưa có từ điển cho lọai từ điển này";
                 m_lbl_thong_bao.Visible = true;
             }
             else m_lbl_thong_bao.Visible = false;
