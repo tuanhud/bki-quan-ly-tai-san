@@ -269,7 +269,7 @@
         <tr>
             <td style="width: 10%" colspan="6">
                 <asp:GridView ID="m_grv_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                    EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="4"
+                    EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                     ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                     <Columns>
                         <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
@@ -285,7 +285,7 @@
                         </asp:BoundField>
                         <asp:TemplateField HeaderStyle-Width="32%">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse:collapse">
                                     <tr>
                                         <td colspan="3">
                                             GIÁ TRỊ THEO SỔ KẾ TOÁN
@@ -294,7 +294,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" rowspan="1">
+                                        <td colspan="2" rowspan="1" style="height:30px;">
                                             Nguyên giá
                                         </td>
                                         <td rowspan="2" style="width: 33.33%">
@@ -312,12 +312,12 @@
                                 </table>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
-                                        <td style="width: 33.33%" align="right">
+                                        <td style="width: 33.33%; height:40px; border-right: 1px solid gray;" align="right">
                                             <%# Eval("NGUON_NS", "{0:#,###.00}")%>
                                         </td>
-                                        <td style="width: 33.33%" align="right">
+                                        <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
                                             <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
                                         </td>
                                         <td style="width: 33.33%" align="right">
