@@ -183,19 +183,19 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             m_txt_cap_hang.Text = m_us_dm_nha.dcCAP_HANG.ToString();
             m_txt_nam_xd.Text = m_us_dm_nha.dcNAM_XAY_DUNG.ToString();
             m_txt_ngay_su_dung.Text = m_us_dm_nha.dcNGAY_THANG_NAM_SU_DUNG.ToString();
-            m_txt_nguyen_gia.Text = m_us_dm_nha.dcNGUON_NS.ToString("0,000.00");
-            m_txt_nguyen_gia_nguon_khac.Text = m_us_dm_nha.dcNGUON_KHAC.ToString("0,000.00");
-            m_txt_gia_tri_con_lai.Text = m_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("0,000.00");
+            m_txt_nguyen_gia.Text = m_us_dm_nha.dcNGUON_NS.ToString("#,##0.00");
+            m_txt_nguyen_gia_nguon_khac.Text = m_us_dm_nha.dcNGUON_KHAC.ToString("#,##0.00");
+            m_txt_gia_tri_con_lai.Text = m_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0.00");
             m_txt_so_tang.Text = m_us_dm_nha.dcSO_TANG.ToString();
-            m_txt_dien_tich_xay_dung.Text = m_us_dm_nha.dcDT_XAY_DUNG.ToString("0,000.00");
-            m_txt_tong_dien_tich_xay_dung.Text = m_us_dm_nha.dcTONG_DT_SAN_XD.ToString("0,000.00");
-            m_txt_tru_so_lam_viec.Text = m_us_dm_nha.dcTRU_SO_LAM_VIEC.ToString("0,000.00");
-            m_txt_co_so_hdsn.Text = m_us_dm_nha.dcCO_SO_HDSN.ToString("0,000.00");
-            m_txt_lam_nha_o.Text = m_us_dm_nha.dcLAM_NHA_O.ToString("0,000.00");
-            m_txt_cho_thue.Text = m_us_dm_nha.dcCHO_THUE.ToString("0,000.00");
-            m_txt_bo_trong.Text = m_us_dm_nha.dcBO_TRONG.ToString("0,000.00");
-            m_txt_bi_lan_chiem.Text = m_us_dm_nha.dcBI_LAN_CHIEM.ToString("0,000.00");
-            m_txt_khac.Text = m_us_dm_nha.dcKHAC.ToString("0,000.00");
+            m_txt_dien_tich_xay_dung.Text = m_us_dm_nha.dcDT_XAY_DUNG.ToString("#,##0.00");
+            m_txt_tong_dien_tich_xay_dung.Text = m_us_dm_nha.dcTONG_DT_SAN_XD.ToString("#,##0.00");
+            m_txt_tru_so_lam_viec.Text = m_us_dm_nha.dcTRU_SO_LAM_VIEC.ToString("#,##0.00");
+            m_txt_co_so_hdsn.Text = m_us_dm_nha.dcCO_SO_HDSN.ToString("#,##0.00");
+            m_txt_lam_nha_o.Text = m_us_dm_nha.dcLAM_NHA_O.ToString("#,##0.00");
+            m_txt_cho_thue.Text = m_us_dm_nha.dcCHO_THUE.ToString("#,##0.00");
+            m_txt_bo_trong.Text = m_us_dm_nha.dcBO_TRONG.ToString("#,##0.00");
+            m_txt_bi_lan_chiem.Text = m_us_dm_nha.dcBI_LAN_CHIEM.ToString("#,##0.00");
+            m_txt_khac.Text = m_us_dm_nha.dcKHAC.ToString("#,##0.00");
             m_ddl_trang_thai_nha.SelectedValue = m_us_dm_nha.dcID_TRANG_THAI.ToString();
         }
         catch (Exception v_e)

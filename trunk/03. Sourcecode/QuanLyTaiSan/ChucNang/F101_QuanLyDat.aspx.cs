@@ -9,6 +9,7 @@ using IP.Core.IPUserService;
 using WebDS;
 using WebUS;
 using IP.Core.IPData;
+using WebDS.CDBNames;
 
 public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 {
@@ -113,7 +114,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
 
-        v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_DAT", v_ds_cm_dm_tu_dien);
+        v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_DAT,CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
         m_ddl_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
         m_ddl_trang_thai.DataTextField = "TEN";
         m_ddl_trang_thai.DataValueField = "ID";
@@ -130,8 +131,9 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            string v_str_query = "where DIA_CHI LIKE '%" + ip_str_tu_khoa + "%' OR MA_TAI_SAN LIKE '%" + ip_str_tu_khoa + "%'";
-            m_us_dm_dat.FillDataset(v_ds_dm_dat, v_str_query);
+            CStoredProc v_cstore = new CStoredProc("pr_DM_DAT_Search");
+            v_cstore.addNVarcharInputParam("@TU_KHOA", m_txt_tu_khoa.Text);
+            v_cstore.fillDataSetByCommand(m_us_dm_dat, v_ds_dm_dat);
         }
         m_grv_danh_sach_nha.DataSource = v_ds_dm_dat.DM_DAT;
         m_grv_danh_sach_nha.DataBind();
@@ -148,15 +150,15 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             m_txt_dia_chi.Text = m_us_dm_dat.strDIA_CHI;
             m_txt_ma_tai_san.Text = m_us_dm_dat.strMA_TAI_SAN;
             m_txt_nam_xd.Text = m_us_dm_dat.dcSO_NAM_DA_SU_DUNG.ToString();
-            m_txt_nguyen_gia.Text = m_us_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString();
-            m_txt_dien_tich_khuon_vien.Text = m_us_dm_dat.dcDT_KHUON_VIEN.ToString();
-            m_txt_tru_so_lam_viec.Text = m_us_dm_dat.dcDT_TRU_SO_LAM_VIEC.ToString();
-            m_txt_lam_nha_o.Text = m_us_dm_dat.dcDT_LAM_NHA_O.ToString();
-            m_txt_co_so_hdsn.Text = m_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP.ToString();
-            m_txt_cho_thue.Text = m_us_dm_dat.dcDT_CHO_THUE.ToString();
-            m_txt_bo_trong.Text = m_us_dm_dat.dcDT_BO_TRONG.ToString();
-            m_txt_bi_lan_chiem.Text = m_us_dm_dat.dcDT_BI_LAN_CHIEM.ToString();
-            m_txt_khac.Text = m_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC.ToString();
+            m_txt_nguyen_gia.Text = m_us_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString("#,##0.00");
+            m_txt_dien_tich_khuon_vien.Text = m_us_dm_dat.dcDT_KHUON_VIEN.ToString("#,##0.00");
+            m_txt_tru_so_lam_viec.Text = m_us_dm_dat.dcDT_TRU_SO_LAM_VIEC.ToString("#,##0.00");
+            m_txt_lam_nha_o.Text = m_us_dm_dat.dcDT_LAM_NHA_O.ToString("#,##0.00");
+            m_txt_co_so_hdsn.Text = m_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP.ToString("#,##0.00");
+            m_txt_cho_thue.Text = m_us_dm_dat.dcDT_CHO_THUE.ToString("#,##0.00");
+            m_txt_bo_trong.Text = m_us_dm_dat.dcDT_BO_TRONG.ToString("#,##0.00");
+            m_txt_bi_lan_chiem.Text = m_us_dm_dat.dcDT_BI_LAN_CHIEM.ToString("#,##0.00");
+            m_txt_khac.Text = m_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC.ToString("#,##0.00");
         }
         catch (Exception v_e)
         {

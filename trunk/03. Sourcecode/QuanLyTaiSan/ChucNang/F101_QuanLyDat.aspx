@@ -7,7 +7,7 @@
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
-                <span class="cssPageTitle">Quản lý nhà</span> <span class="expand-collapse-text initial-expand">
+                <span class="cssPageTitle">Quản lý đất</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
@@ -91,7 +91,7 @@
                             <span class="cssManField">Số năm đã sử dụng</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox cssNumber" Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox csscurrency" Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_nam_xd" runat="server" ControlToValidate="m_txt_nam_xd"
@@ -115,7 +115,7 @@
                             <span class="cssManField">Diện tích khuôn viên (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_dien_tich_khuon_vien" runat="server" CssClass="cssTextBox cssNumber"
+                            <asp:TextBox ID="m_txt_dien_tich_khuon_vien" runat="server" CssClass="cssTextBox csscurrency"
                                 ValidationGroup="m_vlg_nha" Width="85%"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -150,7 +150,7 @@
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:TextBox ID="m_txt_tru_so_lam_viec" runat="server" 
-                                CssClass="cssTextBox cssNumber" Width="85%"
+                                CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -162,7 +162,7 @@
                         </td>
                         <td align="left" style="width: 30%;">
                             <asp:TextBox ID="m_txt_co_so_hdsn" runat="server" 
-                                CssClass="cssTextBox cssNumber" Width="85%"
+                                CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -175,7 +175,7 @@
                             <span class="cssManField">Làm nhà ở (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_lam_nha_o" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
+                            <asp:TextBox ID="m_txt_lam_nha_o" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -186,7 +186,7 @@
                             <span class="cssManField">Cho thuê (m2)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_cho_thue" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
+                            <asp:TextBox ID="m_txt_cho_thue" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -199,7 +199,8 @@
                             <span class="cssManField">Bỏ trống (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_bo_trong" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
+                            <asp:TextBox ID="m_txt_bo_trong" runat="server" 
+                                CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -211,7 +212,7 @@
                         </td>
                         <td align="left" style="width: 30%;">
                             <asp:TextBox ID="m_txt_bi_lan_chiem" runat="server" 
-                                CssClass="cssTextBox cssNumber" Width="85%"
+                                CssClass="cssTextBox csscurrency" Width="85%"
                                 ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -224,7 +225,7 @@
                             <span class="cssManField">Khác (m2)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox cssNumber" 
+                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox csscurrency" 
                                 Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -273,7 +274,7 @@
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
-                <span class="cssPageTitle">Danh sách nhà</span> <span class="expand-collapse-text initial-expand">
+                <span class="cssPageTitle">Danh sách đất</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
@@ -355,15 +356,15 @@
                         </asp:TemplateField>
                         <asp:BoundField HeaderText="Tên tài sản" DataField="MA_TAI_SAN"/>
                         <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI"/>
-                        <asp:BoundField HeaderText="DT Khuôn viên" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="DT Trụ sở làm việc" DataField="DT_TRU_SO_LAM_VIEC" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="DT Cơ sở hoạt động sự nghiệp" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="DT Làm nhà ở" DataField="DT_LAM_NHA_O" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="DT Cho thuê" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="DT Bỏ trống" DataField="DT_BO_TRONG"/>
-                        <asp:BoundField HeaderText="DT Bị lấn chiếm" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="DT Sử dụng mục đích khác" DataField="DT_SU_DUNG_MUC_DICH_KHAC" ItemStyle-HorizontalAlign="Right"/>
-                        <asp:BoundField HeaderText="Giá trị theo số kế toán" DataField="GT_THEO_SO_KE_TOAN" ItemStyle-HorizontalAlign="Right"/>
+                        <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
+                        <asp:BoundField HeaderText="DT Trụ sở làm việc (m2)" DataField="DT_TRU_SO_LAM_VIEC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
+                        <asp:BoundField HeaderText="DT Cơ sở hoạt động sự nghiệp (m2)" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
+                        <asp:BoundField HeaderText="DT Làm nhà ở (m2)" DataField="DT_LAM_NHA_O" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
+                        <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
+                        <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG"/>
+                        <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
+                        <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
+                        <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"/>
                         <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right"/>
                     </Columns>
                 </asp:GridView>
