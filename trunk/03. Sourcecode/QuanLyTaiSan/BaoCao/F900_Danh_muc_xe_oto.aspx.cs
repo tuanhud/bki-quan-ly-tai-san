@@ -16,12 +16,55 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     #region Members
     US_DM_OTO m_us_dm_oto = new US_DM_OTO();
     DS_DM_OTO m_ds_dm_oto = new DS_DM_OTO();
+    US_DM_DON_VI m_us_dm_don_vi = new US_DM_DON_VI();
+    DS_DM_DON_VI m_ds_dm_don_vi = new DS_DM_DON_VI();
     #endregion
 
     #region Data Structures
     #endregion
 
     #region Private Methods
+    private void load_data_to_cbo_bo_tinh()
+    {
+        try
+        {
+            m_us_dm_don_vi.FillDataset(m_ds_dm_don_vi, "Where id_loai_don_vi=574");
+            m_cbo_bo_tinh.DataSource = m_ds_dm_don_vi.DM_DON_VI;
+            m_cbo_bo_tinh.DataValueField = CIPConvert.ToStr(DM_DON_VI.ID);
+            m_cbo_bo_tinh.DataTextField = CIPConvert.ToStr(DM_DON_VI.TEN_DON_VI);
+            m_cbo_bo_tinh.DataBind();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+
+    private void load_data_to_cbo_don_vi_quan_ly()
+    {
+        
+        string v_id_bo_tinh = m_cbo_bo_tinh.SelectedValue;
+        m_us_dm_don_vi.FillDataset(m_ds_dm_don_vi, "where ID_LOAI_DON_VI = 575 and ID_DON_VI_CAP_TREN LIKE '%"
+            + v_id_bo_tinh + "%'");
+        m_cbo_don_vi_quan_ly.DataSource = m_ds_dm_don_vi.DM_DON_VI;
+        m_cbo_don_vi_quan_ly.DataTextField = "TEN_DON_VI";
+        m_cbo_don_vi_quan_ly.DataValueField = "ID";
+        m_cbo_don_vi_quan_ly.DataBind();
+        m_cbo_don_vi_quan_ly.Items.Insert(0, new ListItem("Tất cả đơn vị trực thuộc", ""));
+    }
+    private void load_data_to_cbo_don_vi_su_dung()
+    {
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+        DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+
+        string v_id_don_vi_chu_quan = m_cbo_don_vi_quan_ly.SelectedValue;
+        v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 576 and ID_DON_VI_CAP_TREN LIKE '%" + v_id_don_vi_chu_quan
+            + "%'");
+        m_cbo_don_vi_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+        m_cbo_don_vi_su_dung.DataTextField = "TEN_DON_VI";
+        m_cbo_don_vi_su_dung.DataValueField = "ID";
+        m_cbo_don_vi_su_dung.DataBind();
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -31,6 +74,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                 if (!this.IsPostBack)
                 {
                     load_cbo_trang_thai();
+                    load_data_to_cbo_bo_tinh();
                     load_data_2_grid_by_command();
                 }
             }
@@ -87,8 +131,19 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         try
         {   
             string v_str_tu_khoa = m_txt_tu_khoa.Text.Trim();
+
+            decimal v_dc_id_don_vi_sd = 0;
+            if( m_cbo_don_vi_su_dung.SelectedValue != "")
+                v_dc_id_don_vi_sd = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
+
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            m_us_dm_oto.FillDatasetBySearch(m_ds_dm_oto,v_str_tu_khoa,v_dc_id_trang_thai);
+            
+            if (v_dc_id_don_vi_sd != 0)
+            {
+                m_us_dm_oto.FillDatasetBySearch(m_ds_dm_oto, v_str_tu_khoa, v_dc_id_trang_thai, v_dc_id_don_vi_sd);
+            }
+            else
+                m_us_dm_oto.FillDatasetBySearch(m_ds_dm_oto, v_str_tu_khoa, v_dc_id_trang_thai, 0);
             m_grv_bao_cao_oto.DataSource = m_ds_dm_oto.DM_OTO;
             m_grv_bao_cao_oto.DataBind();
         }
@@ -132,6 +187,33 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
 
             throw v_e;
         }
+    }
+    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+
+            load_data_to_cbo_don_vi_quan_ly();
+
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+    protected void m_cbo_don_vi_quan_ly_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+
+            load_data_to_cbo_don_vi_su_dung();
+
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+
     }
 }
 

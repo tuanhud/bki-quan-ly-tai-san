@@ -18,6 +18,45 @@
             </td>
         </tr>
         <tr>
+            <td align="right" style="width: 15%;">
+                <span class="cssManField">Bộ, tỉnh</span>
+            </td>
+            <td style="width: 20%;">
+                <asp:DropDownList ID="m_cbo_bo_tinh" runat="server" AutoPostBack="True" 
+                    CssClass="cssDorpdownlist" 
+                    onselectedindexchanged="m_cbo_bo_tinh_SelectedIndexChanged" Width="96%">
+                </asp:DropDownList>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width: 15%;">
+                <span class="cssManField">Đơn vị quản lý</span>
+            </td>
+            <td style="width: 20%;">
+                <asp:DropDownList ID="m_cbo_don_vi_quan_ly" runat="server" AutoPostBack="True" 
+                    CssClass="cssDorpdownlist" 
+                    onselectedindexchanged="m_cbo_don_vi_quan_ly_SelectedIndexChanged" Width="96%">
+                </asp:DropDownList>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width: 15%;">
+                <span class="cssManField">Đơn vị sử dụng</span>
+            </td>
+            <td style="width: 20%;">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung" runat="server" AutoPostBack="True" 
+                    CssClass="cssDorpdownlist" Width="96%">
+                </asp:DropDownList>
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
             <td align="right" style="width: 15%">
                 <span class="cssManField">Từ khóa</span>
             </td>
@@ -102,19 +141,19 @@
                 </asp:BoundField>
                 <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="25%">
                     <HeaderTemplate>
-                        <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                        <table border="0" cellspacing="0" cellpadding="3" width="100%">
                             <tr>
-                                <td colspan="3">
+                                <td colspan="3" style="border-bottom-style:solid; border-bottom-width:1px">
                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                     <br />
                                     (NGÀN ĐỒNG)
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="2" style="border-bottom-style:solid; border-bottom-width:1px">
                                     Nguyên giá
                                 </td>
-                                <td rowspan="2" style="width: 33%">
+                                <td rowspan="2" style="width: 33%; border-left-style:solid; border-left-width:1px">
                                     Giá trị còn lại
                                 </td>
                             </tr>
@@ -122,7 +161,7 @@
                                 <td style="width: 33.5%">
                                     Nguồn NS
                                 </td>
-                                <td style="width: 33.5%">
+                                <td style="width: 33.5%;border-left-style:solid; border-left-width:1px; height:50px">
                                     Nguồn khác
                                 </td>
                             </tr>
@@ -147,18 +186,18 @@
                 </asp:TemplateField>
                 <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="20%">
                     <HeaderTemplate>
-                        <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                        <table border="0" cellspacing="0" cellpadding="3" width="100%">
                             <tr>
-                                <td colspan="4">
+                                <td colspan="4" style="border-bottom:solid; border-bottom-width:1px; height:30px">
                                     HIỆN TRẠNG SỬ DỤNG<br />
                                     (chiếc)
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="2" style="width: 25%">
+                                <td rowspan="2" style="width: 25%;border-right:solid; border-right-width:1px">
                                     QLNN
                                 </td>
-                                <td colspan="2" style="width: 50%">
+                                <td colspan="2" style="width: 50%;border-bottom:solid; border-bottom-width:1px;border-right:solid; border-right-width:1px">
                                     HĐ Sự nghiệp
                                 </td>
                                 <td rowspan="2" style="width: 25%">
@@ -166,10 +205,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 25%">
+                                <td style="width: 25%;border-right:solid; border-right-width:1px">
                                     Kinh doanh
                                 </td>
-                                <td style="width: 25%">
+                                <td style="width: 25%;border-right:solid; border-right-width:1px">
                                     Không kinh doanh
                                 </td>
                             </tr>
