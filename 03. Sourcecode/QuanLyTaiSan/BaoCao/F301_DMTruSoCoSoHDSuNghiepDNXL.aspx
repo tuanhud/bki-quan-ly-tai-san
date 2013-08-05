@@ -24,7 +24,7 @@
             </td>
             <td style="width: 35%">
                 <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
-                    OnSelectedIndexChanged="m_cbo_bo_tinh_SelectedIndexChanged">
+                    OnSelectedIndexChanged="m_cbo_bo_tinh_SelectedIndexChanged" TabIndex="1">
                 </asp:DropDownList>
             </td>
             <td align="right" style="width: 15%">
@@ -32,7 +32,8 @@
             </td>
             <td style="width: 35%">
                 <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
-                    OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged">
+                    OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged" 
+                    TabIndex="2">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -42,14 +43,15 @@
             </td>
             <td>
                 <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
-                    OnSelectedIndexChanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged">
+                    OnSelectedIndexChanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged" 
+                    TabIndex="3">
                 </asp:DropDownList>
             </td>
             <td align="right">
                 <span class="cssManField">Địa chỉ: </span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="90%">
+                <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="90%" TabIndex="4">
                 </asp:DropDownList>
             </td>
         </tr>
