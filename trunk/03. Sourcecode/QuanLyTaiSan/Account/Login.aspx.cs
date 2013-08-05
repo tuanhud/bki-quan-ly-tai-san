@@ -47,7 +47,7 @@ public partial class Account_Login : System.Web.UI.Page
                 Response.Cookies["UserName"].Value = strUserName;
                 Response.Cookies["PassWord"].Value = strPassWord;
             }
-            Session[SESSION.AccounLogin] = "Y";
+            Session[SESSION.AccounLoginYN] = "Y";
             Session[SESSION.UserName] = strUserName;
             
             decimal v_dc_quyen = load_user_quyen(strUserName);
