@@ -10,6 +10,7 @@ using IP.Core.IPBusinessService;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using WebDS.CDBNames;
+using QltsForm;
 
 public partial class Default2 : System.Web.UI.Page
 {
@@ -36,6 +37,29 @@ public partial class Default2 : System.Web.UI.Page
     #region private method
 
 
+    private void export_excel()
+    {
+        string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
+        string v_str_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedItem.Text;
+        decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue);
+        string v_str_output_file = "";
+        f401_bao_cao_danh_muc_tai_san_khac v_f401_bc_dm_tai_san_khac = new f401_bao_cao_danh_muc_tai_san_khac();
+       
+                    v_f401_bc_dm_tai_san_khac.expor_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
+
+                                , v_str_bo_tinh
+                                , v_str_don_vi_chu_quan
+                                , v_dc_id_dv_su_dung
+                                , ref v_str_output_file);
+
+                  
+             
+            Response.Clear();
+            v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;
+            Response.Redirect(v_str_output_file, false);
+        
+
+    }
 
     private void load_data_to_cbo_bo_tinh()
     {
@@ -285,6 +309,18 @@ public partial class Default2 : System.Web.UI.Page
             load_data_to_grid_tai_san_khac();
             m_grv_tai_san_khac.PageIndex = e.NewPageIndex;
             m_grv_tai_san_khac.DataBind();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+   
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            export_excel();
         }
         catch (System.Exception ex)
         {
