@@ -110,12 +110,22 @@
                 <tr>
                     <td align="center">
                         <asp:GridView ID="m_grv_dm_don_vi" runat="server" AutoGenerateColumns="False" Width="80%"
-                            DataKeyNames="ID" AllowPaging="true" PageSize="15" CellPadding="4" ForeColor="#333333"
+                            DataKeyNames="ID" AllowPaging="True" PageSize="15" CellPadding="4" ForeColor="#333333"
                             CssClass="cssGrid" OnRowDeleting="m_grv_dm_don_vi_RowDeleting" OnSelectedIndexChanging="m_grv_dm_don_vi_SelectedIndexChanging"
                             OnPageIndexChanging="m_grv_dm_don_vi_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
+                                <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center">
+                                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                </asp:CommandField>
+                                <asp:TemplateField HeaderText="Sửa">
+                            <ItemTemplate>
+                                <asp:LinkButton ToolTip="Sửa" ID="m_lbt_edit" CommandName="Update" runat="server">
+                                <img src="../Images/Button/edit.png" alt="Update" align="middle" />
+                                </asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %></ItemTemplate>
@@ -123,14 +133,13 @@
                                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="MA_DON_VI" ItemStyle-HorizontalAlign="Center" HeaderText="Mã đơn vị">
+                                    <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="TEN_DON_VI" HeaderText="Tên đơn vị"></asp:BoundField>
                                 <asp:BoundField DataField="LOAI_HINH_DON_VI" HeaderText="Loại hình đơn vị" />
                                 <asp:BoundField DataField="ID_DON_VI_CAP_TREN" HeaderText="Đơn vị cấp trên" />
-                                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center">
-                                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                </asp:CommandField>
-                                <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center">
+                                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" 
+                                    ItemStyle-HorizontalAlign="Center" Visible="False">
                                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                                 </asp:CommandField>
                             </Columns>
