@@ -80,8 +80,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             if (Request.QueryString["ID"] != null)
             {
                 string v_dc_id_loai_don_vi = Request.QueryString["ID"].ToString();
-                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("select * from DM_DON_VI where ID_LOAI_DON_VI = 574");
-                m_us_don_vi.FillDatasetByCommand(m_ds_don_vi,cmd);
+                m_us_don_vi.FillDatasetByQueryString(m_ds_don_vi,v_dc_id_loai_don_vi);
                 m_grv_dm_don_vi.DataSource = m_ds_don_vi.DM_DON_VI;
                 m_grv_dm_don_vi.DataBind();
             }
@@ -302,5 +301,18 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
 
             throw v_e;
         }
+    }
+    protected void m_grv_dm_don_vi_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        try
+        {
+            m_lbl_mess.Text = "";
+            load_update_don_vi(e.RowIndex);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+        
     }
 }
