@@ -443,21 +443,21 @@ namespace QltsForm {
             US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_dc_don_vi_su_dung);
 
             //2. Xuất dữ liệu ra file excel
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1); ;
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 12, 1); ;
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
                     load_data_2_grid(ip_dc_don_vi_su_dung, ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
-                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 12, 1);
                     break;
                 case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
                     load_data_2_grid(ip_dc_don_vi_su_dung, ID_TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY);
-                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 12, 1);
                     break;
                 case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
                     // Chỗ này đang chưa chuẩn vì chưa hiểu sự nghiệp là gì
                     load_data_2_grid(ip_dc_don_vi_su_dung, ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
-                    v_obj_exe_report = new CExcelWebReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 12, 1);
                     break;
                 default:
                     break;
