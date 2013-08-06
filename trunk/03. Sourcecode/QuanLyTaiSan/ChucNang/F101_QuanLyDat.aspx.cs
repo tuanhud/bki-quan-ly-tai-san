@@ -187,6 +187,11 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         m_us_dm_dat.dcDT_BO_TRONG = CIPConvert.ToDecimal(m_txt_bo_trong.Text);
         m_us_dm_dat.dcDT_BI_LAN_CHIEM = CIPConvert.ToDecimal(m_txt_bi_lan_chiem.Text);
         m_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC = CIPConvert.ToDecimal(m_txt_khac.Text);
+        m_us_dm_dat.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.DAT;
+
+        //m_us_dm_dat.dcID_NGUOI_DUYET = 0;
+        //m_us_dm_dat.dcID_NGUOI_LAP = 0;
+        m_us_dm_dat.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
     }
 
     #endregion

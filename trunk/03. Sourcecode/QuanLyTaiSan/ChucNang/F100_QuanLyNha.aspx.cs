@@ -238,6 +238,9 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             m_us_dm_nha.dcID_DON_VI_CHU_QUAN = v_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
             m_us_dm_nha.dcID_DON_VI_DAU_TU = CIPConvert.ToDecimal(m_ddl_don_vi_dau_tu.SelectedValue);
             m_us_dm_nha.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
+
+            //m_us_dm_nha.dcID_NGUOI_DUYET = 0;
+            //m_us_dm_nha.dcID_NGUOI_LAP = 0;
         }
         catch (Exception v_e)
         {
@@ -290,20 +293,21 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
 
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
-        if (m_hdf_id.Value == "")
+        if (m_hdf_id.Value == "" && m_ddl_thuoc_khu_dat.SelectedValue != "")
         {
             fill_form_data_to_us();
             m_us_dm_nha.Insert();
         }
         else
         {
+
         }
 
     }
 
     protected void m_cmd_cap_nhat_Click(object sender, EventArgs e)
     {
-        if (m_hdf_id.Value != "")
+        if (m_hdf_id.Value != "" && m_ddl_thuoc_khu_dat.SelectedValue != "")
         {
             fill_form_data_to_us();
             m_us_dm_nha.Update();
@@ -322,6 +326,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         load_form_data();
+        m_txt_tu_khoa.Focus();
     }
 
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
