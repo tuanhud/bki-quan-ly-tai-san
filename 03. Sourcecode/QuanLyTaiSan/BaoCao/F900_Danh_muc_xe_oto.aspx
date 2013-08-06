@@ -27,20 +27,14 @@
                     onselectedindexchanged="m_cbo_bo_tinh_SelectedIndexChanged" Width="96%">
                 </asp:DropDownList>
             </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="width: 15%;">
+            <td align="right">
                 <span class="cssManField">Đơn vị quản lý</span>
             </td>
-            <td style="width: 20%;">
+            <td>
                 <asp:DropDownList ID="m_cbo_don_vi_quan_ly" runat="server" AutoPostBack="True" 
                     CssClass="cssDorpdownlist" 
                     onselectedindexchanged="m_cbo_don_vi_quan_ly_SelectedIndexChanged" Width="96%">
                 </asp:DropDownList>
-            </td>
-            <td>
             </td>
         </tr>
         <tr>
@@ -52,27 +46,27 @@
                     CssClass="cssDorpdownlist" Width="96%">
                 </asp:DropDownList>
             </td>
+            <td align="right">
+                <span class="cssManField">Từ khóa</span>&nbsp;</td>
             <td>
-                &nbsp;
+                <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" 
+                    Width="85%"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td align="right" style="width: 15%">
-                <span class="cssManField">Từ khóa</span>
-            </td>
-            <td align="left" style="width: 30%">
-                <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" 
-                    Width="85%"></asp:TextBox>
-            </td>
-            <td align="right">
                 <asp:Label ID="m_lbl_trang_thai" runat="server" CssClass="cssManField" 
                     Visible="False">Trạng thái</asp:Label>
+            </td>
+            <td align="left" style="width: 30%">
+                <asp:DropDownList ID="m_cbo_trang_thai" runat="server" AutoPostBack="True" 
+                    CssClass="cssDorpdownlist" 
+                    onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged" Width="264px" />
+            </td>
+            <td align="right">
 &nbsp;</td>
             <td align="left">
-                <asp:DropDownList ID="m_cbo_trang_thai" runat="server" Width="264px" 
-                    CssClass="cssDorpdownlist" AutoPostBack="True" 
-                    onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged" />
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td align="right">
@@ -101,7 +95,7 @@
     <div id="gridViewContent">
         <asp:GridView ID="m_grv_bao_cao_oto" AllowPaging="true" runat="server" AutoGenerateColumns="False"
             Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" 
-            PageSize="30" >
+            PageSize="30">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField HeaderText="TÀI SẢN" ItemStyle-HorizontalAlign="Center" DataField="TEN_TAI_SAN"
@@ -171,13 +165,13 @@
                     <ItemTemplate>
                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                             <tr>
-                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px; height:35px">
+                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px; height:35px"  align="right">
                                     <%# Eval("NGUON_NS", "{0:#,###.00}")%>
                                 </td>
-                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px">
+                                <td style="width: 33.5% ; border-right:solid; border-right-width:1px"  align="right">
                                     <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
                                 </td>
-                                <td style="width: 33%">
+                                <td style="width: 33%"  align="right">
                                     <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
                                 </td>
                             </tr>
@@ -218,16 +212,16 @@
                     <ItemTemplate>
                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                             <tr>
-                                <td style="width: 25% ; border-right:solid; border-right-width:1px">
+                                <td style="width: 25% ; border-right:solid; border-right-width:1px"  align="right">
                                     <%# Eval("QLNN") %>
                                 </td>
-                                <td style="width: 25 ; border-right:solid; border-right-width:1px">
+                                <td style="width: 25 ; border-right:solid; border-right-width:1px"  align="right">
                                     <%# Eval("KINH_DOANH") %>
                                 </td>
-                                <td style="width: 25% ; border-right:solid; border-right-width:1px;height:35px" >
+                                <td style="width: 25% ; border-right:solid; border-right-width:1px;height:35px"  align="right">
                                     <%# Eval("KHONG_KINH_DOANH") %>
                                 </td>
-                                <td style="width: 25%">
+                                <td style="width: 25%"  align="right">
                                     <%# Eval("HD_KHAC") %>
                                 </td>
                             </tr>
