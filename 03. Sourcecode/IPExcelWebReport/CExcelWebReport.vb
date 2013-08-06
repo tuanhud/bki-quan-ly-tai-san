@@ -15,6 +15,8 @@ Public Class CExcelWebReport
     Protected m_strFileNameOutPut As String = ""
 
     Private m_strTemplateFileNameWithPath As String
+    Private m_strTemplateFileNameWithoutPath As String = ""
+
     Private m_iSheetStartRow As Integer
     Private m_iSheetStartCol As Integer
 
@@ -34,6 +36,8 @@ Public Class CExcelWebReport
                             , ByVal i_iSheetStartCol As Integer)
         InitPaths()
         m_strTemplateFileNameWithPath = m_strTemplatesPath & i_strTemplateFileWithoutPath
+        m_strTemplateFileNameWithoutPath = i_strTemplateFileWithoutPath
+
         m_iSheetStartCol = i_iSheetStartCol
         m_iSheetStartRow = i_iSheetStartRow
         'Get time truoc khi start Excel Application
@@ -100,7 +104,7 @@ Public Class CExcelWebReport
     Public Function GetOutputFileNameWithPath() As String
         Dim v_strRandomName As String
         Randomize()
-        m_strFileNameOutPut = "~" & CType(Rnd() * 1000000000000, Int64) & ".xls"
+        m_strFileNameOutPut = m_strTemplateFileNameWithoutPath.Replace(".xls", "") & "-" & CType(Rnd() * 1000000000000, Int64) & ".xls"
         v_strRandomName = m_strOutputPath & m_strFileNameOutPut
         Return v_strRandomName
     End Function
@@ -162,6 +166,7 @@ Public Class CExcelWebReport
             'Cap nhat by tinhth :i_b_show = true de kill object Excel
             If i_b_show Then
                 m_objExcelApp.Visible = False
+              
                 Unmount()
             End If
         Catch v_e As Exception
@@ -211,6 +216,7 @@ Public Class CExcelWebReport
             'Cap nhat by tinhth :i_b_show = true de kill object Excel
             If i_b_show Then
                 m_objExcelApp.Visible = False
+                
                 Unmount()
             End If
         Catch v_e As Exception
@@ -274,11 +280,12 @@ Public Class CExcelWebReport
 
     Private Sub Unmount()
         'Save WorkBook file
-        m_objExcelApp.ActiveWorkbook.Save()
+        'm_objExcelApp.ActiveWorkbook.Save()
+        'm_objExcelApp.Workbooks.Close()
         'Huy cac object
         m_objExcelWorksheet = Nothing
         m_objExcelWorkbook = Nothing
-        m_objExcelApp.Quit()
+        'm_objExcelApp.Quit()
         m_objExcelApp = Nothing
         Dim v_start_time As DateTime
         Dim v_proc As System.Diagnostics.Process
