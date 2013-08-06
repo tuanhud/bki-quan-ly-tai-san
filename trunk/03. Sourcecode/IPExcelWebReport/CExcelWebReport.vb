@@ -280,12 +280,12 @@ Public Class CExcelWebReport
 
     Private Sub Unmount()
         'Save WorkBook file
-        'm_objExcelApp.ActiveWorkbook.Save()
-        'm_objExcelApp.Workbooks.Close()
+        m_objExcelApp.ActiveWorkbook.Save()
+        m_objExcelApp.Workbooks.Close()
         'Huy cac object
         m_objExcelWorksheet = Nothing
         m_objExcelWorkbook = Nothing
-        'm_objExcelApp.Quit()
+        m_objExcelApp.Quit()
         m_objExcelApp = Nothing
         Dim v_start_time As DateTime
         Dim v_proc As System.Diagnostics.Process
