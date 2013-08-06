@@ -226,5 +226,12 @@ namespace WebUS
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        public void FillDatasetByQueryString(WebDS.DS_DM_DON_VI m_ds_don_vi, string v_dc_id_loai_don_vi)
+        {
+            CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_grid");
+            cstored.addDecimalInputParam("@ID_LOAI_DON_VI", v_dc_id_loai_don_vi);
+            cstored.fillDataSetByCommand(this, m_ds_don_vi);
+        }
     }
 }
