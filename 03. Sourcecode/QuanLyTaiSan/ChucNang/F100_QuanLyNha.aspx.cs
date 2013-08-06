@@ -233,9 +233,9 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             m_us_dm_nha.dcKHAC = CIPConvert.ToDecimal(m_txt_khac.Text);
             m_us_dm_nha.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_ddl_trang_thai_nha.SelectedValue);
             m_us_dm_nha.dcID_DAT = CIPConvert.ToDecimal(m_ddl_thuoc_khu_dat.SelectedValue);
-            m_us_dm_nha.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_ddl_don_vi_su_dung.SelectedValue);
-            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(m_us_dm_nha.dcID_DON_VI_SU_DUNG);
-            m_us_dm_nha.dcID_DON_VI_CHU_QUAN = v_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
+            US_DM_DAT v_us_dm_dat = new US_DM_DAT(m_us_dm_nha.dcID_DAT);
+            m_us_dm_nha.dcID_DON_VI_SU_DUNG = v_us_dm_dat.dcID_DON_VI_SU_DUNG;
+            m_us_dm_nha.dcID_DON_VI_CHU_QUAN = v_us_dm_dat.dcID_DON_VI_CHU_QUAN;
             m_us_dm_nha.dcID_DON_VI_DAU_TU = CIPConvert.ToDecimal(m_ddl_don_vi_dau_tu.SelectedValue);
             m_us_dm_nha.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
 
