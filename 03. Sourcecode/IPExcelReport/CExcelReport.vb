@@ -15,6 +15,7 @@ Public Class CExcelReport
     Protected m_strTemplatesPath As String = ""
 
     Private m_strTemplateFileNameWithPath As String
+    Private m_strTemplateFileNameWithoutPath As String = ""
     Private m_iSheetStartRow As Integer
     Private m_iSheetStartCol As Integer
 
@@ -31,6 +32,8 @@ Public Class CExcelReport
                             , ByVal i_iSheetStartCol As Integer)
         InitPaths()
         m_strTemplateFileNameWithPath = m_strTemplatesPath & i_strTemplateFileWithoutPath
+        m_strTemplateFileNameWithoutPath = i_strTemplateFileWithoutPath
+
         m_iSheetStartCol = i_iSheetStartCol
         m_iSheetStartRow = i_iSheetStartRow
         m_objExcelApp = New Excel.Application
@@ -57,7 +60,7 @@ Public Class CExcelReport
     Public Function GetOutputFileNameWithPath() As String
         Dim v_strRandomName As String
         Randomize()
-        v_strRandomName = m_strOutputPath & "~" & CType(Rnd() * 1000000000000, Int64) & ".xls"
+        v_strRandomName = m_strOutputPath & m_strTemplateFileNameWithoutPath.Replace(".xls", "") & "-" & CType(Rnd() * 1000000000000, Int64) & ".xls"
         Return v_strRandomName
     End Function
 
