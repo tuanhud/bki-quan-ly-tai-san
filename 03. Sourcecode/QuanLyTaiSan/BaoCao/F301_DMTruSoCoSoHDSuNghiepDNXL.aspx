@@ -1,18 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F301_DMTruSoCoSoHDSuNghiepDNXL.aspx.cs" Inherits="ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghiXuLy" %>
-<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-    <ContentTemplate>
-    
-   
-
-
     <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
@@ -445,6 +436,4 @@
             </td>
         </tr>
     </table>
-     </ContentTemplate>
-    </asp:UpdatePanel>
 </asp:Content>
