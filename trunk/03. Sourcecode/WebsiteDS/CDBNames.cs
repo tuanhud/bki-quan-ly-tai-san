@@ -98,7 +98,7 @@ namespace WebDS.CDBNames
           public const string NGAY_THANG_NAM_SU_DUNG = "NGAY_THANG_NAM_SU_DUNG";
           public const string NAM_XAY_DUNG = "NAM_XAY_DUNG";
           public const string DT_XAY_DUNG = "DT_XAY_DUNG";
-          public const string TONG_DT_SAU_XD = "TONG_DT_SAU_XD";
+          public const string TONG_DT_SAN_XD = "TONG_DT_SAN_XD";
           public const string NGUON_NS = "NGUON_NS";
           public const string NGUON_KHAC = "NGUON_KHAC";
           public const string GIA_TRI_CON_LAI = "GIA_TRI_CON_LAI";
