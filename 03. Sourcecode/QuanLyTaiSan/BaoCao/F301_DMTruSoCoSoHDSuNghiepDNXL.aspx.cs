@@ -11,6 +11,7 @@ using WebDS;
 using WebUS;
 using WebUS;
 using WebDS.CDBNames;
+using QltsForm;
 
 
 public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghiXuLy : System.Web.UI.Page
@@ -33,32 +34,65 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
 
     }
 
-    #region Member
+    #region Members
     DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
     US_CM_DM_TU_DIEN m_us_dm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-
-    
-
-
-
-
 
     #endregion
 
     #region private methods
+    private void export_excel()
+    {
+        string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
+        string v_str_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedItem.Text;
+        decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
+        decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue);
+        string v_str_output_file = "";
+
+        if (Request.QueryString["id_loai_bao_cao"] != null)
+        {
+            string v_id = Request.QueryString["id_loai_bao_cao"];
+            f402_bao_cao_danh_muc_tru_so_lam_viec v_f402_bc_dm_nha = new f402_bao_cao_danh_muc_tru_so_lam_viec();
+            switch (v_id)
+            {
+                case "1":
+                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DANH_MUC_TRU_SO_LAM_VIEC
+                                            , v_str_bo_tinh
+                                            , v_str_don_vi_chu_quan
+                                            , v_dc_id_dv_su_dung
+                                            , v_dc_id_dat
+                                            , ref v_str_output_file);
+                    break;
+                case "2":
+                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DE_NGHI_XU_LY
+                                            , v_str_bo_tinh
+                                            , v_str_don_vi_chu_quan
+                                            , v_dc_id_dv_su_dung
+                                            , v_dc_id_dat
+                                            , ref v_str_output_file);
+                    break;
+                case "3":
+                    break;
+            }
+        }
+        Response.Clear();
+        v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;
+        Response.Redirect(v_str_output_file, false);
+    }
+
     private void load_data_to_cbo_bo_tinh()
     {
         try
         {
             DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
             US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "Where id_loai_don_vi = "+ID_LOAI_DON_VI.BO_TINH );
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "Where id_loai_don_vi = " + ID_LOAI_DON_VI.BO_TINH);
             m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
             m_cbo_bo_tinh.DataValueField = CIPConvert.ToStr(DM_DON_VI.ID);
             m_cbo_bo_tinh.DataTextField = CIPConvert.ToStr(DM_DON_VI.TEN_DON_VI);
             m_cbo_bo_tinh.DataBind();
             load_data_to_cbo_don_vi_chu_quan();
-          
+
         }
         catch (System.Exception ex)
         {
@@ -76,7 +110,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
         {
             string v_id_bo_tinh = m_cbo_bo_tinh.SelectedValue;
 
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = "+ID_LOAI_DON_VI.DV_CHU_QUAN+ "and ID_DON_VI_CAP_TREN LIKE '%"
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN + "and ID_DON_VI_CAP_TREN LIKE '%"
                 + v_id_bo_tinh + "%'");
             if (v_ds_dm_don_vi.DM_DON_VI.Count != 0)
             {
@@ -92,14 +126,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
                 m_cbo_don_vi_chu_quan.Items.Clear();
                 m_cbo_don_vi_su_dung_tai_san.Items.Clear();
                 m_cbo_dia_chi.Items.Clear();
-               
-               
             }
-           
-                
-            
-           
-
         }
 
     }
@@ -115,7 +142,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
             string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = "+ID_LOAI_DON_VI.DV_SU_DUNG+ " and ID_DON_VI_CAP_TREN LIKE '%" + v_id_don_vi_chu_quan
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_SU_DUNG + " and ID_DON_VI_CAP_TREN LIKE '%" + v_id_don_vi_chu_quan
                 + "%'");
             if (v_ds_dm_don_vi.DM_DON_VI.Count != 0)
             {
@@ -130,16 +157,8 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
                 //m_cbo_don_vi_chu_quan.Items.Clear();
                 m_cbo_don_vi_su_dung_tai_san.Items.Clear();
                 m_cbo_dia_chi.Items.Clear();
-
             }
-              
-            
-           
-
         }
-
-
-
     }
 
     private void load_data_to_cbo_dia_chi()
@@ -171,24 +190,17 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
                     //m_cbo_don_vi_su_dung_tai_san.Items.Clear();
                     m_cbo_dia_chi.Items.Clear();
                 }
-                    
-                
-               
                 //m_cbo_dia_chi.DataTextField=DM_NHA.d
-
             }
             catch (System.Exception ex)
             {
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
-
-        
     }
 
     private void load_data_to_thong_tin_nha_dat()
     {
-
         try
         {
 
@@ -196,41 +208,16 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
             US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(v_id_dat));
             m_lbl_dia_chi.Text = v_us_dm_dat.strDIA_CHI;
-
             m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN, "#,##0.00") + "   ";
-
             m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
-
-
-
             m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
-
-
-
             m_lbl_lam_co_so_hd_du_nghiep.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP, "#,##0.00");
-
-
-
             m_lbl_lam_nha_o.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_LAM_NHA_O, "#,##0.00");
-
             m_lbl_cho_thue.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_CHO_THUE, "#,##0.00");
-
-
-
-
             m_lbl_bo_trong.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BO_TRONG, "#,##0.00");
-
-
             m_lbl_bi_lan_chiem.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BI_LAN_CHIEM, "#,##0.00");
-
-
             m_lbl_su_dung_vao_muc_dich_khac.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC, "#,##0.00");
-
-
             m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(v_us_dm_dat.dcGT_THEO_SO_KE_TOAN, "#,##0.00");
-
-
-
         }
         catch (System.Exception ex)
         {
@@ -345,7 +332,8 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-
+            m_grv_nha.PageIndex = e.NewPageIndex;
+            load_data_to_grid_nha();
         }
         catch (System.Exception ex)
         {
@@ -403,12 +391,12 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            if (m_cbo_don_vi_chu_quan.SelectedValue == "") 
+            if (m_cbo_don_vi_chu_quan.SelectedValue == "")
             {
                 m_lbl_mess.Text = "Bạn chưa chọn Đơn vị chủ quản";
                 return;
             }
-            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == "") 
+            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == "")
             {
                 m_lbl_mess.Text = "Bạn chưa chọn Đơn vị sử dụng";
                 return;
@@ -424,11 +412,19 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
                 load_data_to_thong_tin_nha_dat();
                 load_data_to_grid_nha();
             }
-            
+
         }
         catch (System.Exception ex)
         {
             CSystemLog_301.ExceptionHandle(ex);
         }
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        
+    }
+    protected void Button2_Click1(object sender, EventArgs e)
+    {
+        export_excel();
     }
 }
