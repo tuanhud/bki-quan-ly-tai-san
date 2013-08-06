@@ -111,14 +111,14 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse">
                                     <tr>
-                                        <td colspan="3" style="height:35px">
+                                        <td colspan="3" style="height:40px">
                                             GIÁ TRỊ THEO SỔ KẾ TOÁN
                                             <br />
                                             (ngàn đồng)
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" rowspan="1" style="height: 27px;">
+                                        <td colspan="2" rowspan="1" style="height: 28px;">
                                             Nguyên giá
                                         <td rowspan="2" style="width: 33.33%; height: 57px;">
                                             Giá trị còn lại
