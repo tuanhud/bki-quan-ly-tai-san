@@ -84,7 +84,8 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
-                    Height="25px" Text="Xuất Excel" Width="98px" />
+                    Height="25px" Text="Xuất Excel" Width="98px" 
+                    onclick="m_cmd_xuat_excel_Click" />
             </td>
         </tr>
         <tr>

@@ -10,6 +10,7 @@ using IP.Core.IPData;
 using IP.Core.IPUserService;
 using WebDS.CDBNames;
 using IP.Core.IPCommon;
+using QltsForm;
 
 public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.Page
 {
@@ -39,7 +40,22 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(ex);
         }
     }
-
+    private void export_excel()
+        {
+            string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
+            string v_str_don_vi_chu_quan = m_cbo_don_vi_quan_ly.SelectedItem.Text;
+            decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
+            string v_str_output_file ="";
+            f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
+            v_f400_bc_dm_oto.expor_excel(f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
+                                    , v_str_bo_tinh
+                                    , v_str_don_vi_chu_quan
+                                    , v_dc_id_dv_su_dung
+                                    , ref v_str_output_file);
+            Response.Clear();    
+            v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;        
+            Response.Redirect(v_str_output_file, false);
+        }
     private void load_data_to_cbo_don_vi_quan_ly()
     {
         
@@ -218,6 +234,17 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(ex);
         }
 
+    }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            export_excel();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
     }
 }
 
