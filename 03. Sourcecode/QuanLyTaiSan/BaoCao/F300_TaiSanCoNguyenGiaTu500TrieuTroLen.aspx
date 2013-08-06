@@ -164,7 +164,7 @@
                                         <td rowspan="2" colspan="1" style="width: 25%; height:57px">
                                             QLNN
                                         </td>
-                                        <td rowspan="1" colspan="2">
+                                        <td rowspan="1" colspan="2"   style="height: 27px;">
                                             HĐ sự nghiệp
                                         </td>
                                         <td colspan="1" rowspan="2" style="width: 25%;">
