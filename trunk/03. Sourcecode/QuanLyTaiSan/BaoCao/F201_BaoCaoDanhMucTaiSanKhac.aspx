@@ -62,9 +62,12 @@
                 </asp:DropDownList>
             </td>
             <td align="right">
+                <span class="cssManField">Trạng thái: </span>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%">
+                </asp:DropDownList>
+            </td>
         </tr>
         <tr>
             <td align="right">
