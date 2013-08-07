@@ -227,11 +227,23 @@ namespace WebUS
         }
         #endregion
 
-        public void FillDatasetByQueryString(WebDS.DS_DM_DON_VI m_ds_don_vi, string v_dc_id_loai_don_vi)
+        public void FillDatasetByQueryString(
+            WebDS.DS_DM_DON_VI op_ds_don_vi
+            , string v_dc_id_loai_don_vi)
         {
             CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_grid");
             cstored.addDecimalInputParam("@ID_LOAI_DON_VI", v_dc_id_loai_don_vi);
-            cstored.fillDataSetByCommand(this, m_ds_don_vi);
+            cstored.fillDataSetByCommand(this, op_ds_don_vi);
+        }
+
+        public void FillDataset(
+            WebDS.DS_DM_DON_VI op_ds_don_vi
+            , decimal v_dc_id_loai_don_vi
+            , string ip_str_user_name) {
+                CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_Select_by_user_name");
+            cstored.addDecimalInputParam("@ip_str_user_name", ip_str_user_name);
+            cstored.addDecimalInputParam("@ip_dc_loai_don_vi", v_dc_id_loai_don_vi);
+            cstored.fillDataSetByCommand(this, op_ds_don_vi);
         }
     }
 }
