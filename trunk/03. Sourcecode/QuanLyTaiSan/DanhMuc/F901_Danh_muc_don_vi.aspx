@@ -79,11 +79,11 @@
                 <tr>
                     <td align="center" colspan="4">
                         <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                            Width="98px" Text="Tạo mới(c)" />&nbsp;
+                            Width="98px" Text="Tạo mới(c)" onclick="m_cmd_tao_moi_Click" />&nbsp;
                         <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                            Width="98px" Text="Cập nhật(u)" />&nbsp;
+                            Width="98px" Text="Cập nhật(u)" onclick="m_cmd_cap_nhat_Click" />&nbsp;
                         <asp:Button ID="btnCancel" AccessKey="r" CssClass="cssButton" runat="server" Width="98px"
-                            Text="Xóa trắng(r)" />
+                            Text="Xóa trắng(r)" onclick="btnCancel_Click" />
                     </td>
                 </tr>
             </table>
@@ -112,17 +112,19 @@
                         <asp:GridView ID="m_grv_dm_don_vi" runat="server" AutoGenerateColumns="False" Width="80%"
                             DataKeyNames="ID" AllowPaging="True" PageSize="15" CellPadding="4" ForeColor="#333333"
                             CssClass="cssGrid" OnRowDeleting="m_grv_dm_don_vi_RowDeleting" OnSelectedIndexChanging="m_grv_dm_don_vi_SelectedIndexChanging"
-                            OnPageIndexChanging="m_grv_dm_don_vi_PageIndexChanging">
+                            OnPageIndexChanging="m_grv_dm_don_vi_PageIndexChanging" 
+                            onrowupdating="m_grv_dm_don_vi_RowUpdating" >
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center">
+                                <asp:CommandField SelectText="Sửa" ShowSelectButton="True" 
+                                    ItemStyle-HorizontalAlign="Center" Visible="False">
                                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
                                 </asp:CommandField>
-                                <asp:TemplateField HeaderText="Sửa">
+                                <asp:TemplateField HeaderText="Sửa" HeaderStyle-Width="3%">
                             <ItemTemplate>
                                 <asp:LinkButton ToolTip="Sửa" ID="m_lbt_edit" CommandName="Update" runat="server">
-                                <img src="../Images/Button/edit.png" alt="Update" align="middle" />
+                                <img src="../Images/Button/edit.png" alt="Update" align="middle"/>
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>

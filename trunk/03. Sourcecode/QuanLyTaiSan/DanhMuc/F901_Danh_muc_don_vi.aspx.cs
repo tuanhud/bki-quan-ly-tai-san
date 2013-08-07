@@ -28,9 +28,8 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             {
                 load_cbo_don_vi_cap_tren();
                 load_cbo_loai_don_vi();
-                load_data_2_grid();
+                load_data_2_grid();        
             }
-            
         }
         catch (Exception v_e)
         {
@@ -79,6 +78,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         {
             if (Request.QueryString["ID"] != null)
             {
+                m_ds_don_vi.Clear();
                 string v_dc_id_loai_don_vi = Request.QueryString["ID"].ToString();
                 m_us_don_vi.FillDatasetByQueryString(m_ds_don_vi,v_dc_id_loai_don_vi);
                 m_grv_dm_don_vi.DataSource = m_ds_don_vi.DM_DON_VI;
