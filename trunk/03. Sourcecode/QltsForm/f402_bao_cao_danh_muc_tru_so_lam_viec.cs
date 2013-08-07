@@ -703,8 +703,8 @@ namespace QltsForm
                     v_obj_exe_report = new CExcelWebReport("BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep.xls", 21, 1);
                     break;
                 case eFormMode.DE_NGHI_XU_LY:
-                    v_obj_exe_report = new CExcelWebReport("BC-017. Bao cao danh mục tru so lam viec, co so hoat dong su nghiep de nghi xu ly.xls", 21, 1);
                     load_data_2_grid(ip_dc_don_vi_su_dung.ToString(), ID_TRANG_THAI_NHA.DE_NGHI_XU_LY.ToString());
+                    v_obj_exe_report = new CExcelWebReport("BC-017. Bao cao danh mục tru so lam viec, co so hoat dong su nghiep de nghi xu ly.xls", 21, 1);
                     break;
                 case eFormMode.TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP:
                     //v_obj_exe_report = new CExcelWebReport("BC-017. Bao cao danh mục tru so lam viec, co so hoat dong su nghiep de nghi xu ly.xls", 21, 1);
@@ -734,7 +734,6 @@ namespace QltsForm
 
             // Thông tin phần cuối
             //v_obj_exe_report.AddFindAndReplaceItem("<HO_SO_GIAY_TO_LIEN_QUAN>", v_us_dm_dat.strDIA_CHI);
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", ip_str_bo_tinh);
             v_obj_exe_report.AddFindAndReplaceItem("<NGAY>", DateTime.Now.Day);
             v_obj_exe_report.AddFindAndReplaceItem("<THANG>", DateTime.Now.Month);
             v_obj_exe_report.AddFindAndReplaceItem("<NAM>", DateTime.Now.Year);
