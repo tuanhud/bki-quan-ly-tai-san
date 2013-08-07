@@ -21,7 +21,7 @@
             <td align="right" style="width: 15%;">
                 <span class="cssManField">Bộ, tỉnh</span>
             </td>
-            <td style="width: 20%;">
+            <td style="width: 35%;">
                 <asp:DropDownList ID="m_cbo_bo_tinh" runat="server" AutoPostBack="True" 
                     CssClass="cssDorpdownlist" 
                     onselectedindexchanged="m_cbo_bo_tinh_SelectedIndexChanged" Width="96%">
@@ -71,15 +71,19 @@
         <tr>
             <td align="right">
             </td>
-            <td align="left" colspan="2">
+            <td align="left" colspan="1">
                 <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" 
                     CssClass="cssButton" Height="24px"
                     Text="Tìm kiếm" Width="98px" onclick="m_cmd_tim_kiem_Click"/>
             </td>
-            <td align="left">
-                <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
-                    Height="25px" Text="Xuất Excel" Width="98px" 
-                    onclick="m_cmd_xuat_excel_Click" />
+            <td align="right" colspan="1">
+            
+            </td>
+            <td>
+            <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" 
+            CssClass="cssButton" Height="25px" onclick="m_cmd_xuat_excel_Click" 
+            Text="Xuất Excel" Width="98px" />
+            
             </td>
         </tr>
         <tr>
@@ -92,6 +96,11 @@
             </td>
         </tr>
     </table>
+    <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="updatePanel">
+            <ProgressTemplate>
+            <img alt="Loading..." style="font-weight: bold; color: #0000FF" />
+            </ProgressTemplate>
+            </asp:UpdateProgress>
     <div id="gridViewContent">
         <asp:GridView ID="m_grv_bao_cao_oto" AllowPaging="true" runat="server" AutoGenerateColumns="False"
             Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" 
@@ -240,9 +249,4 @@
     </div>
     </ContentTemplate>
     </asp:UpdatePanel>
-    <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="updatePanel">
-    <ProgressTemplate>
-    <img src="../Images/pager/loading2.gif" alt="Loading..."/>
-    </ProgressTemplate>
-    </asp:UpdateProgress>
 </asp:Content>
