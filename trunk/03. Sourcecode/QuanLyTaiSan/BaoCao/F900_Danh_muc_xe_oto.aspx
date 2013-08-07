@@ -8,7 +8,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <asp:ScriptManager runat="server">
     </asp:ScriptManager>
-    <asp:UpdatePanel runat="server">
+    <asp:UpdatePanel runat="server" ID="updatePanel">
     <ContentTemplate>
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
@@ -240,4 +240,9 @@
     </div>
     </ContentTemplate>
     </asp:UpdatePanel>
+    <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="updatePanel">
+    <ProgressTemplate>
+    <img src="../Images/pager/loading2.gif" alt="Loading..."/>
+    </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>
