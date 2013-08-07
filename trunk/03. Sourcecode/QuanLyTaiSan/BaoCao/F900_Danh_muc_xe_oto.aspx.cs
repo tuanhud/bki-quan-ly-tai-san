@@ -51,11 +51,22 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
             string v_str_output_file ="";
             f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
-            v_f400_bc_dm_oto.expor_excel(f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
-                                    , v_str_bo_tinh
-                                    , v_str_don_vi_chu_quan
-                                    , v_dc_id_dv_su_dung
-                                    , ref v_str_output_file);
+            if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==584) 
+            {
+                v_f400_bc_dm_oto.expor_excel(f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
+                                        , v_str_bo_tinh
+                                        , v_str_don_vi_chu_quan
+                                        , v_dc_id_dv_su_dung
+                                        , ref v_str_output_file);
+            }
+            else if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==581)
+            {
+                v_f400_bc_dm_oto.expor_excel(f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
+                                        , v_str_bo_tinh
+                                        , v_str_don_vi_chu_quan
+                                        , v_dc_id_dv_su_dung
+                                        , ref v_str_output_file);
+            }
             Response.Clear();    
             v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;        
             Response.Redirect(v_str_output_file, false);
