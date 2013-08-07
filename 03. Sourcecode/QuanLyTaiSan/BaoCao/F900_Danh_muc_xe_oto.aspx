@@ -98,7 +98,7 @@
     </table>
     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="updatePanel">
             <ProgressTemplate>
-            <img alt="Loading..." style="font-weight: bold; color: #0000FF" />
+            <img  src="../Images/pager/loading3.gif" alt="Loading..." style="font-weight: bold; color: #0000FF" />
             </ProgressTemplate>
             </asp:UpdateProgress>
     <div id="gridViewContent">
