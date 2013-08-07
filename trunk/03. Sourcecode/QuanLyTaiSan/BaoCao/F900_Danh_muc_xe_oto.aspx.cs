@@ -55,8 +55,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                                     , v_str_bo_tinh
                                     , v_str_don_vi_chu_quan
                                     , v_dc_id_dv_su_dung
-                                    , ref v_str_output_file
-                                    , v_dc_id_trang_thai);
+                                    , ref v_str_output_file);
             Response.Clear();    
             v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;        
             Response.Redirect(v_str_output_file, false);
