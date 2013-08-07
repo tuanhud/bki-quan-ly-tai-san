@@ -45,7 +45,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     }
     private void export_excel()
         {
-            
+            decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(Request.QueryString["ID"]);
             string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
             string v_str_don_vi_chu_quan = m_cbo_don_vi_quan_ly.SelectedItem.Text;
             decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
@@ -55,7 +55,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                                     , v_str_bo_tinh
                                     , v_str_don_vi_chu_quan
                                     , v_dc_id_dv_su_dung
-                                    , ref v_str_output_file);
+                                    , ref v_str_output_file
+                                    , v_dc_id_trang_thai);
             Response.Clear();    
             v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;        
             Response.Redirect(v_str_output_file, false);
@@ -264,7 +265,6 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            System.Threading.Thread.Sleep(2000);
             if (Request.QueryString["ID"] != null)
             {
                 load_data_2_grid_by_command();
