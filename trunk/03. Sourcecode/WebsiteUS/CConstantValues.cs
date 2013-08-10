@@ -4,6 +4,10 @@ using System.Text;
 
 namespace WebUS
 {
+    public class CONST_QLDB {
+        public const decimal ID_TAT_CA = -1;
+        public const string TAT_CA = "Tất cả";
+    }
 
     public class SESSION {
         public const string UserFullName = "UserFullName";
