@@ -437,7 +437,14 @@ namespace QltsForm {
                 m_obj_trans = get_trans_object(m_fg);
                 
                 m_e_form_mode = ip_form_mode;
-                US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_dc_don_vi_su_dung);
+                US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI();
+                if (ip_dc_don_vi_su_dung != CONST_QLDB.ID_TAT_CA) {
+                    v_us_don_vi = new US_DM_DON_VI(ip_dc_don_vi_su_dung);
+                }
+                else {
+                    v_us_don_vi.strTEN_DON_VI = CONST_QLDB.TAT_CA;
+                    v_us_don_vi.strLOAI_HINH_DON_VI = CONST_QLDB.TAT_CA;
+                }
                 
             //2. Xuất dữ liệu ra file excel
                 CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-002 Bao cao ke khai xe o to.xls", 13, 1);;
