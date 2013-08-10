@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -32,6 +33,14 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
             US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
             v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "Where id_loai_don_vi = " + ID_LOAI_DON_VI.BO_TINH);
+            DataRow v_dr = v_ds_dm_don_vi.DM_DON_VI.NewDM_DON_VIRow();
+            v_dr[DM_DON_VI.ID] = CONST_QLDB.ID_TAT_CA;
+            v_dr[DM_DON_VI.TEN_DON_VI] = CONST_QLDB.TAT_CA;
+            v_ds_dm_don_vi.EnforceConstraints = false;
+            v_ds_dm_don_vi.DM_DON_VI.Rows.InsertAt(v_dr, 0);
+
+                
+
             m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
             m_cbo_bo_tinh.DataValueField = CIPConvert.ToStr(DM_DON_VI.ID);
             m_cbo_bo_tinh.DataTextField = CIPConvert.ToStr(DM_DON_VI.TEN_DON_VI);
@@ -84,20 +93,22 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
 
             v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN + "and ID_DON_VI_CAP_TREN LIKE '%"
                 + v_id_bo_tinh + "%'");
-            if (v_ds_dm_don_vi.DM_DON_VI.Count != 0)
-            {
+
+            DataRow v_dr = v_ds_dm_don_vi.DM_DON_VI.NewDM_DON_VIRow();
+            v_dr[DM_DON_VI.ID] = CONST_QLDB.ID_TAT_CA;
+            v_dr[DM_DON_VI.TEN_DON_VI] = CONST_QLDB.TAT_CA;
+            v_ds_dm_don_vi.EnforceConstraints = false;
+            v_ds_dm_don_vi.DM_DON_VI.Rows.InsertAt(v_dr, 0);
+
+
+            
                 m_cbo_don_vi_quan_ly.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-                m_cbo_don_vi_quan_ly.DataTextField = "TEN_DON_VI";
-                m_cbo_don_vi_quan_ly.DataValueField = "ID";
+                m_cbo_don_vi_quan_ly.DataTextField = DM_DON_VI.TEN_DON_VI;
+                m_cbo_don_vi_quan_ly.DataValueField = DM_DON_VI.ID;
                 m_cbo_don_vi_quan_ly.DataBind();
                 // m_cbo_don_vi_chu_quan.Items.Insert(0, new ListItem("Tất cả đơn vị trực thuộc", ""));
                 load_data_to_cbo_don_vi_su_dung();
-            }
-            else
-            {
-                m_cbo_don_vi_quan_ly.Items.Clear();
-                m_cbo_don_vi_su_dung.Items.Clear();
-            }
+            
         }
     }
     private void load_data_to_cbo_don_vi_su_dung()
@@ -106,10 +117,18 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
         string v_id_don_vi_chu_quan = m_cbo_don_vi_quan_ly.SelectedValue;
-        v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 576 and ID_DON_VI_CAP_TREN =" + v_id_don_vi_chu_quan);
+        v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI ="+ID_LOAI_DON_VI.DV_SU_DUNG  + "and ID_DON_VI_CAP_TREN =" + v_id_don_vi_chu_quan);
+
+
+        DataRow v_dr = v_ds_dm_don_vi.DM_DON_VI.NewDM_DON_VIRow();
+        v_dr[DM_DON_VI.ID] = CONST_QLDB.ID_TAT_CA;
+        v_dr[DM_DON_VI.TEN_DON_VI] = CONST_QLDB.TAT_CA;
+        v_ds_dm_don_vi.EnforceConstraints = false;
+        v_ds_dm_don_vi.DM_DON_VI.Rows.InsertAt(v_dr, 0);
+
         m_cbo_don_vi_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_don_vi_su_dung.DataTextField = "TEN_DON_VI";
-        m_cbo_don_vi_su_dung.DataValueField = "ID";
+        m_cbo_don_vi_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
+        m_cbo_don_vi_su_dung.DataValueField = DM_DON_VI.ID;
         m_cbo_don_vi_su_dung.DataBind();
     }
     protected void Page_Load(object sender, EventArgs e)
