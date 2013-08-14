@@ -125,7 +125,7 @@
                 &nbsp;</td>
             <td align="left" style="width: 15%;" colspan="1">
                 <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" CssClass="cssButton"
-                    OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px" />
+                    OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px" Height="24px"/>
             </td>
                     </tr>
                     <tr>
@@ -165,12 +165,14 @@
         <tr >
             <td align = "left" colspan = 1>
                 <asp:Button ID="m_cmd_de_nghi_xu_ly" runat="server" AccessKey="c" CssClass="cssButton" 
-                                Text="Đề nghị xử lý" Width="98px" onclick="m_cmd_de_nghi_xu_ly_Click" />
+                                Text="Đề nghị xử lý" Height="24px" Width="98px" onclick="m_cmd_de_nghi_xu_ly_Click" />
+                <asp:Button ID="m_cmd_huy_de_nghi_xu_ly" runat="server" Text="Hủy" CssClass="cssButton"
+                    Height="24px" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" 
+                    Enabled="False" />
             </td>
         </tr>
         <tr>
-            <td align="left">
-                &nbsp;<br />
+            <td align="left"><br />
                 <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssManField" />
             </td>
             <td>
@@ -186,8 +188,8 @@
                 &nbsp;
                 <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_dm_oto_PageIndexChanging"
-                    OnRowCommand="m_grv_danh_sach_nha_RowCommand">
+                    PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp"
+                    OnPageIndexChanging="m_grv_dm_oto_PageIndexChanging">
                     <Columns>
                         <asp:TemplateField ItemStyle-Width="2%">
                         <HeaderTemplate> <!-- Header checkbox --> 
@@ -206,16 +208,16 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
-                        <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
-                        <asp:BoundField HeaderText="Nhãn hiệu" DataField="NHAN_HIEU" />
-                        <asp:BoundField HeaderText="Biển kiểm soát" DataField="BIEN_KIEM_SOAT" />
-                        <asp:BoundField HeaderText="Số chỗ ngồi" DataField="SO_CHO_NGOI" />
-                        <asp:BoundField HeaderText="Công suất xe" DataField="CONG_SUAT_XE" />
-                        <asp:BoundField HeaderText="Chức danh sử dụng" DataField="CHUC_DANH_SU_DUNG" />
-                        <asp:BoundField HeaderText="Nguồn gốc xe" DataField="NGUON_GOC_XE" />
-                        <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
-                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" />
-                        <asp:BoundField HeaderText="Ngày/tháng/năm sử dụng" DataField="NAM_SU_DUNG" />
+                        <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Nhãn hiệu" DataField="NHAN_HIEU" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Biển kiểm soát" DataField="BIEN_KIEM_SOAT" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Số chỗ ngồi" DataField="SO_CHO_NGOI" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Công suất xe" DataField="CONG_SUAT_XE" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Chức danh sử dụng" DataField="CHUC_DANH_SU_DUNG" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Nguồn gốc xe" DataField="NGUON_GOC_XE" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:BoundField HeaderText="Ngày/tháng/năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center"/>
                         <asp:TemplateField HeaderStyle-Width="20%">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
