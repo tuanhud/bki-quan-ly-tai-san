@@ -147,7 +147,7 @@
                             ItemStyle-HorizontalAlign="Center" />
                         <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="4" width="100%" style="border-collapse: collapse;">
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
                                         <td colspan="3" style="height: 20px">
                                             Giá trị theo sổ kế toán
@@ -157,7 +157,7 @@
                                         <td colspan="2">
                                             Nguyên giá
                                         </td>
-                                        <td rowspan="2" style="width: 33%;">
+                                        <td rowspan="2" style="width: 33%; height: 55px">
                                             Giá trị còn lại
                                         </td>
                                     </tr>
@@ -193,12 +193,12 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
-                                        <td colspan="7">
+                                        <td colspan="7" style="height:20px">
                                             Hiện trạng sử dụng (m2)
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td rowspan="2" style="width: 14%;">
+                                        <td rowspan="2" style="width: 14%; height:55px;">
                                             Trụ sở làm việc
                                         </td>
                                         <td rowspan="2" style="width: 14%">
