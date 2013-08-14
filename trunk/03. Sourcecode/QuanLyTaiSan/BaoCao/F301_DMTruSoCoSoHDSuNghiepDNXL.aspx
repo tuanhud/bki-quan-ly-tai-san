@@ -86,8 +86,8 @@
                         <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
                             Width="98px" Text="Lọc dữ liệu(l)" Height="23px" OnClick="m_cmd_loc_du_lieu_Click"
                             TabIndex="5" />
-                        <asp:Button ID="Button2" AccessKey="x" CssClass="cssButton" runat="server" Width="98px"
-                            Text="Xuất Excel (x)" Height="22px" onclick="Button2_Click1" />
+                        <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server" Width="98px"
+                            Text="Xuất Excel (x)" Height="22px" onclick="m_cmd_xuat_excel_Click" />
                     </td>
                     <td>
                         &nbsp;
