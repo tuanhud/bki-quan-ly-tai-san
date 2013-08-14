@@ -187,12 +187,12 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         string v_trang_thai = m_ddl_trang_thai_nha.SelectedValue;
         switch (v_trang_thai)
         {
-            case "580":
+            case "584":
                 m_cmd_de_nghi_xu_ly.Visible = true;
                 m_cmd_de_nghi_xu_ly.Enabled = true;
                 m_cmd_huy_de_nghi_xu_ly.Visible = false;
                 break;
-            case "577":
+            case "581":
                 m_cmd_de_nghi_xu_ly.Visible = false;
                 m_cmd_huy_de_nghi_xu_ly.Visible = true;
                 m_cmd_huy_de_nghi_xu_ly.Enabled = true;
