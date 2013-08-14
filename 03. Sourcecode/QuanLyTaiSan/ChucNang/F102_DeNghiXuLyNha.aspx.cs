@@ -30,7 +30,8 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
         load_data_dat(m_ddl_don_vi_su_dung.SelectedValue, m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
         load_data_trang_thai();
-        load_data_to_grid(m_txt_tu_khoa.Text);
+        load_data_to_grid(m_txt_tu_khoa.Text.Trim());
+        set_trang_thai_cmd();
     }
 
     // Load dữ liệu vào grid
@@ -187,12 +188,12 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         string v_trang_thai = m_ddl_trang_thai_nha.SelectedValue;
         switch (v_trang_thai)
         {
-            case "584":
+            case "580":
                 m_cmd_de_nghi_xu_ly.Visible = true;
                 m_cmd_de_nghi_xu_ly.Enabled = true;
                 m_cmd_huy_de_nghi_xu_ly.Visible = false;
                 break;
-            case "581":
+            case "577":
                 m_cmd_de_nghi_xu_ly.Visible = false;
                 m_cmd_huy_de_nghi_xu_ly.Visible = true;
                 m_cmd_huy_de_nghi_xu_ly.Enabled = true;
@@ -211,8 +212,6 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         if (!IsPostBack)
         {
             load_form_data();
-            m_cmd_de_nghi_xu_ly.Visible = false;
-            m_cmd_huy_de_nghi_xu_ly.Visible = false;
         }
     }
     
@@ -233,7 +232,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         try
         {
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
-            load_data_to_grid(m_txt_tu_khoa.Text);
+            load_data_to_grid(m_txt_tu_khoa.Text.Trim());
         }
         catch (Exception v_e)
         {
@@ -308,6 +307,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
             load_data_to_grid("");
+            set_trang_thai_cmd();
         }
         catch (Exception v_e)
         {
@@ -338,6 +338,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
             load_data_to_grid("");
+            set_trang_thai_cmd();
         }
         catch (Exception v_e)
         {

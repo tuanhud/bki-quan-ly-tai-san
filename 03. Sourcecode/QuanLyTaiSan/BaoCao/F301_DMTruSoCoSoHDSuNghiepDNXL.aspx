@@ -303,11 +303,11 @@
                                 <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NGAY_THANG_NAM_SU_DUNG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:TemplateField HeaderStyle-Width="25%">
+                                <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="3" style="height: 47px">
+                                                <td colspan="3" style="height: 35px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
                                                     (ngàn đồng)
@@ -317,7 +317,7 @@
                                                 <td colspan="2" rowspan="1">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="width: 33.33%">
+                                                <td rowspan="2" style="width: 33.33%; height: 40px">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
@@ -358,18 +358,18 @@
                                     HeaderStyle-Width="5%">
                                     <ItemStyle HorizontalAlign="right" />
                                 </asp:BoundField>
-                                <asp:TemplateField HeaderStyle-Width="30%">
+                                <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="75px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="7">
+                                                <td colspan="7" style="height: 35px">
                                                     HIỆN TRẠNG SỬ DỤNG
                                                     <br />
                                                     (m2)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="2" style="width: 14.28%">
+                                                <td rowspan="2" style="width: 14.28%; height: 40px">
                                                     Trụ sở làm việc
                                                 </td>
                                                 <td rowspan="2" style="width: 14.28%">
