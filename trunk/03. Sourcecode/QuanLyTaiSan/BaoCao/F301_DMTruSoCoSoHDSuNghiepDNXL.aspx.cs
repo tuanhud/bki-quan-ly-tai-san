@@ -84,10 +84,10 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             , v_str_user_name);
 
         m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_bo_tinh.DataTextField = "TEN_DON_VI";
-        m_cbo_bo_tinh.DataValueField = "ID";
+        m_cbo_bo_tinh.DataTextField = DM_DON_VI.TEN_DON_VI;
+        m_cbo_bo_tinh.DataValueField = DM_DON_VI.ID;
         m_cbo_bo_tinh.DataBind();
-        m_cbo_bo_tinh.Items.Insert(0, new ListItem("Tất cả", "-1"));
+        m_cbo_bo_tinh.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
 
     }
 
@@ -105,10 +105,10 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             , v_str_user_name);
        
         m_cbo_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_don_vi_chu_quan.DataTextField = "TEN_DON_VI";
-        m_cbo_don_vi_chu_quan.DataValueField = "ID";
+        m_cbo_don_vi_chu_quan.DataTextField = DM_DON_VI.TEN_DON_VI;
+        m_cbo_don_vi_chu_quan.DataValueField = DM_DON_VI.ID;
         m_cbo_don_vi_chu_quan.DataBind();
-        m_cbo_don_vi_chu_quan.Items.Insert(0, new ListItem("Tất cả", "-1"));
+        m_cbo_bo_tinh.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
 
     }
     private void load_data_to_cbo_don_vi_su_dung(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
@@ -127,10 +127,10 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
       
 
         m_cbo_don_vi_su_dung_tai_san.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_don_vi_su_dung_tai_san.DataTextField = "TEN_DON_VI";
-        m_cbo_don_vi_su_dung_tai_san.DataValueField = "ID";
+        m_cbo_don_vi_su_dung_tai_san.DataTextField = DM_DON_VI.TEN_DON_VI;
+        m_cbo_don_vi_su_dung_tai_san.DataValueField = DM_DON_VI.ID;
         m_cbo_don_vi_su_dung_tai_san.DataBind();
-        m_cbo_don_vi_su_dung_tai_san.Items.Insert(0, new ListItem("Tất cả", "-1"));
+        m_cbo_bo_tinh.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
     }
 
     private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_string_bo_tinh)
