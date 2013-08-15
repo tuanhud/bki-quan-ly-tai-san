@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Services;
-//using System.Web.Script.Services;
+using System.Web.Script.Services;
 
 using System.Data;
 using System.Data.SqlClient;
@@ -12,7 +12,7 @@ using IP.Core.IPCommon;
 
 [WebService(Namespace = "http://bkindex.com")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-//[ScriptService]
+[ScriptService]
 public class PersonService : System.Web.Services.WebService
 {
     #region Web Methods
@@ -42,12 +42,6 @@ public class PersonService : System.Web.Services.WebService
                 v_teachers.Add(v_oto);
             }
         return v_teachers;
-    }
-
-    private SqlConnection getConnection()
-    {
-        string v_str_query_string = "Data Source=.\\SQLEXPRESS; Initial Catalog=TRM; User Id=sa; Password=123456;";
-        return new SqlConnection(v_str_query_string);
     }
     #endregion
 }
