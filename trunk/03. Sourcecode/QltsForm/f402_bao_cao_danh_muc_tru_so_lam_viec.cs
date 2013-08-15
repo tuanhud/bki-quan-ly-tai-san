@@ -722,15 +722,15 @@ namespace QltsForm
 
             // Thông tin đất
             v_obj_exe_report.AddFindAndReplaceItem("<DIA_CHI>", v_us_dm_dat.strDIA_CHI);
-            v_obj_exe_report.AddFindAndReplaceItem("<DT_KHUON_VIEN>", v_us_dm_dat.dcDT_KHUON_VIEN.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<TRU_SO_LAM_VIEC>", v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<CO_SO_HDSN>", v_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<LAM_NHA_O>", v_us_dm_dat.dcDT_LAM_NHA_O.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<CHO_THUE>", v_us_dm_dat.dcDT_CHO_THUE.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TRONG>", v_us_dm_dat.dcDT_BO_TRONG.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<BI_LAN_CHIEM>", v_us_dm_dat.dcDT_BI_LAN_CHIEM.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<KHAC>", v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC.ToString("{0:#,###.##}"));
-            v_obj_exe_report.AddFindAndReplaceItem("<GT_THEO_SO_KE_TOAN>", v_us_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString("{0:#,###.##}"));
+            v_obj_exe_report.AddFindAndReplaceItem("<DT_KHUON_VIEN>", v_us_dm_dat.dcDT_KHUON_VIEN.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<TRU_SO_LAM_VIEC>", v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<CO_SO_HDSN>", v_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<LAM_NHA_O>", v_us_dm_dat.dcDT_LAM_NHA_O.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<CHO_THUE>", v_us_dm_dat.dcDT_CHO_THUE.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<BO_TRONG>", v_us_dm_dat.dcDT_BO_TRONG.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<BI_LAN_CHIEM>", v_us_dm_dat.dcDT_BI_LAN_CHIEM.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<KHAC>", v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<GT_THEO_SO_KE_TOAN>", v_us_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString("#,###.##"));
 
             // Thông tin phần cuối
             //v_obj_exe_report.AddFindAndReplaceItem("<HO_SO_GIAY_TO_LIEN_QUAN>", v_us_dm_dat.strDIA_CHI);
