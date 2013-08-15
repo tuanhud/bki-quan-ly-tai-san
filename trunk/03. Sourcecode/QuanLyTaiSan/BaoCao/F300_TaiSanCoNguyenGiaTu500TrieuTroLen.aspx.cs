@@ -107,15 +107,15 @@ public partial class Default2 : System.Web.UI.Page
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
         DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
-        if (ip_str_id_bo_tinh.Equals("-1"))
-        {
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "WHERE ID_LOAI_DON_VI IN (" + ID_LOAI_DON_VI.DV_SU_DUNG + "," + ID_LOAI_DON_VI.DV_CHU_QUAN + ")");
-        }
-        else if (ip_str_id_don_vi_chu_quan.Equals("-1"))
+        if (ip_str_id_don_vi_chu_quan.Equals("-1"))
         {
             decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
             v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN in (select ID from DM_DON_VI where ID_DON_VI_CAP_TREN = "
                 + v_dc_id_bo_tinh + ") or ID_DON_VI_CAP_TREN = " + v_dc_id_bo_tinh);
+        }
+        else if (ip_str_id_bo_tinh.Equals("-1"))
+        {
+            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "WHERE ID_LOAI_DON_VI IN (" + ID_LOAI_DON_VI.DV_SU_DUNG + "," + ID_LOAI_DON_VI.DV_CHU_QUAN + ")");
         }
         else
         {
