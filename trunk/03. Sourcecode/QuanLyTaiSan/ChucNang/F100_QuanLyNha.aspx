@@ -490,27 +490,29 @@
                                 <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
                                     ItemStyle-HorizontalAlign="Center" />
-                                <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
+                                <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="3" style="height: 20px">
-                                                    Giá trị theo sổ kế toán
+                                                <td colspan="3" style="height: 50px">
+                                                    GIÁ TRỊ THEO SỔ KẾ TOÁN
+                                                    <br />
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2">
+                                                <td colspan="2" rowspan="1">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="width: 33%; height: 55px">
+                                                <td rowspan="2" style="width: 33.33%; height: 60px">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 33%">
+                                                <td style="width: 33.33%">
                                                     Nguồn NS
                                                 </td>
-                                                <td style="width: 33%">
+                                                <td style="width: 33.33%">
                                                     Nguồn khác
                                                 </td>
                                             </tr>
@@ -534,39 +536,41 @@
                                 <asp:BoundField HeaderText="Số tầng" DataField="SO_TANG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="DT xây dựng" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" />
-                                <asp:TemplateField HeaderStyle-Height="75px">
+                                <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="7" style="height:20px">
-                                                    Hiện trạng sử dụng (m2)
+                                                <td colspan="7" style="height: 50px">
+                                                    HIỆN TRẠNG SỬ DỤNG
+                                                    <br />
+                                                    (m2)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="2" style="width: 14%; height: 55px;">
+                                                <td rowspan="2" style="width: 14.28%; height: 60px">
                                                     Trụ sở làm việc
                                                 </td>
-                                                <td rowspan="2" style="width: 14%">
+                                                <td rowspan="2" style="width: 14.28%">
                                                     Cơ sở HĐSN
                                                 </td>
-                                                <td colspan="5">
+                                                <td rowspan="1" colspan="5">
                                                     Sử dụng khác
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 14%">
+                                                <td style="width: 14.28%">
                                                     Làm nhà ở
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14.28%">
                                                     Cho thuê
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14.28%">
                                                     Bỏ trống
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14.28%">
                                                     Bị lấn chiếm
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14.28%">
                                                     Khác
                                                 </td>
                                             </tr>

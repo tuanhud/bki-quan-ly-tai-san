@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F102_DeNghiXuLyNha.aspx.cs" Inherits="ChucNang_F102_DeNghiXuLyNha" %>
 
+<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         // Hàm này dùng để check all checkbox trên lưới
@@ -20,6 +22,8 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
@@ -94,7 +98,6 @@
             <td>
             </td>
             <td>
-                &nbsp;
             </td>
             <td>
             </td>
@@ -103,22 +106,20 @@
         </tr>
         <tr>
             <td colspan="4">
-                <hr/>
+                <hr />
             </td>
         </tr>
         <tr>
             <td>
                 <asp:Button ID="m_cmd_de_nghi_xu_ly" runat="server" Text="Đề nghị xử lý" CssClass="cssButton"
-                    Height="24px" Width="98px" OnClick="m_cmd_de_nghi_xu_ly_Click" 
-                    Enabled="False" />
+                    Height="24px" Width="98px" OnClick="m_cmd_de_nghi_xu_ly_Click" Enabled="False" />
                 <asp:Button ID="m_cmd_huy_de_nghi_xu_ly" runat="server" Text="Hủy" CssClass="cssButton"
-                    Height="24px" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" 
-                    Enabled="False" />
+                    Height="24px" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" Enabled="False" />
             </td>
             <td>
-                </td>
+            </td>
             <td>
-                </td>
+            </td>
             <td>
             </td>
         </tr>
@@ -145,27 +146,29 @@
                         <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
                         <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
                             ItemStyle-HorizontalAlign="Center" />
-                        <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
+                        <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
-                                        <td colspan="3" style="height: 20px">
-                                            Giá trị theo sổ kế toán
+                                        <td colspan="3" style="height: 50px">
+                                            GIÁ TRỊ THEO SỔ KẾ TOÁN
+                                            <br />
+                                            (ngàn đồng)
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="2" rowspan="1">
                                             Nguyên giá
                                         </td>
-                                        <td rowspan="2" style="width: 33%; height: 55px">
+                                        <td rowspan="2" style="width: 33.33%; height: 60px">
                                             Giá trị còn lại
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 33%">
+                                        <td style="width: 33.33%">
                                             Nguồn NS
                                         </td>
-                                        <td style="width: 33%">
+                                        <td style="width: 33.33%">
                                             Nguồn khác
                                         </td>
                                     </tr>
@@ -193,12 +196,12 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
-                                        <td colspan="7" style="height:20px">
+                                        <td colspan="7" style="height: 20px">
                                             Hiện trạng sử dụng (m2)
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td rowspan="2" style="width: 14%; height:55px;">
+                                        <td rowspan="2" style="width: 14%; height: 55px;">
                                             Trụ sở làm việc
                                         </td>
                                         <td rowspan="2" style="width: 14%">
