@@ -373,27 +373,11 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            if (m_cbo_don_vi_chu_quan.SelectedValue == "-1")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị chủ quản";
-                return;
-            }
-            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == "-1")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị sử dụng";
-                return;
-            }
-            if (m_cbo_dia_chi.SelectedValue == "-1")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Địa chỉ";
-                return;
-            }
-            else
-            {
-                format_label_able();
-                load_data_to_thong_tin_nha_dat();
-                load_data_to_grid_nha();
-            }
+
+            format_label_able();
+            load_data_to_thong_tin_nha_dat();
+            load_data_to_grid_nha();
+
 
         }
         catch (System.Exception ex)
@@ -405,24 +389,10 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            if (m_cbo_don_vi_chu_quan.SelectedValue == "-1")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị chủ quản";
-                return;
-            }
-            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == "-1")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị sử dụng";
-                return;
-            }
-            if (m_cbo_dia_chi.SelectedValue == "-1")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Địa chỉ";
-                return;
-            }
-            else
-                export_excel();
+
+            export_excel();
         }
+
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
