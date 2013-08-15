@@ -202,7 +202,7 @@
                                 Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
-                            <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hau"
+                            <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
                                 ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_nha"
                                 ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
