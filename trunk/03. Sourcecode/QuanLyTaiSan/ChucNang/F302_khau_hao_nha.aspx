@@ -242,32 +242,36 @@
                                 Width="98px" Text="Xóa trắng(r)" />
                             <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
                         </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
                     </tr>
                 </table>
             </td>
         </tr>
     </table>
-    <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
+    <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
         <tr>
-            <td class="cssPageTitleBG" colspan="6">
+            <td class="cssPageTitleBG" colspan="6" >
                 <span class="cssPageTitle">Chọn nhà</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
         <tr>
-            <td align="right" colspan="1" style="width: 15%">
+            <td align="right" colspan="1" style="width: 20%">
                 <span class="cssManField">Bộ, tỉnh:</span>
             </td>
-            <td style="width: 35%" colspan="1">
-                <asp:DropDownList ID="m_ddl_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
+            <td style="width: 30%" colspan="1">
+                <asp:DropDownList ID="m_ddl_bo_tinh" Width="85%" runat="Server" AutoPostBack="True"
                     TabIndex="1">
                 </asp:DropDownList>
             </td>
-            <td align="right" style="width: 15%" colspan="1">
+            <td align="right" style="width: 20%" colspan="1">
                 <span class="cssManField">Đơn vị chủ quản:</span>
             </td>
-            <td style="width: 35%" colspan="1">
-                <asp:DropDownList ID="m_ddl_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
+            <td style="width: 20%" colspan="1">
+                <asp:DropDownList ID="m_ddl_don_vi_chu_quan" Width="85%" runat="Server" AutoPostBack="True"
                     TabIndex="2">
                 </asp:DropDownList>
             </td>
