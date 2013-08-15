@@ -239,12 +239,14 @@ namespace WebUS
         public void FillDataset(
             WebDS.DS_DM_DON_VI op_ds_don_vi
             , decimal v_dc_id_loai_don_vi
-            , decimal v_dc_id_don_vi_cap_tren
+            , decimal v_dc_id_don_vi_cap_tren1
+            , decimal v_dc_id_don_vi_cap_tren2
             , string ip_str_user_name) {
                 CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_Select_by_user_name");
             cstored.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             cstored.addDecimalInputParam("@ip_dc_loai_don_vi", v_dc_id_loai_don_vi);
-            cstored.addDecimalInputParam("@ip_dc_id_don_vi_cap_tren", v_dc_id_don_vi_cap_tren);
+            cstored.addDecimalInputParam("@ip_dc_id_dv_cap_tren1", v_dc_id_don_vi_cap_tren1);
+            cstored.addDecimalInputParam("@ip_dc_id_dv_cap_tren2", v_dc_id_don_vi_cap_tren2);
             cstored.fillDataSetByCommand(this, op_ds_don_vi);
         }
     }

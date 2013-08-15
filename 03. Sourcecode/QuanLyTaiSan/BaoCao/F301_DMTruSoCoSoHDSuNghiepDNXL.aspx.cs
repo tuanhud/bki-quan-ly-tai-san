@@ -81,6 +81,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             v_ds_dm_don_vi
             ,ID_LOAI_DON_VI.BO_TINH
             , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA
             , v_str_user_name);
 
         m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
@@ -102,13 +103,14 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             v_ds_dm_don_vi
             , ID_LOAI_DON_VI.DV_CHU_QUAN
             , v_dc_id_bo_tinh
+            , CONST_QLDB.ID_TAT_CA
             , v_str_user_name);
        
         m_cbo_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
         m_cbo_don_vi_chu_quan.DataTextField = DM_DON_VI.TEN_DON_VI;
         m_cbo_don_vi_chu_quan.DataValueField = DM_DON_VI.ID;
         m_cbo_don_vi_chu_quan.DataBind();
-        m_cbo_bo_tinh.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+        m_cbo_don_vi_chu_quan.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
 
     }
     private void load_data_to_cbo_don_vi_su_dung(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
@@ -118,10 +120,12 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
 
         string v_str_user_name = Session[SESSION.UserName].ToString();
         decimal v_dc_id_don_vi_chu_quan = CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan);
+        decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
         v_us_dm_don_vi.FillDataset(
             v_ds_dm_don_vi
             , ID_LOAI_DON_VI.DV_SU_DUNG
             , v_dc_id_don_vi_chu_quan
+            , v_dc_id_bo_tinh
             , v_str_user_name);
 
       
@@ -130,35 +134,24 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
         m_cbo_don_vi_su_dung_tai_san.DataTextField = DM_DON_VI.TEN_DON_VI;
         m_cbo_don_vi_su_dung_tai_san.DataValueField = DM_DON_VI.ID;
         m_cbo_don_vi_su_dung_tai_san.DataBind();
-        m_cbo_bo_tinh.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+        m_cbo_don_vi_su_dung_tai_san.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
     }
 
-    private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_string_bo_tinh)
+    private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_str_bo_tinh)
     {
         DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
         US_DM_DAT v_us_dm_dat = new US_DM_DAT();
 
-        if (!ip_str_id_don_vi_su_dung.Equals("-1"))
-        {
-            v_us_dm_dat.FillDataset(v_ds_dm_dat, "where " + DM_DAT.ID_DON_VI_SU_DUNG + " = " + ip_str_id_don_vi_su_dung);
-        }
-        else if (!ip_str_id_don_vi_su_dung.Equals("-1"))
-        {
-            v_us_dm_dat.FillDataset(v_ds_dm_dat, "where " + DM_DAT.ID_DON_VI_CHU_QUAN + " = " + ip_str_id_don_vi_chu_quan);
-        }
-        else if (!ip_string_bo_tinh.Equals("-1"))
-        {
-            v_us_dm_dat.FillDataset(v_ds_dm_dat, "where " + DM_DAT.ID_DON_VI_CHU_QUAN
-                + " in (select ID from DM_DON_VI where " + DM_DON_VI.ID_DON_VI_CAP_TREN + " = " + ip_string_bo_tinh + ")");
-        }
-        else
-        {
-            v_us_dm_dat.FillDataset(v_ds_dm_dat);
-        }
-
+        string v_str_user_name = Session[SESSION.UserName].ToString();
+        v_us_dm_dat.FillDatasetByID_DonVi(
+            CIPConvert.ToDecimal(ip_str_bo_tinh)
+            , CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan)
+            , CIPConvert.ToDecimal(ip_str_id_don_vi_su_dung)
+            , v_str_user_name
+            , v_ds_dm_dat);
         m_cbo_dia_chi.DataSource = v_ds_dm_dat.DM_DAT;
-        m_cbo_dia_chi.DataTextField = "DIA_CHI";
-        m_cbo_dia_chi.DataValueField = "ID";
+        m_cbo_dia_chi.DataTextField = DM_DAT.DIA_CHI;
+        m_cbo_dia_chi.DataValueField = DM_DAT.ID;
         m_cbo_dia_chi.DataBind();
     }
 
@@ -186,10 +179,18 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             CSystemLog_301.ExceptionHandle(ex);
         }
     }
+
+    private bool check_validate_data_is_ok() {
+
+        if (m_cbo_dia_chi.SelectedValue == null) return false;
+        return true;
+    }
+
     private void load_data_to_grid_nha()
     {
         try
         {
+            if (check_validate_data_is_ok() == false) return;
             DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
             US_DM_NHA v_us_dm_nha = new US_DM_NHA();
             string v_id_dat = m_cbo_dia_chi.SelectedValue;
@@ -229,7 +230,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
     {
         try
         {
-            string v_id_dat = m_cbo_dia_chi.SelectedValue;
+           
             string id_loai_bao_cao = "";
             if (Request.QueryString["id_loai_bao_cao"] != null)
             {

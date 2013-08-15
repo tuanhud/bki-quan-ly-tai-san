@@ -451,5 +451,24 @@ public class US_DM_DAT : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    #region Addtional
+    public void FillDatasetByID_DonVi(
+        decimal ip_dc_id_bo_tinh
+        , decimal ip_dc_id_dv_chu_quan
+        , decimal ip_dc_id_dv_su_dung
+        , string ip_str_user_name
+        , DS_DM_DAT op_ds_dat) {
+            CStoredProc v_obj_pr = new CStoredProc("pr_DM_DAT_search_by_id_don_vi");
+
+            v_obj_pr.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_id_bo_tinh);
+            v_obj_pr.addDecimalInputParam("@ip_id_dv_chu_quan", ip_dc_id_dv_chu_quan);
+            v_obj_pr.addDecimalInputParam("@ip_id_dv_su_dung", ip_dc_id_dv_su_dung);
+            v_obj_pr.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
+            v_obj_pr.fillDataSetByCommand(this, op_ds_dat);
+    }
+
+
+    #endregion
+}
 }
