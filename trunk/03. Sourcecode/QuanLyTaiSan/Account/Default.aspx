@@ -1,7 +1,41 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Account_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+<link href="../Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".tb").autocomplete({
 
+                source: function (request, response) {
+                    $.ajax({
+                        url: "PersonService.asmx/get_top_dm_oto_by_name",
+                        data: "{ 'name_prefix': '" + request.term + "' }",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        dataFilter: function (data) { return data; },
+                        success: function (data) {
+                            response($.map(data.d, function (item) {
+                                return {
+                                    value: item.strTEN_TAI_SAN,
+                                    dcID: item.dcID
+                                }
+                            }))
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                },
+                minLength: 1,
+                select: function (event, ui) {
+                    $("#m_txt_id_oto").val(ui.item.dcID);
+                    console.log(ui.item.dcID);
+                }
+            });
+        });
+    </script>
     <script type="text/javascript">
     // Hàm này dùng để check all checkbox trên lưới
     function SelectAllCheckboxes(spanChk) {
@@ -20,7 +54,11 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-
+     <span class="cssManField">Ô tô</span>
+     <asp:TextBox ID="tbAuto" class="tb" runat="server" CssClass="cssTextBox" Width="25%">
+     </asp:TextBox>
+      <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID</span>
+      <asp:TextBox ID="m_txt_id_oto" runat="server"></asp:TextBox>
     <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AutoGenerateColumns="False"
                 Width="100%" DataKeyNames="ID" ShowFooter="true"
                 CellPadding="4" ForeColor="#333333" 
