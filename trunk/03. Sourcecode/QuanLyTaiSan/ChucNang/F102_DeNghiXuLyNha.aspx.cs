@@ -148,8 +148,8 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         if (!ip_str_id_don_vi_su_dung.Equals("-1")) 
         {
             v_us_dm_dat.FillDataset(v_ds_dm_dat, "where " + DM_DAT.ID_DON_VI_SU_DUNG + " = "  + ip_str_id_don_vi_su_dung);
-        } 
-        else if (!ip_str_id_don_vi_su_dung.Equals("-1"))
+        }
+        else if (!ip_str_id_don_vi_chu_quan.Equals("-1"))
         {
             v_us_dm_dat.FillDataset(v_ds_dm_dat, "where " + DM_DAT.ID_DON_VI_CHU_QUAN + " = " + ip_str_id_don_vi_chu_quan);
         }

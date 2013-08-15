@@ -104,11 +104,11 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
         DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
-        if (ip_str_id_bo_tinh.Equals("-1"))
+        if (ip_str_id_bo_tinh.Equals(String.Empty))
         {
             v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "WHERE ID_LOAI_DON_VI IN (" + ID_LOAI_DON_VI.DV_SU_DUNG + "," + ID_LOAI_DON_VI.DV_CHU_QUAN + ")");
         }
-        else if (ip_str_id_don_vi_chu_quan.Equals("-1"))
+        else if (ip_str_id_don_vi_chu_quan.Equals(String.Empty))
         {
             decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
             v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN in (select ID from DM_DON_VI where ID_DON_VI_CAP_TREN = "
@@ -149,7 +149,11 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
         US_DM_DAT v_us_dm_dat = new US_DM_DAT();
 
-        v_us_dm_dat.FillDataset(v_ds_dm_dat, "where ID_DON_VI_SU_DUNG =" + ip_str_don_vi_su_dung);
+        if (!ip_str_don_vi_su_dung.Equals(String.Empty))
+        {
+            v_us_dm_dat.FillDataset(v_ds_dm_dat, "where ID_DON_VI_SU_DUNG =" + ip_str_don_vi_su_dung);
+        }
+        
         m_ddl_thuoc_khu_dat.DataSource = v_ds_dm_dat.DM_DAT;
         m_ddl_thuoc_khu_dat.DataTextField = "DIA_CHI";
         m_ddl_thuoc_khu_dat.DataValueField = "ID";
