@@ -12,6 +12,8 @@ using WebUS;
 using WebDS.CDBNames;
 using QltsForm;
 
+using IP.Core.WinFormControls;
+
 
 public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghiXuLy : System.Web.UI.Page
 {
@@ -69,73 +71,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
         Response.Redirect(v_str_output_file, false);
     }
 
-    private void load_data_to_cbo_bo_tinh()
-    {
-
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-        DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-        //v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.BO_TINH);
-        string v_str_user_name = Session[SESSION.UserName].ToString();
-        v_us_dm_don_vi.FillDataset(
-            v_ds_dm_don_vi
-            ,ID_LOAI_DON_VI.BO_TINH
-            , CONST_QLDB.ID_TAT_CA
-            , CONST_QLDB.ID_TAT_CA
-            , v_str_user_name);
-
-        m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_bo_tinh.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_bo_tinh.DataValueField = DM_DON_VI.ID;
-        m_cbo_bo_tinh.DataBind();
-        m_cbo_bo_tinh.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-
-    }
-
-    private void load_data_to_cbo_don_vi_chu_quan(string ip_str_id_bo_tinh)
-    {
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-        DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-        string v_str_user_name = Session[SESSION.UserName].ToString();
-        decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
-        v_us_dm_don_vi.FillDataset(
-            v_ds_dm_don_vi
-            , ID_LOAI_DON_VI.DV_CHU_QUAN
-            , v_dc_id_bo_tinh
-            , CONST_QLDB.ID_TAT_CA
-            , v_str_user_name);
-       
-        m_cbo_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_don_vi_chu_quan.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_don_vi_chu_quan.DataValueField = DM_DON_VI.ID;
-        m_cbo_don_vi_chu_quan.DataBind();
-        m_cbo_don_vi_chu_quan.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-
-    }
-    private void load_data_to_cbo_don_vi_su_dung(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
-    {
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-        DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-        string v_str_user_name = Session[SESSION.UserName].ToString();
-        decimal v_dc_id_don_vi_chu_quan = CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan);
-        decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
-        v_us_dm_don_vi.FillDataset(
-            v_ds_dm_don_vi
-            , ID_LOAI_DON_VI.DV_SU_DUNG
-            , v_dc_id_don_vi_chu_quan
-            , v_dc_id_bo_tinh
-            , v_str_user_name);
-
-      
-
-        m_cbo_don_vi_su_dung_tai_san.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_don_vi_su_dung_tai_san.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_don_vi_su_dung_tai_san.DataValueField = DM_DON_VI.ID;
-        m_cbo_don_vi_su_dung_tai_san.DataBind();
-        m_cbo_don_vi_su_dung_tai_san.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-    }
+    
 
     private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_str_bo_tinh)
     {
@@ -294,9 +230,18 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             {
                 form_title();
                 format_label_disable();
-                load_data_to_cbo_bo_tinh();
-                load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh.SelectedValue);
-                load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+                 WinFormControls.load_data_to_cbo_bo_tinh(
+                     WinFormControls.eTAT_CA.YES
+                     , m_cbo_bo_tinh);
+                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                     m_cbo_bo_tinh.SelectedValue
+                     , WinFormControls.eTAT_CA.YES
+                     , m_cbo_don_vi_chu_quan);
+                 WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                     m_cbo_don_vi_chu_quan.SelectedValue
+                     , m_cbo_bo_tinh.SelectedValue
+                     , WinFormControls.eTAT_CA.YES
+                     , m_cbo_don_vi_su_dung_tai_san);
                 load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
             }
         }
@@ -324,8 +269,14 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
         try
         {
             m_lbl_mess.Text = "";
-            load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh.SelectedValue);
-            load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
             load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
@@ -341,8 +292,15 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
         try
         {
             m_lbl_mess.Text = "";
-            load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
-            load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
+            load_data_to_cbo_dia_chi(
+                m_cbo_don_vi_su_dung_tai_san.SelectedValue
+                , m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue);
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
 
