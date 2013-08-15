@@ -236,16 +236,38 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 
     protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
-        load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
-        load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        try
+        {
+            load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
+            load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     protected void m_ddl_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
-        load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        try
+        {
+            load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
-        load_form_data();
+        try
+        {
+            load_form_data();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+        
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
@@ -255,8 +277,15 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 
     protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-        m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
-        load_form_data();
+        try
+        {
+            m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
+            load_form_data();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
     {
