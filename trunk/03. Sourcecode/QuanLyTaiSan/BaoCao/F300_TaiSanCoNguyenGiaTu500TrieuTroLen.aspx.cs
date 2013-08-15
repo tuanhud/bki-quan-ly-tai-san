@@ -11,6 +11,7 @@ using IP.Core.IPData;
 using IP.Core.IPUserService;
 using WebDS.CDBNames;
 using QltsForm;
+using IP.Core.WinFormControls;
 
 public partial class Default2 : System.Web.UI.Page
 {
@@ -18,9 +19,18 @@ public partial class Default2 : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            load_data_to_cbo_bo_tinh();
-            load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh.SelectedValue);
-            load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_bo_tinh(
+                     WinFormControls.eTAT_CA.YES
+                     , m_cbo_bo_tinh);
+            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_chu_quan);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
             load_data_to_cbo_trang_thai();
 
         }
@@ -64,71 +74,7 @@ public partial class Default2 : System.Web.UI.Page
 
     }
 
-    private void load_data_to_cbo_bo_tinh()
-    {
 
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-        DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-        v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.BO_TINH);
-        m_cbo_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_bo_tinh.DataTextField = "TEN_DON_VI";
-        m_cbo_bo_tinh.DataValueField = "ID";
-        m_cbo_bo_tinh.DataBind();
-        m_cbo_bo_tinh.Items.Insert(0, new ListItem("Tất cả", "-1"));
-
-    }
-
-    private void load_data_to_cbo_don_vi_chu_quan(string ip_str_id_bo_tinh)
-    {
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-        DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-        if (ip_str_id_bo_tinh.Equals("-1"))
-        {
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN);
-        }
-        else
-        {
-            decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = " + ID_LOAI_DON_VI.DV_CHU_QUAN
-            + " AND ID_DON_VI_CAP_TREN = " + v_dc_id_bo_tinh);
-        }
-
-        m_cbo_don_vi_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_don_vi_chu_quan.DataTextField = "TEN_DON_VI";
-        m_cbo_don_vi_chu_quan.DataValueField = "ID";
-        m_cbo_don_vi_chu_quan.DataBind();
-        m_cbo_don_vi_chu_quan.Items.Insert(0, new ListItem("Tất cả", "-1"));
-
-    }
-    private void load_data_to_cbo_don_vi_su_dung(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
-    {
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-        DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-        if (!ip_str_id_don_vi_chu_quan.Equals("-1"))
-        {
-            decimal v_dc_id_don_vi_chu_quan = CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan);
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN = " + v_dc_id_don_vi_chu_quan + " or ID = " + v_dc_id_don_vi_chu_quan);
-        }
-        else if (!ip_str_id_bo_tinh.Equals("-1"))
-        {
-            decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_DON_VI_CAP_TREN in (select ID from DM_DON_VI where ID_DON_VI_CAP_TREN = "
-                + v_dc_id_bo_tinh + ") or ID_DON_VI_CAP_TREN = " + v_dc_id_bo_tinh);
-        }
-        else
-        {
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "WHERE ID_LOAI_DON_VI IN (" + ID_LOAI_DON_VI.DV_SU_DUNG + "," + ID_LOAI_DON_VI.DV_CHU_QUAN + ")");
-        }
-
-        m_cbo_don_vi_su_dung_tai_san.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-        m_cbo_don_vi_su_dung_tai_san.DataTextField = "TEN_DON_VI";
-        m_cbo_don_vi_su_dung_tai_san.DataValueField = "ID";
-        m_cbo_don_vi_su_dung_tai_san.DataBind();
-        m_cbo_don_vi_su_dung_tai_san.Items.Insert(0, new ListItem("Tất cả", "-1"));
-    }
 
     private void load_data_to_cbo_trang_thai()
     {
@@ -219,8 +165,15 @@ public partial class Default2 : System.Web.UI.Page
             m_lbl_thong_bao.Text = "";
             m_grv_tai_san_khac.Visible = false;
 
-            load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh.SelectedValue);
-            load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
             //load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
             //load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
         }
@@ -237,7 +190,11 @@ public partial class Default2 : System.Web.UI.Page
             m_lbl_mess.Text = "";
             m_grv_tai_san_khac.Visible = false;
             //load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh.SelectedValue);
-            load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                     m_cbo_don_vi_chu_quan.SelectedValue
+                     , m_cbo_bo_tinh.SelectedValue
+                     , WinFormControls.eTAT_CA.YES
+                     , m_cbo_don_vi_su_dung_tai_san);
         }
         catch (System.Exception ex)
         {
