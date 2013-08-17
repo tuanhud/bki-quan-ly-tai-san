@@ -140,7 +140,7 @@ public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghi
             {
                 case "1":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat);
+                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat+" and id_trang_thai = "+ID_TRANG_THAI_NHA.DANG_SU_DUNG);
                     break;
                 case "2":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
