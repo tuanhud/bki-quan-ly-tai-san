@@ -283,7 +283,7 @@ namespace WebDS {
             
             private global::System.Data.DataColumn columnID_DON_VI;
             
-            private global::System.Data.DataColumn columnID_NGUOI_SU_DUNG;
+            private global::System.Data.DataColumn columnID_USER_GROUP;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -336,9 +336,9 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_NGUOI_SU_DUNGColumn {
+            public global::System.Data.DataColumn ID_USER_GROUPColumn {
                 get {
-                    return this.columnID_NGUOI_SU_DUNG;
+                    return this.columnID_USER_GROUP;
                 }
             }
             
@@ -379,12 +379,12 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_QUAN_HE_SU_DUNG_DU_LIEURow AddHT_QUAN_HE_SU_DUNG_DU_LIEURow(decimal ID_DON_VI, decimal ID_NGUOI_SU_DUNG) {
+            public HT_QUAN_HE_SU_DUNG_DU_LIEURow AddHT_QUAN_HE_SU_DUNG_DU_LIEURow(decimal ID_DON_VI, decimal ID_USER_GROUP) {
                 HT_QUAN_HE_SU_DUNG_DU_LIEURow rowHT_QUAN_HE_SU_DUNG_DU_LIEURow = ((HT_QUAN_HE_SU_DUNG_DU_LIEURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ID_DON_VI,
-                        ID_NGUOI_SU_DUNG};
+                        ID_USER_GROUP};
                 rowHT_QUAN_HE_SU_DUNG_DU_LIEURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHT_QUAN_HE_SU_DUNG_DU_LIEURow);
                 return rowHT_QUAN_HE_SU_DUNG_DU_LIEURow;
@@ -422,7 +422,7 @@ namespace WebDS {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnID_DON_VI = base.Columns["ID_DON_VI"];
-                this.columnID_NGUOI_SU_DUNG = base.Columns["ID_NGUOI_SU_DUNG"];
+                this.columnID_USER_GROUP = base.Columns["ID_USER_GROUP"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -432,8 +432,8 @@ namespace WebDS {
                 base.Columns.Add(this.columnID);
                 this.columnID_DON_VI = new global::System.Data.DataColumn("ID_DON_VI", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_DON_VI);
-                this.columnID_NGUOI_SU_DUNG = new global::System.Data.DataColumn("ID_NGUOI_SU_DUNG", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_NGUOI_SU_DUNG);
+                this.columnID_USER_GROUP = new global::System.Data.DataColumn("ID_USER_GROUP", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_USER_GROUP);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -443,7 +443,7 @@ namespace WebDS {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnID_DON_VI.AllowDBNull = false;
-                this.columnID_NGUOI_SU_DUNG.AllowDBNull = false;
+                this.columnID_USER_GROUP.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -608,12 +608,12 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ID_NGUOI_SU_DUNG {
+            public decimal ID_USER_GROUP {
                 get {
-                    return ((decimal)(this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_NGUOI_SU_DUNGColumn]));
+                    return ((decimal)(this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_USER_GROUPColumn]));
                 }
                 set {
-                    this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_NGUOI_SU_DUNGColumn] = value;
+                    this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_USER_GROUPColumn] = value;
                 }
             }
         }
@@ -779,7 +779,7 @@ namespace WebDS.DS_HT_QUAN_HE_SU_DUNG_DU_LIEUTableAdapters {
             tableMapping.DataSetTable = "HT_QUAN_HE_SU_DUNG_DU_LIEU";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("ID_DON_VI", "ID_DON_VI");
-            tableMapping.ColumnMappings.Add("ID_NGUOI_SU_DUNG", "ID_NGUOI_SU_DUNG");
+            tableMapping.ColumnMappings.Add("ID_NGUOI_SU_DUNG", "ID_USER_GROUP");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
