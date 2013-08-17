@@ -10,6 +10,7 @@ using WebDS;
 using IP.Core.IPCommon;
 using WebUS;
 using QltsForm;
+using IP.Core.WinFormControls;
 
 
 public partial class Default2 : System.Web.UI.Page
@@ -21,7 +22,18 @@ public partial class Default2 : System.Web.UI.Page
             if (!IsPostBack)
             {
                 form_title();
-                load_data_to_cbo_bo_tinh();
+                WinFormControls.load_data_to_cbo_bo_tinh(
+                    WinFormControls.eTAT_CA.YES
+                    , m_cbo_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_cbo_don_vi_chu_quan.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung_tai_san);
                 load_data_to_cbo_trang_thai();
             }
         }
@@ -163,7 +175,7 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
-    private void load_data_to_cbo_bo_tinh()
+    /*private void load_data_to_cbo_bo_tinh()
     {
         try
         {
@@ -180,8 +192,8 @@ public partial class Default2 : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(ex);
         }
-    }
-    private void load_data_to_cbo_don_vi_chu_quan()
+    }*/
+    /*private void load_data_to_cbo_don_vi_chu_quan()
     {
         US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
         DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
@@ -202,8 +214,8 @@ public partial class Default2 : System.Web.UI.Page
             m_cbo_don_vi_chu_quan.Items.Clear();
             m_cbo_don_vi_su_dung_tai_san.Items.Clear();
         }
-    }
-    private void load_data_to_cbo_don_vi_su_dung()
+    }*/
+    /*private void load_data_to_cbo_don_vi_su_dung()
     {
         if (m_cbo_bo_tinh.SelectedValue == null || m_cbo_don_vi_chu_quan.SelectedValue == null)
         {
@@ -230,7 +242,7 @@ public partial class Default2 : System.Web.UI.Page
                 m_cbo_don_vi_su_dung_tai_san.Items.Clear();
             }
         }
-    }
+    }*/
     #endregion
 
     private void load_data_to_cbo_trang_thai()
@@ -287,7 +299,17 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            load_data_to_cbo_don_vi_chu_quan();
+            /*load_data_to_cbo_don_vi_chu_quan();
+            m_grv_danh_sach_tai_san_khac.Visible = false;*/
+            m_lbl_mess.Text = "";
+            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
             m_grv_danh_sach_tai_san_khac.Visible = false;
         }
         catch (System.Exception ex)
@@ -300,8 +322,14 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-
-            load_data_to_cbo_don_vi_su_dung();
+            /*load_data_to_cbo_don_vi_su_dung();
+            m_grv_danh_sach_tai_san_khac.Visible = false;*/
+            m_lbl_mess.Text = "";
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
             m_grv_danh_sach_tai_san_khac.Visible = false;
         }
         catch (System.Exception ex)
