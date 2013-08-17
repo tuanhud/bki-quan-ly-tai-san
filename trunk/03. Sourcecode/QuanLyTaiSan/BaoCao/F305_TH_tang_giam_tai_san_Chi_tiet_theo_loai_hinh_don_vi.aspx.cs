@@ -74,9 +74,74 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            /*load_data_to_cbo_don_vi_chu_quan();
+            m_grv_danh_sach_tai_san_khac.Visible = false;*/
+            m_lbl_mess.Text = "";
+            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
+            m_grv_tai_san.Visible = false;
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
 
+    }
+    protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            /*load_data_to_cbo_don_vi_su_dung();
+            m_grv_danh_sach_tai_san_khac.Visible = false;*/
+            m_lbl_mess.Text = "";
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_cbo_don_vi_chu_quan.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES
+                , m_cbo_don_vi_su_dung_tai_san);
+            m_grv_tai_san.Visible = false;
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
 
+    }
 
-
+    protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (m_cbo_don_vi_chu_quan.SelectedValue == "")
+            {
+                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị chủ quản";
+                return;
+            }
+            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == "")
+            {
+                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị sử dụng";
+                return;
+            }
+            else
+            {
+                m_grv_tai_san.Visible = true;
+                //load_data_to_grid();
+            }
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
     #endregion
 }
