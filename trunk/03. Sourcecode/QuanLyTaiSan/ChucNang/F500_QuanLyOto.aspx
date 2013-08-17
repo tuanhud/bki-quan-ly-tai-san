@@ -23,7 +23,7 @@
             <td colspan="4">
                 <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
                     ValidationGroup="m_vlg_nha" />
-                <asp:Label ID="Label2" runat="server" CssClass="cssManField" />
+                <asp:Label ID="Label2" runat="server" CssClass="cssManField" Style = "color:Blue" />
             </td>
         </tr>
         <tr>
@@ -31,7 +31,7 @@
                 <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                     <tr>
                         <td align="right" style="width: 15%;">
-                            <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
+                            <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" Style = "color:Blue"/>
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             &nbsp;

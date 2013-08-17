@@ -53,11 +53,11 @@ Public Class CSystemLog_301
             WriteToLog(i_exp)
             Select Case m_strRunMode
                 Case IPConstants.C_RUNMODE_TEST
-                    i_page.Response.Redirect("../MessageError.aspx")
+                    i_page.Response.Redirect("../MessageError.aspx?Message= Error:" + i_exp.Message)
                 Case IPConstants.C_RUNMODE_DEVELOP
-                    i_page.Response.Redirect("../MessageError.aspx")
+                    i_page.Response.Redirect("../MessageError.aspx?Message= Error:" + i_exp.Message)
                 Case IPConstants.C_RUNMODE_RUNTIME
-                    i_page.Response.Redirect("../MessageError.aspx")
+                    i_page.Response.Redirect("../MessageError.aspx?Message= Đã xảy ra lỗi trong quá trình cập nhật dữ liệu!")
             End Select
         Catch
             'i_page.Response.Redirect("../MessageError.aspx?mess=Title Website: " + i_page.Title + ". Message: " + i_exp.Message + " Source: " + i_exp.Source)

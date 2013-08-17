@@ -9,7 +9,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <table width = "315px" >
+    <table style="width: 319px" >
         <tr class="title_ttql">
             <td >
               ERROR 404
@@ -26,14 +26,13 @@
                         <tbody>
                             <tr>
                                 <td valign="top">
-                                    <table border="0" width="200" cellpadding="0" cellspacing="3" align="left">
+                                    <table border="0" cellpadding="0" cellspacing="3" align="left" 
+                                        style="height: 28px; width: 314px">
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <a href="#" title="Quản lý đất">
-                                                        <img border="0" src="Images/pager/dat1.jpg" width="200" 
-                                                        title="Quản lý đất" /></a>
-                                                </td>
+                                                <asp:Label ID = "lblErrorMessage" runat ="server" style="color:Red; font-size:17px" text = "Đã xảy ra lỗi khi thao tác với hệ thống!"></asp:Label>
+                                                    &nbsp;</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -46,8 +45,7 @@
                             <tr>
                                 <td>
                                    
-                                                    <a href="#" title="Quản lý nhà">
-                                                        <img border="0" src="Images/pager/nha1.jpg" width="200" title="Quản lý nhà" /></a></td>
+                                                    &nbsp;</td>
                             </tr>
                             <tr>
                                 <td>
@@ -80,7 +78,7 @@
                                             <tr>
                                                 <td class="OtherNews_td">                                                    
                                                     <br>
-                                                    <span style="color:Red; font-size:17px">Đã xảy ra lỗi khi thao tác với hệ thống</span>
+                                                    
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -106,8 +104,7 @@
                 </td>
                 <td style="width: 60%; padding-left: 5px; padding-right: 8px; border-left: 1px solid rgb(229, 229, 229);"
                     valign="top">
-                                    <img border="0" src="Images/pager/oto1.jpg" title="Quản lý Oto" 
-                        style="height: 254px; width: 332px" /><table id="Table6" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
+                                    <table id="Table6" style="width: 100%; border-collapse: collapse;" border="0" cellspacing="0">
                         <tbody>
                             
                         </tbody>
