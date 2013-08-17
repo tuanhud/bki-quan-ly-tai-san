@@ -67,7 +67,7 @@ public partial class Default2 : System.Web.UI.Page
     private void load_data_2_cbo_trang_thai_tai_san()
     {
         m_ds_tu_dien.CM_DM_TU_DIEN.Clear();
-        m_us_tu_dien.FillDataset(m_ds_tu_dien, "Where ID_LOAI_TU_DIEN=8");
+        m_us_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, CM_DM_TU_DIEN.GHI_CHU, m_ds_tu_dien);
         m_cbo_trang_thai_tai_san.DataSource = m_ds_tu_dien.CM_DM_TU_DIEN;
         m_cbo_trang_thai_tai_san.DataTextField = CM_DM_TU_DIEN.TEN;
         m_cbo_trang_thai_tai_san.DataValueField = CM_DM_TU_DIEN.ID;
