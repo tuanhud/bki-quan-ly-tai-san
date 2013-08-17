@@ -49,7 +49,8 @@
                             <span class="cssManField">Đơn vị sử dụng tài sản</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_up" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" 
+                                Width="85%">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -135,7 +136,7 @@
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Nguyên giá nguồn NS (VNĐ)</span>
                         </td>
-                        <td style="width: 30%" align="left">
+                        <td style="width: 30%" align="right">
                             <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -143,7 +144,7 @@
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Nguyên giá nguồn khác (VNĐ)</span>
                         </td>
-                        <td align="left" style="width: 30%;">
+                        <td align="right" style="width: 30%;">
                             <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -153,7 +154,7 @@
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Giá trị còn lại (VNĐ)</span>
                         </td>
-                        <td style="width: 30%" align="left">
+                        <td style="width: 30%" align="right">
                             <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -172,8 +173,6 @@
                         <td colspan="4" align="left">
                             <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
                                 Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_tai_san_khac" />&nbsp;
-                            <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Cập nhật(u)" ValidationGroup="m_vlg_tai_san_khac" />&nbsp;
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                 Width="98px" Text="Xóa trắng(r)" />
                             <asp:HiddenField ID="hdf_id" runat="server" Value="" />
