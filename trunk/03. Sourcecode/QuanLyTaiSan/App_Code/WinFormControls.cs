@@ -38,6 +38,11 @@ namespace IP.Core.WinFormControls{
             US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
             DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
+            if (ip_str_id_bo_tinh.Length ==0) {
+                ip_obj_cbo_dv_chu_quan.Items.Clear();
+                return;
+            }
+
             string v_str_user_name = HttpContext.Current.Session[SESSION.UserName].ToString();
             decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
             v_us_dm_don_vi.FillDataset(
@@ -88,6 +93,16 @@ namespace IP.Core.WinFormControls{
             , string ip_str_id_bo_tinh
              , eTAT_CA ip_e_tat_ca 
             , DropDownList ip_obj_cbo_dv_su_dung) {
+
+                if (ip_str_id_bo_tinh.Length == 0) {
+                    ip_obj_cbo_dv_su_dung.Items.Clear();
+                    return;
+                }
+                if (ip_str_id_don_vi_chu_quan.Length == 0) {
+                    ip_obj_cbo_dv_su_dung.Items.Clear();
+                    return;
+                }
+
             US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
             DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
