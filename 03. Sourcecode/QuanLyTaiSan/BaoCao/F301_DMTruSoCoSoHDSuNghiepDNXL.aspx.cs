@@ -15,7 +15,7 @@ using QltsForm;
 using IP.Core.WinFormControls;
 
 
-public partial class ChucNang_F301_DanhMucTruSoLamViecCoSoHoatDongSuNghiepDeNghiXuLy : System.Web.UI.Page
+public partial class Default2 : System.Web.UI.Page
 {
 
 
