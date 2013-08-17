@@ -29,7 +29,7 @@
                             <span class="cssManField">Bộ, tỉnh</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="m_cbo_bo_tinh" runat="server" Width="85%" AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_bo_tinh_up" runat="server" Width="85%" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -38,7 +38,7 @@
                             <span class="cssManField">Đơn vị chủ quản</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan_up" runat="server" Width="85%">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -46,10 +46,10 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Đơn vị sử dụng</span>
+                            <span class="cssManField">Đơn vị sử dụng tài sản</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="m_cbo_don_vi_su_dung" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_up" runat="server" Width="85%">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -58,7 +58,7 @@
                             <span class="cssManField">Trạng thái tài sản</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:DropDownList ID="m_cbo_trang_thai_tai_san" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_cbo_trang_thai_tai_san_up" runat="server" Width="85%">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -165,7 +165,6 @@
                         <td align="left" style="width: 1%;">
                         </td>
                     </tr>
-                   
                     <tr>
                         <td>
                             &nbsp;
@@ -196,7 +195,7 @@
                 <span class="cssManField">Bộ, tỉnh:</span>
             </td>
             <td style="width: 30%" colspan="1">
-                <asp:DropDownList ID="m_ddl_bo_tinh" Width="85%" runat="Server" AutoPostBack="True"
+                <asp:DropDownList ID="m_cbo_bo_tinh_down" Width="85%" runat="Server" AutoPostBack="True"
                     TabIndex="1">
                 </asp:DropDownList>
             </td>
@@ -204,7 +203,7 @@
                 <span class="cssManField">Đơn vị chủ quản:</span>
             </td>
             <td style="width: 30%" colspan="1">
-                <asp:DropDownList ID="m_ddl_don_vi_chu_quan" Width="85%" runat="Server" AutoPostBack="True"
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan_down" Width="85%" runat="Server" AutoPostBack="True"
                     TabIndex="2">
                 </asp:DropDownList>
             </td>
@@ -214,15 +213,15 @@
                 <span class="cssManField">Đơn vị sử dụng tài sản:</span>
             </td>
             <td>
-                <asp:DropDownList ID="m_ddl_don_vi_su_dung_tai_san" Width="85%" runat="Server" AutoPostBack="True"
-                    TabIndex="3">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_down" Width="85%" runat="Server"
+                    AutoPostBack="True" TabIndex="3">
                 </asp:DropDownList>
             </td>
             <td align="right">
                 <span class="cssManField">Trạng thái tài sản: </span>
             </td>
             <td>
-                <asp:DropDownList ID="m_ddl_trang_thai_tai_san" runat="Server" Width="85%" TabIndex="4">
+                <asp:DropDownList ID="m_cbo_trang_thai_tai_san_down" runat="Server" Width="85%" TabIndex="4">
                 </asp:DropDownList>
             </td>
         </tr>
