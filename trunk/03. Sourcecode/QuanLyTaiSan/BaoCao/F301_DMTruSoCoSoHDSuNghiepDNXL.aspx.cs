@@ -71,7 +71,7 @@ public partial class Default2 : System.Web.UI.Page
         Response.Redirect(v_str_output_file, false);
     }
 
-    
+
 
     private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_str_bo_tinh)
     {
@@ -116,7 +116,8 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
-    private bool check_validate_data_is_ok() {
+    private bool check_validate_data_is_ok()
+    {
 
         if (m_cbo_dia_chi.SelectedValue == null) return false;
         return true;
@@ -140,7 +141,7 @@ public partial class Default2 : System.Web.UI.Page
             {
                 case "1":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat+" and id_trang_thai = "+ID_TRANG_THAI_NHA.DANG_SU_DUNG);
+                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DANG_SU_DUNG);
                     break;
                 case "2":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
@@ -166,7 +167,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-           
+
             string id_loai_bao_cao = "";
             if (Request.QueryString["id_loai_bao_cao"] != null)
             {
@@ -230,18 +231,18 @@ public partial class Default2 : System.Web.UI.Page
             {
                 form_title();
                 format_label_disable();
-                 WinFormControls.load_data_to_cbo_bo_tinh(
-                     WinFormControls.eTAT_CA.YES
-                     , m_cbo_bo_tinh);
-                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                     m_cbo_bo_tinh.SelectedValue
-                     , WinFormControls.eTAT_CA.YES
-                     , m_cbo_don_vi_chu_quan);
-                 WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                     m_cbo_don_vi_chu_quan.SelectedValue
-                     , m_cbo_bo_tinh.SelectedValue
-                     , WinFormControls.eTAT_CA.YES
-                     , m_cbo_don_vi_su_dung_tai_san);
+                WinFormControls.load_data_to_cbo_bo_tinh(
+                    WinFormControls.eTAT_CA.YES
+                    , m_cbo_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_cbo_don_vi_chu_quan.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung_tai_san);
                 load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
             }
         }
