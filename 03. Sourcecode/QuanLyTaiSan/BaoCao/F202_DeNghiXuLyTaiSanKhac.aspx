@@ -64,14 +64,16 @@
                         </td>
                         <td>
                             <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
-                                TabIndex="3">
+                                TabIndex="3" 
+                                onselectedindexchanged="m_cbo_don_vi_su_dung_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="right">
                             <span class="cssManField">Trạng thái: </span>
                         </td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%">
+                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%" 
+                                onselectedindexchanged="m_cbo_trang_thai_tai_san_khac_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -100,8 +102,8 @@
                         <td>
                         </td>
                         <td colspan="2" align="left">
-                            <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Lọc dữ liệu(l)" OnClick="m_cmd_tim_kiem_Click" />&nbsp; &nbsp;
+                            <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server" Height="24px" 
+                                Width="98px" Text="Tìm kiếm(s)" OnClick="m_cmd_tim_kiem_Click" />&nbsp; &nbsp;
                         </td>
                     </tr>
                 </table>
@@ -118,7 +120,10 @@
                         </td>
                         <td align="left">
                                         <asp:Button ID="m_cmd_de_nghi_xu_ly" runat="server" AccessKey="c" CssClass="cssButton" 
-                                Text="Đề nghị xử lý" Width="98px"/>
+                                Text="Đề nghị xử lý" Height="24px"  Width="98px" onclick="m_cmd_de_nghi_xu_ly_Click"/>
+            
+                                        <asp:Button ID="m_cmd_huy_de_nghi_xu_ly" runat="server" CssClass="cssButton" Height="24px" 
+                                            Text="Hủy" Width="98px" onclick="m_cmd_huy_de_nghi_xu_ly_Click" />
             
                         </td>
                         <td align="left">
@@ -152,10 +157,12 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Select">
                                         <ItemTemplate>
-                                            <asp:CheckBox ID="chkSelect" runat="server" />
+                                            <asp:CheckBox runat="server" ID="chkItem" ToolTip='<%# Eval("ID") %>' />
+                                            <asp:CheckBox runat="server" ID="chkTrangThai" Visible="false" />
                                         </ItemTemplate>
                                         <HeaderTemplate>
-                                            <asp:CheckBox ID="chkSelect" runat="server" />
+                                            <input type="checkbox" id="chkAll" onclick="javascript:SelectAllCheckboxes(this)"
+                                    runat="server" />
                                         </HeaderTemplate>
                                     </asp:TemplateField>
                                     <asp:HyperLinkField HeaderText="Tên tài sản" FooterText="Tổng cộng" DataTextField="TEN_TAI_SAN"
