@@ -11,86 +11,89 @@ using WebUS;
 using WebUS;
 using WebDS.CDBNames;
 using QltsForm;
-
 using IP.Core.WinFormControls;
 
 
 public partial class Default2 : System.Web.UI.Page
 {
-
-
     #region Members
     DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
     US_CM_DM_TU_DIEN m_us_dm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-
     #endregion
 
     #region private methods
     private void export_excel()
     {
-        US_DM_DON_VI v_us_dm_don_vi;
-        US_DM_DAT v_us_dm_dat;
-        decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
-        v_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
-        decimal v_dc_id_dv_su_dung = v_us_dm_dat.dcID_DON_VI_SU_DUNG;
-        v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_dat.dcID_DON_VI_CHU_QUAN);
-        string v_str_don_vi_chu_quan = v_us_dm_don_vi.strTEN_DON_VI;
-        v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_don_vi.dcID_DON_VI_CAP_TREN);
-        string v_str_bo_tinh = v_us_dm_don_vi.strTEN_DON_VI;
-
-        string v_str_output_file = "";
-
-        if (Request.QueryString["id_loai_bao_cao"] != null)
+        try
         {
-            string v_id = Request.QueryString["id_loai_bao_cao"];
-            f402_bao_cao_danh_muc_tru_so_lam_viec v_f402_bc_dm_nha = new f402_bao_cao_danh_muc_tru_so_lam_viec();
-            switch (v_id)
+            US_DM_DON_VI v_us_dm_don_vi;
+            US_DM_DAT v_us_dm_dat;
+            decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
+            v_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
+            decimal v_dc_id_dv_su_dung = v_us_dm_dat.dcID_DON_VI_SU_DUNG;
+            v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_dat.dcID_DON_VI_CHU_QUAN);
+            string v_str_don_vi_chu_quan = v_us_dm_don_vi.strTEN_DON_VI;
+            v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_don_vi.dcID_DON_VI_CAP_TREN);
+            string v_str_bo_tinh = v_us_dm_don_vi.strTEN_DON_VI;
+            string v_str_output_file = "";
+            if (Request.QueryString["id_loai_bao_cao"] != null)
             {
-                case "1":
-                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DANH_MUC_TRU_SO_LAM_VIEC
-                                            , v_str_bo_tinh
-                                            , v_str_don_vi_chu_quan
-                                            , v_dc_id_dv_su_dung
-                                            , v_dc_id_dat
-                                            , ref v_str_output_file);
-                    break;
-                case "2":
-                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DE_NGHI_XU_LY
-                                            , v_str_bo_tinh
-                                            , v_str_don_vi_chu_quan
-                                            , v_dc_id_dv_su_dung
-                                            , v_dc_id_dat
-                                            , ref v_str_output_file);
-                    break;
-                case "3":
-                    break;
+                string v_id = Request.QueryString["id_loai_bao_cao"];
+                f402_bao_cao_danh_muc_tru_so_lam_viec v_f402_bc_dm_nha = new f402_bao_cao_danh_muc_tru_so_lam_viec();
+                switch (v_id)
+                {
+                    case "1":
+                        v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DANH_MUC_TRU_SO_LAM_VIEC
+                                                , v_str_bo_tinh
+                                                , v_str_don_vi_chu_quan
+                                                , v_dc_id_dv_su_dung
+                                                , v_dc_id_dat
+                                                , ref v_str_output_file);
+                        break;
+                    case "2":
+                        v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DE_NGHI_XU_LY
+                                                , v_str_bo_tinh
+                                                , v_str_don_vi_chu_quan
+                                                , v_dc_id_dv_su_dung
+                                                , v_dc_id_dat
+                                                , ref v_str_output_file);
+                        break;
+                    case "3":
+                        break;
+                }
             }
+            Response.Clear();
+            v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;
+            Response.Redirect(v_str_output_file, false);
         }
-        Response.Clear();
-        v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;
-        Response.Redirect(v_str_output_file, false);
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
-
-
-
     private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_str_bo_tinh)
     {
-        DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
-        US_DM_DAT v_us_dm_dat = new US_DM_DAT();
-
-        string v_str_user_name = Session[SESSION.UserName].ToString();
-        v_us_dm_dat.FillDatasetByID_DonVi(
-            CIPConvert.ToDecimal(ip_str_bo_tinh)
-            , CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan)
-            , CIPConvert.ToDecimal(ip_str_id_don_vi_su_dung)
-            , v_str_user_name
-            , v_ds_dm_dat);
-        m_cbo_dia_chi.DataSource = v_ds_dm_dat.DM_DAT;
-        m_cbo_dia_chi.DataTextField = DM_DAT.DIA_CHI;
-        m_cbo_dia_chi.DataValueField = DM_DAT.ID;
-        m_cbo_dia_chi.DataBind();
+        try
+        {
+            DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
+            US_DM_DAT v_us_dm_dat = new US_DM_DAT();
+            string v_str_user_name = Session[SESSION.UserName].ToString();
+            v_us_dm_dat.FillDatasetByID_DonVi(
+                CIPConvert.ToDecimal(ip_str_bo_tinh)
+                , CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan)
+                , CIPConvert.ToDecimal(ip_str_id_don_vi_su_dung)
+                , v_str_user_name
+                , v_ds_dm_dat);
+            m_cbo_dia_chi.DataSource = v_ds_dm_dat.DM_DAT;
+            m_cbo_dia_chi.DataTextField = DM_DAT.DIA_CHI;
+            m_cbo_dia_chi.DataValueField = DM_DAT.ID;
+            m_cbo_dia_chi.DataBind();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
-
     private void load_data_to_thong_tin_nha_dat()
     {
         try
@@ -110,19 +113,27 @@ public partial class Default2 : System.Web.UI.Page
             m_lbl_su_dung_vao_muc_dich_khac.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC, "#,##0.00");
             m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(v_us_dm_dat.dcGT_THEO_SO_KE_TOAN, "#,##0.00");
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     private bool check_validate_data_is_ok()
     {
-
-        if (m_cbo_dia_chi.SelectedValue == null) return false;
+        try
+        {
+            if (m_cbo_dia_chi.SelectedValue == null)
+            {
+                m_lbl_mess.Text = "Bạn phải chọn Địa Chỉ Đất!";
+                return false;
+            }
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
         return true;
     }
-
     private void load_data_to_grid_nha()
     {
         try
@@ -136,7 +147,6 @@ public partial class Default2 : System.Web.UI.Page
             {
                 id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
             }
-
             switch (id_loai_bao_cao)
             {
                 case "1":
@@ -151,23 +161,18 @@ public partial class Default2 : System.Web.UI.Page
                 //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
                 //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
             }
-
-
             m_grv_nha.DataSource = v_ds_dm_nha.DM_NHA;
             m_grv_nha.DataBind();
-
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     private void form_title()
     {
         try
         {
-
             string id_loai_bao_cao = "";
             if (Request.QueryString["id_loai_bao_cao"] != null)
             {
@@ -190,24 +195,22 @@ public partial class Default2 : System.Web.UI.Page
                 //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
             }
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     private void format_label_disable()
     {
         try
         {
             m_pnl_thong_tin_nha_dat.Visible = false;
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     private void format_label_able()
     {
         try
@@ -215,9 +218,9 @@ public partial class Default2 : System.Web.UI.Page
             m_pnl_thong_tin_nha_dat.Visible = true;
             m_grv_nha.Visible = true;
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     #endregion
@@ -246,13 +249,11 @@ public partial class Default2 : System.Web.UI.Page
                 load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
             }
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
-
     }
-
     protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -260,9 +261,9 @@ public partial class Default2 : System.Web.UI.Page
             m_grv_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid_nha();
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
@@ -282,11 +283,10 @@ public partial class Default2 : System.Web.UI.Page
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
-
     }
     protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -304,13 +304,11 @@ public partial class Default2 : System.Web.UI.Page
                 , m_cbo_bo_tinh.SelectedValue);
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
-
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
-
     }
     protected void m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -321,33 +319,28 @@ public partial class Default2 : System.Web.UI.Page
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
-
     }
     protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e)
     {
         try
         {
-
             format_label_able();
             load_data_to_thong_tin_nha_dat();
             load_data_to_grid_nha();
-
-
         }
-        catch (System.Exception ex)
+        catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
         try
         {
-
             export_excel();
         }
 
