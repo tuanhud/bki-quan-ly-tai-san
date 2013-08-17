@@ -25,7 +25,7 @@
             </td>
             <td style="width: 34%">
                 <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="1">
+                    TabIndex="1" onselectedindexchanged="m_cbo_bo_tinh_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
@@ -35,7 +35,8 @@
             </td>
             <td style="width: 34%">
                 <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="2">
+                    TabIndex="2" 
+                    onselectedindexchanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
@@ -91,7 +92,8 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" />
+                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" 
+                    onclick="m_cmd_loc_du_lieu_Click" />
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
                     Width="98px" Text="Xuất Excel (x)" Height="22px" />
             </td>
