@@ -98,8 +98,13 @@ public class US_HT_QUAN_HE_SU_DUNG_DU_LIEU : US_Object
     #endregion
 
     #region Addtional
-    
 
+    public void update_quyen_group(decimal i_dc_id_user_group, string i_arr_dc_don_vi) {
+        CStoredProc v_cstore = new CStoredProc("pr_HT_QUAN_HE_SU_DUNG_DU_LIEU_UpdateQuyen4Group");
+        v_cstore.addDecimalInputParam("@ID_USER_GROUP", i_dc_id_user_group);
+        v_cstore.addNVarcharInputParam("@ID_DON_VI", i_arr_dc_don_vi);
+        v_cstore.ExecuteCommand(this);
+    }
     #endregion
 }
 }
