@@ -69,77 +69,147 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        try
         {
-            //1. load data to combobox bộ, tỉnh - up
-            WinFormControls.load_data_to_cbo_bo_tinh(
-                     WinFormControls.eTAT_CA.YES
-                     , m_cbo_bo_tinh_up);
-            //2. load data to combobox đơn vị chủ quản - up
-            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                m_cbo_bo_tinh_up.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_chu_quan_up);
-            //3. load data to cobobox đơn vị sử dụng - up
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan_up.SelectedValue
-                , m_cbo_bo_tinh_up.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_su_dung_tai_san_up);
-            //4. load data to combobox trạng thái - up
-            load_data_to_cbo_trang_thai_up();
-            //a. load data to combobox bộ, tỉnh - down
-            WinFormControls.load_data_to_cbo_bo_tinh(
-                WinFormControls.eTAT_CA.YES,
-                m_cbo_bo_tinh_down
-                );
-            //b. load data to combobox đơn vị chủ quản - down
-            WinFormControls.load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh_down.SelectedValue,
-                WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan_down);
-            //c. load data to combobox đơn vi sử dụng - down
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan_down.SelectedValue,
-                m_cbo_bo_tinh_down.SelectedValue, WinFormControls.eTAT_CA.YES,m_cbo_don_vi_su_dung_tai_san_down);
-             //d. load data to combobox trạng thái - down
-            load_data_to_cbo_trang_thai_down();
+            if (!IsPostBack)
+            {
+                //1. load data to combobox bộ, tỉnh - up
+                WinFormControls.load_data_to_cbo_bo_tinh(
+                         WinFormControls.eTAT_CA.YES
+                         , m_cbo_bo_tinh_up);
+                //2. load data to combobox đơn vị chủ quản - up
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh_up.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan_up);
+                //3. load data to cobobox đơn vị sử dụng - up
+                WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_cbo_don_vi_chu_quan_up.SelectedValue
+                    , m_cbo_bo_tinh_up.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung_tai_san_up);
+                //4. load data to combobox trạng thái - up
+                load_data_to_cbo_trang_thai_up();
+                //a. load data to combobox bộ, tỉnh - down
+                WinFormControls.load_data_to_cbo_bo_tinh(
+                    WinFormControls.eTAT_CA.YES,
+                    m_cbo_bo_tinh_down
+                    );
+                //b. load data to combobox đơn vị chủ quản - down
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh_down.SelectedValue,
+                    WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan_down);
+                //c. load data to combobox đơn vi sử dụng - down
+                WinFormControls.load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan_down.SelectedValue,
+                    m_cbo_bo_tinh_down.SelectedValue, WinFormControls.eTAT_CA.YES, m_cbo_don_vi_su_dung_tai_san_down);
+                //d. load data to combobox trạng thái - down
+                load_data_to_cbo_trang_thai_down();
+            }
         }
-
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
     }
-
-    #endregion
-
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cbo_don_vi_chu_quan_up_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cbo_don_vi_su_dung_tai_san_up_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cbo_trang_thai_o_to_up_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cbo_loai_o_to_SelectedIndexChanged(object sender, EventArgs e)
-       {
-       }
+    {
+        try
+        {
+
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
     protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cbo_don_vi_chu_quan_down_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cbo_don_vi_su_dung_tai_san_down_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cbo_trang_thai_o_to_down_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
+    #endregion
+
+    
 }
