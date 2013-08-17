@@ -79,6 +79,7 @@ body
     text-align: center;
     background-image: url('../images/Button/BGButton.jpg');
     cursor: hand;
+    height: 17px;
 }
 .cssHyperLinkButton
 {

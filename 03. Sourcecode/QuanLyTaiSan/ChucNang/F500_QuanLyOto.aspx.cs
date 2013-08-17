@@ -177,7 +177,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         decimal v_dc_id_oto = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[ip_i_row_del].Value);
         m_us_dm_oto.dcID = v_dc_id_oto;
         m_us_dm_oto.DeleteByID(v_dc_id_oto);
-        m_lbl_mess.Text = "Xóa bản ghi thành công";
+        m_lbl_mess.Text = "Xóa bản ghi thành công!";
         load_data_to_grid();
     }
     private void load_data_2_us_by_id(int ip_i_id) {
@@ -192,7 +192,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_us_dm_oto.search_oto(ip_str_tu_khoa, m_ds_dm_oto);
         m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
         m_grv_dm_oto.DataBind();
-        if (m_ds_dm_oto.DM_OTO.Rows.Count == 0) m_lbl_thong_bao.Text = "Không có môn nào thỏa mãn!";
+        if (m_ds_dm_oto.DM_OTO.Rows.Count == 0) m_lbl_thong_bao.Text = "Không có ô tô nào thỏa mãn!";
     }
     #endregion
     
@@ -254,13 +254,13 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             if (m_hdf_id.Value == "")
             {
-                m_lbl_mess.Text = "Bạn phải chọn nội dung cần Cập nhật";
+                m_lbl_mess.Text = "Bạn phải chọn nội dung cần Cập nhật!";
                 return;
             }
             form_2_us_object(m_us_dm_oto);
             m_us_dm_oto.Update();
             reset_control();
-            m_lbl_mess.Text = "Cập nhật dữ liệu thành công";
+            m_lbl_mess.Text = "Cập nhật dữ liệu thành công!";
             m_grv_dm_oto.EditIndex = -1;
             m_init_mode = DataEntryFormMode.ViewDataState;
             load_data_to_grid();
