@@ -53,7 +53,13 @@
             </td>
             <td>
             </td>
+            <td align="right">
+                <span class="cssManField">Trạng thái:</span>
+            </td>
             <td>
+                <asp:DropDownList ID="m_cbo_trang_thai" Width="90%" runat="Server" AutoPostBack="True"
+                    TabIndex="3">
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
@@ -61,7 +67,7 @@
                 <span>Từ ngày:</span>
             </td>
             <td>
-                <asp:TextBox ID="m_txt_tu_ngay" runat="Server" Width="90%"></asp:TextBox>
+                <asp:TextBox ID="m_txt_tu_ngay" runat="Server" Width="89%"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_tu_ngay"
@@ -72,7 +78,7 @@
                 <span>Đến ngày:</span>
             </td>
             <td>
-                <asp:TextBox ID="m_txt_den_ngay" runat="Server" Width="90%"></asp:TextBox>
+                <asp:TextBox ID="m_txt_den_ngay" runat="Server" Width="89%"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="m_txt_den_ngay"
