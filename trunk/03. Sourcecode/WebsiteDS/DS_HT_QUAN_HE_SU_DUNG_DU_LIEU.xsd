@@ -55,7 +55,7 @@ SELECT ID, ID_DON_VI, ID_NGUOI_SU_DUNG FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="ID_DON_VI" DataSetColumn="ID_DON_VI" />
-              <Mapping SourceColumn="ID_NGUOI_SU_DUNG" DataSetColumn="ID_NGUOI_SU_DUNG" />
+              <Mapping SourceColumn="ID_NGUOI_SU_DUNG" DataSetColumn="ID_USER_GROUP" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -72,7 +72,7 @@ SELECT ID, ID_DON_VI, ID_NGUOI_SU_DUNG FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="ID_DON_VI" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI" msprop:Generator_ColumnPropNameInRow="ID_DON_VI" msprop:Generator_ColumnPropNameInTable="ID_DON_VIColumn" msprop:Generator_UserColumnName="ID_DON_VI" type="xs:decimal" />
-              <xs:element name="ID_NGUOI_SU_DUNG" msprop:Generator_ColumnVarNameInTable="columnID_NGUOI_SU_DUNG" msprop:Generator_ColumnPropNameInRow="ID_NGUOI_SU_DUNG" msprop:Generator_ColumnPropNameInTable="ID_NGUOI_SU_DUNGColumn" msprop:Generator_UserColumnName="ID_NGUOI_SU_DUNG" type="xs:decimal" />
+              <xs:element name="ID_USER_GROUP" msprop:Generator_ColumnVarNameInTable="columnID_USER_GROUP" msprop:Generator_ColumnPropNameInRow="ID_USER_GROUP" msprop:Generator_ColumnPropNameInTable="ID_USER_GROUPColumn" msprop:Generator_UserColumnName="ID_USER_GROUP" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
