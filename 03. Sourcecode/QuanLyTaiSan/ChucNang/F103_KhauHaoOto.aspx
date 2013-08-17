@@ -39,7 +39,7 @@
                             <span>Bộ, tỉnh:</span>
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
-                            <asp:DropDownList ID="DropDownList1" runat="server" Width="85%" OnSelectedIndexChanged="m_ddl_bo_tinh_SelectedIndexChanged"
+                            <asp:DropDownList ID="m_cbo_bo_tinh_up" runat="server" Width="85%" OnSelectedIndexChanged="m_ddl_bo_tinh_SelectedIndexChanged"
                                 AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
@@ -47,7 +47,7 @@
                             <span>Đơn vị chủ quản</span>
                         </td>
                         <td align="left" class="style1" style="width: 30%" colspan="1">
-                            <asp:DropDownList ID="m_ddl_dv_chu_quan" runat="server" Width="85%" AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan_up" runat="server" Width="85%" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -56,14 +56,15 @@
                             <span>Đơn vi sử dụng tài sản:</span>
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
-                            <asp:DropDownList ID="m_ddl_dv_sd_ts" runat="server" Width="85%" AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" Width="85%"
+                                AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <td align="right" colspan="1" class="cssManField" style="width: 20%">
                             <span>Trạng thái ô tô</span>
                         </td>
                         <td align="left" class="style1" style="width: 30%">
-                            <asp:DropDownList ID="m_ddl_trang_thai_oto" runat="server" Width="85%" AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_trang_thai_o_to" runat="server" Width="85%" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <tr>
@@ -203,7 +204,7 @@
                 <span class="cssManField">Bộ, tỉnh</span>
             </td>
             <td style="width: 30%" align="left">
-                <asp:DropDownList ID="m_ddl_bo_tinh" runat="server" Width="85%" ValidationGroup="m_vlg_oto"
+                <asp:DropDownList ID="m_cbo_bo_tinh_down" runat="server" Width="85%" ValidationGroup="m_vlg_oto"
                     AutoPostBack="True" OnSelectedIndexChanged="m_ddl_bo_tinh_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
@@ -211,17 +212,17 @@
                 <span class="cssManField">Đơn vị chủ quản</span>
             </td>
             <td align="left" style="width: 30%;">
-                <asp:DropDownList ID="m_ddl_don_vi_chu_quan" runat="server" Width="85%" ValidationGroup="m_vlg_oto"
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan_down" runat="server" Width="85%" ValidationGroup="m_vlg_oto"
                     AutoPostBack="True">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td align="right" style="width: 20%" colspan="1">
-                <span class="cssManField">Đơn vị sử dụng</span>
+                <span class="cssManField">Đơn vị sử dụng tài sản</span>
             </td>
             <td style="width: 30%" align="left" colspan="1">
-                <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_oto"
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="server" Width="85%" ValidationGroup="m_vlg_oto"
                     OnSelectedIndexChanged="m_ddl_don_vi_su_dung_SelectedIndexChanged" AutoPostBack="True">
                 </asp:DropDownList>
             </td>
@@ -229,7 +230,7 @@
                 <span class="cssManField">Trạng thái ô tô</span>
             </td>
             <td align="left" colspan="1" style="width: 30%;">
-                <asp:DropDownList ID="m_ddl_trang_o_to" runat="server" Width="85%" ValidationGroup="m_vlg_oto">
+                <asp:DropDownList ID="m_cbo_trang_o_to" runat="server" Width="85%" ValidationGroup="m_vlg_oto">
                 </asp:DropDownList>
             </td>
         </tr>
