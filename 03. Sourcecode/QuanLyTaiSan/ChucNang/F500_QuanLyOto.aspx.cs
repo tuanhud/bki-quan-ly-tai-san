@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPException;
+using IP.Core.WinFormControls;
 
 
 public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
@@ -48,69 +49,18 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             throw v_e;
         }
     }
-    private void load_2_cbo_bo_tinh() {
-        try {
-            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 574");
-            m_ddl_bo_tinh.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-            m_ddl_bo_tinh.DataTextField = "TEN_DON_VI";
-            m_ddl_bo_tinh.DataValueField = "ID";
-            m_ddl_bo_tinh.DataBind();
-        }
-
-        catch (Exception v_e) {
-            throw v_e;
-        }
-    }
-    private void load_2_cbo_dv_chu_quan(string ip_str_id_don_vi_bo_tinh) {
-        try {
-            if (ip_str_id_don_vi_bo_tinh == "") return;
-            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 575 and ID_DON_VI_CAP_TREN LIKE '%"
-                + ip_str_id_don_vi_bo_tinh + "%'");
-            m_ddl_dv_chu_quan.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-            m_ddl_dv_chu_quan.DataTextField = "TEN_DON_VI";
-            m_ddl_dv_chu_quan.DataValueField = "ID";
-            m_ddl_dv_chu_quan.DataBind();
-        }
-
-        catch (Exception v_e) {
-            throw v_e;
-        }
-    }
-    private void load_2_cbo_dv_sdts(string ip_str_id_don_vi_chu_quan) {
-        try {
-            if (ip_str_id_don_vi_chu_quan == "") return;
-            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-            string v_id_don_vi_chu_quan = m_ddl_dv_chu_quan.SelectedValue;
-            v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI = 576 and ID_DON_VI_CAP_TREN LIKE '%" + ip_str_id_don_vi_chu_quan
-                + "%'");
-            m_ddl_dv_sd_ts.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-            m_ddl_dv_sd_ts.DataTextField = "TEN_DON_VI";
-            m_ddl_dv_sd_ts.DataValueField = "ID";
-            m_ddl_dv_sd_ts.DataBind();
-        }
-
-        catch (Exception v_e) {
-            throw v_e;
-        }
-    }
+    
     // Load dữ liệu vào combo trạng thái
     private void load_data_trang_thai() {
         try {
             DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
 
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_OTO", v_ds_cm_dm_tu_dien);
+            
+            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds( MA_LOAI_TU_DIEN.TRANG_THAI_OTO, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
             m_ddl_trang_thai_oto.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-            m_ddl_trang_thai_oto.DataTextField = "TEN";
-            m_ddl_trang_thai_oto.DataValueField = "ID";
+            m_ddl_trang_thai_oto.DataTextField = CM_DM_TU_DIEN.TEN;
+            m_ddl_trang_thai_oto.DataValueField = CM_DM_TU_DIEN.ID;
             m_ddl_trang_thai_oto.DataBind();
         }
 
@@ -119,23 +69,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
 
     }
-    protected void Page_Load(object sender, EventArgs e) {
-        m_lbl_mess.Text = "";
-        if (m_init_mode == DataEntryFormMode.UpdateDataState) {
-            m_cmd_tao_moi.Enabled = false;
-        }
-        else {
-            m_cmd_tao_moi.Enabled = true;
-        }
-        if (!IsPostBack) {
-            load_data_to_grid();
-            load_2_cbo_bo_tinh();
-            load_2_cbo_dv_chu_quan("");
-            load_2_cbo_dv_sdts("");
-            load_2_cbo_loaits();
-            load_data_trang_thai();
-        }
-    }
+   
     private void reset_control() {
         m_txt_bien_kiem_soat.Text = "";
         m_txt_chuc_danh_sd_xe.Text = "";
@@ -161,6 +95,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         if (!m_hdf_id.Value.Equals(String.Empty)) {
             ip_us_oto.dcID = CIPConvert.ToDecimal(m_hdf_id.Value);
         }
+        ip_us_oto.strNGUON_GOC_XE = m_txt_nguon_goc_xe.Text;
         ip_us_oto.dcSO_CHO_NGOI = CIPConvert.ToDecimal(m_txt_tai_trong.Text);
         ip_us_oto.dcCONG_SUAT_XE = CIPConvert.ToDecimal(m_txt_cong_suat_xe.Text);
         ip_us_oto.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
@@ -192,13 +127,12 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     /// </summary>
     /// <param name="ip_dm_noi_dung_thanh_toan"></param>
     private void us_obj_2_form(US_DM_OTO ip_us_oto) {
-
         m_hdf_id.Value = ip_us_oto.dcID.ToString();
         m_txt_tai_trong.Text = ip_us_oto.dcSO_CHO_NGOI.ToString();
         m_txt_ma_ts.Text = ip_us_oto.strMA_TAI_SAN;
         m_txt_nam_su_dung.Text = ip_us_oto.dcNAM_SU_DUNG.ToString();
         m_txt_nam_san_xuat.Text = ip_us_oto.dcNAM_SAN_XUAT.ToString();
-        m_txt_gia_tri_con_lai.Text = ip_us_oto.dcGIA_TRI_CON_LAI.ToString("#,###.##");
+        m_txt_gia_tri_con_lai.Text = ip_us_oto.dcGIA_TRI_CON_LAI.ToString("#,##0.##");
         m_txt_ten_nhan_hieu.Text = ip_us_oto.strNHAN_HIEU;
         m_txt_nuoc_san_xuat.Text = ip_us_oto.strNUOC_SAN_XUAT;
         m_txt_bien_kiem_soat.Text = ip_us_oto.strBIEN_KIEM_SOAT;
@@ -208,13 +142,17 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_txt_hd_khac.Text = ip_us_oto.dcHD_KHAC.ToString();
         m_txt_khong_kinh_doanh.Text = ip_us_oto.dcKHONG_KINH_DOANH.ToString();
         m_txt_kinh_doanh.Text = ip_us_oto.dcKINH_DOANH.ToString();
-        m_txt_nguon_khac.Text = ip_us_oto.dcNGUON_KHAC.ToString("#,###.##");
-        m_txt_nguon_ns.Text = ip_us_oto.dcNGUON_NS.ToString("#,###.##");
+        m_txt_nguon_khac.Text = ip_us_oto.dcNGUON_KHAC.ToString("#,##0.##");
+        m_txt_nguon_ns.Text = ip_us_oto.dcNGUON_NS.ToString("#,##0.##");
         m_txt_qlnn.Text = ip_us_oto.dcQLNN.ToString();
         m_txt_ten_ts.Text = ip_us_oto.strTEN_TAI_SAN;
         m_ddl_loai_xe.SelectedValue = ip_us_oto.dcID_LOAI_TAI_SAN.ToString();
-        m_ddl_dv_sd_ts.SelectedValue = ip_us_oto.dcID_DON_VI_SU_DUNG.ToString();
+
+        US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_us_oto.dcID_DON_VI_CHU_QUAN);
+        m_ddl_bo_tinh.SelectedValue = v_us_don_vi.dcID_DON_VI_CAP_TREN.ToString();
         m_ddl_dv_chu_quan.SelectedValue = ip_us_oto.dcID_DON_VI_CHU_QUAN.ToString();
+        m_ddl_dv_sd_ts.SelectedValue = ip_us_oto.dcID_DON_VI_SU_DUNG.ToString();
+
         m_ddl_trang_thai_oto.SelectedValue = ip_us_oto.dcID_TRANG_THAI.ToString();
     }
 
@@ -260,7 +198,40 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     
 
     // Events
-
+    protected void Page_Load(object sender, EventArgs e) {
+        try {
+            m_lbl_mess.Text = "";
+            if (m_init_mode == DataEntryFormMode.UpdateDataState) {
+                m_cmd_tao_moi.Enabled = false;
+            }
+            else {
+                m_cmd_tao_moi.Enabled = true;
+            }
+            if (!IsPostBack) {
+                
+                WinFormControls.load_data_to_cbo_bo_tinh(
+                     WinFormControls.eTAT_CA.YES
+                     , m_ddl_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_ddl_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_ddl_dv_chu_quan);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_ddl_dv_chu_quan.SelectedValue
+                    , m_ddl_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_ddl_dv_sd_ts);
+                load_2_cbo_loaits();
+                load_data_trang_thai();
+                load_data_to_grid();
+            }
+        }
+        catch (Exception v_e) {
+            
+            CSystemLog_301.ExceptionHandle(v_e);
+        }
+        
+    }
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
@@ -339,21 +310,39 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
-        load_2_cbo_dv_chu_quan(m_ddl_bo_tinh.SelectedValue);
-        load_2_cbo_dv_sdts(m_ddl_dv_chu_quan.SelectedValue);
+        try {
+             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_ddl_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_ddl_dv_chu_quan);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_ddl_dv_chu_quan.SelectedValue
+                    , m_ddl_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_ddl_dv_sd_ts);
+        }
+        catch (Exception v_e) {
+            
+            CSystemLog_301.ExceptionHandle(v_e);
+        }
     }
     protected void m_ddl_dv_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
-        load_2_cbo_dv_sdts(m_ddl_dv_chu_quan.SelectedValue);
+        try {
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_ddl_dv_chu_quan.SelectedValue
+                    , m_ddl_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_ddl_dv_sd_ts);
+        }
+        catch (Exception v_e) {
+            
+            CSystemLog_301.ExceptionHandle(v_e);
+        }
+        
 
     }
-    protected void m_ddl_dv_sd_ts_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-    protected void m_ddl_loai_xe_SelectedIndexChanged(object sender, EventArgs e)
-    {
-    }
+   
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
@@ -384,7 +373,5 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
     }
 
-    protected void m_grv_dm_oto_SelectedIndexChanged(object sender, EventArgs e) {
-
-    }
+    
 }

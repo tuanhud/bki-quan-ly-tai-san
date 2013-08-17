@@ -67,7 +67,7 @@
                             <asp:Label ID="lblFullName16" CssClass="cssManField" runat="server" Text="Đơn vị sử dụng tài sản" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
-                            <asp:DropDownList ID="m_ddl_dv_sd_ts" runat="server" Width="85%" OnSelectedIndexChanged="m_ddl_dv_sd_ts_SelectedIndexChanged"
+                            <asp:DropDownList ID="m_ddl_dv_sd_ts" runat="server" Width="85%" 
                                 AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
@@ -75,7 +75,7 @@
                             <asp:Label ID="lblFullName19" CssClass="cssManField" runat="server" Text="Trạng thái ô tô" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
-                            <asp:DropDownList ID="m_ddl_trang_thai_oto" runat="server" Width="85%" OnSelectedIndexChanged="m_ddl_dv_sd_ts_SelectedIndexChanged"
+                            <asp:DropDownList ID="m_ddl_trang_thai_oto" runat="server" Width="85%" 
                                 AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
@@ -85,7 +85,8 @@
                             <asp:Label ID="lblFullName13" CssClass="cssManField" runat="server" Text="&lt;U&gt;L&lt;/U&gt;oại xe" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
-                            <asp:DropDownList ID="m_ddl_loai_xe" runat="server" Width="85%" OnSelectedIndexChanged="m_ddl_loai_xe_SelectedIndexChanged">
+                            <asp:DropDownList ID="m_ddl_loai_xe" runat="server" Width="85%" 
+                            AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <td align="right" colspan="1" style="width: 15%">
@@ -141,22 +142,20 @@
                                 ErrorMessage="Bạn phải nhập Công suất xe" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" colspan="1" style="width: 15%">
-                            <asp:Label ID="Label20" CssClass="cssManField" runat="server" Text="Chức danh sử dụng xe*" />
+                            <asp:Label ID="Label20" CssClass="cssManField" runat="server" Text="Chức danh sử dụng xe" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
                             <asp:TextBox ID="m_txt_chuc_danh_sd_xe" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="m_rfv_chuc_danh_sd_xe" runat="server" ControlToValidate="m_txt_chuc_danh_sd_xe"
-                                ErrorMessage="Bạn phải nhập Chức danh sử dụng xe" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
+                            
                         </td>
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%;">
-                            <asp:Label ID="Label21" CssClass="cssManField" runat="server" Text="Nguồn gốc xe*" />
+                            <asp:Label ID="Label21" CssClass="cssManField" runat="server" Text="Nguồn gốc xe" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:TextBox ID="m_txt_nguon_goc_xe" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="m_rfv_nguon_goc_xe" runat="server" ControlToValidate="m_txt_nguon_goc_xe"
-                                ErrorMessage="Bạn phải nhập Nguồn gốc xe" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
+                            
                         </td>
                         <td align="right" colspan="1" style="width: 15%">
                             <asp:Label ID="Label18" CssClass="cssManField" runat="server" Text="Năm sử dụng*" />
