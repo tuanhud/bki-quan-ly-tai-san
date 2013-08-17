@@ -249,7 +249,7 @@
                             <span class="cssManField">Quản lý nhà nước</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox" 
+                            <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox" align="left"
                                 Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -270,7 +270,7 @@
                             <span class="cssManField">Hoạt động sự nghiệp (Kinh doanh)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox" 
+                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox" align="left"
                                 Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -283,7 +283,7 @@
                             <span class="cssManField">Hoạt động sự nghiệp (Không kinh doanh)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox" 
+                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox" align="left"
                                 Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -298,7 +298,7 @@
                             <span class="cssManField">Khác</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox" Width="85%" 
+                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox" Width="85%" align="left"
                                 ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -341,7 +341,7 @@
                                 Width="98px" Text="Cập nhật(u)" onclick="m_cmd_cap_nhat_Click" 
                                 ValidationGroup="m_vlg_tsk"/>&nbsp;
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Xóa trắng(r)"/>
+                                Width="98px" Text="Xóa trắng(r)" onclick="m_cmd_xoa_trang_Click"/>
                             <asp:HiddenField ID="hdf_id" runat="server" Value="" />
                         </td>
                     </tr>	
