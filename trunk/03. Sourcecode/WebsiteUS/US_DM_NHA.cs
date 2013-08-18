@@ -13,11 +13,11 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using WebDS;
+using WebDS.CDBNames;
 
 
 namespace WebUS
 {
-
     public class US_DM_NHA : US_Object
     {
         private const string c_TableName = "DM_NHA";
@@ -667,6 +667,20 @@ namespace WebUS
         #endregion
 
         #region "Addition Functions"
+        public void load_nha_by_ten(DS_DM_NHA op_ds_dm_nha, string ip_str_search, decimal ip_dc_id_dat)
+        {
+            if (ip_dc_id_dat == CONST_QLDB.ID_TAT_CA)
+            {
+                this.FillDataset(op_ds_dm_nha, "where " + DM_NHA.ID_TRANG_THAI + " = " + ID_TRANG_THAI_NHA.DANG_SU_DUNG);
+            } 
+            else
+            {
+                CStoredProc v_cstore = new CStoredProc("pr_DM_NHA_Search_by_name");
+                v_cstore.addNVarcharInputParam("@TU_KHOA", ip_str_search);
+                v_cstore.addDecimalInputParam("@ID_DAT", ip_dc_id_dat);
+                v_cstore.fillDataSetByCommand(this, op_ds_dm_nha);
+            }
+        }
         #endregion
     }
 }
