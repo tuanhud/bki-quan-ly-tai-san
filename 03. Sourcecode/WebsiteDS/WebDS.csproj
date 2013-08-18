@@ -159,15 +159,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_DAT_HISTORY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_DAT_HISTORY.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_NHA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_NHA.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_NHA_HISTORY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_NHA_HISTORY.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_OTO.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_OTO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_DM_OTO_HISTORY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_OTO_HISTORY.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_DM_TAI_SAN_KHAC.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -418,6 +433,17 @@
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </None>
+    <None Include="DS_V_DM_DAT_HISTORY.xsc">
+      <DependentUpon>DS_V_DM_DAT_HISTORY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_DAT_HISTORY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_DAT_HISTORY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_DAT_HISTORY.xss">
+      <DependentUpon>DS_V_DM_DAT_HISTORY.xsd</DependentUpon>
+    </None>
     <None Include="DS_V_DM_NHA.xsc">
       <DependentUpon>DS_V_DM_NHA.xsd</DependentUpon>
     </None>
@@ -429,6 +455,17 @@
     <None Include="DS_V_DM_NHA.xss">
       <DependentUpon>DS_V_DM_NHA.xsd</DependentUpon>
     </None>
+    <None Include="DS_V_DM_NHA_HISTORY.xsc">
+      <DependentUpon>DS_V_DM_NHA_HISTORY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_NHA_HISTORY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_NHA_HISTORY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_NHA_HISTORY.xss">
+      <DependentUpon>DS_V_DM_NHA_HISTORY.xsd</DependentUpon>
+    </None>
     <None Include="DS_V_DM_OTO.xsc">
       <DependentUpon>DS_V_DM_OTO.xsd</DependentUpon>
     </None>
@@ -439,6 +476,17 @@
     </None>
     <None Include="DS_V_DM_OTO.xss">
       <DependentUpon>DS_V_DM_OTO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_OTO_HISTORY.xsc">
+      <DependentUpon>DS_V_DM_OTO_HISTORY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_OTO_HISTORY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_OTO_HISTORY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_OTO_HISTORY.xss">
+      <DependentUpon>DS_V_DM_OTO_HISTORY.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_TAI_SAN_KHAC.xsc">
       <DependentUpon>DS_V_DM_TAI_SAN_KHAC.xsd</DependentUpon>
