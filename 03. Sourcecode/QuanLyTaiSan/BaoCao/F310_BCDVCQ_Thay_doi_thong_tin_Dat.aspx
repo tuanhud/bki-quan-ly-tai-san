@@ -160,6 +160,7 @@
                         ForeColor="#333333"></SelectedRowStyle>
                     <Columns>
                         <asp:BoundField HeaderText="NGÀY CẬP NHẬT CUỐI" DataField="NGAY_CAP_NHAT_CUOI" ItemStyle-HorizontalAlign="right" />
+                        <asp:BoundField HeaderText="LỊCH SỬ CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="left" />
                         <asp:BoundField HeaderText="MÃ TÀI SẢN" DataField="MA_TAI_SAN" />
                         <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" />
                         <asp:BoundField HtmlEncode="false" HeaderText="DIỆN TÍCH KHUÔN VIÊN <br/> (m2)" DataField="DT_KHUON_VIEN"
@@ -180,7 +181,7 @@
                         <asp:BoundField HeaderText="GIÁ TRỊ THEO SỔ KẾ TOÁN <br/> (ngàn đồng)" HtmlEncode="false"
                             DataField="GT_THEO_SO_KE_TOAN" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
                         <asp:BoundField HeaderText="SỐ NĂM ĐÃ SỬ DỤNG" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
-                        <%--<asp:BoundField HeaderText="LÝ DO CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="left" />--%>
+                       
                     </Columns>
                 </asp:GridView>
             </td>
