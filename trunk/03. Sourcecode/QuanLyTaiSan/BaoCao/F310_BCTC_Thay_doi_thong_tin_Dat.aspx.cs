@@ -70,37 +70,29 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     //        CSystemLog_301.ExceptionHandle(this, v_e);
     //    }
     //}
-    private void load_data_to_cbo_trang_thai()
-    {
-        try
-        {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            //string cmd = "select distinct ma_tu_dien from cm_dm_tu_dien where id_loai_tu_dien=6 or id_loai_tu_dien=7 or id_loai_tu_dien=8";
-            //System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);  
-            //"select * from DM_TAI_SAN_KHAC Where TEN_TAI_SAN like '%"+m_txt_tim_kiem.Text+
-            //"%' or KY_HIEU like '%"+m_txt_tim_kiem.Text+
-            //"%' or NUOC_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
-            //"%' or NAM_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
-            //"%' or NAM_SU_DUNG like '%"+m_txt_tim_kiem.Text+
-            //"%'";
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_DAT, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
-            m_cbo_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-            m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
-            m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
-            // m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
-            m_cbo_trang_thai.DataBind();
-            m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-        }
-        catch (System.Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
+    private void load_data_to_cbo_trang_thai() {
+
+        DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+        US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+        //string cmd = "select distinct ma_tu_dien from cm_dm_tu_dien where id_loai_tu_dien=6 or id_loai_tu_dien=7 or id_loai_tu_dien=8";
+        //System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);  
+        //"select * from DM_TAI_SAN_KHAC Where TEN_TAI_SAN like '%"+m_txt_tim_kiem.Text+
+        //"%' or KY_HIEU like '%"+m_txt_tim_kiem.Text+
+        //"%' or NUOC_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
+        //"%' or NAM_SAN_XUAT like '%"+m_txt_tim_kiem.Text+
+        //"%' or NAM_SU_DUNG like '%"+m_txt_tim_kiem.Text+
+        //"%'";
+        v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_DAT, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
+        m_cbo_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+        m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
+        m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
+        // m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
+        m_cbo_trang_thai.DataBind();
+        m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
     }
     private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_str_bo_tinh)
     {
-        try
-        {
+     
             DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
             US_DM_DAT v_us_dm_dat = new US_DM_DAT();
             string v_str_user_name = Session[SESSION.UserName].ToString();
@@ -114,74 +106,55 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
             m_cbo_dia_chi.DataTextField = DM_DAT.DIA_CHI;
             m_cbo_dia_chi.DataValueField = DM_DAT.ID;
             m_cbo_dia_chi.DataBind();
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(this, ex);
-        }
+            m_cbo_dia_chi.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+       
     }
     private bool check_validate_data_is_ok()
     {
-        try
-        {
-            if (m_cbo_dia_chi.SelectedValue.Equals(CONST_QLDB.KHONG_CO_DU_LIEU))
-            {
-                m_lbl_mess.Text = "Bạn phải chọn Địa Chỉ Đất!";
-                m_lbl_mess.Visible = true;
-                m_grv_dat_history.DataSource = null;
-                m_grv_dat_history.Visible = false;
-                return false;
-            }
-        }
-        catch (System.Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
+        
+            if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
+            if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
+        
+        
         return true;
     }
     private void load_data_to_grid_dat_history()
     {
-        try
-        {
+        
+            if (!check_validate_data_is_ok()) return;
             string v_id_dat=m_cbo_dia_chi.SelectedValue;
             string v_id_trang_thai=m_cbo_trang_thai.SelectedValue;
+            DateTime v_dat_tu_ngay;
+            DateTime v_dat_den_ngay;
+            if (m_txt_tu_ngay.Text.Trim().Length > 0) {
+                v_dat_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+            }
+            else {
+                v_dat_tu_ngay = CIPConvert.ToDatetime("01/01/2000");
+            }
+            if (m_txt_den_ngay.Text.Trim().Length > 0) {
+                v_dat_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
+            }
+            else {
+                v_dat_den_ngay = CIPConvert.ToDatetime("01/01/3000");
+            }
+
+
             DS_V_DM_DAT_HISTORY v_ds_v_dm_dat_history = new DS_V_DM_DAT_HISTORY();
             US_V_DM_DAT_HISTORY v_us_v_dm_dat_history = new US_V_DM_DAT_HISTORY();
-            if (v_id_trang_thai.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
-            {
-                if (v_id_dat.Equals(CONST_QLDB.KHONG_CO_DU_LIEU))
-                {
-                    m_lbl_thong_bao.Text = "Không có dữ liệu phù hợp!";
-                    m_lbl_thong_bao.Visible = true;
-                    m_grv_dat_history.Visible = false;
-                    return;
-                }
-                else
-                {
-                    v_us_v_dm_dat_history.FillDataset(v_ds_v_dm_dat_history, "where id_dat = " + v_id_dat);
-                }
-            }
-            else
-            {
-                v_us_v_dm_dat_history.FillDataset(v_ds_v_dm_dat_history, "where id_dat = " + v_id_dat + " and id_trang_thai = " + v_id_trang_thai);
-            }
-            if (v_ds_v_dm_dat_history.V_DM_DAT_HISTORY.Count != 0)
-            {
-                m_grv_dat_history.DataSource = v_ds_v_dm_dat_history.V_DM_DAT_HISTORY;
-               m_grv_dat_history.Visible = true;
-                m_grv_dat_history.DataBind();
-            }
-            else
-            {
-                m_grv_dat_history.DataSource = null;
-                m_grv_dat_history.Visible = false;
-                m_lbl_thong_bao.Text = "Không có dữ liệu phù hợp";
-            }
-        }
-        catch (System.Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
+            v_us_v_dm_dat_history.FillDataset(
+                CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                , v_dat_tu_ngay
+                , v_dat_den_ngay
+                , m_txt_tim_kiem.Text
+                , v_ds_v_dm_dat_history);
+            m_grv_dat_history.DataSource = v_ds_v_dm_dat_history.V_DM_DAT_HISTORY;
+            m_grv_dat_history.DataBind();
+
     }
     #endregion
 
@@ -230,7 +203,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            m_grv_dat_history.Visible = false;
+            
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
@@ -251,7 +224,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            m_grv_dat_history.Visible = false;
+            
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                 m_cbo_don_vi_chu_quan.SelectedValue
@@ -272,7 +245,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            m_grv_dat_history.Visible = false;
+            
             m_lbl_mess.Text = "";
             load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
         }
@@ -285,15 +258,9 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            m_lbl_thong_bao.Text = "";
-            if (check_validate_data_is_ok() == false)
-            {
-                return;
-            }
-            else
-            {
-                load_data_to_grid_dat_history();
-            }
+            
+             load_data_to_grid_dat_history();
+            
         }
         catch (System.Exception v_e)
         {
@@ -316,7 +283,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            m_grv_dat_history.Visible = false;
+            
             m_lbl_mess.Visible = false;
             m_lbl_thong_bao.Visible = false;
         }
