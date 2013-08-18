@@ -24,6 +24,21 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
+            if (Request.QueryString["ID"] == "574")
+            {
+                m_lbl_don_vi.Text = "Đơn vị bộ tỉnh";
+                m_lbl_don_vi0.Text = "Đơn vị bộ tỉnh";
+            }
+            if (Request.QueryString["ID"] == "575")
+            {
+                m_lbl_don_vi.Text = "Đơn vị chủ quản";
+                m_lbl_don_vi0.Text = "Đơn vị chủ quản";
+            }
+            if (Request.QueryString["ID"] == "576")
+            {
+                m_lbl_don_vi.Text = "Đơn vị sử dụng";
+                m_lbl_don_vi0.Text = "Đơn vị sử dụng";
+            }
             if (!this.IsPostBack)
             {
                 load_cbo_don_vi_cap_tren();

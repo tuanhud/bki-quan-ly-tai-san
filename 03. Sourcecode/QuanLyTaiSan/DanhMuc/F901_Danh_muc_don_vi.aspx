@@ -14,9 +14,9 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Danh mục đơn vị</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
-                    </td>
+                        <asp:Label ID="m_lbl_don_vi" runat="server" CssClass="cssManField" 
+                            ForeColor="White" />
+&nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span></td>
                 </tr>
                 <tr>
                     <td align="right">
@@ -46,7 +46,7 @@
                         <asp:Label ID="Label9" CssClass="cssManField" runat="server" Text="Đơn vị cấp trên" />
                     </td>
                     <td>
-                        <asp:DropDownList ID="m_cbo_don_vi_cap_tren" runat="server" Width="264px" CssClass="cssDorpdownlist"
+                        <asp:DropDownList ID="m_cbo_don_vi_cap_tren" runat="server" Width="200px" CssClass="cssDorpdownlist"
                             AutoPostBack="true" 
                             onselectedindexchanged="m_cbo_don_vi_cap_tren_SelectedIndexChanged" />
                     </td>
@@ -90,9 +90,9 @@
             <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG">
-                        <span class="cssPageTitle">Danh mục đơn vị</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
-                    </td>
+                        <asp:Label ID="m_lbl_don_vi0" runat="server" CssClass="cssManField" 
+                            ForeColor="White" />
+&nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span></td>
                 </tr>
                 <tr>
                     <td align="left">
