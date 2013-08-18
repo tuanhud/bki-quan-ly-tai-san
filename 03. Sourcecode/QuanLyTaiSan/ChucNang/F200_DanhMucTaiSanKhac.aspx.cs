@@ -15,10 +15,9 @@ public partial class Default2 : System.Web.UI.Page {
     #region Member
     US_DM_TAI_SAN_KHAC m_us_tai_san_khac = new US_DM_TAI_SAN_KHAC();
     DS_DM_TAI_SAN_KHAC m_ds_tai_san_khac = new DS_DM_TAI_SAN_KHAC();
-    US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
-    DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
-    US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
-    DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+    DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+
+
     #endregion
     #region Data Structures
     #endregion
@@ -33,34 +32,13 @@ public partial class Default2 : System.Web.UI.Page {
             throw v_e;
         }
     }
-    private void load_data_2_cbo_bo_tinh() {
-        m_ds_don_vi.DM_DON_VI.Clear();
-        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_LOAI_DON_VI=574");
-        m_cbo_bo_tinh.DataSource = m_ds_don_vi.DM_DON_VI;
-        m_cbo_bo_tinh.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_bo_tinh.DataValueField = DM_DON_VI.ID;
-        m_cbo_bo_tinh.DataBind();
-    }
-    private void load_data_2_cbo_don_vi_chu_quan() {
-        m_ds_don_vi.DM_DON_VI.Clear();
-        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_LOAI_DON_VI = 575");
-        m_cbo_don_vi_chu_quan.DataSource = m_ds_don_vi.DM_DON_VI;
-        m_cbo_don_vi_chu_quan.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_don_vi_chu_quan.DataValueField = DM_DON_VI.ID;
-        m_cbo_don_vi_chu_quan.DataBind();
-    }
-    private void load_data_2_cbo_don_vi_su_dung() {
-        m_ds_don_vi.DM_DON_VI.Clear();
-        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_LOAI_DON_VI = 576");
-        m_cbo_don_vi_su_dung.DataSource = m_ds_don_vi.DM_DON_VI;
-        m_cbo_don_vi_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_don_vi_su_dung.DataValueField = DM_DON_VI.ID;
-        m_cbo_don_vi_su_dung.DataBind();
-    }
+    
     private void load_data_2_cbo_trang_thai_tai_san() {
-        m_ds_tu_dien.CM_DM_TU_DIEN.Clear();
-        m_us_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, CM_DM_TU_DIEN.GHI_CHU, m_ds_tu_dien);
-        m_cbo_trang_thai_tai_san.DataSource = m_ds_tu_dien.CM_DM_TU_DIEN;
+        US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
+        DS_CM_DM_TU_DIEN v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+        
+        v_us_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, CM_DM_TU_DIEN.GHI_CHU, v_ds_tu_dien);
+        m_cbo_trang_thai_tai_san.DataSource = v_ds_tu_dien.CM_DM_TU_DIEN;
         m_cbo_trang_thai_tai_san.DataTextField = CM_DM_TU_DIEN.TEN;
         m_cbo_trang_thai_tai_san.DataValueField = CM_DM_TU_DIEN.ID;
         m_cbo_trang_thai_tai_san.DataBind();
@@ -88,7 +66,20 @@ public partial class Default2 : System.Web.UI.Page {
     private void us_object_2_form(US_DM_TAI_SAN_KHAC ip_us_m_dm_tai_san_khac) {
         hdf_id.Value = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID);
         m_txt_ten_tai_san.Text = ip_us_m_dm_tai_san_khac.strTEN_TAI_SAN;
+
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(ip_us_m_dm_tai_san_khac.dcID_DON_VI_CHU_QUAN);
+        m_cbo_bo_tinh.SelectedValue = CIPConvert.ToStr(v_us_dm_don_vi.dcID_DON_VI_CAP_TREN);
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                   m_cbo_bo_tinh.SelectedValue
+                   , WinFormControls.eTAT_CA.NO
+                   , m_cbo_don_vi_chu_quan);
+
         m_cbo_don_vi_chu_quan.SelectedValue = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID_DON_VI_CHU_QUAN);
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+    m_cbo_don_vi_chu_quan.SelectedValue
+    , m_cbo_bo_tinh.SelectedValue
+    , WinFormControls.eTAT_CA.NO
+    , m_cbo_don_vi_su_dung);
         m_cbo_don_vi_su_dung.SelectedValue = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID_DON_VI_SU_DUNG);
         m_cbo_trang_thai_tai_san.SelectedValue = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID_TRANG_THAI);
         m_txt_ma_tai_san.Text = ip_us_m_dm_tai_san_khac.strMA_TAI_SAN;
@@ -133,14 +124,18 @@ public partial class Default2 : System.Web.UI.Page {
         m_txt_kinh_doanh.Text = "";
         m_txt_khong_kinh_doanh.Text = "";
         m_txt_khac.Text = "";
+        m_e_form_mode = DataEntryFormMode.InsertDataState;
     }
     #endregion
     protected void Page_Load(object sender, EventArgs e) {
         try {
+            
+
             if (!this.IsPostBack) {
                 /*load_data_2_grid();
                 load_data_2_cbo_bo_tinh();
                 load_data_2_cbo_trang_thai_tai_san();*/
+                set_form_mode();
                 load_data_2_grid();
                 WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.NO
@@ -165,6 +160,24 @@ public partial class Default2 : System.Web.UI.Page {
         }
     }
 
+    private void set_form_mode() {
+        switch (m_e_form_mode) {
+            case DataEntryFormMode.InsertDataState:
+                m_cmd_tao_moi.Visible = true;
+                m_cmd_cap_nhat.Visible = false;
+                break;
+            case DataEntryFormMode.SelectDataState:
+                break;
+            case DataEntryFormMode.UpdateDataState:
+                m_cmd_tao_moi.Visible = false;
+                m_cmd_cap_nhat.Visible = true;
+                break;
+            case DataEntryFormMode.ViewDataState:
+                break;
+            default:
+                break;
+        }
+    }
     protected void m_cmd_cap_nhat_Click(object sender, EventArgs e) {
         try {
             if (hdf_id.Value.Trim().Equals("")) {
@@ -177,7 +190,8 @@ public partial class Default2 : System.Web.UI.Page {
             m_us_tai_san_khac.Update();
             load_data_2_grid();
             hdf_id.Value = "";
-            reset_control();
+            reset_control();            
+            set_form_mode();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(v_e);
@@ -186,11 +200,20 @@ public partial class Default2 : System.Web.UI.Page {
     protected void m_grv_tai_san_khac_RowUpdating(object sender, GridViewUpdateEventArgs e) {
         try {
             load_data_2_us_update(e.RowIndex);
-            m_cbo_don_vi_chu_quan.Items.Clear();
-            load_data_2_cbo_don_vi_chu_quan();
-            m_cbo_don_vi_su_dung.Items.Clear();
-            load_data_2_cbo_don_vi_su_dung();
+            //m_cbo_don_vi_chu_quan.Items.Clear();
+            //WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+            //         m_cbo_bo_tinh.SelectedValue
+            //         , WinFormControls.eTAT_CA.NO
+            //         , m_cbo_don_vi_chu_quan);
+            //m_cbo_don_vi_su_dung.Items.Clear();
+            //WinFormControls.load_data_to_cbo_don_vi_su_dung(
+            //         m_cbo_don_vi_chu_quan.SelectedValue
+            //         , m_cbo_bo_tinh.SelectedValue
+            //         , WinFormControls.eTAT_CA.NO
+            //         , m_cbo_don_vi_su_dung);
             us_object_2_form(m_us_tai_san_khac);
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            set_form_mode();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(v_e);
@@ -259,7 +282,7 @@ public partial class Default2 : System.Web.UI.Page {
             decimal dc_id_tai_san_khac = CIPConvert.ToDecimal(m_grv_tai_san_khac.DataKeys[e.RowIndex].Value);
             m_us_tai_san_khac.DeleteByID(dc_id_tai_san_khac);
             load_data_2_grid();
-            m_lbl_mess.Text = "Xóa thành công";
+            m_lbl_mess.Text = "Xóa thành công!";
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(v_e);
@@ -292,6 +315,7 @@ public partial class Default2 : System.Web.UI.Page {
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e) {
         try {
             reset_control();
+            set_form_mode();
         }
         catch (Exception v_e) {
             
