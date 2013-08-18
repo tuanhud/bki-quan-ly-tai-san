@@ -30,7 +30,7 @@
                         <asp:Label ID="Label7" CssClass="cssManField" runat="server" Text="Tên đơn vị" />
                     </td>
                     <td>
-                        <asp:TextBox ID="m_txt_ten_don_vi" CssClass="cssTextBox" runat="server" MaxLength="25"
+                        <asp:TextBox ID="m_txt_ten_don_vi" CssClass="cssTextBox" runat="server" MaxLength="50"
                             Width="200px" />
                     </td>
                 </tr>
