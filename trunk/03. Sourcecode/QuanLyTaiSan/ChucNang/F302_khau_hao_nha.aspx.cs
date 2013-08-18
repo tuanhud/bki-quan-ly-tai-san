@@ -265,6 +265,11 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+
+    protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+
+    }
     #endregion
 
     #region Public Interfaces
@@ -334,5 +339,11 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         m_cbo_thuoc_khu_dat.DataValueField = DM_DAT.ID;
         m_cbo_thuoc_khu_dat.DataBind();
     }
+
+    private void load_data_to_grid()
+    {
+
+    }
     #endregion
+    
 }
