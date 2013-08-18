@@ -22,6 +22,11 @@ public class PersonService : System.Web.Services.WebService
         return get_top_dm_oto_by_name(name_prefix);
     }
     
+    [WebMethod]
+    public List<US_DM_NHA> GetNha(string name_prefix, decimal ip_dc_id_dat)
+    {
+        return get_top_dm_nha_by_name(name_prefix, ip_dc_id_dat);
+    }
     #endregion
     #region Private Methods
 
@@ -42,6 +47,25 @@ public class PersonService : System.Web.Services.WebService
                 v_teachers.Add(v_oto);
             }
         return v_teachers;
+    }
+
+    private List<US_DM_NHA> get_top_dm_nha_by_name(string ip_str_ten_nha, decimal ip_dc_id_dat)
+    {
+        DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
+        US_DM_NHA v_us_dm_nha = new US_DM_NHA();
+        v_ds_dm_nha.EnforceConstraints = false;
+        v_us_dm_nha.load_nha_by_ten(v_ds_dm_nha, ip_str_ten_nha, ip_dc_id_dat);
+        if (v_ds_dm_nha.DM_NHA.Rows.Count == 0) return null;
+        List<US_DM_NHA> v_list_nha = new List<US_DM_NHA>();
+        for (int i = 0; i < v_ds_dm_nha.DM_NHA.Rows.Count; i++ )
+        {
+            US_DM_NHA v_us_temp = new US_DM_NHA();
+            v_us_temp.dcID = int.Parse(v_ds_dm_nha.DM_NHA.Rows[i]["ID"].ToString());
+            v_us_temp.strTEN_TAI_SAN = v_ds_dm_nha.DM_NHA.Rows[i][DM_NHA.TEN_TAI_SAN].ToString().TrimEnd();
+            v_list_nha.Add(v_us_temp);
+        }
+
+        return v_list_nha;
     }
     #endregion
 }
