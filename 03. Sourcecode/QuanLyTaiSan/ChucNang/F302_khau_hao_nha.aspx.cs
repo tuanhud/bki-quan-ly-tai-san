@@ -63,7 +63,15 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
-
+        try
+        {
+            load_data_to_grid(m_cbo_dia_chi.SelectedValue
+                , m_txt_tu_khoa.Text);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
 
     protected void m_hdf_id_ValueChanged(object sender, EventArgs e)
@@ -93,30 +101,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         {
             if (!m_hdf_id.Value.Equals(String.Empty))
             {
-                decimal v_dc_id = CIPConvert.ToDecimal(m_hdf_id.Value);
-                US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
-                US_DM_NHA v_us_dm_nha = new US_DM_NHA(v_dc_id);
-
-                decimal v_dc_gia_tri_khau_hao = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
-                decimal v_dc_user_id = CIPConvert.ToDecimal(HttpContext.Current.Session[SESSION.UserID].ToString());
-
-                // Lấy thông tin mới cho giao dịch khấu hao
-                v_us_gd_khau_hao.dcID_TAI_SAN = v_dc_id;
-                v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.NHA;
-                v_us_gd_khau_hao.dcID_DON_VI = v_us_dm_nha.dcID_DON_VI_SU_DUNG;
-                v_us_gd_khau_hao.dcGIA_TRI_KHAU_HAO = v_dc_gia_tri_khau_hao;
-                v_us_gd_khau_hao.strMA_PHIEU = m_txt_ma_phieu.Text;
-                v_us_gd_khau_hao.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
-                v_us_gd_khau_hao.datNGAY_LAP = CIPConvert.ToDatetime(m_txt_ngay_lap.Text);
-                v_us_gd_khau_hao.dcID_NGUOI_LAP = v_dc_user_id;
-                v_us_gd_khau_hao.dcID_NGUOI_DUYET = v_dc_user_id;
-
-                // Cập nhật cho nhà
-                v_us_dm_nha.dcGIA_TRI_CON_LAI = v_us_dm_nha.dcGIA_TRI_CON_LAI - v_dc_gia_tri_khau_hao;
-
-                // Thực hiện cập nhật
-                v_us_gd_khau_hao.Insert();
-                v_us_dm_nha.Update();
+                them_moi_khau_hao(CIPConvert.ToDecimal(m_hdf_id.Value));
             }
         }
         catch (Exception v_e)
@@ -298,8 +283,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
 
         v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_NHA, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
         m_cbo_trang_thai_nha_up.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-        m_cbo_trang_thai_nha_up.DataTextField = "TEN";
-        m_cbo_trang_thai_nha_up.DataValueField = "ID";
+        m_cbo_trang_thai_nha_up.DataTextField =  CM_DM_TU_DIEN.TEN;
+        m_cbo_trang_thai_nha_up.DataValueField = CM_DM_TU_DIEN.ID;
         m_cbo_trang_thai_nha_up.DataBind();
         m_cbo_trang_thai_nha_up.SelectedValue = ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString();
     }
@@ -340,9 +325,44 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         m_cbo_thuoc_khu_dat.DataBind();
     }
 
-    private void load_data_to_grid()
+    private void load_data_to_grid(string ip_str_id_dat
+        , string ip_str_key_word)
     {
+        US_V_GD_KHAU_HAO_DM_NHA v_us_v_gd_kh_dm_nha = new US_V_GD_KHAU_HAO_DM_NHA();
+        DS_V_GD_KHAU_HAO_DM_NHA v_ds_v_gd_kh_dm_nha = new DS_V_GD_KHAU_HAO_DM_NHA();
 
+        decimal v_dc_id = CIPConvert.ToDecimal(ip_str_id_dat);
+
+        v_us_v_gd_kh_dm_nha.FillDatasetByKeyWord(v_ds_v_gd_kh_dm_nha, ip_str_key_word, v_dc_id);
+        m_grv_danh_sach_nha.DataSource = v_ds_v_gd_kh_dm_nha.V_GD_KHAU_HAO_DM_NHA;
+        m_grv_danh_sach_nha.DataBind();
+    }
+
+    private void them_moi_khau_hao(decimal ip_dc_id)
+    {
+        US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
+        US_DM_NHA v_us_dm_nha = new US_DM_NHA(ip_dc_id);
+
+        decimal v_dc_gia_tri_khau_hao = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
+        decimal v_dc_user_id = CIPConvert.ToDecimal(HttpContext.Current.Session[SESSION.UserID].ToString());
+
+        // Lấy thông tin mới cho giao dịch khấu hao
+        v_us_gd_khau_hao.dcID_TAI_SAN = ip_dc_id;
+        v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.NHA;
+        v_us_gd_khau_hao.dcID_DON_VI = v_us_dm_nha.dcID_DON_VI_SU_DUNG;
+        v_us_gd_khau_hao.dcGIA_TRI_KHAU_HAO = v_dc_gia_tri_khau_hao;
+        v_us_gd_khau_hao.strMA_PHIEU = m_txt_ma_phieu.Text;
+        v_us_gd_khau_hao.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
+        v_us_gd_khau_hao.datNGAY_LAP = CIPConvert.ToDatetime(m_txt_ngay_lap.Text);
+        v_us_gd_khau_hao.dcID_NGUOI_LAP = v_dc_user_id;
+        v_us_gd_khau_hao.dcID_NGUOI_DUYET = v_dc_user_id;
+
+        // Cập nhật cho nhà
+        v_us_dm_nha.dcGIA_TRI_CON_LAI = v_us_dm_nha.dcGIA_TRI_CON_LAI - v_dc_gia_tri_khau_hao;
+
+        // Thực hiện cập nhật
+        v_us_gd_khau_hao.Insert();
+        v_us_dm_nha.Update();
     }
     #endregion
     
