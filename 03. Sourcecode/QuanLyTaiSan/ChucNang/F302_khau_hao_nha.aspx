@@ -3,7 +3,6 @@
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         $(function () {
@@ -330,6 +329,18 @@
             </td>
         </tr>
         <tr>
+            <td align="right" colspan="1" style="width: 20%">
+                <span class="cssManField">Từ khóa </span>
+            </td>
+            <td style="width: 30%" colspan="1">
+                <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+            </td>
+            <td align="right" style="width: 20%" colspan="1">
+            </td>
+            <td style="width: 30%" colspan="1">
+            </td>
+        </tr>
+        <tr>
             <td align="right">
             </td>
             <td align="left">
@@ -352,7 +363,8 @@
             <td align="center" colspan="4" style="height: 450px;" valign="top">
                 <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
+                    EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging"
+                    OnRowCommand="m_grv_danh_sach_nha_RowCommand">
                     <Columns>
                         <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>
