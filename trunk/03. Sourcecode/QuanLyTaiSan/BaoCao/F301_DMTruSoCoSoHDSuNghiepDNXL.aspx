@@ -256,7 +256,7 @@
                             <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue">
                     
                             </asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ngàn đồng</span>
+                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  đồng</span>
                         </td>
                         <td colspan="1">
                         </td>
@@ -310,7 +310,7 @@
                                                 <td colspan="3" style="height: 50px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (ngàn đồng)
+                                                    (đồng)
                                                 </td>
                                             </tr>
                                             <tr>
