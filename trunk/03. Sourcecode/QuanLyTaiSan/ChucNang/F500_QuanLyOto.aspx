@@ -82,7 +82,7 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%;">
-                            <asp:Label ID="lblFullName13" CssClass="cssManField" runat="server" Text="&lt;U&gt;L&lt;/U&gt;oại xe" />
+                            <asp:Label ID="lblFullName13" CssClass="cssManField" runat="server" Text="Loại xe" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:DropDownList ID="m_ddl_loai_xe" runat="server" Width="85%" 
@@ -129,12 +129,12 @@
                         <td align="left" class="style1" style="width: 30%">
                             <asp:TextBox ID="m_txt_bien_kiem_soat" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="m_rfv_nhan_hieu" runat="server" ControlToValidate="m_txt_ten_nhan_hieu"
-                                ErrorMessage="Bạn phải nhập Nhãn hiệu" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
+                                ErrorMessage="Bạn phải nhập biển kiểm soát" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%;">
-                            <asp:Label ID="Label19" CssClass="cssManField" runat="server" Text="Cống suất xe*" />
+                            <asp:Label ID="Label19" CssClass="cssManField" runat="server" Text="Công suất xe*" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:TextBox ID="m_txt_cong_suat_xe" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
@@ -158,12 +158,11 @@
                             
                         </td>
                         <td align="right" colspan="1" style="width: 15%">
-                            <asp:Label ID="Label18" CssClass="cssManField" runat="server" Text="Năm sử dụng*" />
+                            <asp:Label ID="Label18" CssClass="cssManField" runat="server" Text="Năm sử dụng" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
                             <asp:TextBox ID="m_txt_nam_su_dung" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="m_rfv_nam_su_dung" runat="server" ControlToValidate="m_txt_nam_su_dung"
-                                ErrorMessage="Bạn phải nhập Năm sử dụng" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -216,7 +215,7 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%;">
-                            <asp:Label ID="lblFullName6" CssClass="cssManField" runat="server" Text="Giá trị còn lại" />
+                            <asp:Label ID="lblFullName6" CssClass="cssManField" runat="server" Text="Giá trị còn lại*" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:TextBox ID="m_txt_gia_tri_con_lai" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
@@ -240,12 +239,11 @@
                                 ErrorMessage="Bạn phải nhập Nước sản xuất" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" colspan="1" style="width: 15%">
-                            <asp:Label ID="Label4" CssClass="cssManField" runat="server" Text="Năm sản xuất*" />
+                            <asp:Label ID="Label4" CssClass="cssManField" runat="server" Text="Năm sản xuất" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
-                            <asp:TextBox ID="m_txt_nam_san_xuat" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="m_rfv_nam_san_xuat" runat="server" ControlToValidate="m_txt_nam_san_xuat"
-                                ErrorMessage="Bạn phải nhập Năm sản xuất" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="m_txt_nam_san_xuat" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -272,7 +270,7 @@
                                 ErrorMessage="Bạn phải nhập QLNN" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" colspan="1" style="width: 15%">
-                            <asp:Label ID="lblFullName12" CssClass="cssManField" runat="server" Text="HĐSN không kinh doanh*" />
+                            <asp:Label ID="lblFullName12" CssClass="cssManField" runat="server" Text="HĐSN KHÔNG kinh doanh*" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
                             <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
@@ -282,7 +280,7 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%;">
-                            <asp:Label ID="lblFullName11" CssClass="cssManField" runat="server" Text="HĐ sự nghiệp Kinh doanh*" />
+                            <asp:Label ID="lblFullName11" CssClass="cssManField" runat="server" Text="HĐSN Kinh doanh*" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
@@ -318,11 +316,11 @@
                         </td>
                         <td align="left" style="width: 35%" colspan="1">
                             <asp:Button ID="m_cmd_tao_moi" runat="server" AccessKey="c" CssClass="cssButton"
-                                OnClick="m_cmd_tao_moi_Click" Text="Tạo mới(c)" Width="98px" ValidationGroup="m_vlg_nha" />
+                                OnClick="m_cmd_tao_moi_Click" Text="Tạo mới(c)" Width="98px" Height = "24px" ValidationGroup="m_vlg_nha" />
                             <asp:Button ID="m_cmd_cap_nhat" runat="server" AccessKey="u" CssClass="cssButton"
-                                OnClick="m_cmd_cap_nhat_Click" Text="Cập nhật(u)" Width="98px" ValidationGroup="m_vlg_nha" />
+                                OnClick="m_cmd_cap_nhat_Click" Text="Cập nhật(u)" Width="98px" Height = "24px" ValidationGroup="m_vlg_nha" />
                             <asp:Button ID="btnCancel" runat="server" AccessKey="r" CssClass="cssButton" OnClick="btnCancel_Click"
-                                Text="Xóa trắng(r)" Width="98px" TabIndex="25" />
+                                Text="Xóa trắng(r)" Width="98px"  Height = "24px" TabIndex="25" />
                         </td>
                         <td colspan="1">
                             &nbsp;
@@ -364,7 +362,7 @@
             </td>
             <td align="left" style="width: 15%;" colspan="1">
                 <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" CssClass="cssButton"
-                    OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px" />
+                    OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px" Height = "24px" />
             </td>
         </tr>
         <tr>

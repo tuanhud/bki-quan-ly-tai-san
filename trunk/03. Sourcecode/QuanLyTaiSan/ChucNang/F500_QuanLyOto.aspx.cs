@@ -90,6 +90,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_txt_ma_ts.Text = "";
         m_txt_nam_su_dung.Text = "";
         m_txt_tim_kiem.Text = "";
+        m_lbl_mess.Text = "";
+        m_lbl_thong_bao.Text = "";
     }
     private void form_2_us_object(US_DM_OTO ip_us_oto) {
         if (!m_hdf_id.Value.Equals(String.Empty)) {
@@ -206,10 +208,26 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         if (!CValidateTextBox.IsValid(m_txt_ten_ts, DataType.StringType, allowNull.NO)) return false;
         if (!CValidateTextBox.IsValid(m_txt_nguon_ns, DataType.NumberType, allowNull.NO)) return false;
         if (!CValidateTextBox.IsValid(m_txt_nguon_khac, DataType.NumberType, allowNull.NO)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_nam_su_dung, DataType.NumberType, allowNull.YES)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_nam_san_xuat, DataType.NumberType, allowNull.YES)) return false;
         if (!CValidateTextBox.IsValid(m_txt_gia_tri_con_lai, DataType.NumberType, allowNull.NO)) return false;
         if (!CValidateTextBox.IsValid(m_txt_qlnn, DataType.NumberType, allowNull.YES)) return false;
         if (!CValidateTextBox.IsValid(m_txt_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
         if (!CValidateTextBox.IsValid(m_txt_khong_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
+        if ((m_txt_nam_su_dung.Text.Trim().Length > 0) & (m_txt_nam_san_xuat.Text.Trim().Length > 0)) {
+            if (CIPConvert.ToDecimal(m_txt_nam_su_dung.Text) < CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text)) {
+                m_lbl_mess.Text = "Năm sử dụng phải lớn hơn hoặc bằng năm sản xuất!";
+                return false;
+            }
+        }
+        if ((m_txt_nguon_ns.Text.Trim().Length > 0) & (m_txt_nguon_khac.Text.Trim().Length > 0) & (m_txt_gia_tri_con_lai.Text.Trim().Length > 0)) {
+            if (CIPConvert.ToDecimal(m_txt_nguon_ns.Text) + CIPConvert.ToDecimal(m_txt_nguon_khac.Text) < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text)) {
+                m_lbl_mess.Text = "Nguyên giá (nguồn ngân sách + nguồn khác) phải lớn hơn giá trị còn lại!";
+                return false;
+            }
+        }
+
+
         return true;
     }
 
@@ -226,6 +244,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     private void update_data() {
         if (m_hdf_id.Value == "") {
             m_lbl_mess.Text = "Bạn phải chọn nội dung cần Cập nhật!";
+            
             return;
         }
         if (!check_validate_data_is_ok()) return;
@@ -239,6 +258,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
 
     private void search_oto(string ip_str_tu_khoa) {
+        m_lbl_thong_bao.Text = "";
         m_us_dm_oto.FillDatasetBySearch(
             m_ds_dm_oto
             ,ip_str_tu_khoa
