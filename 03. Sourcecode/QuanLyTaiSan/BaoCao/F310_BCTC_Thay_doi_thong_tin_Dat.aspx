@@ -65,12 +65,13 @@
                 <span class="cssManField">Trạng thái:</span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%">
+                <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" AutoPostBack="True"
+                    OnSelectedIndexChanged="m_cbo_trang_thai_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td class="cssManField" align="right">
+            <td class="cssManField" align="right" style="width: 18%">
                 <span>Từ ngày:</span>
             </td>
             <td>
@@ -97,8 +98,8 @@
             <td align="right">
                 <span class="cssManField">Tìm kiếm:</span>
             </td>
-            <td colspan="4">
-                <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%"></asp:TextBox>
+            <td colspan="1">
+                <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="89%"></asp:TextBox>
             </td>
         </tr>
         <tr style="height: 10px">
@@ -159,29 +160,43 @@
                     <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
                         ForeColor="#333333"></SelectedRowStyle>
                     <Columns>
-                        <asp:BoundField HeaderText="NGÀY CẬP NHẬT CUỐI" DataField="NGAY_CAP_NHAT_CUOI" ItemStyle-HorizontalAlign="right" />
-                        <asp:BoundField HeaderText="LỊCH SỬ CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="left" />
-                        <asp:BoundField HeaderText="MÃ TÀI SẢN" DataField="MA_TAI_SAN" />
-                        <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" />
+                        <asp:BoundField HeaderText="NGÀY CẬP NHẬT CUỐI" DataField="NGAY_CAP_NHAT_CUOI" ItemStyle-HorizontalAlign="right"
+                            HeaderStyle-Width="5%" ItemStyle-Width="5%" />
+                        <asp:BoundField HeaderText="LỊCH SỬ CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="left"
+                            HeaderStyle-Width="8%" ItemStyle-Width="8%" />
+                        <asp:BoundField HeaderText="MÃ TÀI SẢN" DataField="MA_TAI_SAN" HeaderStyle-Width="5%"
+                            ItemStyle-Width="5%" ItemStyle-HorizontalAlign="Center" />
+                        <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" ItemStyle-HorizontalAlign="left"
+                            HeaderStyle-Width="17%" ItemStyle-Width="17%" />
                         <asp:BoundField HtmlEncode="false" HeaderText="DIỆN TÍCH KHUÔN VIÊN <br/> (m2)" DataField="DT_KHUON_VIEN"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" HeaderStyle-Width="5%"
+                            ItemStyle-Width="5%" />
                         <asp:BoundField HeaderText="DIỆN TÍCH TRỤ SỞ LÀM VIỆC <br/>(m2)" HtmlEncode="false"
-                            DataField="DT_TRU_SO_LAM_VIEC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="DT_TRU_SO_LAM_VIEC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"
+                            HeaderStyle-Width="5%" ItemStyle-Width="5%" />
                         <asp:BoundField HeaderText="DIỆN TÍCH CƠ SỞ HĐSN <br/> (m2)" HtmlEncode="false" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" HeaderStyle-Width="5%"
+                            ItemStyle-Width="5%" />
                         <asp:BoundField HeaderText="DIỆN TÍCH LÀM NHÀ Ở <br/> (m2)" HtmlEncode="false" DataField="DT_LAM_NHA_O"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" HeaderStyle-Width="5%"
+                            ItemStyle-Width="5%" />
                         <asp:BoundField HeaderText="DIỆN TÍCH CHO THUÊ <br/> (m2)" HtmlEncode="false" DataField="DT_CHO_THUE"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                        <asp:BoundField HeaderText="DIỆN TÍCH BỎ TRỐNG <br/> (m2)" HtmlEncode="false" DataField="DT_BO_TRONG" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" HeaderStyle-Width="5%"
+                            ItemStyle-Width="5%" />
+                        <asp:BoundField HeaderText="DIỆN TÍCH BỎ TRỐNG <br/> (m2)" HtmlEncode="false" DataField="DT_BO_TRONG"
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" HeaderStyle-Width="5%"
+                            ItemStyle-Width="5%" />
                         <asp:BoundField HeaderText="DIỆN TÍCH BỊ LẤN CHIẾM  <br/> (m2)" HtmlEncode="false"
-                            DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"
+                            HeaderStyle-Width="5%" ItemStyle-Width="5%" />
                         <asp:BoundField HeaderText="DIỆN TÍCH SỬ DỤNG VÀO MỤC ĐÍCH KHÁC <br/> (m2)" HtmlEncode="false"
-                            DataField="DT_SU_DUNG_MUC_DICH_KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="DT_SU_DUNG_MUC_DICH_KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"
+                            HeaderStyle-Width="5%" ItemStyle-Width="5%" />
                         <asp:BoundField HeaderText="GIÁ TRỊ THEO SỔ KẾ TOÁN <br/> (ngàn đồng)" HtmlEncode="false"
-                            DataField="GT_THEO_SO_KE_TOAN" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                        <asp:BoundField HeaderText="SỐ NĂM ĐÃ SỬ DỤNG" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
-                       
+                            DataField="GT_THEO_SO_KE_TOAN" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}"
+                            HeaderStyle-Width="10%" ItemStyle-Width="10%" />
+                        <asp:BoundField HeaderText="SỐ NĂM ĐÃ SỬ DỤNG" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right"
+                            HeaderStyle-Width="5%" ItemStyle-Width="5%" />
                     </Columns>
                 </asp:GridView>
             </td>
