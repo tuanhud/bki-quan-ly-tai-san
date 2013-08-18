@@ -65,28 +65,28 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         op_obj_parameter.dcID_TRANG_THAI_TAI_SAN = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
         op_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = m_cbo_trang_thai.SelectedItem.Text;
         op_obj_parameter.strKEY_SEARCH = m_txt_tu_khoa.Text;
+        op_obj_parameter.dcID_LOAI_TAI_SAN = CONST_QLDB.ID_TAT_CA;
+        op_obj_parameter.strTEN_LOAI_TAI_SAN = CONST_QLDB.TAT_CA;
             
     }
     private void export_excel()
         {
-            decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(Request.QueryString["ID"]);
+            
             f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
             CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
             form_2_objExcelAssetParameters(v_obj_parameter);
-            
 
-            if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==ID_TRANG_THAI_OTO.DANG_SU_DUNG) 
+
+            if (v_obj_parameter.dcID_TRANG_THAI_TAI_SAN == ID_TRANG_THAI_OTO.DANG_SU_DUNG) 
             {
-                v_obj_parameter.dcID_TRANG_THAI_TAI_SAN = ID_TRANG_THAI_OTO.DANG_SU_DUNG;
-                v_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = "Đang sử dụng";
+                
                 v_f400_bc_dm_oto.export_excel(
                     f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
                     ,ref v_obj_parameter );
             }
-            else if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==ID_TRANG_THAI_OTO.DE_NGHI_XU_LY)
+            else if (v_obj_parameter.dcID_TRANG_THAI_TAI_SAN == ID_TRANG_THAI_OTO.DE_NGHI_XU_LY)
             {
-                v_obj_parameter.dcID_TRANG_THAI_TAI_SAN = ID_TRANG_THAI_OTO.DE_NGHI_XU_LY;
-                v_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = "Đề nghị xử lý";
+                
                 v_f400_bc_dm_oto.export_excel(
                     f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
                     , ref v_obj_parameter);
@@ -147,31 +147,26 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         m_cbo_don_vi_su_dung.DataValueField = DM_DON_VI.ID;
         m_cbo_don_vi_su_dung.DataBind();
     }
+   
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
-            if (Request.QueryString["ID"] == null)
-            {
-                if (!this.IsPostBack)
-                {
-                    load_cbo_trang_thai();
-                    load_data_to_cbo_bo_tinh();
-                    load_data_2_grid();                    
-                }
+
+            if (!this.IsPostBack) {
+            
+                load_data_to_cbo_bo_tinh();
+                load_data_to_cbo_don_vi_quan_ly();
+                load_data_to_cbo_don_vi_su_dung();
+                load_cbo_trang_thai();
+                load_data_2_grid_by_command();
             }
-            else
-            {
-                if (!this.IsPostBack)
-                {
-                    m_cbo_trang_thai.Visible = false;
-                    m_lbl_trang_thai.Visible = false;
-                    load_data_to_cbo_bo_tinh();
-                    load_data_to_cbo_don_vi_quan_ly();
-                    load_data_to_cbo_don_vi_su_dung();
-                    load_data_2_grid_by_command();
-                }                
-            }
+            if (Request.QueryString["ID"] != null) {
+                m_cbo_trang_thai.Visible = false;
+                m_lbl_trang_thai.Visible = false;
+                m_cbo_trang_thai.SelectedValue = Request.QueryString["ID"].ToString();
+            }            
+            
         }
         catch (Exception v_e)
         {
@@ -185,7 +180,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         {
             US_CM_DM_TU_DIEN us_cm_tu_dien = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN ds_cm_tu_dien = new DS_CM_DM_TU_DIEN();
-            us_cm_tu_dien.FillDataset(ds_cm_tu_dien, " WHERE ID_LOAI_TU_DIEN =7");
+            us_cm_tu_dien.FillDataset(
+                ds_cm_tu_dien, " WHERE ID_LOAI_TU_DIEN =7");
             m_cbo_trang_thai.DataSource = ds_cm_tu_dien.CM_DM_TU_DIEN;
             m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN_NGAN;
             m_cbo_trang_thai.DataValueField = CM_DM_LOAI_TD.ID;
@@ -199,21 +195,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
     }
     
-    private void load_data_2_grid() 
-    {
-        try
-        {
-            string v_str_trang_thai = Request.QueryString["ID"].ToString();
-            string v_str_tu_khoa = m_txt_tu_khoa.Text.Trim();
-            m_us_dm_oto.FillDatasetSearch(m_ds_dm_oto, v_str_tu_khoa,v_str_trang_thai);
-            m_grv_bao_cao_oto.DataSource = m_ds_dm_oto.DM_OTO;
-            m_grv_bao_cao_oto.DataBind();
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
-    }
+    
     private void load_data_2_grid_by_command()
     {
         try
@@ -233,7 +215,13 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                 v_dc_id_don_vi_sd = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
 
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(Request.QueryString["ID"]);
-            m_us_dm_oto.FillDatasetBySearch(m_ds_dm_oto, v_str_tu_khoa, v_dc_id_trang_thai, v_dc_id_don_vi_bo_tinh, v_dc_id_don_vi_quan_ly, v_dc_id_don_vi_sd);
+            m_us_dm_oto.FillDatasetBySearch(
+                m_ds_dm_oto
+                , v_str_tu_khoa
+                , v_dc_id_trang_thai
+                , v_dc_id_don_vi_bo_tinh
+                , v_dc_id_don_vi_quan_ly
+                , v_dc_id_don_vi_sd);
             m_grv_bao_cao_oto.DataSource = m_ds_dm_oto.DM_OTO;
             m_grv_bao_cao_oto.DataBind();
         }
@@ -252,17 +240,14 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         try
         {
             System.Threading.Thread.Sleep(2000);
-            if (Request.QueryString["ID"] != null)
-            {
+            
                 load_data_2_grid_by_command();
-            }
-            else
-                load_data_2_grid();
+            
         }
         catch (Exception v_e)
         {
 
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(v_e);
         }
     }
     #endregion
@@ -276,7 +261,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         catch (Exception v_e)
         {
 
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(v_e);
         }
     }
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
@@ -309,19 +294,14 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
         try
-        {
-            if (Request.QueryString["ID"] != null)
-            {
-                load_data_2_grid_by_command();
-            }
-            else
-                load_data_2_grid();
+        {           
+                load_data_2_grid_by_command();           
                 export_excel();
         }
         catch (Exception v_e)
         {
 
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(v_e);
         }
     }
 }
