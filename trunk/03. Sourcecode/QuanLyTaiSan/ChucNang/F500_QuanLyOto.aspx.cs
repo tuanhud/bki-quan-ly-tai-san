@@ -150,7 +150,19 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
         US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_us_oto.dcID_DON_VI_CHU_QUAN);
         m_ddl_bo_tinh.SelectedValue = v_us_don_vi.dcID_DON_VI_CAP_TREN.ToString();
+
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                   m_ddl_bo_tinh.SelectedValue
+                   , WinFormControls.eTAT_CA.NO
+                   , m_ddl_dv_chu_quan);
+
         m_ddl_dv_chu_quan.SelectedValue = ip_us_oto.dcID_DON_VI_CHU_QUAN.ToString();
+
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+    m_ddl_dv_chu_quan.SelectedValue
+    , m_ddl_bo_tinh.SelectedValue
+    , WinFormControls.eTAT_CA.NO
+    , m_ddl_dv_sd_ts);
         m_ddl_dv_sd_ts.SelectedValue = ip_us_oto.dcID_DON_VI_SU_DUNG.ToString();
 
         m_ddl_trang_thai_oto.SelectedValue = ip_us_oto.dcID_TRANG_THAI.ToString();
