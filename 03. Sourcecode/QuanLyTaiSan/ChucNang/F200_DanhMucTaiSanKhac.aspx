@@ -438,15 +438,15 @@
                         <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center"/>
                         <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
-                                	<tr>
-                                		<td colspan="3" style="height:35px">Giá trị theo sổ kế toán</td>
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse; height:100%">
+                                	<tr style="height:30%">
+                                		<td colspan="3" style="height:100%">Giá trị theo sổ kế toán</td>
                                 	</tr>
-                                    <tr>
-                                        <td colspan="2" style = "width: 66%; height:24px">Nguyên giá</td>
-                                        <td rowspan="2" style = "width: 33%">Giá trị còn lại</td>
+                                    <tr style="height:30%">
+                                        <td colspan="2" style = "width: 66%">Nguyên giá</td>
+                                        <td rowspan="2" style = "width: 33%; height:60px">Giá trị còn lại</td>
                                     </tr>
-                                    <tr>
+                                    <tr style="height:30%">
                                         <td style = "width: 33%">Nguồn NS</td>
                                         <td style = "width: 33%">Nguồn khác</td>
                                     </tr>
@@ -465,16 +465,16 @@
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse">
-                                	<tr>
-                                		<td colspan="7" style="height:39px">Hiện trạng sử dụng</td>
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse:collapse;height:100%">
+                                	<tr style="height:30%">
+                                		<td colspan="7" style="height:60px">Hiện trạng sử dụng</td>
                                 	</tr>
-                                    <tr>
-                                        <td rowspan="2" style = "width: 25%">Quản lý nhà nước</td>
+                                    <tr style="height:30%">
+                                        <td rowspan="2" style = "width: 25%; height:60px">Quản lý nhà nước</td>
                                         <td colspan="2" style = "width: 50%">Hoạt đông sự nghiệp</td>
                                         <td rowspan="2" style = "width: 25%">Khác</td>
                                     </tr>
-                                    <tr>
+                                    <tr style="height:30%">
                                         <td style = "width: 25%">Kinh doanh</td>
                                         <td style = "width: 25%">Không kinh doanh</td>
                                     </tr>
