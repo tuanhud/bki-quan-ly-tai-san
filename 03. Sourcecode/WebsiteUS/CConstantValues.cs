@@ -6,7 +6,7 @@ namespace WebUS
 {
     public class CONST_QLDB {
         public const decimal ID_TAT_CA = -1;
-        public const string TAT_CA = "----------Tất cả----------";
+        public const string TAT_CA = "--------------------Tất cả--------------------";
     }
 
     public class SESSION {
