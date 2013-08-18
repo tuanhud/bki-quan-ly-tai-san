@@ -468,7 +468,7 @@ namespace QltsForm {
             }
 
             //2. Xuất dữ liệu ra file excel
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-002 Bao cao ke khai xe o to.xls", 13, 1); ;
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport();
             switch (m_e_form_mode) {
                 case eFormMode.KE_KHAI_O_TO:
                     load_data_2_grid(

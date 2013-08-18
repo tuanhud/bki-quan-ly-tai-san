@@ -443,7 +443,7 @@ namespace QltsForm {
             US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_dc_don_vi_su_dung);
 
             //2. Xuất dữ liệu ra file excel
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1); ;
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport();
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
