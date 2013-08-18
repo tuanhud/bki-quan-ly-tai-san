@@ -82,13 +82,13 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
             string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
             DS_DM_TAI_SAN_KHAC v_ds_dm_tai_san_khac = new DS_DM_TAI_SAN_KHAC();
             US_DM_TAI_SAN_KHAC v_us_dm_tai_san_khac = new US_DM_TAI_SAN_KHAC();
-            if (v_id_don_vi_su_dung.Equals("-1"))
+            if (v_id_don_vi_su_dung.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
             {
                 v_us_dm_tai_san_khac.FillDataset(v_ds_dm_tai_san_khac, "where id_trang_thai = " + v_id_trang_thai);
             }
-            else if (!v_id_don_vi_su_dung.Equals("-1"))
+            else if (!v_id_don_vi_su_dung.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
             {
-                if (v_id_don_vi_chu_quan.Equals("-1"))
+                if (v_id_don_vi_chu_quan.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
                 {
                     v_us_dm_tai_san_khac.FillDataset(v_ds_dm_tai_san_khac, "where id_trang_thai = " + v_id_trang_thai + " and id_don_vi_su_dung = " + v_id_don_vi_su_dung);
                 }
