@@ -158,6 +158,8 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         m_us_don_vi.strMA_DON_VI = m_txt_ma_don_vi.Text.Trim();
         m_us_don_vi.strTEN_DON_VI = m_txt_ten_don_vi.Text.Trim();
         m_us_don_vi.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
+        m_us_don_vi.dcLEVEL_MODE = CIPConvert.ToDecimal(m_txt_level_mode.Text);
+        m_us_don_vi.dcSTT = CIPConvert.ToDecimal(m_txt_stt.Text);
     }
     private void clear_data()
     {

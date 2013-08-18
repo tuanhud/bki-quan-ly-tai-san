@@ -5,6 +5,12 @@
     TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            height: 24px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -52,16 +58,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="right">
+                    <td align="right" class="style1">
                         <asp:Label ID="Label10" CssClass="cssManField" runat="server" Text="STT" />
                     </td>
-                    <td>
+                    <td class="style1">
                         <asp:TextBox ID="m_txt_stt" CssClass="cssTextBox" runat="server" MaxLength="25" Width="200px" />
                     </td>
-                    <td align="right">
+                    <td align="right" class="style1">
                         <asp:Label ID="Label11" CssClass="cssManField" runat="server" Text="Level Mode" />
                     </td>
-                    <td>
+                    <td class="style1">
                         <asp:TextBox ID="m_txt_level_mode" CssClass="cssTextBox" runat="server" MaxLength="25"
                             Width="200px" />
                     </td>
@@ -96,7 +102,7 @@
                 </tr>
                 <tr>
                     <td align="left">
-                        <asp:Label ID="m_lbl_mess" Visible="False" runat="server" CssClass="cssManField" />
+                        <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                     </td>
                     <td>
                         &nbsp;
