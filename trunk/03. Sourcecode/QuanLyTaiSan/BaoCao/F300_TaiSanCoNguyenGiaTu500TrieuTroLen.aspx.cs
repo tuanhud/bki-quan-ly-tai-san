@@ -13,7 +13,7 @@ using WebDS.CDBNames;
 using QltsForm;
 using IP.Core.WinFormControls;
 
-public partial class Default2 : System.Web.UI.Page
+public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.UI.Page
 {
     #region member
     DS_CM_DM_TU_DIEN m_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();

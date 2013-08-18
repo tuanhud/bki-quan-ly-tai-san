@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="F301_DMTruSoCoSoHDSuNghiepDNXL.aspx.cs" Inherits="Default2" %>
+    CodeFile="F301_DMTruSoCoSoHDSuNghiepDNXL.aspx.cs" Inherits="BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
