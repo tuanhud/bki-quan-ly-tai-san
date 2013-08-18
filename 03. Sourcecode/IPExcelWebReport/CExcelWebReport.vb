@@ -31,6 +31,10 @@ Public Class CExcelWebReport
 
     Public FindAndReplaceCollection As Hashtable
 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New(ByVal i_strTemplateFileWithoutPath As String _
                             , ByVal i_iSheetStartRow As Integer _
                             , ByVal i_iSheetStartCol As Integer)

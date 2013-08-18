@@ -695,7 +695,8 @@ namespace QltsForm
             US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_dc_don_vi_su_dung);
             US_DM_DAT v_us_dm_dat = new US_DM_DAT(ip_dc_id_dat);
             //2. Xuất dữ liệu ra file excel
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep.xls", 21, 1);
+            //CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep.xls", 21, 1);
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport();
             switch (m_e_form_mode)
             {
                 case eFormMode.DANH_MUC_TRU_SO_LAM_VIEC:
