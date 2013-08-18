@@ -243,7 +243,7 @@
                             <asp:Label ID="Label4" CssClass="cssManField" runat="server" Text="Năm sản xuất*" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
-                            <asp:TextBox ID="m_txt_nam_san_xuat" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_nam_san_xuat" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="m_rfv_nam_san_xuat" runat="server" ControlToValidate="m_txt_nam_san_xuat"
                                 ErrorMessage="Bạn phải nhập Năm sản xuất" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
@@ -267,7 +267,7 @@
                             <asp:Label ID="lblFullName8" CssClass="cssManField" runat="server" Text="Quản lý nhà nước*" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
-                            <asp:TextBox ID="m_txt_qlnn" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_qlnn" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="m_rfv_qlnn" runat="server" ControlToValidate="m_txt_qlnn"
                                 ErrorMessage="Bạn phải nhập QLNN" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
@@ -275,7 +275,7 @@
                             <asp:Label ID="lblFullName12" CssClass="cssManField" runat="server" Text="HĐSN không kinh doanh*" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
-                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="m_rfv_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
                                 ErrorMessage="Bạn phải nhập Không kinh doanh" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
@@ -285,7 +285,7 @@
                             <asp:Label ID="lblFullName11" CssClass="cssManField" runat="server" Text="HĐ sự nghiệp Kinh doanh*" />
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
-                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="m_rfv_kinh_doanh" runat="server" ControlToValidate="m_txt_kinh_doanh"
                                 ErrorMessage="Bạn phải nhập Kinh doanh" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
@@ -293,7 +293,7 @@
                             <asp:Label ID="lblFullName10" CssClass="cssManField" runat="server" Text="Hoạt động khác*" />
                         </td>
                         <td align="left" class="style1" style="width: 30%">
-                            <asp:TextBox ID="m_txt_hd_khac" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_hd_khac" runat="server" CssClass="cssTextBox csscurrency" Width="85%"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="m_rfv_hd_khac" runat="server" ControlToValidate="m_txt_hd_khac"
                                 ErrorMessage="Bạn phải nhập HĐ khác" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>

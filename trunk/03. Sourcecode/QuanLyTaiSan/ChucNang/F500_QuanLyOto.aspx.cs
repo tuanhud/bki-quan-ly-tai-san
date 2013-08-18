@@ -188,8 +188,52 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         // Đẩy us lên form
         us_obj_2_form(v_us_dm_oto);
     }
+
+    private bool check_validate_data_is_ok() {
+        if (!CValidateTextBox.IsValid(m_txt_ma_ts, DataType.StringType, allowNull.NO)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_ten_ts, DataType.StringType, allowNull.NO)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_nguon_ns, DataType.NumberType, allowNull.NO)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_nguon_khac, DataType.NumberType, allowNull.NO)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_gia_tri_con_lai, DataType.NumberType, allowNull.NO)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_qlnn, DataType.NumberType, allowNull.YES)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_khong_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
+        return true;
+    }
+
+    private void insert_data() {
+        if (m_init_mode == DataEntryFormMode.UpdateDataState) return;
+        if (!check_validate_data_is_ok()) return;
+        form_2_us_object(m_us_dm_oto);
+        m_us_dm_oto.Insert();
+        m_lbl_mess.Text = "Thêm bản ghi thành công!";
+        reset_control();
+        load_data_to_grid();
+    }
+
+    private void update_data() {
+        if (m_hdf_id.Value == "") {
+            m_lbl_mess.Text = "Bạn phải chọn nội dung cần Cập nhật!";
+            return;
+        }
+        if (!check_validate_data_is_ok()) return;
+        form_2_us_object(m_us_dm_oto);
+        m_us_dm_oto.Update();
+        reset_control();
+        m_lbl_mess.Text = "Cập nhật dữ liệu thành công!";
+        m_grv_dm_oto.EditIndex = -1;
+        m_init_mode = DataEntryFormMode.ViewDataState;
+        load_data_to_grid();
+    }
+
     private void search_oto(string ip_str_tu_khoa) {
-        m_us_dm_oto.search_oto(ip_str_tu_khoa, m_ds_dm_oto);
+        m_us_dm_oto.FillDatasetBySearch(
+            m_ds_dm_oto
+            ,ip_str_tu_khoa
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA);
         m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
         m_grv_dm_oto.DataBind();
         if (m_ds_dm_oto.DM_OTO.Rows.Count == 0) m_lbl_thong_bao.Text = "Không có ô tô nào thỏa mãn!";
@@ -210,16 +254,16 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             if (!IsPostBack) {
                 
                 WinFormControls.load_data_to_cbo_bo_tinh(
-                     WinFormControls.eTAT_CA.YES
+                     WinFormControls.eTAT_CA.NO
                      , m_ddl_bo_tinh);
                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_ddl_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_ddl_dv_chu_quan);
                 WinFormControls.load_data_to_cbo_don_vi_su_dung(
                     m_ddl_dv_chu_quan.SelectedValue
                     , m_ddl_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_ddl_dv_sd_ts);
                 load_2_cbo_loaits();
                 load_data_trang_thai();
@@ -236,12 +280,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
-            if (m_init_mode == DataEntryFormMode.UpdateDataState) return;
-            form_2_us_object(m_us_dm_oto);
-            m_us_dm_oto.Insert();
-            m_lbl_mess.Text = "Thêm bản ghi thành công";
-            reset_control();
-            load_data_to_grid();
+            insert_data();
+            
         }
         catch (Exception v_e)
         {
@@ -252,18 +292,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
-            if (m_hdf_id.Value == "")
-            {
-                m_lbl_mess.Text = "Bạn phải chọn nội dung cần Cập nhật!";
-                return;
-            }
-            form_2_us_object(m_us_dm_oto);
-            m_us_dm_oto.Update();
-            reset_control();
-            m_lbl_mess.Text = "Cập nhật dữ liệu thành công!";
-            m_grv_dm_oto.EditIndex = -1;
-            m_init_mode = DataEntryFormMode.ViewDataState;
-            load_data_to_grid();
+            update_data();
         }
         catch (System.Exception v_e)
         {
@@ -313,12 +342,12 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         try {
              WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_ddl_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_ddl_dv_chu_quan);
                 WinFormControls.load_data_to_cbo_don_vi_su_dung(
                     m_ddl_dv_chu_quan.SelectedValue
                     , m_ddl_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_ddl_dv_sd_ts);
         }
         catch (Exception v_e) {
@@ -332,7 +361,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                     m_ddl_dv_chu_quan.SelectedValue
                     , m_ddl_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_ddl_dv_sd_ts);
         }
         catch (Exception v_e) {
