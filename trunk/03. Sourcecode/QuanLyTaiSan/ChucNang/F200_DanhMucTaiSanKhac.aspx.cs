@@ -24,7 +24,8 @@ public partial class Default2 : System.Web.UI.Page {
     #region Private Methods
     private void load_data_2_grid() {
         try {
-            m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac);
+            m_ds_tai_san_khac.DM_TAI_SAN_KHAC.Clear();
+            m_us_tai_san_khac.search(m_txt_tim_kiem.Text.Trim(), m_ds_tai_san_khac);
             m_grv_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
             m_grv_tai_san_khac.DataBind();
         }
@@ -111,6 +112,7 @@ public partial class Default2 : System.Web.UI.Page {
         m_cbo_trang_thai_tai_san.DataBind();
     }
     private void reset_control() {
+        m_lbl_mess.Text = "";
         m_txt_ten_tai_san.Text = "";
         m_txt_ma_tai_san.Text = "";
         m_txt_ky_hieu.Text = "";
@@ -182,7 +184,7 @@ public partial class Default2 : System.Web.UI.Page {
         try {
             if (hdf_id.Value.Trim().Equals("")) {
                 m_lbl_mess.Visible = true;
-                m_lbl_mess.Text = "Chua chon dong de cap nhat";
+                m_lbl_mess.Text = "Bạn chưa chọn tài sản để cập nhật!";
                 return;
             }
             form_2_us_object();
@@ -192,6 +194,7 @@ public partial class Default2 : System.Web.UI.Page {
             hdf_id.Value = "";
             reset_control();            
             set_form_mode();
+            m_lbl_mess.Text = "Cập nhật thành công!";
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(v_e);
@@ -224,7 +227,7 @@ public partial class Default2 : System.Web.UI.Page {
             form_2_us_object();
             m_us_tai_san_khac.Insert();
             load_data_2_grid();
-            m_lbl_mess.Text = "Tạo mới thành công";
+            m_lbl_mess.Text = "Tạo mới thành công!";
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(v_e);
@@ -289,11 +292,9 @@ public partial class Default2 : System.Web.UI.Page {
         }
     }
 
-    protected void Button1_Click(object sender, EventArgs e) {
+    protected void m_cmd_search_Click(object sender, EventArgs e) {
         try {
-            m_us_tai_san_khac.search(m_txt_tim_kiem.Text, m_ds_tai_san_khac);
-            m_grv_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
-            m_grv_tai_san_khac.DataBind();
+            load_data_2_grid();
         }
         catch (Exception v_e) {
             
@@ -322,5 +323,8 @@ public partial class Default2 : System.Web.UI.Page {
             CSystemLog_301.ExceptionHandle(v_e);
         }
         
+    }
+    protected void m_txt_khong_kinh_doanh_TextChanged(object sender, EventArgs e) {
+
     }
 }
