@@ -124,9 +124,12 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            if (m_cbo_dia_chi.SelectedValue == null)
+            if (m_cbo_dia_chi.SelectedValue.Equals(CONST_QLDB.KHONG_CO_DU_LIEU))
             {
                 m_lbl_mess.Text = "Bạn phải chọn Địa Chỉ Đất!";
+                m_lbl_mess.Visible = true;
+                m_grv_dat_history.DataSource = null;
+                m_grv_dat_history.Visible = false;
                 return false;
             }
         }
@@ -140,38 +143,37 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            string v_id_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedValue;
-            string v_id_don_vi_su_dung = m_cbo_don_vi_su_dung_tai_san.SelectedValue;
-            string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
+            string v_id_dat=m_cbo_dia_chi.SelectedValue;
+            string v_id_trang_thai=m_cbo_trang_thai.SelectedValue;
             DS_V_DM_DAT_HISTORY v_ds_v_dm_dat_history = new DS_V_DM_DAT_HISTORY();
             US_V_DM_DAT_HISTORY v_us_v_dm_dat_history = new US_V_DM_DAT_HISTORY();
-            if (v_id_don_vi_su_dung.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
+            if (v_id_trang_thai.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
             {
-                v_us_v_dm_dat_history.FillDataset(v_ds_v_dm_dat_history, "where id_trang_thai = " + v_id_trang_thai);
-            }
-            else if (!v_id_don_vi_su_dung.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
-            {
-                if (v_id_don_vi_chu_quan.Equals(CONST_QLDB.ID_TAT_CA.ToString()))
+                if (v_id_dat.Equals(CONST_QLDB.KHONG_CO_DU_LIEU))
                 {
-                    v_us_v_dm_dat_history.FillDataset(v_ds_v_dm_dat_history, "where id_trang_thai = " + v_id_trang_thai + " and id_don_vi_su_dung = " + v_id_don_vi_su_dung);
+                    m_lbl_thong_bao.Text = "Không có dữ liệu phù hợp!";
+                    m_lbl_thong_bao.Visible = true;
+                    m_grv_dat_history.Visible = false;
+                    return;
                 }
                 else
                 {
-                    v_us_v_dm_dat_history.FillDataset(v_ds_v_dm_dat_history, "where id_don_vi_chu_quan = " + v_id_don_vi_chu_quan + " and id_don_vi_su_dung = " + v_id_don_vi_su_dung + " and id_trang_thai = " + v_id_trang_thai);
+                    v_us_v_dm_dat_history.FillDataset(v_ds_v_dm_dat_history, "where id_dat = " + v_id_dat);
                 }
-
             }
-            //// v_us_dm_tai_san_khac.FillDataset(v_ds_dm_tai_san_khac, "where id_don_vi_su_dung=" + v_id_don_vi_su_dung + " and id_don_vi_chu_quan=" + v_id_don_vi_chu_quan + " and id_trang_thai=" + v_id_trang_thai);
-            ////string cmd = "select dm_tai_san_khac.* from cm_dm_tu_dien join dm_tai_san_khac on cm_dm_tu_dien.id=dm_tai_san_khac.id_trang_thai where ( dm_tai_san_khac.nguon_ns+dm_tai_san_khac.nguon_khac >=500000000) and dm_tai_san_khac.id_trang_thai in (select id from cm_dm_TU_DIEN where ma_tu_dien='" + m_cbo_trang_thai.SelectedValue + "')";
-            //System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(cmd);
-            //v_us_dm_tai_san_khac.FillDatasetByCommand(v_ds_dm_tai_san_khac, command);
+            else
+            {
+                v_us_v_dm_dat_history.FillDataset(v_ds_v_dm_dat_history, "where id_dat = " + v_id_dat + " and id_trang_thai = " + v_id_trang_thai);
+            }
             if (v_ds_v_dm_dat_history.V_DM_DAT_HISTORY.Count != 0)
             {
                 m_grv_dat_history.DataSource = v_ds_v_dm_dat_history.V_DM_DAT_HISTORY;
+               m_grv_dat_history.Visible = true;
                 m_grv_dat_history.DataBind();
             }
             else
             {
+                m_grv_dat_history.DataSource = null;
                 m_grv_dat_history.Visible = false;
                 m_lbl_thong_bao.Text = "Không có dữ liệu phù hợp";
             }
@@ -190,6 +192,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
         {
             if (!IsPostBack)
             {
+                m_lbl_thong_bao.Visible = false;
                 WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.YES
                     , m_cbo_bo_tinh);
@@ -227,6 +230,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
+            m_grv_dat_history.Visible = false;
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
@@ -247,6 +251,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
+            m_grv_dat_history.Visible = false;
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                 m_cbo_don_vi_chu_quan.SelectedValue
@@ -267,6 +272,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
+            m_grv_dat_history.Visible = false;
             m_lbl_mess.Text = "";
             load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
         }
@@ -279,6 +285,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
+            m_lbl_thong_bao.Text = "";
             if (check_validate_data_is_ok() == false)
             {
                 return;
@@ -305,6 +312,20 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            m_grv_dat_history.Visible = false;
+            m_lbl_mess.Visible = false;
+            m_lbl_thong_bao.Visible = false;
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
 
+    
 }
