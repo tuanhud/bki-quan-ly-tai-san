@@ -1,7 +1,43 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F302_khau_hao_nha.aspx.cs" Inherits="ChucNang_F302_khau_hao_nha" %>
 
+<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <script type="text/javascript">
+        $(function () {
+            $(".tb").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "../ChucNang/PersonService.asmx/GetNha",
+                        data: "{ 'name_prefix': '" + request.term + "', 'ip_dc_id_dat': '"
+                        + document.getElementById('<%= m_cbo_thuoc_khu_dat.ClientID%>').value + "' }",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        dataFilter: function (data) { return data; },
+                        success: function (data) {
+                            response($.map(data.d, function (item) {
+                                return {
+                                    value: item.strTEN_TAI_SAN,
+                                    dcID: item.dcID
+                                }
+                            }))
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                },
+                minLength: 1,
+                select: function (event, ui) {
+                    document.getElementById("<%= m_hdf_id.ClientID%>").value = ui.item.dcID;
+                    console.log(ui.item.dcID);
+                }
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -26,8 +62,8 @@
                             <span class="cssManField">Bộ, tỉnh</span>
                         </td>
                         <td style="width: 29%" align="left">
-                            <asp:DropDownList ID="m_cbo_bo_tinh" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
-                                AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_bo_tinh_up" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                                AutoPostBack="True" OnSelectedIndexChanged="m_cbo_bo_tinh_up_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td style="width: 1%">
@@ -36,8 +72,8 @@
                             <span class="cssManField">Đơn vị chủ quản</span>
                         </td>
                         <td align="left" style="width: 29%;">
-                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
-                                AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan_up" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                                AutoPostBack="True" OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_up_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td style="width: 1%">
@@ -48,8 +84,8 @@
                             <span class="cssManField">Đơn vị sử dụng</span>
                         </td>
                         <td align="left">
-                            <asp:DropDownList ID="m_cbo_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
-                                AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_up" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                                AutoPostBack="True" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_up_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td>
@@ -58,7 +94,8 @@
                             <span class="cssManField">Trạng thái nhà</span>
                         </td>
                         <td align="left">
-                            <asp:DropDownList ID="m_cbo_trang_thai_nha" runat="server" Width="85%" ValidationGroup="m_vlg_nha">
+                            <asp:DropDownList ID="m_cbo_trang_thai_nha_up" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                                Enabled="false">
                             </asp:DropDownList>
                         </td>
                         <td>
@@ -78,8 +115,8 @@
                             <span class="cssManField">Nhà</span>
                         </td>
                         <td align="left">
-                            <asp:TextBox ID="m_txt_nha" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
-                                ValidationGroup="m_vlg_nha"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_nha" class="tb" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                                AutoPostBack="True" OnTextChanged="m_txt_nha_TextChanged"></asp:TextBox>
                         </td>
                         <td>
                         </td>
@@ -187,15 +224,15 @@
                             <span>Mã phiếu</span>
                         </td>
                         <td colspan="1" style="width: 29%">
-                            <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox csscurrency"
-                                Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
+                                ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
                                 ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_nha" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                            <span>Giá trị khấu hao:</span>
+                            <span>Giá trị khấu hao </span>
                         </td>
                         <td>
                             <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
@@ -209,22 +246,22 @@
                     </tr>
                     <tr>
                         <td colspan="1" align="right" class="cssManField">
-                            <span>Ngày lập:</span>
+                            <span>Ngày lập </span>
                         </td>
                         <td style="width: 29%" align="left">
-                            <asp:TextBox ID="m_txt_ngay_lap" runat="server" CssClass="cssTextBox csscurrency"
-                                Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_ngay_lap" runat="server" CssClass="cssTextBox" Width="85%"
+                                ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%" class="cssManField">
-                            <asp:RegularExpressionValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
-                                ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="*" ValidationGroup="m_vlg_nha"></asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
+                                ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" class="cssManField">
-                            <span>Ngày duyệt:</span>
+                            <span>Ngày duyệt </span>
                         </td>
                         <td style="width: 29%" align="left">
-                            <asp:TextBox ID="m_txt_ngay_duyet" runat="Server" CssClass=" cssTextBox csscurrency"
-                                Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_ngay_duyet" runat="Server" CssClass=" cssTextBox" Width="85%"
+                                ValidationGroup="m_vlg_nha"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ControlToValidate="m_txt_ngay_duyet"
@@ -235,12 +272,11 @@
                     <tr>
                         <td colspan="4" align="center">
                             <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_nha" />&nbsp;
-                            <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Cập nhật(u)" ValidationGroup="m_vlg_nha" />&nbsp;
+                                Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_nha" OnClick="m_cmd_tao_moi_Click" />
+                            &nbsp; &nbsp;
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Xóa trắng(r)" />
-                            <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
+                                Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
+                            <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
                         </td>
                         <td>
                         </td>
@@ -253,43 +289,43 @@
     </table>
     <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
         <tr>
-            <td class="cssPageTitleBG" colspan="6" >
+            <td class="cssPageTitleBG" colspan="6">
                 <span class="cssPageTitle">Chọn nhà</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
         <tr>
             <td align="right" colspan="1" style="width: 20%">
-                <span class="cssManField">Bộ, tỉnh:</span>
+                <span class="cssManField">Bộ, tỉnh </span>
             </td>
             <td style="width: 30%" colspan="1">
-                <asp:DropDownList ID="m_ddl_bo_tinh" Width="85%" runat="Server" AutoPostBack="True"
-                    TabIndex="1">
+                <asp:DropDownList ID="m_cbo_bo_tinh_down" Width="85%" runat="Server" AutoPostBack="True"
+                    TabIndex="1" OnSelectedIndexChanged="m_cbo_bo_tinh_down_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td align="right" style="width: 20%" colspan="1">
-                <span class="cssManField">Đơn vị chủ quản:</span>
+                <span class="cssManField">Đơn vị chủ quản </span>
             </td>
-            <td style="width: 20%" colspan="1">
-                <asp:DropDownList ID="m_ddl_don_vi_chu_quan" Width="85%" runat="Server" AutoPostBack="True"
-                    TabIndex="2">
+            <td style="width: 30%" colspan="1">
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan_down" Width="85%" runat="Server" AutoPostBack="True"
+                    TabIndex="2" OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_down_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td align="right">
-                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
+                <span class="cssManField">Đơn vị sử dụng tài sản </span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="3">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_down" Width="85%" runat="Server" AutoPostBack="True"
+                    TabIndex="3" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_down_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td align="right">
-                <span class="cssManField">Địa chỉ đất: </span>
+                <span class="cssManField">Địa chỉ đất </span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="90%" TabIndex="4">
+                <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -298,11 +334,11 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
-                    Height="24px" Text="Tìm kiếm" Width="98px" />
+                    Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
-                    Height="25px" Text="Xuất Excel" Width="98px" />
+                    Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
             </td>
             <td align="left">
             </td>
@@ -316,7 +352,7 @@
             <td align="center" colspan="4" style="height: 450px;" valign="top">
                 <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true">
+                    EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                     <Columns>
                         <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>
@@ -342,29 +378,26 @@
                         </asp:TemplateField>
                         <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
                         <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
-                        <asp:TemplateField>
-                            <HeaderTemplate>
-                                Địa chỉ</HeaderTemplate>
-                            <ItemTemplate>
-                                <%%></ItemTemplate>
-                        </asp:TemplateField>
+                        <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" ItemStyle-HorizontalAlign="Center" />
                         <asp:BoundField HeaderText="Cấp hạng" DataField="CAP_HANG" ItemStyle-HorizontalAlign="Center" />
                         <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
                         <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
                             ItemStyle-HorizontalAlign="Center" />
-                        <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
+                        <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
-                                        <td colspan="3" style="height: 20px">
-                                            Giá trị theo sổ kế toán
+                                        <td colspan="3" style="height: 50px">
+                                            GIÁ TRỊ THEO SỔ KẾ TOÁN
+                                            <br />
+                                            (ngàn đồng)
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
                                             Nguyên giá
                                         </td>
-                                        <td rowspan="2" style="width: 33%; height: 55px">
+                                        <td rowspan="2" style="width: 33%; height: 60px">
                                             Giá trị còn lại
                                         </td>
                                     </tr>
@@ -387,7 +420,7 @@
                                     <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
                                         <%# Eval("NGUON_KHAC", "{0:#,##0.00}")%>
                                     </td>
-                                    <td style="width: 33%; height: 50px;">
+                                    <td style="width: 33%; height: 60px;">
                                         <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0.00}")%>
                                     </td>
                                 </table>
