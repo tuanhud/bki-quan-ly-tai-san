@@ -12,6 +12,8 @@ using IP.Core.IPUserService;
 using WebDS.CDBNames;
 using IP.Core.IPCommon;
 using QltsForm;
+using IP.Core.QltsFormControls;
+
 
 public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.Page
 {
@@ -52,33 +54,47 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(ex);
         }
     }
+
+    private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter) {
+        op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
+        op_obj_parameter.strTEN_BO_TINH = m_cbo_bo_tinh.SelectedItem.Text;
+        op_obj_parameter.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_quan_ly.SelectedValue);
+        op_obj_parameter.strTEN_DON_VI_CHU_QUAN = m_cbo_don_vi_quan_ly.SelectedItem.Text;
+        op_obj_parameter.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
+        op_obj_parameter.strTEN_DON_VI_SU_DUNG = m_cbo_don_vi_su_dung.SelectedItem.Text;
+        op_obj_parameter.dcID_TRANG_THAI_TAI_SAN = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+        op_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = m_cbo_trang_thai.SelectedItem.Text;
+        op_obj_parameter.strKEY_SEARCH = m_txt_tu_khoa.Text;
+            
+    }
     private void export_excel()
         {
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(Request.QueryString["ID"]);
-            string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
-            string v_str_don_vi_chu_quan = m_cbo_don_vi_quan_ly.SelectedItem.Text;
-            decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
-            string v_str_output_file ="";
             f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
-            if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==584) 
+            CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
+            form_2_objExcelAssetParameters(v_obj_parameter);
+            
+
+            if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==ID_TRANG_THAI_OTO.DANG_SU_DUNG) 
             {
-                v_f400_bc_dm_oto.expor_excel(f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
-                                        , v_str_bo_tinh
-                                        , v_str_don_vi_chu_quan
-                                        , v_dc_id_dv_su_dung
-                                        , ref v_str_output_file);
+                v_obj_parameter.dcID_TRANG_THAI_TAI_SAN = ID_TRANG_THAI_OTO.DANG_SU_DUNG;
+                v_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = "Đang sử dụng";
+                v_f400_bc_dm_oto.export_excel(
+                    f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
+                    ,ref v_obj_parameter );
             }
-            else if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==581)
+            else if (CIPConvert.ToDecimal(Request.QueryString["ID"].ToString())==ID_TRANG_THAI_OTO.DE_NGHI_XU_LY)
             {
-                v_f400_bc_dm_oto.expor_excel(f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
-                                        , v_str_bo_tinh
-                                        , v_str_don_vi_chu_quan
-                                        , v_dc_id_dv_su_dung
-                                        , ref v_str_output_file);
+                v_obj_parameter.dcID_TRANG_THAI_TAI_SAN = ID_TRANG_THAI_OTO.DE_NGHI_XU_LY;
+                v_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = "Đề nghị xử lý";
+                v_f400_bc_dm_oto.export_excel(
+                    f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
+                    , ref v_obj_parameter);
+                
             }
-            Response.Clear();    
-            v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;        
-            Response.Redirect(v_str_output_file, false);
+            Response.Clear();
+            v_obj_parameter.strFILE_NAME_RESULT = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+            Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);
         }
     private void load_data_to_cbo_don_vi_quan_ly()
     {

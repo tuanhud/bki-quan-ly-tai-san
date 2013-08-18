@@ -677,6 +677,30 @@ namespace WebUS
             v_cstore.fillDataSetByCommand(this, op_ds_oto);
         }
 
+
+        public void FillDataset(
+       decimal ip_dc_bo_tinh
+       , decimal ip_dc_don_vi_chu_quan
+       , decimal ip_dc_don_vi_su_dung
+        , decimal ip_dc_id_loai_tai_san
+       , decimal ip_id_trang_thai
+    
+       , string ip_str_tu_khoa
+       , DS_V_DM_OTO op_ds_v_dm_oto) {
+
+           CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_OTO_Search");
+
+            v_obj_procedure.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_bo_tinh);
+            v_obj_procedure.addDecimalInputParam("@ip_id_dvql", ip_dc_don_vi_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_id_dvsd", ip_dc_don_vi_su_dung);
+            v_obj_procedure.addDecimalInputParam("@ip_id_loai_tai_san", ip_dc_id_loai_tai_san);
+            
+            v_obj_procedure.addDecimalInputParam("@ip_id_trang_thai", ip_id_trang_thai);
+            
+            v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_v_dm_oto);
+        }
         #endregion
 
     }
