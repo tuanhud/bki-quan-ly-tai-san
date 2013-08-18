@@ -137,7 +137,7 @@
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Ngày, tháng, năm sử dụng</span>
+                            <span class="cssManField">Năm sử dụng</span>
                         </td>
                         <td align="left" style="width: 30%;">
                             <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" 
@@ -154,7 +154,7 @@
                         <td>
                         </td>
                         <td>
-                            GIÁ TRỊ THEO SỔ KẾ TOÁN
+                            GIÁ TRỊ THEO SỔ KẾ TOÁN (VNĐ)
                         </td>
                         <td>
                         </td>
@@ -167,7 +167,7 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Nguyên giá nguồn NS (VNĐ)</span>
+                            <span class="cssManField">Nguyên giá nguồn NS</span>
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:TextBox ID="m_txt_nguyen_gia_nguon_ns" runat="server" CssClass="cssTextBox csscurrency"
@@ -180,7 +180,7 @@
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Nguyên giá nguồn khác (VNĐ)</span>
+                            <span class="cssManField">Nguyên giá nguồn khác</span>
                         </td>
                         <td align="left" style="width: 30%;">
                             <asp:TextBox ID="m_txt_nguyen_gia_nguon_khac" runat="server" CssClass="cssTextBox csscurrency"
@@ -195,7 +195,7 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Giá trị còn lại (VNĐ)</span>
+                            <span class="cssManField">Giá trị còn lại</span>
                         </td>
                         <td style="width: 30%" align="left">
                             <asp:TextBox ID="m_txt_gia_tri_con_lai" runat="server" CssClass="cssTextBox csscurrency"
@@ -249,7 +249,7 @@
                             <span class="cssManField">Quản lý nhà nước</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox" align="left"
+                            <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox csscurrency" align="left"
                                 Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -267,10 +267,10 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Hoạt động sự nghiệp (Kinh doanh)</span>
+                            <span class="cssManField">HĐSN (Kinh doanh)</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox" align="left"
+                            <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency" align="left"
                                 Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -280,11 +280,12 @@
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                         </td>
                         <td align="right" style="width: 15%">
-                            <span class="cssManField">Hoạt động sự nghiệp (Không kinh doanh)</span>
+                            <span class="cssManField">HĐSN(Không kinh doanh)</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox" align="left"
-                                Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency" align="left"
+                                Width="85%" ValidationGroup="m_vlg_tsk" 
+                                ontextchanged="m_txt_khong_kinh_doanh_TextChanged"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                             (*)
@@ -298,7 +299,7 @@
                             <span class="cssManField">Khác</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox" Width="85%" align="left"
+                            <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox csscurrency" Width="85%" align="left"
                                 ValidationGroup="m_vlg_tsk"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -372,8 +373,8 @@
             <td align="right">
             </td>
             <td align="left">
-                <asp:Button ID="Button1" runat="server" AccessKey="s" CssClass="cssButton"
-                    Height="24px" Text="Tìm kiếm" Width="98px" onclick="Button1_Click"/>
+                <asp:Button ID="m_cmd_search" runat="server" AccessKey="s" CssClass="cssButton"
+                    Height="24px" Text="Tìm kiếm" Width="98px" onclick="m_cmd_search_Click"/>
             </td>
             <td align="left">
                 <asp:Button ID="Button2" runat="server" CausesValidation="False" CssClass="cssButton"
