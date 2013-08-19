@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel" runat="server">
@@ -43,6 +43,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td align="right">
+                        <span class="cssManField">Loại hình đơn vị:</span>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%">
+                        </asp:DropDownList>
+                    </td>
                     <td align="right" style="width: 18%">
                         <span class="cssManField">Đơn vị sử dụng tài sản:</span>
                     </td>
@@ -50,6 +57,8 @@
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" TabIndex="3">
                         </asp:DropDownList>
                     </td>
+                </tr>
+                <tr>
                     <td align="right">
                         <span class="cssManField">Trạng thái: </span>
                     </td>
