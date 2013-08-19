@@ -213,6 +213,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
     {
         try
         {
+            System.Threading.Thread.Sleep(2000);
             m_lbl_thong_bao.Text = "";
             load_data_to_grid_tai_san_khac();
         }
