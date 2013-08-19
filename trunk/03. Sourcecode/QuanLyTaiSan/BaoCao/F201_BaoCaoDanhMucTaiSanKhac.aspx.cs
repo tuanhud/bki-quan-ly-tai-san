@@ -375,6 +375,7 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
+        Thread.Sleep(2000);
         export_excel();
     }
 }
