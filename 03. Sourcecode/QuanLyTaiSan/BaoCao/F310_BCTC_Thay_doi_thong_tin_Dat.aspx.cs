@@ -90,25 +90,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
         m_cbo_trang_thai.DataBind();
         m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
     }
-    private void load_data_to_cbo_dia_chi(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_str_bo_tinh)
-    {
-     
-            DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
-            US_DM_DAT v_us_dm_dat = new US_DM_DAT();
-            string v_str_user_name = Session[SESSION.UserName].ToString();
-            v_us_dm_dat.FillDatasetByID_DonVi(
-                CIPConvert.ToDecimal(ip_str_bo_tinh)
-                , CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan)
-                , CIPConvert.ToDecimal(ip_str_id_don_vi_su_dung)
-                , v_str_user_name
-                , v_ds_dm_dat);
-            m_cbo_dia_chi.DataSource = v_ds_dm_dat.DM_DAT;
-            m_cbo_dia_chi.DataTextField = DM_DAT.DIA_CHI;
-            m_cbo_dia_chi.DataValueField = DM_DAT.ID;
-            m_cbo_dia_chi.DataBind();
-            m_cbo_dia_chi.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-       
-    }
+   
     private bool check_validate_data_is_ok()
     {
         
@@ -178,7 +160,13 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
                     , m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_su_dung_tai_san);
-                load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+                WinFormControls.load_data_to_cbo_dia_chi(
+                     CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                   , WinFormControls.eTAT_CA.YES
+                   , m_cbo_dia_chi);
                 load_data_to_cbo_trang_thai();
             }
         }
@@ -213,7 +201,13 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
                 , m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES
                 , m_cbo_don_vi_su_dung_tai_san);
-            load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_dia_chi(
+                     CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                   , WinFormControls.eTAT_CA.YES
+                   , m_cbo_dia_chi);
         }
         catch (System.Exception v_e)
         {
@@ -231,10 +225,13 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
                 , m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES
                 , m_cbo_don_vi_su_dung_tai_san);
-            load_data_to_cbo_dia_chi(
-                m_cbo_don_vi_su_dung_tai_san.SelectedValue
-                , m_cbo_don_vi_chu_quan.SelectedValue
-                , m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_dia_chi(
+                     CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                   , WinFormControls.eTAT_CA.YES
+                   , m_cbo_dia_chi);
         }
         catch (System.Exception v_e)
         {
@@ -247,7 +244,13 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
         {
             
             m_lbl_mess.Text = "";
-            load_data_to_cbo_dia_chi(m_cbo_don_vi_su_dung_tai_san.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
+            WinFormControls.load_data_to_cbo_dia_chi(
+                     CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                   , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                   , WinFormControls.eTAT_CA.YES
+                   , m_cbo_dia_chi);
         }
         catch (System.Exception v_e)
         {

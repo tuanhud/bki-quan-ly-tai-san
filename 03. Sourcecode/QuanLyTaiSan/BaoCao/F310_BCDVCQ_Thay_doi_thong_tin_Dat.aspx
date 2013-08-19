@@ -65,7 +65,8 @@
                 <span class="cssManField">Trạng thái:</span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%">
+                <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" 
+                    onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
