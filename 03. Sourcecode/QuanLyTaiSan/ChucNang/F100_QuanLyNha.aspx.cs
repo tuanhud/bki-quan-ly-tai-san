@@ -12,6 +12,7 @@ using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPException;
 using WebDS.CDBNames;
+using System.Threading;
 
 public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
 {
@@ -342,6 +343,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     {
         try
         {
+            Thread.Sleep(5000);
             load_form_data();
             m_txt_tu_khoa.Focus();
         }
