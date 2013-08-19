@@ -139,8 +139,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         try
         {
             if (check_validate_data_is_ok() == false) return;
-            DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
-            US_DM_NHA v_us_dm_nha = new US_DM_NHA();
+            DS_V_DM_NHA v_ds_v_dm_nha = new DS_V_DM_NHA();
+            US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
             string v_id_dat = m_cbo_dia_chi.SelectedValue;
             string id_loai_bao_cao = "";
             if (Request.QueryString["id_loai_bao_cao"] != null)
@@ -151,17 +151,33 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             {
                 case "1":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DANG_SU_DUNG);
+                    //v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DANG_SU_DUNG);
+                    v_us_v_dm_nha.FillDatasetLoadDataToGridNha(
+                        CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                        , ID_TRANG_THAI_NHA.DANG_SU_DUNG
+                        , v_ds_v_dm_nha
+                        );
                     break;
                 case "2":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
-                    v_us_dm_nha.FillDataset(v_ds_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
+                    //v_us_dm_dm_nha.FillDataset(v_ds_v_dm_nha, "where id_dat = " + v_id_dat + " and id_trang_thai = " + ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
+                    v_us_v_dm_nha.FillDatasetLoadDataToGridNha(
+                        CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                        , ID_TRANG_THAI_NHA.DE_NGHI_XU_LY
+                        , v_ds_v_dm_nha
+                    );
                     break;
                 //case "3":
-                //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
-                //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
+                // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
+                // m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
             }
-            m_grv_nha.DataSource = v_ds_dm_nha.DM_NHA;
+            m_grv_nha.DataSource = v_ds_v_dm_nha.V_DM_NHA;
             m_grv_nha.DataBind();
         }
         catch (System.Exception v_e)
@@ -328,7 +344,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            if (check_validate_data_is_ok()==false)
+            if (check_validate_data_is_ok() == false)
             {
                 return;
             }
