@@ -10,6 +10,7 @@ using WebDS;
 using IP.Core.IPCommon;
 using WebUS;
 using IP.Core.WinFormControls;
+using System.Threading;
 
 public partial class Default2 : System.Web.UI.Page {
     #region Member
@@ -331,7 +332,9 @@ public partial class Default2 : System.Web.UI.Page {
 
     protected void m_cmd_search_Click(object sender, EventArgs e) {
         try {
+            Thread.Sleep(2000);
             load_data_2_grid();
+            m_txt_tim_kiem.Focus();
         }
         catch (Exception v_e) {
             
