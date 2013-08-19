@@ -520,6 +520,21 @@ public class US_V_DM_TAI_SAN_KHAC : US_Object
 
     }
 
+    public void FillDataSetLoadDataToGridTaiSanKhac(
+        decimal ip_dc_id_bo_tinh
+        ,decimal ip_dc_id_don_vi_chu_quan
+        ,decimal ip_dc_id_don_vi_su_dung
+        ,decimal ip_dc_id_trang_thai
+        ,DS_V_DM_TAI_SAN_KHAC op_dat_v_dm_tai_san_khac)
+    {
+        CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Load_data_to_grid_tai_san_khac");
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh",ip_dc_id_bo_tinh);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan",ip_dc_id_don_vi_chu_quan);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_dc_id_don_vi_su_dung);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
+        v_obj_procedure.fillDataSetByCommand(this, op_dat_v_dm_tai_san_khac);
+    }
+
     #endregion
 	}
 }
