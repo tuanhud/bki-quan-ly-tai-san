@@ -177,7 +177,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_nguyen_gia" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_nguyen_gia" runat="server" ControlToValidate="m_txt_nguyen_gia"
@@ -188,7 +188,7 @@
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:TextBox ID="m_txt_nguyen_gia_nguon_khac" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_nguyen_gia_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
@@ -201,7 +201,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_gia_tri_con_lai" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_gia_tri_con_lai" runat="server" ControlToValidate="m_txt_gia_tri_con_lai"
@@ -235,7 +235,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_so_tang" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
-                                        ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                        ValidationGroup="m_vlg_nha">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_so_tang" runat="server" ControlToValidate="m_txt_so_tang"
@@ -246,7 +246,7 @@
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:TextBox ID="m_txt_dien_tich_xay_dung" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_dien_tich_xay_dung" runat="server" ControlToValidate="m_txt_dien_tich_xay_dung"
@@ -259,7 +259,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_tong_dien_tich_xay_dung" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_tong_dien_tich_xay_dung" runat="server" ControlToValidate="m_txt_tong_dien_tich_xay_dung"
@@ -400,11 +400,14 @@
                                 </td>
                                 <td colspan="4" align="left">
                                     <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_nha" />&nbsp;
+                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" 
+                                        ValidationGroup="m_vlg_nha" Height="24px" />&nbsp;
                                     <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_nha" />&nbsp;
+                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" 
+                                        ValidationGroup="m_vlg_nha" Height="24px" Visible="False" />&nbsp;
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
+                                        Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" 
+                                        Height="24px" />
                                     <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
                                 </td>
                             </tr>
