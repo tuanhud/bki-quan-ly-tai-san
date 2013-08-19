@@ -26,30 +26,12 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                WinFormControls.load_data_to_cbo_bo_tinh(
-                     WinFormControls.eTAT_CA.YES
-                     , m_cbo_bo_tinh_up);
-                WinFormControls.load_data_to_cbo_bo_tinh(
-                     WinFormControls.eTAT_CA.YES
-                     , m_cbo_bo_tinh_down);
-                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                    m_cbo_bo_tinh_up.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_chu_quan_up);
-                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                    m_cbo_bo_tinh_down.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_chu_quan_down);
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                    m_cbo_don_vi_chu_quan_up.SelectedValue
-                    , m_cbo_bo_tinh_up.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung_up);
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                    m_cbo_don_vi_chu_quan_down.SelectedValue
-                    , m_cbo_bo_tinh_down.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung_down);
+                load_data_to_bo_tinh_up();
+                load_data_to_bo_tinh_down();
+                load_data_to_dv_chu_quan_up();
+                load_data_to_dv_chu_quan_down();
+                load_data_to_dv_su_dung_up();
+                load_data_to_dv_su_dung_down();
                 load_data_to_cbo_dia_chi_down(m_cbo_don_vi_su_dung_down.SelectedValue, m_cbo_don_vi_chu_quan_down.SelectedValue, m_cbo_don_vi_chu_quan_down.SelectedValue);
                 load_data_to_cbo_dia_chi_up(m_cbo_don_vi_su_dung_up.SelectedValue, m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
                 load_data_trang_thai();
@@ -59,7 +41,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-        
+
     }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
@@ -108,7 +90,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-        
+
     }
 
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e)
@@ -143,15 +125,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     {
         try
         {
-            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                m_cbo_bo_tinh_up.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_chu_quan_up);
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan_up.SelectedValue
-                , m_cbo_bo_tinh_up.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_su_dung_up);
+            load_data_to_dv_chu_quan_up();
+            load_data_to_dv_chu_quan_down();
             load_data_to_cbo_dia_chi_up(m_cbo_don_vi_su_dung_up.SelectedValue, m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
         }
         catch (Exception v_e)
@@ -163,11 +138,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     {
         try
         {
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan_up.SelectedValue
-                , m_cbo_bo_tinh_up.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_su_dung_up);
+            load_data_to_dv_su_dung_up();
             load_data_to_cbo_dia_chi_up(m_cbo_don_vi_su_dung_up.SelectedValue, m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
         }
         catch (Exception v_e)
@@ -191,15 +162,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     {
         try
         {
-            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                m_cbo_bo_tinh_down.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_chu_quan_down);
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan_down.SelectedValue
-                , m_cbo_bo_tinh_down.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_su_dung_down);
+            load_data_to_dv_chu_quan_down();
+            load_data_to_dv_su_dung_down();
             load_data_to_cbo_dia_chi_down(m_cbo_don_vi_su_dung_down.SelectedValue, m_cbo_don_vi_chu_quan_down.SelectedValue, m_cbo_bo_tinh_down.SelectedValue);
         }
         catch (Exception v_e)
@@ -212,11 +176,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     {
         try
         {
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan_down.SelectedValue
-                , m_cbo_bo_tinh_down.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_su_dung_down);
+            load_data_to_dv_su_dung_down();
             load_data_to_cbo_dia_chi_down(m_cbo_don_vi_su_dung_down.SelectedValue, m_cbo_don_vi_chu_quan_down.SelectedValue, m_cbo_bo_tinh_down.SelectedValue);
         }
         catch (Exception v_e)
@@ -283,7 +243,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
 
         v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_NHA, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
         m_cbo_trang_thai_nha_up.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-        m_cbo_trang_thai_nha_up.DataTextField =  CM_DM_TU_DIEN.TEN;
+        m_cbo_trang_thai_nha_up.DataTextField = CM_DM_TU_DIEN.TEN;
         m_cbo_trang_thai_nha_up.DataValueField = CM_DM_TU_DIEN.ID;
         m_cbo_trang_thai_nha_up.DataBind();
         m_cbo_trang_thai_nha_up.SelectedValue = ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString();
@@ -338,6 +298,54 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         m_grv_danh_sach_nha.DataBind();
     }
 
+    private void load_data_to_bo_tinh_up()
+    {
+        WinFormControls.load_data_to_cbo_bo_tinh(
+                     WinFormControls.eTAT_CA.YES
+                     , m_cbo_bo_tinh_up);
+    }
+
+    private void load_data_to_bo_tinh_down()
+    {
+        WinFormControls.load_data_to_cbo_bo_tinh(
+                     WinFormControls.eTAT_CA.YES
+                     , m_cbo_bo_tinh_down);
+    }
+
+    private void load_data_to_dv_chu_quan_up()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh_up.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan_up);
+    }
+
+    private void load_data_to_dv_chu_quan_down()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh_down.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan_down);
+    }
+
+    private void load_data_to_dv_su_dung_up()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_cbo_don_vi_chu_quan_up.SelectedValue
+                    , m_cbo_bo_tinh_up.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung_up);
+    }
+
+    private void load_data_to_dv_su_dung_down()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_cbo_don_vi_chu_quan_down.SelectedValue
+                    , m_cbo_bo_tinh_down.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung_down);
+    }
+
     private void them_moi_khau_hao(decimal ip_dc_id)
     {
         US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
@@ -365,5 +373,5 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         v_us_dm_nha.Update();
     }
     #endregion
-    
+
 }
