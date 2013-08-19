@@ -112,7 +112,7 @@
                 <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" 
                     AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    PageSize="15" ShowHeader="true" ShowFooter="true" 
+                    PageSize="15" ShowHeader="true"
                     EmptyDataText="Không có dữ liệu phù hợp"
                     onpageindexchanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                     <Columns>
@@ -122,7 +122,7 @@
                                     ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:HyperLinkField HeaderText="Tên tài sản" FooterText="Tổng cộng" DataTextField="TEN_TAI_SAN" NavigateUrl="" HeaderStyle-Width="20%"/>
+                        <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" HeaderStyle-Width="20%"/>
                         <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU"/>
                         <asp:BoundField HeaderText="Năm sản xuất" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
                         HeaderStyle-Width="3.5%">
@@ -202,4 +202,14 @@
     </ContentTemplate>
     </asp:UpdatePanel>
 </div>
+<asp:updateprogress ID="Updateprogress1" runat="server">
+        <progresstemplate>
+        <div class="cssLoadWapper">
+            <div class="cssLoadContent">
+                <img src="../Images/loadingBar.gif" alt=""/>
+                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+            </div>
+        </div>       
+        </progresstemplate>
+    </asp:updateprogress>
 </asp:Content>

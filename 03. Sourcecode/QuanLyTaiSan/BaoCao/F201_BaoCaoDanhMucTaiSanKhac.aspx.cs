@@ -11,6 +11,7 @@ using IP.Core.IPCommon;
 using WebUS;
 using QltsForm;
 using IP.Core.WinFormControls;
+using System.Threading;
 
 
 public partial class Default2 : System.Web.UI.Page
@@ -285,6 +286,7 @@ public partial class Default2 : System.Web.UI.Page
             }
             
             m_cbo_trang_thai.DataBind();
+            m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
         }
         catch (System.Exception ex)
         {
@@ -354,6 +356,7 @@ public partial class Default2 : System.Web.UI.Page
             else
             {
                 m_grv_danh_sach_tai_san_khac.Visible = true;
+                Thread.Sleep(2000);
                 load_data_to_grid();
             }
         }
