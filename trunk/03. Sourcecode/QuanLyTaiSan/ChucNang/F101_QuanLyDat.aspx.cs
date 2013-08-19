@@ -210,9 +210,11 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             fill_form_data_to_us();
             m_us_dm_dat.Insert();
+            Response.Redirect("~/ChucNang/F101_QuanLyDat.aspx");
         }
         else
         {
+
         }
 
     }
@@ -223,10 +225,11 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             fill_form_data_to_us();
             m_us_dm_dat.Update();
+            Response.Redirect("~/ChucNang/F101_QuanLyDat.aspx");
         }
         else
         {
-
+            
         }
     }
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e)
