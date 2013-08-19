@@ -284,4 +284,14 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
+    <asp:updateprogress ID="Updateprogress1" runat="server">
+        <progresstemplate>
+        <div class="cssLoadWapper">
+            <div class="cssLoadContent">
+                <img src="../Images/loadingBar.gif" alt=""/>
+                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+            </div>
+        </div>       
+        </progresstemplate>
+    </asp:updateprogress>
 </asp:Content>
