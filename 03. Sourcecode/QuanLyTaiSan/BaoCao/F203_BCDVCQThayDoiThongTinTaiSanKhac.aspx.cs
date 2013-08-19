@@ -11,6 +11,7 @@ using IP.Core.IPCommon;
 using WebUS;
 using QltsForm;
 using IP.Core.WinFormControls;
+using System.Threading;
 
 public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI.Page
 {
@@ -32,7 +33,8 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
                     , m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_su_dung_tai_san);
-                load_data_to_cbo_trang_thai();
+                //load_data_to_cbo_trang_thai();
+                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
             }
         }
         catch (System.Exception ex)
@@ -224,7 +226,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
                 m_cbo_don_vi_su_dung_tai_san.Items.Clear();
             }
         }
-    }*/
+    }
     private void load_data_to_cbo_trang_thai()
     {
         try
@@ -252,7 +254,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
             CSystemLog_301.ExceptionHandle(ex);
         }
 
-    }
+    }*/
     #endregion
 
     protected void m_grv_tai_san_khac_history_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -321,6 +323,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
             else
             {
                 m_grv_tai_san_khac_history.Visible = true;
+                Thread.Sleep(2000);
                 load_data_to_grid();
             }
         }
@@ -331,6 +334,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
+        Thread.Sleep(2000);
         export_excel();
     }
 }
