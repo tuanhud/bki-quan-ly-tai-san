@@ -46,6 +46,32 @@ namespace IP.Core.WinFormControls{
             , PHAN_LOAI_TAI_SAN
         }
 
+        public static void load_data_to_cbo_dia_chi(
+             decimal ip_dc_bo_tinh
+            , decimal ip_dc_id_don_vi_chu_quan
+            , decimal ip_dc_id_don_vi_su_dung
+            , decimal ip_dc_id_trang_thai_dat
+            , eTAT_CA ip_e_tat_ca
+            , DropDownList op_obj_cbo_dia_chi_dat) {
+            
+                DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
+                US_DM_DAT v_us_dm_dat = new US_DM_DAT();
+                string v_str_user_name = HttpContext.Current.Session[SESSION.UserName].ToString();
+                v_us_dm_dat.FillDatasetByID_DonVi(
+                    ip_dc_bo_tinh
+                    , ip_dc_id_don_vi_chu_quan
+                    , ip_dc_id_don_vi_su_dung
+                    , ip_dc_id_trang_thai_dat
+                    , v_str_user_name
+                    , v_ds_dm_dat);
+                op_obj_cbo_dia_chi_dat.DataSource = v_ds_dm_dat.DM_DAT;
+                op_obj_cbo_dia_chi_dat.DataTextField = DM_DAT.DIA_CHI;
+                op_obj_cbo_dia_chi_dat.DataValueField = DM_DAT.ID;
+                op_obj_cbo_dia_chi_dat.DataBind();
+                if (ip_e_tat_ca == eTAT_CA.YES) {
+                    op_obj_cbo_dia_chi_dat.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+                }
+        }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e_trang_thai_tai_san
             , eTAT_CA ip_e_tat_ca
