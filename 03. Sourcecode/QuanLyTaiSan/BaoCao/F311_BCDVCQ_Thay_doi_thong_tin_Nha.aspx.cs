@@ -10,4 +10,8 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
     {
 
     }
+    protected void m_grv_nha_history_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+
+    }
 }
