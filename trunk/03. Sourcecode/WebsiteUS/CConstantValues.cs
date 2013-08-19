@@ -36,6 +36,13 @@ namespace WebUS
         public const string LOAI_HINH_DON_VI = "LOAI_HINH_DON_VI"; 
     }
 
+    public class ID_TRANG_THAI_DAT {
+        public const decimal DE_NGHI_XU_LY = 594;
+        public const decimal DA_THANH_LY = 595;
+        public const decimal DE_NGHI_TRANG_CAP = 596;
+        public const decimal DANG_SU_DUNG = 597;
+    }
+
     public class ID_TRANG_THAI_NHA {
         public const decimal DE_NGHI_XU_LY = 577;
         public const decimal DA_THANH_LY = 578;

@@ -457,6 +457,7 @@ public class US_DM_DAT : US_Object
         decimal ip_dc_id_bo_tinh
         , decimal ip_dc_id_dv_chu_quan
         , decimal ip_dc_id_dv_su_dung
+        , decimal ip_dc_id_trang_thai_dat
         , string ip_str_user_name
         , DS_DM_DAT op_ds_dat) {
             CStoredProc v_obj_pr = new CStoredProc("pr_DM_DAT_search_by_id_don_vi");
@@ -464,6 +465,8 @@ public class US_DM_DAT : US_Object
             v_obj_pr.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_id_bo_tinh);
             v_obj_pr.addDecimalInputParam("@ip_id_dv_chu_quan", ip_dc_id_dv_chu_quan);
             v_obj_pr.addDecimalInputParam("@ip_id_dv_su_dung", ip_dc_id_dv_su_dung);
+            v_obj_pr.addDecimalInputParam("@ip_dc_id_trang_thai_dat", ip_dc_id_trang_thai_dat);
+
             v_obj_pr.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_pr.fillDataSetByCommand(this, op_ds_dat);
     }
