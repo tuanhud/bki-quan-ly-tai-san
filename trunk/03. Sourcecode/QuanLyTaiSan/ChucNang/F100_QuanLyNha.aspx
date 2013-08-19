@@ -3,13 +3,13 @@
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
+<asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
+</asp:content>
+<asp:content id="Content2" contentplaceholderid="MainContent" runat="Server">
+    <asp:scriptmanager id="ScriptManager1" runat="server">
+    </asp:scriptmanager>
+    <asp:updatepanel id="UpdatePanel1" runat="server">
+        <contenttemplate>
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
@@ -619,6 +619,16 @@
                     </td>
                 </tr>
             </table>
-        </ContentTemplate>
-    </asp:UpdatePanel>
-</asp:Content>
+        </contenttemplate>
+    </asp:updatepanel>
+    <asp:updateprogress runat="server">
+        <progresstemplate>
+        <div class="cssLoadWapper">
+            <div class="cssLoadContent">
+                <img src="../Images/loadingBar.gif" alt=""/>
+                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+            </div>
+        </div>       
+        </progresstemplate>
+    </asp:updateprogress>
+</asp:content>
