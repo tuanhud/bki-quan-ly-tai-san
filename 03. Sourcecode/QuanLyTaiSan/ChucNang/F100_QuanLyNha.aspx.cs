@@ -160,6 +160,14 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         m_ddl_thuoc_khu_dat.DataBind();
     }
 
+    private bool check_validate_data_is_ok() {
+        if (m_ddl_thuoc_khu_dat.SelectedValue == "") {
+            m_lbl_mess.Text = "Bạn chưa chọn khu đất!";
+            return false;
+        }
+        return true;
+    }
+
     // Load dữ liệu vào combo trạng thái
     private void load_data_trang_thai()
     {
@@ -206,7 +214,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     private void fill_form_data_to_us()
     {
 
-        if (!m_hdf_id.Value.Equals("-1"))
+        if (!m_hdf_id.Value.Equals("-1")& (m_hdf_id.Value !=""))
         {
             m_us_dm_nha.dcID = CIPConvert.ToDecimal(m_hdf_id.Value);
         }
@@ -262,6 +270,8 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         m_txt_bi_lan_chiem.Text = "";
         m_txt_khac.Text = "";
         m_txt_ma_tai_san.Text = "";
+        m_lbl_mess.Text = "";
+        m_lbl_thong_bao.Text = "";
     }
 
     private decimal get_id_bo_tinh(decimal ip_dc_id_don_vi_chu_quan)
@@ -288,15 +298,14 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     {
         try
         {
-            if (m_hdf_id.Value == "" && m_ddl_thuoc_khu_dat.SelectedValue != "")
+            if (!check_validate_data_is_ok()) return;
+            if (m_hdf_id.Value == "")
             {
                 fill_form_data_to_us();
                 m_us_dm_nha.Insert();
+                m_lbl_mess.Text = "Đã thêm mới dữ liệu thành công!";
             }
-            else
-            {
-                // Thông báo cho người sử dụng
-            }
+           
         }
         catch (Exception v_e)
         {
@@ -307,16 +316,16 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     protected void m_cmd_cap_nhat_Click(object sender, EventArgs e)
     {
         try
+
         {
-            if (m_hdf_id.Value == "" && m_ddl_thuoc_khu_dat.SelectedValue != "")
+            if (!check_validate_data_is_ok()) return;
+            if (m_hdf_id.Value != "")
             {
                 fill_form_data_to_us();
                 m_us_dm_nha.Update();
+                m_lbl_mess.Text = "Đã cập nhật dữ liệu thành công!";
             }
-            else
-            {
-                // Thông báo cho người sử dụng
-            }
+           
         }
         catch (Exception v_e)
         {
