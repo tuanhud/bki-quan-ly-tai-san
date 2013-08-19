@@ -204,7 +204,8 @@ public partial class Default2 : System.Web.UI.Page {
                     , m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_su_dung);
-                load_data_2_cbo_trang_thai_tai_san();
+                //load_data_2_cbo_trang_thai_tai_san();
+                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai_tai_san);
             }
 
             /*load_data_2_cbo_don_vi_chu_quan();
@@ -235,6 +236,7 @@ public partial class Default2 : System.Web.UI.Page {
     }
     protected void m_cmd_cap_nhat_Click(object sender, EventArgs e) {
         try {
+            Thread.Sleep(2000);
             update_data();
         }
         catch (Exception v_e) {
@@ -265,6 +267,7 @@ public partial class Default2 : System.Web.UI.Page {
     }
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e) {
         try {
+            Thread.Sleep(2000);
             insert_data();
         }
         catch (Exception v_e) {
@@ -355,6 +358,7 @@ public partial class Default2 : System.Web.UI.Page {
     }
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e) {
         try {
+            Thread.Sleep(2000);
             reset_control();
             set_form_mode();
         }
