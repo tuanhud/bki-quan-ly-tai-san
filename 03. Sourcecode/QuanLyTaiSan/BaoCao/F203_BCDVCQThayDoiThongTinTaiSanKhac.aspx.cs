@@ -95,8 +95,8 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
 
         if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
         if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
-        DateTime m_tu_ngay=CIPConvert.ToDatetime(m_txt_tu_ngay);
-        DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay);
+        DateTime m_tu_ngay=CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+        DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
         if(m_den_ngay.CompareTo(m_tu_ngay)<0)
         {
             return false;
