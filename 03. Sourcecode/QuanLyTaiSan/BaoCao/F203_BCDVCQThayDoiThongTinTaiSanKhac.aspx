@@ -3,6 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+ <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
     <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
@@ -155,5 +160,18 @@
             </td>
         </tr>
     </table>
+                </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    <asp:updateprogress ID="Updateprogress1" runat="server">
+        <progresstemplate>
+        <div class="cssLoadWapper">
+            <div class="cssLoadContent">
+                <img src="../Images/loadingBar.gif" alt=""/>
+                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+            </div>
+        </div>       
+        </progresstemplate>
+    </asp:updateprogress>
 </asp:Content>
 
