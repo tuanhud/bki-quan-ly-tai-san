@@ -44,6 +44,15 @@
                 </tr>
                 <tr>
                     <td align="right">
+                        <span class="cssManField">Loại hình đơn vị:</span>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%" 
+                            onselectedindexchanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged">
+                        </asp:DropDownList>
+                        </asp>
+                    </td>
+                    <td align="right">
                         <span class="cssManField">Đơn vị sử dụng tài sản:</span>
                     </td>
                     <td>
@@ -51,6 +60,8 @@
                             OnSelectedIndexChanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged" TabIndex="3">
                         </asp:DropDownList>
                     </td>
+                </tr>
+                <tr>
                     <td align="right">
                         <span class="cssManField">Địa chỉ đất: </span>
                     </td>
@@ -86,8 +97,8 @@
                         <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
                             Width="98px" Text="Lọc dữ liệu(l)" Height="23px" OnClick="m_cmd_loc_du_lieu_Click"
                             TabIndex="5" />
-                        <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server" Width="98px"
-                            Text="Xuất Excel (x)" Height="22px" onclick="m_cmd_xuat_excel_Click" />
+                        <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
+                            Width="98px" Text="Xuất Excel (x)" Height="22px" OnClick="m_cmd_xuat_excel_Click" />
                     </td>
                     <td>
                         &nbsp;
@@ -98,7 +109,7 @@
             </table>
             <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
                 <tr>
-                    <td class="cssPageTitleBG" colspan="6">
+                    <td class="cssPageTitleBG">
                         <span class="cssPageTitle">THÔNG TIN NHÀ ĐẤT</span> <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
@@ -256,7 +267,7 @@
                             <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue">
                     
                             </asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  đồng</span>
+                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; đồng</span>
                         </td>
                         <td colspan="1">
                         </td>
@@ -287,7 +298,7 @@
                     </tr>
                 </asp:Panel>
                 <tr>
-                    <td style="width: 10%" colspan="6">
+                    <td style="width: 10%">
                         <asp:GridView ID="m_grv_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                             ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
