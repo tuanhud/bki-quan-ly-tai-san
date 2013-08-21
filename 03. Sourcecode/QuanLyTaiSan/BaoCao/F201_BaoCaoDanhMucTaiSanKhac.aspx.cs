@@ -35,7 +35,7 @@ public partial class Default2 : System.Web.UI.Page
                     m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_chu_quan);
-                WinFormControls.load_data_to_cbo_don_vi_su_dung( 
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh( 
                     m_cbo_loai_hinh_don_vi.SelectedValue
                     , m_cbo_don_vi_chu_quan.SelectedValue
                     , m_cbo_bo_tinh.SelectedValue
@@ -148,6 +148,8 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+            DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
             US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
             DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
             string id_loai_bao_cao = "";
@@ -160,11 +162,11 @@ public partial class Default2 : System.Web.UI.Page
             {
                 case "1":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                    m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, " where ID_TRANG_THAI = " + m_cbo_trang_thai.SelectedValue.ToString()+"and ID_DON_VI_CHU_QUAN =" +m_cbo_don_vi_chu_quan.SelectedValue.ToString() + "and ID_DON_VI_SU_DUNG =" + m_cbo_don_vi_su_dung_tai_san.SelectedValue.ToString());
+                    m_us_v_tai_san_khac.FillDataset(CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue),CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue),m_ds_v_tai_san_khac);
                     break;
                 case "2":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
-                    m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, " where ID_TRANG_THAI = " + m_cbo_trang_thai.SelectedValue.ToString() + "and ID_DON_VI_CHU_QUAN =" + m_cbo_don_vi_chu_quan.SelectedValue.ToString() + "and ID_DON_VI_SU_DUNG =" + m_cbo_don_vi_su_dung_tai_san.SelectedValue.ToString());
+                    m_us_v_tai_san_khac.FillDataset(CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue), CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue), m_ds_v_tai_san_khac);
                     break;
                 //case "3":
                 //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
