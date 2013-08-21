@@ -23,6 +23,6 @@ public class Person
 
     public static bool check_session_valid()
     {
-        return HttpContext.Current.Session[SESSION.UserID] == null;
+        return HttpContext.Current.Session[SESSION.UserID] != null;
     }
 }
