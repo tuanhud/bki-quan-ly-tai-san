@@ -129,6 +129,9 @@
                     EmptyDataText="Không có dữ liệu phù hợp"
                     onpageindexchanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                     <Columns>
+                    <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DON_VI_BO_TINH" />
+                            <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DATAFIELD ="TEN_DON_VI_CHU_QUAN" />
+                            <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DON_VI" />
                         <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
                             <ItemTemplate>
                                 <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
@@ -144,7 +147,7 @@
                         <asp:BoundField HeaderText="Năm sử dụng" ItemStyle-HorizontalAlign="Center" DataField="NAM_SU_DUNG" HeaderStyle-Width="3.5%"/>
                         <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;">
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse; height: 100%">
                                 	<tr>
                                 		<td colspan="3" style="height:35px">Giá trị theo sổ kế toán</td>
                                 	</tr>
@@ -171,7 +174,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
+                                <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;height: 100%">
                                 	<tr>
                                 		<td colspan="7" style="height:39px">Hiện trạng sử dụng</td>
                                 	</tr>
