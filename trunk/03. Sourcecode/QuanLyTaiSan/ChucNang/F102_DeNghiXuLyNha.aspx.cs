@@ -40,13 +40,13 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
 
-        string query = "(TEN_TAI_SAN LIKE N'%" + ip_str_tu_khoa + "%' OR MA_TAI_SAN LIKE N'%" 
-            + ip_str_tu_khoa + "%' OR ID LIKE N'%"+ ip_str_tu_khoa + "%') AND " 
+        string query = "(TEN_TAI_SAN LIKE N'%" + ip_str_tu_khoa + "%' OR MA_TAI_SAN LIKE N'%"
+            + ip_str_tu_khoa + "%' OR ID LIKE N'%" + ip_str_tu_khoa + "%') AND "
             + DM_NHA.ID_TRANG_THAI + " = " + m_ddl_trang_thai_nha.SelectedValue;
 
         if (!m_ddl_thuoc_khu_dat.SelectedValue.Equals("-1"))
         {
-            m_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + DM_NHA.ID_DAT + " = " + m_ddl_thuoc_khu_dat.SelectedValue + " and "+ query);
+            m_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + DM_NHA.ID_DAT + " = " + m_ddl_thuoc_khu_dat.SelectedValue + " and " + query);
         }
         else if (!m_ddl_don_vi_su_dung.SelectedValue.Equals("-1"))
         {
@@ -119,19 +119,17 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             return;
         }
 
-        if ()
+        if (v_dc_trang_thai.Equals(ID_TRANG_THAI_NHA.DE_NGHI_XU_LY))
         {
+            m_cmd_de_nghi_xu_ly.Visible = false;
+            m_cmd_huy_de_nghi_xu_ly.Visible = true;
+            m_cmd_huy_de_nghi_xu_ly.Enabled = true;
+            return;
         }
-            case "577":
-                m_cmd_de_nghi_xu_ly.Visible = false;
-                m_cmd_huy_de_nghi_xu_ly.Visible = true;
-                m_cmd_huy_de_nghi_xu_ly.Enabled = true;
-                break;
-            default:
-                m_cmd_de_nghi_xu_ly.Visible = false;
-                m_cmd_huy_de_nghi_xu_ly.Visible = false;
-                break;
-        }
+
+        m_cmd_de_nghi_xu_ly.Visible = false;
+        m_cmd_huy_de_nghi_xu_ly.Visible = false;
+
     }
     #endregion
 
@@ -143,7 +141,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             load_form_data();
         }
     }
-    
+
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         try
@@ -276,5 +274,5 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     }
     #endregion
 
-    
+
 }
