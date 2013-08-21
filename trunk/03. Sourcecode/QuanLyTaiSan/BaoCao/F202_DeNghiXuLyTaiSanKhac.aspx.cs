@@ -32,6 +32,11 @@ public partial class Default2 : System.Web.UI.Page
         //load_data_don_vi_chu_quan(m_cbo_bo_tinh.SelectedValue);
         //load_data_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
         //load_data_trang_thai();
+        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_loai_hinh_don_vi
+                    );
         WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.YES
                     , m_cbo_bo_tinh);
@@ -40,7 +45,8 @@ public partial class Default2 : System.Web.UI.Page
             , WinFormControls.eTAT_CA.YES
             , m_cbo_don_vi_chu_quan);
         WinFormControls.load_data_to_cbo_don_vi_su_dung(
-            m_cbo_don_vi_chu_quan.SelectedValue
+            m_cbo_loai_hinh_don_vi.SelectedValue
+            , m_cbo_don_vi_chu_quan.SelectedValue
             , m_cbo_bo_tinh.SelectedValue
             , WinFormControls.eTAT_CA.YES
             , m_cbo_don_vi_su_dung_tai_san);
@@ -208,10 +214,18 @@ public partial class Default2 : System.Web.UI.Page
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        try
         {
-            load_form_data();
+            if (!IsPostBack)
+            {
+                load_form_data();
+            }
         }
+        catch (Exception v_e)
+        {
+
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }  
     }
 
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
@@ -363,4 +377,21 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
     #endregion
+    protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+    m_cbo_loai_hinh_don_vi.SelectedValue
+    , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
+    , m_cbo_bo_tinh.SelectedValue.ToString()
+    , WinFormControls.eTAT_CA.YES
+    , m_cbo_don_vi_su_dung_tai_san
+    );
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
 }

@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="F202_DeNghiXuLyTaiSanKhac.aspx.cs"
-    Inherits="Default2" %>
+    CodeFile="F202_DeNghiXuLyTaiSanKhac.aspx.cs" Inherits="Default2" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
@@ -60,21 +59,38 @@
                     </tr>
                     <tr>
                         <td align="right">
-                            <span class="cssManField">Đơn vị sử dụng tài sản:</span>
-                        </td>
+                            &nbsp;<span class="cssManField">Loại hình đơn vị:</span></td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
-                                TabIndex="3" 
-                                onselectedindexchanged="m_cbo_don_vi_su_dung_SelectedIndexChanged">
+                            <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" 
+                                onselectedindexchanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged" 
+                                Width="90%" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <td align="right">
-                            <span class="cssManField">Trạng thái: </span>
+                            <span class="cssManField">Đơn vị sử dụng tài sản:</span></td>
+                        <td>
+                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" 
+                                AutoPostBack="True" 
+                                OnSelectedIndexChanged="m_cbo_don_vi_su_dung_SelectedIndexChanged" TabIndex="3" 
+                                Width="90%">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            &nbsp;<span class="cssManField">Trạng thái: </span>
                         </td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%" 
-                                onselectedindexchanged="m_cbo_trang_thai_tai_san_khac_SelectedIndexChanged">
+                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" 
+                                OnSelectedIndexChanged="m_cbo_trang_thai_tai_san_khac_SelectedIndexChanged" 
+                                TabIndex="4" Width="90%">
                             </asp:DropDownList>
+                        </td>
+                        <td align="right">
+                            <span class="cssManField">&nbsp;</span>
+                        </td>
+                        <td>
+                            &nbsp;
                         </td>
                     </tr>
                     <tr>
@@ -82,13 +98,14 @@
                             <span class="cssManField">Từ khóa tìm kiếm:</span>
                         </td>
                         <td>
-                            <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" 
-                               Width="90%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" Width="90%"></asp:TextBox>
                         </td>
                         <td align="right">
-                            <span class="cssManField">&nbsp;</span></td>
+                            <span class="cssManField">&nbsp;</span>
+                        </td>
                         <td>
-                            &nbsp;</td>
+                            &nbsp;
+                        </td>
                     </tr>
                     <tr>
                         <td align="right">
@@ -102,8 +119,9 @@
                         <td>
                         </td>
                         <td colspan="2" align="left">
-                            <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server" Height="24px" 
-                                Width="98px" Text="Tìm kiếm(s)" OnClick="m_cmd_tim_kiem_Click" />&nbsp; &nbsp;
+                            <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
+                                Height="24px" Width="98px" Text="Tìm kiếm(s)" OnClick="m_cmd_tim_kiem_Click" />&nbsp;
+                            &nbsp;
                         </td>
                     </tr>
                 </table>
@@ -119,12 +137,10 @@
                         <td align="right">
                         </td>
                         <td align="left">
-                                        <asp:Button ID="m_cmd_de_nghi_xu_ly" runat="server" AccessKey="c" CssClass="cssButton" 
-                                Text="Đề nghị xử lý" Height="24px"  Width="98px" onclick="m_cmd_de_nghi_xu_ly_Click"/>
-            
-                                        <asp:Button ID="m_cmd_huy_de_nghi_xu_ly" runat="server" CssClass="cssButton" Height="24px" 
-                                            Text="Hủy" Width="98px" onclick="m_cmd_huy_de_nghi_xu_ly_Click" />
-            
+                            <asp:Button ID="m_cmd_de_nghi_xu_ly" runat="server" AccessKey="c" CssClass="cssButton"
+                                Text="Đề nghị xử lý" Height="24px" Width="98px" OnClick="m_cmd_de_nghi_xu_ly_Click" />
+                            <asp:Button ID="m_cmd_huy_de_nghi_xu_ly" runat="server" CssClass="cssButton" Height="24px"
+                                Text="Hủy" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" />
                         </td>
                         <td align="left">
                         </td>
@@ -162,7 +178,7 @@
                                         </ItemTemplate>
                                         <HeaderTemplate>
                                             <input type="checkbox" id="chkAll" onclick="javascript:SelectAllCheckboxes(this)"
-                                    runat="server" />
+                                                runat="server" />
                                         </HeaderTemplate>
                                     </asp:TemplateField>
                                     <asp:HyperLinkField HeaderText="Tên tài sản" FooterText="Tổng cộng" DataTextField="TEN_TAI_SAN"
@@ -284,14 +300,15 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
-    <asp:updateprogress ID="Updateprogress1" runat="server">
-        <progresstemplate>
-        <div class="cssLoadWapper">
-            <div class="cssLoadContent">
-                <img src="../Images/loadingBar.gif" alt=""/>
-                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+    <asp:UpdateProgress ID="Updateprogress1" runat="server">
+        <ProgressTemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
             </div>
-        </div>       
-        </progresstemplate>
-    </asp:updateprogress>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>
