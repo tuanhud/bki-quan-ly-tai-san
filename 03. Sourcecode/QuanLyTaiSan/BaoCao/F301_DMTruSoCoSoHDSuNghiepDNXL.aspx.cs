@@ -78,7 +78,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         {
             string v_id_dat = m_cbo_dia_chi.SelectedValue;
             DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
-            US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(v_id_dat));
+            US_DM_DAT v_us_dm_dat = new US_DM_DAT();
             m_lbl_dia_chi.Text = v_us_dm_dat.strDIA_CHI;
             m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN, "#,##0.00") + "   ";
             m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
