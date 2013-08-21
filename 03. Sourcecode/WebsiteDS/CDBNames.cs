@@ -62,6 +62,7 @@ namespace WebDS.CDBNames
           public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
           public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
           public const string TEN_LOAI_TAI_SAN = "TEN_LOAI_TAI_SAN";
+           public const string ID_TINH_TRANG =  "ID_TINH_TRANG";
       }
       public class V_DM_TAI_SAN_KHAC {
           public const string ID = "ID";
@@ -86,6 +87,7 @@ namespace WebDS.CDBNames
           public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
           public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
           public const string TEN_LOAI_TAI_SAN = "TEN_LOAI_TAI_SAN";
+          public const string ID_TINH_TRANG = "ID_TINH_TRANG";
       }
       public class V_DM_NHA {
           public const string ID = "ID";
@@ -116,6 +118,7 @@ namespace WebDS.CDBNames
           public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
           public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
           public const string ID_DON_VI_DAU_TU = "ID_DON_VI_DAU_TU";
+          public const string ID_TINH_TRANG = "ID_TINH_TRANG";
       }
 
       public class LOAI_TU_DIEN
@@ -193,6 +196,7 @@ namespace WebDS.CDBNames
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
         public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
         public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
+        public const string ID_TINH_TRANG = "ID_TINH_TRANG";
     }
 
   
@@ -300,6 +304,7 @@ namespace WebDS.CDBNames
        public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
        public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
        public const string SO_NAM_DA_SU_DUNG = "SO_NAM_DA_SU_DUNG";
+       public const string ID_TINH_TRANG = "ID_TINH_TRANG";
    }
    
   
@@ -333,6 +338,7 @@ namespace WebDS.CDBNames
        public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
        public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
        public const string ID_DON_VI_DAU_TU = "ID_DON_VI_DAU_TU";
+       public const string ID_TINH_TRANG = "ID_TINH_TRANG";
    }
   
    public class DM_TAI_SAN_KHAC
@@ -357,6 +363,7 @@ namespace WebDS.CDBNames
        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
        public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
        public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
+       public const string ID_TINH_TRANG = "ID_TINH_TRANG";
    }
    public class GD_DE_NGHI
    {
