@@ -347,7 +347,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     {
         try
         {
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+            WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
     m_cbo_loai_hinh_don_vi.SelectedValue
     , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
     , m_cbo_bo_tinh.SelectedValue.ToString()
