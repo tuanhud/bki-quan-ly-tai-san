@@ -268,11 +268,14 @@
                                 </td>
                                 <td colspan="4" align="left">
                                     <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_nha" />
+                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" 
+                                        ValidationGroup="m_vlg_nha" Height="24px" />
                                     <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_nha" />
+                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" 
+                                        ValidationGroup="m_vlg_nha" Height="24px" />
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
+                                        Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" 
+                                        Height="24px" />
                                     <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
                                 </td>
                             </tr>
@@ -389,4 +392,14 @@
             </table>
         </ContentTemplate>
     </asp:UpdatePanel>
+    <asp:updateprogress runat="server">
+        <progresstemplate>
+        <div class="cssLoadWapper">
+            <div class="cssLoadContent">
+                <img src="../Images/loadingBar.gif" alt=""/>
+                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+            </div>
+        </div>       
+        </progresstemplate>
+    </asp:updateprogress>
 </asp:Content>
