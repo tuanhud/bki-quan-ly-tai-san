@@ -79,35 +79,6 @@ namespace IP.Core.WinFormControls
                 op_obj_cbo_dia_chi_dat.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
             }
         }
-        public static void load_data_to_cbo_dia_chi_2012_08_20(
-             decimal ip_dc_bo_tinh
-            , decimal ip_dc_id_don_vi_chu_quan
-            , decimal ip_dc_id_don_vi_su_dung
-            , string ip_str_loai_hinh_don_vi
-            , decimal ip_dc_id_trang_thai_dat
-            , eTAT_CA ip_e_tat_ca
-            , DropDownList op_obj_cbo_dia_chi_dat)
-        {
-
-            DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
-            US_DM_DAT v_us_dm_dat = new US_DM_DAT();
-            string v_str_user_name = HttpContext.Current.Session[SESSION.UserName].ToString();
-            v_us_dm_dat.FillDatasetByID_DonVi(
-                ip_dc_bo_tinh
-                , ip_dc_id_don_vi_chu_quan
-                , ip_dc_id_don_vi_su_dung
-                , ip_dc_id_trang_thai_dat
-                , v_str_user_name
-                , v_ds_dm_dat);
-            op_obj_cbo_dia_chi_dat.DataSource = v_ds_dm_dat.DM_DAT;
-            op_obj_cbo_dia_chi_dat.DataTextField = DM_DAT.DIA_CHI;
-            op_obj_cbo_dia_chi_dat.DataValueField = DM_DAT.ID;
-            op_obj_cbo_dia_chi_dat.DataBind();
-            if (ip_e_tat_ca == eTAT_CA.YES)
-            {
-                op_obj_cbo_dia_chi_dat.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-            }
-        }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e_trang_thai_tai_san
             , eTAT_CA ip_e_tat_ca
@@ -216,54 +187,10 @@ namespace IP.Core.WinFormControls
 
         }
 
-        public static void load_data_to_cbo_don_vi_su_dung_2012_08_20(
-            string ip_str_loai_hinh_don_vi
-            , string ip_str_id_don_vi_chu_quan
-            , string ip_str_id_bo_tinh
-             , eTAT_CA ip_e_tat_ca
-            , DropDownList ip_obj_cbo_dv_su_dung
-            )
-        {
-            if (ip_str_id_bo_tinh.Length == 0)
-            {
-                ip_obj_cbo_dv_su_dung.Items.Clear();
-                return;
-            }
-            if (ip_str_id_don_vi_chu_quan.Length == 0)
-            {
-                ip_obj_cbo_dv_su_dung.Items.Clear();
-                return;
-            }
-
-            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
-
-            string v_str_user_name = HttpContext.Current.Session[SESSION.UserName].ToString();
-            if (!Person.check_session_valid()) return;
-            decimal v_dc_id_don_vi_chu_quan = CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan);
-            decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
-            v_us_dm_don_vi.FillDataset(
-                v_ds_dm_don_vi
-                , ID_LOAI_DON_VI.DV_SU_DUNG
-                , v_dc_id_don_vi_chu_quan
-                , v_dc_id_bo_tinh
-                , ip_str_loai_hinh_don_vi
-                , v_str_user_name);
-            ip_obj_cbo_dv_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
-            ip_obj_cbo_dv_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
-            ip_obj_cbo_dv_su_dung.DataValueField = DM_DON_VI.ID;
-            ip_obj_cbo_dv_su_dung.DataBind();
-
-            if (ip_e_tat_ca == eTAT_CA.YES)
-            {
-                ip_obj_cbo_dv_su_dung.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-            }
-        }
-
         public static void load_data_to_cbo_don_vi_su_dung(
             string ip_str_id_don_vi_chu_quan
             , string ip_str_id_bo_tinh
-             , eTAT_CA ip_e_tat_ca
+            , eTAT_CA ip_e_tat_ca
             , DropDownList ip_obj_cbo_dv_su_dung)
         {
 
@@ -290,9 +217,6 @@ namespace IP.Core.WinFormControls
                 , v_dc_id_don_vi_chu_quan
                 , v_dc_id_bo_tinh
                 , v_str_user_name);
-
-
-
             ip_obj_cbo_dv_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
             ip_obj_cbo_dv_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
             ip_obj_cbo_dv_su_dung.DataValueField = DM_DON_VI.ID;
