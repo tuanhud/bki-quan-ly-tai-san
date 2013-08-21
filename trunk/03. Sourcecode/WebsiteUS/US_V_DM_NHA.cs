@@ -769,6 +769,29 @@ namespace WebUS
             pm_objDR["ID_TINH_TRANG"] = System.Convert.DBNull;
         }
 
+        public string strTEN_TINH_TRANG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TEN_TINH_TRANG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TEN_TINH_TRANG"] = value;
+            }
+        }
+
+        public bool IsTEN_TINH_TRANGNull()
+        {
+            return pm_objDR.IsNull("TEN_TINH_TRANG");
+        }
+
+        public void SetTEN_TINH_TRANGNull()
+        {
+            pm_objDR["TEN_TINH_TRANG"] = System.Convert.DBNull;
+        }
+
+
         #endregion
         #region "Init Functions"
         public US_V_DM_NHA()
