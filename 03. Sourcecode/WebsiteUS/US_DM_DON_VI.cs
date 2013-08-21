@@ -265,8 +265,8 @@ namespace WebUS
             CStoredProc v_obj_procedure = new CStoredProc("pr_DM_DON_VI_loai_hinh_don_vi_Select_by_user_name");
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addDecimalInputParam("@ip_dc_loai_don_vi", ip_dc_id_loai_don_vi);
-            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_cap_tren1", ip_dc_id_don_vi_cap_tren1);
-            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_cap_tren2", ip_dc_id_don_vi_cap_tren1);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_dv_cap_tren1", ip_dc_id_don_vi_cap_tren1);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_dv_cap_tren2", ip_dc_id_don_vi_cap_tren2);
             v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
             v_obj_procedure.fillDataSetByCommand(this, op_ds_don_vi);
         }
