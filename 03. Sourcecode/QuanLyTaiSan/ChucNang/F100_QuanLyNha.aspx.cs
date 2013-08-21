@@ -65,20 +65,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     // Load dữ liệu vào grid
     private void load_data_to_grid(string ip_str_tu_khoa)
     {
-        DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
 
-        if (ip_str_tu_khoa.Equals(String.Empty))
-        {
-            m_us_dm_nha.FillDataset(v_ds_dm_nha);
-        }
-        else
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_DM_NHA_Search");
-            v_cstore.addNVarcharInputParam("@TU_KHOA", m_txt_tu_khoa.Text);
-            v_cstore.fillDataSetByCommand(m_us_dm_nha, v_ds_dm_nha);
-        }
-        m_grv_danh_sach_nha.DataSource = v_ds_dm_nha.DM_NHA;
-        m_grv_danh_sach_nha.DataBind();
     }
 
     // Load dữ liệu vào combo bộ tỉnh
