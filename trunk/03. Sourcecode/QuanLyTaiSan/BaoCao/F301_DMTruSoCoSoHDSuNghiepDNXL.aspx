@@ -456,6 +456,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TRANG_THAI_NHA" />
+                                
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
