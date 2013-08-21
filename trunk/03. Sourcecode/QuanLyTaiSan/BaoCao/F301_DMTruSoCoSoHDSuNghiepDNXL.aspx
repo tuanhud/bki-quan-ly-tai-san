@@ -47,9 +47,8 @@
                         <span class="cssManField">Loại hình đơn vị:</span>
                     </td>
                     <td>
-                        <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%" 
-                            AutoPostBack="True" 
-                            onselectedindexchanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged">
+                        <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%" AutoPostBack="True"
+                            OnSelectedIndexChanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged">
                         </asp:DropDownList>
                         </asp>
                     </td>
@@ -63,6 +62,15 @@
                     </td>
                 </tr>
                 <tr>
+                    <td align="right">
+                        <span class="cssManField">Trạng thái:</span>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" 
+                            AutoPostBack="True" 
+                            onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged">
+                        </asp:DropDownList>
+                    </td>
                     <td align="right">
                         <span class="cssManField">Địa chỉ đất: </span>
                     </td>

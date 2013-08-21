@@ -228,12 +228,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             {
                 form_title();
                 format_label_disable();
-                //WinFormControls.load_data_to_cbo_tu_dien(
-                //    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                //    , WinFormControls.eTAT_CA.YES
-                //    , m_cbo_loai_hinh_don_vi
-                //    );
-
                 WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.YES
                     , m_cbo_bo_tinh);
@@ -246,7 +240,12 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_loai_hinh_don_vi
                     );
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                WinFormControls.load_data_to_cbo_tu_dien(
+                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_trang_thai
+                    );
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
                    m_cbo_loai_hinh_don_vi.SelectedValue
                    , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
                    , m_cbo_bo_tinh.SelectedValue.ToString()
@@ -288,8 +287,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan.SelectedValue
+            WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                m_cbo_loai_hinh_don_vi.SelectedValue
+                , m_cbo_don_vi_chu_quan.SelectedValue
                 , m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES
                 , m_cbo_don_vi_su_dung_tai_san);
@@ -314,8 +314,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan.SelectedValue
+            WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                m_cbo_loai_hinh_don_vi.SelectedValue
+                , m_cbo_don_vi_chu_quan.SelectedValue
                 , m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES
                 , m_cbo_don_vi_su_dung_tai_san);
@@ -387,7 +388,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+            WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
     m_cbo_loai_hinh_don_vi.SelectedValue
     , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
     , m_cbo_bo_tinh.SelectedValue.ToString()
@@ -410,4 +411,23 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     #endregion
 
+    protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
+                CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                            , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                                , m_cbo_loai_hinh_don_vi.SelectedValue
+                                , WinFormControls.eTAT_CA.YES
+                                , m_cbo_dia_chi
+                );
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
 }
