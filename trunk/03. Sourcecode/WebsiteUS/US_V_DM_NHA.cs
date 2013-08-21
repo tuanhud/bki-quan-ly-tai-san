@@ -790,7 +790,6 @@ namespace WebUS
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_dat", ip_dc_id_dat);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
 
-            v_obj_procedure.fillDataSetByCommand(this, op_ds_v_dm_nha);
         }
         public void FillDatasetLoadDataToGridNha_loai_hinh(
            decimal ip_dc_id_bo_tinh
