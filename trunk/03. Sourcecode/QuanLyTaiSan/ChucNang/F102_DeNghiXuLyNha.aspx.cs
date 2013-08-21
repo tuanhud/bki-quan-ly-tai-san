@@ -38,38 +38,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     // Load dữ liệu vào grid
     private void load_data_to_grid(string ip_str_tu_khoa)
     {
-        DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
 
-        string query = "(TEN_TAI_SAN LIKE N'%" + ip_str_tu_khoa + "%' OR MA_TAI_SAN LIKE N'%"
-            + ip_str_tu_khoa + "%' OR ID LIKE N'%" + ip_str_tu_khoa + "%') AND "
-            + DM_NHA.ID_TRANG_THAI + " = " + m_ddl_trang_thai_nha.SelectedValue;
-
-        if (!m_ddl_thuoc_khu_dat.SelectedValue.Equals("-1"))
-        {
-            m_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + DM_NHA.ID_DAT + " = " + m_ddl_thuoc_khu_dat.SelectedValue + " and " + query);
-        }
-        else if (!m_ddl_don_vi_su_dung.SelectedValue.Equals("-1"))
-        {
-            m_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + DM_NHA.ID_DON_VI_SU_DUNG + " = " + m_ddl_don_vi_su_dung.SelectedValue
-                + " and " + query);
-        }
-        else if (!m_ddl_don_vi_chu_quan.SelectedValue.Equals("-1"))
-        {
-            m_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + DM_NHA.ID_DON_VI_CHU_QUAN + " = " + m_ddl_don_vi_chu_quan.SelectedValue
-                + " and " + query);
-        }
-        else if (!m_ddl_bo_tinh.SelectedValue.Equals("-1"))
-        {
-            m_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + DM_NHA.ID_DON_VI_CHU_QUAN
-                + " in (select ID from DM_DON_VI where " + DM_DON_VI.ID_DON_VI_CAP_TREN + " = " + m_ddl_bo_tinh.SelectedValue + ")"
-                + " and " + query);
-        }
-        else
-        {
-            m_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + query);
-        }
-        m_grv_danh_sach_nha.DataSource = v_ds_dm_nha.DM_NHA;
-        m_grv_danh_sach_nha.DataBind();
     }
 
     // Load dữ liệu vào combo bộ tỉnh
