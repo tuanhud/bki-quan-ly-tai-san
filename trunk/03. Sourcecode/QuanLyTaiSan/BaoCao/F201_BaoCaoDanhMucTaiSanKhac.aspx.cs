@@ -162,11 +162,23 @@ public partial class Default2 : System.Web.UI.Page
             {
                 case "1":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                    m_us_v_tai_san_khac.FillDataset(CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue),CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue),m_ds_v_tai_san_khac);
+                    m_us_v_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue),
+                        Person.get_user_name()
+                        , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                        , m_ds_v_tai_san_khac);
                     break;
                 case "2":
                     // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
-                    m_us_v_tai_san_khac.FillDataset(CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue), CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue), m_ds_v_tai_san_khac);
+                    m_us_v_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue),
+                        Person.get_user_name()
+                        , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                        , m_ds_v_tai_san_khac);
                     break;
                 //case "3":
                 //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
@@ -174,7 +186,7 @@ public partial class Default2 : System.Web.UI.Page
             }
 
 
-            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_tai_san_khac;
+            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
             m_grv_danh_sach_tai_san_khac.DataBind();
 
         }
