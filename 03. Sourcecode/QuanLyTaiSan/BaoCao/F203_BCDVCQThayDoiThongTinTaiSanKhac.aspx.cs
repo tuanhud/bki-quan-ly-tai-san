@@ -21,7 +21,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         {
             if (!IsPostBack)
             {
-                WinFormControls.load_data_to_cbo_tu_dien(
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_loai_hinh_don_vi

@@ -56,7 +56,7 @@
             <td>
                 <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" 
                     onselectedindexchanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged" 
-                    Width="90%">
+                    Width="90%" AutoPostBack="True">
                 </asp:DropDownList>
             </td>
             <td align="right">
