@@ -360,17 +360,11 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            if (check_validate_data_is_ok() == false)
-            {
-                return;
-            }
-            else
-            {
-                check_validate_data_is_ok();
-                format_label_able();
-                load_data_to_thong_tin_nha_dat();
-                load_data_to_grid_nha();
-            }
+            if (!check_validate_data_is_ok()) return;
+            format_label_able();
+            load_data_to_thong_tin_nha_dat();
+            load_data_to_grid_nha();
+
         }
         catch (System.Exception v_e)
         {
