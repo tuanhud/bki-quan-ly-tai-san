@@ -54,20 +54,33 @@
         </tr>
         <tr>
             <td align="right">
-                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
-            </td>
+                <span class="cssManField">Loại hình đơn vị:</span></td>
             <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True" 
-                    TabIndex="3">
+                <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" 
+                    onselectedindexchanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged" 
+                    Width="90%">
                 </asp:DropDownList>
             </td>
             <td align="right">
-                <span class="cssManField">Trạng thái: </span>
+                <span class="cssManField">Đơn vị sử dụng tài sản:</span></td>
+            <td>
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" 
+                    AutoPostBack="True" TabIndex="3" Width="90%">
+                </asp:DropDownList>
             </td>
+        </tr>
+        <tr>
+            <td align="right">
+                &nbsp;<span class="cssManField">Trạng thái:</span></td>
             <td>
                 <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%">
                 </asp:DropDownList>
             </td>
+            <td align="right">
+                <span class="cssManField">&nbsp; </span>
+            </td>
+            <td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td align="right">

@@ -23,6 +23,11 @@ public partial class Default2 : System.Web.UI.Page
             if (!IsPostBack)
             {
                 form_title();
+                WinFormControls.load_data_to_cbo_tu_dien(
+                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_loai_hinh_don_vi
+                    );
                 WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.YES
                     , m_cbo_bo_tinh);
@@ -31,7 +36,8 @@ public partial class Default2 : System.Web.UI.Page
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_chu_quan);
                 WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                    m_cbo_don_vi_chu_quan.SelectedValue
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_chu_quan.SelectedValue
                     , m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_su_dung_tai_san);
@@ -377,5 +383,22 @@ public partial class Default2 : System.Web.UI.Page
     {
         Thread.Sleep(2000);
         export_excel();
+    }
+    protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+    m_cbo_loai_hinh_don_vi.SelectedValue
+    , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
+    , m_cbo_bo_tinh.SelectedValue.ToString()
+    , WinFormControls.eTAT_CA.YES
+    , m_cbo_don_vi_su_dung_tai_san
+    );
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
 }
