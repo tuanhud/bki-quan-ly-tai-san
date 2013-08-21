@@ -12,6 +12,7 @@ using IP.Core.IPException;
 using IP.Core.IPUserService;
 using IP.Core.IPBusinessService;
 using IP.Core.WinFormControls;
+using System.Threading;
 
 public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
 {
@@ -111,9 +112,16 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        try
         {
-            load_form_data();
+            if (!IsPostBack)
+            {
+                load_form_data();
+            }
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
 
@@ -121,6 +129,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
+            Thread.Sleep(2000);
             load_data_to_grid(m_txt_tu_khoa.Text);
             set_trang_thai_cmd();
         }
@@ -133,6 +142,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
+            Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid(m_txt_tu_khoa.Text.Trim());
         }
@@ -189,6 +199,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
+            Thread.Sleep(2000);
             foreach (GridViewRow row in m_grv_danh_sach_nha.Rows)
             {
                 bool v_ch;
@@ -221,6 +232,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
+            Thread.Sleep(2000);
             foreach (GridViewRow row in m_grv_danh_sach_nha.Rows)
             {
                 bool v_ch;
