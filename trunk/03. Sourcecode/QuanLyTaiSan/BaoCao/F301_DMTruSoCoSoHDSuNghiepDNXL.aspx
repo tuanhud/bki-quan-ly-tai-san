@@ -66,9 +66,8 @@
                         <span class="cssManField">Trạng thái:</span>
                     </td>
                     <td>
-                        <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" 
-                            AutoPostBack="True" 
-                            onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged">
+                        <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" AutoPostBack="True"
+                            OnSelectedIndexChanged="m_cbo_trang_thai_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="right">
@@ -116,202 +115,212 @@
                     </td>
                 </tr>
             </table>
-            <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
+            <table border="0" cellspacing="0" cellpadding="0" width="150%" class="cssTable">
                 <tr>
                     <td class="cssPageTitleBG">
                         <span class="cssPageTitle">THÔNG TIN NHÀ ĐẤT</span> <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
-                <asp:Panel ID="m_pnl_thong_tin_nha_dat" runat="Server" Width="100%">
-                    <tr>
-                        <td colspan="1" style="width: 5%">
-                        </td>
-                        <td colspan="1" style="width: 30%">
-                            <span class="cssManField">I-Về đất:</span>
-                        </td>
-                        <td colspan="1" style="width: 15%">
-                        </td>
-                        <td colspan="1" style="width: 30%">
-                        </td>
-                        <td colspan="1" style="width: 15%">
-                        </td>
-                        <td colspan="1" style="width: 5%">
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td colspan="1">
-                        </td>
-                        <td colspan="1" align="right">
-                            <span class="cssManField">Địa chỉ: </span>&nbsp;
-                        </td>
-                        <td align="left" colspan="2">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_dia_chi" runat="Server" ForeColor="blue"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td colspan="1" class="cssManField" align="left">
-                            <span>a-Diện tích khuôn viên đất: </span>
-                        </td>
-                        <td align="right" colspan="1">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_dien_tich_khuon_vien_dat" runat="server" ForeColor="blue" />
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        </td>
-                        <td colspan="4" class="cssManField">
-                            <span>b-Hiện trạng sử dụng: </span>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td align="right" colspan="1">
-                            Làm trụ sở làm việc:
-                        </td>
-                        <td colspan="1" align="right">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_lam_tru_so_lam_viec" runat="server" ForeColor="blue" />
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                        </td>
-                        <tr class="cssManField">
-                            <td>
-                            </td>
-                            <td align="right" colspan="1">
-                                <span>Làm cơ sở HĐ sự nghiệp:</span>
-                            </td>
-                            <td colspan="1" align="right">
-                                <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <asp:Label ID="m_lbl_lam_co_so_hd_du_nghiep" runat="Server" ForeColor="blue"></asp:Label>
-                                <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td align="right" colspan="1">
-                            <span>Làm nhà ở:</span>
-                        </td>
-                        <td colspan="1" align="right">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_lam_nha_o" runat="Server" ForeColor="blue"></asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td align="right" colspan="1">
-                            <span>Cho thuê:</span>
-                        </td>
-                        <td colspan="1" align="right">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_cho_thue" runat="Server" ForeColor="blue"></asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td align="right">
-                            <span>Bỏ trống:</span>
-                        </td>
-                        <td align="right">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_bo_trong" runat="Server" ForeColor="blue"></asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td align="right">
-                            <span>Bị lấn chiếm:</span>
-                        </td>
-                        <td align="right">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_bi_lan_chiem" runat="Server" ForeColor="blue"></asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td align="right">
-                            <span>Sử dụng vào mục đích khác:</span>
-                        </td>
-                        <td align="right">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_su_dung_vao_muc_dich_khac" runat="Server" ForeColor="blue"></asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td class="cssManField" colspan="1" align="left">
-                            <span>c-Giá trị theo sổ kế toán: </span>
-                        </td>
-                        <td colspan="1" align="right">
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue">
-                    
-                            </asp:Label>
-                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; đồng</span>
-                        </td>
-                        <td colspan="1">
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                        </td>
-                        <td>
-                            <span>II-Về nhà</span>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="cssManField">
-                        <td>
-                            <br />
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                </asp:Panel>
                 <tr>
-                    <td style="width: 10%">
+                    <td>
+                        <asp:Panel ID="m_pnl_thong_tin_nha_dat" runat="Server" Width="100%">
+                            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                <tr>
+                                    <td colspan="1" style="width: 5%">
+                                    </td>
+                                    <td colspan="1" style="width: 30%">
+                                        <span class="cssManField">I-Về đất:</span>
+                                    </td>
+                                    <td colspan="1" style="width: 15%">
+                                    </td>
+                                    <td colspan="1" style="width: 30%">
+                                    </td>
+                                    <td colspan="1" style="width: 15%">
+                                    </td>
+                                    <td colspan="1" style="width: 5%">
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td colspan="1">
+                                    </td>
+                                    <td colspan="1" align="right">
+                                        <span class="cssManField">Địa chỉ: </span>&nbsp;
+                                    </td>
+                                    <td align="left" colspan="2">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_dia_chi" runat="Server" ForeColor="blue"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td colspan="1" class="cssManField" align="left">
+                                        <span>a-Diện tích khuôn viên đất: </span>
+                                    </td>
+                                    <td align="right" colspan="1">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_dien_tich_khuon_vien_dat" runat="server" ForeColor="blue" />
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td colspan="4" class="cssManField">
+                                        <span>b-Hiện trạng sử dụng: </span>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td align="right" colspan="1">
+                                        Làm trụ sở làm việc:
+                                    </td>
+                                    <td colspan="1" align="right">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_lam_tru_so_lam_viec" runat="server" ForeColor="blue" />
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                    </td>
+                                    <tr class="cssManField">
+                                        <td>
+                                        </td>
+                                        <td align="right" colspan="1">
+                                            <span>Làm cơ sở HĐ sự nghiệp:</span>
+                                        </td>
+                                        <td colspan="1" align="right">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <asp:Label ID="m_lbl_lam_co_so_hd_du_nghiep" runat="Server" ForeColor="blue"></asp:Label>
+                                            <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td align="right" colspan="1">
+                                        <span>Làm nhà ở:</span>
+                                    </td>
+                                    <td colspan="1" align="right">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_lam_nha_o" runat="Server" ForeColor="blue"></asp:Label>
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td align="right" colspan="1">
+                                        <span>Cho thuê:</span>
+                                    </td>
+                                    <td colspan="1" align="right">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_cho_thue" runat="Server" ForeColor="blue"></asp:Label>
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td align="right">
+                                        <span>Bỏ trống:</span>
+                                    </td>
+                                    <td align="right">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_bo_trong" runat="Server" ForeColor="blue"></asp:Label>
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td align="right">
+                                        <span>Bị lấn chiếm:</span>
+                                    </td>
+                                    <td align="right">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_bi_lan_chiem" runat="Server" ForeColor="blue"></asp:Label>
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td align="right">
+                                        <span>Sử dụng vào mục đích khác:</span>
+                                    </td>
+                                    <td align="right">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_su_dung_vao_muc_dich_khac" runat="Server" ForeColor="blue"></asp:Label>
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2</span>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td class="cssManField" colspan="1" align="left">
+                                        <span>c-Giá trị theo sổ kế toán: </span>
+                                    </td>
+                                    <td colspan="1" align="right">
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <asp:Label ID="m_lbl_gia_tri_theo_so_ke_toan" runat="Server" ForeColor="blue">
+                    
+                                        </asp:Label>
+                                        <span class="cssManField">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; đồng</span>
+                                    </td>
+                                    <td colspan="1">
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <span>II-Về nhà</span>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr class="cssManField">
+                                    <td>
+                                        <br />
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <asp:GridView ID="m_grv_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            EmptyDataText="Không có dữ liệu phù hợp!" Width="150%" DataKeyNames="ID" CellPadding="0"
+                            EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                             ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                             <Columns>
+                            <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DON_VI_BO_TINH" />
+                            <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DATAFIELD ="TEN_DON_VI_CHU_QUAN" />
+                            <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DON_VI" />
+                             <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" />
                                 <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
                                     NavigateUrl="" />
                                 <asp:BoundField HeaderText="CẤP HẠNG" HeaderStyle-Width="3%" DataField="CAP_HANG">
@@ -323,14 +332,14 @@
                                 <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NGAY_THANG_NAM_SU_DUNG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
+                                <asp:TemplateField HeaderStyle-Width="17.5%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
                                                 <td colspan="3" style="height: 50px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (đồng)
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
@@ -352,7 +361,7 @@
                                         </table>
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <table border="0" cellspacing="0" cellpadding="2" width="150%">
+                                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                             <tr>
                                                 <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
                                                     <%# Eval("NGUON_NS", "{0:0,000.00}")%>
@@ -378,7 +387,7 @@
                                     HeaderStyle-Width="5%">
                                     <ItemStyle HorizontalAlign="right" />
                                 </asp:BoundField>
-                                <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
+                                <asp:TemplateField HeaderStyle-Width="20%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
@@ -446,6 +455,7 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TRANG_THAI_NHA" />
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
