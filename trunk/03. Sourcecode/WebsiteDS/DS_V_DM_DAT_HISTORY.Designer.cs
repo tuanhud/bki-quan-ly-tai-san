@@ -795,26 +795,17 @@ namespace WebDS {
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnMA_TAI_SAN.AllowDBNull = false;
                 this.columnMA_TAI_SAN.MaxLength = 15;
                 this.columnID_LOAI_TAI_SAN.AllowDBNull = false;
                 this.columnDIA_CHI.AllowDBNull = false;
                 this.columnDIA_CHI.MaxLength = 250;
-                this.columnDT_KHUON_VIEN.AllowDBNull = false;
-                this.columnDT_TRU_SO_LAM_VIEC.AllowDBNull = false;
-                this.columnDT_CO_SO_HOAT_DONG_SU_NGHIEP.AllowDBNull = false;
-                this.columnDT_LAM_NHA_O.AllowDBNull = false;
-                this.columnDT_CHO_THUE.AllowDBNull = false;
-                this.columnDT_BO_TRONG.AllowDBNull = false;
-                this.columnDT_BI_LAN_CHIEM.AllowDBNull = false;
-                this.columnDT_SU_DUNG_MUC_DICH_KHAC.AllowDBNull = false;
-                this.columnGT_THEO_SO_KE_TOAN.AllowDBNull = false;
                 this.columnID_TRANG_THAI.AllowDBNull = false;
                 this.columnNGAY_CAP_NHAT_CUOI.AllowDBNull = false;
                 this.columnID_DON_VI_SU_DUNG.AllowDBNull = false;
                 this.columnID_DON_VI_CHU_QUAN.AllowDBNull = false;
-                this.columnSO_NAM_DA_SU_DUNG.AllowDBNull = false;
                 this.columnID_DAT.AllowDBNull = false;
                 this.columnGHI_CHU_LICH_SU.MaxLength = 250;
             }
@@ -1049,7 +1040,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_KHUON_VIEN {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_KHUON_VIENColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_KHUON_VIENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_KHUON_VIEN\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_KHUON_VIENColumn] = value;
@@ -1060,7 +1056,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_TRU_SO_LAM_VIEC {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_TRU_SO_LAM_VIECColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_TRU_SO_LAM_VIECColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_TRU_SO_LAM_VIEC\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_TRU_SO_LAM_VIECColumn] = value;
@@ -1071,7 +1072,13 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_CO_SO_HOAT_DONG_SU_NGHIEP {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_CO_SO_HOAT_DONG_SU_NGHIEPColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_CO_SO_HOAT_DONG_SU_NGHIEPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_CO_SO_HOAT_DONG_SU_NGHIEP\' in table \'V_DM_DAT_HISTORY\' i" +
+                                "s DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_CO_SO_HOAT_DONG_SU_NGHIEPColumn] = value;
@@ -1082,7 +1089,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_LAM_NHA_O {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_LAM_NHA_OColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_LAM_NHA_OColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_LAM_NHA_O\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_LAM_NHA_OColumn] = value;
@@ -1093,7 +1105,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_CHO_THUE {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_CHO_THUEColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_CHO_THUEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_CHO_THUE\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_CHO_THUEColumn] = value;
@@ -1104,7 +1121,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_BO_TRONG {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_BO_TRONGColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_BO_TRONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_BO_TRONG\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_BO_TRONGColumn] = value;
@@ -1115,7 +1137,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_BI_LAN_CHIEM {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_BI_LAN_CHIEMColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_BI_LAN_CHIEMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_BI_LAN_CHIEM\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_BI_LAN_CHIEMColumn] = value;
@@ -1126,7 +1153,13 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DT_SU_DUNG_MUC_DICH_KHAC {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_SU_DUNG_MUC_DICH_KHACColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.DT_SU_DUNG_MUC_DICH_KHACColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DT_SU_DUNG_MUC_DICH_KHAC\' in table \'V_DM_DAT_HISTORY\' is DB" +
+                                "Null.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.DT_SU_DUNG_MUC_DICH_KHACColumn] = value;
@@ -1137,7 +1170,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal GT_THEO_SO_KE_TOAN {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.GT_THEO_SO_KE_TOANColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.GT_THEO_SO_KE_TOANColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GT_THEO_SO_KE_TOAN\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.GT_THEO_SO_KE_TOANColumn] = value;
@@ -1224,7 +1262,12 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal SO_NAM_DA_SU_DUNG {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DAT_HISTORY.SO_NAM_DA_SU_DUNGColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DAT_HISTORY.SO_NAM_DA_SU_DUNGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SO_NAM_DA_SU_DUNG\' in table \'V_DM_DAT_HISTORY\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DAT_HISTORY.SO_NAM_DA_SU_DUNGColumn] = value;
@@ -1260,6 +1303,114 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_KHUON_VIENNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_KHUON_VIENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_KHUON_VIENNull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_KHUON_VIENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_TRU_SO_LAM_VIECNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_TRU_SO_LAM_VIECColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_TRU_SO_LAM_VIECNull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_TRU_SO_LAM_VIECColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_CO_SO_HOAT_DONG_SU_NGHIEPNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_CO_SO_HOAT_DONG_SU_NGHIEPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_CO_SO_HOAT_DONG_SU_NGHIEPNull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_CO_SO_HOAT_DONG_SU_NGHIEPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_LAM_NHA_ONull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_LAM_NHA_OColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_LAM_NHA_ONull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_LAM_NHA_OColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_CHO_THUENull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_CHO_THUEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_CHO_THUENull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_CHO_THUEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_BO_TRONGNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_BO_TRONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_BO_TRONGNull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_BO_TRONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_BI_LAN_CHIEMNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_BI_LAN_CHIEMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_BI_LAN_CHIEMNull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_BI_LAN_CHIEMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDT_SU_DUNG_MUC_DICH_KHACNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.DT_SU_DUNG_MUC_DICH_KHACColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDT_SU_DUNG_MUC_DICH_KHACNull() {
+                this[this.tableV_DM_DAT_HISTORY.DT_SU_DUNG_MUC_DICH_KHACColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGT_THEO_SO_KE_TOANNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.GT_THEO_SO_KE_TOANColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGT_THEO_SO_KE_TOANNull() {
+                this[this.tableV_DM_DAT_HISTORY.GT_THEO_SO_KE_TOANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_NGUOI_LAPNull() {
                 return this.IsNull(this.tableV_DM_DAT_HISTORY.ID_NGUOI_LAPColumn);
             }
@@ -1280,6 +1431,18 @@ namespace WebDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_NGUOI_DUYETNull() {
                 this[this.tableV_DM_DAT_HISTORY.ID_NGUOI_DUYETColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSO_NAM_DA_SU_DUNGNull() {
+                return this.IsNull(this.tableV_DM_DAT_HISTORY.SO_NAM_DA_SU_DUNGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSO_NAM_DA_SU_DUNGNull() {
+                this[this.tableV_DM_DAT_HISTORY.SO_NAM_DA_SU_DUNGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
