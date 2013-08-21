@@ -23,7 +23,7 @@ public partial class Default2 : System.Web.UI.Page
             if (!IsPostBack)
             {
                 form_title();
-                WinFormControls.load_data_to_cbo_tu_dien(
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_loai_hinh_don_vi
@@ -35,7 +35,7 @@ public partial class Default2 : System.Web.UI.Page
                     m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_chu_quan);
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                WinFormControls.load_data_to_cbo_don_vi_su_dung( 
                     m_cbo_loai_hinh_don_vi.SelectedValue
                     , m_cbo_don_vi_chu_quan.SelectedValue
                     , m_cbo_bo_tinh.SelectedValue
