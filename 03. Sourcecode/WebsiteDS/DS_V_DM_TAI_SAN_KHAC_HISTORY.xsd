@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_QLTSConnectionString (Settings)" DbObjectName="BKI_QLTS.dbo.V_DM_TAI_SAN_KHAC_HISTORY" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TEN_DV_SU_DUNG, TEN_DV_CHU_QUAN, TEN_DV_BO_TINH, TEN_TRANG_THAI, ID, MA_TAI_SAN, TEN_TAI_SAN, KY_HIEU, ID_LOAI_TAI_SAN, NUOC_SAN_XUAT, NAM_SAN_XUAT, NAM_SU_DUNG, NGUON_NS, NGUON_KHAC, GIA_TRI_CON_LAI, QLNN, KINH_DOANH, KHONG_KINH_DOANH, HD_KHAC, ID_TRANG_THAI, NGAY_CAP_NHAT_CUOI, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_DON_VI_SU_DUNG, ID_DON_VI_CHU_QUAN, ID_TAI_SAN_KHAC, GHI_CHU_LICH_SU FROM dbo.V_DM_TAI_SAN_KHAC_HISTORY</CommandText>
+                    <CommandText>SELECT TEN_DV_SU_DUNG, TEN_DV_CHU_QUAN, TEN_DV_BO_TINH, TEN_TRANG_THAI, TEN_TINH_TRANG, ID, MA_TAI_SAN, TEN_TAI_SAN, KY_HIEU, ID_LOAI_TAI_SAN, NUOC_SAN_XUAT, NAM_SAN_XUAT, NAM_SU_DUNG, NGUON_NS, NGUON_KHAC, GIA_TRI_CON_LAI, QLNN, KINH_DOANH, KHONG_KINH_DOANH, HD_KHAC, ID_TRANG_THAI, NGAY_CAP_NHAT_CUOI, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_DON_VI_SU_DUNG, ID_DON_VI_CHU_QUAN, ID_TAI_SAN_KHAC, GHI_CHU_LICH_SU, ID_TINH_TRANG FROM dbo.V_DM_TAI_SAN_KHAC_HISTORY</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -23,6 +23,7 @@
               <Mapping SourceColumn="TEN_DV_CHU_QUAN" DataSetColumn="TEN_DV_CHU_QUAN" />
               <Mapping SourceColumn="TEN_DV_BO_TINH" DataSetColumn="TEN_DV_BO_TINH" />
               <Mapping SourceColumn="TEN_TRANG_THAI" DataSetColumn="TEN_TRANG_THAI" />
+              <Mapping SourceColumn="TEN_TINH_TRANG" DataSetColumn="TEN_TINH_TRANG" />
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="MA_TAI_SAN" DataSetColumn="MA_TAI_SAN" />
               <Mapping SourceColumn="TEN_TAI_SAN" DataSetColumn="TEN_TAI_SAN" />
@@ -46,6 +47,7 @@
               <Mapping SourceColumn="ID_DON_VI_CHU_QUAN" DataSetColumn="ID_DON_VI_CHU_QUAN" />
               <Mapping SourceColumn="ID_TAI_SAN_KHAC" DataSetColumn="ID_TAI_SAN_KHAC" />
               <Mapping SourceColumn="GHI_CHU_LICH_SU" DataSetColumn="GHI_CHU_LICH_SU" />
+              <Mapping SourceColumn="ID_TINH_TRANG" DataSetColumn="ID_TINH_TRANG" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -57,7 +59,7 @@
   <xs:element name="DS_V_DM_TAI_SAN_KHAC_HISTORY" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_UserDSName="DS_V_DM_TAI_SAN_KHAC_HISTORY">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_TableClassName="V_DM_TAI_SAN_KHAC_HISTORYDataTable" msprop:Generator_TableVarName="tableV_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_RowChangedName="V_DM_TAI_SAN_KHAC_HISTORYRowChanged" msprop:Generator_TablePropName="V_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_RowDeletingName="V_DM_TAI_SAN_KHAC_HISTORYRowDeleting" msprop:Generator_RowChangingName="V_DM_TAI_SAN_KHAC_HISTORYRowChanging" msprop:Generator_RowEvHandlerName="V_DM_TAI_SAN_KHAC_HISTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_TAI_SAN_KHAC_HISTORYRowDeleted" msprop:Generator_RowClassName="V_DM_TAI_SAN_KHAC_HISTORYRow" msprop:Generator_UserTableName="V_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_RowEvArgName="V_DM_TAI_SAN_KHAC_HISTORYRowChangeEvent">
+        <xs:element name="V_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_TableClassName="V_DM_TAI_SAN_KHAC_HISTORYDataTable" msprop:Generator_TableVarName="tableV_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_TablePropName="V_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_RowDeletingName="V_DM_TAI_SAN_KHAC_HISTORYRowDeleting" msprop:Generator_RowChangingName="V_DM_TAI_SAN_KHAC_HISTORYRowChanging" msprop:Generator_RowEvHandlerName="V_DM_TAI_SAN_KHAC_HISTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_TAI_SAN_KHAC_HISTORYRowDeleted" msprop:Generator_UserTableName="V_DM_TAI_SAN_KHAC_HISTORY" msprop:Generator_RowChangedName="V_DM_TAI_SAN_KHAC_HISTORYRowChanged" msprop:Generator_RowEvArgName="V_DM_TAI_SAN_KHAC_HISTORYRowChangeEvent" msprop:Generator_RowClassName="V_DM_TAI_SAN_KHAC_HISTORYRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TEN_DV_SU_DUNG" msprop:Generator_ColumnVarNameInTable="columnTEN_DV_SU_DUNG" msprop:Generator_ColumnPropNameInRow="TEN_DV_SU_DUNG" msprop:Generator_ColumnPropNameInTable="TEN_DV_SU_DUNGColumn" msprop:Generator_UserColumnName="TEN_DV_SU_DUNG">
@@ -88,7 +90,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="TEN_TINH_TRANG" msprop:Generator_ColumnVarNameInTable="columnTEN_TINH_TRANG" msprop:Generator_ColumnPropNameInRow="TEN_TINH_TRANG" msprop:Generator_ColumnPropNameInTable="TEN_TINH_TRANGColumn" msprop:Generator_UserColumnName="TEN_TINH_TRANG">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="MA_TAI_SAN" msprop:Generator_ColumnVarNameInTable="columnMA_TAI_SAN" msprop:Generator_ColumnPropNameInRow="MA_TAI_SAN" msprop:Generator_ColumnPropNameInTable="MA_TAI_SANColumn" msprop:Generator_UserColumnName="MA_TAI_SAN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -141,6 +150,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ID_TINH_TRANG" msprop:Generator_ColumnVarNameInTable="columnID_TINH_TRANG" msprop:Generator_ColumnPropNameInRow="ID_TINH_TRANG" msprop:Generator_ColumnPropNameInTable="ID_TINH_TRANGColumn" msprop:Generator_UserColumnName="ID_TINH_TRANG" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
