@@ -309,7 +309,7 @@
                 <tr>
                     <td style="width: 10%">
                         <asp:GridView ID="m_grv_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
+                            EmptyDataText="Không có dữ liệu phù hợp!" Width="150%" DataKeyNames="ID" CellPadding="0"
                             ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                             <Columns>
                                 <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
@@ -352,7 +352,7 @@
                                         </table>
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                                        <table border="0" cellspacing="0" cellpadding="2" width="150%">
                                             <tr>
                                                 <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
                                                     <%# Eval("NGUON_NS", "{0:0,000.00}")%>
