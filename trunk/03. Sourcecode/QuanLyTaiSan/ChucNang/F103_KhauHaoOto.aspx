@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F103_KhauHaoOto.aspx.cs" Inherits="ChucNang_F103_KhauHaoOto" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    TagPrefix="asp" %>
+
+<asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
     <script type="text/javascript">
         $(function () {
             $(".tb").autocomplete({
@@ -34,8 +37,12 @@
             });
         });
     </script>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+</asp:content>
+<asp:content id="Content2" contentplaceholderid="MainContent" runat="Server" >
+    <asp:scriptmanager id="ScriptManager1" runat="server">
+    </asp:scriptmanager>
+    <asp:updatepanel id="UpdatePanel1" runat="server">
+        <contenttemplate>
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <!--  Quan ly oto  -->
         <tr>
@@ -47,6 +54,7 @@
         </tr>
         <tr>
             <td colspan="4">
+                <asp:Label ID="m_lbl_message" runat="server" Text="" CssClass="cssManField"></asp:Label>
                 <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
                     ValidationGroup="m_vlg_oto" />
             </td>
@@ -442,4 +450,16 @@
             </td>
         </tr>
     </table>
-</asp:Content>
+    </contenttemplate>
+    </asp:updatepanel>
+    <asp:updateprogress runat="server">
+        <progresstemplate>
+        <div class="cssLoadWapper">
+            <div class="cssLoadContent">
+                <img src="../Images/loadingBar.gif" alt=""/>
+                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+            </div>
+        </div>       
+        </progresstemplate>
+    </asp:updateprogress>
+</asp:content>
