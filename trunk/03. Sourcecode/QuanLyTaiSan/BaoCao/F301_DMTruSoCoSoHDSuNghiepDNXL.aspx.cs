@@ -240,7 +240,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                     m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_chu_quan);
-                WinFormControls.load_data_to_cbo_don_vi_su_dung_2012_08_20(
+                WinFormControls.load_data_to_cbo_don_vi_su_dung(
                     m_cbo_loai_hinh_don_vi.SelectedValue
                     , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
                     , m_cbo_bo_tinh.SelectedValue.ToString()
@@ -384,12 +384,11 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
     protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            WinFormControls.load_data_to_cbo_don_vi_su_dung_2012_08_20(
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
     m_cbo_loai_hinh_don_vi.SelectedValue
     , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
     , m_cbo_bo_tinh.SelectedValue.ToString()
@@ -402,4 +401,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+    #endregion
+    
 }
