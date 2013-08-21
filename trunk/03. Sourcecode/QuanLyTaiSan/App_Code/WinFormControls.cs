@@ -139,30 +139,6 @@ namespace IP.Core.WinFormControls
                 op_obj_cbo_dia_chi_dat.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
             }
         }
-        public static void load_data_to_cbo_loai_hinh_don_vi(
-            eLOAI_TU_DIEN ip_e_trang_thai_tai_san
-           , eTAT_CA ip_e_tat_ca
-           , DropDownList ip_obj_cbo_trang_thai)
-        {
-
-            US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            string v_str_loai_trang_thai = "";
-            v_str_loai_trang_thai = MA_LOAI_TU_DIEN.LOAI_HINH_DON_VI;
-            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
-                v_str_loai_trang_thai
-                , CM_DM_TU_DIEN.GHI_CHU
-                , v_ds_dm_tu_dien);
-            ip_obj_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
-            ip_obj_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
-            ip_obj_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.MA_TU_DIEN;
-            ip_obj_cbo_trang_thai.DataBind();
-            if (ip_e_tat_ca == eTAT_CA.YES)
-            {
-                ip_obj_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-            }
-
-        }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e_trang_thai_tai_san
             , eTAT_CA ip_e_tat_ca
@@ -271,7 +247,7 @@ namespace IP.Core.WinFormControls
 
         }
 
-        public static void load_data_to_cbo_don_vi_su_dung(
+        public static void load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
             string ip_str_loai_hinh_don_vi
             , string ip_str_id_don_vi_chu_quan
             , string ip_str_id_bo_tinh
