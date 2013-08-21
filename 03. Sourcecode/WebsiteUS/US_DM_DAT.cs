@@ -462,6 +462,28 @@ namespace WebUS
             pm_objDR["SO_NAM_DA_SU_DUNG"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_TINH_TRANG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_TINH_TRANG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_TINH_TRANG"] = value;
+            }
+        }
+
+        public bool IsID_TINH_TRANGNull()
+        {
+            return pm_objDR.IsNull("ID_TINH_TRANG");
+        }
+
+        public void SetID_TINH_TRANGNull()
+        {
+            pm_objDR["ID_TINH_TRANG"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_DM_DAT()

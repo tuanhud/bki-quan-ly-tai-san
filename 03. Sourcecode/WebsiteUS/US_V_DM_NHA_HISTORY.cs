@@ -21,6 +21,28 @@ public class US_V_DM_NHA_HISTORY : US_Object
 {
 	private const string c_TableName = "V_DM_NHA_HISTORY";
 #region "Public Properties"
+    public string strDIA_CHI
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "DIA_CHI", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["DIA_CHI"] = value;
+        }
+    }
+
+    public bool IsDIA_CHINull()
+    {
+        return pm_objDR.IsNull("DIA_CHI");
+    }
+
+    public void SetDIA_CHINull()
+    {
+        pm_objDR["DIA_CHI"] = System.Convert.DBNull;
+    }
+
 	public string strTEN_DV_SU_DUNG 
 	{
 		get 
@@ -709,6 +731,50 @@ public class US_V_DM_NHA_HISTORY : US_Object
 	public void SetGHI_CHU_LICH_SUNull() {
 		pm_objDR["GHI_CHU_LICH_SU"] = System.Convert.DBNull;
 	}
+
+    public decimal dcID_TINH_TRANG
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_TINH_TRANG", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_TINH_TRANG"] = value;
+        }
+    }
+
+    public bool IsID_TINH_TRANGNull()
+    {
+        return pm_objDR.IsNull("ID_TINH_TRANG");
+    }
+
+    public void SetID_TINH_TRANGNull()
+    {
+        pm_objDR["ID_TINH_TRANG"] = System.Convert.DBNull;
+    }
+
+    public string strTEN_TINH_TRANG
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_TINH_TRANG", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_TINH_TRANG"] = value;
+        }
+    }
+
+    public bool IsTEN_TINH_TRANGNull()
+    {
+        return pm_objDR.IsNull("TEN_TINH_TRANG");
+    }
+
+    public void SetTEN_TINH_TRANGNull()
+    {
+        pm_objDR["TEN_TINH_TRANG"] = System.Convert.DBNull;
+    }
 
 #endregion
 #region "Init Functions"
