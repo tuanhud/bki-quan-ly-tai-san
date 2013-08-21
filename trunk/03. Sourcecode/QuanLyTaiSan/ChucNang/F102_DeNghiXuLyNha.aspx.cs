@@ -97,7 +97,13 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     // Load dữ liệu vào đất
     private void load_data_dat(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_string_bo_tinh)
     {
-        WinFormControls.load_data_to_cbo_dia_chi(ip_string_bo_tinh, );
+        WinFormControls.load_data_to_cbo_dia_chi(
+            CIPConvert.ToDecimal(ip_string_bo_tinh)
+            , CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan)
+            , CIPConvert.ToDecimal(ip_str_id_don_vi_su_dung)
+            , CONST_QLDB.ID_TAT_CA
+            , WinFormControls.eTAT_CA.YES
+            , m_ddl_thuoc_khu_dat);
     }
 
     // Load dữ liệu vào combo trạng thái
