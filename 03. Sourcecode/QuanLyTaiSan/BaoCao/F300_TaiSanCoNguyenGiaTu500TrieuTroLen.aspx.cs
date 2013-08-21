@@ -74,7 +74,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    private void load_data_to_grid_tai_san_khac()
+    /*private void load_data_to_grid_tai_san_khac()
     {
         try
         {
@@ -133,7 +133,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
+    */
     private bool check_validate_data_id_ok()
     {
         return true;
@@ -215,7 +215,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
         {
             System.Threading.Thread.Sleep(2000);
             m_lbl_thong_bao.Text = "";
-            load_data_to_grid_tai_san_khac();
+            //load_data_to_grid_tai_san_khac();
         }
         catch (System.Exception v_e)
         {
@@ -226,7 +226,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
     {
         try
         {
-            load_data_to_grid_tai_san_khac();
+            //load_data_to_grid_tai_san_khac();
             m_grv_tai_san_khac.PageIndex = e.NewPageIndex;
             m_grv_tai_san_khac.DataBind();
         }
