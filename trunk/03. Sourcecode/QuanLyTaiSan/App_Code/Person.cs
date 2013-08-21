@@ -21,6 +21,12 @@ public class Person
         return CIPConvert.ToDecimal(v_obj_id);
     }
 
+    public static string get_user_name()
+    {
+        object v_obj_username = HttpContext.Current.Session[SESSION.UserName];
+        return v_obj_username.ToString();
+    }
+
     public static bool check_session_valid()
     {
         return HttpContext.Current.Session[SESSION.UserID] != null;
