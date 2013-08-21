@@ -210,6 +210,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             Response.Write(m_str_id_checked);
             load_data_to_grid("");
             set_trang_thai_cmd();
+            m_lbl_message.Text = "Đã cập nhật thành công";
         }
         catch (Exception v_e)
         {
@@ -241,6 +242,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             Response.Write(m_str_id_checked);
             load_data_to_grid("");
             set_trang_thai_cmd();
+            m_lbl_message.Text = "Đã cập nhật thành công";
         }
         catch (Exception v_e)
         {
