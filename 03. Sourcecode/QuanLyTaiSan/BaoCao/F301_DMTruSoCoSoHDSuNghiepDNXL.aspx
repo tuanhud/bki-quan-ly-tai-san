@@ -317,22 +317,22 @@
                             EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                             ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                             <Columns>
-                            <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DON_VI_BO_TINH" />
-                            <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DATAFIELD ="TEN_DON_VI_CHU_QUAN" />
-                            <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DON_VI" />
-                             <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" />
-                                <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
+                                <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="6%" />
+                                <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="7%" />
+                                <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="7%" />
+                                <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" HeaderStyle-Width="10%" />
+                                <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="8%" DataTextField="TEN_TAI_SAN"
                                     NavigateUrl="" />
-                                <asp:BoundField HeaderText="CẤP HẠNG" HeaderStyle-Width="3%" DataField="CAP_HANG">
+                                <asp:BoundField HeaderText="CẤP HẠNG" HeaderStyle-Width="2%" DataField="CAP_HANG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="NĂM XÂY DỰNG" HeaderStyle-Width="3%" DataField="NAM_XAY_DUNG">
+                                <asp:BoundField HeaderText="NĂM XÂY DỰNG" HeaderStyle-Width="2%" DataField="NAM_XAY_DUNG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NGAY_THANG_NAM_SU_DUNG">
+                                <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="2%" DataField="NGAY_THANG_NAM_SU_DUNG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:TemplateField HeaderStyle-Width="17.5%" HeaderStyle-Height="110px">
+                                <asp:TemplateField HeaderStyle-Width="18.5%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
@@ -376,15 +376,15 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="SỐ TẦNG" DataField="SO_TANG" HeaderStyle-Width="3%">
+                                <asp:BoundField HeaderText="SỐ TẦNG" DataField="SO_TANG" HeaderStyle-Width="2%">
                                     <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
                                 <asp:BoundField HeaderText="DIỆN TÍCH XÂY DỰNG <br/> (m2)" HtmlEncode="false" DataField="DT_XAY_DUNG"
-                                    HeaderStyle-Width="5%">
+                                    HeaderStyle-Width="3.25%">
                                     <ItemStyle HorizontalAlign="right" />
                                 </asp:BoundField>
                                 <asp:BoundField HeaderText="TỔNG DT SÀN XÂY DỰNG <br/> (m2)" HtmlEncode="false" DataField="TONG_DT_SAN_XD"
-                                    HeaderStyle-Width="5%">
+                                    HeaderStyle-Width="3.25%">
                                     <ItemStyle HorizontalAlign="right" />
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderStyle-Width="20%" HeaderStyle-Height="110px">
@@ -455,8 +455,10 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TRANG_THAI_NHA" />
-                                
+                                <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TEN_TRANG_THAI" HeaderStyle-Width="6%"
+                                    ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="TÌNH TRẠNG" DataField="TEN_TINH_TRANG" HeaderStyle-Width="4%"
+                                    ItemStyle-HorizontalAlign="Center" />
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
