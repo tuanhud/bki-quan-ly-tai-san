@@ -169,7 +169,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         try
         {
             load_data_to_dv_chu_quan_up(m_cbo_bo_tinh_up.SelectedValue);
-            load_data_to_dv_su_dung_up(m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo)
+            load_data_to_dv_su_dung_up(m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
         }
         catch (System.Exception ex)
         {
