@@ -63,18 +63,17 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <span class="cssManField">Trạng thái:</span>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" AutoPostBack="True"
-                            OnSelectedIndexChanged="m_cbo_trang_thai_SelectedIndexChanged">
-                        </asp:DropDownList>
-                    </td>
-                    <td align="right">
                         <span class="cssManField">Địa chỉ đất: </span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="90%" TabIndex="4">
+                        </asp:DropDownList>
+                    </td>
+                    <td align="right">
+                        <span class="cssManField">Trạng thái:</span>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                 </tr>
