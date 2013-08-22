@@ -76,11 +76,16 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            string v_id_dat = m_cbo_dia_chi.SelectedValue;
-           DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
-            US_DM_DAT v_us_dm_dat = new US_DM_DAT();
+            decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
+            if (v_dc_id_dat == -1)
+            {
+                m_pnl_thong_tin_nha_dat.Visible = false;
+                return;
+            }
+            m_pnl_thong_tin_nha_dat.Visible = true;
+            US_DM_DAT v_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
             m_lbl_dia_chi.Text = v_us_dm_dat.strDIA_CHI;
-            m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN, "#,##0.00") + "   ";
+            m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN, "#,##0.00");
             m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
             m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
             m_lbl_lam_co_so_hd_du_nghiep.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP, "#,##0.00");
@@ -244,7 +249,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                     , m_cbo_loai_hinh_don_vi
                     );  
                 WinFormControls.load_data_to_cbo_tu_dien(
-                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
+                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_trang_thai
                     );
@@ -413,24 +418,4 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         }
     }
     #endregion
-
-    protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
-                CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                            , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                                , m_cbo_loai_hinh_don_vi.SelectedValue
-                                , WinFormControls.eTAT_CA.YES
-                                , m_cbo_dia_chi
-                );
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(this, ex);
-        }
-    }
 }
