@@ -488,7 +488,10 @@
                                             ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
+                                <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN"/>
+                                <asp:BoundField HeaderText="Bộ tỉnh" DataField="TEN_DV_BO_TINH"/>
+                                <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN"/>
+                                <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN"/>
                                 <asp:BoundField HeaderText="Cấp hạng" DataField="CAP_HANG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
@@ -608,6 +611,7 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:BoundField HeaderText="Trạng thái" DataField="TEN_TRANG_THAI" ItemStyle-HorizontalAlign="Center" />
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
