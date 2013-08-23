@@ -39,6 +39,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             , m_ddl_thuoc_khu_dat.SelectedValue
             , m_ddl_trang_thai_nha.SelectedValue);
         set_trang_thai_cmd();
+        m_lbl_message.Text = "";
     }
 
     // Load dữ liệu vào grid
@@ -131,7 +132,6 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
 
         m_cmd_de_nghi_xu_ly.Visible = false;
         m_cmd_huy_de_nghi_xu_ly.Visible = false;
-
     }
     #endregion
 
@@ -163,6 +163,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             , m_ddl_thuoc_khu_dat.SelectedValue
             , m_ddl_trang_thai_nha.SelectedValue);
             set_trang_thai_cmd();
+            m_lbl_message.Text = "";
         }
         catch (Exception v_e)
         {
