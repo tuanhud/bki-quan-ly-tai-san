@@ -841,14 +841,14 @@ namespace WebUS
             v_obj_procedure.fillDataSetByCommand(this, op_ds_v_dm_nha);
         }
         public void FillDatasetLoadDataToGridNha_loai_hinh(
-           decimal ip_dc_id_bo_tinh
-           , decimal ip_dc_id_don_vi_chu_quan
-           , decimal ip_dc_id_don_vi_su_dung
-           , decimal ip_dc_id_dat
-           , decimal ip_dc_id_trang_thai
+            decimal ip_dc_id_bo_tinh
+            , decimal ip_dc_id_don_vi_chu_quan
+            , decimal ip_dc_id_don_vi_su_dung
+            , decimal ip_dc_id_dat
+            , decimal ip_dc_id_trang_thai
             , string ip_str_loai_hinh_don_vi
             , string ip_str_user_name
-           , DS_V_DM_NHA op_ds_v_dm_nha)
+            , DS_V_DM_NHA op_ds_v_dm_nha)
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_Load_data_to_grid_nha_loai_hinh");
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_dc_id_bo_tinh);
@@ -858,6 +858,29 @@ namespace WebUS
             v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_v_dm_nha);
+        }
+
+        public void FillDatasetLoadDataToGridNha_by_tu_khoa(
+            string ip_str_tu_khoa
+            , decimal ip_dc_id_bo_tinh
+            , decimal ip_dc_id_don_vi_chu_quan
+            , decimal ip_dc_id_don_vi_su_dung
+            , decimal ip_dc_id_dat
+            , decimal ip_dc_id_trang_thai
+            , string ip_str_loai_hinh_don_vi
+            , string ip_str_user_name
+            , DS_V_DM_NHA op_ds_v_dm_nha)
+        {
+            CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_Load_data_to_grid_nha_loai_hinh");
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_dc_id_bo_tinh);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_dc_id_don_vi_su_dung);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_dat", ip_dc_id_dat);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
             v_obj_procedure.fillDataSetByCommand(this, op_ds_v_dm_nha);
         }
         #endregion
