@@ -32,14 +32,38 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
         load_data_dat(m_ddl_don_vi_su_dung.SelectedValue, m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
         load_data_trang_thai();
-        load_data_to_grid(m_txt_tu_khoa.Text.Trim());
+        load_data_to_grid(m_txt_tu_khoa.Text.Trim()
+            , m_ddl_bo_tinh.SelectedValue
+            , m_ddl_don_vi_chu_quan.SelectedValue
+            , m_ddl_don_vi_su_dung.SelectedValue
+            , m_ddl_thuoc_khu_dat.SelectedValue
+            , m_ddl_trang_thai_nha.SelectedValue);
         set_trang_thai_cmd();
     }
 
     // Load dữ liệu vào grid
-    private void load_data_to_grid(string ip_str_tu_khoa)
+    private void load_data_to_grid(string ip_str_tu_khoa
+        , string ip_str_id_bo_tinh
+        , string ip_str_id_dv_chu_quan
+        , string ip_str_id_dv_su_dung
+        , string ip_str_id_dat
+        , string ip_str_trang_thai_nha)
     {
+        // TODO
+        US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
+        DS_V_DM_NHA v_ds_v_dm_Nha = new DS_V_DM_NHA();
 
+        v_us_v_dm_nha.FillDatasetLoadDataToGridNha(
+            CIPConvert.ToDecimal(ip_str_id_bo_tinh)
+            , CIPConvert.ToDecimal(ip_str_id_dv_chu_quan)
+            , CIPConvert.ToDecimal(ip_str_id_dv_su_dung)
+            , CIPConvert.ToDecimal(ip_str_id_dat)
+            , Person.get_user_name()
+            , CIPConvert.ToDecimal(ip_str_trang_thai_nha)
+            , v_ds_v_dm_Nha);
+
+        m_grv_danh_sach_nha.DataSource = v_ds_v_dm_Nha.V_DM_NHA;
+        m_grv_danh_sach_nha.DataBind();
     }
 
     // Load dữ liệu vào combo bộ tỉnh
@@ -130,7 +154,12 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         try
         {
             Thread.Sleep(2000);
-            load_data_to_grid(m_txt_tu_khoa.Text);
+            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
+            , m_ddl_bo_tinh.SelectedValue
+            , m_ddl_don_vi_chu_quan.SelectedValue
+            , m_ddl_don_vi_su_dung.SelectedValue
+            , m_ddl_thuoc_khu_dat.SelectedValue
+            , m_ddl_trang_thai_nha.SelectedValue);
             set_trang_thai_cmd();
         }
         catch (Exception v_e)
@@ -144,7 +173,12 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         {
             Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
-            load_data_to_grid(m_txt_tu_khoa.Text.Trim());
+            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
+            , m_ddl_bo_tinh.SelectedValue
+            , m_ddl_don_vi_chu_quan.SelectedValue
+            , m_ddl_don_vi_su_dung.SelectedValue
+            , m_ddl_thuoc_khu_dat.SelectedValue
+            , m_ddl_trang_thai_nha.SelectedValue);
         }
         catch (Exception v_e)
         {
@@ -219,7 +253,12 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             }
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
-            load_data_to_grid("");
+            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
+            , m_ddl_bo_tinh.SelectedValue
+            , m_ddl_don_vi_chu_quan.SelectedValue
+            , m_ddl_don_vi_su_dung.SelectedValue
+            , m_ddl_thuoc_khu_dat.SelectedValue
+            , m_ddl_trang_thai_nha.SelectedValue);
             set_trang_thai_cmd();
             m_lbl_message.Text = "Đã cập nhật thành công";
         }
@@ -252,7 +291,12 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             }
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
-            load_data_to_grid("");
+            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
+            , m_ddl_bo_tinh.SelectedValue
+            , m_ddl_don_vi_chu_quan.SelectedValue
+            , m_ddl_don_vi_su_dung.SelectedValue
+            , m_ddl_thuoc_khu_dat.SelectedValue
+            , m_ddl_trang_thai_nha.SelectedValue);
             set_trang_thai_cmd();
             m_lbl_message.Text = "Đã cập nhật thành công";
         }
