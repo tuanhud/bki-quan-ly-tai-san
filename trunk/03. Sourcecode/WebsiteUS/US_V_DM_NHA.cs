@@ -826,6 +826,7 @@ namespace WebUS
             , decimal ip_dc_id_don_vi_chu_quan
             , decimal ip_dc_id_don_vi_su_dung
             , decimal ip_dc_id_dat
+            , string ip_str_user_name
             , decimal ip_dc_id_trang_thai
             , DS_V_DM_NHA op_ds_v_dm_nha)
         {
@@ -834,6 +835,7 @@ namespace WebUS
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_dc_id_don_vi_su_dung);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_dat", ip_dc_id_dat);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
 
             v_obj_procedure.fillDataSetByCommand(this, op_ds_v_dm_nha);
