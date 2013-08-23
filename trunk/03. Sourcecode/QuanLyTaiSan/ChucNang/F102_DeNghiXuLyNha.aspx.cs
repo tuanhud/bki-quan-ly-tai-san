@@ -53,13 +53,15 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         DS_V_DM_NHA v_ds_v_dm_Nha = new DS_V_DM_NHA();
 
-        v_us_v_dm_nha.FillDatasetLoadDataToGridNha(
-            CIPConvert.ToDecimal(ip_str_id_bo_tinh)
+        v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
+            ip_str_tu_khoa
+            ,CIPConvert.ToDecimal(ip_str_id_bo_tinh)
             , CIPConvert.ToDecimal(ip_str_id_dv_chu_quan)
             , CIPConvert.ToDecimal(ip_str_id_dv_su_dung)
             , CIPConvert.ToDecimal(ip_str_id_dat)
-            , Person.get_user_name()
             , CIPConvert.ToDecimal(ip_str_trang_thai_nha)
+            , CONST_QLDB.ID_TAT_CA.ToString()
+            , Person.get_user_name()
             , v_ds_v_dm_Nha);
 
         m_grv_danh_sach_nha.DataSource = v_ds_v_dm_Nha.V_DM_NHA;
