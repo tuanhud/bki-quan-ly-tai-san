@@ -50,7 +50,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     // Load dữ liệu vào combo đơn vị chủ quản
     private void load_data_don_vi_chu_quan(string ip_str_id_bo_tinh)
     {
-        WinFormControls.load_data_to_cbo_don_vi_chu_quan(ip_str_id_bo_tinh,  WinFormControls.eTAT_CA.NO, m_ddl_don_vi_chu_quan);
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(ip_str_id_bo_tinh, WinFormControls.eTAT_CA.NO, m_ddl_don_vi_chu_quan);
 
         if (m_us_dm_dat.dcID_DON_VI_CHU_QUAN != 0)
         {
@@ -82,19 +82,21 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 
     private void load_data_grid(string ip_str_tu_khoa)
     {
-        DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
+        US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT();
+        DS_V_DM_DAT v_ds_v_dm_dat = new DS_V_DM_DAT();
 
-        if (ip_str_tu_khoa.Equals(String.Empty))
-        {
-            m_us_dm_dat.FillDataset(v_ds_dm_dat);
-        }
-        else
-        {
-            CStoredProc v_cstore = new CStoredProc("pr_DM_DAT_Search");
-            v_cstore.addNVarcharInputParam("@TU_KHOA", m_txt_tu_khoa.Text);
-            v_cstore.fillDataSetByCommand(m_us_dm_dat, v_ds_dm_dat);
-        }
-        m_grv_danh_sach_nha.DataSource = v_ds_dm_dat.DM_DAT;
+        v_us_v_dm_dat.FillDataSetByKeyWord(
+            CONST_QLDB.ID_TAT_CA.ToString()
+            , CONST_QLDB.ID_TAT_CA.ToString()
+            , CONST_QLDB.ID_TAT_CA.ToString()
+            , CONST_QLDB.ID_TAT_CA.ToString()
+            , Person.get_user_name()
+            , CONST_QLDB.ID_TAT_CA.ToString()
+            , ip_str_tu_khoa
+            , v_ds_v_dm_dat
+            );
+
+        m_grv_danh_sach_nha.DataSource = v_ds_v_dm_dat.V_DM_DAT;
         m_grv_danh_sach_nha.DataBind();
     }
 
@@ -174,8 +176,10 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
     }
 
-    private bool check_validate_data_is_ok() {
-        if (m_ddl_don_vi_chu_quan.SelectedValue == "") {
+    private bool check_validate_data_is_ok()
+    {
+        if (m_ddl_don_vi_chu_quan.SelectedValue == "")
+        {
             m_lbl_mess.Text = "Bạn chưa chọn đơn vị chủ quản!";
             return false;
         }
@@ -313,7 +317,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-        
+
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
@@ -366,5 +370,5 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
     #endregion
 
-    
+
 }
