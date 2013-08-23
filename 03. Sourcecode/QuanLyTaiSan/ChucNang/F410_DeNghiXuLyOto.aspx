@@ -1,9 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F410_DeNghiXuLyOto.aspx.cs"
     Inherits="ChucNang_F410_DeNghiXuLyOto" %>
-
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <style type="text/css">
@@ -341,4 +339,15 @@
             </table>
         </ContentTemplate>
     </asp:UpdatePanel>
+    <asp:UpdateProgress runat="server">
+        <ProgressTemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>
