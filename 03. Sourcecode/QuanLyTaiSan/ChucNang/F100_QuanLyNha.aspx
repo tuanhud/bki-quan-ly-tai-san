@@ -490,8 +490,8 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN"/>
                                 <asp:BoundField HeaderText="Bộ tỉnh" DataField="TEN_DV_BO_TINH"/>
-                                <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN"/>
-                                <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN"/>
+                                <asp:BoundField HeaderText="Tên đơn vị chủ quản" DataField="TEN_DV_CHU_QUAN"/>
+                                <asp:BoundField HeaderText="Tên đơn vị sử dụng" DataField="TEN_DV_SU_DUNG"/>
                                 <asp:BoundField HeaderText="Cấp hạng" DataField="CAP_HANG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"

@@ -872,7 +872,7 @@ namespace WebUS
             , string ip_str_user_name
             , DS_V_DM_NHA op_ds_v_dm_nha)
         {
-            CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_Load_data_to_grid_nha_loai_hinh");
+            CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_Load_data_to_grid_by_tu_khoa");
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_dc_id_bo_tinh);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_dc_id_don_vi_su_dung);
