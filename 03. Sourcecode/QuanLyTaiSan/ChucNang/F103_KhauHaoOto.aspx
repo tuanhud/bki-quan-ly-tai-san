@@ -8,7 +8,8 @@
                 source: function (request, response) {
                     $.ajax({
                         url: "../ChucNang/PersonService.asmx/GetOto",
-                        data: "{ 'name_prefix': '" + request.term + "' }",
+                        data: "{ 'name_prefix': '" + request.term + "', 'ip_dc_id_dv_su_dung': '"
+                        + document.getElementById('<%= m_cbo_don_vi_su_dung_tai_san_up.ClientID%>').value + "' }",
                         dataType: "json",
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
