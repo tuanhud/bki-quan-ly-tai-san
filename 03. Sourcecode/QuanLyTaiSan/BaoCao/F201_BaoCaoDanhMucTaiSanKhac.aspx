@@ -150,7 +150,7 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse; height: 100%">
                                 	<tr>
-                                		<td colspan="3" style="height:35px">Giá trị theo sổ kế toán</td>
+                                		<td colspan="3" style="height:35px">Giá trị theo sổ kế toán (VNĐ)</td>
                                 	</tr>
                                     <tr>
                                         <td colspan="2" style = "width: 66%">Nguyên giá</td>
