@@ -12,7 +12,7 @@ using WebUS;
 using WebDS.CDBNames;
 using QltsForm;
 using IP.Core.WinFormControls;
-
+using System.Threading;
 
 public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
 {
@@ -164,6 +164,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                 // m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
             }
             m_grv_nha.DataSource = v_ds_v_dm_nha.V_DM_NHA;
+            Thread.Sleep(1000);
             m_grv_nha.DataBind();
         }
         catch (System.Exception v_e)
