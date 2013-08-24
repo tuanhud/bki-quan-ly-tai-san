@@ -325,7 +325,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[rowIndex].Value);
                 m_us_gd_kh = new US_GD_KHAU_HAO(v_dc_id_kh);
-                US_
 
                 switch (e.CommandName)
                 {
