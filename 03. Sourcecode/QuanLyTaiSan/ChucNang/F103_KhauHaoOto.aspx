@@ -128,13 +128,13 @@
                     </tr>
                     <tr>
                         <td align="right" class="cssManField" colspan="1" style="width: 20%">
-                            <span>Mã tài sản:</span>
+                            <span>Mã tài sản</span>
                         </td>
                         <td align="left" class="style1" style="width: 30%">
                             <asp:Label ID="m_lbl_ma_tai_san" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
                         </td>
                         <td align="right" class="cssManField" style="width: 20%;">
-                            <span>Nhãn hiệu:</span>
+                            <span>Nhãn hiệu</span>
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:Label ID="m_lbl_nhan_hieu" runat="server" class="cssManField" Style="color: blue"></asp:Label>
@@ -142,7 +142,7 @@
                     </tr>
                     <tr>
                         <td align="right" colspan="1" class="cssManField" style="width: 20%">
-                            <span>Biển kiểm soát:</span>
+                            <span>Biển kiểm soát</span>
                         </td>
                         <td align="left" class="style1" style="width: 30%">
                             <asp:Label ID="m_lbl_bien_kiem_soat" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -156,13 +156,13 @@
                     </tr>
                     <tr>
                         <td align="right" class="cssManField" style="width: 20%;">
-                            <span>Nước sản xuất:</span>
+                            <span>Nước sản xuất</span>
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:Label ID="m_lbl_nuoc_san_xuat" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
                         </td>
                         <td align="right" class="cssManField" colspan="1" style="width: 20%">
-                            <span>Năm sản xuất:</span>
+                            <span>Năm sản xuất</span>
                         </td>
                         <td align="left" class="style1" style="width: 30%">
                             <asp:Label ID="m_lbl_nam_san_xuat" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -170,7 +170,7 @@
                     </tr>
                     <tr>
                         <td align="right" class="cssManField" style="width: 20%;">
-                            <span>Năm sử dụng:</span>
+                            <span>Năm sử dụng</span>
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:Label ID="m_lbl_nam_su_dung" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -198,13 +198,13 @@
                     </tr>
                     <tr>
                         <td align="right" class="cssManField" style="width: 20%;">
-                            <span>Nguyên giá Nguồn NS:</span>
+                            <span>Nguyên giá Nguồn NS (VNĐ)</span>
                         </td>
                         <td colspan="1" style="width: 30%" class="cssManField" style="color: blue">
                             <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" ForeColor="Blue"></asp:Label>
                         </td>
                         <td align="right" colspan="1" class="cssManField" style="width: 20%">
-                            <span>Nguyên giá Nguồn khác</span>
+                            <span>Nguyên giá Nguồn khác (VNĐ)</span>
                         </td>
                         <td>
                             <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -212,7 +212,7 @@
                     </tr>
                     <tr>
                         <td align="right" style="width: 20%;" class="cssManField">
-                            <span>Giá trị còn lại:</span>
+                            <span>Giá trị còn lại (VNĐ)</span>
                         </td>
                         <td colspan="1" style="width: 30%">
                             <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -246,7 +246,7 @@
                                 ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_oto" ForeColor="Red"> </asp:RequiredFieldValidator>
                         </td>
                         <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                            <span>Giá trị khấu hao </span>
+                            <span>Giá trị khấu hao (VNĐ) </span>
                         </td>
                         <td>
                             <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
@@ -284,7 +284,8 @@
                         </td>
                         <td colspan="4" align="left">
                             <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_oto" />
+                                Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_oto" 
+                                onclick="m_cmd_tao_moi_Click" />
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                 Height="24px" Width="98px" Text="Xóa trắng(r)" />
                             <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
