@@ -52,12 +52,12 @@ public partial class Default2 : System.Web.UI.Page
             , m_cbo_don_vi_su_dung_tai_san);
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
         m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY);
-        load_data_to_grid(m_txt_tim_kiem.Text.Trim());
+        load_data_to_grid();
         set_trang_thai_cmd();
     }
 
     // Load dữ liệu vào grid
-    private void load_data_to_grid()
+    /*private void load_data_to_grid()
     {
         try
         {
@@ -81,35 +81,31 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(ex);
         }
     }
-
-    private void load_data_to_grid(string ip_str_tu_khoa)
+    */
+    private void load_data_to_grid()
     {
-        string query = "(TEN_TAI_SAN LIKE N'%" + ip_str_tu_khoa + "%' OR MA_TAI_SAN LIKE N'%"
-            + ip_str_tu_khoa + "%' OR ID LIKE N'%" + ip_str_tu_khoa + "%') AND "
-            + DM_TAI_SAN_KHAC.ID_TRANG_THAI + " = " + m_cbo_trang_thai.SelectedValue;
+        try
+        {
+            US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+            DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
+            US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
+            DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
+            m_us_v_tai_san_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(m_txt_tim_kiem.Text.Trim()
+                        , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue) 
+                        , CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
+                        , Person.get_user_name()
+                        , m_ds_v_tai_san_khac);
+            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
+            m_grv_danh_sach_tai_san_khac.DataBind();
 
-        if (!m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals("-1"))
-        {
-            m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, "where " + DM_TAI_SAN_KHAC.ID_DON_VI_SU_DUNG + " = " + m_cbo_don_vi_su_dung_tai_san.SelectedValue
-                + " and " + query);
         }
-        else if (!m_cbo_don_vi_chu_quan.SelectedValue.Equals("-1"))
+        catch (System.Exception ex)
         {
-            m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, "where " + DM_TAI_SAN_KHAC.ID_DON_VI_CHU_QUAN + " = " + m_cbo_don_vi_chu_quan.SelectedValue
-                + " and " + query);
+            CSystemLog_301.ExceptionHandle(ex);
         }
-        else if (!m_cbo_bo_tinh.SelectedValue.Equals("-1"))
-        {
-            m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, "where " + DM_TAI_SAN_KHAC.ID_DON_VI_CHU_QUAN
-                + " in (select ID from DM_DON_VI where " + DM_DON_VI.ID_DON_VI_CAP_TREN + " = " + m_cbo_bo_tinh.SelectedValue + ")"
-                + " and " + query);
-        }
-        else
-        {
-            m_us_tai_san_khac.FillDataset(m_ds_tai_san_khac, "where " + query);
-        }
-        m_grv_danh_sach_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
-        m_grv_danh_sach_tai_san_khac.DataBind();
     }
 
     // Load dữ liệu vào combo bộ tỉnh
@@ -241,7 +237,7 @@ public partial class Default2 : System.Web.UI.Page
         try
         {
             Thread.Sleep(2000);
-            load_data_to_grid(m_txt_tim_kiem.Text);
+            load_data_to_grid();
             set_trang_thai_cmd();
         }
         catch (Exception v_e)
@@ -254,7 +250,7 @@ public partial class Default2 : System.Web.UI.Page
         try
         {
             m_grv_danh_sach_tai_san_khac.PageIndex = e.NewPageIndex;
-            load_data_to_grid(m_txt_tim_kiem.Text.Trim());
+            load_data_to_grid();
         }
         catch (Exception v_e)
         {
@@ -277,7 +273,6 @@ public partial class Default2 : System.Web.UI.Page
                 , m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES
                 , m_cbo_don_vi_su_dung_tai_san);
-            m_grv_danh_sach_tai_san_khac.Visible = false;
         }
         catch (System.Exception ex)
         {
@@ -297,7 +292,6 @@ public partial class Default2 : System.Web.UI.Page
                 , m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES
                 , m_cbo_don_vi_su_dung_tai_san);
-            m_grv_danh_sach_tai_san_khac.Visible = false;
         }
         catch (System.Exception ex)
         {
@@ -310,7 +304,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            load_data_to_grid();  
+            //load_data_to_grid();  
         }
         catch (Exception v_e)
         {
@@ -320,7 +314,14 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void m_cbo_trang_thai_tai_san_khac_SelectedIndexChanged(object sender, EventArgs e)
     {
-
+        try
+        {
+            //load_data_to_grid(); 
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     protected void m_cmd_de_nghi_xu_ly_Click(object sender, EventArgs e)
     {
@@ -345,7 +346,7 @@ public partial class Default2 : System.Web.UI.Page
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
             Thread.Sleep(2000);
-            load_data_to_grid("");
+            load_data_to_grid();
             set_trang_thai_cmd();
         }
         catch (Exception v_e)
@@ -376,7 +377,7 @@ public partial class Default2 : System.Web.UI.Page
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
             Thread.Sleep(2000);
-            load_data_to_grid("");
+            load_data_to_grid();
             set_trang_thai_cmd();
         }
         catch (Exception v_e)
@@ -384,7 +385,7 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
-    #endregion
+    
     protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -403,3 +404,4 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 }
+    #endregion
