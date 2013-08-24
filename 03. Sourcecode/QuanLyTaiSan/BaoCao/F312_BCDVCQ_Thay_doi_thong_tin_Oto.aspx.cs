@@ -101,27 +101,18 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
 
         //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
         //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
-        try
-        {
             DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
             DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
             if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
             {
                 return false;
             }
-        }
-        catch (Exception v_e)
-        {
-
-        }
 
         return true;
     }
 
     private void load_data_to_grid()
     {
-        try
-        {
             /*US_V_DM_TAI_SAN_KHAC_HISTORY m_us_tai_san_khac = new US_V_DM_TAI_SAN_KHAC_HISTORY();
             DS_V_DM_TAI_SAN_KHAC_HISTORY m_ds_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC_HISTORY();
             US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
@@ -166,11 +157,6 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
             m_grv_oto_history.DataSource = v_ds_v_dm_oto_history;
             m_grv_oto_history.DataBind();
         }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-    }
 
     /*private void load_data_to_cbo_bo_tinh()
     {
@@ -272,8 +258,16 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
 
     protected void m_grv_oto_history_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-        m_grv_oto_history.PageIndex = e.NewPageIndex;
-        load_data_to_grid();
+        try
+        {
+            m_grv_oto_history.PageIndex = e.NewPageIndex;
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle( v_e);
+        }
+        
     }
 
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
@@ -347,8 +341,16 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
-        Thread.Sleep(2000);
-        //export_excel();
+        try
+        {
+            Thread.Sleep(2000);
+            //export_excel();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(v_e);
+        }
+        
     }
     protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
     {
