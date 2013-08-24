@@ -58,23 +58,6 @@ public partial class Default2 : System.Web.UI.Page
     DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
     #endregion
     #region Private Methods
-    private double runningTotal = 0;
-    private void CalcTotal(string price)
-    {
-        try
-        {
-            runningTotal += Double.Parse(price);
-        }
-        catch { }
-    }
-    protected void myRow(GridView e)
-    {
-        for (int i = 1; i < 3; i++)
-        {
-            CalcTotal(e.Rows[1].Cells[5].Text);
-        }
-    }
-
     private void export_excel()
     {
         string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
@@ -114,8 +97,6 @@ public partial class Default2 : System.Web.UI.Page
 
     private void form_title()
     {
-        try
-        {
             string id_loai_bao_cao = "";
             if (Request.QueryString["ID"] != null)
             {
@@ -137,17 +118,10 @@ public partial class Default2 : System.Web.UI.Page
                 //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
                 //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
             }
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
     }
 
     private void load_data_to_grid()
     {
-        try
-        {
             US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
             DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
             US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
@@ -188,12 +162,6 @@ public partial class Default2 : System.Web.UI.Page
 
             m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
             m_grv_danh_sach_tai_san_khac.DataBind();
-
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
     }
 
     /*private void load_data_to_cbo_bo_tinh()
@@ -266,8 +234,6 @@ public partial class Default2 : System.Web.UI.Page
     }*/
     private void load_data_to_cbo_trang_thai()
     {
-        try
-        {
             //DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             //US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
             //string cmd = "select distinct ma_tu_dien from cm_dm_tu_dien where id_loai_tu_dien=6 or id_loai_tu_dien=7 or id_loai_tu_dien=8";
@@ -309,12 +275,6 @@ public partial class Default2 : System.Web.UI.Page
             
             //m_cbo_trang_thai.DataBind();
             //m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-
     }
     #endregion
 
