@@ -175,9 +175,12 @@
                         </td>
                         <td align="left" style="width: 1%;">
                             (*)
-                            <asp:RequiredFieldValidator ID="m_rfv_nguon_ngan_sách" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
+                            <asp:RequiredFieldValidator ID="m_rfv_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
                                 ErrorMessage="Bạn phải nhập Nguồn ngân sách" Text="*"  
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="m_cp_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
+                                ErrorMessage="Bạn không được nhập số âm vào Nguồn ngân sách" Text="*" Operator="GreaterThanEqual" ValueToCompare="0"
+                                ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                         </td>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">Nguyên giá nguồn khác</span>
@@ -191,6 +194,9 @@
                             <asp:RequiredFieldValidator ID="m_rfv_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
                                 ErrorMessage="Bạn phải nhập Nguồn khác" Text="*"  
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="m_cp_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
+                                ErrorMessage="Bạn không được nhập số âm vào Nguồn khác" Text="*" Operator="GreaterThanEqual" ValueToCompare="0"
+                                ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>
@@ -206,6 +212,9 @@
                             <asp:RequiredFieldValidator ID="m_rfv_gia_tri_con_lai" runat="server" ControlToValidate="m_txt_gia_tri_con_lai"
                                 ErrorMessage="Bạn phải nhập Giá trị còn lại" Text="*"  
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="m_cp_gia_tri_con_lai" runat="server" ControlToValidate="m_txt_gia_tri_con_lai"
+                                ErrorMessage="Bạn không được nhập số âm vào Giá trị còn lại" Text="*" Operator="GreaterThanEqual" ValueToCompare="0"
+                                ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                         </td>
                         <td align="right">
                         </td>
@@ -257,6 +266,9 @@
                             <asp:RequiredFieldValidator ID="m_rfv_quan_ly_nha_nuoc" runat="server" ControlToValidate="m_txt_quan_ly_nha_nuoc"
                                 ErrorMessage="Bạn phải nhập Quản lý nhà nước" Text="*"  
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="m_cp_quan_ly_nha_nuoc" runat="server" ControlToValidate="m_txt_quan_ly_nha_nuoc"
+                                ErrorMessage="Bạn không được nhập số âm vào Quản lý nhà nước" Text="*" Operator="GreaterThanEqual" ValueToCompare="0"
+                                ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                         </td>
                         <td align="right" style="width: 15%">
                         </td>
@@ -275,9 +287,12 @@
                         </td>
                         <td align="left" style="width: 1%;">
                             (*)
-                            <asp:RequiredFieldValidator ID="m_rfv_kinh_doanh" runat="server" ControlToValidate="m_txt_ma_tai_san"
+                            <asp:RequiredFieldValidator ID="m_rfv_kinh_doanh" runat="server" ControlToValidate="m_txt_kinh_doanh"
                                 ErrorMessage="Bạn phải nhập Kinh doanh" Text="*"  
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="m_cp_kinh_doanh" runat="server" ControlToValidate="m_txt_kinh_doanh"
+                                ErrorMessage="Bạn không được nhập số âm vào Kinh doanh" Text="*" Operator="GreaterThanEqual" ValueToCompare="0"
+                                ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                         </td>
                         <td align="right" style="width: 15%">
                             <span class="cssManField">HĐSN(Không kinh doanh)</span>
@@ -292,6 +307,9 @@
                             <asp:RequiredFieldValidator ID="m_rfv_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
                                 ErrorMessage="Bạn phải nhập Không kinh doanh" Text="*"  
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="m_cp_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
+                                ErrorMessage="Bạn không được nhập số âm vào Không kinh doanh" Text="*" Operator="GreaterThanEqual" ValueToCompare="0"
+                                ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>
@@ -307,6 +325,9 @@
                             <asp:RequiredFieldValidator ID="m_rfv_khac" runat="server" ControlToValidate="m_txt_khac"
                                 ErrorMessage="Bạn phải nhập Khác" Text="*"  
                                 ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="m_cp_khac" runat="server" ControlToValidate="m_txt_khac"
+                                ErrorMessage="Bạn không được nhập số âm vào Khác" Text="*" Operator="GreaterThanEqual" ValueToCompare="0"
+                                ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                         </td>
                         <td align="right">
                         </td>
