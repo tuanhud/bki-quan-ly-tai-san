@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <span class="cssManField">Loại hình đơn vị:</span>
+                        <span class="cssManField">Loại hình đơn vị sử dụng:</span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%" AutoPostBack="True"
@@ -70,7 +70,7 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right">
-                        <span class="cssManField">Trạng thái:</span>
+                        <span class="cssManField">Trạng thái nhà:</span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%" AutoPostBack="True">
