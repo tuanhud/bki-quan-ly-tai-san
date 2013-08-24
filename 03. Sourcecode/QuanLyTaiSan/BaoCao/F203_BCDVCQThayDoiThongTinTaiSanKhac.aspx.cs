@@ -101,13 +101,20 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
 
         if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
         if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
-        DateTime m_tu_ngay=CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-        DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-        if(m_den_ngay.CompareTo(m_tu_ngay)<0)
+        try
         {
-            return false;
+            DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+            DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
+            if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
+            {
+                return false;
+            }
         }
-
+        catch (Exception v_e)
+        {
+        	
+        }
+        
         return true;
     }
 
@@ -133,7 +140,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
             }
             else
             {
-                v_tsk_tu_ngay = CIPConvert.ToDatetime("01/01/2000");
+                v_tsk_tu_ngay = CIPConvert.ToDatetime("01/01/1900");
             }
             if (m_txt_den_ngay.Text.Trim().Length > 0)
             {
