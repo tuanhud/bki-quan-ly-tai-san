@@ -84,7 +84,11 @@ namespace WebUS
         public const decimal DE_NGHI_TRANG_CAP = 587;
         public const decimal DANG_SU_DUNG = 588;
     }
-  
 
+    public class ID_TINH_TRANG
+    {
+        public const decimal TOT = 611;
+        public const decimal XAU = 612;
+    }
    
 }
