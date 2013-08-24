@@ -74,7 +74,12 @@ public partial class Default2 : System.Web.UI.Page {
         }
 
 
-        return true;
+         if (!m_us_tai_san_khac.check_ma_valid(m_txt_ma_tai_san.Text.Trim()))
+        {
+            m_lbl_mess.Text = "Mã tài sản này đã tồn tại";
+            return false;
+        };
+         return true;
     }
     /*private void load_data_2_cbo_trang_thai_tai_san() {
         US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
@@ -87,6 +92,7 @@ public partial class Default2 : System.Web.UI.Page {
         m_cbo_trang_thai_tai_san.DataBind();
     }*/
     private void form_2_us_object() {
+        
         m_us_tai_san_khac.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue);
         m_us_tai_san_khac.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
         m_us_tai_san_khac.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue);
