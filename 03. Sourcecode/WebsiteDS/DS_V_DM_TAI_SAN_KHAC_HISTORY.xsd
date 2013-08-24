@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_QLTSConnectionString (Settings)" DbObjectName="BKI_QLTS.dbo.V_DM_TAI_SAN_KHAC_HISTORY" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TEN_DV_SU_DUNG, TEN_DV_CHU_QUAN, TEN_DV_BO_TINH, TEN_TRANG_THAI, TEN_TINH_TRANG, ID, MA_TAI_SAN, TEN_TAI_SAN, KY_HIEU, ID_LOAI_TAI_SAN, NUOC_SAN_XUAT, NAM_SAN_XUAT, NAM_SU_DUNG, NGUON_NS, NGUON_KHAC, GIA_TRI_CON_LAI, QLNN, KINH_DOANH, KHONG_KINH_DOANH, HD_KHAC, ID_TRANG_THAI, NGAY_CAP_NHAT_CUOI, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_DON_VI_SU_DUNG, ID_DON_VI_CHU_QUAN, ID_TAI_SAN_KHAC, GHI_CHU_LICH_SU, ID_TINH_TRANG FROM dbo.V_DM_TAI_SAN_KHAC_HISTORY</CommandText>
+                    <CommandText>SELECT TEN_DV_SU_DUNG, TEN_DV_CHU_QUAN, TEN_DV_BO_TINH, TEN_TRANG_THAI, TEN_TINH_TRANG, LOAI_HINH_DON_VI, TEN_LOAI_HINH_DVSD, ID, MA_TAI_SAN, TEN_TAI_SAN, KY_HIEU, ID_LOAI_TAI_SAN, NUOC_SAN_XUAT, NAM_SAN_XUAT, NAM_SU_DUNG, NGUON_NS, NGUON_KHAC, GIA_TRI_CON_LAI, QLNN, KINH_DOANH, KHONG_KINH_DOANH, HD_KHAC, ID_TRANG_THAI, NGAY_CAP_NHAT_CUOI, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_DON_VI_SU_DUNG, ID_DON_VI_CHU_QUAN, ID_TAI_SAN_KHAC, GHI_CHU_LICH_SU, ID_TINH_TRANG FROM dbo.V_DM_TAI_SAN_KHAC_HISTORY</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -24,6 +24,8 @@
               <Mapping SourceColumn="TEN_DV_BO_TINH" DataSetColumn="TEN_DV_BO_TINH" />
               <Mapping SourceColumn="TEN_TRANG_THAI" DataSetColumn="TEN_TRANG_THAI" />
               <Mapping SourceColumn="TEN_TINH_TRANG" DataSetColumn="TEN_TINH_TRANG" />
+              <Mapping SourceColumn="LOAI_HINH_DON_VI" DataSetColumn="LOAI_HINH_DON_VI" />
+              <Mapping SourceColumn="TEN_LOAI_HINH_DVSD" DataSetColumn="TEN_LOAI_HINH_DVSD" />
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="MA_TAI_SAN" DataSetColumn="MA_TAI_SAN" />
               <Mapping SourceColumn="TEN_TAI_SAN" DataSetColumn="TEN_TAI_SAN" />
@@ -91,6 +93,20 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="TEN_TINH_TRANG" msprop:Generator_ColumnVarNameInTable="columnTEN_TINH_TRANG" msprop:Generator_ColumnPropNameInRow="TEN_TINH_TRANG" msprop:Generator_ColumnPropNameInTable="TEN_TINH_TRANGColumn" msprop:Generator_UserColumnName="TEN_TINH_TRANG">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAI_HINH_DON_VI" msprop:Generator_ColumnVarNameInTable="columnLOAI_HINH_DON_VI" msprop:Generator_ColumnPropNameInRow="LOAI_HINH_DON_VI" msprop:Generator_ColumnPropNameInTable="LOAI_HINH_DON_VIColumn" msprop:Generator_UserColumnName="LOAI_HINH_DON_VI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_LOAI_HINH_DVSD" msprop:Generator_ColumnVarNameInTable="columnTEN_LOAI_HINH_DVSD" msprop:Generator_ColumnPropNameInRow="TEN_LOAI_HINH_DVSD" msprop:Generator_ColumnPropNameInTable="TEN_LOAI_HINH_DVSDColumn" msprop:Generator_UserColumnName="TEN_LOAI_HINH_DVSD">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
