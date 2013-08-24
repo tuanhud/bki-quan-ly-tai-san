@@ -102,9 +102,14 @@
                             EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                             ForeColor="#333333" AllowSorting="True" PageSize="10" OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging">
                             <Columns>
+                                <asp:TemplateField HeaderStyle-Width="2%" ItemStyle-HorizontalAlign="center" HeaderText="STT">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="10%" />
-                                <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="11%" />
-                                <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="11%" />
+                                <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="10%" />
+                                <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="10%" />
                                 <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="14%" DataTextField="TEN_TAI_SAN"
                                     NavigateUrl="" />
                                 <asp:BoundField HeaderText="KÝ HIỆU" HeaderStyle-Width="4%" DataField="KY_HIEU">

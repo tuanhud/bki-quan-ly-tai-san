@@ -77,15 +77,6 @@
                         </asp:DropDownList>
                     </td>
                 </tr>
-                <%-- <tr>
-            <td align="right">
-                <span class="cssManField">Loại hình đơn vị:</span>
-            </td>
-            <td>
-                <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%">
-                </asp:DropDownList>
-            </td>
-        </tr>--%>
                 <tr style="height: 10px">
                     <td>
                     </td>
@@ -316,10 +307,15 @@
                             EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                             ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                             <Columns>
+                                <asp:TemplateField HeaderStyle-Width="2%" ItemStyle-HorizontalAlign="center" HeaderText="STT">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="6%" />
                                 <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="7%" />
                                 <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="7%" />
-                                <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" HeaderStyle-Width="10%" />
+                                <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" HeaderStyle-Width="8%" />
                                 <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="8%" DataTextField="TEN_TAI_SAN"
                                     NavigateUrl="" />
                                 <asp:BoundField HeaderText="CẤP HẠNG" HeaderStyle-Width="2%" DataField="CAP_HANG">

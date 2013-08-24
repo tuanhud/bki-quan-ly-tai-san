@@ -198,7 +198,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
 
                 WinFormControls.load_data_to_cbo_tu_dien(
                     WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_cbo_trang_thai
                     );
                 string id_loai_bao_cao = "";
@@ -211,6 +211,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
                     case "2": m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
                         break;
                 }
+                m_cbo_trang_thai.Enabled = false;
                 //load data to combobox don vi su dung
                 WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
                    m_cbo_loai_hinh_don_vi.SelectedValue
