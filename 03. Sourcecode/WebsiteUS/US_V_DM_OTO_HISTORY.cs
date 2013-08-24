@@ -766,5 +766,31 @@ public class US_V_DM_OTO_HISTORY : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    #region Addtional
+    public void FillDataset(
+        decimal ip_dc_bo_tinh
+        , decimal ip_dc_don_vi_chu_quan
+        , decimal ip_dc_don_vi_su_dung
+        , decimal ip_id_trang_thai
+        , DateTime ip_tsk_tu_ngay
+        , DateTime ip_tsk_den_ngay
+        , string ip_str_tu_khoa
+        , DS_V_DM_OTO_HISTORY op_ds_oto_history)
+    {
+
+        CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_OTO_HISTORY_Search");
+
+        v_obj_procedure.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_bo_tinh);
+        v_obj_procedure.addDecimalInputParam("@ip_id_dvql", ip_dc_don_vi_chu_quan);
+        v_obj_procedure.addDecimalInputParam("@ip_id_dvsd", ip_dc_don_vi_su_dung);
+        v_obj_procedure.addDecimalInputParam("@ip_id_trang_thai", ip_id_trang_thai);
+        v_obj_procedure.addDatetimeInputParam("@ip_tsk_tu_ngay", ip_tsk_tu_ngay);
+        v_obj_procedure.addDatetimeInputParam("@ip_tsk_den_ngay", ip_tsk_den_ngay);
+        v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+
+        v_obj_procedure.fillDataSetByCommand(this, op_ds_oto_history);
+    }
+
+    #endregion
 	}
 }
