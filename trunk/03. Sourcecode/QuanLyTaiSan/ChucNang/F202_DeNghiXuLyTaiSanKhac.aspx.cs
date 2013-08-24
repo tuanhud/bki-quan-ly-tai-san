@@ -340,6 +340,7 @@ public partial class Default2 : System.Web.UI.Page
             Thread.Sleep(2000);
             load_data_to_grid();
             set_trang_thai_cmd();
+            m_lbl_mess.Text = "Đã cập nhập thành công";
         }
         catch (Exception v_e)
         {
