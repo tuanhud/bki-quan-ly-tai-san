@@ -25,7 +25,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     private void load_data_to_cbo_trang_thai_up()
     {
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
-            , WinFormControls.eTAT_CA.YES
+            , WinFormControls.eTAT_CA.NO
             , m_cbo_trang_thai_o_to_up);
         m_cbo_trang_thai_o_to_up.SelectedValue = ID_TRANG_THAI_OTO.DANG_SU_DUNG.ToString();
     }
@@ -33,7 +33,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     private void load_data_to_cbo_trang_thai_down()
     {
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
-            , WinFormControls.eTAT_CA.YES
+            , WinFormControls.eTAT_CA.NO
             , m_cbo_trang_thai_o_to_down);
     }
 
