@@ -47,7 +47,8 @@
                         <span class="cssManField">Loại hình đơn vị:</span>
                     </td>
                     <td>
-                        <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%">
+                        <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" Width="90%" AutoPostBack="True"
+                            OnSelectedIndexChanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="right" style="width: 18%">
@@ -83,13 +84,7 @@
                     </td>
                 </tr>
             </table>
-            <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="updatePanel">
-                <ProgressTemplate>
-                    <img src="../Images/pager/loading3.gif" alt="Loading..." style="font-weight: bold;
-                        color: #0000FF" />
-                </ProgressTemplate>
-            </asp:UpdateProgress>
-            <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
+            <table border="0" cellspacing="0" cellpadding="0" width="150%" class="cssTable">
                 <tr style="width: 100%">
                     <td class="cssPageTitleBG" colspan="3">
                         <span class="cssPageTitle">DANH SÁCH CHI TIẾT TÀI SẢN</span> <span class="expand-collapse-text initial-expand">
@@ -107,18 +102,21 @@
                             EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                             ForeColor="#333333" AllowSorting="True" PageSize="10" OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging">
                             <Columns>
-                                <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="10%" DataTextField="TEN_TAI_SAN"
+                                <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="10%" />
+                                <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="11%" />
+                                <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="11%" />
+                                <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="14%" DataTextField="TEN_TAI_SAN"
                                     NavigateUrl="" />
-                                <asp:BoundField HeaderText="KÝ HIỆU" HeaderStyle-Width="8%" DataField="KY_HIEU">
+                                <asp:BoundField HeaderText="KÝ HIỆU" HeaderStyle-Width="4%" DataField="KY_HIEU">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="NƯỚC SẢN XUẤT" HeaderStyle-Width="8%" DataField="NUOC_SAN_XUAT">
+                                <asp:BoundField HeaderText="NƯỚC SẢN XUẤT" HeaderStyle-Width="4%" DataField="NUOC_SAN_XUAT">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="NĂM SẢN XUẤT" HeaderStyle-Width="4%" DataField="NAM_SAN_XUAT">
+                                <asp:BoundField HeaderText="NĂM SẢN XUẤT" HeaderStyle-Width="3%" DataField="NAM_SAN_XUAT">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="4%" DataField="NAM_SU_DUNG">
+                                <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="3%" DataField="NAM_SU_DUNG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderStyle-Width="20%" HeaderStyle-Height="75px">
@@ -208,13 +206,17 @@
                                                 <td style="width: 25%; border-right: 1px solid gray" align="right">
                                                     <%# Eval("KHONG_KINH_DOANH") %>
                                                 </td>
-                                                <td style="width: 25%; border-right: 1px solid gray" align="right">
+                                                <td style="width: 25%" align="right">
                                                     <%# Eval("HD_KHAC") %>
                                                 </td>
                                             </tr>
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TEN_TRANG_THAI" HeaderStyle-Width="6%"
+                                    ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="TÌNH TRẠNG" DataField="TEN_TINH_TRANG" HeaderStyle-Width="4%"
+                                    ItemStyle-HorizontalAlign="Center" />
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
@@ -231,4 +233,15 @@
             </table>
         </ContentTemplate>
     </asp:UpdatePanel>
+    <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+        <ProgressTemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>
