@@ -129,9 +129,9 @@
                     EmptyDataText="Không có dữ liệu phù hợp"
                     onpageindexchanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                     <Columns>
-                    <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DON_VI_BO_TINH" />
-                            <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DATAFIELD ="TEN_DON_VI_CHU_QUAN" />
-                            <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DON_VI" />
+                    <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" />
+                            <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DATAFIELD ="TEN_DV_CHU_QUAN" />
+                            <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" />
                         <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
                             <ItemTemplate>
                                 <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
