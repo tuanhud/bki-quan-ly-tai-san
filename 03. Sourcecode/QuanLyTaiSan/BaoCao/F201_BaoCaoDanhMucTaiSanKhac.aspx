@@ -132,6 +132,7 @@
                     <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" />
                             <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DATAFIELD ="TEN_DV_CHU_QUAN" />
                             <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" />
+                            <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TEN_TRANG_THAI" />
                         <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
                             <ItemTemplate>
                                 <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
@@ -167,7 +168,7 @@
                                 	<tr>
                                 		<td style = "width: 33% ; border-right:solid; border-right-width:1px" height="40px"><%# Eval("NGUON_NS", "{0:#,###}")%></td>
                                         <td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("NGUON_KHAC", "{0:#,###}")%></td>
-                                        <td style = "width: 33% ; border-right:solid; border-right-width:1px"><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
+                                        <td style = "width: 33% "><%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>
@@ -196,7 +197,7 @@
                                 		<td style = "width: 25% ; border-right:solid; border-right-width:1px" height="40px"><%# Eval("QLNN") %></td>
                                         <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KINH_DOANH") %></td>
                                         <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("KHONG_KINH_DOANH") %></td>
-                                        <td style = "width: 25% ; border-right:solid; border-right-width:1px"><%# Eval("HD_KHAC") %></td>
+                                        <td style = "width: 25%"><%# Eval("HD_KHAC") %></td>
                                 	</tr>
                                 </table>
                             </ItemTemplate>
