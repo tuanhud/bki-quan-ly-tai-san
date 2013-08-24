@@ -59,7 +59,9 @@
                             <span class="cssManField">Bộ, tỉnh</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="m_cbo_bo_tinh_up" runat="server" Width="85%" AutoPostBack="True">
+                            <asp:DropDownList ID="m_cbo_bo_tinh_up" runat="server" Width="85%" 
+                                AutoPostBack="True" 
+                                onselectedindexchanged="m_cbo_bo_tinh_up_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -68,7 +70,8 @@
                             <span class="cssManField">Đơn vị chủ quản</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan_up" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_cbo_don_vi_chu_quan_up" runat="server" Width="85%" 
+                                onselectedindexchanged="m_cbo_don_vi_chu_quan_up_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -88,7 +91,8 @@
                             <span class="cssManField">Trạng thái tài sản</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:DropDownList ID="m_cbo_trang_thai_tai_san_up" runat="server" Width="85%">
+                            <asp:DropDownList ID="m_cbo_trang_thai_tai_san_up" runat="server" Width="85%" 
+                                Enabled="False">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -99,8 +103,8 @@
                             <span class="cssManField">Tên tài sản</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_ten_tai_san" runat="Server" class="tb" Width="85%" OnTextChanged="m_txt_ten_tai_san_TextChanged">
-                            </asp:TextBox>
+                            <asp:TextBox ID="m_txt_ten_tai_san" runat="Server" class="tb" Width="85%" 
+                                OnTextChanged="m_txt_ten_tai_san_TextChanged" AutoPostBack="True"></asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -273,7 +277,8 @@
                         </td>
                         <td colspan="4" align="left">
                             <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_tai_san_khac" />&nbsp;
+                                Height="24px" Width="98px" Text="Tạo mới(c)" 
+                                ValidationGroup="m_vlg_tai_san_khac" onclick="m_cmd_tao_moi_Click" />&nbsp;
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                 Height="24px" Width="98px" Text="Xóa trắng(r)" />
                             <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
@@ -296,7 +301,8 @@
             </td>
             <td style="width: 30%" colspan="1">
                 <asp:DropDownList ID="m_cbo_bo_tinh_down" Width="85%" runat="Server" AutoPostBack="True"
-                    TabIndex="1">
+                    TabIndex="1" 
+                    onselectedindexchanged="m_cbo_bo_tinh_down_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td align="right" style="width: 20%" colspan="1">
@@ -304,7 +310,8 @@
             </td>
             <td style="width: 30%" colspan="1">
                 <asp:DropDownList ID="m_cbo_don_vi_chu_quan_down" Width="85%" runat="Server" AutoPostBack="True"
-                    TabIndex="2">
+                    TabIndex="2" 
+                    onselectedindexchanged="m_cbo_don_vi_chu_quan_down_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -361,8 +368,10 @@
         <tr>
             <td align="center" colspan="4" style="height: 450px;" valign="top">
                 <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                    Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu.">
+                    Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True"
+                    PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu." 
+                    onpageindexchanging="m_grv_tai_san_khac_PageIndexChanging" 
+                    onrowcommand="m_grv_tai_san_khac_RowCommand">
                     <Columns>
                         <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>

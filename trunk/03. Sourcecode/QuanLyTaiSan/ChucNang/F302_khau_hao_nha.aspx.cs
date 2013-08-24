@@ -213,9 +213,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
                 switch (e.CommandName)
                 {
                     case "DeleteComp":
-                        Thread.Sleep(2000);
                         m_us_gd_khau_hao.DeleteByID(v_dc_id_kh);
-                        load_form_data();
+                        load_data_to_grid();
                         break;
                 }
             }
@@ -388,7 +387,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     }
 
     private void clear_form_data()
-    {   
+    {
         m_lbl_nguyen_gia_nguon_khac.Text = "";
         m_lbl_nguyen_gia_nguon_ns.Text = "";
         m_lbl_gia_tri_con_lai.Text = "";
