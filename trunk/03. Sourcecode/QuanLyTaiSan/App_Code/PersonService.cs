@@ -29,7 +29,7 @@ public class PersonService : System.Web.Services.WebService
     [WebMethod]
     public List<US_V_DM_TAI_SAN_KHAC> GetTaiSanKhac(string name_prefix, decimal ip_dc_id_dv_su_dung)
     {
-        return null;
+        return get_top_dm_tai_san_khac(name_prefix, ip_dc_id_dv_su_dung);
     }
     #endregion
 
@@ -77,21 +77,12 @@ public class PersonService : System.Web.Services.WebService
         DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_ts_khac = new DS_V_DM_TAI_SAN_KHAC();
         US_V_DM_TAI_SAN_KHAC v_us_v_dm_ts_khac = new US_V_DM_TAI_SAN_KHAC();
         v_ds_v_dm_ts_khac.EnforceConstraints = false;
-        v_us_v_dm_ts_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(
-            String.Empty
-            , CONST_QLDB.ID_TAT_CA
-            , CONST_QLDB.ID_TAT_CA
-            , ip_dc_id_ts
-            , ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG
-            , CONST_QLDB.ID_TAT_CA.ToString()
-            , Person.get_user_name()
-            , v_ds_v_dm_ts_khac);
-
+        v_us_v_dm_ts_khac.search_by_name(v_ds_v_dm_ts_khac, ip_str_ten_ts, ip_dc_id_ts);
         List<US_V_DM_TAI_SAN_KHAC> v_list = new List<US_V_DM_TAI_SAN_KHAC>();
         for (int i = 0; i < v_ds_v_dm_ts_khac.V_DM_TAI_SAN_KHAC.Rows.Count; i++)
         {
             US_V_DM_TAI_SAN_KHAC v_us_temp = new US_V_DM_TAI_SAN_KHAC();
-            v_us_temp.dcID = int.Parse(v_ds_v_dm_ts_khac.V_DM_TAI_SAN_KHAC.Rows[i]["ID"].ToString());
+            v_us_temp.dcID = int.Parse(v_ds_v_dm_ts_khac.V_DM_TAI_SAN_KHAC.Rows[i][V_DM_TAI_SAN_KHAC.ID].ToString());
             v_us_temp.strTEN_TAI_SAN = v_ds_v_dm_ts_khac.V_DM_TAI_SAN_KHAC.Rows[i][V_DM_TAI_SAN_KHAC.TEN_TAI_SAN].ToString().TrimEnd();
             v_list.Add(v_us_temp);
         }
