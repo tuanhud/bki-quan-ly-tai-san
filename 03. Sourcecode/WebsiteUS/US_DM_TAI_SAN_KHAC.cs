@@ -501,7 +501,18 @@ public class US_DM_TAI_SAN_KHAC : US_Object
         CStoredProc v_cstore = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Search");
         v_cstore.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
         v_cstore.fillDataSetByCommand(this, ip_ds_dm_tai_san_khac);
+
+    }
     #endregion
+    public bool check_ma_valid(string ip_str_ma_tai_san)
+    {
+        DS_DM_TAI_SAN_KHAC v_ds_dm_tai_san_khac = new DS_DM_TAI_SAN_KHAC();
+        CStoredProc v_cstore = new CStoredProc("pr_DM_TAI_SAN_KHAC_check_ma_tai_san_khac");
+        v_cstore.addNVarcharInputParam("@ip_str_ma_tai_san", ip_str_ma_tai_san);
+        v_cstore.fillDataSetByCommand(this, v_ds_dm_tai_san_khac);
+        if (v_ds_dm_tai_san_khac.DM_TAI_SAN_KHAC.Rows.Count == 0)
+            return true;
+        return false;
     }
 }
 }
