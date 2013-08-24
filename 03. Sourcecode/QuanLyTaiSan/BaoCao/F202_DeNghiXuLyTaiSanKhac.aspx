@@ -162,7 +162,7 @@
                         <td align="center" colspan="3" style="height: 450px;" valign="top">
                             <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True"
                                 AutoGenerateColumns="False" Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333"
-                                AllowSorting="True" PageSize="15" ShowHeader="true" ShowFooter="true" EmptyDataText="Không có dữ liệu phù hợp"
+                                AllowSorting="True" PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp"
                                 OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
@@ -181,7 +181,7 @@
                                                 runat="server" />
                                         </HeaderTemplate>
                                     </asp:TemplateField>
-                                    <asp:HyperLinkField HeaderText="Tên tài sản" FooterText="Tổng cộng" DataTextField="TEN_TAI_SAN"
+                                    <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN"
                                         NavigateUrl="" HeaderStyle-Width="20%" />
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                     <asp:BoundField HeaderText="Năm sản xuất" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
@@ -227,7 +227,7 @@
                                                     <td style="width: 33%; border-right: solid; border-right-width: 1px">
                                                         <%# Eval("NGUON_KHAC", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px">
+                                                    <td style="width: 33%">
                                                         <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
@@ -276,7 +276,7 @@
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px">
                                                         <%# Eval("KHONG_KINH_DOANH") %>
                                                     </td>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px">
+                                                    <td style="width: 25%">
                                                         <%# Eval("HD_KHAC") %>
                                                     </td>
                                                 </tr>
