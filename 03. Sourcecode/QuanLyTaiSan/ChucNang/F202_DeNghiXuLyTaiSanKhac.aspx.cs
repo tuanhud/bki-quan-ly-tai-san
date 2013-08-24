@@ -84,20 +84,20 @@ public partial class Default2 : System.Web.UI.Page
     */
     private void load_data_to_grid()
     {
-            US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
-            DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
-            US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
-            DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
-            m_us_v_tai_san_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(m_txt_tim_kiem.Text.Trim()
-                        , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                        , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                        , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue) 
-                        , CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
-                        , Person.get_user_name()
-                        , m_ds_v_tai_san_khac);
-            m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
-            m_grv_danh_sach_tai_san_khac.DataBind();
+        US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+        DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
+        US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
+        DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
+        m_us_v_tai_san_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(m_txt_tim_kiem.Text.Trim()
+                    , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                    , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                    , CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
+                    , Person.get_user_name()
+                    , m_ds_v_tai_san_khac);
+        m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
+        m_grv_danh_sach_tai_san_khac.DataBind();
     }
 
     // Load dữ liệu vào combo bộ tỉnh
@@ -221,7 +221,7 @@ public partial class Default2 : System.Web.UI.Page
         {
 
             CSystemLog_301.ExceptionHandle(this, v_e);
-        }  
+        }
     }
 
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
@@ -378,7 +378,7 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
-    
+
     protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -396,5 +396,6 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-}
     #endregion
+}
+    

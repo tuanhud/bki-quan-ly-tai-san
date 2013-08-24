@@ -83,7 +83,7 @@
                         <td>
                             <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" 
                                 OnSelectedIndexChanged="m_cbo_trang_thai_tai_san_khac_SelectedIndexChanged" 
-                                TabIndex="4" Width="90%">
+                                TabIndex="4" Width="90%" Enabled="False">
                             </asp:DropDownList>
                         </td>
                         <td align="right">
