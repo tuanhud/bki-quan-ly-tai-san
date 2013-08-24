@@ -65,11 +65,15 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_loai_hinh_don_vi
                     );
+                //load data to trang thai 
                 WinFormControls.load_data_to_cbo_tu_dien(
                     WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_cbo_trang_thai
                     );
+                m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
+                m_cbo_trang_thai.Enabled = false;
+                //load data to combobox bo tinh
                 WinFormControls.load_data_to_cbo_bo_tinh(
                          WinFormControls.eTAT_CA.YES
                          , m_cbo_bo_tinh);
