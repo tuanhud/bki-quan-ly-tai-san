@@ -124,9 +124,6 @@
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:TextBox ID="m_txt_ten_tai_san" runat="server" class="tb" Width="85%" OnTextChanged="m_txt_ten_tai_san_TextChanged"
                                 AutoPostBack="true" ValidationGroup="m_vlg_oto"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="m_rfv_ten_tai_san" runat="server" ControlToValidate="m_txt_ten_tai_san"
-                                ErrorMessage="Bạn phải nhập Tên Tài Sản" Text="*" ValidationGroup="m_vlg_oto"
-                                ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
