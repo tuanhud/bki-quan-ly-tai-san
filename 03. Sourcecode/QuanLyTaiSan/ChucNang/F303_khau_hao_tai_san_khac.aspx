@@ -276,7 +276,7 @@
                                 Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_tai_san_khac" />&nbsp;
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                 Height="24px" Width="98px" Text="Xóa trắng(r)" />
-                            <asp:HiddenField ID="hdf_id" runat="server" Value="" />
+                            <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
                         </td>
                     </tr>
                 </table>
