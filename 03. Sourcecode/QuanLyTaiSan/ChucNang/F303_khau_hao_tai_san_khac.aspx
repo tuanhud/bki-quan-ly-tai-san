@@ -1,12 +1,42 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F303_khau_hao_tai_san_khac.aspx.cs" Inherits="ChucNang_F303_khau_hao_tai_san_khac" %>
 
-<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
-    TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <script type="text/javascript">
+        $(function () {
+            $(".tb").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "../ChucNang/PersonService.asmx/GetTaiSanKhac",
+                        data: "{ 'name_prefix': '" + request.term + "', 'ip_dc_id_dv_su_dung': '"
+                        + document.getElementById('<%= m_cbo_don_vi_su_dung_tai_san_up.ClientID%>').value + "' }",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        dataFilter: function (data) { return data; },
+                        success: function (data) {
+                            response($.map(data.d, function (item) {
+                                return {
+                                    value: item.strTEN_TAI_SAN,
+                                    dcID: item.dcID
+                                }
+                            }))
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                },
+                minLength: 1,
+                select: function (event, ui) {
+                    document.getElementById("<%= m_hdf_id.ClientID%>").value = ui.item.dcID;
+                    console.log(ui.item.dcID);
+                }
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    '
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
@@ -49,8 +79,7 @@
                             <span class="cssManField">Đơn vị sử dụng tài sản</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" 
-                                Width="85%">
+                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" Width="85%">
                             </asp:DropDownList>
                         </td>
                         <td align="left" style="width: 1%;">
@@ -70,7 +99,8 @@
                             <span class="cssManField">Tên tài sản</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:TextBox ID="m_txt_ten_tai_san" runat="Server" class="cssTextBox" Width="85%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_ten_tai_san" runat="Server" class="tb" Width="85%" OnTextChanged="m_txt_ten_tai_san_TextChanged">
+                            </asp:TextBox>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -78,7 +108,8 @@
                             <span class="cssManField">Mã tài sản</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:Label ID="m_lbl_ma_tai_san" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_ma_tai_san" runat="Server" CssClass="cssManField" Style="color: blue">
+                            </asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -88,7 +119,8 @@
                             <span class="cssManField">Ký hiệu</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:Label ID="m_lbl_ky_hieu" runat="server" class="cssManField" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_ky_hieu" runat="server" CssClass="cssManField" Style="color: blue">
+                            </asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -96,7 +128,8 @@
                             <span class="cssManField">Nước sản xuất</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:Label ID="m_lbl_nuoc_san_xuat" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_nuoc_san_xuat" runat="Server" CssClass="cssManField" Style="color: blue">
+                            </asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -106,7 +139,8 @@
                             <span class="cssManField">Năm sản xuất</span>
                         </td>
                         <td style="width: 30%" align="left">
-                            <asp:Label ID="m_lbl_nam_san_xuat" class="cssManField" runat="server" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_nam_san_xuat" CssClass="cssManField" runat="server" Style="color: blue">
+                            </asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -114,7 +148,8 @@
                             <span class="cssManField">Ngày, tháng, năm sử dụng</span>
                         </td>
                         <td align="left" style="width: 30%;">
-                            <asp:Label ID="m_lbl_ngay_thang_nam_su_dung" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_ngay_thang_nam_su_dung" runat="Server" CssClass="cssManField"
+                                Style="color: blue"></asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -137,7 +172,8 @@
                             <span class="cssManField">Nguyên giá nguồn NS (VNĐ)</span>
                         </td>
                         <td style="width: 30%" align="right">
-                            <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" CssClass="cssManField" Style="color: blue">
+                            </asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -145,7 +181,8 @@
                             <span class="cssManField">Nguyên giá nguồn khác (VNĐ)</span>
                         </td>
                         <td align="right" style="width: 30%;">
-                            <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" CssClass="cssManField"
+                                Style="color: blue"></asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -155,7 +192,8 @@
                             <span class="cssManField">Giá trị còn lại (VNĐ)</span>
                         </td>
                         <td style="width: 30%" align="right">
-                            <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
+                            <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" CssClass="cssManField" Style="color: blue">
+                            </asp:Label>
                         </td>
                         <td align="left" style="width: 1%;">
                         </td>
@@ -167,14 +205,77 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="cssManField" colspan="2" align="center">
+                            <span>KHẤU HAO TÀI SẢN</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cssManField" align="right" colspan="1" style="width: 20%">
+                            <span>Mã phiếu</span>
+                        </td>
+                        <td colspan="1" style="width: 29%">
+                            <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox csscurrency"
+                                Width="85%" ValidationGroup="m_vlg_tai_san_khac">
+                            </asp:TextBox>
+                        </td>
+                        <td align="left" style="width: 1%;">
+                            <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
+                                ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_nha" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                        <td colspan="1" style="width: 20%" align="right" class="cssManField">
+                            <span>Giá trị khấu hao </span>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
+                                Width="85%" ValidationGroup="m_vlg_tai_san_khac">
+                            </asp:TextBox>
+                        </td>
+                        <td align="left" style="width: 1%;">
+                            <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
+                                ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_nha"
+                                ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" align="right" class="cssManField">
+                            <span>Ngày lập </span>
+                        </td>
+                        <td style="width: 29%" align="left">
+                            <asp:TextBox ID="m_txt_ngay_lap" runat="server" CssClass="cssTextBox" Width="85%"
+                                ValidationGroup="m_vlg_tai_san_khac">
+                            </asp:TextBox>
+                        </td>
+                        <td align="left" style="width: 1%" class="cssManField">
+                            <asp:RequiredFieldValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
+                                ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="*" ValidationGroup="m_vlg_nha">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                        <td align="right" class="cssManField">
+                            <span>Ngày duyệt </span>
+                        </td>
+                        <td style="width: 29%" align="left">
+                            <asp:TextBox ID="m_txt_ngay_duyet" runat="Server" CssClass=" cssTextBox" Width="85%"
+                                ValidationGroup="m_vlg_tai_san_khac">
+                            </asp:TextBox>
+                        </td>
+                        <td align="left" style="width: 1%;">
+                            <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ControlToValidate="m_txt_ngay_duyet"
+                                ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="*" ValidationGroup="m_vlg_nha"
+                                ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>
                             &nbsp;
                         </td>
                         <td colspan="4" align="left">
                             <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_tai_san_khac" />&nbsp;
+                                Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_tai_san_khac" />&nbsp;
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Xóa trắng(r)" />
+                                Height="24px" Width="98px" Text="Xóa trắng(r)" />
                             <asp:HiddenField ID="hdf_id" runat="server" Value="" />
                         </td>
                     </tr>
@@ -225,11 +326,25 @@
             </td>
         </tr>
         <tr>
+            <td align="right" colspan="1" style="width: 20%">
+                <span class="cssManField">Từ khóa </span>
+            </td>
+            <td style="width: 30%" colspan="1">
+                <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%">
+                </asp:TextBox>
+            </td>
+            <td align="right" style="width: 20%" colspan="1">
+            </td>
+            <td style="width: 30%" colspan="1">
+            </td>
+        </tr>
+        <tr>
             <td align="right">
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
-                    Height="24px" Text="Tìm kiếm" Width="98px" />
+                    Height="24px" Text="Tìm kiếm" Width="98px" 
+                    onclick="m_cmd_tim_kiem_Click" />
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
@@ -278,7 +393,7 @@
                         <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center" />
                         <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
-                                <table border="1" cellspacing="0" cellpadding="3" width="100%">
+                                <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse">
                                     <tr>
                                         <td colspan="3" style="height: 35px">
                                             Giá trị theo sổ kế toán
@@ -313,7 +428,7 @@
                                         <td style="width: 33%; border-right: solid; border-right-width: 1px" align="right">
                                             <%# Eval("NGUON_KHAC", "{0:#,###}")%>
                                         </td>
-                                        <td style="width: 33%; border-right: solid; border-right-width: 1px" align="right">
+                                        <td style="width: 33%;" align="right">
                                             <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
                                         </td>
                                     </tr>

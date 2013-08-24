@@ -16,52 +16,109 @@ using WebDS;
 public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
 {
     #region Members
-
+    private US_GD_KHAU_HAO m_us_gd_khau_hao = new US_GD_KHAU_HAO();
     #endregion
 
-    #region private methods
+    #region Private methods
     private void load_data_to_cbo_trang_thai_up()
     {
-        try
-        {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
-            m_cbo_trang_thai_tai_san_up.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-            m_cbo_trang_thai_tai_san_up.DataValueField = CM_DM_TU_DIEN.ID;
-            m_cbo_trang_thai_tai_san_up.DataTextField = CM_DM_TU_DIEN.TEN;
-            //m_cbo_trang_thai_o_to_up.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
-            m_cbo_trang_thai_tai_san_up.DataBind();
-            m_cbo_trang_thai_tai_san_up.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
 
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-
+        WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC
+            , WinFormControls.eTAT_CA.NO
+            , m_cbo_trang_thai_tai_san_up);
     }
 
     private void load_data_to_cbo_trang_thai_down()
     {
-        try
-        {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
-            m_cbo_trang_thai_tai_san_down.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-            m_cbo_trang_thai_tai_san_down.DataValueField = CM_DM_TU_DIEN.ID;
-            m_cbo_trang_thai_tai_san_down.DataTextField = CM_DM_TU_DIEN.TEN;
-            //m_cbo_trang_thai_o_to_up.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
-            m_cbo_trang_thai_tai_san_down.DataBind();
-            m_cbo_trang_thai_tai_san_down.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+        WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC
+            , WinFormControls.eTAT_CA.NO
+            , m_cbo_trang_thai_tai_san_down);
+    }
 
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
+    private void load_data_to_bo_tinh_up()
+    {
+        WinFormControls.load_data_to_cbo_bo_tinh(
+                     WinFormControls.eTAT_CA.YES
+                     , m_cbo_bo_tinh_up);
+    }
 
+    private void load_data_to_bo_tinh_down()
+    {
+        WinFormControls.load_data_to_cbo_bo_tinh(
+                     WinFormControls.eTAT_CA.YES
+                     , m_cbo_bo_tinh_down);
+    }
+
+    private void load_data_to_dv_chu_quan_up()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh_up.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan_up);
+    }
+
+    private void load_data_to_dv_chu_quan_down()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh_down.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_chu_quan_down);
+    }
+
+    private void load_data_to_dv_su_dung_up()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_cbo_don_vi_chu_quan_up.SelectedValue
+                    , m_cbo_bo_tinh_up.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung_tai_san_up);
+    }
+
+    private void load_data_to_dv_su_dung_down()
+    {
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                    m_cbo_don_vi_chu_quan_down.SelectedValue
+                    , m_cbo_bo_tinh_down.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung_tai_san_down);
+    }
+
+    private void load_from_data()
+    {
+        load_data_to_bo_tinh_up();
+        load_data_to_bo_tinh_down();
+        load_data_to_dv_chu_quan_up();
+        load_data_to_dv_chu_quan_down();
+        load_data_to_dv_su_dung_up();
+        load_data_to_dv_su_dung_down();
+        load_data_to_grid();
+    }
+
+    private void load_data_to_grid()
+    {
+
+    }
+
+    private void load_data_from_us()
+    {
+
+    }
+
+    private void them_moi_khau_hao(decimal ip_dc_id)
+    {
+
+    }
+
+    private void clear_form_data()
+    {
+        m_lbl_ma_tai_san.Text = "";
+        m_lbl_ky_hieu.Text = "";
+        m_lbl_nam_san_xuat.Text = "";
+        m_lbl_ngay_thang_nam_su_dung.Text = "";
+        m_lbl_nguyen_gia_nguon_ns.Text = "";
+        m_lbl_nguyen_gia_nguon_khac.Text = "";
+        m_lbl_nuoc_san_xuat.Text = "";
+        m_lbl_gia_tri_con_lai.Text = "";
     }
     #endregion
 
@@ -72,36 +129,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                //1. load data to combobox bộ, tỉnh - up
-                WinFormControls.load_data_to_cbo_bo_tinh(
-                         WinFormControls.eTAT_CA.YES
-                         , m_cbo_bo_tinh_up);
-                //2. load data to combobox đơn vị chủ quản - up
-                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                    m_cbo_bo_tinh_up.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_chu_quan_up);
-                //3. load data to cobobox đơn vị sử dụng - up
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                    m_cbo_don_vi_chu_quan_up.SelectedValue
-                    , m_cbo_bo_tinh_up.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung_tai_san_up);
-                //4. load data to combobox trạng thái - up
-                load_data_to_cbo_trang_thai_up();
-                //a. load data to combobox bộ, tỉnh - down
-                WinFormControls.load_data_to_cbo_bo_tinh(
-                    WinFormControls.eTAT_CA.YES,
-                    m_cbo_bo_tinh_down
-                    );
-                //b. load data to combobox đơn vị chủ quản - down
-                WinFormControls.load_data_to_cbo_don_vi_chu_quan(m_cbo_bo_tinh_down.SelectedValue,
-                    WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan_down);
-                //c. load data to combobox đơn vi sử dụng - down
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(m_cbo_don_vi_chu_quan_down.SelectedValue,
-                    m_cbo_bo_tinh_down.SelectedValue, WinFormControls.eTAT_CA.YES, m_cbo_don_vi_su_dung_tai_san_down);
-                //d. load data to combobox trạng thái - down
-                load_data_to_cbo_trang_thai_down();
+                load_from_data();
             }
         }
         catch (System.Exception ex)
@@ -109,6 +137,33 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(ex);
         }
     }
+    protected void m_txt_ten_tai_san_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!IsPostBack)
+            {
+            }
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+    protected void hdf_id_ValueChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void m_cmd_xoa_trang_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+
+    }
     #endregion
+
+
 
 }
