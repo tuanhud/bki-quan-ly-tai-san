@@ -30,7 +30,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
         load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
         load_data_trang_thai();
-        load_data_grid(m_txt_tu_khoa.Text);
+        load_data_grid(m_txt_tu_khoa.Text.Trim());
         set_form_mode();
     }
 
@@ -311,7 +311,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try
         {
             Thread.Sleep(2000);
-            load_data_grid(m_txt_tu_khoa.Text);
+            load_data_grid(m_txt_tu_khoa.Text.Trim());
         }
         catch (Exception v_e)
         {
@@ -330,7 +330,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
-            load_data_grid(m_txt_tu_khoa.Text);
+            load_data_grid(m_txt_tu_khoa.Text.Trim());
         }
         catch (Exception v_e)
         {

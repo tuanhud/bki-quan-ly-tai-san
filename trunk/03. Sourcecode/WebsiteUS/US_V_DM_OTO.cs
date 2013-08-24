@@ -803,10 +803,11 @@ namespace WebUS
 
         }
 
-        public void load_oto_by_ten(DS_V_DM_OTO op_ds_oto, string ip_str_search)
+        public void load_oto_by_ten(DS_V_DM_OTO op_ds_oto, string ip_str_search, decimal ip_dc_id_dv_su_dung)
         {
             CStoredProc v_cstore = new CStoredProc("pr_V_DM_OTO_Search_by_Ten");
             v_cstore.addNVarcharInputParam("@ip_str_ten_oto_search", ip_str_search);
+            v_cstore.addDecimalInputParam("@ip_dc_id_dv_su_dung", ip_dc_id_dv_su_dung);
             v_cstore.fillDataSetByCommand(this, op_ds_oto);
         }
 
