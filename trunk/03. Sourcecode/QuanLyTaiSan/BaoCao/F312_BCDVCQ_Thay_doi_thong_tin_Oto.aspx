@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F312_BCDVCQ_Thay_doi_thong_tin_Oto.aspx.cs" Inherits="BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeFile="F312_BCDVCQ_Thay_doi_thong_tin_Oto.aspx.cs" Inherits="BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
@@ -17,15 +18,19 @@
         </tr>
         <tr>
             <td align="right" style="width: 15%;">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td style="width: 20%;">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td align="right" style="width: 15%;">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td style="width: 20%;">
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
-<tr>
+        <tr>
             <td align="right" colspan="1" style="width: 15%">
                 <span class="cssManField">Bộ, tỉnh:</span>
             </td>
@@ -39,25 +44,25 @@
             </td>
             <td style="width: 35%">
                 <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
-                    OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged" 
-                    TabIndex="2">
+                    OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged" TabIndex="2">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td align="right">
-                &nbsp;<span class="cssManField">Loại hình đơn vị:</span></td>
+                &nbsp;<span class="cssManField">Loại hình đơn vị:</span>
+            </td>
             <td>
-                <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" 
-                    onselectedindexchanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged" 
+                <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" OnSelectedIndexChanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged"
                     Width="90%" AutoPostBack="True">
                 </asp:DropDownList>
             </td>
             <td align="right">
-                <span class="cssManField">Đơn vị sử dụng tài sản:</span></td>
+                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
+            </td>
             <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" 
-                    AutoPostBack="True" TabIndex="3" Width="90%">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" AutoPostBack="True"
+                    TabIndex="3" Width="90%">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -70,9 +75,11 @@
                 </asp:DropDownList>
             </td>
             <td align="right">
-                <span class="cssManField">&nbsp;</span></td>
+                <span class="cssManField">&nbsp;</span>
+            </td>
             <td>
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
         <tr>
             <td align="right">
@@ -107,10 +114,10 @@
             </td>
             <td colspan="2" align="left">
                 <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" onclick="m_cmd_tim_kiem_Click" />&nbsp;
+                    Width="98px" Text="Lọc dữ liệu(l)" OnClick="m_cmd_tim_kiem_Click" />&nbsp;
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Xuất Excel (x)" onclick="m_cmd_xuat_excel_Click" />&nbsp;
-                </td>
+                    Width="98px" Text="Xuất Excel (x)" OnClick="m_cmd_xuat_excel_Click" />&nbsp;
+            </td>
         </tr>
     </table>
     <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
@@ -144,6 +151,10 @@
                     <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
                         ForeColor="#333333"></SelectedRowStyle>
                     <Columns>
+                        <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" />
+                        <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" />
+                        <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" />
+                        <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TEN_TRANG_THAI" />
                         <asp:BoundField HeaderText="NGÀY CẬP NHẬT CUỐI" DataField="NGAY_CAP_NHAT_CUOI" ItemStyle-HorizontalAlign="right" />
                         <asp:BoundField HeaderText="LỊCH SỬ CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="left" />
                         <asp:BoundField HeaderText="TÊN TÀI SẢN" DataField="TEN_TAI_SAN" />
@@ -152,21 +163,21 @@
                         <asp:BoundField HeaderText="NƯỚC SẢN XUẤT" DataField="NUOC_SAN_XUAT" />
                         <asp:BoundField HeaderText="BIỂN KIỂM SOÁT" DataField="BIEN_KIEM_SOAT" />
                         <asp:BoundField HeaderText="SỐ CHỖ NGỒI" DataField="SO_CHO_NGOI" />
-                        <asp:BoundField HeaderText="CÔNG SUẤT XE <br/> (ngàn đồng)" HtmlEncode="false"
-                            DataField="CONG_SUAT_XE" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                        <asp:BoundField HeaderText="CÔNG SUẤT XE <br/> (ngàn đồng)" HtmlEncode="false" DataField="CONG_SUAT_XE"
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
                         <asp:BoundField HeaderText="NĂM SỬ DỤNG" DataField="NAM_SU_DUNG" />
                         <asp:BoundField HeaderText="NĂM SẢN XUẤT" DataField="NAM_SAN_XUAT" />
-                        <asp:BoundField HeaderText="NGUỒN NGÂN SÁCH <br/> (VNĐ)" HtmlEncode="false"
-                            DataField="NGUON_NS" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                        <asp:BoundField HeaderText="NGUỒN KHÁC <br/> (VNĐ)" HtmlEncode="false"
-                            DataField="NGUON_KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                        <asp:BoundField HeaderText="GIÁ TRỊ CÒN LẠI <br/> (VNĐ)" HtmlEncode="false"
-                            DataField="GIA_TRI_CON_LAI" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                        <asp:BoundField HeaderText="NGUỒN NGÂN SÁCH <br/> (VNĐ)" HtmlEncode="false" DataField="NGUON_NS"
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                        <asp:BoundField HeaderText="NGUỒN KHÁC <br/> (VNĐ)" HtmlEncode="false" DataField="NGUON_KHAC"
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                        <asp:BoundField HeaderText="GIÁ TRỊ CÒN LẠI <br/> (VNĐ)" HtmlEncode="false" DataField="GIA_TRI_CON_LAI"
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
                         <asp:BoundField HeaderText="QUẢN LÝ NHÀ NƯỚC" DataField="QLNN" />
                         <asp:BoundField HeaderText="KINH DOANH" DataField="KINH_DOANH" />
                         <asp:BoundField HeaderText="KHÔNG KINH DOANH" DataField="KHONG_KINH_DOANH" />
                         <asp:BoundField HeaderText="KHÁC" DataField="HD_KHAC" />
-                        <asp:BoundField HeaderText="CHỨC NĂNG SỬ DỤNG" DataField="CHUC_NANG_SU_DUNG" />
+                        <asp:BoundField HeaderText="CHỨC DANH SỬ DỤNG" DataField="CHUC_DANH_SU_DUNG" />
                         <asp:BoundField HeaderText="NGUỒN GỐC XE" DataField="NGUON_GOC_XE" />
                     </Columns>
                 </asp:GridView>

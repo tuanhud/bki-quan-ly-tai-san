@@ -101,6 +101,8 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
 
         //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
         //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
+        try
+        {
             DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
             DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
             if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
@@ -108,6 +110,11 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
                 return false;
             }
 
+        }
+        catch (Exception)
+        {
+
+        }
         return true;
     }
 
@@ -150,6 +157,7 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
                 , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
                 , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                 , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                ,CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
                 , v_tsk_tu_ngay
                 , v_tsk_den_ngay
                 , m_txt_tim_kiem.Text
