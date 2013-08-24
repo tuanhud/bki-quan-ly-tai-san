@@ -48,7 +48,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_hdf_id_ValueChanged(object sender, EventArgs e)
     {
         try
@@ -64,7 +63,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -77,7 +75,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
@@ -85,6 +82,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             if (!m_hdf_id.Value.Equals(String.Empty))
             {
                 them_moi_khau_hao(CIPConvert.ToDecimal(m_hdf_id.Value));
+                m_lbl_mess.Text = "Cập nhật thành công";
+                clear_form_data();
             }
         }
         catch (Exception v_e)
@@ -93,24 +92,11 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         }
 
     }
-
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e)
     {
         try
         {
-            m_txt_nha.Text = "";
-            m_lbl_ten_tai_san.Text = "";
-            m_lbl_ma_tai_san.Text = "";
-            m_lbl_cap_hang.Text = "";
-            m_lbl_nam_xay_dung.Text = "";
-            m_lbl_ngay_thang_nam_du_dung.Text = "";
-            m_lbl_nguyen_gia_nguon_ns.Text = "";
-            m_lbl_nguyen_gia_nguon_khac.Text = "";
-            m_lbl_gia_tri_con_lai.Text = "";
-            m_txt_ma_phieu.Text = "";
-            m_txt_ngay_lap.Text = "";
-            m_txt_gia_tri_khau_hao.Text = "";
-            m_txt_ngay_duyet.Text = "";
+            clear_form_data();
         }
         catch (Exception v_e)
         {
@@ -121,7 +107,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     {
 
     }
-
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -164,7 +149,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -178,7 +162,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cbo_don_vi_chu_quan_down_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -208,6 +191,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         {
             if (!m_hdf_id.Value.Equals(String.Empty))
             {
+                clear_form_data();
                 decimal v_dc_id = CIPConvert.ToDecimal(m_hdf_id.Value);
                 load_data_from_us(v_dc_id);
             }
@@ -217,7 +201,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
@@ -311,7 +294,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     private void load_data_to_bo_tinh_up()
     {
         WinFormControls.load_data_to_cbo_bo_tinh(
-                     WinFormControls.eTAT_CA.YES
+                     WinFormControls.eTAT_CA.NO
                      , m_cbo_bo_tinh_up);
     }
 
@@ -326,7 +309,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     {
         WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_cbo_bo_tinh_up.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_chu_quan_up);
     }
 
@@ -343,7 +326,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         WinFormControls.load_data_to_cbo_don_vi_su_dung(
                     m_cbo_don_vi_chu_quan_up.SelectedValue
                     , m_cbo_bo_tinh_up.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_su_dung_up);
     }
 
@@ -384,18 +367,17 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         US_DM_NHA v_us_dm_nha = new US_DM_NHA(ip_dc_id);
 
         decimal v_dc_gia_tri_khau_hao = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
-        decimal v_dc_user_id = CIPConvert.ToDecimal(HttpContext.Current.Session[SESSION.UserID].ToString());
 
         // Lấy thông tin mới cho giao dịch khấu hao
         v_us_gd_khau_hao.dcID_TAI_SAN = ip_dc_id;
-        v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.NHA;
+        v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = v_us_dm_nha.dcID_LOAI_TAI_SAN;
         v_us_gd_khau_hao.dcID_DON_VI = v_us_dm_nha.dcID_DON_VI_SU_DUNG;
         v_us_gd_khau_hao.dcGIA_TRI_KHAU_HAO = v_dc_gia_tri_khau_hao;
         v_us_gd_khau_hao.strMA_PHIEU = m_txt_ma_phieu.Text;
         v_us_gd_khau_hao.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
         v_us_gd_khau_hao.datNGAY_LAP = CIPConvert.ToDatetime(m_txt_ngay_lap.Text);
-        v_us_gd_khau_hao.dcID_NGUOI_LAP = v_dc_user_id;
-        v_us_gd_khau_hao.dcID_NGUOI_DUYET = v_dc_user_id;
+        v_us_gd_khau_hao.dcID_NGUOI_LAP = Person.get_user_id();
+        v_us_gd_khau_hao.dcID_NGUOI_DUYET = Person.get_user_id();
 
         // Cập nhật cho nhà
         v_us_dm_nha.dcGIA_TRI_CON_LAI = v_us_dm_nha.dcGIA_TRI_CON_LAI - v_dc_gia_tri_khau_hao;
@@ -403,6 +385,23 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
         // Thực hiện cập nhật
         v_us_gd_khau_hao.Insert();
         v_us_dm_nha.Update();
+    }
+
+    private void clear_form_data()
+    {
+        m_hdf_id.Value = "";
+        m_lbl_nguyen_gia_nguon_khac.Text = "";
+        m_lbl_nguyen_gia_nguon_ns.Text = "";
+        m_lbl_gia_tri_con_lai.Text = "";
+        m_lbl_ten_tai_san.Text = "";
+        m_lbl_ma_tai_san.Text = "";
+        m_lbl_cap_hang.Text = "";
+        m_lbl_nam_xay_dung.Text = "";
+        m_lbl_ngay_thang_nam_du_dung.Text = "";
+        m_txt_ma_phieu.Text = "";
+        m_txt_ngay_duyet.Text = "";
+        m_txt_ngay_lap.Text = "";
+        m_txt_gia_tri_khau_hao.Text = "";
     }
     #endregion
 

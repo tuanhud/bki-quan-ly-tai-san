@@ -58,18 +58,17 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(ip_dc_id);
 
         decimal v_dc_gia_tri_khau_hao = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
-        decimal v_dc_user_id = CIPConvert.ToDecimal(HttpContext.Current.Session[SESSION.UserID].ToString());
 
         // Lấy thông tin mới cho giao dịch khấu hao
         v_us_gd_khau_hao.dcID_TAI_SAN = ip_dc_id;
-        v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.NHA;
+        v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = v_us_dm_oto.dcID_LOAI_TAI_SAN;
         v_us_gd_khau_hao.dcID_DON_VI = v_us_dm_oto.dcID_DON_VI_SU_DUNG;
         v_us_gd_khau_hao.dcGIA_TRI_KHAU_HAO = v_dc_gia_tri_khau_hao;
         v_us_gd_khau_hao.strMA_PHIEU = m_txt_ma_phieu.Text;
         v_us_gd_khau_hao.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
         v_us_gd_khau_hao.datNGAY_LAP = CIPConvert.ToDatetime(m_txt_ngay_lap.Text);
-        v_us_gd_khau_hao.dcID_NGUOI_LAP = v_dc_user_id;
-        v_us_gd_khau_hao.dcID_NGUOI_DUYET = v_dc_user_id;
+        v_us_gd_khau_hao.dcID_NGUOI_LAP = Person.get_user_id();
+        v_us_gd_khau_hao.dcID_NGUOI_DUYET = Person.get_user_id();
 
         // Cập nhật cho nhà
         v_us_dm_oto.dcGIA_TRI_CON_LAI = v_us_dm_oto.dcGIA_TRI_CON_LAI - v_dc_gia_tri_khau_hao;
@@ -116,7 +115,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     private void load_data_to_bo_tinh_up()
     {
         WinFormControls.load_data_to_cbo_bo_tinh(
-            WinFormControls.eTAT_CA.YES
+            WinFormControls.eTAT_CA.NO
             , m_cbo_bo_tinh_up);
     }
 
@@ -130,7 +129,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     private void load_data_to_dv_chu_quan_up(string ip_str_id_bo_tinh)
     {
         WinFormControls.load_data_to_cbo_don_vi_chu_quan(ip_str_id_bo_tinh
-            , WinFormControls.eTAT_CA.YES
+            , WinFormControls.eTAT_CA.NO
             , m_cbo_don_vi_chu_quan_up);
     }
 
@@ -146,7 +145,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
        WinFormControls.load_data_to_cbo_don_vi_su_dung(
             ip_str_id_don_vi_chu_quan
             , ip_str_id_bo_tinh
-            , WinFormControls.eTAT_CA.YES
+            , WinFormControls.eTAT_CA.NO
             , m_cbo_don_vi_su_dung_tai_san_up);
     }
 
@@ -175,7 +174,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         m_txt_gia_tri_khau_hao.Text = "";
         m_txt_ngay_lap.Text = "";
         m_txt_ngay_duyet.Text = "";
-        m_lbl_message.Text = "";
     }
 
     private void load_data_to_grid()
@@ -236,7 +234,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-
     protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -249,7 +246,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-
     protected void m_cbo_don_vi_chu_quan_down_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -261,13 +257,13 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-
     protected void m_txt_ten_tai_san_TextChanged(object sender, EventArgs e)
     {
         try
         {
             if (!m_hdf_id.Value.Equals(String.Empty))
             {
+                clear_form_data();
                 decimal v_dc_id = CIPConvert.ToDecimal(m_hdf_id.Value);
                 load_data_from_us(v_dc_id);
             }
@@ -277,7 +273,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
@@ -287,6 +282,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
                 Thread.Sleep(1000);
                 them_moi_khau_hao(CIPConvert.ToDecimal(m_hdf_id.Value));
                 clear_form_data();
+                m_lbl_message.Text = "Cập nhật thành công";
             }
         }
         catch (Exception v_e)
@@ -294,7 +290,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e)
     {
         try
@@ -321,7 +316,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_grv_dm_oto_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
