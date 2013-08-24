@@ -24,7 +24,7 @@ public partial class Default2 : System.Web.UI.Page {
     #endregion
     #region Private Methods
     private void load_data_2_grid() {
-        try {
+        /*try {
             m_ds_tai_san_khac.DM_TAI_SAN_KHAC.Clear();
             m_us_tai_san_khac.search(m_txt_tim_kiem.Text.Trim(), m_ds_tai_san_khac);
             m_grv_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
@@ -33,6 +33,20 @@ public partial class Default2 : System.Web.UI.Page {
         catch (Exception v_e) {
             throw v_e;
         }
+         */
+        US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+        DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
+        m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Clear();
+        m_us_v_tai_san_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(m_txt_tim_kiem.Text.Trim()
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.ID_TAT_CA.ToString()
+            , Person.get_user_name()
+            , m_ds_v_tai_san_khac);
+        m_grv_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
+        m_grv_tai_san_khac.DataBind();
     }
 
     private bool check_validate_data_is_ok() {
@@ -62,7 +76,7 @@ public partial class Default2 : System.Web.UI.Page {
 
         return true;
     }
-    private void load_data_2_cbo_trang_thai_tai_san() {
+    /*private void load_data_2_cbo_trang_thai_tai_san() {
         US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
         DS_CM_DM_TU_DIEN v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
         
@@ -71,7 +85,7 @@ public partial class Default2 : System.Web.UI.Page {
         m_cbo_trang_thai_tai_san.DataTextField = CM_DM_TU_DIEN.TEN;
         m_cbo_trang_thai_tai_san.DataValueField = CM_DM_TU_DIEN.ID;
         m_cbo_trang_thai_tai_san.DataBind();
-    }
+    }*/
     private void form_2_us_object() {
         m_us_tai_san_khac.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue);
         m_us_tai_san_khac.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
@@ -91,6 +105,10 @@ public partial class Default2 : System.Web.UI.Page {
         m_us_tai_san_khac.dcKINH_DOANH = CIPConvert.ToDecimal(m_txt_kinh_doanh.Text.Trim());
         m_us_tai_san_khac.dcKHONG_KINH_DOANH = CIPConvert.ToDecimal(m_txt_khong_kinh_doanh.Text.Trim());
         m_us_tai_san_khac.dcHD_KHAC = CIPConvert.ToDecimal(m_txt_khac.Text.Trim());
+        if (hdf_id.Value.Equals(String.Empty))
+        {
+            m_us_tai_san_khac.dcID_TINH_TRANG = ID_TINH_TRANG.TOT;
+        }
     }
     private void us_object_2_form(US_DM_TAI_SAN_KHAC ip_us_m_dm_tai_san_khac) {
         hdf_id.Value = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcID);
@@ -129,7 +147,7 @@ public partial class Default2 : System.Web.UI.Page {
         hdf_id.Value = CIPConvert.ToStr(dc_id_tai_san_khac);
         m_us_tai_san_khac = new US_DM_TAI_SAN_KHAC(dc_id_tai_san_khac);
     }
-    private void load_data_trang_thai() {
+    /*private void load_data_trang_thai() {
         DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
 
@@ -138,7 +156,7 @@ public partial class Default2 : System.Web.UI.Page {
         m_cbo_trang_thai_tai_san.DataTextField = "TEN";
         m_cbo_trang_thai_tai_san.DataValueField = "ID";
         m_cbo_trang_thai_tai_san.DataBind();
-    }
+    }*/
     private void reset_control() {
         m_lbl_mess.Text = "";
         m_txt_ten_tai_san.Text = "";
@@ -164,8 +182,10 @@ public partial class Default2 : System.Web.UI.Page {
             return;
         }
         if (!check_validate_data_is_ok()) return;
+        m_us_tai_san_khac = new US_DM_TAI_SAN_KHAC(CIPConvert.ToDecimal(hdf_id.Value));
+
         form_2_us_object();
-        m_us_tai_san_khac.dcID = CIPConvert.ToDecimal(hdf_id.Value);
+        
         m_us_tai_san_khac.Update();
         load_data_2_grid();
         hdf_id.Value = "";
@@ -191,7 +211,7 @@ public partial class Default2 : System.Web.UI.Page {
                 load_data_2_cbo_bo_tinh();
                 load_data_2_cbo_trang_thai_tai_san();*/
                 set_form_mode();
-                load_data_2_grid();
+                
                 WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.NO
                     , m_cbo_bo_tinh);
@@ -205,7 +225,8 @@ public partial class Default2 : System.Web.UI.Page {
                     , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_su_dung);
                 //load_data_2_cbo_trang_thai_tai_san();
-                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai_tai_san);
+                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.NO, m_cbo_trang_thai_tai_san);
+                load_data_2_grid();
             }
 
             /*load_data_2_cbo_don_vi_chu_quan();
