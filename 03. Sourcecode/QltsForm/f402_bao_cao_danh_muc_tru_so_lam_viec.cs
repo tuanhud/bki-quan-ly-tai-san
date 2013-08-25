@@ -4,7 +4,6 @@
 /// Goal: Create Form for V_DM_NHA
 ///************************************************
 
-
 using System;
 using System.Data;
 using System.Drawing;
@@ -19,13 +18,12 @@ using IP.Core.IPExcelWebReport;
 using WebUS;
 using WebDS;
 using WebDS.CDBNames;
+using IP.Core.QltsFormControls;
 
 using C1.Win.C1FlexGrid;
 
 namespace QltsForm
 {
-
-
 
     public class f402_bao_cao_danh_muc_tru_so_lam_viec : System.Windows.Forms.Form
     {
@@ -679,59 +677,96 @@ namespace QltsForm
             this.ShowDialog();
         }
 
-
         public void export_excel(
             eFormMode ip_form_mode
-            , string ip_str_bo_tinh
-            , string ip_str_don_vi_chu_quan
-            , decimal ip_dc_don_vi_su_dung
             , decimal ip_dc_id_dat
-            , ref string op_str_excel_file_name)
+            , ref CObjExcelAssetParameters op_obj_excel_parameters)
         {
             //1. Đưa dữ liệu lên trên grid
             m_obj_trans = get_trans_object(m_fg);
-
             m_e_form_mode = ip_form_mode;
-            US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_dc_don_vi_su_dung);
-            US_DM_DAT v_us_dm_dat = new US_DM_DAT(ip_dc_id_dat);
+            US_V_DM_DAT v_us_v_dm_dat;
+            if (ip_dc_id_dat != CONST_QLDB.ID_TAT_CA)
+            {
+                v_us_v_dm_dat = new US_V_DM_DAT(ip_dc_id_dat);
+            }
+            else
+            {
+                v_us_v_dm_dat = new US_V_DM_DAT();
+            }
+            US_DM_DON_VI v_us_dm_don_vi;
+            if (op_obj_excel_parameters.dcID_DON_VI_SU_DUNG != CONST_QLDB.ID_TAT_CA)
+            {
+                v_us_dm_don_vi = new US_DM_DON_VI(op_obj_excel_parameters.dcID_DON_VI_SU_DUNG);
+            }
+            else
+            {
+                v_us_dm_don_vi = new US_DM_DON_VI();
+            }
+
             //2. Xuất dữ liệu ra file excel
             //CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep.xls", 21, 1);
             CExcelWebReport v_obj_exe_report = new CExcelWebReport();
             switch (m_e_form_mode)
             {
                 case eFormMode.DANH_MUC_TRU_SO_LAM_VIEC:
-                    load_data_2_grid(ip_dc_don_vi_su_dung.ToString(), ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString());
+                    load_data_2_grid(
+                        op_obj_excel_parameters.strKEY_SEARCH
+                        , op_obj_excel_parameters.dcID_BO_TINH
+                        , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
+                        , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
+                        , ip_dc_id_dat
+                        , ID_TRANG_THAI_NHA.DANG_SU_DUNG
+                        , op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
+                        , op_obj_excel_parameters.strUSER_NAME);
                     v_obj_exe_report = new CExcelWebReport("BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep.xls", 21, 1);
                     break;
                 case eFormMode.DE_NGHI_XU_LY:
-                    load_data_2_grid(ip_dc_don_vi_su_dung.ToString(), ID_TRANG_THAI_NHA.DE_NGHI_XU_LY.ToString());
+                    load_data_2_grid(
+                        op_obj_excel_parameters.strKEY_SEARCH
+                        , op_obj_excel_parameters.dcID_BO_TINH
+                        , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
+                        , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
+                        , ip_dc_id_dat
+                        , ID_TRANG_THAI_NHA.DE_NGHI_XU_LY
+                        , op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
+                        , op_obj_excel_parameters.strUSER_NAME);
                     v_obj_exe_report = new CExcelWebReport("BC-017. Bao cao danh mục tru so lam viec, co so hoat dong su nghiep de nghi xu ly.xls", 21, 1);
                     break;
                 case eFormMode.TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP:
-                    //v_obj_exe_report = new CExcelWebReport("BC-017. Bao cao danh mục tru so lam viec, co so hoat dong su nghiep de nghi xu ly.xls", 21, 1);
+                    load_data_2_grid(
+                        op_obj_excel_parameters.strKEY_SEARCH
+                        , op_obj_excel_parameters.dcID_BO_TINH
+                        , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
+                        , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
+                        , ip_dc_id_dat
+                        , ID_TRANG_THAI_NHA.DANG_SU_DUNG
+                        , op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
+                        , op_obj_excel_parameters.strUSER_NAME);
+                    v_obj_exe_report = new CExcelWebReport("BC-004 Bao cao danh muc tru so lam viec co so hoat dong su nghiep giao cho don vi su nghiep cong lap tu chu tai chinh.xls", 21, 1);
                     break;
                 default:
                     break;
             }
 
             // Thông tin phần đầu
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", ip_str_bo_tinh);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", ip_str_don_vi_chu_quan);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", v_us_don_vi.strTEN_DON_VI);
-            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_us_don_vi.strMA_DON_VI);
-            v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", v_us_don_vi.strLOAI_HINH_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", op_obj_excel_parameters.strTEN_BO_TINH);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", op_obj_excel_parameters.strTEN_DON_VI_CHU_QUAN);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", op_obj_excel_parameters.strTEN_DON_VI_SU_DUNG);
+            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_us_dm_don_vi.strMA_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", op_obj_excel_parameters.strLOAI_HINH_DON_VI);
 
             // Thông tin đất
-            v_obj_exe_report.AddFindAndReplaceItem("<DIA_CHI>", v_us_dm_dat.strDIA_CHI);
-            v_obj_exe_report.AddFindAndReplaceItem("<DT_KHUON_VIEN>", v_us_dm_dat.dcDT_KHUON_VIEN.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<TRU_SO_LAM_VIEC>", v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<CO_SO_HDSN>", v_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<LAM_NHA_O>", v_us_dm_dat.dcDT_LAM_NHA_O.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<CHO_THUE>", v_us_dm_dat.dcDT_CHO_THUE.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TRONG>", v_us_dm_dat.dcDT_BO_TRONG.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<BI_LAN_CHIEM>", v_us_dm_dat.dcDT_BI_LAN_CHIEM.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<KHAC>", v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC.ToString("#,###.##"));
-            v_obj_exe_report.AddFindAndReplaceItem("<GT_THEO_SO_KE_TOAN>", v_us_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString("#,###.##"));
+            v_obj_exe_report.AddFindAndReplaceItem("<DIA_CHI>", v_us_v_dm_dat.strDIA_CHI);
+            v_obj_exe_report.AddFindAndReplaceItem("<DT_KHUON_VIEN>", v_us_v_dm_dat.dcDT_KHUON_VIEN.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<TRU_SO_LAM_VIEC>", v_us_v_dm_dat.dcDT_TRU_SO_LAM_VIEC.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<CO_SO_HDSN>", v_us_v_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<LAM_NHA_O>", v_us_v_dm_dat.dcDT_LAM_NHA_O.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<CHO_THUE>", v_us_v_dm_dat.dcDT_CHO_THUE.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<BO_TRONG>", v_us_v_dm_dat.dcDT_BO_TRONG.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<BI_LAN_CHIEM>", v_us_v_dm_dat.dcDT_BI_LAN_CHIEM.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<KHAC>", v_us_v_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC.ToString("#,##0.00"));
+            v_obj_exe_report.AddFindAndReplaceItem("<GT_THEO_SO_KE_TOAN>", v_us_v_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString("#,##0.00"));
 
             // Thông tin phần cuối
             //v_obj_exe_report.AddFindAndReplaceItem("<HO_SO_GIAY_TO_LIEN_QUAN>", v_us_dm_dat.strDIA_CHI);
@@ -744,7 +779,7 @@ namespace QltsForm
             v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
 
             //3. Trả về địa chỉ file
-            op_str_excel_file_name = v_obj_exe_report.GetStrOutputFileNameWithPath();
+            op_obj_excel_parameters.strFILE_NAME_RESULT = v_obj_exe_report.GetStrOutputFileNameWithPath();
         }
         #endregion
 
@@ -958,13 +993,29 @@ namespace QltsForm
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.DM_NHA.NewRow());
             return v_obj_trans;
         }
-        private void load_data_2_grid(string ip_str_id_don_vi_su_dung, string ip_str_id_trang_thai)
+        private void load_data_2_grid(
+            string ip_str_tu_khoa
+            , decimal ip_dc_id_bo_tinh
+            , decimal ip_dc_id_don_vi_chu_quan
+            , decimal ip_dc_id_don_vi_su_dung
+            , decimal ip_dc_id_dat
+            , decimal ip_dc_id_trang_thai
+            , string ip_str_loai_hinh_don_vi
+            , string ip_str_user_name)
         {
-            m_ds = new DS_DM_NHA();
-            m_us.FillDataset(m_ds, "where " + DM_NHA.ID_DON_VI_SU_DUNG + " = " + ip_str_id_don_vi_su_dung
-                + " and " + DM_NHA.ID_TRANG_THAI + " = " + ip_str_id_trang_thai);
+            US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
+            DS_V_DM_NHA v_ds_v_dm_nha = new DS_V_DM_NHA();
+            v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(ip_str_tu_khoa
+            , ip_dc_id_bo_tinh
+            , ip_dc_id_don_vi_chu_quan
+            , ip_dc_id_don_vi_su_dung
+            , ip_dc_id_dat
+            , ip_dc_id_trang_thai
+            , ip_str_loai_hinh_don_vi
+            , ip_str_user_name
+            , v_ds_v_dm_nha);
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(v_ds_v_dm_nha, m_fg, m_obj_trans);
             m_fg.Redraw = true;
         }
         private void grid2us_object(US_DM_NHA i_us
@@ -1196,7 +1247,7 @@ namespace QltsForm
             try
             {
                 if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
-                load_data_2_grid(m_cbo_don_vi_su_dung.SelectedValue.ToString(), m_cbo_trang_thai.SelectedValue.ToString());
+
             }
             catch (System.Exception ex)
             {
