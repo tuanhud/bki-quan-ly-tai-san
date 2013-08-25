@@ -1,8 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F311_BCDVCQ_Thay_doi_thong_tin_Nha.aspx.cs" Inherits="BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha" %>
-
+<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+<div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
     <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
@@ -195,6 +201,20 @@
             </td>
         </tr>
     </table>
+    </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    <asp:UpdateProgress ID="Updateprogress1" runat="server">
+        <ProgressTemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>
 
 
