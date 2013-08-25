@@ -174,6 +174,11 @@
                     <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
                         ForeColor="#333333"></SelectedRowStyle>
                     <Columns>
+                        <asp:TemplateField HeaderStyle-Width="3%" ItemStyle-HorizontalAlign="center" HeaderText="STT">
+                            <ItemTemplate>
+                                <%# Container.DataItemIndex + 1 %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:BoundField HeaderText="NGÀY CẬP NHẬT CUỐI" DataField="NGAY_CAP_NHAT_CUOI" ItemStyle-HorizontalAlign="center"
                             HeaderStyle-Width="6%" />
                         <asp:BoundField HeaderText="LỊCH SỬ CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="center"
