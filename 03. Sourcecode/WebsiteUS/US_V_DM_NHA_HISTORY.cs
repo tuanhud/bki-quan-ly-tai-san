@@ -920,7 +920,7 @@ namespace WebUS
             , DateTime ip_tsk_den_ngay
             , string ip_str_user_name
             , string ip_str_tu_khoa
-            , DS_V_DM_OTO_HISTORY op_ds_nha_history)
+            , DS_V_DM_NHA_HISTORY op_ds_nha_history)
         {
 
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_HISTORY_Search");
