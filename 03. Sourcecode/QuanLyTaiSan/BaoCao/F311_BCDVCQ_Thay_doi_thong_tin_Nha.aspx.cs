@@ -177,7 +177,30 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
         m_grv_nha_history.DataSource = v_ds_v_dm_nha_history;
         m_grv_nha_history.DataBind();
     }
+    private void load_data_to_thong_tin_nha_dat()
+    {
 
+        decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
+        if (v_dc_id_dat == -1)
+        {
+            m_pnl_thong_tin_nha_dat.Visible = false;
+            return;
+        }
+        m_pnl_thong_tin_nha_dat.Visible = true;
+        US_DM_DAT v_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
+        m_lbl_dia_chi.Text = v_us_dm_dat.strDIA_CHI;
+        m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_KHUON_VIEN, "#,##0.00");
+        m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
+        m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_TRU_SO_LAM_VIEC, "#,##0.00");
+        m_lbl_lam_co_so_hd_du_nghiep.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP, "#,##0.00");
+        m_lbl_lam_nha_o.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_LAM_NHA_O, "#,##0.00");
+        m_lbl_cho_thue.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_CHO_THUE, "#,##0.00");
+        m_lbl_bo_trong.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BO_TRONG, "#,##0.00");
+        m_lbl_bi_lan_chiem.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BI_LAN_CHIEM, "#,##0.00");
+        m_lbl_su_dung_vao_muc_dich_khac.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC, "#,##0.00");
+        m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(v_us_dm_dat.dcGT_THEO_SO_KE_TOAN, "#,##0.00");
+
+    }
     /*private void load_data_to_cbo_bo_tinh()
     {
         try
@@ -371,6 +394,7 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
                 m_grv_nha_history.Visible = true;
                 Thread.Sleep(2000);
                 load_data_to_grid();
+                load_data_to_thong_tin_nha_dat();
             }
         }
         catch (System.Exception ex)
