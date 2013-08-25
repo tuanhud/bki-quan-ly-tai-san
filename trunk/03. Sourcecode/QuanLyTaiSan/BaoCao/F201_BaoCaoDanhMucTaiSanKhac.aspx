@@ -129,6 +129,11 @@
                     EmptyDataText="Không có dữ liệu phù hợp"
                     onpageindexchanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                     <Columns>
+                    <asp:TemplateField HeaderStyle-Width="2%" ItemStyle-HorizontalAlign="center" HeaderText="STT">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                     <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" />
                             <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DATAFIELD ="TEN_DV_CHU_QUAN" />
                             <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" />
