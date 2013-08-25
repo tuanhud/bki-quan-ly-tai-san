@@ -23,7 +23,8 @@ public class WinformReport
 {
     /*
 * Chú ý khi xuất excel:
-* thêm EnableEventValidation ="false" vào <%@ Page ở trang .aspx* Hàm load dữ liệu lên lưới để là: load_data_to_grid();
+* thêm EnableEventValidation ="false" vào <%@ Page ở trang .aspx
+* Hàm load dữ liệu lên lưới để là: load_data_to_grid();
 */
 
     /// <summary>
@@ -119,7 +120,7 @@ public class WinformReport
             HttpContext.Current.Response.Output.Write(sw.ToString());
             HttpContext.Current.Response.Flush();
            
-            //HttpContext.Current.Response.End();
+            HttpContext.Current.Response.End();
         }
     }
 
