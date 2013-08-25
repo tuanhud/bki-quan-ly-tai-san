@@ -167,6 +167,21 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
         try
         {
             m_grv_tai_san_khac.PageIndex = e.NewPageIndex;
+
+            m_lbl_thong_bao.Text = "";
+            US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+            DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
+            v_us_v_dm_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(
+                          CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
+                        , Person.get_user_name()
+                        , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                        , v_ds_v_dm_tai_san_khac
+            );
+            m_grv_tai_san_khac.DataSource = v_ds_v_dm_tai_san_khac.V_DM_TAI_SAN_KHAC;
+            Thread.Sleep(1000);
             m_grv_tai_san_khac.DataBind();
         }
         catch (System.Exception v_e)
