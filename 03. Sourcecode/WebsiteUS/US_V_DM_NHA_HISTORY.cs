@@ -920,7 +920,7 @@ namespace WebUS
             , DateTime ip_tsk_den_ngay
             , string ip_str_user_name
             , string ip_str_tu_khoa
-            , DS_V_DM_OTO_HISTORY op_ds_oto_history)
+            , DS_V_DM_OTO_HISTORY op_ds_nha_history)
         {
 
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_HISTORY_Search");
@@ -935,7 +935,7 @@ namespace WebUS
             v_obj_procedure.addDatetimeInputParam("@ip_tsk_den_ngay", ip_tsk_den_ngay);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
-            v_obj_procedure.fillDataSetByCommand(this, op_ds_oto_history);
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_nha_history);
         }
 
         #endregion
