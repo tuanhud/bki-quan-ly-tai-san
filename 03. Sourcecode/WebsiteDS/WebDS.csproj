@@ -84,6 +84,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_LOAI_TAI_SAN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_LOC_BAO_CAO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_LOC_BAO_CAO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_NHA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -291,6 +296,17 @@
     </None>
     <None Include="DS_DM_LOAI_TAI_SAN.xss">
       <DependentUpon>DS_DM_LOAI_TAI_SAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_LOC_BAO_CAO.xsc">
+      <DependentUpon>DS_DM_LOC_BAO_CAO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_LOC_BAO_CAO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_LOC_BAO_CAO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_LOC_BAO_CAO.xss">
+      <DependentUpon>DS_DM_LOC_BAO_CAO.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_NHA.xsc">
       <DependentUpon>DS_DM_NHA.xsd</DependentUpon>
