@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="F101_QuanLyDat.aspx.cs" Inherits="ChucNang_F101_QuanLyDat" %>
+    CodeFile="F101_QuanLyDat.aspx.cs" Inherits="ChucNang_F101_QuanLyDat" EnableEventValidation ="false" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>

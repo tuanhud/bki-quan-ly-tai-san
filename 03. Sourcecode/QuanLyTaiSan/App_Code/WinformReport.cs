@@ -6,8 +6,8 @@ using System.IO;
 
 
 using System.Web.UI.WebControls;
-using System.Web;
-using System.Web.UI.WebControls;
+
+
 using System.Collections.Generic;
 using System.Web.UI;
 
@@ -35,15 +35,15 @@ public class WinformReport
     /// <param name="ip_i_invisible_columns">Danh sách các cột muốn ẩn đi khi xuất (lấy theo số thứ tự, bắt đầu từ 0)</param>
     public static void export_gridview_2_excel(GridView ip_grv
                                , string ip_str_filename
-                               , System.Web.UI.Page ip_page
                                , params int[] ip_i_invisible_columns
                                 ) {
-        ip_page.Response.Clear();
-        ip_page.Response.Buffer = true;
-        ip_page.Response.AddHeader("content-disposition", "attachment;filename=" + ip_str_filename);
-        ip_page.Response.Charset = "UTF-8";
-        ip_page.Response.ContentEncoding = System.Text.Encoding.UTF8;
-        ip_page.Response.ContentType = "application/vnd.ms-excel";
+        
+        HttpContext.Current.Response.Clear();
+        HttpContext.Current.Response.Buffer = true;
+        HttpContext.Current.Response.AddHeader("content-disposition", "attachment;filename=" + ip_str_filename);
+        HttpContext.Current.Response.Charset = "UTF-8";
+        HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.UTF8;
+        HttpContext.Current.Response.ContentType = "application/vnd.ms-excel";
         using (StringWriter sw = new StringWriter()) {
             HtmlTextWriter hw = new HtmlTextWriter(sw);
 
@@ -115,10 +115,11 @@ public class WinformReport
 
             //style to format numbers to string
             string style = @"<style> .textmode { mso-number-format:\@; } </style>";
-            ip_page.Response.Write(style);
-            ip_page.Response.Output.Write(sw.ToString());
-            ip_page.Response.Flush();
-            ip_page.Response.End();
+            HttpContext.Current.Response.Write(style);
+            HttpContext.Current.Response.Output.Write(sw.ToString());
+            HttpContext.Current.Response.Flush();
+           
+            //HttpContext.Current.Response.End();
         }
     }
 
