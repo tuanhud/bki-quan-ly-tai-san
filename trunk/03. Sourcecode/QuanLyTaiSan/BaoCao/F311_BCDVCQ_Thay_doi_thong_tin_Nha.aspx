@@ -28,7 +28,7 @@
             </td>
             <td style="width: 34%">
                 <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="1">
+                    TabIndex="1" onselectedindexchanged="m_cbo_bo_tinh_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
@@ -38,7 +38,8 @@
             </td>
             <td style="width: 34%">
                 <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="2">
+                    TabIndex="2" 
+                    onselectedindexchanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
@@ -46,20 +47,22 @@
         </tr>
         <tr>
             <td align="right">
-                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
-            </td>
+                &nbsp;&nbsp;<span class="cssManField">Loại hình đơn vị:</span></td>
             <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="3">
+                <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" 
+                    AutoPostBack="True" 
+                    OnSelectedIndexChanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged" 
+                    Width="90%">
                 </asp:DropDownList>
             </td>
             <td>
             </td>
             <td align="right">
-                <span class="cssManField">Địa chỉ đất: </span>
-            </td>
+                <span class="cssManField">Đơn vị sử dụng tài sản:</span></td>
             <td>
-                <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="90%" TabIndex="4">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" 
+                    AutoPostBack="True" TabIndex="3" Width="90%" 
+                    onselectedindexchanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td>
@@ -67,11 +70,22 @@
         </tr>
         <tr>
             <td align="right">
-                <span class="cssManField">Trạng thái:</span>
+                &nbsp;<span class="cssManField">Trạng thái: </span>
             </td>
             <td>
                 <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" Width="90%">
                 </asp:DropDownList>
+            </td>
+            <td>
+            </td>
+            <td align="right">
+                <span class="cssManField">&nbsp;Địa chỉ đất: </span>
+            </td>
+            <td>
+                <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" TabIndex="4" Width="90%">
+                </asp:DropDownList>
+            </td>
+            <td>
             </td>
         </tr>
         <tr>
@@ -122,9 +136,11 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" />
+                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" 
+                    onclick="m_cmd_tim_kiem_Click" />
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Xuất Excel (x)" Height="22px"/>
+                    Width="98px" Text="Xuất Excel (x)" Height="22px" 
+                    onclick="m_cmd_xuat_excel_Click"/>
             </td>
             <td>
                 &nbsp;
@@ -166,6 +182,10 @@
                     <Columns>
                         <asp:BoundField HeaderText="NGÀY CẬP NHẬT CUỐI" DataField="NGAY_CAP_NHAT_CUOI" ItemStyle-HorizontalAlign="right" />
                         <asp:BoundField HeaderText="LỊCH SỬ CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="left" />
+                        <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" />
+                        <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" />
+                        <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" />
+                        <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TEN_TRANG_THAI" />
                         <asp:BoundField HeaderText="TÊN TÀI SẢN" DataField="TEN_TAI_SAN" />
                         <asp:BoundField HeaderText="MÃ TÀI SẢN" DataField="MA_TAI_SAN" />
                         <asp:BoundField HeaderText="CẤP HẠNG" DataField="CAP_HANG" />
@@ -183,7 +203,7 @@
                             DataField="NGUON_KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
                         <asp:BoundField HeaderText="GIÁ TRỊ CÒN LẠI <br/> (ngàn đồng)" HtmlEncode="false"
                             DataField="GIA_TRI_CON_LAI" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                        <asp:BoundField HeaderText="DIỆN TÍCH TRỤ SỞ LÀM VIỆC <br/> (m2)" HtmlEncode="false" DataField="TRU_SƠ_LAM_VIEC"
+                        <asp:BoundField HeaderText="DIỆN TÍCH TRỤ SỞ LÀM VIỆC <br/> (m2)" HtmlEncode="false" DataField="TRU_SO_LAM_VIEC"
                             ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
                         <asp:BoundField HeaderText="DIỆN TÍCH CƠ SỞ HĐSN <br/> (m2)" HtmlEncode="false" DataField="CO_SO_HDSN"
                             ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
