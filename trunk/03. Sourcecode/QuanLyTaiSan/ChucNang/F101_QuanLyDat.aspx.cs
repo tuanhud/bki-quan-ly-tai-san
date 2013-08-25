@@ -13,6 +13,11 @@ using WebDS.CDBNames;
 using IP.Core.WinFormControls;
 using System.Threading;
 
+using System.Drawing;
+using System.Web.UI;
+using System.IO;
+
+
 public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 {
     #region Members
@@ -209,6 +214,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 
     #endregion
 
+    
+
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -223,6 +230,10 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
+    }
+
+    public override void VerifyRenderingInServerForm(Control control) {
+        //base.VerifyRenderingInServerForm(control);
     }
 
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
@@ -321,7 +332,16 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
-
+        try {
+            WinformReport.export_gridview_2_excel(
+                        m_grv_danh_sach_nha
+                        , "DS tai san.xls"
+                        , 0
+                        , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+        }
+        catch (Exception v_e) {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
 
     protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
