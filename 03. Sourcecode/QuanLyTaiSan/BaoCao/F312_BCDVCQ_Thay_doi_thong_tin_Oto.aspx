@@ -13,7 +13,7 @@
     <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="4">
-                <span class="cssPageTitle">BÁO CÁO THAY ĐỔI THÔNG TIN TÀI SẢN KHÁC </span>
+                <span class="cssPageTitle">BÁO CÁO THAY ĐỔI THÔNG TIN Ô TÔ </span>
             </td>
         </tr>
         <tr>
