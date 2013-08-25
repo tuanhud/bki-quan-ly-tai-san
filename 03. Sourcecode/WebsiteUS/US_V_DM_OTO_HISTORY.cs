@@ -888,7 +888,6 @@ namespace WebUS
             v_obj_procedure.addDatetimeInputParam("@ip_tsk_den_ngay", ip_tsk_den_ngay);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
-
             v_obj_procedure.fillDataSetByCommand(this, op_ds_oto_history);
         }
 
