@@ -36,7 +36,7 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
     #endregion
 
     #region Data Structures
-    
+
     #endregion
 
     #region Private Methods
@@ -44,6 +44,8 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
     {
         load_data_don_vi_chu_quan();
         load_list_don_vi_su_dung();
+        load_data_loai_bao_cao();
+        load_data_loai_tai_san();
     }
     // Load dữ liệu vào combo đơn vị chủ quản
     private void load_data_don_vi_chu_quan()
@@ -59,18 +61,59 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
         string v_id_don_vi_chu_quan = m_ddl_don_vi_chu_quan.SelectedValue;
         v_us_dm_don_vi.FillDataset(v_ds_dm_don_vi, "where ID_LOAI_DON_VI =" + ID_LOAI_DON_VI.DV_SU_DUNG + "and ID_DON_VI_CAP_TREN =" + v_id_don_vi_chu_quan);
 
-        DataRow v_dr = v_ds_dm_don_vi.DM_DON_VI.NewDM_DON_VIRow();
-        v_dr[DM_DON_VI.ID] = CONST_QLDB.ID_TAT_CA;
-        v_dr[DM_DON_VI.TEN_DON_VI] = CONST_QLDB.TAT_CA;
-        v_ds_dm_don_vi.EnforceConstraints = false;
-        v_ds_dm_don_vi.DM_DON_VI.Rows.InsertAt(v_dr, 0);
-
         m_lst_don_vi_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
         m_lst_don_vi_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
         m_lst_don_vi_su_dung.DataValueField = DM_DON_VI.ID;
         m_lst_don_vi_su_dung.DataBind();
     }
-    
+    // Load dữ liệu vào list loại báo cáo
+    private void load_data_loai_bao_cao()
+    {
+        US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
+        DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+
+        v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
+                MA_LOAI_TU_DIEN.LOAI_BAO_CAO
+                , CM_DM_TU_DIEN.GHI_CHU
+                , v_ds_dm_tu_dien);
+
+        m_lst_loai_bao_cao.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
+        m_lst_loai_bao_cao.DataTextField = CM_DM_TU_DIEN.TEN;
+        m_lst_loai_bao_cao.DataValueField = CM_DM_TU_DIEN.ID;
+        m_lst_loai_bao_cao.DataBind();
+    }
+    // Load dữ liệu vào list loại tài sản
+    private void load_data_loai_tai_san()
+    {
+        US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
+        DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+
+        v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
+                MA_LOAI_TU_DIEN.PHAN_LOAI_TAI_SAN
+                , CM_DM_TU_DIEN.GHI_CHU
+                , v_ds_dm_tu_dien);
+
+        m_lst_loai_tai_san.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
+        m_lst_loai_tai_san.DataTextField = CM_DM_TU_DIEN.TEN;
+        m_lst_loai_tai_san.DataValueField = CM_DM_TU_DIEN.ID;
+        m_lst_loai_tai_san.DataBind();
+    }
+
+    private void load_data_to_grid()
+    {        
+        US_DM_LOC_BAO_CAO v_us_dm_loc_bao_cao = new US_DM_LOC_BAO_CAO();
+        DS_DM_LOC_BAO_CAO v_ds_dm_loc_bao_cao = new DS_DM_LOC_BAO_CAO();
+
+        v_us_dm_loc_bao_cao.FillDatasetByLoaiTS_LoaiBC(
+                CIPConvert.ToDecimal(m_lst_loai_tai_san.SelectedValue)
+                , CIPConvert.ToDecimal(m_lst_loai_bao_cao.SelectedValue)
+                , v_ds_dm_loc_bao_cao);
+        if (v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO != null && v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO.Rows.Count > 0)
+        {
+            v_us_dm_loc_bao_cao.DataRow2Me(v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO.Rows[0]);
+            Response.Redirect(v_us_dm_loc_bao_cao.strDUONG_DAN +"?don_vi="+m_lst_don_vi_su_dung.SelectedValue, false);
+        }
+    }
     #endregion
 
     #region Even
@@ -78,12 +121,26 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
     {
         try
         {
-            load_list_don_vi_su_dung();            
+            load_list_don_vi_su_dung();
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+            Thread.Sleep(2000);
+            load_data_to_grid();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
     #endregion
+
 }
