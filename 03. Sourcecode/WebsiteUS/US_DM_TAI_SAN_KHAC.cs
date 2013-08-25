@@ -512,7 +512,8 @@ public class US_DM_TAI_SAN_KHAC : US_Object
         v_cstore.fillDataSetByCommand(this, v_ds_dm_tai_san_khac);
         if (v_ds_dm_tai_san_khac.DM_TAI_SAN_KHAC.Rows.Count == 0)
             return true;
-        return false;
+        else
+            return false;
     }
 }
 }
