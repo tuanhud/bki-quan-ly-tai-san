@@ -13,6 +13,8 @@ using WebDS.CDBNames;
 using QltsForm;
 using IP.Core.WinFormControls;
 using System.Threading;
+using IP.Core.QltsFormControls;
+using IP.Core;
 
 public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page {
     #region Members
@@ -21,46 +23,53 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
     #endregion
 
     #region private methods
-    private void export_excel() {
+    private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter)
+    {
+        op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
+        op_obj_parameter.strTEN_BO_TINH = m_cbo_bo_tinh.SelectedItem.Text;
+        op_obj_parameter.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue);
+        op_obj_parameter.strTEN_DON_VI_CHU_QUAN = m_cbo_don_vi_chu_quan.SelectedItem.Text;
+        op_obj_parameter.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue);
+        op_obj_parameter.strTEN_DON_VI_SU_DUNG = m_cbo_don_vi_su_dung_tai_san.SelectedItem.Text;
+        op_obj_parameter.dcID_TRANG_THAI_TAI_SAN = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+        op_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = m_cbo_trang_thai.SelectedItem.Text;
+        op_obj_parameter.strKEY_SEARCH = String.Empty;
+        op_obj_parameter.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.NHA;
+        op_obj_parameter.strTEN_LOAI_TAI_SAN = CONST_QLDB.TAT_CA;
+        op_obj_parameter.strLOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedItem.Text;
+        op_obj_parameter.strMA_LOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedValue;
+        op_obj_parameter.strUSER_NAME = Person.get_user_name();
+    }
 
-        US_DM_DON_VI v_us_dm_don_vi;
-        US_DM_DAT v_us_dm_dat;
-        decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
-        v_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
-        decimal v_dc_id_dv_su_dung = v_us_dm_dat.dcID_DON_VI_SU_DUNG;
-        v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_dat.dcID_DON_VI_CHU_QUAN);
-        string v_str_don_vi_chu_quan = v_us_dm_don_vi.strTEN_DON_VI;
-        v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_don_vi.dcID_DON_VI_CAP_TREN);
-        string v_str_bo_tinh = v_us_dm_don_vi.strTEN_DON_VI;
+    private void export_excel() {
         string v_str_output_file = "";
         if (Request.QueryString["id_loai_bao_cao"] != null) {
             string v_id = Request.QueryString["id_loai_bao_cao"];
             f402_bao_cao_danh_muc_tru_so_lam_viec v_f402_bc_dm_nha = new f402_bao_cao_danh_muc_tru_so_lam_viec();
+            CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
+            form_2_objExcelAssetParameters(v_obj_parameter);
             switch (v_id) {
                 case "1":
                     v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DANH_MUC_TRU_SO_LAM_VIEC
-                                            , v_str_bo_tinh
-                                            , v_str_don_vi_chu_quan
-                                            , v_dc_id_dv_su_dung
-                                            , v_dc_id_dat
-                                            , ref v_str_output_file);
+                                            , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                                            , ref v_obj_parameter);
                     break;
                 case "2":
                     v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DE_NGHI_XU_LY
-                                            , v_str_bo_tinh
-                                            , v_str_don_vi_chu_quan
-                                            , v_dc_id_dv_su_dung
-                                            , v_dc_id_dat
-                                            , ref v_str_output_file);
+                                            , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                                            , ref v_obj_parameter);
                     break;
                 case "3":
+                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP
+                                            , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                                            , ref v_obj_parameter);
                     break;
             }
+            Response.Clear();
+            v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+            Response.Redirect(v_str_output_file, false);
         }
-        Response.Clear();
-        v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;
-        Response.Redirect(v_str_output_file, false);
-
+        
     }
 
     private void load_data_to_thong_tin_nha_dat() {
@@ -305,6 +314,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
                    , m_cbo_loai_hinh_don_vi.SelectedValue
                    , WinFormControls.eTAT_CA.YES
                    , m_cbo_dia_chi);
+            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue));
+            m_cbo_loai_hinh_don_vi.SelectedValue = v_us_dm_don_vi.strLOAI_HINH_DON_VI;
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
         }
