@@ -182,5 +182,19 @@ namespace WebUS
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        #region Addition
+        public void FillDatasetByLoaiTS_LoaiBC(
+            decimal ip_dc_id_loai_tai_san
+            , decimal ip_dc_id_loai_bao_cao            
+            , DS_DM_LOC_BAO_CAO op_ds_dm_loc_bao_cao)
+        {
+            CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_Load_data_to_grid_nha");
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_loai_tai_san", ip_dc_id_loai_tai_san);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_loai_bao_cao", ip_dc_id_loai_bao_cao);
+
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_dm_loc_bao_cao);
+        }
+        #endregion
     }
 }
