@@ -42,7 +42,9 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         op_obj_parameter.strKEY_SEARCH = m_txt_tu_khoa.Text;
         op_obj_parameter.dcID_LOAI_TAI_SAN = CONST_QLDB.ID_TAT_CA;
         op_obj_parameter.strTEN_LOAI_TAI_SAN = CONST_QLDB.TAT_CA;
-
+        op_obj_parameter.strLOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedItem.Text;
+        op_obj_parameter.dcID_LOAI_HINH_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_hinh_don_vi.SelectedValue);
+        op_obj_parameter.strUSER_NAME = Person.get_user_name();
     }
 
     private void load_data_to_cbo_loai_xe()
