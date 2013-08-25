@@ -151,7 +151,6 @@ namespace IP.Core.QltsFormControls{
         public decimal dcID_DON_VI_SU_DUNG;
         public decimal dcID_TRANG_THAI_TAI_SAN;
         public decimal dcID_LOAI_TAI_SAN;
-        public decimal dcID_LOAI_HINH_DON_VI;
         public decimal dcUSER_ID;
         public string strTEN_BO_TINH;
         public string strTEN_DON_VI_CHU_QUAN;
