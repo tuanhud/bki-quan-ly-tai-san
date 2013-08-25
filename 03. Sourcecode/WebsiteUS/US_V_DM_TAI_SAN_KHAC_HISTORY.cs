@@ -693,6 +693,7 @@ namespace WebUS
             , string ip_str_loai_hinh_don_vi
             , DateTime ip_tsk_tu_ngay
             , DateTime ip_tsk_den_ngay
+            , string ip_str_user_name 
             , string ip_str_tu_khoa
             , DS_V_DM_TAI_SAN_KHAC_HISTORY op_ds_tsk_history)
         {
@@ -706,6 +707,7 @@ namespace WebUS
             v_obj_procedure.addDecimalInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
             v_obj_procedure.addDatetimeInputParam("@ip_tsk_tu_ngay", ip_tsk_tu_ngay);
             v_obj_procedure.addDatetimeInputParam("@ip_tsk_den_ngay", ip_tsk_den_ngay);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
 
             v_obj_procedure.fillDataSetByCommand(this, op_ds_tsk_history);
