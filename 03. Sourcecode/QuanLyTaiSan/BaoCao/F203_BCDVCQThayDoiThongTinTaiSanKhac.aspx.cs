@@ -161,6 +161,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
                 ,CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
                 , v_tsk_tu_ngay
                 , v_tsk_den_ngay
+                , Person.get_user_name()
                 , m_txt_tim_kiem.Text
                 , v_ds_v_dm_tai_san_khac_history);
             m_grv_tai_san_khac_history.DataSource = v_ds_v_dm_tai_san_khac_history;
