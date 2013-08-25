@@ -151,15 +151,18 @@ namespace IP.Core.QltsFormControls{
         public decimal dcID_DON_VI_SU_DUNG;
         public decimal dcID_TRANG_THAI_TAI_SAN;
         public decimal dcID_LOAI_TAI_SAN;
+        public decimal dcID_LOAI_HINH_DON_VI;
+        public decimal dcUSER_ID;
         public string strTEN_BO_TINH;
         public string strTEN_DON_VI_CHU_QUAN;
         public string strTEN_DON_VI_SU_DUNG;
         public string strTEN_TRANG_THAI_TAI_SAN;
         public string strTEN_LOAI_TAI_SAN;
+        public string strLOAI_HINH_DON_VI;
         public string strKEY_SEARCH;
+        public string strUSER_NAME;
         public DateTime datTU_NGAY;
         public DateTime datDEN_NGAY;
         public string strFILE_NAME_RESULT;
-        
     }
 }
