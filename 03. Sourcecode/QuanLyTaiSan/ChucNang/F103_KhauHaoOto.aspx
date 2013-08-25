@@ -287,7 +287,8 @@
                                 Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_oto" 
                                 onclick="m_cmd_tao_moi_Click" />
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                Height="24px" Width="98px" Text="Xóa trắng(r)" />
+                                Height="24px" Width="98px" Text="Xóa trắng(r)" 
+                                onclick="m_cmd_xoa_trang_Click" />
                             <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
                         </td>
                     </tr>
@@ -368,6 +369,11 @@
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                            <ItemTemplate>
+                                <%# Container.DataItemIndex + 1 %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
                         <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
                         <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
@@ -383,7 +389,7 @@
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
                                         <td colspan="3" style="height: 15px">
-                                            Giá trị theo sổ kế toán
+                                            Giá trị theo sổ kế toán (VNĐ)
                                         </td>
                                     </tr>
                                     <tr>
