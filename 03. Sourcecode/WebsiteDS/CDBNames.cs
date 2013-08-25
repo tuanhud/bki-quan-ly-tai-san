@@ -34,6 +34,17 @@ namespace WebDS.CDBNames
         , DV_TO_CHUC_SK = 27
     }
 
+      public class DM_LOC_BAO_CAO
+      {
+          public const string ID = "ID";
+          public const string TEN_BAO_CAO = "TEN_BAO_CAO";
+          public const string DUONG_DAN = "DUONG_DAN";
+          public const string ID_LOAI_TAI_SAN = "ID_LOAI_TAI_SAN";
+          public const string ID_LOAI_BAO_CAO = "ID_LOAI_BAO_CAO";
+          public const string GHI_CHU = "GHI_CHU";
+      }
+
+
       public class V_DM_OTO {
           public const string ID = "ID";
           public const string TEN_TAI_SAN = "TEN_TAI_SAN";

@@ -79,6 +79,7 @@
     <Compile Include="US_DM_DAT.cs" />
     <Compile Include="US_DM_DON_VI.cs" />
     <Compile Include="US_DM_LOAI_TAI_SAN.cs" />
+    <Compile Include="US_DM_LOC_BAO_CAO.cs" />
     <Compile Include="US_DM_NHA.cs" />
     <Compile Include="US_DM_OTO.cs" />
     <Compile Include="US_DM_TAI_SAN_KHAC.cs" />
