@@ -158,6 +158,7 @@ namespace IP.Core.QltsFormControls{
         public string strTEN_TRANG_THAI_TAI_SAN;
         public string strTEN_LOAI_TAI_SAN;
         public string strLOAI_HINH_DON_VI;
+        public string strMA_LOAI_HINH_DON_VI;
         public string strKEY_SEARCH;
         public string strUSER_NAME;
         public DateTime datTU_NGAY;
