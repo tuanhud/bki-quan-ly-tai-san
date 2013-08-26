@@ -110,7 +110,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     private void load_data_don_vi_su_dung()
     {
         WinFormControls.load_data_to_cbo_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue
-            , m_ddl_don_vi_su_dung.SelectedValue
+            , m_ddl_bo_tinh.SelectedValue
             , WinFormControls.eTAT_CA.NO
             , m_ddl_don_vi_su_dung);
 
@@ -176,6 +176,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text))
         {
             m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị còn lại lớn hơn tổng nguyên giá";
+            return false;
         }
         return true;
     }
