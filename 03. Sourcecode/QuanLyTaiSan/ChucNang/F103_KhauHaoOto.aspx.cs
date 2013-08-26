@@ -22,6 +22,15 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     #endregion
 
     #region private methods
+    private bool check_validate_data_is_valid()
+    {
+        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
+        {
+            m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
+        }
+        return true;
+    }
+
     private void load_data_to_cbo_trang_thai_up()
     {
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
