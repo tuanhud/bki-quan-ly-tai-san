@@ -10,11 +10,11 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 
-using BtdUS;
-using BtdDS;
-using BtdDS.CDBNames;
+using WebUS;
+using WebDS;
+using WebDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
-namespace BtdApp
+namespace WebApp
 {
