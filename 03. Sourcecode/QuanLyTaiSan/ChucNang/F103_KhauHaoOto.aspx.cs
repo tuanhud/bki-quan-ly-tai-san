@@ -27,6 +27,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
         {
             m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
+            return false;
         }
         return true;
     }
@@ -289,6 +290,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             if (!m_hdf_id.Value.Equals(String.Empty))
             {
                 Thread.Sleep(1000);
+                if (!check_validate_data_is_valid()) return;
                 them_moi_khau_hao(CIPConvert.ToDecimal(m_hdf_id.Value));
                 clear_form_data();
                 m_lbl_message.Text = "Cập nhật thành công";
