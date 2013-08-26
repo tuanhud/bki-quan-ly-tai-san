@@ -65,6 +65,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
             Response.Clear();
             v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
             Response.Redirect(v_str_output_file, false);
+        }
     }
 
     private bool check_validate_data_id_ok()
