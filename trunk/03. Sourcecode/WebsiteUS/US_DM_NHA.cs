@@ -703,6 +703,15 @@ namespace WebUS
                 v_cstore.fillDataSetByCommand(this, op_ds_dm_nha);
             }
         }
+
+        public bool check_ma_tai_san_valid(string ip_str_ma_tai_san)
+        {
+            US_DM_NHA v_us_dm_nha = new US_DM_NHA();
+            DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
+            v_us_dm_nha.FillDataset(v_ds_dm_nha, "where " + DM_DAT.MA_TAI_SAN + " = '" + ip_str_ma_tai_san + "'");
+            if (v_ds_dm_nha.DM_NHA.Rows.Count == 0) return true;
+            return false;
+        }
         #endregion
     }
 }
