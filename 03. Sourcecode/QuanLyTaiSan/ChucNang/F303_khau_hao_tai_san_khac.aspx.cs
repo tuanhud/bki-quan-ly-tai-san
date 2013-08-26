@@ -155,6 +155,16 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         m_txt_ngay_duyet.Text = "";
         m_txt_ngay_lap.Text = "";
     }
+
+    private bool check_validate_data_is_valid()
+    {
+        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
+        {
+            m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
+            return false;
+        }
+        return true;
+    }
     #endregion
 
     #region Events
@@ -233,6 +243,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         {
             if (!m_hdf_id.Value.Equals(String.Empty))
             {
+                if (!check_validate_data_is_valid()) return;
                 them_moi_khau_hao(CIPConvert.ToDecimal(m_hdf_id.Value));
                 m_lbl_mess.Text = "Cập nhật thành công";
                 clear_form_data();
@@ -326,8 +337,5 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
-
-
-    
+    #endregion  
 }
