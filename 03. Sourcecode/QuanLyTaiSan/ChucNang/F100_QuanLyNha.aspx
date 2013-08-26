@@ -2,6 +2,7 @@
     CodeFile="F100_QuanLyNha.aspx.cs" Inherits="ChucNang_F100_QuanLyNha" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -491,10 +492,9 @@
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
+                                <asp:TemplateField HeaderText="STT">
                                     <ItemTemplate>
-                                        <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
-                                            ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
+                                        <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
