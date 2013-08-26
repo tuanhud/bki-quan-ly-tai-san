@@ -710,39 +710,15 @@ namespace QltsForm
             switch (m_e_form_mode)
             {
                 case eFormMode.DANH_MUC_TRU_SO_LAM_VIEC:
-                    load_data_2_grid(
-                        op_obj_excel_parameters.strKEY_SEARCH
-                        , op_obj_excel_parameters.dcID_BO_TINH
-                        , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
-                        , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
-                        , ip_dc_id_dat
-                        , ID_TRANG_THAI_NHA.DANG_SU_DUNG
-                        , op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
-                        , op_obj_excel_parameters.strUSER_NAME);
+                    load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
                     v_obj_exe_report = new CExcelWebReport("BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep.xls", 21, 1);
                     break;
                 case eFormMode.DE_NGHI_XU_LY:
-                    load_data_2_grid(
-                        op_obj_excel_parameters.strKEY_SEARCH
-                        , op_obj_excel_parameters.dcID_BO_TINH
-                        , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
-                        , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
-                        , ip_dc_id_dat
-                        , ID_TRANG_THAI_NHA.DE_NGHI_XU_LY
-                        , op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
-                        , op_obj_excel_parameters.strUSER_NAME);
+                    load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
                     v_obj_exe_report = new CExcelWebReport("BC-017. Bao cao danh mục tru so lam viec, co so hoat dong su nghiep de nghi xu ly.xls", 21, 1);
                     break;
                 case eFormMode.TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP:
-                    load_data_2_grid(
-                        op_obj_excel_parameters.strKEY_SEARCH
-                        , op_obj_excel_parameters.dcID_BO_TINH
-                        , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
-                        , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
-                        , ip_dc_id_dat
-                        , ID_TRANG_THAI_NHA.DANG_SU_DUNG
-                        , op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
-                        , op_obj_excel_parameters.strUSER_NAME);
+                    load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
                     v_obj_exe_report = new CExcelWebReport("BC-004 Bao cao danh muc tru so lam viec co so hoat dong su nghiep giao cho don vi su nghiep cong lap tu chu tai chinh.xls", 21, 1);
                     break;
                 default:
@@ -993,27 +969,19 @@ namespace QltsForm
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.DM_NHA.NewRow());
             return v_obj_trans;
         }
-        private void load_data_2_grid(
-            string ip_str_tu_khoa
-            , decimal ip_dc_id_bo_tinh
-            , decimal ip_dc_id_don_vi_chu_quan
-            , decimal ip_dc_id_don_vi_su_dung
-            , decimal ip_dc_id_dat
-            , decimal ip_dc_id_trang_thai
-            , string ip_str_loai_hinh_don_vi
-            , string ip_str_user_name)
+        private void load_data_2_grid(CObjExcelAssetParameters op_obj_excel_parameters, decimal ip_dc_id_dat)
         {
             US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
             DS_V_DM_NHA v_ds_v_dm_nha = new DS_V_DM_NHA();
-            v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(ip_str_tu_khoa
-            , ip_dc_id_bo_tinh
-            , ip_dc_id_don_vi_chu_quan
-            , ip_dc_id_don_vi_su_dung
-            , ip_dc_id_dat
-            , ip_dc_id_trang_thai
-            , ip_str_loai_hinh_don_vi
-            , ip_str_user_name
-            , v_ds_v_dm_nha);
+            v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(op_obj_excel_parameters.strKEY_SEARCH,
+                op_obj_excel_parameters.dcID_BO_TINH,
+                op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN,
+                op_obj_excel_parameters.dcID_DON_VI_SU_DUNG,
+                ip_dc_id_dat,
+                op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN,
+                op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI,
+                op_obj_excel_parameters.strUSER_NAME,
+                v_ds_v_dm_nha);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds_v_dm_nha, m_fg, m_obj_trans);
             m_fg.Redraw = true;
