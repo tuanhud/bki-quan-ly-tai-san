@@ -94,9 +94,9 @@
             <td>
             </td>
             <td colspan="2" align="left">
-                <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
+                <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server" Height="24px"
                     Width="98px" Text="Lọc dữ liệu(l)" onclick="m_cmd_tim_kiem_Click" />&nbsp;
-                <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
+                <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server" Height="24px"
                     Width="98px" Text="Xuất Excel (x)" onclick="m_cmd_xuat_excel_Click" />&nbsp;
                 </td>
         </tr>

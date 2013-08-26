@@ -22,23 +22,25 @@ using IP.Core.IPExcelWebReport;
 using WebUS;
 using WebDS;
 using WebDS.CDBNames;
+using IP.Core.QltsFormControls;
 
 using C1.Win.C1FlexGrid;
 
-namespace QltsForm {
+namespace QltsForm
+{
 
 
 
-	public class f401_bao_cao_danh_muc_tai_san_khac : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+    public class f401_bao_cao_danh_muc_tai_san_khac : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private GroupBox groupBox1;
         private Label label6;
         private ComboBox m_cbo_trang_thai_tai_san;
@@ -54,43 +56,43 @@ namespace QltsForm {
         private Label label2;
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f401_bao_cao_danh_muc_tai_san_khac()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f401_bao_cao_danh_muc_tai_san_khac()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f401_bao_cao_danh_muc_tai_san_khac));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -421,77 +423,93 @@ namespace QltsForm {
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-
-        public void expor_excel(
-    eFormMode ip_form_mode
-    , string ip_str_bo_tinh
-    , string ip_str_don_vi_chu_quan
-    , decimal ip_dc_don_vi_su_dung
-    , ref string op_str_excel_file_name)
+        #region Public Interface
+        public void display()
         {
-            //1. Đưa dữ liệu lên trên grid
+            this.ShowDialog();
+        }
+
+        public void export_excel(
+            eFormMode ip_form_mode
+            , ref IP.Core.QltsFormControls.CObjExcelAssetParameters op_obj_excel_parameters)
+        {
             m_obj_trans = get_trans_object(m_fg);
-
             m_e_form_mode = ip_form_mode;
-            US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_dc_don_vi_su_dung);
+            US_DM_DON_VI v_us_dm_don_vi;
+            if (op_obj_excel_parameters.dcID_DON_VI_SU_DUNG != CONST_QLDB.ID_TAT_CA)
+            {
+                v_us_dm_don_vi = new US_DM_DON_VI(op_obj_excel_parameters.dcID_DON_VI_SU_DUNG);
+            }
+            else
+            {
+                v_us_dm_don_vi = new US_DM_DON_VI();
+            }
 
-            //2. Xuất dữ liệu ra file excel
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport();
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1); ;
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
-                    load_data_2_grid(ip_dc_don_vi_su_dung, ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
                     v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1);
+                    load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
-                    load_data_2_grid(ip_dc_don_vi_su_dung, ID_TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY);
-                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1);
+                    load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
-                    // Chỗ này đang chưa chuẩn vì chưa hiểu sự nghiệp là gì
-                    load_data_2_grid(ip_dc_don_vi_su_dung, ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
-                    v_obj_exe_report = new CExcelWebReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 12, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 13, 1);
+                    load_data_2_grid(op_obj_excel_parameters);
                     break;
                 default:
                     break;
             }
+            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", op_obj_excel_parameters.strTEN_BO_TINH);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", op_obj_excel_parameters.strTEN_DON_VI_CHU_QUAN);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", op_obj_excel_parameters.strTEN_DON_VI_SU_DUNG);
+            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_us_dm_don_vi.strMA_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", op_obj_excel_parameters.strLOAI_HINH_DON_VI);
 
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", ip_str_bo_tinh);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", ip_str_don_vi_chu_quan);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", v_us_don_vi.strTEN_DON_VI);
-            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_us_don_vi.strMA_DON_VI);
-            v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", v_us_don_vi.strLOAI_HINH_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<NGAY>", DateTime.Now.Day);
+            v_obj_exe_report.AddFindAndReplaceItem("<THANG>", DateTime.Now.Month);
+            v_obj_exe_report.AddFindAndReplaceItem("<NAM>", DateTime.Now.Year);
 
             v_obj_exe_report.FindAndReplace(false);
             v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
-            //3. Trả về địa chỉ file
-            op_str_excel_file_name = v_obj_exe_report.GetStrOutputFileNameWithPath();
+
+            op_obj_excel_parameters.strFILE_NAME_RESULT = v_obj_exe_report.GetStrOutputFileNameWithPath();
         }
-		#endregion
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			NGUON_NS = 6
-,HD_KHAC = 12
-,NAM_SAN_XUAT = 4
-,KY_HIEU = 2
-,KHONG_KINH_DOANH = 11
-,NAM_SU_DUNG = 5
-,TEN_TAI_SAN = 1
-,GIA_TRI_CON_LAI = 8
-,NUOC_SAN_XUAT = 3
-,QLNN = 9
-,KINH_DOANH = 10
-,NGUON_KHAC = 7
+        #region Data Structure
+        private enum e_col_Number
+        {
+            NGUON_NS = 6
+,
+            HD_KHAC = 12
+                ,
+            NAM_SAN_XUAT = 4
+                ,
+            KY_HIEU = 2
+                ,
+            KHONG_KINH_DOANH = 11
+                ,
+            NAM_SU_DUNG = 5
+                ,
+            TEN_TAI_SAN = 1
+                ,
+            GIA_TRI_CON_LAI = 8
+                ,
+            NUOC_SAN_XUAT = 3
+                ,
+            QLNN = 9
+                ,
+            KINH_DOANH = 10
+                , NGUON_KHAC = 7
 
-		}
+        }
         public enum eFormMode
         {
             KE_KHAI_TAI_SAN_KHAC
@@ -499,28 +517,30 @@ namespace QltsForm {
             TAI_SAN_KHAC_DE_NGHI_XU_LY
                 , TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP
         }
-		#endregion
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
-		US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
+        US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
         eFormMode m_e_form_mode = eFormMode.KE_KHAI_TAI_SAN_KHAC;
-		#endregion
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this);
-			CControlFormat.setC1FlexFormat(m_fg);
+        #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this);
+            CControlFormat.setC1FlexFormat(m_fg);
             //m_fg.Cols[(int)e_col_Number.TEN_LOAI_TAI_SAN].Visible = false;
             //m_fg.Tree.Column = (int)e_col_Number.TEN_TAI_SAN;
             //m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
+            set_define_events();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load()
+        {
+            m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_bo_tinh();
             load_data_2_cbo_don_vi_chu_quan();
             load_data_2_cbo_don_vi_su_dung();
@@ -533,7 +553,7 @@ namespace QltsForm {
                 CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue)
                 , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue));*/
 
-		}
+        }
 
         private void load_data_2_cbo_bo_tinh()
         {
@@ -601,24 +621,25 @@ namespace QltsForm {
             m_cbo_trang_thai_tai_san.SelectedValueChanged += new EventHandler(m_cbo_bo_tinh_SelectedValueChanged);
         }
 
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_DM_TAI_SAN_KHAC.NGUON_NS, e_col_Number.NGUON_NS);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.HD_KHAC, e_col_Number.HD_KHAC);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.NAM_SAN_XUAT, e_col_Number.NAM_SAN_XUAT);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.KY_HIEU, e_col_Number.KY_HIEU);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.KHONG_KINH_DOANH, e_col_Number.KHONG_KINH_DOANH);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.NAM_SU_DUNG, e_col_Number.NAM_SU_DUNG);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.TEN_TAI_SAN, e_col_Number.TEN_TAI_SAN);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.GIA_TRI_CON_LAI, e_col_Number.GIA_TRI_CON_LAI);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.NUOC_SAN_XUAT, e_col_Number.NUOC_SAN_XUAT);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.QLNN, e_col_Number.QLNN);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.KINH_DOANH, e_col_Number.KINH_DOANH);
-			v_htb.Add(V_DM_TAI_SAN_KHAC.NGUON_KHAC, e_col_Number.NGUON_KHAC);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.NewRow());
-			return v_obj_trans;			
-		}
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_TAI_SAN_KHAC.NGUON_NS, e_col_Number.NGUON_NS);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.HD_KHAC, e_col_Number.HD_KHAC);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.NAM_SAN_XUAT, e_col_Number.NAM_SAN_XUAT);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.KY_HIEU, e_col_Number.KY_HIEU);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.KHONG_KINH_DOANH, e_col_Number.KHONG_KINH_DOANH);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.NAM_SU_DUNG, e_col_Number.NAM_SU_DUNG);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.TEN_TAI_SAN, e_col_Number.TEN_TAI_SAN);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.GIA_TRI_CON_LAI, e_col_Number.GIA_TRI_CON_LAI);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.NUOC_SAN_XUAT, e_col_Number.NUOC_SAN_XUAT);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.QLNN, e_col_Number.QLNN);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.KINH_DOANH, e_col_Number.KINH_DOANH);
+            v_htb.Add(V_DM_TAI_SAN_KHAC.NGUON_KHAC, e_col_Number.NGUON_KHAC);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.NewRow());
+            return v_obj_trans;
+        }
 
         private void load_data_2_grid(decimal ip_dc_don_vi_su_dung, decimal ip_dc_trang_thai)
         {
@@ -627,123 +648,110 @@ namespace QltsForm {
             m_us_v_tai_san_khac.FillDataset(ip_dc_don_vi_su_dung, ip_dc_trang_thai, m_ds_v_tai_san_khac);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_v_tai_san_khac, m_fg, m_obj_trans);
-            //m_fg.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
-
-            /*m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None
-                , 0
-                , (int)e_col_Number.TEN_LOAI_TAI_SAN
-                , -1
-                , "{0}");
-			m_fg.Redraw = true;*/
+            m_fg.Redraw = true;
         }
 
-		private void load_data_2_grid(){						
-			m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();			
-			m_us_v_tai_san_khac.FillDataset(m_ds_v_tai_san_khac, "Where ID_DON_VI_SU_DUNG ="+m_cbo_don_vi_su_dung.SelectedValue+"and ID_TRANG_THAI ="+m_cbo_trang_thai_tai_san.SelectedValue);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds_v_tai_san_khac, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
-
-        private void export_excel()
+        private void load_data_2_grid(CObjExcelAssetParameters op_obj_excel_parameters)
         {
-            CExcelReport v_obj_exe_report = new CExcelReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1); ;
-            switch (m_e_form_mode)
-            {
-                case eFormMode.KE_KHAI_TAI_SAN_KHAC:
-                    v_obj_exe_report = new CExcelReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1);
-                    break;
-                case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
-                    v_obj_exe_report = new CExcelReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1);
-                    break;
-                case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
-                    v_obj_exe_report = new CExcelReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 13, 1);
-                    break;
-                default:
-                    break;
-            }
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", m_cbo_bo_tinh.Text);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_cbo_don_vi_chu_quan.Text);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_cbo_don_vi_su_dung.Text);
-            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", m_txt_ma_don_vi.Text);
-            v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", m_txt_loai_hinh_don_vi.Text);
-
-            v_obj_exe_report.FindAndReplace(false);
-            v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+            US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+            DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
+            v_us_v_dm_tai_san_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(
+                op_obj_excel_parameters.strKEY_SEARCH,
+                op_obj_excel_parameters.dcID_BO_TINH,
+                op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN,
+                op_obj_excel_parameters.dcID_DON_VI_SU_DUNG,
+                op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN,
+                op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI,
+                op_obj_excel_parameters.strUSER_NAME,
+                v_ds_v_dm_tai_san_khac);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds_v_dm_tai_san_khac, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
         }
 
-		private void grid2us_object(US_V_DM_TAI_SAN_KHAC i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
-
-	
-		private void us_object2grid(US_V_DM_TAI_SAN_KHAC i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
 
 
-		private void insert_v_dm_tai_san_khac(){			
-		//	f401_bao_cao_danh_muc_tai_san_khac_DE v_fDE = new  f401_bao_cao_danh_muc_tai_san_khac_DE();								
-		//	v_fDE.display();
-		//	load_data_2_grid();
-		}
+        private void grid2us_object(US_V_DM_TAI_SAN_KHAC i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
-		private void update_v_dm_tai_san_khac(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us_v_tai_san_khac, m_fg.Row);
-		//	f401_bao_cao_danh_muc_tai_san_khac_DE v_fDE = new f401_bao_cao_danh_muc_tai_san_khac_DE();
-		//	v_fDE.display(m_us);
-		//	load_data_2_grid();
-		}
-				
-		private void delete_v_dm_tai_san_khac(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_DM_TAI_SAN_KHAC v_us = new US_V_DM_TAI_SAN_KHAC();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
 
-		private void view_v_dm_tai_san_khac(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us_v_tai_san_khac, m_fg.Row);
-		//	f401_bao_cao_danh_muc_tai_san_khac_DE v_fDE = new f401_bao_cao_danh_muc_tai_san_khac_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+        private void us_object2grid(US_V_DM_TAI_SAN_KHAC i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
+
+
+        private void insert_v_dm_tai_san_khac()
+        {
+            //	f401_bao_cao_danh_muc_tai_san_khac_DE v_fDE = new  f401_bao_cao_danh_muc_tai_san_khac_DE();								
+            //	v_fDE.display();
+            //	load_data_2_grid();
+        }
+
+        private void update_v_dm_tai_san_khac()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us_v_tai_san_khac, m_fg.Row);
+            //	f401_bao_cao_danh_muc_tai_san_khac_DE v_fDE = new f401_bao_cao_danh_muc_tai_san_khac_DE();
+            //	v_fDE.display(m_us);
+            //	load_data_2_grid();
+        }
+
+        private void delete_v_dm_tai_san_khac()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_V_DM_TAI_SAN_KHAC v_us = new US_V_DM_TAI_SAN_KHAC();
+            grid2us_object(v_us, m_fg.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+
+        private void view_v_dm_tai_san_khac()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us_v_tai_san_khac, m_fg.Row);
+            //	f401_bao_cao_danh_muc_tai_san_khac_DE v_fDE = new f401_bao_cao_danh_muc_tai_san_khac_DE();			
+            //	v_fDE.display(m_us);
+        }
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cbo_bo_tinh.SelectedValueChanged += new EventHandler(m_cbo_bo_tinh_SelectedValueChanged);
             m_cbo_don_vi_chu_quan.SelectedValueChanged += new EventHandler(m_cbo_don_vi_chu_quan_SelectedValueChanged);
             m_cbo_don_vi_su_dung.SelectedValueChanged += new EventHandler(m_cbo_don_vi_su_dung_SelectedValueChanged);
             m_cbo_trang_thai_tai_san.SelectedValueChanged += new EventHandler(m_cbo_trang_thai_tai_san_SelectedValueChanged);
-		}
+        }
 
         void m_cbo_trang_thai_tai_san_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -756,7 +764,7 @@ namespace QltsForm {
                 /*load_data_2_grid(
                     CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue));*/
-                load_data_2_grid();
+
             }
             catch (Exception v_e)
             {
@@ -769,7 +777,6 @@ namespace QltsForm {
         {
             try
             {
-                export_excel();
             }
             catch (Exception v_e)
             {
@@ -788,7 +795,7 @@ namespace QltsForm {
                 /*load_data_2_grid(
                     CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue));*/
-                load_data_2_grid();
+
             }
             catch (Exception v_e)
             {
@@ -814,7 +821,6 @@ namespace QltsForm {
                 /*load_data_2_grid(
                     CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue));*/
-                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -834,7 +840,6 @@ namespace QltsForm {
                 /*load_data_2_grid(
                     CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue));*/
-                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -843,69 +848,87 @@ namespace QltsForm {
             }
         }
 
-		#endregion
+        #endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f401_bao_cao_danh_muc_tai_san_khac_Load(object sender, System.EventArgs e) {
-			try{
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void f401_bao_cao_danh_muc_tai_san_khac_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
                 set_define_events();
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_dm_tai_san_khac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_dm_tai_san_khac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_dm_tai_san_khac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_dm_tai_san_khac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_tai_san_khac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_dm_tai_san_khac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_dm_tai_san_khac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-	}
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_dm_tai_san_khac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+    }
 }
 
