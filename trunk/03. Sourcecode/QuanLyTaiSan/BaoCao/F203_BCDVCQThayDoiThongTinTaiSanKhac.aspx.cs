@@ -61,38 +61,6 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
 
     private void export_excel()
     {
-        string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
-        string v_str_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedItem.Text;
-        decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue);
-        string v_str_output_file = "";
-        f401_bao_cao_danh_muc_tai_san_khac v_f401_bc_dm_tai_san_khac = new f401_bao_cao_danh_muc_tai_san_khac();
-        if (Request.QueryString["ID"] != null)
-        {
-            string v_id = Request.QueryString["ID"];
-            switch (v_id)
-            {
-                case "1":
-                    v_f401_bc_dm_tai_san_khac.expor_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
-
-                                , v_str_bo_tinh
-                                , v_str_don_vi_chu_quan
-                                , v_dc_id_dv_su_dung
-                                , ref v_str_output_file);
-
-                    break;
-                case "2":
-                    v_f401_bc_dm_tai_san_khac.expor_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY
-
-                                , v_str_bo_tinh
-                                , v_str_don_vi_chu_quan
-                                , v_dc_id_dv_su_dung
-                                , ref v_str_output_file);
-                    break;
-            }
-            Response.Clear();
-            v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;
-            Response.Redirect(v_str_output_file, false);
-        }
 
     }
 
