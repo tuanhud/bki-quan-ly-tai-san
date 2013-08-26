@@ -37,52 +37,63 @@ public class WinformReport
     public static void export_gridview_2_excel(GridView ip_grv
                                , string ip_str_filename
                                , params int[] ip_i_invisible_columns
-                                ) {
-        
+                                )
+    {
+
         HttpContext.Current.Response.Clear();
-        HttpContext.Current.Response.Buffer = true;
+        //Response.Buffer = true;
         HttpContext.Current.Response.AddHeader("content-disposition", "attachment;filename=" + ip_str_filename);
         HttpContext.Current.Response.Charset = "UTF-8";
         HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.UTF8;
         HttpContext.Current.Response.ContentType = "application/vnd.ms-excel";
-        using (StringWriter sw = new StringWriter()) {
+        HttpContext.Current.Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+        using (StringWriter sw = new StringWriter())
+        {
             HtmlTextWriter hw = new HtmlTextWriter(sw);
-
             //if (ip_b_export_all_yn) {
             //    //To Export all pages
             //    ip_grv.AllowPaging = false;
             //    load_data_to_grid();
             //}
-
+            //ip_grv.DataBind();
             // Ẩn các cột phân trang ở cả đầu và cuối
             ip_grv.TopPagerRow.Visible = false;
             ip_grv.BottomPagerRow.Visible = false;
 
             ip_grv.HeaderRow.BackColor = Color.White;
-            foreach (TableCell cell in ip_grv.HeaderRow.Cells) {
+            foreach (TableCell cell in ip_grv.HeaderRow.Cells)
+            {
                 cell.BackColor = ip_grv.HeaderStyle.BackColor;
             }
             // Chỗ này để ẩn đi cột trên header
-            if (ip_i_invisible_columns.Length > 0) {
-                for (int v_i = 0; v_i < ip_i_invisible_columns.Length; v_i++) {
+            if (ip_i_invisible_columns.Length > 0)
+            {
+                for (int v_i = 0; v_i < ip_i_invisible_columns.Length; v_i++)
+                {
                     ip_grv.HeaderRow.Cells[v_i].Visible = false;
                 }
             }
 
-            foreach (GridViewRow row in ip_grv.Rows) {
+            foreach (GridViewRow row in ip_grv.Rows)
+            {
                 // Chỗ này để ẩn đi cột trên các dòng dữ liệu
-                if (ip_i_invisible_columns.Length > 0) {
-                    for (int v_i = 0; v_i < ip_i_invisible_columns.Length; v_i++) {
+                if (ip_i_invisible_columns.Length > 0)
+                {
+                    for (int v_i = 0; v_i < ip_i_invisible_columns.Length; v_i++)
+                    {
                         row.Cells[v_i].Visible = false;
                     }
                 }
 
                 row.BackColor = Color.White;
-                foreach (TableCell cell in row.Cells) {
-                    if (row.RowIndex % 2 == 0) {
+                foreach (TableCell cell in row.Cells)
+                {
+                    if (row.RowIndex % 2 == 0)
+                    {
                         cell.BackColor = ip_grv.AlternatingRowStyle.BackColor;
                     }
-                    else {
+                    else
+                    {
                         cell.BackColor = ip_grv.RowStyle.BackColor;
                     }
                     cell.CssClass = "textmode";
@@ -90,8 +101,10 @@ public class WinformReport
                     List<Control> controls = new List<Control>();
 
                     //Add controls to be removed to Generic List
-                    foreach (Control control in cell.Controls) {
-                        switch (control.GetType().Name) {
+                    foreach (Control control in cell.Controls)
+                    {
+                        switch (control.GetType().Name)
+                        {
                             case "HyperLink":
                                 cell.Controls.Remove(control);
                                 break;
@@ -111,15 +124,14 @@ public class WinformReport
                     }
                 }
             }
-
             ip_grv.RenderControl(hw);
 
             //style to format numbers to string
             string style = @"<style> .textmode { mso-number-format:\@; } </style>";
             HttpContext.Current.Response.Write(style);
             HttpContext.Current.Response.Output.Write(sw.ToString());
+            //Response.Write(sw.ToString());
             HttpContext.Current.Response.Flush();
-           
             HttpContext.Current.Response.End();
         }
     }
