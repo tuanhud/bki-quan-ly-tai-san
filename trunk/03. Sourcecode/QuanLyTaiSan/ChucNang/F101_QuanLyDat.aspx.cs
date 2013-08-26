@@ -333,6 +333,10 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
         try {
+            // Nếu muốn xuất all tất cả dữ liệu trên lưới
+            m_grv_danh_sach_nha.AllowPaging = false;
+            load_data_grid(m_txt_tu_khoa.Text);
+            // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
             WinformReport.export_gridview_2_excel(
                         m_grv_danh_sach_nha
                         , "DS tai san.xls"
