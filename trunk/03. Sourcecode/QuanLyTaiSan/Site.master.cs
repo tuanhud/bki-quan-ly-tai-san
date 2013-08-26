@@ -30,23 +30,22 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             if (Session[SESSION.AccounLoginYN] != null) {
                 if (Session[SESSION.AccounLoginYN].ToString().Equals("Y")) {
                     m_lhk_user_name.Text = "Xin chào anh(chị): " + Session[SESSION.UserFullName].ToString();
+                    m_str_user_name = CIPConvert.ToStr(Session[SESSION.UserName]);
+                    if (!IsPostBack)
+                    {
+                        m_us_ht_chuc_nang.get_parent_table(m_str_user_name, m_ds_ht_chuc_nang);
+                        // Lấy toàn bộ các menu cấp 1 được cấp quyền và được hiển thị
+                        rptMainMenu.DataSource = m_ds_ht_chuc_nang.HT_CHUC_NANG.Select("CHUC_NANG_PARENT_ID =0 AND HIEN_THI_YN='Y'", "VI_TRI");
+                        rptMainMenu.DataBind();
+                    }
                 }
                 else {
                     Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
                 }
             }
             else {
-                Response.Redirect("/QuanLyTaiSan/Account/Login.aspx");
+                Response.Redirect("/QuanLyTaiSan/Account/Login.aspx", false);
             }
-
-            m_str_user_name = CIPConvert.ToStr(Session[SESSION.UserName]);
-            if (!IsPostBack) {
-                m_us_ht_chuc_nang.get_parent_table(m_str_user_name, m_ds_ht_chuc_nang);
-                // Lấy toàn bộ các menu cấp 1 được cấp quyền và được hiển thị
-                rptMainMenu.DataSource = m_ds_ht_chuc_nang.HT_CHUC_NANG.Select("CHUC_NANG_PARENT_ID =0 AND HIEN_THI_YN='Y'", "VI_TRI");
-                rptMainMenu.DataBind();
-            }
-
         }
         catch (Exception v_e) {
             
