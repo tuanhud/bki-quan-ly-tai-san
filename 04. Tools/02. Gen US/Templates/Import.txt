@@ -1,5 +1,5 @@
 using System;
-using AuctionDS;
+using WebDS;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
