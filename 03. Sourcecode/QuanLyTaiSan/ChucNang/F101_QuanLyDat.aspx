@@ -391,13 +391,11 @@
                 </tr>
             </table>
         </ContentTemplate>
-         <!-- Đoạn này thêm vào để xuất được excel trong Panel  
-            ControlID: là name của button xuất Excel
-         -->
+   
          <Triggers>
             <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
         </Triggers>
-        <!-- Đến đây -->
+
     </asp:UpdatePanel>
     <asp:updateprogress runat="server">
         <progresstemplate>
