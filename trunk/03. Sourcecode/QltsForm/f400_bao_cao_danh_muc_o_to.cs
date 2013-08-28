@@ -108,6 +108,8 @@ namespace QltsForm {
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.m_cbo_trang_thai_tai_san = new System.Windows.Forms.ComboBox();
             this.m_txt_loai_hinh_don_vi = new System.Windows.Forms.TextBox();
@@ -121,8 +123,6 @@ namespace QltsForm {
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -295,6 +295,22 @@ namespace QltsForm {
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thong tin tìm kiếm";
             // 
+            // m_txt_search
+            // 
+            this.m_txt_search.Location = new System.Drawing.Point(477, 116);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(402, 20);
+            this.m_txt_search.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(386, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Từ khóa tìm kiếm";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -409,22 +425,6 @@ namespace QltsForm {
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bộ/Tỉnh";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(386, 123);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Từ khóa tìm kiếm";
-            // 
-            // m_txt_search
-            // 
-            this.m_txt_search.Location = new System.Drawing.Point(477, 116);
-            this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(402, 20);
-            this.m_txt_search.TabIndex = 14;
             // 
             // f400_bao_cao_danh_muc_o_to
             // 
@@ -572,24 +572,24 @@ namespace QltsForm {
 
 		#region Data Structure
 		private enum e_col_Number{
-			NGUON_GOC_XE = 10
-            ,NGUON_NS = 11
-            ,HD_KHAC = 17
-            ,NHAN_HIEU = 2
-            ,KHONG_KINH_DOANH = 16
-            ,BIEN_KIEM_SOAT = 3
-            ,NAM_SU_DUNG = 7
-            ,NGUON_KHAC = 12
-            ,CHUC_DANH_SU_DUNG = 9
-            ,TEN_TAI_SAN = 1
-            ,SO_CHO_NGOI = 4
-            ,GIA_TRI_CON_LAI = 13
-            ,NUOC_SAN_XUAT = 5
-            ,QLNN = 14
-            ,KINH_DOANH = 15
-            ,NAM_SAN_XUAT = 6
-            ,CONG_SUAT_XE = 8
-            ,TEN_LOAI_TAI_SAN = 18
+			NGUON_GOC_XE = 11
+            ,NGUON_NS = 12
+            ,HD_KHAC = 18
+            ,NHAN_HIEU = 3
+            ,KHONG_KINH_DOANH = 17
+            ,BIEN_KIEM_SOAT = 4
+            ,NAM_SU_DUNG = 8
+            ,NGUON_KHAC = 13
+            ,CHUC_DANH_SU_DUNG = 10
+            ,TEN_TAI_SAN = 2
+            ,SO_CHO_NGOI = 5
+            ,GIA_TRI_CON_LAI = 14
+            ,NUOC_SAN_XUAT = 6
+            ,QLNN = 15
+            ,KINH_DOANH = 16
+            ,NAM_SAN_XUAT = 7
+            ,CONG_SUAT_XE = 9
+            ,TEN_LOAI_TAI_SAN = 1
 		}
 
         public enum eFormMode {
