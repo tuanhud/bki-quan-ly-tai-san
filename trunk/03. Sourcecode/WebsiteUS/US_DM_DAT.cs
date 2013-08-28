@@ -13,6 +13,7 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using WebDS;
+using WebDS.CDBNames;
 
 
 namespace WebUS
@@ -551,6 +552,14 @@ namespace WebUS
             v_obj_pr.fillDataSetByCommand(this, op_ds_dat);
         }
 
+        public bool check_ma_tai_san_valid(string ip_str_ma_tai_san)
+        {
+            US_DM_DAT v_us_dm_dat = new US_DM_DAT();
+            DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
+            v_us_dm_dat.FillDataset(v_ds_dm_dat, "where " + DM_DAT.MA_TAI_SAN + " = '" + ip_str_ma_tai_san + "'");
+            if (v_ds_dm_dat.DM_DAT.Count == 0) return true;
+            return false;
+        }
         #endregion
     }
 }
