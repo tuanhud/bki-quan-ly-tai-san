@@ -724,14 +724,14 @@ namespace WebUS
             v_obj_procedure.fillDataSetByCommand(this, op_dat_v_dm_tai_san_khac);
         }
         public void FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(
-    string ip_str_tu_khoa
-    , decimal ip_dc_id_bo_tinh
-    , decimal ip_dc_id_don_vi_chu_quan
-    , decimal ip_dc_id_don_vi_su_dung
-    , decimal ip_dc_id_trang_thai
-    , string ip_str_loai_hinh_don_vi
-    , string ip_str_user_name
-    , DS_V_DM_TAI_SAN_KHAC op_dat_v_dm_tai_san_khac)
+            string ip_str_tu_khoa
+            , decimal ip_dc_id_bo_tinh
+            , decimal ip_dc_id_don_vi_chu_quan
+            , decimal ip_dc_id_don_vi_su_dung
+            , decimal ip_dc_id_trang_thai
+            , string ip_str_loai_hinh_don_vi
+            , string ip_str_user_name
+            , DS_V_DM_TAI_SAN_KHAC op_dat_v_dm_tai_san_khac)
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Load_data_to_grid_by_tu_khoa");
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_dc_id_bo_tinh);
@@ -744,6 +744,26 @@ namespace WebUS
             v_obj_procedure.fillDataSetByCommand(this, op_dat_v_dm_tai_san_khac);
         }
 
+        public void FillDatasetLoadDataToGridTaiSanCoNguyenGiaTren500_by_tu_khoa(
+            string ip_str_tu_khoa
+            , decimal ip_dc_id_bo_tinh
+            , decimal ip_dc_id_don_vi_chu_quan
+            , decimal ip_dc_id_don_vi_su_dung
+            , decimal ip_dc_id_trang_thai
+            , string ip_str_loai_hinh_don_vi
+            , string ip_str_user_name
+            , DS_V_DM_TAI_SAN_KHAC op_dat_v_dm_tai_san_khac)
+        {
+            CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Load_data_to_grid_tai_san_co_nguyen_gia_tren_500_trieu_by_tu_khoa");
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_dc_id_bo_tinh);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_dc_id_don_vi_su_dung);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+            v_obj_procedure.fillDataSetByCommand(this, op_dat_v_dm_tai_san_khac);
+        }
         public void search_by_name(DS_V_DM_TAI_SAN_KHAC op_ds_v_dm_tai_san_khac, string ip_str_name, decimal ip_dc_don_vi_su_dung)
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Search_by_name");
