@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F410_DeNghiXuLyOto.aspx.cs"
     Inherits="ChucNang_F410_DeNghiXuLyOto" %>
+
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+<asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
     <style type="text/css">
         a
         {
@@ -26,12 +26,12 @@
                 }
         }
     </script>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
+</asp:content>
+<asp:content id="Content2" contentplaceholderid="MainContent" runat="Server">
+    <asp:scriptmanager id="ScriptManager1" runat="server">
+    </asp:scriptmanager>
+    <asp:updatepanel id="UpdatePanel1" runat="server">
+        <contenttemplate>
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <!--  Quan ly oto  -->
                 <tr>
@@ -130,12 +130,15 @@
                                     &nbsp;
                                 </td>
                                 <td align="left" colspan="1" style="width: 35%">
-                                    &nbsp;
+                                    <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" 
+                                        CssClass="cssButton" Height="24px" OnClick="m_cmd_tim_kiem_Click" 
+                                        Text="Tìm kiếm(s)" Width="98px" />
+                                        &nbsp;
+                                    <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
+                                        Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
                                 </td>
                                 <td align="left" style="width: 15%;" colspan="1">
-                                    <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" CssClass="cssButton"
-                                        OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px" Height="24px" />
-                                </td>
+                                    &nbsp;</td>
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%;">
@@ -215,13 +218,12 @@
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" />
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
+                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
-                                            ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
+                                        <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
+                                <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
                                 <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Nhãn hiệu" DataField="NHAN_HIEU" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Biển kiểm soát" DataField="BIEN_KIEM_SOAT" ItemStyle-HorizontalAlign="Center" />
@@ -337,10 +339,10 @@
                 </tr>
                 <!--End Gridview-->
             </table>
-        </ContentTemplate>
-    </asp:UpdatePanel>
-    <asp:UpdateProgress runat="server">
-        <ProgressTemplate>
+        </contenttemplate>
+    </asp:updatepanel>
+    <asp:updateprogress runat="server">
+        <progresstemplate>
             <div class="cssLoadWapper">
                 <div class="cssLoadContent">
                     <img src="../Images/loadingBar.gif" alt="" />
@@ -348,6 +350,6 @@
                         Đang gửi yêu cầu, hãy đợi ...</p>
                 </div>
             </div>
-        </ProgressTemplate>
-    </asp:UpdateProgress>
-</asp:Content>
+        </progresstemplate>
+    </asp:updateprogress>
+</asp:content>

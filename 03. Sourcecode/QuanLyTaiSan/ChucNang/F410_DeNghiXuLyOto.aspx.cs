@@ -31,28 +31,26 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
     private void load_form_data()
     {
         load_data_bo_tinh();
-        load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
-        load_data_don_vi_su_dung(m_ddl_dv_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        load_data_don_vi_chu_quan();
+        load_data_don_vi_su_dung();
         load_data_trang_thai();
         load_data_to_grid();
         set_trang_thai_cmd();
         m_lbl_mess.Text = "";
     }
-
     private void load_data_bo_tinh()
     {
         WinFormControls.load_data_to_cbo_bo_tinh(WinFormControls.eTAT_CA.YES, m_ddl_bo_tinh);
     }
-    private void load_data_don_vi_chu_quan(string ip_str_id_bo_tinh)
+    private void load_data_don_vi_chu_quan()
     {
-        WinFormControls.load_data_to_cbo_don_vi_chu_quan(ip_str_id_bo_tinh, WinFormControls.eTAT_CA.YES, m_ddl_dv_chu_quan);
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue, WinFormControls.eTAT_CA.YES, m_ddl_dv_chu_quan);
     }
-
-    private void load_data_don_vi_su_dung(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
+    private void load_data_don_vi_su_dung()
     {
         WinFormControls.load_data_to_cbo_don_vi_su_dung(
-            ip_str_id_don_vi_chu_quan
-            , ip_str_id_bo_tinh
+            m_ddl_dv_chu_quan.SelectedValue
+            , m_ddl_bo_tinh.SelectedValue
             , WinFormControls.eTAT_CA.YES
             , m_ddl_dv_sd_ts);
     }
@@ -80,7 +78,6 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
         m_grv_dm_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
         m_grv_dm_oto.DataBind();
     }
-
     private void set_trang_thai_cmd()
     {
         decimal v_dc_trang_thai = CIPConvert.ToDecimal(m_ddl_trang_thai_oto.SelectedValue);
@@ -121,7 +118,6 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
         }
         
     }
-
     protected void m_grv_dm_oto_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -152,17 +148,16 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
     }
     protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
-        load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
-        load_data_don_vi_su_dung(m_ddl_dv_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        load_data_don_vi_chu_quan();
+        load_data_don_vi_su_dung();
     }
     protected void m_ddl_dv_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
-        load_data_don_vi_su_dung(m_ddl_dv_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        load_data_don_vi_su_dung();
     }
     protected void m_ddl_dv_sd_ts_SelectedIndexChanged(object sender, EventArgs e)
     {
     }
-
     protected void m_cmd_de_nghi_xu_ly_Click(object sender, EventArgs e)
     {
         try
@@ -196,7 +191,6 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
-
     protected void m_cmd_huy_de_nghi_xu_ly_Click(object sender, EventArgs e)
     {
         try
@@ -230,6 +224,20 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_grv_dm_oto.AllowPaging = false;
+            load_data_to_grid();
+            WinformReport.export_gridview_2_excel(m_grv_dm_oto
+                , "DS de nghi xu ly o to.xls"
+                , 0);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
-
 }
