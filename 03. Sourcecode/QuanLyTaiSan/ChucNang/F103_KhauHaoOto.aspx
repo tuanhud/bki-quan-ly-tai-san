@@ -384,7 +384,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
-                        <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
+                        <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
                         <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                         <asp:BoundField HeaderText="Nhãn hiệu" DataField="NHAN_HIEU" />
                         <asp:BoundField HeaderText="Biển kiểm soát" DataField="BIEN_KIEM_SOAT" />
