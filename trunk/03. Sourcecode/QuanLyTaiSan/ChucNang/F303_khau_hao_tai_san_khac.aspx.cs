@@ -337,5 +337,21 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_grv_tai_san_khac.AllowPaging = false;
+            load_data_to_grid();
+            WinformReport.export_gridview_2_excel(m_grv_tai_san_khac
+                , "DS khau hao tai san khac.xls"
+                , 0);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion  
+    
 }
