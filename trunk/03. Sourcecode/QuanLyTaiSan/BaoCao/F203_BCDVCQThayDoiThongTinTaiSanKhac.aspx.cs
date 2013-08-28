@@ -58,12 +58,10 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
     #endregion
     #region Private Methods
-
-    private void export_excel()
+    public override void VerifyRenderingInServerForm(Control control)
     {
-
+        //base.VerifyRenderingInServerForm(control);
     }
-
     private bool check_validate_data_is_ok()
     {
 
@@ -322,7 +320,22 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         try
         {
             Thread.Sleep(2000);
-            export_excel();
+            try
+            {
+                // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
+                m_grv_tai_san_khac_history.AllowPaging = false;
+                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                WinformReport.export_gridview_2_excel(
+                            m_grv_tai_san_khac_history
+                            , "DS tai san khac thay doi thong tin.xls"
+                            , 0
+                            , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(this, v_e);
+            }
         }
         catch (Exception ex)
         {
