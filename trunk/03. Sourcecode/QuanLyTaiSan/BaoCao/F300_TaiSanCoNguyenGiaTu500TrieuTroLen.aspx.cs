@@ -47,25 +47,11 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
         f401_bao_cao_danh_muc_tai_san_khac v_f401_bc_dm_tai_san_khac = new f401_bao_cao_danh_muc_tai_san_khac();
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
-        if (Request.QueryString["ID"] != null)
-        {
-            string v_id = Request.QueryString["ID"];
-            switch (v_id)
-            {
-                case "1":
-                    v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
+        v_f401_bc_dm_tai_san_khac.export_excel_tai_san_co_nguyen_gia_tren_500_trieu(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
                         , ref v_obj_parameter);
-
-                    break;
-                case "2":
-                    v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY
-                        , ref v_obj_parameter);
-                    break;
-            }
-            Response.Clear();
-            v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-            Response.Redirect(v_str_output_file, false);
-        }
+        Response.Clear();
+        v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+        Response.Redirect(v_str_output_file, false);
     }
 
     private bool check_validate_data_id_ok()
@@ -214,6 +200,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
     {
         try
         {
+            Thread.Sleep(2000);
             export_excel();
         }
         catch (System.Exception v_e)
