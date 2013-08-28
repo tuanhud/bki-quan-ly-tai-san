@@ -131,7 +131,7 @@
                                                 <td colspan="3" style="height: 40px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (ngàn đồng)
+                                                    (đồng)
                                                 </td>
                                             </tr>
                                             <tr>
