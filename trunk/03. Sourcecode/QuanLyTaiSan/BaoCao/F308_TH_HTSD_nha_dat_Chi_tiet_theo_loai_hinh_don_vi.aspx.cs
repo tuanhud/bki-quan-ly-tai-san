@@ -12,6 +12,7 @@ using WebDS.CDBNames;
 using QltsForm;
 using WebUS;
 using WebDS;
+using System.Threading;
 
 public partial class BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi : System.Web.UI.Page
 {
@@ -30,11 +31,17 @@ public partial class BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi 
             , v_ds_rpt_tong_hop_hien_trang
             );
         m_grv_tai_san_nha_dat.DataSource = v_ds_rpt_tong_hop_hien_trang.RPT_TONG_HOP_HIEN_TRANG;
+        Thread.Sleep(1000);
         m_grv_tai_san_nha_dat.DataBind();
     }
+
     #endregion
 
     #region Events
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -80,9 +87,27 @@ public partial class BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi 
     {
         try
         {
+
             load_data_to_grid(
                 m_cbo_bo_tinh.SelectedValue
                 ,m_cbo_don_vi_chu_quan.SelectedValue
+                );
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_grv_tai_san_nha_dat.AllowPaging = false;
+            load_data_to_grid(m_cbo_bo_tinh.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue);
+            Thread.Sleep(1000);
+            WinformReport.export_gridview_2_excel(
+                m_grv_tai_san_nha_dat
+                ,"BaoCaoTongHopTinhHinhSuDungNhaDatChiTietTheoTungDonVi.xls"
                 );
         }
         catch (System.Exception ex)
