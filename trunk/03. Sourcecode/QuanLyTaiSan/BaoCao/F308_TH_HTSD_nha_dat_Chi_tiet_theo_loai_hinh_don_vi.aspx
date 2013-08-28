@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi.aspx.cs" Inherits="BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeFile="F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi.aspx.cs" Inherits="BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-<table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
                 <span class="cssPageTitle">TỔNG HỢP HIỆN TRẠNG SỬ DỤNG NHÀ, ĐẤT</span> <span class="expand-collapse-text">
@@ -43,20 +44,20 @@
         </tr>
         <tr>
             <td align="right">
-                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
+                <span class="cssManField">Loại hình đơn vị:</span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
+                <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" Width="90%" runat="Server" AutoPostBack="True"
                     TabIndex="3">
                 </asp:DropDownList>
             </td>
             <td>
             </td>
             <td align="right">
-                <span class="cssManField">Trạng thái:</span>
+                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
             </td>
             <td>
-                <asp:DropDownList ID="m_cbo_trang_thai" Width="90%" runat="Server" AutoPostBack="True"
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung" Width="90%" runat="Server" AutoPostBack="True"
                     TabIndex="3">
                 </asp:DropDownList>
             </td>
@@ -203,4 +204,3 @@
         </tr>
     </table>
 </asp:Content>
-
