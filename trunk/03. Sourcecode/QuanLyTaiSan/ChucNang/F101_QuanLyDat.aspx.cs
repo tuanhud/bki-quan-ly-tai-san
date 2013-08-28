@@ -188,6 +188,27 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             m_lbl_mess.Text = "Bạn chưa chọn đơn vị chủ quản!";
             return false;
         }
+        if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+        {
+            if (m_us_dm_dat.check_ma_tai_san_valid(m_txt_ma_tai_san.Text))
+            {
+                m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
+                return false;
+            }
+        }
+        if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+        {
+            m_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_hdf_id.Value));
+            if (m_us_dm_dat.strMA_TAI_SAN != m_txt_ma_tai_san.Text)
+            {
+                if (m_us_dm_dat.check_ma_tai_san_valid(m_txt_ma_tai_san.Text))
+                {
+                    m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
+                    return false;
+                }
+            }
+        }
+
         return true;
     }
 
@@ -213,8 +234,6 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
 
     #endregion
-
-    
 
     #region Events
     protected void Page_Load(object sender, EventArgs e)
