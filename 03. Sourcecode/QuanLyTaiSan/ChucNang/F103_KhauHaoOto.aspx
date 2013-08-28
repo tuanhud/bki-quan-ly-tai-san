@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="F103_KhauHaoOto.aspx.cs" Inherits="ChucNang_F103_KhauHaoOto" %>
+    EnableEventValidation="false" CodeFile="F103_KhauHaoOto.aspx.cs" Inherits="ChucNang_F103_KhauHaoOto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
@@ -40,7 +40,6 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    &nbsp;&nbsp;&nbsp;
     <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
         <!--  Quan ly oto  -->
         <tr>
@@ -284,11 +283,9 @@
                         </td>
                         <td colspan="4" align="left">
                             <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_oto" 
-                                onclick="m_cmd_tao_moi_Click" />
+                                Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_oto" OnClick="m_cmd_tao_moi_Click" />
                             <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                Height="24px" Width="98px" Text="Xóa trắng(r)" 
-                                onclick="m_cmd_xoa_trang_Click" />
+                                Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
                             <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
                         </td>
                     </tr>
@@ -348,8 +345,21 @@
                 <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%"> </asp:TextBox>
             </td>
             <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
                 <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
                     Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
+                &nbsp;
+                <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
+                    Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
+            </td>
+            <td>
             </td>
             <td>
             </td>
@@ -358,8 +368,7 @@
             <td align="center" colspan="4" style="height: 450px;" valign="top">
                 <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                    PageSize="15" ShowHeader="true" OnRowCommand="m_grv_dm_oto_RowCommand" 
-                    EmptyDataText="Không có dữ liệu phù hợp">
+                    PageSize="15" ShowHeader="true" OnRowCommand="m_grv_dm_oto_RowCommand" EmptyDataText="Không có dữ liệu phù hợp">
                     <Columns>
                         <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>
@@ -383,7 +392,7 @@
                         <asp:BoundField HeaderText="Nguồn gốc xe" DataField="NGUON_GOC_XE" />
                         <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
                         <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" />
-                        <asp:BoundField HeaderText="Ngày/tháng/năm sử dụng" DataField="NAM_SU_DUNG" />
+                        <asp:BoundField HeaderText="Năm sử dụng" DataField="NAM_SU_DUNG" />
                         <asp:TemplateField HeaderStyle-Width="20%">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
@@ -443,4 +452,7 @@
             </td>
         </tr>
     </table>
+    <triggers>
+        <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+    </triggers>
 </asp:Content>

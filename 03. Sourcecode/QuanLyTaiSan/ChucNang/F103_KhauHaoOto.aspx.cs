@@ -96,7 +96,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             US_DM_LOAI_TAI_SAN v_us_dm_loaits = new US_DM_LOAI_TAI_SAN();
             // DataRow v_dr_all = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
             // Đổ dữ liệu vào DS 
-            v_us_dm_loaits.FillDataset(v_ds_dm_loaits, "where " + DM_LOAI_TAI_SAN.ID_LOAI_TAI_SAN_PARENT + " = "+ ID_LOAI_TAI_SAN.OTO); // Đây là lấy theo điều kiện
+            v_us_dm_loaits.FillDataset(v_ds_dm_loaits, "where " + DM_LOAI_TAI_SAN.ID_LOAI_TAI_SAN_PARENT + " = " + ID_LOAI_TAI_SAN.OTO); // Đây là lấy theo điều kiện
             m_cbo_loai_o_to_up.DataSource = v_ds_dm_loaits.DM_LOAI_TAI_SAN;
             m_cbo_loai_o_to_up.DataTextField = "TEN_LOAI_TAI_SAN";
             m_cbo_loai_o_to_up.DataValueField = "ID";
@@ -152,11 +152,11 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void load_data_to_dv_su_dung_up(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
     {
-       WinFormControls.load_data_to_cbo_don_vi_su_dung(
-            ip_str_id_don_vi_chu_quan
-            , ip_str_id_bo_tinh
-            , WinFormControls.eTAT_CA.NO
-            , m_cbo_don_vi_su_dung_tai_san_up);
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+             ip_str_id_don_vi_chu_quan
+             , ip_str_id_bo_tinh
+             , WinFormControls.eTAT_CA.NO
+             , m_cbo_don_vi_su_dung_tai_san_up);
     }
 
     private void load_data_to_dv_su_dung_down(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
@@ -220,6 +220,10 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
+    }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
     }
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -375,6 +379,20 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_grv_dm_oto.AllowPaging = false;
+            load_data_to_grid();
+            WinformReport.export_gridview_2_excel(m_grv_dm_oto
+                , "DM khau hao oto.xls"
+                , 0);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
-    
 }
