@@ -11,7 +11,7 @@ using WebUS;
 using WebDS.CDBNames;
 using QltsForm;
 using IP.Core.WinFormControls;
-
+using System.Threading;
 
 public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Page
 {
@@ -21,55 +21,6 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     #endregion
 
     #region private methods
-    //private void export_excel()
-    //{
-    //    try
-    //    {
-    //        US_DM_DON_VI v_us_dm_don_vi;
-    //        US_DM_DAT v_us_dm_dat;
-    //        decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
-    //        v_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
-    //        decimal v_dc_id_dv_su_dung = v_us_dm_dat.dcID_DON_VI_SU_DUNG;
-    //        v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_dat.dcID_DON_VI_CHU_QUAN);
-    //        string v_str_don_vi_chu_quan = v_us_dm_don_vi.strTEN_DON_VI;
-    //        v_us_dm_don_vi = new US_DM_DON_VI(v_us_dm_don_vi.dcID_DON_VI_CAP_TREN);
-    //        string v_str_bo_tinh = v_us_dm_don_vi.strTEN_DON_VI;
-    //        string v_str_output_file = "";
-    //        if (Request.QueryString["id_loai_bao_cao"] != null)
-    //        {
-    //            string v_id = Request.QueryString["id_loai_bao_cao"];
-    //            f402_bao_cao_danh_muc_tru_so_lam_viec v_f402_bc_dm_nha = new f402_bao_cao_danh_muc_tru_so_lam_viec();
-    //            switch (v_id)
-    //            {
-    //                case "1":
-    //                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DANH_MUC_TRU_SO_LAM_VIEC
-    //                                            , v_str_bo_tinh
-    //                                            , v_str_don_vi_chu_quan
-    //                                            , v_dc_id_dv_su_dung
-    //                                            , v_dc_id_dat
-    //                                            , ref v_str_output_file);
-    //                    break;
-    //                case "2":
-    //                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DE_NGHI_XU_LY
-    //                                            , v_str_bo_tinh
-    //                                            , v_str_don_vi_chu_quan
-    //                                            , v_dc_id_dv_su_dung
-    //                                            , v_dc_id_dat
-    //                                            , ref v_str_output_file);
-    //                    break;
-    //                case "3":
-    //                    break;
-    //            }
-    //        }
-    //        Response.Clear();
-    //        v_str_output_file = "/QuanLyTaiSan/" + v_str_output_file;
-    //        Response.Redirect(v_str_output_file, false);
-    //    }
-    //    catch (System.Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
 
     private bool check_validate_data_is_ok()
     {
@@ -260,6 +211,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
+            
             if (!check_validate_data_is_ok()) return;
             string v_str_user_name = Person.get_user_name();
             if (v_str_user_name.Equals(null)) return;
@@ -279,6 +231,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
                 , v_ds_v_dm_dat_history
                 );
             m_grv_dat_history.DataSource = v_ds_v_dm_dat_history.V_DM_DAT_HISTORY;
+            Thread.Sleep(1000);
             m_grv_dat_history.DataBind();
         }
         catch (System.Exception v_e)
@@ -290,7 +243,34 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         try
         {
-            //export_excel();
+
+            if (!check_validate_data_is_ok()) return;
+            string v_str_user_name = Person.get_user_name();
+            if (v_str_user_name.Equals(null)) return;
+            US_V_DM_DAT_HISTORY v_us_v_dm_dat_history = new US_V_DM_DAT_HISTORY();
+            DS_V_DM_DAT_HISTORY v_ds_v_dm_dat_history = new DS_V_DM_DAT_HISTORY();
+            m_grv_dat_history.AllowPaging = false;
+            v_us_v_dm_dat_history.FillDatasetLoaiHinh(
+                CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                , m_cbo_loai_hinh_don_vi.SelectedValue
+                , v_str_user_name
+                , CIPConvert.ToDatetime(m_txt_tu_ngay.Text)
+                , CIPConvert.ToDatetime(m_txt_den_ngay.Text)
+                , m_txt_tim_kiem.Text
+                , v_ds_v_dm_dat_history
+                );
+            m_grv_dat_history.DataSource = v_ds_v_dm_dat_history.V_DM_DAT_HISTORY;
+            Thread.Sleep(1000);
+            m_grv_dat_history.DataBind();
+            
+            WinformReport.export_gridview_2_excel(
+                m_grv_dat_history
+                , "BaoCaoThayDoiThongTinDat.xls"
+                );
         }
 
         catch (Exception v_e)
@@ -346,6 +326,9 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
 
 }
