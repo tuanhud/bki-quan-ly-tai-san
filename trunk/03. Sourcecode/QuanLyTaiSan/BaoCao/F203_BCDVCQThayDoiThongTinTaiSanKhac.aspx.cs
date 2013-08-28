@@ -58,10 +58,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
     #endregion
     #region Private Methods
-    public override void VerifyRenderingInServerForm(Control control)
-    {
-        //base.VerifyRenderingInServerForm(control);
-    }
+    
     private bool check_validate_data_is_ok()
     {
 
@@ -231,7 +228,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
 
     }*/
     #endregion
-
+    #region Events
     protected void m_grv_tai_san_khac_history_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -245,7 +242,10 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         }
         
     }
-
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -360,4 +360,5 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+    #endregion
 }
