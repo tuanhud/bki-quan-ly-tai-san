@@ -107,7 +107,18 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
-
+        try
+        {
+            m_grv_danh_sach_nha.AllowPaging = false;
+            load_data_to_grid();
+            WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha
+                , "DS khau hao nha.xls"
+                , 0);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -226,6 +237,11 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
+
     #endregion
 
     #region Public Interfaces
