@@ -32,10 +32,10 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     private void load_form_data()
     {
         load_data_bo_tinh();
-        load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
-        load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        load_data_don_vi_chu_quan();
+        load_data_don_vi_su_dung();
         load_data_trang_thai();
-        load_data_grid(m_txt_tu_khoa.Text.Trim());
+        load_data_grid();
         set_form_mode();
     }
 
@@ -53,9 +53,9 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
 
     // Load dữ liệu vào combo đơn vị chủ quản
-    private void load_data_don_vi_chu_quan(string ip_str_id_bo_tinh)
+    private void load_data_don_vi_chu_quan()
     {
-        WinFormControls.load_data_to_cbo_don_vi_chu_quan(ip_str_id_bo_tinh, WinFormControls.eTAT_CA.NO, m_ddl_don_vi_chu_quan);
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue, WinFormControls.eTAT_CA.NO, m_ddl_don_vi_chu_quan);
 
         if (m_us_dm_dat.dcID_DON_VI_CHU_QUAN != 0)
         {
@@ -64,10 +64,10 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
 
     // Load dữ liệu vào combo đơn vị sử dụng
-    private void load_data_don_vi_su_dung(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
+    private void load_data_don_vi_su_dung()
     {
-        WinFormControls.load_data_to_cbo_don_vi_su_dung(ip_str_id_don_vi_chu_quan
-            , ip_str_id_bo_tinh
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue
+            , m_ddl_bo_tinh.SelectedValue
             , WinFormControls.eTAT_CA.NO
             , m_ddl_don_vi_su_dung);
 
@@ -85,7 +85,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             , m_ddl_trang_thai);
     }
 
-    private void load_data_grid(string ip_str_tu_khoa)
+    private void load_data_grid()
     {
         US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT();
         DS_V_DM_DAT v_ds_v_dm_dat = new DS_V_DM_DAT();
@@ -97,7 +97,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             , CONST_QLDB.ID_TAT_CA.ToString()
             , Person.get_user_name()
             , CONST_QLDB.ID_TAT_CA.ToString()
-            , ip_str_tu_khoa
+            , m_txt_tu_khoa.Text.Trim()
             , v_ds_v_dm_dat
             );
 
@@ -317,8 +317,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     {
         try
         {
-            load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
-            load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+            load_data_don_vi_chu_quan();
+            load_data_don_vi_su_dung();
         }
         catch (Exception v_e)
         {
@@ -329,7 +329,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     {
         try
         {
-            load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+            load_data_don_vi_su_dung();
         }
         catch (Exception v_e)
         {
@@ -341,7 +341,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try
         {
             Thread.Sleep(2000);
-            load_data_grid(m_txt_tu_khoa.Text.Trim());
+            load_data_grid();
         }
         catch (Exception v_e)
         {
@@ -354,7 +354,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try {
             // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
             m_grv_danh_sach_nha.AllowPaging = false;
-            load_data_grid(m_txt_tu_khoa.Text);  // đây là hàm load lại dữ liệu lên lưới
+            load_data_grid();  // đây là hàm load lại dữ liệu lên lưới
             // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
             WinformReport.export_gridview_2_excel(
                         m_grv_danh_sach_nha
@@ -373,7 +373,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
-            load_data_grid(m_txt_tu_khoa.Text.Trim());
+            load_data_grid();
         }
         catch (Exception v_e)
         {
