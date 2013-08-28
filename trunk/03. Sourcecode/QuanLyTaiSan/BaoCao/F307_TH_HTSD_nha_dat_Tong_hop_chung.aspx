@@ -79,12 +79,12 @@
                     EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                     ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true">
                     <Columns>
-                        <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="31.25%" DataTextField="TEN_TAI_SAN"
+                        <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="20%" DataTextField="TEN_TAI_SAN"
                             HeaderStyle-HorizontalAlign="Center" />
                         <asp:BoundField HeaderText="SỐ LƯỢNG" HeaderStyle-Width="6.25%" DataField="SO_LUONG"
-                            ItemStyle-HorizontalAlign="right"></asp:BoundField>
-                        <asp:BoundField HeaderText="DIỆN TÍCH" HeaderStyle-Width="18.75%" DataField="TONG_DIEN_TICH"
-                            ItemStyle-HorizontalAlign="right" HeaderStyle-HorizontalAlign="Center"></asp:BoundField>
+                            ItemStyle-HorizontalAlign="right" DataFormatString="{0:#,###.##}"></asp:BoundField>
+                        <asp:BoundField HeaderText="DIỆN TÍCH" HeaderStyle-Width="10%" DataField="TONG_DIEN_TICH"
+                            ItemStyle-HorizontalAlign="right" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:#,##0.00}" ></asp:BoundField>
                         <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
@@ -128,26 +128,26 @@
                             <ItemTemplate>
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
-                                        <td style="width: 14%; height: 40px; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("DT_TRU_SO_LAM_VIEC") %>
+                                        <td style="width: 14%; height: 40px; border-right: 1px solid gray;" align="right"   >
+                                            <%# Eval("DT_TRU_SO_LAM_VIEC", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("DT_CO_SO_HDSN")%>
+                                        <td style="width: 14%; border-right: 1px solid gray;" align="right"  >
+                                            <%# Eval("DT_CO_SO_HDSN", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("DT_LAM_NHA_O")%>
+                                        <td style="width: 14%; border-right: 1px solid gray;" align="right"  >
+                                            <%# Eval("DT_LAM_NHA_O", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("DT_CHO_THUE")%>
+                                        <td style="width: 14%; border-right: 1px solid gray;" align="right"   >
+                                            <%# Eval("DT_CHO_THUE", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("DT_BO_TRONG")%>
+                                        <td style="width: 14%; border-right: 1px solid gray;" align="right"  >
+                                            <%# Eval("DT_BO_TRONG", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("DT_BI_LAN_CHIEM")%>
+                                        <td style="width: 14%; border-right: 1px solid gray;" align="right"   >
+                                            <%# Eval("DT_BI_LAN_CHIEM", "{0:#,##0.00}")%>
                                         </td>
-                                        <td style="width: 14%" align="right">
-                                            <%# Eval("DT_KHAC")%>
+                                        <td style="width: 14%" align="right"   >
+                                            <%# Eval("DT_KHAC", "{0:#,##0.00}")%>
                                         </td>
                                     </tr>
                                 </table>
