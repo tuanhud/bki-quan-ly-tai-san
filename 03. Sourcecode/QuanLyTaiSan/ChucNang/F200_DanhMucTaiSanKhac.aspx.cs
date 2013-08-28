@@ -79,7 +79,27 @@ public partial class Default2 : System.Web.UI.Page
                 return false;
             }
         }
-        switch (m_e_form_mode)
+        if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+        {
+            m_us_tai_san_khac = new US_DM_TAI_SAN_KHAC(CIPConvert.ToDecimal(hdf_id.Value));
+            if (m_us_tai_san_khac.strMA_TAI_SAN != m_txt_ma_tai_san.Text)
+            {
+                if (!m_us_tai_san_khac.check_ma_valid(m_txt_ma_tai_san.Text))
+                {
+                    m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
+                    return false;
+                }
+            }
+        }
+        if(m_e_form_mode==DataEntryFormMode.InsertDataState)
+        {
+            if (!m_us_tai_san_khac.check_ma_valid(m_txt_ma_tai_san.Text.Trim()))
+                {
+                    m_lbl_mess.Text = "Mã tài sản này đã tồn tại";
+                    return false;
+                };
+        }
+        /*switch (m_e_form_mode)
         {
             case DataEntryFormMode.InsertDataState:
                 if (!m_us_tai_san_khac.check_ma_valid(m_txt_ma_tai_san.Text.Trim()))
@@ -93,6 +113,7 @@ public partial class Default2 : System.Web.UI.Page
             default:
                 break;
         }
+         */
         return true;
     }
     /*private void load_data_2_cbo_trang_thai_tai_san() {
