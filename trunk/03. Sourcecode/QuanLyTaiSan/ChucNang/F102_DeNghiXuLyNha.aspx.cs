@@ -28,39 +28,29 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     private void load_form_data()
     {
         load_data_bo_tinh();
-        load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
-        load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
-        load_data_dat(m_ddl_don_vi_su_dung.SelectedValue, m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+        load_data_don_vi_chu_quan();
+        load_data_don_vi_su_dung();
+        load_data_dat();
         load_data_trang_thai();
-        load_data_to_grid(m_txt_tu_khoa.Text.Trim()
-            , m_ddl_bo_tinh.SelectedValue
-            , m_ddl_don_vi_chu_quan.SelectedValue
-            , m_ddl_don_vi_su_dung.SelectedValue
-            , m_ddl_thuoc_khu_dat.SelectedValue
-            , m_ddl_trang_thai_nha.SelectedValue);
+        load_data_to_grid();
         set_trang_thai_cmd();
         m_lbl_message.Text = "";
     }
 
     // Load dữ liệu vào grid
-    private void load_data_to_grid(string ip_str_tu_khoa
-        , string ip_str_id_bo_tinh
-        , string ip_str_id_dv_chu_quan
-        , string ip_str_id_dv_su_dung
-        , string ip_str_id_dat
-        , string ip_str_trang_thai_nha)
+    private void load_data_to_grid()
     {
         // TODO
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         DS_V_DM_NHA v_ds_v_dm_Nha = new DS_V_DM_NHA();
 
         v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
-            ip_str_tu_khoa
-            ,CIPConvert.ToDecimal(ip_str_id_bo_tinh)
-            , CIPConvert.ToDecimal(ip_str_id_dv_chu_quan)
-            , CIPConvert.ToDecimal(ip_str_id_dv_su_dung)
-            , CIPConvert.ToDecimal(ip_str_id_dat)
-            , CIPConvert.ToDecimal(ip_str_trang_thai_nha)
+            m_txt_tu_khoa.Text
+            ,CIPConvert.ToDecimal(m_ddl_bo_tinh.SelectedValue)
+            , CIPConvert.ToDecimal(m_ddl_don_vi_chu_quan.SelectedValue)
+            , CIPConvert.ToDecimal(m_ddl_don_vi_su_dung.SelectedValue)
+            , CIPConvert.ToDecimal(m_ddl_thuoc_khu_dat.SelectedValue)
+            , CIPConvert.ToDecimal(m_ddl_trang_thai_nha.SelectedValue)
             , CONST_QLDB.ID_TAT_CA.ToString()
             , Person.get_user_name()
             , v_ds_v_dm_Nha);
@@ -76,28 +66,29 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     }
 
     // Load dữ liệu vào combo đơn vị chủ quản
-    private void load_data_don_vi_chu_quan(string ip_str_id_bo_tinh)
+    private void load_data_don_vi_chu_quan()
     {
-        WinFormControls.load_data_to_cbo_don_vi_chu_quan(ip_str_id_bo_tinh, WinFormControls.eTAT_CA.YES, m_ddl_don_vi_chu_quan);
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue
+            , WinFormControls.eTAT_CA.YES, m_ddl_don_vi_chu_quan);
     }
 
     // Load dữ liệu vào combo đơn vị sử dụng
-    private void load_data_don_vi_su_dung(string ip_str_id_don_vi_chu_quan, string ip_str_id_bo_tinh)
+    private void load_data_don_vi_su_dung()
     {
         WinFormControls.load_data_to_cbo_don_vi_su_dung(
-            ip_str_id_don_vi_chu_quan
-            , ip_str_id_bo_tinh
+            m_ddl_don_vi_chu_quan.SelectedValue
+            , m_ddl_bo_tinh.SelectedValue
             , WinFormControls.eTAT_CA.YES
             , m_ddl_don_vi_su_dung);
     }
 
     // Load dữ liệu vào đất
-    private void load_data_dat(string ip_str_id_don_vi_su_dung, string ip_str_id_don_vi_chu_quan, string ip_string_bo_tinh)
+    private void load_data_dat()
     {
         WinFormControls.load_data_to_cbo_dia_chi(
-            CIPConvert.ToDecimal(ip_string_bo_tinh)
-            , CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan)
-            , CIPConvert.ToDecimal(ip_str_id_don_vi_su_dung)
+            CIPConvert.ToDecimal(m_ddl_bo_tinh.SelectedValue)
+            , CIPConvert.ToDecimal(m_ddl_don_vi_chu_quan.SelectedValue)
+            , CIPConvert.ToDecimal(m_ddl_don_vi_su_dung.SelectedValue)
             , CONST_QLDB.ID_TAT_CA
             , WinFormControls.eTAT_CA.YES
             , m_ddl_thuoc_khu_dat);
@@ -150,18 +141,16 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         try
         {
             Thread.Sleep(2000);
-            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
-            , m_ddl_bo_tinh.SelectedValue
-            , m_ddl_don_vi_chu_quan.SelectedValue
-            , m_ddl_don_vi_su_dung.SelectedValue
-            , m_ddl_thuoc_khu_dat.SelectedValue
-            , m_ddl_trang_thai_nha.SelectedValue);
+            load_data_to_grid();
             set_trang_thai_cmd();
             m_lbl_message.Text = "";
         }
@@ -176,58 +165,49 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         {
             Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
-            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
-            , m_ddl_bo_tinh.SelectedValue
-            , m_ddl_don_vi_chu_quan.SelectedValue
-            , m_ddl_don_vi_su_dung.SelectedValue
-            , m_ddl_thuoc_khu_dat.SelectedValue
-            , m_ddl_trang_thai_nha.SelectedValue);
+            load_data_to_grid();
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_ddl_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
-            load_data_dat(m_ddl_don_vi_su_dung.SelectedValue, m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+            load_data_don_vi_su_dung();
+            load_data_dat();
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            load_data_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue);
-            load_data_don_vi_su_dung(m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
-            load_data_dat(m_ddl_don_vi_su_dung.SelectedValue, m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+            load_data_don_vi_chu_quan();
+            load_data_don_vi_su_dung();
+            load_data_dat();
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_ddl_don_vi_su_dung_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            load_data_dat(m_ddl_don_vi_su_dung.SelectedValue, m_ddl_don_vi_chu_quan.SelectedValue, m_ddl_bo_tinh.SelectedValue);
+            load_data_dat();
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_ddl_trang_thai_nha_SelectedIndexChanged(object sender, EventArgs e)
     {
 
@@ -256,12 +236,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             }
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
-            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
-            , m_ddl_bo_tinh.SelectedValue
-            , m_ddl_don_vi_chu_quan.SelectedValue
-            , m_ddl_don_vi_su_dung.SelectedValue
-            , m_ddl_thuoc_khu_dat.SelectedValue
-            , m_ddl_trang_thai_nha.SelectedValue);
+            load_data_to_grid();
             set_trang_thai_cmd();
             m_lbl_message.Text = "Đã cập nhật thành công";
         }
@@ -294,12 +269,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             }
             // Hiển thị các ID được checked ra màn hình
             Response.Write(m_str_id_checked);
-            load_data_to_grid(m_txt_tu_khoa.Text.Trim()
-            , m_ddl_bo_tinh.SelectedValue
-            , m_ddl_don_vi_chu_quan.SelectedValue
-            , m_ddl_don_vi_su_dung.SelectedValue
-            , m_ddl_thuoc_khu_dat.SelectedValue
-            , m_ddl_trang_thai_nha.SelectedValue);
+            load_data_to_grid();
             set_trang_thai_cmd();
             m_lbl_message.Text = "Đã cập nhật thành công";
         }
@@ -308,7 +278,20 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_grv_danh_sach_nha.AllowPaging = false;
+            load_data_to_grid();
+
+            WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha, "DS de nghi xu ly nha.xls", 0);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    } 
     #endregion
-
-
+  
 }
