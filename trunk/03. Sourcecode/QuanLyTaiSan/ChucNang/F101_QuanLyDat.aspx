@@ -1,15 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="F101_QuanLyDat.aspx.cs" Inherits="ChucNang_F101_QuanLyDat" EnableEventValidation ="false" %>
+    CodeFile="F101_QuanLyDat.aspx.cs" Inherits="ChucNang_F101_QuanLyDat" EnableEventValidation="false" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
+<asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
+</asp:content>
+<asp:content id="Content2" contentplaceholderid="MainContent" runat="Server">
+    <asp:scriptmanager id="ScriptManager1" runat="server">
+    </asp:scriptmanager>
+    <asp:updatepanel id="UpdatePanel1" runat="server">
+        <contenttemplate>
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
@@ -359,10 +359,9 @@
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
+                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
-                                            ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
+                                        <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
@@ -390,13 +389,11 @@
                     </td>
                 </tr>
             </table>
-        </ContentTemplate>
-   
-         <Triggers>
+        </contenttemplate>
+        <triggers>
             <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
-        </Triggers>
-
-    </asp:UpdatePanel>
+        </triggers>
+    </asp:updatepanel>
     <asp:updateprogress runat="server">
         <progresstemplate>
         <div class="cssLoadWapper">
@@ -407,4 +404,4 @@
         </div>       
         </progresstemplate>
     </asp:updateprogress>
-</asp:Content>
+</asp:content>
