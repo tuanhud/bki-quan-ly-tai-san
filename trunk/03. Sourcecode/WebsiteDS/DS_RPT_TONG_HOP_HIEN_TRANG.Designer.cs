@@ -1482,7 +1482,7 @@ SELECT ID, USER_NAME, STT, LEVEL_MODE, TEN_TAI_SAN, SO_LUONG, TONG_DIEN_TICH, DT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WebDS.Properties.Settings.Default.BKI_QLTSConnectionString2;
+            this._connection.ConnectionString = global::WebDS.Properties.Settings.Default.BKI_QLTSConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
