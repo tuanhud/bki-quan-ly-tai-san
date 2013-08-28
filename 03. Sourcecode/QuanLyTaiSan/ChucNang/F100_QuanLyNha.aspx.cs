@@ -308,6 +308,11 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         }
     }
 
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
+
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
@@ -384,7 +389,16 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
 
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
-        // TODO
+        try
+        {
+            m_grv_danh_sach_nha.AllowPaging = false;
+            load_data_to_grid();
+            WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha, "DS nha.xls", 0, 1);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
 
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
