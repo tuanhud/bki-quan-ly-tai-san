@@ -16,7 +16,7 @@ using System.Data;
 using WebDS;
 
 
-namespace AuctionUS
+namespace WebUS
 {
 
     public class US_RPT_TONG_HOP_HIEN_TRANG : US_Object
