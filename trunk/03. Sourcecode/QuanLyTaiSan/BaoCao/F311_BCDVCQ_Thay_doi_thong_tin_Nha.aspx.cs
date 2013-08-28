@@ -382,8 +382,6 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
         try
         {
             Thread.Sleep(2000);
-            try
-            {
                 // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
                 m_grv_nha_history.AllowPaging = false;
                 load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
@@ -393,11 +391,7 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
                             , "DS nha thay doi thong tin.xls"
                             , 0
                             , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(this, v_e);
-            }
+
         }
         catch (Exception ex)
         {
