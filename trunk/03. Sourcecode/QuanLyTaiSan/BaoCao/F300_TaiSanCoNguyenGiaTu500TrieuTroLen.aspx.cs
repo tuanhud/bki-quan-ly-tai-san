@@ -165,7 +165,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
             m_lbl_thong_bao.Text = "";
             US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
             DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
-            v_us_v_dm_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(
+            v_us_v_dm_tai_san_khac.FillDataSetLoadDataToGridTaiSanCoNguyenGiaTren500TrieuLoaiHinh(
                           CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
                         , Person.get_user_name()
                         , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
@@ -192,7 +192,7 @@ public partial class BaoCao_F300_TaiSanCoNguyenGiaTu500TrieuTroLen : System.Web.
             m_lbl_thong_bao.Text = "";
             US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
             DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
-            v_us_v_dm_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(
+            v_us_v_dm_tai_san_khac.FillDataSetLoadDataToGridTaiSanCoNguyenGiaTren500TrieuLoaiHinh(
                           CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
                         , Person.get_user_name()
                         , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
