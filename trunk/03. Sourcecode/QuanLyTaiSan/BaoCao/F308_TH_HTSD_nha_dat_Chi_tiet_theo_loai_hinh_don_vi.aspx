@@ -26,7 +26,7 @@
             </td>
             <td style="width: 34%">
                 <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="1">
+                    class="cssDorpdownlist" TabIndex="1">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
@@ -35,55 +35,11 @@
                 <span class="cssManField">Đơn vị chủ quản:</span>
             </td>
             <td style="width: 34%">
-                <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" class="cssDorpdownlist"
                     TabIndex="2">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
-            </td>
-        </tr>
-        <tr>
-            <td align="right">
-                <span class="cssManField">Loại hình đơn vị:</span>
-            </td>
-            <td>
-                <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="3">
-                </asp:DropDownList>
-            </td>
-            <td>
-            </td>
-            <td align="right">
-                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
-            </td>
-            <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="3">
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td class="cssManField" align="right">
-                <span>Từ ngày:</span>
-            </td>
-            <td>
-                <asp:TextBox ID="m_txt_tu_ngay" runat="Server" Width="89%"></asp:TextBox>
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_tu_ngay"
-                    ErrorMessage="Bạn phải nhập Từ Ngày" Text="*" ValidationGroup="m_vlg_tai_san_nha_dat"
-                    ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
-            <td class="cssManField" align="right">
-                <span>Đến ngày:</span>
-            </td>
-            <td>
-                <asp:TextBox ID="m_txt_den_ngay" runat="Server" Width="89%"></asp:TextBox>
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="m_txt_den_ngay"
-                    ErrorMessage="Bạn phải nhập Đến Ngày" Text="*" ValidationGroup="m_vlg_tai_san_nha_dat"
-                    ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -92,7 +48,7 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" />
+                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" OnClick="m_cmd_loc_du_lieu_Click" />
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
                     Width="98px" Text="Xuất Excel (x)" Height="22px" />
             </td>
@@ -115,13 +71,25 @@
                     EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                     ForeColor="#333333" AllowSorting="True" PageSize="10" ShowHeader="true">
                     <Columns>
-                        <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="31.25%" DataTextField="TEN_TAI_SAN"
-                            HeaderStyle-HorizontalAlign="Center" />
-                        <asp:BoundField HeaderText="SỐ LƯỢNG" HeaderStyle-Width="6.25%" DataField="SO_LUONG"
-                            ItemStyle-HorizontalAlign="right"></asp:BoundField>
-                        <asp:BoundField HeaderText="DIỆN TÍCH" HeaderStyle-Width="18.75%" DataField="DIEN_TICH"
-                            ItemStyle-HorizontalAlign="right" HeaderStyle-HorizontalAlign="Center"></asp:BoundField>
-                        <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
+                        <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="21.25%" DataTextField="TEN_TAI_SAN"
+                            HeaderStyle-HorizontalAlign="LEFT" />
+                        <asp:TemplateField HeaderStyle-Width="7.142%" ItemStyle-Width="7.142%" ItemStyle-HorizontalAlign="Right">
+                            <HeaderTemplate>
+                                SỐ LƯỢNG
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <%#Eval("SO_LUONG", "{0:#,###.##}")%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderStyle-Width="8.75%" ItemStyle-Width="8.75%" ItemStyle-HorizontalAlign="Right">
+                            <HeaderTemplate>
+                                DIỆN TÍCH
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <%#Eval("TONG_DIEN_TICH", "{0:#,###.##}")%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderStyle-Width="50%" HeaderStyle-Height="110px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
@@ -132,10 +100,10 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td rowspan="2" style="width: 6.25%; height: 60px">
+                                        <td rowspan="2" style="width: 7.142%; height: 60px">
                                             Trụ sở làm việc
                                         </td>
-                                        <td rowspan="2" style="width: 6.25%">
+                                        <td rowspan="2" style="width: 7.142%">
                                             Cơ sở HĐSN
                                         </td>
                                         <td rowspan="1" colspan="5">
@@ -143,19 +111,19 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 7.142%">
                                             Làm nhà ở
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 7.142%">
                                             Cho thuê
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 7.142%">
                                             Bỏ trống
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 7.142%">
                                             Bị lấn chiếm
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 7.142%">
                                             Khác
                                         </td>
                                     </tr>
@@ -164,26 +132,26 @@
                             <ItemTemplate>
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
-                                        <td style="width: 6.25%; height: 40px; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("TRU_SO_LAM_VIEC") %>
+                                        <td style="width: 7.142%; height: 40px; border-right: 1px solid gray;" align="right">
+                                            <%# Eval("DT_TRU_SO_LAM_VIEC", "{0:#,###.##}")%>
                                         </td>
-                                        <td style="width: 6.25%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("CO_SO_HDSN") %>
+                                        <td style="width: 7.142%; border-right: 1px solid gray;" align="right">
+                                            <%# Eval("DT_CO_SO_HDSN", "{0:#,###.##}")%>
                                         </td>
-                                        <td style="width: 6.25%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("LAM_NHA_O") %>
+                                        <td style="width: 7.142%; border-right: 1px solid gray;" align="right">
+                                            <%# Eval("DT_LAM_NHA_O ", "{0:#,###.##}")%>
                                         </td>
-                                        <td style="width: 6.25%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("CHO_THUE") %>
+                                        <td style="width: 7.142%; border-right: 1px solid gray;" align="right">
+                                            <%# Eval("DT_CHO_THUE", "{0:#,###.##}")%>
                                         </td>
-                                        <td style="width: 6.25%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("BO_TRONG") %>
+                                        <td style="width: 7.142%; border-right: 1px solid gray;" align="right">
+                                            <%# Eval("DT_BO_TRONG","{0:#,###.##}")%>
                                         </td>
-                                        <td style="width: 6.25%; border-right: 1px solid gray;" align="right">
-                                            <%# Eval("BI_LAN_CHIEM") %>
+                                        <td style="width: 7.142%; border-right: 1px solid gray;" align="right">
+                                            <%# Eval("DT_BI_LAN_CHIEM", "{0:#,###.##}")%>
                                         </td>
-                                        <td style="width: 6.25%" align="right">
-                                            <%# Eval("KHAC") %>
+                                        <td style="width: 7.142%" align="right">
+                                            <%# Eval("DT_KHAC", "{0:#,###.##}")%>
                                         </td>
                                     </tr>
                                 </table>
