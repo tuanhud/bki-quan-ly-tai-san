@@ -503,7 +503,7 @@ public class US_DM_TAI_SAN_KHAC : US_Object
         v_cstore.fillDataSetByCommand(this, ip_ds_dm_tai_san_khac);
 
     }
-    #endregion
+
     public bool check_ma_valid(string ip_str_ma_tai_san)
     {
         DS_DM_TAI_SAN_KHAC v_ds_dm_tai_san_khac = new DS_DM_TAI_SAN_KHAC();
@@ -512,8 +512,8 @@ public class US_DM_TAI_SAN_KHAC : US_Object
         v_cstore.fillDataSetByCommand(this, v_ds_dm_tai_san_khac);
         if (v_ds_dm_tai_san_khac.DM_TAI_SAN_KHAC.Rows.Count == 0)
             return true;
-        else
-            return false;
+        return false;
     }
+    #endregion
 }
 }
