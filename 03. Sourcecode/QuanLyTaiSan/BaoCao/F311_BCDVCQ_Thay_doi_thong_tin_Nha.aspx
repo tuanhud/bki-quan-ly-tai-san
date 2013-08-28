@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F311_BCDVCQ_Thay_doi_thong_tin_Nha.aspx.cs" Inherits="BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" 
+EnableEventValidation="false" CodeFile="F311_BCDVCQ_Thay_doi_thong_tin_Nha.aspx.cs" Inherits="BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -417,6 +418,9 @@
         </tr>
     </table>
     </ContentTemplate>
+    <triggers>
+<asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+</triggers>
         </asp:UpdatePanel>
     </div>
     <asp:UpdateProgress ID="Updateprogress1" runat="server">
