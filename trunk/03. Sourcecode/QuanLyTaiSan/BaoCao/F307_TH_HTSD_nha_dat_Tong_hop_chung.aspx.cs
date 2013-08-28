@@ -12,6 +12,7 @@ using WebDS.CDBNames;
 using QltsForm;
 using WebUS;
 using WebDS;
+using System.Threading;
 
 public partial class BaoCao_F307_TH_HTSD_nha_dat_Tong_hop_chung : System.Web.UI.Page
 {
@@ -83,7 +84,9 @@ public partial class BaoCao_F307_TH_HTSD_nha_dat_Tong_hop_chung : System.Web.UI.
             /*load_data_to_cbo_don_vi_chu_quan();
             m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
-            
+            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
             m_grv_tai_san_nha_dat.Visible = false;
         }
         catch (System.Exception ex)
@@ -91,6 +94,10 @@ public partial class BaoCao_F307_TH_HTSD_nha_dat_Tong_hop_chung : System.Web.UI.
             CSystemLog_301.ExceptionHandle(ex);
         }
 
+    }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
     }
     /*protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -114,10 +121,30 @@ public partial class BaoCao_F307_TH_HTSD_nha_dat_Tong_hop_chung : System.Web.UI.
     {
         try
         {
+            Thread.Sleep(2000);
                 m_grv_tai_san_nha_dat.Visible = true;
                 load_data_to_grid();
         }
         catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Thread.Sleep(2000);
+            // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
+            m_grv_tai_san_nha_dat.AllowPaging = false;
+            load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+            // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+            WinformReport.export_gridview_2_excel(
+                       m_grv_tai_san_nha_dat
+                        , "DS tong hop chung nha dat.xls"
+                        ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+        }
+        catch (Exception ex)
         {
             CSystemLog_301.ExceptionHandle(ex);
         }
