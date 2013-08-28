@@ -242,8 +242,23 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_grv_danh_sach_nha.AllowPaging = false;
+            load_data_to_grid();
+            WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha, "DS de nghi xu ly dat.xls", 0);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
+
     #endregion
-
-
-    
 }

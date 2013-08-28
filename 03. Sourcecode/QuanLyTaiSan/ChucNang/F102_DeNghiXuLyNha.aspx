@@ -154,6 +154,11 @@
                                         <asp:CheckBox runat="server" ID="chkTrangThai" Visible="false" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
                                 <asp:BoundField HeaderText="Bộ tỉnh" DataField="TEN_DV_BO_TINH" />
                                 <asp:BoundField HeaderText="Đơn vị chủ quản" DataField="TEN_DV_CHU_QUAN" />

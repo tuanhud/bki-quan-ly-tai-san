@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
     CodeFile="F104_DeNghiXuLyDat.aspx.cs" Inherits="ChucNang_F104_DeNghiXuLyDat" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
@@ -83,9 +83,7 @@
                         </asp:TextBox>
                     </td>
                     <td>
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
-                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
-                    </td>
+                        </td>
                     <td>
                     </td>
                 </tr>
@@ -93,6 +91,13 @@
                     <td>
                     </td>
                     <td>
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" 
+                            CssClass="cssButton" Height="24px" OnClick="m_cmd_tim_kiem_Click" 
+                            Text="Tìm kiếm" Width="98px" />
+                            &nbsp;
+                            <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
+                    Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
+
                     </td>
                     <td>
                     </td>
@@ -145,6 +150,11 @@
                                         <asp:CheckBox runat="server" ID="chkTrangThai" Visible="false" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                 <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
                                 <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
@@ -171,6 +181,9 @@
                 </tr>
             </table>
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+        </Triggers>
     </asp:UpdatePanel>
     <asp:UpdateProgress ID="UpdateProgress1" runat="server">
         <ProgressTemplate>
