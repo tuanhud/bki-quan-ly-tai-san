@@ -562,10 +562,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="2" style="width: 14.28%; height: 60px">
+                                                <td rowspan="2" style="width: 14; height: 60px">
                                                     Trụ sở làm việc
                                                 </td>
-                                                <td rowspan="2" style="width: 14.28%">
+                                                <td rowspan="2" style="width: 14">
                                                     Cơ sở HĐSN
                                                 </td>
                                                 <td rowspan="1" colspan="5">
@@ -573,19 +573,19 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 14.28%">
+                                                <td style="width: 14">
                                                     Làm nhà ở
                                                 </td>
-                                                <td style="width: 14.28%">
+                                                <td style="width: 14">
                                                     Cho thuê
                                                 </td>
-                                                <td style="width: 14.28%">
+                                                <td style="width: 14">
                                                     Bỏ trống
                                                 </td>
-                                                <td style="width: 14.28%">
+                                                <td style="width: 14">
                                                     Bị lấn chiếm
                                                 </td>
-                                                <td style="width: 14.28%">
+                                                <td style="width: 14">
                                                     Khác
                                                 </td>
                                             </tr>
