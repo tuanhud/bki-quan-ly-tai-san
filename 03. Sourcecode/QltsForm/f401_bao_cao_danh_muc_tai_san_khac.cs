@@ -481,6 +481,57 @@ namespace QltsForm
 
             op_obj_excel_parameters.strFILE_NAME_RESULT = v_obj_exe_report.GetStrOutputFileNameWithPath();
         }
+
+        public void export_excel_tai_san_co_nguyen_gia_tren_500_trieu(
+            eFormMode ip_form_mode
+            , ref IP.Core.QltsFormControls.CObjExcelAssetParameters op_obj_excel_parameters)
+        {
+            m_obj_trans = get_trans_object(m_fg);
+            m_e_form_mode = ip_form_mode;
+            US_DM_DON_VI v_us_dm_don_vi;
+            if (op_obj_excel_parameters.dcID_DON_VI_SU_DUNG != CONST_QLDB.ID_TAT_CA)
+            {
+                v_us_dm_don_vi = new US_DM_DON_VI(op_obj_excel_parameters.dcID_DON_VI_SU_DUNG);
+            }
+            else
+            {
+                v_us_dm_don_vi = new US_DM_DON_VI();
+            }
+
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 13, 1); ;
+            switch (m_e_form_mode)
+            {
+                case eFormMode.KE_KHAI_TAI_SAN_KHAC:
+                    v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 12, 1);
+                    load_data_2_grid_tai_san_co_nguyen_gia_tren_500_trieu(op_obj_excel_parameters);
+                    break;
+                case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
+                    v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 13, 1);
+                    load_data_2_grid_tai_san_co_nguyen_gia_tren_500_trieu(op_obj_excel_parameters);
+                    break;
+                case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
+                    v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 13, 1);
+                    load_data_2_grid_tai_san_co_nguyen_gia_tren_500_trieu(op_obj_excel_parameters);
+                    break;
+                default:
+                    break;
+            }
+            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", op_obj_excel_parameters.strTEN_BO_TINH);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", op_obj_excel_parameters.strTEN_DON_VI_CHU_QUAN);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", op_obj_excel_parameters.strTEN_DON_VI_SU_DUNG);
+            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_us_dm_don_vi.strMA_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", op_obj_excel_parameters.strLOAI_HINH_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<TEN_DON_VI_CHU_QUAN>", op_obj_excel_parameters.strTEN_DON_VI_CHU_QUAN);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG>", op_obj_excel_parameters.strTEN_DON_VI_SU_DUNG);
+            v_obj_exe_report.AddFindAndReplaceItem("<NGAY>", DateTime.Now.Day);
+            v_obj_exe_report.AddFindAndReplaceItem("<THANG>", DateTime.Now.Month);
+            v_obj_exe_report.AddFindAndReplaceItem("<NAM>", DateTime.Now.Year);
+
+            v_obj_exe_report.FindAndReplace(false);
+            v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+
+            op_obj_excel_parameters.strFILE_NAME_RESULT = v_obj_exe_report.GetStrOutputFileNameWithPath();
+        }
         #endregion
 
         #region Data Structure
@@ -656,6 +707,23 @@ namespace QltsForm
             US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
             DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
             v_us_v_dm_tai_san_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(
+                op_obj_excel_parameters.strKEY_SEARCH,
+                op_obj_excel_parameters.dcID_BO_TINH,
+                op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN,
+                op_obj_excel_parameters.dcID_DON_VI_SU_DUNG,
+                op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN,
+                op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI,
+                op_obj_excel_parameters.strUSER_NAME,
+                v_ds_v_dm_tai_san_khac);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds_v_dm_tai_san_khac, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
+        private void load_data_2_grid_tai_san_co_nguyen_gia_tren_500_trieu(CObjExcelAssetParameters op_obj_excel_parameters)
+        {
+            US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
+            DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
+            v_us_v_dm_tai_san_khac.FillDatasetLoadDataToGridTaiSanCoNguyenGiaTren500_by_tu_khoa(
                 op_obj_excel_parameters.strKEY_SEARCH,
                 op_obj_excel_parameters.dcID_BO_TINH,
                 op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN,
