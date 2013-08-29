@@ -16,5 +16,5 @@ using WebDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
-namespace WebApp
+namespace QltsForm
 {
