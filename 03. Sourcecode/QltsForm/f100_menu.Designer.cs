@@ -32,6 +32,10 @@
             this.trụSởLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ôTôToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tàiSảnKhácToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tổngCụcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +43,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.báoCáoToolStripMenuItem,
-            this.đềNghịXửLýToolStripMenuItem});
+            this.đềNghịXửLýToolStripMenuItem,
+            this.tổngCụcToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -105,6 +110,35 @@
             this.tàiSảnKhácToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.tàiSảnKhácToolStripMenuItem.Text = "Tài sản khác";
             // 
+            // tổngCụcToolStripMenuItem
+            // 
+            this.tổngCụcToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem,
+            this.tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem,
+            this.tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem});
+            this.tổngCụcToolStripMenuItem.Name = "tổngCụcToolStripMenuItem";
+            this.tổngCụcToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.tổngCụcToolStripMenuItem.Text = "Tổng cục";
+            // 
+            // tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem
+            // 
+            this.tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem.Name = "tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem";
+            this.tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem.Size = new System.Drawing.Size(329, 22);
+            this.tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem.Text = "TH THSD Nhà đất - Tổng hợp chung";
+            // 
+            // tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem
+            // 
+            this.tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem.Name = "tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem";
+            this.tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem.Size = new System.Drawing.Size(329, 22);
+            this.tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem.Text = "TH THSD Nhà đất - Chi tiết theo loại hình đơn vị";
+            this.tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem.Click += new System.EventHandler(this.tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem_Click);
+            // 
+            // tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem
+            // 
+            this.tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem.Name = "tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem";
+            this.tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem.Size = new System.Drawing.Size(329, 22);
+            this.tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem.Text = "TH THSD Nhà dất - Chi tiết theo từng đơn vị";
+            // 
             // f100_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +168,10 @@
         private System.Windows.Forms.ToolStripMenuItem trụSởLàmViệcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ôTôToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tàiSảnKhácToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tổngCụcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tHTHSDNhàĐấtTổngHợpChungToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tHTHSDNhàĐấtChiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem;
     }
 }
 
