@@ -352,8 +352,6 @@
                                             Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_tsk" />&nbsp;
                                         <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                             Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
-                                        <asp:Button ID="m_cmd_huy" AccessKey="h" CssClass="cssButton" runat="server"
-                                            Width="98px" Text="Hủy bỏ(h)" onclick="m_cmd_huy_Click"/>
                                         <asp:HiddenField ID="hdf_id" runat="server" Value="" />
                                     </td>
                                 </tr>
