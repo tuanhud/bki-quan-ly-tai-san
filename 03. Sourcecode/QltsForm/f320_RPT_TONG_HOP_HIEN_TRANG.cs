@@ -217,11 +217,13 @@ namespace QltsForm
             this.ShowDialog();
         }
         #endregion
-        public void export_excel_TH_THSD_theo_loai_hinh_don_vi(
-           ref IP.Core.QltsFormControls.CObjExcelAssetParameters op_obj_excel_parameters)
+        public void export_excel_TH_THSD(
+            TINH_HINH_SU_DUNG ip_str_loai_bao_cao
+           , ref IP.Core.QltsFormControls.CObjExcelAssetParameters op_obj_excel_parameters)
         {
             m_obj_trans = get_trans_object(m_fg);
             US_DM_DON_VI v_us_dm_don_vi_bo_tinh;
+            CExcelWebReport v_obj_exe_report;
             if (op_obj_excel_parameters.dcID_BO_TINH != CONST_QLDB.ID_TAT_CA)
             {
                 v_us_dm_don_vi_bo_tinh = new US_DM_DON_VI(op_obj_excel_parameters.dcID_BO_TINH);
@@ -230,9 +232,26 @@ namespace QltsForm
             {
                 v_us_dm_don_vi_bo_tinh = new US_DM_DON_VI();
             }
+            switch (ip_str_loai_bao_cao)
+            {
+                case TINH_HINH_SU_DUNG.LOAI_HINH_DON_VI:
+                    v_obj_exe_report = new CExcelWebReport("BC-320 Bao cao tong hop tinh hinh su dung nha dat - theo loai hinh don vi.xls", 17, 1); ;
+                    load_data_to_grid_thsd_theo_loai_hinh_don_vi(op_obj_excel_parameters);
+                    break;
+                case TINH_HINH_SU_DUNG.TONG_HOP_CHUNG:
+                    v_obj_exe_report = new CExcelWebReport("BC-319 Bao cao tong hop tinh hinh su dung nha dat - tong hop chung.xls", 17, 1); ;
+                    load_data_to_grid_thsd_theo_loai_hinh_don_vi(op_obj_excel_parameters);
+                    break;
+                case TINH_HINH_SU_DUNG.DON_VI_SU_DUNG:
+                    v_obj_exe_report = new CExcelWebReport("BC-321 Bao cao tong hop tinh hinh su dung nha dat - chi tiet theo tung don vi.xls", 17, 1); ;
+                    load_data_to_grid_thsd_theo_loai_hinh_don_vi(op_obj_excel_parameters);
+                    break;
+                default:
+                    v_obj_exe_report = new CExcelWebReport("BC-320 Bao cao tong hop tinh hinh su dung nha dat - theo loai hinh don vi.xls", 17, 1); ;
+                    load_data_to_grid_thsd_theo_loai_hinh_don_vi(op_obj_excel_parameters);
+                    break;
+            }
 
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-320 Bao cao tong hop tinh hinh su dung nha dat - theo loai hinh don vi.xls", 17, 1); ;
-            load_data_to_grid_thsd_theo_loai_hinh_don_vi(op_obj_excel_parameters);
             v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", op_obj_excel_parameters.strTEN_BO_TINH);
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", op_obj_excel_parameters.strTEN_DON_VI_CHU_QUAN);
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_BO_TINH>", v_us_dm_don_vi_bo_tinh.strTEN_DON_VI);
@@ -268,6 +287,13 @@ namespace QltsForm
                 , DT_BO_TRONG = 8
 
         }
+
+        public enum TINH_HINH_SU_DUNG
+        {
+            TONG_HOP_CHUNG
+            ,LOAI_HINH_DON_VI
+            ,DON_VI_SU_DUNG
+        }
         #endregion
 
         #region Members
@@ -291,6 +317,20 @@ namespace QltsForm
             CGridUtils.Dataset2C1Grid(v_ds_rpt_tong_hop_hien_trang, m_fg, m_obj_trans);
             m_fg.Redraw = true;
 
+        }
+        private void load_data_to_grid_thsd_tong_hop_chung(CObjExcelAssetParameters op_excel_parameters)
+        {
+            DS_RPT_TONG_HOP_HIEN_TRANG v_ds_rpt_tong_hop_hien_trang = new DS_RPT_TONG_HOP_HIEN_TRANG();
+            US_RPT_TONG_HOP_HIEN_TRANG v_us_rpt_tong_hop_hien_trang = new US_RPT_TONG_HOP_HIEN_TRANG();
+            v_us_rpt_tong_hop_hien_trang.FillDataset_tong_hop_chung(
+                op_excel_parameters.dcID_BO_TINH
+                , op_excel_parameters.dcID_DON_VI_CHU_QUAN
+                , op_excel_parameters.strUSER_NAME
+                , v_ds_rpt_tong_hop_hien_trang
+                );
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds_rpt_tong_hop_hien_trang, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
         }
         private void format_controls()
         {
