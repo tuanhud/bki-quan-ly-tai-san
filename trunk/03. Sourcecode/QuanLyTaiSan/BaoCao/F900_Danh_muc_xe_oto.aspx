@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 15%;">
-                        <span class="cssManField">Bộ, tỉnh</span>
+                        <span class="cssManField">Bộ, tỉnh:</span>
                     </td>
                     <td style="width: 35%;">
                         <asp:DropDownList ID="m_cbo_bo_tinh" runat="server" AutoPostBack="True" CssClass="cssDorpdownlist"
@@ -28,7 +28,7 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right" style="width: 15%;">
-                        <span class="cssManField">Đơn vị quản lý</span>
+                        <span class="cssManField">Đơn vị quản lý:</span>
                     </td>
                     <td style="width: 35%;">
                         <asp:DropDownList ID="m_cbo_don_vi_quan_ly" runat="server" AutoPostBack="True" CssClass="cssDorpdownlist"
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <span class="cssManField">Loại hình đơn vị</span>
+                        <span class="cssManField">Loại hình đơn vị:</span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" class="cssDorpdownlist"
@@ -46,17 +46,17 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right" style="width: 15%;">
-                        <span class="cssManField">Đơn vị sử dụng</span>
+                        <span class="cssManField">Đơn vị sử dụng:</span>
                     </td>
                     <td style="width: 20%;">
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung" runat="server" CssClass="cssDorpdownlist"
-                            Width="96%">
+                            Width="96%" AutoPostBack="True" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 15%">
-                        <span class="cssManField">Trạng thái</span>
+                        <span class="cssManField">Trạng thái:</span>
                     </td>
                     <td align="left" style="width: 30%">
                         <asp:DropDownList ID="m_cbo_trang_thai" runat="server" CssClass="cssDorpdownlist"
@@ -64,7 +64,7 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right">
-                        <span class="cssManField">Loại xe</span>
+                        <span class="cssManField">Loại xe:</span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_loai_xe" runat="Server" class="cssDorpdownlist" Width="96%">
@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <span class="cssManField">Từ khóa</span>&nbsp;
+                        <span class="cssManField">Từ khóa:</span>&nbsp;
                     </td>
                     <td>
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="95%"></asp:TextBox>
@@ -87,12 +87,10 @@
                     <td align="left" colspan="1">
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
                             Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
-                    </td>
-                    <td align="right" colspan="1">
-                    </td>
-                    <td>
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
                             Height="25px" OnClick="m_cmd_xuat_excel_Click" Text="Xuất Excel" Width="98px" />
+                    </td>
+                    <td align="right" colspan="1">
                     </td>
                 </tr>
                 <tr>
