@@ -135,6 +135,8 @@
                                     DataField="SO_CHO_NGOI" HeaderStyle-Width="3%"></asp:BoundField>
                                 <asp:BoundField HeaderText="NƯỚC SẢN XUẤT" ItemStyle-HorizontalAlign="Center" DataField="NUOC_SAN_XUAT"
                                     HeaderStyle-Width="4%"></asp:BoundField>
+                                <asp:BoundField HeaderText="NĂM SẢN XUẤT" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
+                                    HeaderStyle-Width="4%"></asp:BoundField>
                                 <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" ItemStyle-HorizontalAlign="Center"
                                     DataField="NAM_SU_DUNG" HeaderStyle-Width="3%"></asp:BoundField>
                                 <asp:BoundField HeaderText="CÔNG SUẤT XE" ItemStyle-HorizontalAlign="Center" DataField="CONG_SUAT_XE"
@@ -150,7 +152,7 @@
                                                 <td colspan="3" style="height: 50px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (VNĐ)
+                                                    (đồng)
                                                 </td>
                                             </tr>
                                             <tr>

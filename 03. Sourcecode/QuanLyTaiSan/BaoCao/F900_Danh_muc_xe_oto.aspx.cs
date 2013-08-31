@@ -48,8 +48,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         op_obj_parameter.dcID_TRANG_THAI_TAI_SAN = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
         op_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = m_cbo_trang_thai.SelectedItem.Text;
         op_obj_parameter.strKEY_SEARCH = m_txt_tu_khoa.Text;
-        op_obj_parameter.dcID_LOAI_TAI_SAN = CONST_QLDB.ID_TAT_CA;
-        op_obj_parameter.strTEN_LOAI_TAI_SAN = CONST_QLDB.TAT_CA;
+        op_obj_parameter.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal(m_cbo_loai_xe.SelectedValue);
+        op_obj_parameter.strTEN_LOAI_TAI_SAN = m_cbo_loai_xe.SelectedItem.Text;
         op_obj_parameter.strLOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedItem.Text;
         op_obj_parameter.strMA_LOAI_HINH_DON_VI = m_cbo_bo_tinh.SelectedValue;
         op_obj_parameter.strUSER_NAME = Person.get_user_name();
