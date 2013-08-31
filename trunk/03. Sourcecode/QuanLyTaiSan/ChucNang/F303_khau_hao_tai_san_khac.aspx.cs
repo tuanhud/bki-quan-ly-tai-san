@@ -154,6 +154,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         m_txt_ma_phieu.Text = "";
         m_txt_ngay_duyet.Text = "";
         m_txt_ngay_lap.Text = "";
+        m_hdf_id.Value = "";
     }
 
     private bool check_validate_data_is_valid()
