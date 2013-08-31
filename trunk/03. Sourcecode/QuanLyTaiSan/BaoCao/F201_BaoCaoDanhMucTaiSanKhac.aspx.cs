@@ -43,6 +43,7 @@ public partial class Default2 : System.Web.UI.Page
                     , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_su_dung_tai_san);
                 load_data_to_cbo_trang_thai();
+                load_data_to_cbo_loai_tai_san();
             }
         }
         catch (System.Exception ex)
@@ -117,16 +118,23 @@ public partial class Default2 : System.Web.UI.Page
         {
 
             case "1":
-                m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC";
+                m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC NGUYÊN GIÁ >=500";
                 m_cbo_trang_thai.Enabled = false;
+                m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_LON_HON_500);
+                m_cbo_loai_tai_san.Enabled=false;
                 break;
             case "2":
-                m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ) ĐỀ NGHỊ XỬ LÝ";
+                m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC NGUYÊN GIÁ <500";
                 m_cbo_trang_thai.Enabled = false;
+                m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_NHO_HON_500);
+                m_cbo_loai_tai_san.Enabled=false;
                 break;
-            //case "3":
-            //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
-            //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
+            case "3":
+                m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC NGUYÊN GIÁ >=500 ĐỀ NGHỊ XỬ LÝ";
+                m_cbo_trang_thai.Enabled = false;
+                m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_LON_HON_500);
+                m_cbo_loai_tai_san.Enabled=false;
+                break;
         }
     }
 
@@ -136,40 +144,14 @@ public partial class Default2 : System.Web.UI.Page
         DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
         US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
         DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
-        string id_loai_bao_cao = "";
-        if (Request.QueryString["ID"] != null)
-        {
-            id_loai_bao_cao = Request.QueryString["ID"];
-        }
-
-        switch (id_loai_bao_cao)
-        {
-            case "1":
-                // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
-                m_us_v_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue),
+        m_us_v_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue),
                     Person.get_user_name()
                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                    , CIPConvert.ToDecimal(m_cbo_loai_tai_san.SelectedValue)
                     , m_ds_v_tai_san_khac);
-                break;
-            case "2":
-                // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
-                m_us_v_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue),
-                    Person.get_user_name()
-                    , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                    , m_ds_v_tai_san_khac);
-                break;
-            //case "3":
-            //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
-            //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
-        }
-
-
         m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
         m_grv_danh_sach_tai_san_khac.DataBind();
     }
@@ -185,22 +167,31 @@ public partial class Default2 : System.Web.UI.Page
         switch (id_loai_bao_cao)
         {
             case "1":
-                // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP";
+                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC > 500";
                 WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
                 m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
                 break;
             case "2":
-                // m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNNG SỰ NGHIỆP ĐỀ NGHỊ XỬ LÝ";
+                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC < 500";
+                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
+                m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
+                break;
+            case "3":
+                // m_lbl_tieu_de.Text = "BÁO CÁO TÀI SẢN KHÁC >500 ĐỀ NGHỊ XỬ LÝ";
                 WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
                 m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY);
                 break;
-            //case "3":
-            //    m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, TRỤ SỞ HOẠT ĐỘNG GIAO CHO ĐƠN VỊ SỰ NGHIỆP TỰ CHỦ TÀI CHÍNH";
-            //    m_us_dm_nha.FillDataset(m_ds_dm_nha,"where id_dat = "+ v_id_dat+" and id_loai_don_vi")
         }
-
-        //m_cbo_trang_thai.DataBind();
-        //m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+    }
+    private void load_data_to_cbo_loai_tai_san()
+    {
+        US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN();
+        DS_DM_LOAI_TAI_SAN v_ds_dm_loai_tai_san = new DS_DM_LOAI_TAI_SAN();
+        v_us_dm_loai_tai_san.FillDataset(v_ds_dm_loai_tai_san,"WHERE ID_LOAI_TAI_SAN_PARENT ="+ID_LOAI_TAI_SAN.TAI_SAN_KHAC);
+        m_cbo_loai_tai_san.DataSource = v_ds_dm_loai_tai_san.DM_LOAI_TAI_SAN;
+        m_cbo_loai_tai_san.DataTextField = DM_LOAI_TAI_SAN.TEN_LOAI_TAI_SAN;
+        m_cbo_loai_tai_san.DataValueField = DM_LOAI_TAI_SAN.ID;
+        m_cbo_loai_tai_san.DataBind();
     }
     #endregion
     #region Events
