@@ -560,6 +560,14 @@ namespace WebUS
             if (v_ds_dm_dat.DM_DAT.Count == 0) return true;
             return false;
         }
+
+        public void search_dat_by_dia_chi(DS_DM_DAT op_ds_dm_dat, string ip_str_tu_khoa, decimal ip_dc_id_dv_su_dung)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_DM_DAT_Search_By_ten");
+            v_cstore.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+            v_cstore.addDecimalInputParam("@ip_dc_id_dv_su_dung", ip_dc_id_dv_su_dung);
+            v_cstore.fillDataSetByCommand(this, op_ds_dm_dat);
+        }
         #endregion
     }
 }
