@@ -19,6 +19,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td colspan="2">
+                        <asp:Label ID="m_lbl_mess" runat="Server" class="cssManField"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
                     <td align="right" style="width: 15%;">
                         <span class="cssManField">Bộ, tỉnh:</span>
                     </td>
@@ -50,7 +55,7 @@
                     </td>
                     <td style="width: 20%;">
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung" runat="server" CssClass="cssDorpdownlist"
-                            Width="96%" AutoPostBack="True" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_SelectedIndexChanged">
+                            Width="96%" AutoPostBack="False">
                         </asp:DropDownList>
                     </td>
                 </tr>

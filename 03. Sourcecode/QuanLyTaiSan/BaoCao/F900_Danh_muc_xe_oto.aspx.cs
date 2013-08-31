@@ -24,19 +24,34 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN(ip_dc_id_loai_tai_san);
         return v_us_dm_loai_tai_san.strTEN_LOAI_TAI_SAN;
     }
-    public class TRANG_THAI_OTO
-    {
-        public const string DE_NGHI_XU_LY = "581";
-        public const string DA_THANH_LY = "582";
-        public const string DE_NGHI_TRANG_CAP = "583";
-        public const string DANG_SU_DUNG = "584";
-    }
+
     #endregion
 
     #region Member
     #endregion
 
     #region Private Methods
+    private bool check_validate_data_is_ok()
+    {
+        m_lbl_mess.Text = "";
+        if (m_cbo_bo_tinh.SelectedValue.Equals(""))
+        {
+            m_lbl_mess.Text = "Không có Bộ, tỉnh!";
+            return false;
+        }
+        if (m_cbo_don_vi_quan_ly.SelectedValue.Equals(""))
+        {
+            m_lbl_mess.Text = "Không có Đơn vị chủ quản!";
+            return false;
+        }
+        if (m_cbo_don_vi_su_dung.SelectedValue.Equals(""))
+        {
+            m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+            return false;
+        }
+        return true;
+    }
+
     private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter)
     {
         op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
@@ -55,7 +70,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         op_obj_parameter.strUSER_NAME = Person.get_user_name();
     }
 
-    private void load_data_to_cbo_loai_xe()
+    private void load_data_to_cbo_loai_xe(WinFormControls.eTAT_CA ip_e_tat_ca)
     {
         US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN();
         DS_DM_LOAI_TAI_SAN v_ds_dm_loai_tai_san = new DS_DM_LOAI_TAI_SAN();
@@ -64,7 +79,10 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         m_cbo_loai_xe.DataValueField = DM_LOAI_TAI_SAN.ID;
         m_cbo_loai_xe.DataTextField = DM_LOAI_TAI_SAN.TEN_LOAI_TAI_SAN;
         m_cbo_loai_xe.DataBind();
-        m_cbo_loai_xe.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+        if (ip_e_tat_ca == WinFormControls.eTAT_CA.YES)
+        {
+            m_cbo_loai_xe.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
+        }
     }
 
     private void export_excel()
@@ -95,10 +113,6 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);
     }
 
-    private bool check_validate_data_is_ok()
-    {
-        return true;
-    }
     #endregion
 
     #region Events
@@ -109,59 +123,60 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             if (!this.IsPostBack)
             {
                 //load data to combobox trang thai o to
-                string v_str_id_loai_bao_cao="";
+                string v_str_id_loai_bao_cao = "";
                 if (Request.QueryString["id"] == null) return;
-                if (Request.QueryString["id"] != null)
-                {
-                    v_str_id_loai_bao_cao = Request.QueryString["id"];
-                }
-                WinFormControls.load_data_to_cbo_tu_dien(
-                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_trang_thai
+                v_str_id_loai_bao_cao = Request.QueryString["id"];
+                WinFormControls.load_data_to_cbo_bo_tinh
+                            (
+                             WinFormControls.eTAT_CA.NO
+                             , m_cbo_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_quan_ly);
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_loai_hinh_don_vi
                     );
+                load_data_to_cbo_loai_xe(WinFormControls.eTAT_CA.NO);
                 switch (v_str_id_loai_bao_cao)
                 {
                     case TRANG_THAI_OTO.DANG_SU_DUNG:
+                        //load data to combobox trang thai nha
+                        WinFormControls.load_data_to_cbo_tu_dien(
+                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_trang_thai
+                            );
                         m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DANG_SU_DUNG.ToString();
+                        m_cbo_trang_thai.Enabled = false;
+                        WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                            m_cbo_loai_hinh_don_vi.SelectedValue
+                            , m_cbo_don_vi_quan_ly.SelectedValue
+                            , m_cbo_bo_tinh.SelectedValue
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_don_vi_su_dung
+                            );
                         break;
                     case TRANG_THAI_OTO.DE_NGHI_XU_LY:
+                        //load data to combobox trang thai nha
+                        WinFormControls.load_data_to_cbo_tu_dien(
+                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_trang_thai
+                            );
                         m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DE_NGHI_XU_LY.ToString();
-                        break;
-                    case TRANG_THAI_OTO.DA_THANH_LY:
-                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DA_THANH_LY.ToString();
-                        break;
-                    case TRANG_THAI_OTO.DE_NGHI_TRANG_CAP:
-                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DE_NGHI_TRANG_CAP.ToString();
-                        break;
-                    default:
-                         m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DANG_SU_DUNG.ToString();
+                        m_cbo_trang_thai.Enabled = false;
+                        WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                            m_cbo_loai_hinh_don_vi.SelectedValue
+                            , m_cbo_don_vi_quan_ly.SelectedValue
+                            , m_cbo_bo_tinh.SelectedValue
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_don_vi_su_dung
+                            );
                         break;
                 }
-                m_cbo_trang_thai.Enabled = false;
-
-                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_loai_hinh_don_vi
-                    );
-                WinFormControls.load_data_to_cbo_bo_tinh(
-                    WinFormControls.eTAT_CA.YES
-                    , m_cbo_bo_tinh
-                    );
-                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                    m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_quan_ly
-                    );
-                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                    m_cbo_loai_hinh_don_vi.SelectedValue
-                    , m_cbo_don_vi_quan_ly.SelectedValue
-                    , m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung
-                    );
-                load_data_to_cbo_loai_xe();
             }
         }
         catch (Exception v_e)
@@ -173,6 +188,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
+            if (!check_validate_data_is_ok()) return;
             System.Threading.Thread.Sleep(1000);
             string v_str_user_name = Person.get_user_name();
             if (v_str_user_name.Equals(null)) return;
@@ -191,6 +207,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                 );
             m_grv_bao_cao_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
             m_grv_bao_cao_oto.DataBind();
+            m_grv_bao_cao_oto.Visible = true;
         }
         catch (Exception v_e)
         {
@@ -201,11 +218,17 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
+            m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                  m_cbo_bo_tinh.SelectedValue
-                  , WinFormControls.eTAT_CA.YES
-                  , m_cbo_don_vi_quan_ly
-                  );
+                m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.NO, m_cbo_don_vi_quan_ly);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                m_cbo_loai_hinh_don_vi.SelectedValue
+                , m_cbo_don_vi_quan_ly.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.NO
+                , m_cbo_don_vi_su_dung);
+            m_grv_bao_cao_oto.Visible = false;
         }
         catch (System.Exception ex)
         {
@@ -216,13 +239,14 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
+            m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                    m_cbo_loai_hinh_don_vi.SelectedValue
-                    , m_cbo_don_vi_quan_ly.SelectedValue
-                    , m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung
-                    );
+                m_cbo_loai_hinh_don_vi.SelectedValue
+                , m_cbo_don_vi_quan_ly.SelectedValue
+                , m_cbo_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.NO
+                , m_cbo_don_vi_su_dung);
+            m_grv_bao_cao_oto.Visible = false;
         }
         catch (System.Exception ex)
         {
@@ -234,6 +258,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
+            if (!check_validate_data_is_ok()) return;
             export_excel();
         }
         catch (Exception v_e)
@@ -246,13 +271,19 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
+            m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                   m_cbo_loai_hinh_don_vi.SelectedValue
-                   , m_cbo_don_vi_quan_ly.SelectedValue
-                   , m_cbo_bo_tinh.SelectedValue
-                   , WinFormControls.eTAT_CA.YES
-                   , m_cbo_don_vi_su_dung
-                   );
+            m_cbo_loai_hinh_don_vi.SelectedValue
+            , m_cbo_don_vi_quan_ly.SelectedValue
+            , m_cbo_bo_tinh.SelectedValue
+            , WinFormControls.eTAT_CA.NO
+            , m_cbo_don_vi_su_dung
+            );
+            if (m_cbo_don_vi_su_dung.SelectedValue.Equals(""))
+            {
+                m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+                return;
+            }
         }
         catch (System.Exception v_e)
         {
@@ -290,17 +321,5 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
     }
     #endregion
-
-    protected void m_cbo_don_vi_su_dung_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(this, ex);
-        }
-    }
 }
 
