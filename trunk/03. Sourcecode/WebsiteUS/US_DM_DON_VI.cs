@@ -22,7 +22,7 @@ namespace WebUS
 
     public class US_DM_DON_VI : US_Object
     {
-        
+
         private const string c_TableName = "DM_DON_VI";
         #region "Public Properties"
         public decimal dcID
@@ -251,14 +251,15 @@ namespace WebUS
         public void FillDataset(
             WebDS.DS_DM_DON_VI op_ds_don_vi
             , decimal ip_dc_id_loai_don_vi
-            
+
             , decimal ip_dc_id_don_vi_cap_tren1
             , decimal ip_dc_id_don_vi_cap_tren2
-            , string ip_str_user_name) {
-                CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_Select_by_user_name");
+            , string ip_str_user_name)
+        {
+            CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_Select_by_user_name");
             cstored.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             cstored.addDecimalInputParam("@ip_dc_loai_don_vi", ip_dc_id_loai_don_vi);
-            
+
             cstored.addDecimalInputParam("@ip_dc_id_dv_cap_tren1", ip_dc_id_don_vi_cap_tren1);
             cstored.addDecimalInputParam("@ip_dc_id_dv_cap_tren2", ip_dc_id_don_vi_cap_tren2);
             cstored.fillDataSetByCommand(this, op_ds_don_vi);
@@ -280,19 +281,33 @@ namespace WebUS
             v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
             v_obj_procedure.fillDataSetByCommand(this, op_ds_don_vi);
         }
+        public void FillDataset_Load_data_to_grid_danh_muc_don_vi(
+          DS_DM_DON_VI op_ds_don_vi
+            , decimal v_dc_id_loai_don_vi
+            , string v_str_user_name
+            )
+        {
+            CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_Load_to_grid_danh_muc");
+            cstored.addDecimalInputParam("@ip_dc_loai_don_vi", v_dc_id_loai_don_vi);
+            cstored.addNVarcharInputParam("@ip_str_user_name", v_str_user_name);
+            cstored.fillDataSetByCommand(this, op_ds_don_vi);
+        }
         public void FillDataset(
             decimal ip_id_user_group
             , bool is_user_group_using_data
-            , DS_DM_DON_VI op_ds_don_vi) {
+            , DS_DM_DON_VI op_ds_don_vi)
+        {
 
             string v_str_sql_condition = " WHERE " + DM_DON_VI.ID;
 
 
-            if (is_user_group_using_data) {
+            if (is_user_group_using_data)
+            {
                 v_str_sql_condition += " IN (SELECT ID_DON_VI FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
             }
-            else {
-                v_str_sql_condition += " NOT IN (SELECT ID_DON_VI FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString()+")";
+            else
+            {
+                v_str_sql_condition += " NOT IN (SELECT ID_DON_VI FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
             }
             this.FillDataset(op_ds_don_vi, v_str_sql_condition);
         }
