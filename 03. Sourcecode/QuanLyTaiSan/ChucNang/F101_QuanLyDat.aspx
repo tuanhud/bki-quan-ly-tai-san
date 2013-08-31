@@ -376,7 +376,8 @@
                                     DataFormatString="{0:#,##0.00}" />
                                 <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG" />
+                                <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG" ItemStyle-HorizontalAlign="Right"
+                                    DataFormatString="{0:#,##0.00}"/>
                                 <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0.00}" />
                                 <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
