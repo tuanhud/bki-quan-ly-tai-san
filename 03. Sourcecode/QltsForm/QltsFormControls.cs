@@ -44,6 +44,7 @@ namespace IP.Core.QltsFormControls{
             v_us_dm_don_vi.FillDataset(
                 v_ds_dm_don_vi
                 , ID_LOAI_DON_VI.BO_TINH
+                
                 , CONST_QLDB.ID_TAT_CA
                 , CONST_QLDB.ID_TAT_CA
                 , v_str_user_name);
@@ -78,6 +79,7 @@ namespace IP.Core.QltsFormControls{
             v_us_dm_don_vi.FillDataset(
                 v_ds_dm_don_vi
                 , ID_LOAI_DON_VI.DV_CHU_QUAN
+                
                 , ip_dc_id_bo_tinh
                 , CONST_QLDB.ID_TAT_CA
                 , v_str_user_name);
@@ -123,6 +125,7 @@ namespace IP.Core.QltsFormControls{
             v_us_dm_don_vi.FillDataset(
                 v_ds_dm_don_vi
                 , ID_LOAI_DON_VI.DV_SU_DUNG
+                
                 , ip_dc_id_don_vi_chu_quan
                 , ip_dc_id_bo_tinh
                 , v_str_user_name);

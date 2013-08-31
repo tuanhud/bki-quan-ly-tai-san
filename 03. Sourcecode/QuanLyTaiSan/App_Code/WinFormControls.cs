@@ -203,6 +203,7 @@ namespace IP.Core.WinFormControls
             v_us_dm_don_vi.FillDataset(
                 v_ds_dm_don_vi
                 , ID_LOAI_DON_VI.DV_CHU_QUAN
+                
                 , v_dc_id_bo_tinh
                 , CONST_QLDB.ID_TAT_CA
                 , v_str_user_name);
@@ -231,6 +232,7 @@ namespace IP.Core.WinFormControls
             v_us_dm_don_vi.FillDataset(
                 v_ds_dm_don_vi
                 , ID_LOAI_DON_VI.BO_TINH
+                
                 , CONST_QLDB.ID_TAT_CA
                 , CONST_QLDB.ID_TAT_CA
                 , v_str_user_name);
@@ -291,6 +293,7 @@ namespace IP.Core.WinFormControls
         }
 
         public static void load_data_to_cbo_don_vi_su_dung(
+            
             string ip_str_id_don_vi_chu_quan
             , string ip_str_id_bo_tinh
              , eTAT_CA ip_e_tat_ca
@@ -312,11 +315,13 @@ namespace IP.Core.WinFormControls
             DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
 
             string v_str_user_name = HttpContext.Current.Session[SESSION.UserName].ToString();
+            
             decimal v_dc_id_don_vi_chu_quan = CIPConvert.ToDecimal(ip_str_id_don_vi_chu_quan);
             decimal v_dc_id_bo_tinh = CIPConvert.ToDecimal(ip_str_id_bo_tinh);
             v_us_dm_don_vi.FillDataset(
                 v_ds_dm_don_vi
                 , ID_LOAI_DON_VI.DV_SU_DUNG
+                
                 , v_dc_id_don_vi_chu_quan
                 , v_dc_id_bo_tinh
                 , v_str_user_name);
