@@ -694,6 +694,7 @@ namespace WebUS
             , decimal ip_dc_id_don_vi_chu_quan
             , decimal ip_dc_id_don_vi_su_dung
             , decimal ip_dc_id_trang_thai
+            , decimal ip_dc_id_loai_tai_san
             , DS_V_DM_TAI_SAN_KHAC op_dat_v_dm_tai_san_khac)
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Load_data_to_grid_tai_san_khac_loai_hinh");
@@ -703,6 +704,7 @@ namespace WebUS
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_loai_tai_san", ip_dc_id_loai_tai_san);
             v_obj_procedure.fillDataSetByCommand(this, op_dat_v_dm_tai_san_khac);
         }
         public void FillDataSetLoadDataToGridTaiSanCoNguyenGiaTren500TrieuLoaiHinh(
