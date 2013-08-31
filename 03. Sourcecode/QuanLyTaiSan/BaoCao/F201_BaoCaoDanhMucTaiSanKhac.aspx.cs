@@ -287,7 +287,7 @@ public partial class Default2 : System.Web.UI.Page
         //m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
     }
     #endregion
-
+    #region Events
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -385,4 +385,5 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+    #endregion
 }
