@@ -24,27 +24,27 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="right">
-                            <asp:Label ID="m_lbl_loai_tai_san_detail0" runat="server" CssClass="cssManField"
+                        <td align="right" style="width: 15%">
+                            <asp:Label ID="m_lbl_loai_tai_san_detail" runat="server" CssClass="cssManField"
                                 Text="Loại" />
                         </td>
-                        <td>
+                        <td style="width: 30%">
                             <asp:DropDownList ID="m_cbo_loai_tai_san_detail" runat="server" Width="98%" CssClass="cssDorpdownlist"
                                 AutoPostBack="true"  />
                         </td>
-                        <td align="right">
-                            <asp:Label ID="m_lbl_ghi_chu8" runat="server" CssClass="cssManField" Text="Tên trạng thái" />
+                        <td align="right" style="width: 15%">
+                            <asp:Label ID="m_lbl_ten_trang_thai" runat="server" CssClass="cssManField" Text="Tên trạng thái" />
                         </td>
-                        <td>
+                        <td style="width: 30%">
                             <asp:TextBox ID="m_txt_ten_trang_thai" AccessKey="m" runat="server" Width="98%" />
                         </td>
                     </tr>
                     <tr>
                         <td align="right">
-                            <asp:Label ID="m_lbl_loai_tai_san_detail" runat="server" CssClass="cssManField" Text="Mã từ điển" />
+                            <asp:Label ID="m_lbl_ma_tu_dien" runat="server" CssClass="cssManField" Text="Mã từ điển" />
                         </td>
                         <td>
-                            <asp:TextBox ID="m_txt_ma_tu_dien" AccessKey="m" runat="server" Width="150px" />
+                            <asp:TextBox ID="m_txt_ma_tu_dien" AccessKey="m" runat="server" Width="98%" />
                         </td>
                         <td>
                             &nbsp;
@@ -54,11 +54,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="style2" align="right">
+                        <td align="right">
                             <asp:Label ID="m_lbl_ghi_chu" runat="server" CssClass="cssManField" Text="Ghi chú" />
                         </td>
-                        <td colspan="3" class="style2">
-                            <asp:TextBox ID="m_txt_ghi_chu" AccessKey="m" runat="server" Width="350px" TextMode="MultiLine" />
+                        <td>
+                            <asp:TextBox ID="m_txt_ghi_chu" AccessKey="m" runat="server" Width="98%" TextMode="MultiLine" />
+                        </td>
+                        <td>
+                        </td>
+                        <td>
                         </td>
                     </tr>
                     <tr>
