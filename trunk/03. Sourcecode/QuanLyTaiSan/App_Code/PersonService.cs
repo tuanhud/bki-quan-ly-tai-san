@@ -31,6 +31,11 @@ public class PersonService : System.Web.Services.WebService
     {
         return get_top_dm_tai_san_khac(name_prefix, ip_dc_id_dv_su_dung);
     }
+    [WebMethod]
+    public List<US_DM_DAT> GetDat(string name_prefix, decimal ip_dc_id_dv_su_dung)
+    {
+        return get_top_dat(name_prefix, ip_dc_id_dv_su_dung);
+    }
     #endregion
 
     #region Private Methods
@@ -84,6 +89,24 @@ public class PersonService : System.Web.Services.WebService
             US_V_DM_TAI_SAN_KHAC v_us_temp = new US_V_DM_TAI_SAN_KHAC();
             v_us_temp.dcID = int.Parse(v_ds_v_dm_ts_khac.V_DM_TAI_SAN_KHAC.Rows[i][V_DM_TAI_SAN_KHAC.ID].ToString());
             v_us_temp.strTEN_TAI_SAN = v_ds_v_dm_ts_khac.V_DM_TAI_SAN_KHAC.Rows[i][V_DM_TAI_SAN_KHAC.TEN_TAI_SAN].ToString().TrimEnd();
+            v_list.Add(v_us_temp);
+        }
+
+        return v_list;
+    }
+
+    private List<US_DM_DAT> get_top_dat(string ip_str_ten_ts, decimal ip_dc_id_dv_sd)
+    {
+        US_DM_DAT v_us_dm_dat = new US_DM_DAT();
+        DS_DM_DAT v_ds_dm_dat = new DS_DM_DAT();
+        v_ds_dm_dat.EnforceConstraints = false;
+        v_us_dm_dat.search_dat_by_dia_chi(v_ds_dm_dat, ip_str_ten_ts, ip_dc_id_dv_sd);
+        List<US_DM_DAT> v_list = new List<US_DM_DAT>();
+        for (int i = 0; i < v_ds_dm_dat.DM_DAT.Rows.Count; i++ )
+        {
+            US_DM_DAT v_us_temp = new US_DM_DAT();
+            v_us_temp.dcID = int.Parse(v_ds_dm_dat.DM_DAT.Rows[i][DM_DAT.ID].ToString());
+            v_us_temp.strDIA_CHI = v_ds_dm_dat.DM_DAT.Rows[i][DM_DAT.DIA_CHI].ToString();
             v_list.Add(v_us_temp);
         }
 
