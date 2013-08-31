@@ -99,7 +99,8 @@
 	                                    </tr>
 	                                    <tr>
 		                                    <td colspan="4" align="center" valign="middle" 
-                                                style="height:34px;background-color:#dddddd;" class="style1">
+                                                style="height:34px;background-color:#dddddd; color: #0000FF;" 
+                                                class="style1">
 		                                        Copyright © 2011 - Designed by 3T. 
 		                                    </td>
 	                                    </tr>
