@@ -58,8 +58,9 @@ public partial class BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi 
         f320_RPT_TONG_HOP_HIEN_TRANG v_f320_tong_hop_thsn_theo_loai_hinh_don_vi = new f320_RPT_TONG_HOP_HIEN_TRANG();
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
-        v_f320_tong_hop_thsn_theo_loai_hinh_don_vi.export_excel_TH_THSD_theo_loai_hinh_don_vi(
-                                 ref v_obj_parameter
+        v_f320_tong_hop_thsn_theo_loai_hinh_don_vi.export_excel_TH_THSD(
+           f320_RPT_TONG_HOP_HIEN_TRANG.TINH_HINH_SU_DUNG.DON_VI_SU_DUNG
+                                 , ref v_obj_parameter
                                );
         Response.Clear();
         v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
