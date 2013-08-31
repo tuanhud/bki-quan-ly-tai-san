@@ -24,7 +24,15 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN(ip_dc_id_loai_tai_san);
         return v_us_dm_loai_tai_san.strTEN_LOAI_TAI_SAN;
     }
+    public class TRANG_THAI_OTO
+    {
+        public const string DE_NGHI_XU_LY = "581";
+        public const string DA_THANH_LY = "582";
+        public const string DE_NGHI_TRANG_CAP = "583";
+        public const string DANG_SU_DUNG = "584";
+    }
     #endregion
+
     #region Member
     #endregion
 
@@ -49,16 +57,16 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
 
     private void load_data_to_cbo_loai_xe()
     {
-        US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san=new US_DM_LOAI_TAI_SAN();
-        DS_DM_LOAI_TAI_SAN v_ds_dm_loai_tai_san=new DS_DM_LOAI_TAI_SAN();
-        v_us_dm_loai_tai_san.FillDataset(v_ds_dm_loai_tai_san,"where id_loai_tai_san_parent = 3");
-        m_cbo_loai_xe.DataSource=v_ds_dm_loai_tai_san.DM_LOAI_TAI_SAN;
+        US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN();
+        DS_DM_LOAI_TAI_SAN v_ds_dm_loai_tai_san = new DS_DM_LOAI_TAI_SAN();
+        v_us_dm_loai_tai_san.FillDataset(v_ds_dm_loai_tai_san, "where id_loai_tai_san_parent = 3");
+        m_cbo_loai_xe.DataSource = v_ds_dm_loai_tai_san.DM_LOAI_TAI_SAN;
         m_cbo_loai_xe.DataValueField = DM_LOAI_TAI_SAN.ID;
         m_cbo_loai_xe.DataTextField = DM_LOAI_TAI_SAN.TEN_LOAI_TAI_SAN;
         m_cbo_loai_xe.DataBind();
         m_cbo_loai_xe.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
     }
-    
+
     private void export_excel()
     {
 
@@ -86,6 +94,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         v_obj_parameter.strFILE_NAME_RESULT = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
         Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);
     }
+
     private bool check_validate_data_is_ok()
     {
         return true;
@@ -99,11 +108,38 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         {
             if (!this.IsPostBack)
             {
+                //load data to combobox trang thai o to
+                string v_str_id_loai_bao_cao="";
+                if (Request.QueryString["id"] == null) return;
+                if (Request.QueryString["id"] != null)
+                {
+                    v_str_id_loai_bao_cao = Request.QueryString["id"];
+                }
                 WinFormControls.load_data_to_cbo_tu_dien(
                     WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_trang_thai
                     );
+                switch (v_str_id_loai_bao_cao)
+                {
+                    case TRANG_THAI_OTO.DANG_SU_DUNG:
+                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DANG_SU_DUNG.ToString();
+                        break;
+                    case TRANG_THAI_OTO.DE_NGHI_XU_LY:
+                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DE_NGHI_XU_LY.ToString();
+                        break;
+                    case TRANG_THAI_OTO.DA_THANH_LY:
+                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DA_THANH_LY.ToString();
+                        break;
+                    case TRANG_THAI_OTO.DE_NGHI_TRANG_CAP:
+                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DE_NGHI_TRANG_CAP.ToString();
+                        break;
+                    default:
+                         m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DANG_SU_DUNG.ToString();
+                        break;
+                }
+                m_cbo_trang_thai.Enabled = false;
+
                 WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                     , WinFormControls.eTAT_CA.YES
@@ -223,7 +259,6 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_grv_bao_cao_oto_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -255,6 +290,17 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
     }
     #endregion
-   
+
+    protected void m_cbo_don_vi_su_dung_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
 }
 
