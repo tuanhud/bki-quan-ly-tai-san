@@ -4,12 +4,7 @@ using System.Text;
 
 namespace WebUS
 {
-    public class TINH_HINH_SU_DUNG
-    {
-        public const string TONG_HOP_CHUNG = "1";
-        public const string LOAI_HINH_DON_VI = "2";
-        public const string DON_VI_SU_DUNG = "3";
-    }
+   
     public class CONST_QLDB
     {
         public const string KHONG_CO_DU_LIEU = "";
