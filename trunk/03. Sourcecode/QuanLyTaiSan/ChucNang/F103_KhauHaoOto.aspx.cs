@@ -29,6 +29,10 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
             return false;
         }
+        if (m_hdf_id.Value.Equals(String.Empty))
+        {
+            m_lbl_mess.Text = "Bạn chưa chọn tài sản";
+        }
         return true;
     }
 
