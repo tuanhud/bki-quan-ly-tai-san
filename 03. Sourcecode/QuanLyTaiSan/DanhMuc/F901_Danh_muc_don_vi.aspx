@@ -164,7 +164,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Đơn vị cấp trên">
                                 <ItemTemplate>
-                                <%#get_ten_don_vi_cap_tren(Eval("ID_DON_VI_CAP_TREN").ToString())%>
+                                <%#get_ten_don_vi_cap_tren(Eval("ID_DON_VI_CAP_TREN"))%>
                                 </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
