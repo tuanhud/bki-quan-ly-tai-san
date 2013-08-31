@@ -189,7 +189,7 @@ namespace WebUS
             , decimal ip_dc_id_loai_bao_cao            
             , DS_DM_LOC_BAO_CAO op_ds_dm_loc_bao_cao)
         {
-            CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_NHA_Load_data_to_grid_nha");
+            CStoredProc v_obj_procedure = new CStoredProc("pr_DM_LOC_BAO_CAO");
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_loai_tai_san", ip_dc_id_loai_tai_san);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_loai_bao_cao", ip_dc_id_loai_bao_cao);
 

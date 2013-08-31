@@ -39,6 +39,12 @@
                                 OnSelectedIndexChanged="m_ddl_don_vi_chu_quan_SelectedIndexChanged" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
+                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="l" 
+                                CssClass="cssButton" Height="23px" OnClick="m_cmd_tim_kiem_Click" 
+                                Text="Chọn báo cáo" Width="98px" />
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -100,10 +106,8 @@
                         <td colspan="2">
                         </td>
                         <td colspan="2" align="left">
-                            <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
-                                Width="98px" Text="Chọn báo cáo" OnClick="m_cmd_tim_kiem_Click" 
-                                Height="23px" />&nbsp; &nbsp;
-                        </td>
+                            &nbsp; &nbsp;
+                            </td>
                     </tr>
                 </table>                
             </ContentTemplate>
