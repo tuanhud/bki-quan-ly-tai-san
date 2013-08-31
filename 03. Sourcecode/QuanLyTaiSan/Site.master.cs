@@ -35,7 +35,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                     {
                         m_us_ht_chuc_nang.get_parent_table(m_str_user_name, m_ds_ht_chuc_nang);
                         // Lấy toàn bộ các menu cấp 1 được cấp quyền và được hiển thị
-                        rptMainMenu.DataSource = m_ds_ht_chuc_nang.HT_CHUC_NANG.Select("CHUC_NANG_PARENT_ID =0 AND HIEN_THI_YN='Y'", "VI_TRI");
+                        rptMainMenu.DataSource = m_ds_ht_chuc_nang.HT_CHUC_NANG.Select("CHUC_NANG_PARENT_ID IS NULL AND HIEN_THI_YN='Y'", "VI_TRI");
                         rptMainMenu.DataBind();
                     }
                 }

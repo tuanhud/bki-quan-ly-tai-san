@@ -23,7 +23,7 @@
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_old_password" CssClass="cssTextBox"  runat="server" TextMode="Password"
-                MaxLength="25" Width="200px" />
+                MaxLength="35" Width="200px" />
 		</td>
 		<td style="width:5%;">  
 			<asp:RequiredFieldValidator id="m_rqv_old_passwprd" runat="server" 
@@ -38,7 +38,7 @@
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_new_password" CssClass="cssTextBox"  runat="server" TextMode="Password"
-                MaxLength="25" Width="200px" />
+                MaxLength="35" Width="200px" />
 		</td>
 		<td style="width:5%;"> 
 				<asp:RequiredFieldValidator id="m_rqv_new_password" runat="server" 

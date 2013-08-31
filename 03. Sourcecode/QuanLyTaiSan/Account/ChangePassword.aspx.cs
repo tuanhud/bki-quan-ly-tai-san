@@ -49,6 +49,10 @@ public partial class Account_ChangePassword : System.Web.UI.Page
             m_lbl_mess.Text = "Bạn chưa nhập lại mật khẩu mới!";
             return false;
         }
+        if (m_txt_new_password.Text.Trim().Length >30) {
+            m_lbl_mess.Text = "Độ dài mật khẩu KHÔNG được vượt quá 30 ký tự!";
+            return false;
+        }
         if (m_txt_new_password.Text != m_txt_mat_khau_retype.Text) {
             m_lbl_mess.Text = "Mật khẩu mới và mật khẩu mới nhập lại chưa giống nhau!";
             return false;
