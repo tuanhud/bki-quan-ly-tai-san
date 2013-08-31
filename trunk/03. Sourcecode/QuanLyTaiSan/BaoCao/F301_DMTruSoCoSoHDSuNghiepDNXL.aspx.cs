@@ -16,7 +16,8 @@ using System.Threading;
 using IP.Core.QltsFormControls;
 using IP.Core;
 
-public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page {
+public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
+{
     #region Members
     DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
     US_CM_DM_TU_DIEN m_us_dm_dm_tu_dien = new US_CM_DM_TU_DIEN();
@@ -40,15 +41,17 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
         op_obj_parameter.strMA_LOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedValue;
         op_obj_parameter.strUSER_NAME = Person.get_user_name();
     }
-
-    private void export_excel() {
+    private void export_excel()
+    {
         string v_str_output_file = "";
-        if (Request.QueryString["id_loai_bao_cao"] != null) {
+        if (Request.QueryString["id_loai_bao_cao"] != null)
+        {
             string v_id = Request.QueryString["id_loai_bao_cao"];
             f402_bao_cao_danh_muc_tru_so_lam_viec v_f402_bc_dm_nha = new f402_bao_cao_danh_muc_tru_so_lam_viec();
             CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
             form_2_objExcelAssetParameters(v_obj_parameter);
-            switch (v_id) {
+            switch (v_id)
+            {
                 case "1":
                     v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DANH_MUC_TRU_SO_LAM_VIEC
                                             , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
@@ -69,13 +72,14 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
             v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
             Response.Redirect(v_str_output_file, false);
         }
-        
-    }
 
-    private void load_data_to_thong_tin_nha_dat() {
+    }
+    private void load_data_to_thong_tin_nha_dat()
+    {
 
         decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
-        if (v_dc_id_dat == -1) {
+        if (v_dc_id_dat == -1)
+        {
             m_pnl_thong_tin_nha_dat.Visible = false;
             return;
         }
@@ -94,18 +98,33 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
         m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(v_us_dm_dat.dcGT_THEO_SO_KE_TOAN, "#,##0.00");
 
     }
-    private bool check_validate_data_is_ok() {
-
-        if (m_cbo_dia_chi.SelectedValue == null) {
-            m_lbl_mess.Text = "Bạn phải chọn Địa Chỉ Đất!";
+    private bool check_validate_data_is_ok()
+    {
+        if (m_cbo_bo_tinh.SelectedValue.Equals(""))
+        {
+            m_lbl_mess.Text = "Không có Bộ, tỉnh!";
+            return false;
+        }
+        if (m_cbo_don_vi_chu_quan.SelectedValue.Equals(""))
+        {
+            m_lbl_mess.Text = "Không có Đơn vị chủ quản!";
+            return false;
+        }
+        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
+        {
+            m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+            return false;
+        }
+        if (m_cbo_dia_chi.SelectedValue.Equals(""))
+        {
+            m_lbl_mess.Text = "Không có Địa Chỉ Đất!";
             return false;
         }
 
         return true;
     }
-    private void load_data_to_grid_nha() {
-
-        if (check_validate_data_is_ok() == false) return;
+    private void load_data_to_grid_nha()
+    {
         DS_V_DM_NHA v_ds_v_dm_nha = new DS_V_DM_NHA();
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         string v_id_dat = m_cbo_dia_chi.SelectedValue;
@@ -113,10 +132,12 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
         string v_str_user_name = Person.get_user_name();
         if (v_str_user_name.Equals(null)) return;
 
-        if (Request.QueryString["id_loai_bao_cao"] != null) {
+        if (Request.QueryString["id_loai_bao_cao"] != null)
+        {
             id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
         }
-        switch (id_loai_bao_cao) {
+        switch (id_loai_bao_cao)
+        {
             case "1":
                 v_us_v_dm_nha.FillDatasetLoadDataToGridNha_loai_hinh(
                     CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
@@ -150,13 +171,16 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
         m_grv_nha.DataBind();
 
     }
-    private void form_title() {
+    private void form_title()
+    {
         string id_loai_bao_cao = "";
-        if (Request.QueryString["id_loai_bao_cao"] != null) {
+        if (Request.QueryString["id_loai_bao_cao"] != null)
+        {
             id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
         }
 
-        switch (id_loai_bao_cao) {
+        switch (id_loai_bao_cao)
+        {
 
             case "1":
                 m_lbl_tieu_de.Text = "BÁO CÁO DANH MỤC TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP";
@@ -172,12 +196,14 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
         }
 
     }
-    private void format_label_disable() {
+    private void format_label_disable()
+    {
 
         m_pnl_thong_tin_nha_dat.Visible = false;
 
     }
-    private void format_label_able() {
+    private void format_label_able()
+    {
 
         m_pnl_thong_tin_nha_dat.Visible = true;
         m_grv_nha.Visible = true;
@@ -186,83 +212,149 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
     #endregion
 
     #region events
-    protected void Page_Load(object sender, EventArgs e) {
-        try {
-            if (!IsPostBack) {
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!IsPostBack)
+            {
+                m_lbl_mess.Text = "";
                 form_title();
                 format_label_disable();
-                WinFormControls.load_data_to_cbo_bo_tinh(
-                    WinFormControls.eTAT_CA.YES
-                    , m_cbo_bo_tinh);
-                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                    m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_chu_quan);
-                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_loai_hinh_don_vi
-                    );
-                //load data to combobox trang thai nha
-
-                WinFormControls.load_data_to_cbo_tu_dien(
-                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
-                    , WinFormControls.eTAT_CA.NO
-                    , m_cbo_trang_thai
-                    );
-                string id_loai_bao_cao = "";
-                if (Request.QueryString["id_loai_bao_cao"] != null) {
-                    id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
-                }
-                switch (id_loai_bao_cao) {
-                    case "1": m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(CONST_QLDB.ID_TAT_CA);
+                if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
+                string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+                switch (v_str_id_loai_bao_cao)
+                {
+                    case "1":
+                        WinFormControls.load_data_to_cbo_bo_tinh(
+                   WinFormControls.eTAT_CA.NO
+                   , m_cbo_bo_tinh);
+                        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                            m_cbo_bo_tinh.SelectedValue
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_don_vi_chu_quan);
+                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_loai_hinh_don_vi
+                            );
+                        //load data to combobox trang thai nha
+                        WinFormControls.load_data_to_cbo_tu_dien(
+                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_trang_thai
+                            );
+                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString();
+                        m_cbo_trang_thai.Enabled = false;
+                        WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                            m_cbo_loai_hinh_don_vi.SelectedValue
+                            ,m_cbo_don_vi_chu_quan.SelectedValue
+                            ,m_cbo_bo_tinh.SelectedValue    
+                            ,WinFormControls.eTAT_CA.NO
+                            ,m_cbo_don_vi_su_dung_tai_san
+                            );
+                        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
+                        {
+                            m_cbo_dia_chi.DataSource = null;
+                            m_cbo_dia_chi.DataBind();
+                            return;
+                        }
+                        WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
+                            CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                            ,CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                            ,CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                            ,CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                            ,m_cbo_loai_hinh_don_vi.SelectedValue
+                            ,WinFormControls.eTAT_CA.NO
+                            ,m_cbo_dia_chi
+                            );
                         break;
-                    case "2": m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_NHA.DE_NGHI_XU_LY);
+                    case "2":
+                        WinFormControls.load_data_to_cbo_bo_tinh(
+                   WinFormControls.eTAT_CA.NO
+                   , m_cbo_bo_tinh);
+                        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                            m_cbo_bo_tinh.SelectedValue
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_don_vi_chu_quan);
+                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_loai_hinh_don_vi
+                            );
+                        //load data to combobox trang thai nha
+                        WinFormControls.load_data_to_cbo_tu_dien(
+                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
+                            , WinFormControls.eTAT_CA.NO
+                            , m_cbo_trang_thai
+                            );
+                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_NHA.DE_NGHI_XU_LY.ToString();
+                        m_cbo_trang_thai.Enabled = false;
+                        WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                            m_cbo_loai_hinh_don_vi.SelectedValue
+                            ,m_cbo_don_vi_chu_quan.SelectedValue
+                            ,m_cbo_bo_tinh.SelectedValue    
+                            ,WinFormControls.eTAT_CA.NO
+                            ,m_cbo_don_vi_su_dung_tai_san
+                            );
+                        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
+                        {
+                            m_cbo_dia_chi.DataSource = null;
+                            m_cbo_dia_chi.DataBind();
+                            return;
+                        }
+                        WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
+                            CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                            ,CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                            ,CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                            ,CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                            ,m_cbo_loai_hinh_don_vi.SelectedValue
+                            ,WinFormControls.eTAT_CA.NO
+                            ,m_cbo_dia_chi
+                            );
+                        break;
+                    case "3":
+                        break;
+                    case "4":
+                        break;
+                    case "5":
+                        break;
+                    case "6":
                         break;
                 }
-                m_cbo_trang_thai.Enabled = false;
-                //load data to combobox don vi su dung
-                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                   m_cbo_loai_hinh_don_vi.SelectedValue
-                   , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
-                   , m_cbo_bo_tinh.SelectedValue.ToString()
-                   , WinFormControls.eTAT_CA.YES
-                   , m_cbo_don_vi_su_dung_tai_san
-                   );
-                WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
-                     CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                   , ID_TRANG_THAI_DAT.DANG_SU_DUNG
-                   , m_cbo_loai_hinh_don_vi.SelectedValue
-                   , WinFormControls.eTAT_CA.YES
-                   , m_cbo_dia_chi);
             }
         }
-        catch (System.Exception v_e) {
+        catch (System.Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e) {
-        try {
+    protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            m_lbl_mess.Text = "";
             m_grv_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid_nha();
         }
-        catch (System.Exception v_e) {
+        catch (System.Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
-                , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
+                , WinFormControls.eTAT_CA.NO, m_cbo_don_vi_chu_quan);
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
                 m_cbo_loai_hinh_don_vi.SelectedValue
                 , m_cbo_don_vi_chu_quan.SelectedValue
                 , m_cbo_bo_tinh.SelectedValue
-                , WinFormControls.eTAT_CA.YES
+                , WinFormControls.eTAT_CA.NO
                 , m_cbo_don_vi_su_dung_tai_san);
             WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
                      CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
@@ -270,23 +362,26 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                    , ID_TRANG_THAI_DAT.DANG_SU_DUNG
                    , m_cbo_loai_hinh_don_vi.SelectedValue
-                   , WinFormControls.eTAT_CA.YES
+                   , WinFormControls.eTAT_CA.NO
                    , m_cbo_dia_chi);
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
         }
-        catch (System.Exception v_e) {
+        catch (System.Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
                 m_cbo_loai_hinh_don_vi.SelectedValue
                 , m_cbo_don_vi_chu_quan.SelectedValue
                 , m_cbo_bo_tinh.SelectedValue
-                , WinFormControls.eTAT_CA.YES
+                , WinFormControls.eTAT_CA.NO
                 , m_cbo_don_vi_su_dung_tai_san);
             WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
                      CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
@@ -294,17 +389,20 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                    , ID_TRANG_THAI_DAT.DANG_SU_DUNG
                    , m_cbo_loai_hinh_don_vi.SelectedValue
-                   , WinFormControls.eTAT_CA.YES
+                   , WinFormControls.eTAT_CA.NO
                    , m_cbo_dia_chi);
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
         }
-        catch (System.Exception v_e) {
+        catch (System.Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
                      CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
@@ -312,57 +410,74 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page 
                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                    , ID_TRANG_THAI_DAT.DANG_SU_DUNG
                    , m_cbo_loai_hinh_don_vi.SelectedValue
-                   , WinFormControls.eTAT_CA.YES
+                   , WinFormControls.eTAT_CA.NO
                    , m_cbo_dia_chi);
             US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue));
             m_cbo_loai_hinh_don_vi.SelectedValue = v_us_dm_don_vi.strLOAI_HINH_DON_VI;
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
         }
-        catch (System.Exception v_e) {
+        catch (System.Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e) {
-        try {
+    protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_lbl_mess.Text = "";
             if (!check_validate_data_is_ok()) return;
             format_label_able();
             load_data_to_thong_tin_nha_dat();
             load_data_to_grid_nha();
 
         }
-        catch (System.Exception v_e) {
+        catch (System.Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
-        try {
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
             export_excel();
         }
 
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
             m_cbo_loai_hinh_don_vi.SelectedValue
-            , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
-            , m_cbo_bo_tinh.SelectedValue.ToString()
-            , WinFormControls.eTAT_CA.YES
+            , m_cbo_don_vi_chu_quan.SelectedValue
+            , m_cbo_bo_tinh.SelectedValue
+            , WinFormControls.eTAT_CA.NO
             , m_cbo_don_vi_su_dung_tai_san
             );
+            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
+            {
+                m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+                return;
+            }
             WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
                      CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                    , ID_TRANG_THAI_DAT.DANG_SU_DUNG
                    , m_cbo_loai_hinh_don_vi.SelectedValue
-                   , WinFormControls.eTAT_CA.YES
+                   , WinFormControls.eTAT_CA.NO
                    , m_cbo_dia_chi);
         }
-        catch (System.Exception ex) {
+        catch (System.Exception ex)
+        {
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
