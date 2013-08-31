@@ -75,6 +75,8 @@ namespace WebUS
         public const decimal NHA = 2;
         public const decimal OTO = 3;
         public const decimal TAI_SAN_KHAC = 4;
+        public const decimal TAI_SAN_KHAC_LON_HON_500 = 8;
+        public const decimal TAI_SAN_KHAC_NHO_HON_500 = 9;
     }
 
     public class LOAI_USER_QUYEN
