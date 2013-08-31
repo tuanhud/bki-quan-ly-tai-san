@@ -222,6 +222,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_TAI_SAN_KHAC_HISTORY.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_KHAU_HAO_DM_DAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_KHAU_HAO_DM_DAT.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_KHAU_HAO_DM_NHA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -596,6 +601,17 @@
     </None>
     <None Include="DS_V_DM_TAI_SAN_KHAC_HISTORY.xss">
       <DependentUpon>DS_V_DM_TAI_SAN_KHAC_HISTORY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_KHAU_HAO_DM_DAT.xsc">
+      <DependentUpon>DS_V_GD_KHAU_HAO_DM_DAT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_KHAU_HAO_DM_DAT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_KHAU_HAO_DM_DAT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_KHAU_HAO_DM_DAT.xss">
+      <DependentUpon>DS_V_GD_KHAU_HAO_DM_DAT.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_KHAU_HAO_DM_NHA.xsc">
       <DependentUpon>DS_V_GD_KHAU_HAO_DM_NHA.xsd</DependentUpon>
