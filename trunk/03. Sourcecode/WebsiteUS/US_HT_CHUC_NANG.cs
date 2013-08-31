@@ -225,10 +225,12 @@ public class US_HT_CHUC_NANG : US_Object
     public void FillDatasetFillFullTreeChucNang(
         string ip_str_hien_thi_yn
         , decimal ip_dc_user_group
+        , string ip_str_having_quyen_yn
         , DS_HT_CHUC_NANG op_ds_ht_chuc_nang) {
             CStoredProc v_cstore = new CStoredProc("pr_HT_CHUC_NANG_select_full_tree_chuc_nang");
             v_cstore.addNVarcharInputParam("@ip_str_hien_thi_yn", ip_str_hien_thi_yn);
             v_cstore.addDecimalInputParam("@ip_id_user_group", ip_dc_user_group);
+            v_cstore.addNVarcharInputParam("@ip_str_having_quyen_yn", ip_str_having_quyen_yn);
             v_cstore.fillDataSetByCommand(this, op_ds_ht_chuc_nang);
     }
     #endregion
