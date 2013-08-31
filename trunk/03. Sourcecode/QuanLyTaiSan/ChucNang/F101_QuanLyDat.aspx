@@ -2,14 +2,15 @@
     CodeFile="F101_QuanLyDat.aspx.cs" Inherits="ChucNang_F101_QuanLyDat" EnableEventValidation="false" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
-    TagPrefix="asp" %>
-<asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
-</asp:content>
-<asp:content id="Content2" contentplaceholderid="MainContent" runat="Server">
-    <asp:scriptmanager id="ScriptManager1" runat="server">
-    </asp:scriptmanager>
-    <asp:updatepanel id="UpdatePanel1" runat="server">
-        <contenttemplate>
+    TagPrefix="asp" %>'
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
@@ -268,14 +269,13 @@
                                 </td>
                                 <td colspan="4" align="left">
                                     <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" 
-                                        ValidationGroup="m_vlg_nha" Height="24px" />
-                                    <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" 
-                                        ValidationGroup="m_vlg_nha" Height="24px" />
-                                    <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" 
+                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_nha"
                                         Height="24px" />
+                                    <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
+                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_nha"
+                                        Height="24px" />
+                                    <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
+                                        Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" Height="24px" />
                                     <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
                                 </td>
                             </tr>
@@ -377,7 +377,7 @@
                                 <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0.00}" />
                                 <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG" ItemStyle-HorizontalAlign="Right"
-                                    DataFormatString="{0:#,##0.00}"/>
+                                    DataFormatString="{0:#,##0.00}" />
                                 <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0.00}" />
                                 <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
@@ -390,19 +390,20 @@
                     </td>
                 </tr>
             </table>
-        </contenttemplate>
-        <triggers>
+        </ContentTemplate>
+        <Triggers>
             <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
-        </triggers>
-    </asp:updatepanel>
-    <asp:updateprogress runat="server">
-        <progresstemplate>
-        <div class="cssLoadWapper">
-            <div class="cssLoadContent">
-                <img src="../Images/loadingBar.gif" alt=""/>
-                <p>Đang gửi yêu cầu, hãy đợi ...</p>
+        </Triggers>
+    </asp:UpdatePanel>
+    <asp:UpdateProgress runat="server">
+        <ProgressTemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
             </div>
-        </div>       
-        </progresstemplate>
-    </asp:updateprogress>
-</asp:content>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+</asp:Content>
