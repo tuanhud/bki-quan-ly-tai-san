@@ -167,6 +167,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         if (m_hdf_id.Value.Equals(String.Empty))
         {
             m_lbl_mess.Text = "Bạn chưa chọn tài sản";
+            return false;
         }
         return true;
     }
