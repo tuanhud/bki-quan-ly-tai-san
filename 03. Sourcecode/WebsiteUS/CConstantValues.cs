@@ -4,7 +4,13 @@ using System.Text;
 
 namespace WebUS
 {
-   
+    public class TRANG_THAI_OTO
+    {
+        public const string DE_NGHI_XU_LY = "581";
+        public const string DA_THANH_LY = "582";
+        public const string DE_NGHI_TRANG_CAP = "583";
+        public const string DANG_SU_DUNG = "584";
+    }
     public class CONST_QLDB
     {
         public const string KHONG_CO_DU_LIEU = "";
