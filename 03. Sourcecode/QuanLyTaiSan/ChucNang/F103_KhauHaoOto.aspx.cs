@@ -184,6 +184,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         m_txt_gia_tri_khau_hao.Text = "";
         m_txt_ngay_lap.Text = "";
         m_txt_ngay_duyet.Text = "";
+        m_hdf_id.Value = "";
     }
 
     private void load_data_to_grid()
