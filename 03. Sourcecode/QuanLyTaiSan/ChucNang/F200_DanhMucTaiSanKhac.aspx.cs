@@ -316,14 +316,12 @@ public partial class Default2 : System.Web.UI.Page
             case DataEntryFormMode.InsertDataState:
                 m_cmd_tao_moi.Visible = true;
                 m_cmd_cap_nhat.Visible = false;
-                m_cmd_huy.Visible = false;
                 break;
             case DataEntryFormMode.SelectDataState:
                 break;
             case DataEntryFormMode.UpdateDataState:
                 m_cmd_tao_moi.Visible = false;
                 m_cmd_cap_nhat.Visible = true;
-                m_cmd_huy.Visible = true;
                 break;
             case DataEntryFormMode.ViewDataState:
                 break;
@@ -504,20 +502,6 @@ public partial class Default2 : System.Web.UI.Page
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_cmd_huy_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
-            Thread.Sleep(2000);
-            reset_control();
-            set_form_mode();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(v_e);
         }
     }
     #endregion
