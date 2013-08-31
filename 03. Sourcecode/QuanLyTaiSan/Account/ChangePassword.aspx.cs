@@ -34,6 +34,33 @@ public partial class Account_ChangePassword : System.Web.UI.Page
         return m_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0][HT_NGUOI_SU_DUNG.MAT_KHAU].ToString();
     }
 
+    private bool check_validate_is_ok() {
+        string v_str_ten_dang_nhap = CIPConvert.ToStr(Session[SESSION.UserName]);
+        // Kiểm tra mật khẩu cũ nhập vào đã chuẩn chưa?
+        if (!m_txt_old_password.Text.Equals(get_current_password(v_str_ten_dang_nhap))) {
+            m_lbl_mess.Text = "Mật khẩu cũ nhập vào chưa đúng!";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_new_password, DataType.StringType, allowNull.NO)) {
+            m_lbl_mess.Text = "Bạn chưa điền mật khẩu mới!";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_mat_khau_retype, DataType.StringType, allowNull.NO)) {
+            m_lbl_mess.Text = "Bạn chưa nhập lại mật khẩu mới!";
+            return false;
+        }
+        if (m_txt_new_password.Text != m_txt_mat_khau_retype.Text) {
+            m_lbl_mess.Text = "Mật khẩu mới và mật khẩu mới nhập lại chưa giống nhau!";
+            return false;
+        }
+        
+        return true;
+    }
+    private void form_2_us_nguoi_su_dung() {
+
+        m_us_ht_nguoi_su_dung.strMAT_KHAU = m_txt_new_password.Text;
+        m_us_ht_nguoi_su_dung.strTEN_TRUY_CAP = CIPConvert.ToStr(Session[SESSION.UserName]);
+    }
     #endregion
 
     #region Events
@@ -41,17 +68,11 @@ public partial class Account_ChangePassword : System.Web.UI.Page
     {
         try
         {
-            string v_str_ten_dang_nhap = CIPConvert.ToStr(Session[SESSION.UserName]);
-            // Kiểm tra mật khẩu cũ nhập vào đã chuẩn chưa?
-            if (!m_txt_old_password.Text.Equals(get_current_password(v_str_ten_dang_nhap)))
-            {
-                m_lbl_mess.Text = "Mật khẩu cũ nhập vào chưa đúng";
-                return;
-            }
-            m_us_ht_nguoi_su_dung.strMAT_KHAU = m_txt_new_password.Text;
-            m_us_ht_nguoi_su_dung.strTEN_TRUY_CAP = v_str_ten_dang_nhap;
+            m_lbl_mess.Text = "";
+            if (!check_validate_is_ok()) return;
+            form_2_us_nguoi_su_dung();   
             m_us_ht_nguoi_su_dung.change_pass_word();
-            m_lbl_mess.Text = "Thay đổi mật khẩu thành công";
+            m_lbl_mess.Text = "Thay đổi mật khẩu thành công!";
         }
         catch (Exception v_e)
         {
@@ -62,7 +83,7 @@ public partial class Account_ChangePassword : System.Web.UI.Page
     {
         try
         {
-            Response.Redirect("Default.aspx",true);
+            Response.Redirect("~/Default.aspx",false);
         }
         catch (Exception v_e)
         {

@@ -19,7 +19,7 @@
 	    <tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="Label4" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;M&lt;/U&gt;ật khẩu cũ"/>
+                Text="Mật khẩu cũ (*)"/>
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_old_password" CssClass="cssTextBox"  runat="server" TextMode="Password"
@@ -34,7 +34,7 @@
 	<tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="lblFullName" CssClass="cssManField" runat="server" 
-                Text="Mật khẩu mới" />
+                Text="Mật khẩu mới (*)" />
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_new_password" CssClass="cssTextBox"  runat="server" TextMode="Password"
@@ -49,7 +49,7 @@
 	    <tr>
 		<td align="right" >
 		    <asp:label id="lblAnswer0" runat="server" CssClass="cssManField" 
-                Text="Nhập lại mật khẩu" />
+                Text="Nhập lại mật khẩu mới (*)" />
 		</td>
 		<td align="left">
 		    <asp:textbox id="m_txt_mat_khau_retype" accessKey="m" runat="server"  Width="200px" 
@@ -68,9 +68,11 @@
 	    <td></td>
 		<td colspan="2" align="left">
 			<asp:button id="m_cmd_doi_mat_khau" accessKey="c" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Lưu" onclick="m_cmd_doi_mat_khau_Click"/>&nbsp;&nbsp;&nbsp;
+                runat="server" Width="98px" Text="Lưu" onclick="m_cmd_doi_mat_khau_Click" 
+                CausesValidation="False" Height="25px"/>&nbsp;&nbsp;&nbsp;
 			<asp:button id="m_cmd_thoat" accessKey="u" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Thoát" onclick="m_cmd_thoat_Click" />
+                runat="server" Width="98px" Text="Thoát" onclick="m_cmd_thoat_Click" 
+                CausesValidation="False" Height="25px" />
 			</td>
 	</tr>
 </table>
