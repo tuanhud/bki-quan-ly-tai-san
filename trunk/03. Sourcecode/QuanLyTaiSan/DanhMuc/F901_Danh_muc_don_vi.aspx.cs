@@ -20,10 +20,10 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(MA_LOAI_TU_DIEN.LOAI_HINH_DON_VI,ip_str_loai_hinh_don_vi);
         return v_us_cm_dm_tu_dien.strTEN;
     }
-    public string get_ten_don_vi_cap_tren(string ip_dc_id_don_vi)
+    public string get_ten_don_vi_cap_tren(object ip_obj_id_don_vi)
     {
-        if (ip_dc_id_don_vi.Equals(null)) return "Không có cấp trên";
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(ip_dc_id_don_vi));
+        if (ip_obj_id_don_vi.ToString().Equals("")) return "Không có cấp trên";
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(ip_obj_id_don_vi));
         return v_us_dm_don_vi.strTEN_DON_VI;
     }
     #endregion
@@ -43,8 +43,6 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     #endregion
 
     #region Private Methods
-
-
     private void load_cbo_don_vi_cap_tren()
     {
         try
