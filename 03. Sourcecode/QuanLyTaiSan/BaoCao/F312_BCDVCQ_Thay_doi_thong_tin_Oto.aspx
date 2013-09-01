@@ -129,7 +129,7 @@
     <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
-                <span class="cssPageTitle">THÔNG TIN THAY ĐỔI</span> <span class="expand-collapse-text initial-expand">
+            <asp:Label ID="m_lbl_title" runat="server" Text="THÔNG TIN THAY ĐỔI" CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
