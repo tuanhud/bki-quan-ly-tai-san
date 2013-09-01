@@ -108,7 +108,7 @@
             <table border="0" cellspacing="0" cellpadding="0" class="cssTable" width="150%">
                 <tr>
                     <td class="cssPageTitleBG">
-                        <span class="cssPageTitle">KẾT QUẢ TÌM KIẾM</span> <span class="expand-collapse-text initial-expand">
+                        <asp:label ID="m_lbl_thong_tin_oto" runat="Server" class="cssPageTitle" Text="DANH SÁCH Ô TÔ"></asp:label> <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
