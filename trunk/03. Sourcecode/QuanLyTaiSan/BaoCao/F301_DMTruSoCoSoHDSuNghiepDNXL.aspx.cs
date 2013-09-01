@@ -181,6 +181,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         }
         m_grv_nha.DataSource = v_ds_v_dm_nha.V_DM_NHA;
         Thread.Sleep(1000);
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_nha.V_DM_NHA.Rows.Count + " bản ghi)";
+        m_lbl_title.Text += v_str_thong_tin;
         m_grv_nha.DataBind();
 
     }
@@ -222,8 +224,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     private void tinh_tong_so_nha()
     {
-        m_lbl_total_dat.Text = "Có " + m_cbo_dia_chi.Items.Count + " Địa chỉ đất";
-        m_lbl_total_nha.Text = "Có " + m_grv_nha.Rows.Count.ToString() + " Trụ sở làm việc, Cơ sở HĐSN";
+        //m_lbl_total_dat.Text = "Có " + m_cbo_dia_chi.Items.Count + " Địa chỉ đất";
+        //m_lbl_total_nha.Text = "Có " + m_grv_nha.Rows.Count.ToString() + " Trụ sở làm việc, Cơ sở HĐSN";
     }
     #endregion
 
@@ -287,9 +289,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                             );
                         break;
                     case "2":
-                         WinFormControls.load_data_to_cbo_bo_tinh(
-                             WinFormControls.eTAT_CA.NO
-                          , m_cbo_bo_tinh);
+                        WinFormControls.load_data_to_cbo_bo_tinh(
+                            WinFormControls.eTAT_CA.NO
+                         , m_cbo_bo_tinh);
                         WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                             m_cbo_bo_tinh.SelectedValue
                             , WinFormControls.eTAT_CA.NO
@@ -331,9 +333,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                             );
                         break;
                     case "3":
-                         WinFormControls.load_data_to_cbo_bo_tinh(
-                             WinFormControls.eTAT_CA.YES
-                          , m_cbo_bo_tinh);
+                        WinFormControls.load_data_to_cbo_bo_tinh(
+                            WinFormControls.eTAT_CA.YES
+                         , m_cbo_bo_tinh);
                         WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                             m_cbo_bo_tinh.SelectedValue
                             , WinFormControls.eTAT_CA.YES
@@ -591,9 +593,10 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
+            m_lbl_title.Text = "THÔNG TIN NHÀ ĐẤT";
             m_lbl_mess.Text = "";
-            m_lbl_total_dat.Text = "";
-            m_lbl_total_nha.Text = "";
+            //m_lbl_total_dat.Text = "";
+            //m_lbl_total_nha.Text = "";
             if (!check_validate_data_is_ok()) return;
             format_label_able();
             load_data_to_thong_tin_nha_dat();
