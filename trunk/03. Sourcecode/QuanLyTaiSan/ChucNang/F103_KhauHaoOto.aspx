@@ -122,7 +122,7 @@
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:TextBox ID="m_txt_ten_tai_san" runat="server" class="tb" Width="85%" OnTextChanged="m_txt_ten_tai_san_TextChanged"
-                                AutoPostBack="true" ValidationGroup="m_vlg_oto"></asp:TextBox>
+                                AutoPostBack="true"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
