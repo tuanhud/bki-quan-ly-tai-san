@@ -336,6 +336,9 @@
                         <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
                             ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
                         <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
+                        <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0.00}" />
+                        <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
+                        <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                     </Columns>
                 </asp:GridView>
             </td>
