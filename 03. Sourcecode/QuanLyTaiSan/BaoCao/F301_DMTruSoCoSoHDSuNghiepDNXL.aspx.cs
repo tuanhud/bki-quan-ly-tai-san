@@ -241,7 +241,11 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                 format_label_disable();
                 if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
                 string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
-
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                            , WinFormControls.eTAT_CA.YES
+                            , m_cbo_loai_hinh_don_vi
+                            );
                 switch (v_str_id_loai_bao_cao)
                 {
                     case "1":
@@ -252,11 +256,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                             m_cbo_bo_tinh.SelectedValue
                             , WinFormControls.eTAT_CA.NO
                             , m_cbo_don_vi_chu_quan);
-                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_loai_hinh_don_vi
-                            );
+                        
                         //load data to combobox trang thai nha
                         WinFormControls.load_data_to_cbo_tu_dien(
                             WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
@@ -296,11 +296,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                             m_cbo_bo_tinh.SelectedValue
                             , WinFormControls.eTAT_CA.NO
                             , m_cbo_don_vi_chu_quan);
-                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_loai_hinh_don_vi
-                            );
                         //load data to combobox trang thai nha
                         WinFormControls.load_data_to_cbo_tu_dien(
                             WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
@@ -340,11 +335,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                             m_cbo_bo_tinh.SelectedValue
                             , WinFormControls.eTAT_CA.YES
                             , m_cbo_don_vi_chu_quan);
-                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                            , WinFormControls.eTAT_CA.YES
-                            , m_cbo_loai_hinh_don_vi
-                            );
                         WinFormControls.load_data_to_cbo_tu_dien(
                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
                            , WinFormControls.eTAT_CA.YES
