@@ -113,7 +113,7 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
-    <%--<asp:UpdateProgress ID="Updateprogress1" runat="server">
+    <asp:UpdateProgress ID="Updateprogress1" runat="server">
         <ProgressTemplate>
             <div class="cssLoadWapper">
                 <div class="cssLoadContent">
@@ -123,5 +123,5 @@
                 </div>
             </div>
         </ProgressTemplate>
-    </asp:UpdateProgress>--%>
+    </asp:UpdateProgress>
 </asp:Content>
