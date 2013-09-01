@@ -452,7 +452,7 @@ namespace QltsForm
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
-                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-026 Bao cao danh muc tai san khac.xls", 12, 1);
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:

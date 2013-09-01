@@ -428,6 +428,19 @@ namespace WebUS
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.fillDataSetByCommand(this, op_ds_rpt_tong_hop_hien_trang);
         }
+
+        public void FillDataset_tong_hop_chi_tiet_theo_don_vi(
+            decimal ip_dc_id_bo_tinh
+            , decimal ip_dc_id_don_vi_chu_quan
+            , string ip_str_user_name
+            , DS_RPT_TONG_HOP_HIEN_TRANG op_ds_rpt_tong_hop_hien_trang)
+        {
+            CStoredProc v_obj_procedure = new CStoredProc("pr_RPT_TONG_HOP_HIEN_TRANG_tong_hop_chi_tiet_theo_don_vi");
+            v_obj_procedure.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_id_bo_tinh);
+            v_obj_procedure.addDecimalInputParam("@ip_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_rpt_tong_hop_hien_trang);
+        }
         #endregion
     }
 }
