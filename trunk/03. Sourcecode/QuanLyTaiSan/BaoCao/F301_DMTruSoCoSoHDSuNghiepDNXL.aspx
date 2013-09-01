@@ -113,6 +113,21 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="cssPageTitleBG">
+                        <span style="color: white; font-weight: bold">Kết quả tìm kiếm:</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cssPageTitleBG">
+                        <asp:Label ID="m_lbl_total_dat" runat="Server" ForeColor="white" Font-Bold="true"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cssPageTitleBG">
+                        <asp:Label ID="m_lbl_total_nha" runat="Server" ForeColor="white" Font-Bold="true"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <asp:Panel ID="m_pnl_thong_tin_nha_dat" runat="Server" Width="100%">
                             <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -334,7 +349,7 @@
                                                 <td colspan="3" style="height: 50px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (VNĐ đồng)
+                                                    (đồng)
                                                 </td>
                                             </tr>
                                             <tr>
