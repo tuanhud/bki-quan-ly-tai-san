@@ -4,6 +4,22 @@
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <script type="text/javascript">
+        // Hàm này dùng để check all checkbox trên lưới
+        function SelectAllCheckboxes(spanChk) {
+            // Added as ASPX uses SPAN for checkbox
+            var oItem = spanChk.children;
+            var theBox = (spanChk.type == "checkbox") ? spanChk : spanChk.children.item[0];
+            xState = theBox.checked;
+            elm = theBox.form.elements;
+
+            for (i = 0; i < elm.length; i++)
+                if (elm[i].type == "checkbox" && elm[i].id != theBox.id) {
+                    if (elm[i].checked != xState)
+                        elm[i].click();
+                }
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div>
