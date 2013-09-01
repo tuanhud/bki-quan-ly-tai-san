@@ -14,12 +14,11 @@ using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPException;
 using IP.Core.WinFormControls;
+using System.Threading;
 
 
 public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 {
-
-
     #region Members
     US_DM_OTO m_us_dm_oto = new US_DM_OTO();
     DS_DM_OTO m_ds_dm_oto = new DS_DM_OTO();
@@ -28,12 +27,27 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     IP.Core.IPData.DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
     DataEntryFormMode m_init_mode = DataEntryFormMode.ViewDataState;
 
-   
+
     #endregion
 
     #region Private Methods
-    private void load_2_cbo_loaits() {
-        try {
+    private void export_to_excel()
+    {
+        Thread.Sleep(2000);
+        // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
+        m_grv_dm_oto.AllowPaging = false;
+        search_oto(m_txt_tim_kiem.Text);  // đây là hàm load lại dữ liệu lên lưới
+        // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+        WinformReport.export_gridview_2_excel(
+                    m_grv_dm_oto
+                    , "DS oto.xls"
+                    , 0
+                    , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+    }
+    private void load_2_cbo_loaits()
+    {
+        try
+        {
             DS_DM_LOAI_TAI_SAN v_ds_dm_loaits = new DS_DM_LOAI_TAI_SAN();
             US_DM_LOAI_TAI_SAN v_us_dm_loaits = new US_DM_LOAI_TAI_SAN();
             // DataRow v_dr_all = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
@@ -45,32 +59,37 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             m_ddl_loai_xe.DataBind();
         }
 
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             throw v_e;
         }
     }
-    
+
     // Load dữ liệu vào combo trạng thái
-    private void load_data_trang_thai() {
-        try {
+    private void load_data_trang_thai()
+    {
+        try
+        {
             DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
 
-            
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds( MA_LOAI_TU_DIEN.TRANG_THAI_OTO, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
+
+            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_OTO, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
             m_ddl_trang_thai_oto.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
             m_ddl_trang_thai_oto.DataTextField = CM_DM_TU_DIEN.TEN;
             m_ddl_trang_thai_oto.DataValueField = CM_DM_TU_DIEN.ID;
             m_ddl_trang_thai_oto.DataBind();
         }
 
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             throw v_e;
         }
 
     }
-   
-    private void reset_control() {
+
+    private void reset_control()
+    {
         m_txt_bien_kiem_soat.Text = "";
         m_txt_chuc_danh_sd_xe.Text = "";
         m_txt_cong_suat_xe.Text = "";
@@ -93,8 +112,10 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_lbl_mess.Text = "";
         m_lbl_thong_bao.Text = "";
     }
-    private void form_2_us_object(US_DM_OTO ip_us_oto) {
-        if (!m_hdf_id.Value.Equals(String.Empty)) {
+    private void form_2_us_object(US_DM_OTO ip_us_oto)
+    {
+        if (!m_hdf_id.Value.Equals(String.Empty))
+        {
             ip_us_oto.dcID = CIPConvert.ToDecimal(m_hdf_id.Value);
         }
         ip_us_oto.strNGUON_GOC_XE = m_txt_nguon_goc_xe.Text;
@@ -128,7 +149,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     /// Load dữ liệu từ US đổ vào form
     /// </summary>
     /// <param name="ip_dm_noi_dung_thanh_toan"></param>
-    private void us_obj_2_form(US_DM_OTO ip_us_oto) {
+    private void us_obj_2_form(US_DM_OTO ip_us_oto)
+    {
         m_hdf_id.Value = ip_us_oto.dcID.ToString();
         m_txt_tai_trong.Text = ip_us_oto.dcSO_CHO_NGOI.ToString();
         m_txt_ma_ts.Text = ip_us_oto.strMA_TAI_SAN;
@@ -170,31 +192,40 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_ddl_trang_thai_oto.SelectedValue = ip_us_oto.dcID_TRANG_THAI.ToString();
     }
 
-    private void load_data_to_grid() {
-        try {
+    private void load_data_to_grid()
+    {
+        try
+        {
+            m_lbl_ket_qua_loc_du_lieu.Text = "DANH SÁCH Ô TÔ";
             // Đổ dữ liệu từ US vào DS
             m_us_dm_oto.FillDataset(m_ds_dm_oto);
 
             // Treo dữ liệu lên lưới
+            string v_str_thong_tin = " (Có " + m_ds_dm_oto.DM_OTO.Rows.Count + " bản ghi)";
+            m_lbl_ket_qua_loc_du_lieu.Text += v_str_thong_tin;
             m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
             m_grv_dm_oto.DataBind();
 
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             //nhớ using Ip.Common
             CSystemLog_301.ExceptionHandle(this, v_e);
 
         }
 
     }
-    private void delete_dm_oto(int ip_i_row_del) {
+    private void delete_dm_oto(int ip_i_row_del)
+    {
         decimal v_dc_id_oto = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[ip_i_row_del].Value);
         m_us_dm_oto.dcID = v_dc_id_oto;
         m_us_dm_oto.DeleteByID(v_dc_id_oto);
         m_lbl_mess.Text = "Xóa bản ghi thành công!";
         load_data_to_grid();
     }
-    private void load_data_2_us_by_id(int ip_i_id) {
+    private void load_data_2_us_by_id(int ip_i_id)
+    {
+        
         decimal v_dc_id_dm_oto = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[ip_i_id].Value);
         m_hdf_id.Value = v_dc_id_dm_oto.ToString();
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(v_dc_id_dm_oto);
@@ -203,7 +234,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         us_obj_2_form(v_us_dm_oto);
     }
 
-    private bool check_validate_data_is_ok() {
+    private bool check_validate_data_is_ok()
+    {
         if (!CValidateTextBox.IsValid(m_txt_ma_ts, DataType.StringType, allowNull.NO)) return false;
         if (!CValidateTextBox.IsValid(m_txt_ten_ts, DataType.StringType, allowNull.NO)) return false;
         if (!CValidateTextBox.IsValid(m_txt_nguon_ns, DataType.NumberType, allowNull.NO)) return false;
@@ -214,14 +246,18 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         if (!CValidateTextBox.IsValid(m_txt_qlnn, DataType.NumberType, allowNull.YES)) return false;
         if (!CValidateTextBox.IsValid(m_txt_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
         if (!CValidateTextBox.IsValid(m_txt_khong_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
-        if ((m_txt_nam_su_dung.Text.Trim().Length > 0) & (m_txt_nam_san_xuat.Text.Trim().Length > 0)) {
-            if (CIPConvert.ToDecimal(m_txt_nam_su_dung.Text) < CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text)) {
+        if ((m_txt_nam_su_dung.Text.Trim().Length > 0) & (m_txt_nam_san_xuat.Text.Trim().Length > 0))
+        {
+            if (CIPConvert.ToDecimal(m_txt_nam_su_dung.Text) < CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text))
+            {
                 m_lbl_mess.Text = "Năm sử dụng phải lớn hơn hoặc bằng năm sản xuất!";
                 return false;
             }
         }
-        if ((m_txt_nguon_ns.Text.Trim().Length > 0) & (m_txt_nguon_khac.Text.Trim().Length > 0) & (m_txt_gia_tri_con_lai.Text.Trim().Length > 0)) {
-            if (CIPConvert.ToDecimal(m_txt_nguon_ns.Text) + CIPConvert.ToDecimal(m_txt_nguon_khac.Text) < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text)) {
+        if ((m_txt_nguon_ns.Text.Trim().Length > 0) & (m_txt_nguon_khac.Text.Trim().Length > 0) & (m_txt_gia_tri_con_lai.Text.Trim().Length > 0))
+        {
+            if (CIPConvert.ToDecimal(m_txt_nguon_ns.Text) + CIPConvert.ToDecimal(m_txt_nguon_khac.Text) < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text))
+            {
                 m_lbl_mess.Text = "Nguyên giá (nguồn ngân sách + nguồn khác) phải lớn hơn giá trị còn lại!";
                 return false;
             }
@@ -231,7 +267,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         return true;
     }
 
-    private void insert_data() {
+    private void insert_data()
+    {
         if (m_init_mode == DataEntryFormMode.UpdateDataState) return;
         if (!check_validate_data_is_ok()) return;
         form_2_us_object(m_us_dm_oto);
@@ -241,10 +278,12 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         load_data_to_grid();
     }
 
-    private void update_data() {
-        if (m_hdf_id.Value == "") {
+    private void update_data()
+    {
+        if (m_hdf_id.Value == "")
+        {
             m_lbl_mess.Text = "Bạn phải chọn nội dung cần Cập nhật!";
-            
+
             return;
         }
         if (!check_validate_data_is_ok()) return;
@@ -257,34 +296,47 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         load_data_to_grid();
     }
 
-    private void search_oto(string ip_str_tu_khoa) {
+    private void search_oto(string ip_str_tu_khoa)
+    {
         m_lbl_thong_bao.Text = "";
+        m_lbl_ket_qua_loc_du_lieu.Text = "DANH SÁCH Ô TÔ";
         m_us_dm_oto.FillDatasetBySearch(
             m_ds_dm_oto
-            ,ip_str_tu_khoa
+            , ip_str_tu_khoa
             , CONST_QLDB.ID_TAT_CA
             , CONST_QLDB.ID_TAT_CA
             , CONST_QLDB.ID_TAT_CA
             , CONST_QLDB.ID_TAT_CA);
         m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
+        string v_str_thong_tin = " (Có " + m_ds_dm_oto.DM_OTO.Rows.Count + " bản ghi)";
+        m_lbl_ket_qua_loc_du_lieu.Text += v_str_thong_tin;
+        m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
         m_grv_dm_oto.DataBind();
         if (m_ds_dm_oto.DM_OTO.Rows.Count == 0) m_lbl_thong_bao.Text = "Không có ô tô nào thỏa mãn!";
     }
     #endregion
-    
 
-    // Events
-    protected void Page_Load(object sender, EventArgs e) {
-        try {
+    #region Events
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
             m_lbl_mess.Text = "";
-            if (m_init_mode == DataEntryFormMode.UpdateDataState) {
+            if (m_init_mode == DataEntryFormMode.UpdateDataState)
+            {
                 m_cmd_tao_moi.Enabled = false;
             }
-            else {
+            else
+            {
                 m_cmd_tao_moi.Enabled = true;
             }
-            if (!IsPostBack) {
-                
+            if (!IsPostBack)
+            {
+
                 WinFormControls.load_data_to_cbo_bo_tinh(
                      WinFormControls.eTAT_CA.NO
                      , m_ddl_bo_tinh);
@@ -302,18 +354,19 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 load_data_to_grid();
             }
         }
-        catch (Exception v_e) {
-            
+        catch (Exception v_e)
+        {
+
             CSystemLog_301.ExceptionHandle(v_e);
         }
-        
+
     }
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
         {
             insert_data();
-            
+
         }
         catch (Exception v_e)
         {
@@ -352,15 +405,15 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(this,v_e);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         try
-        {  
+        {
             // Thu thập dữ liệu search
-            string v_str_tu_khoa_tim_kiem = m_txt_tim_kiem.Text.Trim();            
+            string v_str_tu_khoa_tim_kiem = m_txt_tim_kiem.Text.Trim();
             // Search Môn học
             search_oto(v_str_tu_khoa_tim_kiem);
         }
@@ -371,39 +424,43 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
-        try {
-             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                    m_ddl_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.NO
-                    , m_ddl_dv_chu_quan);
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                    m_ddl_dv_chu_quan.SelectedValue
-                    , m_ddl_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.NO
-                    , m_ddl_dv_sd_ts);
+        try
+        {
+            WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                   m_ddl_bo_tinh.SelectedValue
+                   , WinFormControls.eTAT_CA.NO
+                   , m_ddl_dv_chu_quan);
+            WinFormControls.load_data_to_cbo_don_vi_su_dung(
+                m_ddl_dv_chu_quan.SelectedValue
+                , m_ddl_bo_tinh.SelectedValue
+                , WinFormControls.eTAT_CA.NO
+                , m_ddl_dv_sd_ts);
         }
-        catch (Exception v_e) {
-            
+        catch (Exception v_e)
+        {
+
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
     protected void m_ddl_dv_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
-        try {
+        try
+        {
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                     m_ddl_dv_chu_quan.SelectedValue
                     , m_ddl_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.NO
                     , m_ddl_dv_sd_ts);
         }
-        catch (Exception v_e) {
-            
+        catch (Exception v_e)
+        {
+
             CSystemLog_301.ExceptionHandle(v_e);
         }
-        
+
 
     }
-   
+
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
@@ -433,6 +490,16 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
 
     }
-
-    
+    #endregion
+    protected void m_cmd_export_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            export_to_excel();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
 }
