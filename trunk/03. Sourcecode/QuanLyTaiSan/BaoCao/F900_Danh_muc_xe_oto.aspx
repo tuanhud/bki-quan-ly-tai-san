@@ -119,8 +119,13 @@
                             EmptyDataText="Không có dữ liệu phù hợp!" OnPageIndexChanging="m_grv_bao_cao_oto_PageIndexChanging">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="7%" />
-                                <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="8%" />
+                                <asp:TemplateField HeaderStyle-Width="2%" ItemStyle-HorizontalAlign="center" HeaderText="STT">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="6%" />
+                                <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="7%" />
                                 <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="6%" />
                                 <asp:BoundField HeaderText="TÀI SẢN" ItemStyle-HorizontalAlign="left" DataField="TEN_TAI_SAN"
                                     HeaderStyle-Width="7%"></asp:BoundField>
@@ -247,7 +252,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TEN_TRANG_THAI" HeaderStyle-Width="4%"
                                     ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="TÌNH TRẠNG" DataField="TEN_TINH_TRANG" HeaderStyle-Width="3%"
+                                <asp:BoundField HeaderText="TÌNH TRẠNG" DataField="TEN_TINH_TRANG" HeaderStyle-Width="2%"
                                     ItemStyle-HorizontalAlign="Center" />
                             </Columns>
                             <EditRowStyle BackColor="#7C6F57" />
