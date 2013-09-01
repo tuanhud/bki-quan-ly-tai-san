@@ -15,8 +15,10 @@ using WebDS.CDBNames;
 using System.Threading;
 using IP.Core.WinFormControls;
 
-public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
-{
+public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
+    #region Public Interfaces
+    #endregion
+
     #region Members
     private US_DM_NHA m_us_dm_nha = new US_DM_NHA();
     private DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
@@ -46,13 +48,14 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     }
 
     // Load dữ liệu vào form
-    private void load_form_data()
+    private void load_data_2_form()
     {
+        clear_form_data();
         load_data_bo_tinh();
         load_data_don_vi_chu_quan();
         load_data_don_vi_su_dung();
         load_data_dat();
-        load_data_trang_thai();
+        load_data_trang_thai_nha();
         load_data_don_vi_dau_tu();
         load_data_to_grid();
         set_form_mode();
@@ -73,7 +76,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             , CONST_QLDB.ID_TAT_CA
             , CONST_QLDB.ID_TAT_CA
             , CONST_QLDB.ID_TAT_CA
-            , CONST_QLDB.ID_TAT_CA.ToString()
+            , CONST_QLDB.MA_TAT_CA
             , Person.get_user_name()
             , v_ds_v_dm_Nha);
         m_grv_danh_sach_nha.DataSource = v_ds_v_dm_Nha.V_DM_NHA;
@@ -81,16 +84,24 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     }
 
     // Load dữ liệu vào combo bộ tỉnh
+    private bool IsHavingDonViChuQuanOfNha(US_DM_NHA ip_us_dm_nha){
+        return (m_us_dm_nha.dcID_DON_VI_CHU_QUAN != 0);
+    }
     private void load_data_bo_tinh()
     {
-        WinFormControls.load_data_to_cbo_bo_tinh(WinFormControls.eTAT_CA.NO, m_ddl_bo_tinh);
+        WinFormControls.load_data_to_cbo_bo_tinh(
+            WinFormControls.eTAT_CA.NO
+            , m_ddl_bo_tinh);
 
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
-        if (m_us_dm_nha.dcID_DON_VI_CHU_QUAN != 0)
-        {
-            v_us_dm_don_vi = new US_DM_DON_VI(m_us_dm_nha.dcID_DON_VI_CHU_QUAN);
-            m_ddl_bo_tinh.SelectedValue = v_us_dm_don_vi.dcID_DON_VI_CAP_TREN.ToString();
+        if (!this.IsHavingDonViChuQuanOfNha(m_us_dm_nha)) return;
+        if (v_us_dm_don_vi.InitUSWithIDIsOK(m_us_dm_nha.dcID_DON_VI_CHU_QUAN) == false) {
+            throw new Exception(
+                "Không khởi tạo được đơn vị với ID là:"
+                + CIPConvert.ToStr(m_us_dm_nha.dcID_DON_VI_CHU_QUAN));            
         }
+        m_ddl_bo_tinh.SelectedValue = v_us_dm_don_vi.dcID_DON_VI_CAP_TREN.ToString();
+        
     }
 
     // Load dữ liệu vào combo đơn vị chủ quản
@@ -178,11 +189,15 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị còn lại lớn hơn tổng nguyên giá";
             return false;
         }
+        if ((m_hdf_id.Value == "-1")&&(m_e_form_mode == DataEntryFormMode.UpdateDataState) ){
+            m_lbl_mess.Text = "Bạn chưa chọn dữ liệu để cập nhật";
+            return false;
+        }
         return true;
     }
 
     // Load dữ liệu vào combo trạng thái
-    private void load_data_trang_thai()
+    private void load_data_trang_thai_nha()
     {
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
             , WinFormControls.eTAT_CA.NO
@@ -217,7 +232,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         m_ddl_trang_thai_nha.SelectedValue = m_us_dm_nha.dcID_TRANG_THAI.ToString();
     }
 
-    private void fill_form_data_to_us()
+    private void form_2_us_nha()
     {
         if (!m_hdf_id.Value.Equals("-1"))
         {
@@ -287,9 +302,32 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(ip_dc_id_don_vi_chu_quan);
         return v_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
     }
-    #endregion
 
-    #region Public Interfaces
+    private void update_nha() {
+        m_e_form_mode = DataEntryFormMode.UpdateDataState;
+        if (!check_validate_data_is_ok()) return;        
+        
+        form_2_us_nha();
+        Thread.Sleep(2000);
+        m_us_dm_nha.Update();
+        load_data_2_form();
+        m_lbl_mess.Text = "Đã cập nhật dữ liệu thành công!";
+
+    }
+
+    private void export_gridview_2_excel() {
+        //Đoạn mã nguồn này để gridview không phân trang. 
+        // Vì thế, khi xuất Excel sẽ xuất ra hết dữ liệu.
+        m_grv_danh_sach_nha.AllowPaging = false;
+        load_data_to_grid();
+        int v_dc_delete_column = 0;
+        int v_dc_update_column = 1;
+        WinformReport.export_gridview_2_excel(
+            m_grv_danh_sach_nha
+            , "DS nha.xls"
+            , v_dc_delete_column
+            , v_dc_update_column);
+    }
     #endregion
 
     #region Events
@@ -299,7 +337,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                load_form_data();
+                load_data_2_form();
             }
         }
         catch (Exception v_e)
@@ -321,10 +359,10 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
             if (m_hdf_id.Value == "-1")
             {
                 Thread.Sleep(2000);
-                fill_form_data_to_us();
+                form_2_us_nha();
                 m_us_dm_nha.Insert();
                 clear_form_data();
-                load_form_data();
+                load_data_2_form();
                 m_lbl_mess.Text = "Đã thêm mới dữ liệu thành công!";
             }
         }
@@ -338,21 +376,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     {
         try
         {
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            if (!check_validate_data_is_ok()) return;
-            if (m_hdf_id.Value != "-1")
-            {
-                Thread.Sleep(2000);
-                fill_form_data_to_us();
-                m_us_dm_nha.Update();
-                clear_form_data();
-                load_form_data();
-                m_lbl_mess.Text = "Đã cập nhật dữ liệu thành công!";
-            }
-            else
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn dữ liệu để cập nhật";
-            }
+            update_nha();
         }
         catch (Exception v_e)
         {
@@ -391,9 +415,8 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     {
         try
         {
-            m_grv_danh_sach_nha.AllowPaging = false;
-            load_data_to_grid();
-            WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha, "DS nha.xls", 0, 1);
+            export_gridview_2_excel();
+            
         }
         catch (Exception v_e)
         {
@@ -416,13 +439,13 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
                         Thread.Sleep(2000);
                         m_us_dm_nha = new US_DM_NHA(v_dc_id_nha);
                         m_e_form_mode = DataEntryFormMode.UpdateDataState;
-                        load_form_data();
+                        load_data_2_form();
                         load_data_from_us();
                         break;
                     case "DeleteComp":
                         Thread.Sleep(2000);
                         m_us_dm_nha.DeleteByID(v_dc_id_nha);
-                        load_form_data();
+                        load_data_2_form();
                         break;
                 }
             }
