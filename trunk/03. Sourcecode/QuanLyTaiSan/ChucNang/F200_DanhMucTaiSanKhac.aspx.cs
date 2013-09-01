@@ -159,7 +159,15 @@ public partial class Default2 : System.Web.UI.Page
         m_us_tai_san_khac.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue);
         m_us_tai_san_khac.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
         m_us_tai_san_khac.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue);
-        m_us_tai_san_khac.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal("4");
+        if ((m_txt_nguyen_gia_nguon_ns.Text.Trim().Length > 0) & (m_txt_nguyen_gia_nguon_khac.Text.Trim().Length > 0) & (m_txt_gia_tri_con_lai.Text.Trim().Length > 0))
+        {
+            if (CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_ns.Text) + CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_khac.Text) < CIPConvert.ToDecimal(500000000))
+            {
+                m_us_tai_san_khac.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal("9");
+            }
+            else
+                m_us_tai_san_khac.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal("8");
+        }
         m_us_tai_san_khac.datNGAY_CAP_NHAT_CUOI = DateTime.Now.Date;
         m_us_tai_san_khac.strMA_TAI_SAN = m_txt_ma_tai_san.Text.Trim();
         m_us_tai_san_khac.strTEN_TAI_SAN = m_txt_ten_tai_san.Text.Trim();
