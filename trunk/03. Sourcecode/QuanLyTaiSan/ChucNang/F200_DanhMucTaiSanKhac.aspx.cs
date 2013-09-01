@@ -48,6 +48,8 @@ public partial class Default2 : System.Web.UI.Page
             , Person.get_user_name()
             , m_ds_v_tai_san_khac);
         m_grv_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
+        string v_str_thong_tin = " (Có " + m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
+        m_lbl_title.Text += v_str_thong_tin;
         m_grv_tai_san_khac.DataBind();
     }
     private bool check_validate_data_is_ok()
@@ -449,6 +451,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            m_lbl_title.Text = "DANH SÁCH TÀI SẢN KHÁC";
             Thread.Sleep(2000);
             load_data_2_grid();
             m_txt_tim_kiem.Focus();
