@@ -855,8 +855,8 @@ namespace WebUS
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_GD_KHAU_HAO_DM_DAT_Load_data_to_grid_by_tu_khoa");
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_str_id_bo_tinh);
-            v_obj_procedure.addDecimalInputParam("@ip_dc_id_dv_chu_quan", ip_str_id_dv_chu_quan);
-            v_obj_procedure.addDecimalInputParam("@ip_dc_id_dv_su_dung", ip_str_id_dv_su_dung);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_str_id_dv_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_str_id_dv_su_dung);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai_dat", ip_str_id_trang_thai);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_dv);
