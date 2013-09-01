@@ -87,6 +87,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 
     private void load_data_grid()
     {
+        m_lbl_thong_tin_dat.Text = "DANH SÁCH ĐẤT";
         US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT();
         DS_V_DM_DAT v_ds_v_dm_dat = new DS_V_DM_DAT();
 
@@ -100,7 +101,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             , m_txt_tu_khoa.Text.Trim()
             , v_ds_v_dm_dat
             );
-
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_dat.V_DM_DAT.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_dat.Text += v_str_thong_tin;
         m_grv_danh_sach_nha.DataSource = v_ds_v_dm_dat.V_DM_DAT;
         m_grv_danh_sach_nha.DataBind();
     }
