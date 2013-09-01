@@ -92,18 +92,44 @@ public partial class Default2 : System.Web.UI.Page
                 case "1":
                     v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
                         , ref v_obj_parameter);
-
+                    Response.Clear();
+                    v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+                    Response.Redirect(v_str_output_file, false);
                     break;
                 case "2":
+                    v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
+                        , ref v_obj_parameter);
+                    Response.Clear();
+                    v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+                    Response.Redirect(v_str_output_file, false);
+                    break;
+                case "3":
                     v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY
                         , ref v_obj_parameter);
+                    Response.Clear();
+                    v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+                    Response.Redirect(v_str_output_file, false);
+                    break;
+                case "4":
+                    m_grv_danh_sach_tai_san_khac.AllowPaging = false;
+                    load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+                    // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                    WinformReport.export_gridview_2_excel(
+                                m_grv_danh_sach_tai_san_khac
+                                , "DS tai san khac nguyen gia lon hon 500tr.xls"
+                                ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+                    break;
+                case "5":
+                    m_grv_danh_sach_tai_san_khac.AllowPaging = false;
+                    load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+                    // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                    WinformReport.export_gridview_2_excel(
+                                m_grv_danh_sach_tai_san_khac
+                                , "DS tai san khac nguyen gia nhỏ hon 500tr.xls"
+                                ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
                     break;
             }
-            Response.Clear();
-            v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-            Response.Redirect(v_str_output_file, false);
         }
-
     }
 
     private void form_title()
@@ -121,19 +147,31 @@ public partial class Default2 : System.Web.UI.Page
                 m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC NGUYÊN GIÁ >=500";
                 m_cbo_trang_thai.Enabled = false;
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_LON_HON_500);
-                m_cbo_loai_tai_san.Enabled=false;
+                m_cbo_loai_tai_san.Enabled = false;
                 break;
             case "2":
                 m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI DANH MUC TÀI SẢN KHÁC NGUYÊN GIÁ <500";
                 m_cbo_trang_thai.Enabled = false;
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_NHO_HON_500);
-                m_cbo_loai_tai_san.Enabled=false;
+                m_cbo_loai_tai_san.Enabled = false;
                 break;
             case "3":
                 m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC NGUYÊN GIÁ >=500 ĐỀ NGHỊ XỬ LÝ";
                 m_cbo_trang_thai.Enabled = false;
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_LON_HON_500);
-                m_cbo_loai_tai_san.Enabled=false;
+                m_cbo_loai_tai_san.Enabled = false;
+                break;
+            case "4":
+                m_lbl_tieu_de.Text = "THỐNG KÊ TÀI SẢN KHÁC NGUYÊN GIÁ >=500";
+                m_cbo_trang_thai.Enabled = false;
+                m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_LON_HON_500);
+                m_cbo_loai_tai_san.Enabled = false;
+                break;
+            case "5":
+                m_lbl_tieu_de.Text = "THỐNG KÊ TÀI SẢN KHÁC NGUYÊN GIÁ <500";
+                m_cbo_trang_thai.Enabled = false;
+                m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_NHO_HON_500);
+                m_cbo_loai_tai_san.Enabled = false;
                 break;
         }
     }
@@ -167,19 +205,29 @@ public partial class Default2 : System.Web.UI.Page
         switch (id_loai_bao_cao)
         {
             case "1":
-                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC > 500";
+                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC > 500" DVSD;
                 WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
                 m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
                 break;
             case "2":
-                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC < 500";
+                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC < 500" DVSD;
                 WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
                 m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
                 break;
             case "3":
-                // m_lbl_tieu_de.Text = "BÁO CÁO TÀI SẢN KHÁC >500 ĐỀ NGHỊ XỬ LÝ";
+                // m_lbl_tieu_de.Text = "BÁO CÁO TÀI SẢN KHÁC >500 ĐỀ NGHỊ XỬ LÝ" DVSD;
                 WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
                 m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY);
+                break;
+            case "4":
+                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC > 500" BCTC;
+                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
+                m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
+                break;
+            case "5":
+                // m_lbl_tieu_de.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC < 500" BCTC;
+                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
+                m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
                 break;
         }
     }
@@ -187,7 +235,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN();
         DS_DM_LOAI_TAI_SAN v_ds_dm_loai_tai_san = new DS_DM_LOAI_TAI_SAN();
-        v_us_dm_loai_tai_san.FillDataset(v_ds_dm_loai_tai_san,"WHERE ID_LOAI_TAI_SAN_PARENT ="+ID_LOAI_TAI_SAN.TAI_SAN_KHAC);
+        v_us_dm_loai_tai_san.FillDataset(v_ds_dm_loai_tai_san, "WHERE ID_LOAI_TAI_SAN_PARENT =" + ID_LOAI_TAI_SAN.TAI_SAN_KHAC);
         m_cbo_loai_tai_san.DataSource = v_ds_dm_loai_tai_san.DM_LOAI_TAI_SAN;
         m_cbo_loai_tai_san.DataTextField = DM_LOAI_TAI_SAN.TEN_LOAI_TAI_SAN;
         m_cbo_loai_tai_san.DataValueField = DM_LOAI_TAI_SAN.ID;
@@ -199,8 +247,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            /*load_data_to_cbo_don_vi_chu_quan();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
@@ -222,8 +268,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            /*load_data_to_cbo_don_vi_su_dung();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                 m_cbo_don_vi_chu_quan.SelectedValue
@@ -237,6 +281,23 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(ex);
         }
 
+    }
+    protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+    m_cbo_loai_hinh_don_vi.SelectedValue
+    , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
+    , m_cbo_bo_tinh.SelectedValue.ToString()
+    , WinFormControls.eTAT_CA.NO
+    , m_cbo_don_vi_su_dung_tai_san
+    );
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
     }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
@@ -275,22 +336,9 @@ public partial class Default2 : System.Web.UI.Page
         Thread.Sleep(2000);
         export_excel();
     }
-    protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
+    public override void VerifyRenderingInServerForm(Control control)
     {
-        try
-        {
-            WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-    m_cbo_loai_hinh_don_vi.SelectedValue
-    , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
-    , m_cbo_bo_tinh.SelectedValue.ToString()
-    , WinFormControls.eTAT_CA.NO
-    , m_cbo_don_vi_su_dung_tai_san
-    );
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(this, ex);
-        }
+        //base.VerifyRenderingInServerForm(control);
     }
     #endregion
 }
