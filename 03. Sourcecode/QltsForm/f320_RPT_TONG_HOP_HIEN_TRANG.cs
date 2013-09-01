@@ -240,11 +240,11 @@ namespace QltsForm
                     break;
                 case TINH_HINH_SU_DUNG.TONG_HOP_CHUNG:
                     v_obj_exe_report = new CExcelWebReport("BC-319 Bao cao tong hop tinh hinh su dung nha dat - tong hop chung.xls", 17, 1); ;
-                    load_data_to_grid_thsd_theo_loai_hinh_don_vi(op_obj_excel_parameters);
+                    load_data_to_grid_thsd_tong_hop_chung(op_obj_excel_parameters);
                     break;
                 case TINH_HINH_SU_DUNG.DON_VI_SU_DUNG:
                     v_obj_exe_report = new CExcelWebReport("BC-321 Bao cao tong hop tinh hinh su dung nha dat - chi tiet theo tung don vi.xls", 17, 1); ;
-                    load_data_to_grid_thsd_theo_loai_hinh_don_vi(op_obj_excel_parameters);
+                    load_data_to_grid_thsd_theo_don_vi(op_obj_excel_parameters);
                     break;
                 default:
                     v_obj_exe_report = new CExcelWebReport("BC-320 Bao cao tong hop tinh hinh su dung nha dat - theo loai hinh don vi.xls", 17, 1); ;
@@ -323,6 +323,20 @@ namespace QltsForm
             DS_RPT_TONG_HOP_HIEN_TRANG v_ds_rpt_tong_hop_hien_trang = new DS_RPT_TONG_HOP_HIEN_TRANG();
             US_RPT_TONG_HOP_HIEN_TRANG v_us_rpt_tong_hop_hien_trang = new US_RPT_TONG_HOP_HIEN_TRANG();
             v_us_rpt_tong_hop_hien_trang.FillDataset_tong_hop_chung(
+                op_excel_parameters.dcID_BO_TINH
+                , op_excel_parameters.dcID_DON_VI_CHU_QUAN
+                , op_excel_parameters.strUSER_NAME
+                , v_ds_rpt_tong_hop_hien_trang
+                );
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds_rpt_tong_hop_hien_trang, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
+        private void load_data_to_grid_thsd_theo_don_vi(CObjExcelAssetParameters op_excel_parameters)
+        {
+            DS_RPT_TONG_HOP_HIEN_TRANG v_ds_rpt_tong_hop_hien_trang = new DS_RPT_TONG_HOP_HIEN_TRANG();
+            US_RPT_TONG_HOP_HIEN_TRANG v_us_rpt_tong_hop_hien_trang = new US_RPT_TONG_HOP_HIEN_TRANG();
+            v_us_rpt_tong_hop_hien_trang.FillDataset_tong_hop_chi_tiet_theo_don_vi(
                 op_excel_parameters.dcID_BO_TINH
                 , op_excel_parameters.dcID_DON_VI_CHU_QUAN
                 , op_excel_parameters.strUSER_NAME
