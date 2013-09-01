@@ -114,8 +114,8 @@
                 <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
-                            <span class="cssPageTitle">DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG
-                                SỰ NGHIỆP VÀ XE Ô TÔ)</span> <span class="expand-collapse-text initial-expand">
+                                <asp:Label ID="m_lbl_title" runat="server" Text="DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG
+                                SỰ NGHIỆP VÀ XE Ô TÔ)" CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
                             </span><span class="expand-collapse-text"></span>
                         </td>
                     </tr>
