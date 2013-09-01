@@ -14,8 +14,9 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Kê khai xe ô tô</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_title" runat="Server" class="cssPageTitle"></asp:Label>
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
@@ -108,8 +109,9 @@
             <table border="0" cellspacing="0" cellpadding="0" class="cssTable" width="150%">
                 <tr>
                     <td class="cssPageTitleBG">
-                        <asp:label ID="m_lbl_thong_tin_oto" runat="Server" class="cssPageTitle" Text="DANH SÁCH Ô TÔ"></asp:label> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_thong_tin_oto" runat="Server" class="cssPageTitle" Text="DANH SÁCH Ô TÔ"></asp:Label>
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
