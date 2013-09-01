@@ -72,7 +72,7 @@ public partial class Default2 : System.Web.UI.Page
         op_obj_parameter.dcID_TRANG_THAI_TAI_SAN = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
         op_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = m_cbo_trang_thai.SelectedItem.Text;
         op_obj_parameter.strKEY_SEARCH = String.Empty;
-        op_obj_parameter.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.NHA;
+        op_obj_parameter.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal(m_cbo_loai_tai_san.SelectedValue);
         op_obj_parameter.strTEN_LOAI_TAI_SAN = CONST_QLDB.TAT_CA;
         op_obj_parameter.strLOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedItem.Text;
         op_obj_parameter.strMA_LOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedValue;

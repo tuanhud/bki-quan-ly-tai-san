@@ -448,7 +448,7 @@ namespace QltsForm
                 v_us_dm_don_vi = new US_DM_DON_VI();
             }
 
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 13, 1); ;
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1); ;
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
@@ -456,11 +456,11 @@ namespace QltsForm
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
-                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1);
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
-                    v_obj_exe_report = new CExcelWebReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 14, 1);
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 default:
@@ -706,15 +706,15 @@ namespace QltsForm
         {
             US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
             DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
-            v_us_v_dm_tai_san_khac.FillDatasetLoadDataToGridTaiSanKhac_by_tu_khoa(
-                op_obj_excel_parameters.strKEY_SEARCH,
-                op_obj_excel_parameters.dcID_BO_TINH,
-                op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN,
-                op_obj_excel_parameters.dcID_DON_VI_SU_DUNG,
-                op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN,
-                op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI,
-                op_obj_excel_parameters.strUSER_NAME,
-                v_ds_v_dm_tai_san_khac);
+            v_us_v_dm_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(
+                op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
+                , op_obj_excel_parameters.strUSER_NAME
+                , op_obj_excel_parameters.dcID_BO_TINH
+                , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
+                , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
+                , op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN
+                , op_obj_excel_parameters.dcID_LOAI_TAI_SAN
+                , v_ds_v_dm_tai_san_khac);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds_v_dm_tai_san_khac, m_fg, m_obj_trans);
             m_fg.Redraw = true;
