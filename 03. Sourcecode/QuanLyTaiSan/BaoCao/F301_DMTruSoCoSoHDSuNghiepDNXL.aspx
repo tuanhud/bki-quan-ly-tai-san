@@ -108,23 +108,8 @@
             <table border="0" cellspacing="0" cellpadding="0" width="150%" class="cssTable">
                 <tr>
                     <td class="cssPageTitleBG">
-                        <span class="cssPageTitle">THÔNG TIN NHÀ ĐẤT</span> <span class="expand-collapse-text initial-expand">
+                        <asp:Label ID="m_lbl_title" runat="server" Text="THÔNG TIN NHÀ ĐẤT " CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="cssPageTitleBG">
-                        <span style="color: white; font-weight: bold">Kết quả tìm kiếm:</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="cssPageTitleBG">
-                        <asp:Label ID="m_lbl_total_dat" runat="Server" ForeColor="white" Font-Bold="true"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="cssPageTitleBG">
-                        <asp:Label ID="m_lbl_total_nha" runat="Server" ForeColor="white" Font-Bold="true"></asp:Label>
                     </td>
                 </tr>
                 <tr>
