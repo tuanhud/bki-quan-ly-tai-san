@@ -448,7 +448,7 @@ namespace QltsForm
                 v_us_dm_don_vi = new US_DM_DON_VI();
             }
 
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1); ;
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 13, 1); ;
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
@@ -456,7 +456,7 @@ namespace QltsForm
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
-                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac (tru tru so lam viec, co so hoat dong su nghiep va xe o to) de nghi xu ly.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 13, 1);
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
