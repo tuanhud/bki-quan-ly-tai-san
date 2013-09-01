@@ -256,7 +256,8 @@ public partial class Default2 : System.Web.UI.Page
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
-                , WinFormControls.eTAT_CA.NO, m_cbo_don_vi_chu_quan);
+                , ip_e_tat_ca
+                , m_cbo_don_vi_chu_quan);
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
                     m_cbo_loai_hinh_don_vi.SelectedValue
                     , m_cbo_don_vi_chu_quan.SelectedValue
