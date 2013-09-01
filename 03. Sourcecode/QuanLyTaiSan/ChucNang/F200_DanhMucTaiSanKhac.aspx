@@ -362,7 +362,7 @@
                 <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                     <tr>
                         <td class="cssPageTitleBG" colspan="4">
-                            <span class="cssPageTitle">Danh sách tài sản khác</span> <span class="expand-collapse-text initial-expand">
+                            <asp:Label ID="m_lbl_title" runat="server" Text="DANH SÁCH TÀI SẢN KHÁC " CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
                             </span><span class="expand-collapse-text"></span>
                         </td>
                     </tr>
