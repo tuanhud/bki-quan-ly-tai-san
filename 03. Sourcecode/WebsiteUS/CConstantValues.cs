@@ -24,6 +24,7 @@ namespace WebUS
         public const string MA_TAT_CA = "-1";
         public const string TAT_CA = "--------------------Tất cả--------------------";
         public const string MA_THAM_SO_ID_DVSD = "id_don_vi_su_dung";
+        public const string MA_THAM_SO_ID_NHA = "id_nha";
     }
 
     public class SESSION
