@@ -21,16 +21,17 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            form_title();
             if (!IsPostBack)
             {
-                form_title();
+                
                 WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                     , ip_e_tat_ca
                     , m_cbo_loai_hinh_don_vi
                     );
                 WinFormControls.load_data_to_cbo_bo_tinh(
-                    WinFormControls.eTAT_CA.NO
+                    ip_e_tat_ca
                     , m_cbo_bo_tinh);
                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_cbo_bo_tinh.SelectedValue
