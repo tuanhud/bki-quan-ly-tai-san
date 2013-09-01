@@ -303,7 +303,7 @@
     <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
-                <span class="cssPageTitle">Chọn nhà</span> <span class="expand-collapse-text initial-expand">
+                <span class="cssPageTitle">Danh sách các lần đã khấu hao</span> <span class="expand-collapse-text initial-expand">
                 </span><span class="expand-collapse-text"></span>
             </td>
         </tr>
