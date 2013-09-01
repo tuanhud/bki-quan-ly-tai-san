@@ -108,24 +108,34 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
         m_lst_loai_tai_san.DataValueField = DM_LOAI_TAI_SAN.ID;
         m_lst_loai_tai_san.DataBind();
     }
-
-    private void load_data_to_grid()
+    private bool da_chon_du_lieu_tim_kiem()
+    {
+        if (m_lst_don_vi_su_dung.SelectedIndex < 0) return false;
+        if (m_lst_loai_tai_san.SelectedIndex < 0) return false;
+        if (m_lst_loai_bao_cao.SelectedIndex < 0) return false;
+        return true;
+    }
+    private void den_ba0_cao_duoc_chon()
     {
         m_lbl_mess.Text = "";
         US_DM_LOC_BAO_CAO v_us_dm_loc_bao_cao = new US_DM_LOC_BAO_CAO();
         DS_DM_LOC_BAO_CAO v_ds_dm_loc_bao_cao = new DS_DM_LOC_BAO_CAO();
-
-        v_us_dm_loc_bao_cao.FillDatasetByLoaiTS_LoaiBC(
-                CIPConvert.ToDecimal(m_lst_loai_tai_san.SelectedValue)
-                , CIPConvert.ToDecimal(m_lst_loai_bao_cao.SelectedValue)
-                , v_ds_dm_loc_bao_cao);
+        if (!da_chon_du_lieu_tim_kiem())
+        {
+            m_lbl_mess.Text = "Chưa chọn đủ các trường lọc!";
+            return;
+        }
+         v_us_dm_loc_bao_cao.FillDatasetByLoaiTS_LoaiBC(
+                 CIPConvert.ToDecimal(m_lst_loai_tai_san.SelectedValue)
+                 , CIPConvert.ToDecimal(m_lst_loai_bao_cao.SelectedValue)
+                 , v_ds_dm_loc_bao_cao);
         if (v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO != null && v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO.Rows.Count > 0) {
             v_us_dm_loc_bao_cao.DataRow2Me(v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO.Rows[0]);
-            Response.Redirect(
-                v_us_dm_loc_bao_cao.strDUONG_DAN 
-                +"?"+ CONST_QLDB.MA_THAM_SO_ID_DVSD + "="                
-                + m_lst_don_vi_su_dung.SelectedValue
-                , false);
+            string v_str_url = v_us_dm_loc_bao_cao.strDUONG_DAN
+                + (v_us_dm_loc_bao_cao.strDUONG_DAN.IndexOf("aspx?") == -1 ? "?" : "&") 
+                + CONST_QLDB.MA_THAM_SO_ID_DVSD + "="
+                + m_lst_don_vi_su_dung.SelectedValue;                        
+            Response.Redirect(v_str_url, false);
         }
         else {
             m_lbl_mess.Text = "Hiện nay chưa có báo cáo nào theo bộ lọc của quý khách!";
@@ -148,10 +158,8 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         try
-        {
-
-            Thread.Sleep(2000);
-            load_data_to_grid();
+        {            
+            den_ba0_cao_duoc_chon();
         }
         catch (System.Exception ex)
         {
