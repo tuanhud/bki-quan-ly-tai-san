@@ -198,6 +198,8 @@ public partial class Default2 : System.Web.UI.Page
                     , CIPConvert.ToDecimal(m_cbo_loai_tai_san.SelectedValue)
                     , m_ds_v_tai_san_khac);
         m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
+        string v_str_thong_tin = " (Có " + m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
+        m_lbl_title.Text += v_str_thong_tin;
         m_grv_danh_sach_tai_san_khac.DataBind();
     }
 
@@ -323,6 +325,7 @@ public partial class Default2 : System.Web.UI.Page
             }
             else
             {
+                m_lbl_title.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ)";
                 m_grv_danh_sach_tai_san_khac.Visible = true;
                 Thread.Sleep(2000);
                 load_data_to_grid();
