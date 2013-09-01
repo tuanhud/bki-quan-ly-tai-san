@@ -121,7 +121,11 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
                 , v_ds_dm_loc_bao_cao);
         if (v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO != null && v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO.Rows.Count > 0) {
             v_us_dm_loc_bao_cao.DataRow2Me(v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO.Rows[0]);
-            Response.Redirect(v_us_dm_loc_bao_cao.strDUONG_DAN + "?don_vi=" + m_lst_don_vi_su_dung.SelectedValue, false);
+            Response.Redirect(
+                v_us_dm_loc_bao_cao.strDUONG_DAN 
+                +"?"+ CONST_QLDB.MA_THAM_SO_ID_DVSD + "="                
+                + m_lst_don_vi_su_dung.SelectedValue
+                , false);
         }
         else {
             m_lbl_mess.Text = "Hiện nay chưa có báo cáo nào theo bộ lọc của quý khách!";
