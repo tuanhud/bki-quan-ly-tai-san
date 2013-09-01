@@ -59,7 +59,7 @@ public partial class BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi 
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
         v_f320_tong_hop_thsn_theo_loai_hinh_don_vi.export_excel_TH_THSD(
-           f320_RPT_TONG_HOP_HIEN_TRANG.TINH_HINH_SU_DUNG.DON_VI_SU_DUNG
+           f320_RPT_TONG_HOP_HIEN_TRANG.TINH_HINH_SU_DUNG.LOAI_HINH_DON_VI
                                  , ref v_obj_parameter
                                );
         Response.Clear();
