@@ -314,15 +314,14 @@
                                         <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <!--Đoạn này được thêm vào để thêm nút xem chi tiết; p/s: Cần Import 2 Namespace ở trên cùng-->
+                                
                                 <asp:TemplateField>
                                     <ItemTemplate>
                                         <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
                                             NavigateUrl='<%# "~/ChucNang/F100_QuanLyNha.aspx?"+CONST_QLDB.MA_THAM_SO_ID_NHA+"="+Eval(V_DM_NHA.ID) %>'
                                             ImageUrl="~/Images/Button/detail.png">Chi tiết</asp:HyperLink>
                                     </ItemTemplate>
-                                </asp:TemplateField>
-                                <!--End select-->                                
+                                </asp:TemplateField>                                                               
                                 <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="6%" />
                                 <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="7%" />
                                 <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="7%" />
