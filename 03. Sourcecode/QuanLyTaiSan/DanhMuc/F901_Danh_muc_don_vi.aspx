@@ -19,7 +19,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <asp:Label ID="m_lbl_don_vi" runat="server" CssClass="cssManField" ForeColor="White" />
+                        <asp:Label ID="m_lbl_title" runat="server" CssClass="cssManField" ForeColor="White" />
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
@@ -41,21 +41,22 @@
                     <td style="width: 1%">
                     </td>
                     <td align="right" style="width: 15%">
-                        <span class="cssManField">Tên đơn vị:</span>
+                        <span class="cssManField">Loại đơn vị:</span>
                     </td>
-                    <td tyle="width:34%">
-                        <asp:TextBox ID="m_txt_ten_don_vi" CssClass="cssTextBox" runat="server" MaxLength="50"
-                            Width="90%" />
+                    <td style="width: 34%">
+                        <asp:DropDownList ID="m_cbo_loai_don_vi" class="cssDorpdownlist" runat="server" Width="91%" />
                     </td>
                     <td style="width: 1%">
                     </td>
                 </tr>
                 <tr>
                     <td align="right">
-                        <span class="cssManField">Loại đơn vị:</span>
+                        <span class="cssManField">Tên đơn vị:</span>
                     </td>
                     <td>
-                        <asp:TextBox ID="m_txt_loai_don_vi" CssClass="cssTextBox" runat="server" Width="90%" />
+                    <asp:TextBox ID="m_txt_ten_don_vi" CssClass="cssTextBox" runat="server" MaxLength="50"
+                            Width="90%" />
+                        
                     </td>
                     <td style="width: 1%">
                     </td>
@@ -65,24 +66,6 @@
                     <td>
                         <asp:DropDownList ID="m_cbo_don_vi_cap_tren" runat="server" Width="91%" CssClass="cssDorpdownlist"
                             AutoPostBack="true" />
-                    </td>
-                    <td style="width: 1%">
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right" class="style1">
-                        <span class="cssManField">Số thứ tự:</span>
-                    </td>
-                    <td class="style1">
-                        <asp:TextBox ID="m_txt_stt" CssClass="cssTextBox" runat="server" MaxLength="25" Width="90%" />
-                    </td>
-                    <td style="width: 1%">
-                    </td>
-                    <td align="right" class="style1">
-                        <span class="cssManField">Level Mode:</span>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="m_txt_level_mode" CssClass="cssTextBox" runat="server" Width="90%" />
                     </td>
                     <td style="width: 1%">
                     </td>
@@ -110,7 +93,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG">
-                        <asp:Label ID="m_lbl_don_vi0" runat="server" CssClass="cssManField" ForeColor="White" />
+                        <asp:Label ID="m_lbl_thong_tin_don_vi" runat="server" CssClass="cssManField" ForeColor="White" />
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
@@ -143,7 +126,10 @@
                                 <asp:TemplateField HeaderText="Sửa" HeaderStyle-Width="3%">
                                     <ItemTemplate>
                                         <asp:LinkButton ToolTip="Sửa" ID="m_lbt_edit" CommandName="Update" runat="server">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <img src="../Images/Button/edit.png" alt="Update" align="middle"/>
+                                        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -158,14 +144,14 @@
                                 </asp:BoundField>
                                 <asp:BoundField DataField="TEN_DON_VI" HeaderText="Tên đơn vị"></asp:BoundField>
                                 <asp:TemplateField HeaderText="Loại hình đơn vị">
-                                <ItemTemplate>
-                                <%#get_ten_loai_hinh_don_vi(Eval("LOAI_HINH_DON_VI").ToString())%>
-                                </ItemTemplate>
+                                    <ItemTemplate>
+                                        <%#get_ten_loai_hinh_don_vi(Eval("LOAI_HINH_DON_VI").ToString())%>
+                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Đơn vị cấp trên">
-                                <ItemTemplate>
-                                <%#get_ten_don_vi_cap_tren(Eval("ID_DON_VI_CAP_TREN"))%>
-                                </ItemTemplate>
+                                    <ItemTemplate>
+                                        <%#get_ten_don_vi_cap_tren(Eval("ID_DON_VI_CAP_TREN"))%>
+                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
                                     Visible="False">
