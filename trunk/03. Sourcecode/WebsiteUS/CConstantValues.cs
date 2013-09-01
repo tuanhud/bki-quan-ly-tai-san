@@ -15,6 +15,7 @@ namespace WebUS
     {
         public const string KHONG_CO_DU_LIEU = "";
         public const decimal ID_TAT_CA = -1;
+        public const string MA_TAT_CA = "-1";
         public const string TAT_CA = "--------------------Tất cả--------------------";
     }
 

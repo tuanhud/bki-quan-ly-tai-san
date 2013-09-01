@@ -231,6 +231,20 @@ namespace WebUS
 
 
         #region Addtional
+
+        public bool InitUSWithIDIsOK(decimal ip_dc_id_don_vi) {
+            pm_objDS = new DS_DM_DON_VI();
+            pm_strTableName = c_TableName;
+            IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
+            v_objMkCmd.AddCondition("ID", ip_dc_id_don_vi, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
+            SqlCommand v_cmdSQL;
+            v_cmdSQL = v_objMkCmd.getSelectCmd();
+            this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
+            if (pm_objDS.Tables[pm_strTableName].Rows.Count == 0) return false ;
+            pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+            return true;
+        }
+
         public void FillDatasetByQueryString(
             WebDS.DS_DM_DON_VI op_ds_don_vi
             , string v_dc_id_loai_don_vi)
@@ -238,6 +252,7 @@ namespace WebUS
             CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_grid");
             cstored.addDecimalInputParam("@ID_LOAI_DON_VI", v_dc_id_loai_don_vi);
             cstored.fillDataSetByCommand(this, op_ds_don_vi);
+            
         }
         /// <summary>
         /// 
