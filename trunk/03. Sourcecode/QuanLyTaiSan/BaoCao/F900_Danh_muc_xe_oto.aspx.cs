@@ -113,6 +113,33 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);
     }
 
+    private void load_data_to_grid_oto()
+    {
+        m_lbl_thong_tin_oto.Text = "DANH SÁCH Ô TÔ";
+        if (!check_validate_data_is_ok()) return;
+        System.Threading.Thread.Sleep(1000);
+        string v_str_user_name = Person.get_user_name();
+        if (v_str_user_name.Equals(null)) return;
+        US_V_DM_OTO v_us_v_dm_oto = new US_V_DM_OTO();
+        DS_V_DM_OTO v_ds_v_dm_oto = new DS_V_DM_OTO();
+        v_us_v_dm_oto.FillDatasetLoadDataToGridOto_by_tu_khoa(
+               m_txt_tu_khoa.Text.Trim()
+               , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+               , CIPConvert.ToDecimal(m_cbo_don_vi_quan_ly.SelectedValue)
+               , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue)
+               , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+               , CIPConvert.ToDecimal(m_cbo_loai_xe.SelectedValue)
+               , m_cbo_loai_hinh_don_vi.SelectedValue
+               , v_str_user_name
+               , v_ds_v_dm_oto
+            );
+        m_grv_bao_cao_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_oto.V_DM_OTO.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_oto.Text += v_str_thong_tin;
+        m_grv_bao_cao_oto.DataBind();
+        m_grv_bao_cao_oto.Visible = true;
+    }
+
     #endregion
 
     #region Events
@@ -188,26 +215,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            if (!check_validate_data_is_ok()) return;
-            System.Threading.Thread.Sleep(1000);
-            string v_str_user_name = Person.get_user_name();
-            if (v_str_user_name.Equals(null)) return;
-            US_V_DM_OTO v_us_v_dm_oto = new US_V_DM_OTO();
-            DS_V_DM_OTO v_ds_v_dm_oto = new DS_V_DM_OTO();
-            v_us_v_dm_oto.FillDatasetLoadDataToGridOto_by_tu_khoa(
-                   m_txt_tu_khoa.Text.Trim()
-                   , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_don_vi_quan_ly.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_loai_xe.SelectedValue)
-                   , m_cbo_loai_hinh_don_vi.SelectedValue
-                   , v_str_user_name
-                   , v_ds_v_dm_oto
-                );
-            m_grv_bao_cao_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
-            m_grv_bao_cao_oto.DataBind();
-            m_grv_bao_cao_oto.Visible = true;
+            load_data_to_grid_oto();
         }
         catch (Exception v_e)
         {
