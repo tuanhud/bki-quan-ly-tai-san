@@ -163,7 +163,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                     , m_cbo_don_vi_quan_ly);
                 WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                    , WinFormControls.eTAT_CA.NO
+                    , WinFormControls.eTAT_CA.YES
                     , m_cbo_loai_hinh_don_vi
                     );
                 load_data_to_cbo_loai_xe(WinFormControls.eTAT_CA.YES);
