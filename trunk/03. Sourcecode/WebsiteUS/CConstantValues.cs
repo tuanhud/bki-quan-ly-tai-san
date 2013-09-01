@@ -4,6 +4,12 @@ using System.Text;
 
 namespace WebUS
 {
+    public class LOAI_BAO_CAO
+    {
+        public const string KE_KHAI = "KE_KHAI";
+        public const string DE_NGHI_XU_LY = "DE_NGHI_XY_LY";
+        public const string THONG_KE = "THONG_KE";
+    }
     public class TRANG_THAI_OTO
     {
         public const string DE_NGHI_XU_LY = "581";
