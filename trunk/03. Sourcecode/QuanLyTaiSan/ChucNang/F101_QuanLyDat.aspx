@@ -373,7 +373,7 @@
                                 <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
                                     ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
                                 <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
-                                <asp:BoundField HeaderText="Tình trạng nhà" DataField="TEN_TINH_TRANG"/>
+                                <asp:BoundField HeaderText="Tình trạng đất" DataField="TEN_TINH_TRANG"/>
                             </Columns>
                         </asp:GridView>
                     </td>
