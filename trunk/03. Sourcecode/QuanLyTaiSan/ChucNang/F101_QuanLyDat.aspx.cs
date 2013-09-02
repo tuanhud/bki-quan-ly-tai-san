@@ -300,7 +300,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         set_form_mode();
     }
 
-    private void update_nha() {
+    private void update_dat() {
         m_e_form_mode = DataEntryFormMode.UpdateDataState;
         m_lbl_mess.Text = "";
         if (!check_validate_data_is_ok()) return;
@@ -312,14 +312,15 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         form_2_us_dm_dat();
         m_us_dm_dat.Update();
         Thread.Sleep(2000);
+        m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
         reset_controls_in_form();
-        m_txt_tu_khoa.Text  = m_us_dm_dat.strMA_TAI_SAN;
+        
         load_data_2_form();
         m_lbl_mess.Text = "Đã cập nhật dữ liệu đất thành công!";
 
     }
 
-    private void add_new_nha()
+    private void add_new_dat()
     {
         m_e_form_mode = DataEntryFormMode.InsertDataState;
         m_lbl_mess.Text = "";
@@ -328,8 +329,9 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         form_2_us_dm_dat();
         m_us_dm_dat.Insert();
         Thread.Sleep(2000);
-        reset_controls_in_form();
         m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
+        reset_controls_in_form();
+        
         load_data_2_form();
         m_lbl_mess.Text = "Đã thêm mới dữ liệu đất thành công!";
     }
@@ -358,7 +360,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     {
         try
         {
-            add_new_nha();
+            add_new_dat();
         }
         catch (Exception v_e)
         {
@@ -369,7 +371,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     {
         try
         {
-            update_nha();
+            update_dat();
         }
         catch (Exception v_e)
         {
