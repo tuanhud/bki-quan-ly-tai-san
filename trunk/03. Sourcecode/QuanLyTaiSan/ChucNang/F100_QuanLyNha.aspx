@@ -588,6 +588,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Trạng thái" DataField="TEN_TRANG_THAI" ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="Tình trạng nhà" DataField="TEN_TINH_TRANG" ItemStyle-HorizontalAlign="Center" />
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
