@@ -10,6 +10,7 @@ namespace WebUS
         public const string DE_NGHI_XU_LY = "DE_NGHI_XU_LY";
         public const string THONG_KE = "THONG_KE";
     }
+
     public class TRANG_THAI_OTO
     {
         public const string DE_NGHI_XU_LY = "581";
@@ -23,9 +24,31 @@ namespace WebUS
         public const decimal ID_TAT_CA = -1;
         public const string MA_TAT_CA = "-1";
         public const string TAT_CA = "--------------------Tất cả--------------------";
-        public const string MA_THAM_SO_ID_DVSD = "id_don_vi_su_dung";
-        public const string MA_THAM_SO_ID_NHA = "id_nha";
+        
+        
+      
+        public class MA_THAM_SO_URL {
+            public const string LOAI_BAO_CAO = "ip_str_loai_bao_cao";
+            public const string LOAI_TAI_SAN_KHAC = "ip_str_loai_ts_khac";
+            public const string TRANG_THAI = "ip_id_trang_thai";
+            public const string ID_DVSD = "ip_id_don_vi_su_dung";
+            public const string ID_NHA = "ip_id_nha";
+            
+            
+            
+        }
+        public class LOAI_BAO_CAO {
+            public const string DVSD = "DVSD";
+            public const string DVCQ = "DVCQ";
+            public const string BLD = "BLD";
+        }
+        public class LOAI_TAI_SAN {
+            public const string TREN_500 = "TSK_TREN_500";
+            public const string DUOI_500 = "TSK_DUOI_500";
+        }
     }
+
+    
 
     public class SESSION
     {
