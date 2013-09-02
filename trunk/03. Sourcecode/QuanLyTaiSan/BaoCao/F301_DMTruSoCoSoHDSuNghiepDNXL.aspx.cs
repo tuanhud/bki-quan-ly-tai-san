@@ -412,9 +412,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                         break;
                 }
                 //Select các cbo theo id dơn vị sử dụng khi có id_don_vi_su_dung trên url
-                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_ID_DVSD]!=null)
+                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD]!=null)
                 {
-	                decimal v_id_don_vi_su_dung =  CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_ID_DVSD]);
+                    decimal v_id_don_vi_su_dung = CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD]);
 	                Select_cac_cbo_theo_id_dvsd(v_id_don_vi_su_dung);
                 }
                 //------------------------------------------------------------------------

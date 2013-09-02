@@ -318,7 +318,7 @@
                                 <asp:TemplateField>
                                     <ItemTemplate>
                                         <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
-                                            NavigateUrl='<%# "~/ChucNang/F100_QuanLyNha.aspx?"+CONST_QLDB.MA_THAM_SO_ID_NHA+"="+Eval(V_DM_NHA.ID) %>'
+                                            NavigateUrl='<%# "~/ChucNang/F100_QuanLyNha.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_NHA+"="+Eval(V_DM_NHA.ID) %>'
                                             ImageUrl="~/Images/Button/detail.png">Chi tiết</asp:HyperLink>
                                     </ItemTemplate>
                                 </asp:TemplateField>                                                               
