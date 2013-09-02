@@ -168,7 +168,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         }
         if (m_e_form_mode == DataEntryFormMode.InsertDataState)
         {
-            if (m_us_dm_nha.check_ma_tai_san_valid(m_txt_ma_tai_san.Text))
+            if (!m_us_dm_nha.check_ma_tai_san_valid(m_txt_ma_tai_san.Text))
             {
                 m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
                 return false;
@@ -179,7 +179,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             m_us_dm_nha = new US_DM_NHA(CIPConvert.ToDecimal(m_hdf_id.Value));
             if (m_us_dm_nha.strMA_TAI_SAN != m_txt_ma_tai_san.Text)
             {
-                if (m_us_dm_nha.check_ma_tai_san_valid(m_txt_ma_tai_san.Text))
+                if (!m_us_dm_nha.check_ma_tai_san_valid(m_txt_ma_tai_san.Text))
                 {
                     m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
                     return false;
