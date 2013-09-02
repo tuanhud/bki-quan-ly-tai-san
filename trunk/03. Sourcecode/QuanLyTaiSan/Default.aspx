@@ -70,7 +70,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về đất của đơn vị chủ quản, theo dõi sử dụng đất, báo cáo cho tổng cục
+                                                    Tập hợp các thông tin về đất của đơn vị sử dụng, theo dõi sử dụng đất, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -94,7 +94,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a href="#" style="font-weight: bold">Danh mục đất</a>
+                                                    <a href="/QuanLyTaiSan/ChucNang/F101_QuanLyDat.aspx" style="font-weight: bold">Quản lý danh sách đất</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-31
                                                         14:45:58</span>
@@ -110,7 +110,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai đất</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F104_DeNghiXuLyDat.aspx" style="font-weight: bold">Đề nghị xử lý đất</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
                                                         23:17:05</span>
@@ -126,7 +126,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao đất</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F105_KhauHaoDat.aspx" style="font-weight: bold">Khấu hao đất</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
                                                         23:22:17</span>
@@ -150,7 +150,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý đất</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo kê khai đất</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         15:05:17</span>
@@ -166,7 +166,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị trang cấp đất</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo đề nghị xử lý đất</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         14:10:57</span>
@@ -222,7 +222,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về nhà của đơn vị chủ quản, theo dõi sử dụng nhà, báo cáo cho tổng cục
+                                                    Tập hợp các thông tin về nhà của đơn vị sử dụng, theo dõi sử dụng nhà, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -246,7 +246,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a href="#" style="font-weight: bold">Danh mục nhà</a>
+                                                    <a href="/QuanLyTaiSan/ChucNang/F100_QuanLyNha.aspx" style="font-weight: bold">Quản lý danh sách nhà</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-31
                                                         14:45:58</span>
@@ -262,7 +262,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai nhà</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F102_DeNghiXuLyNha.aspx" style="font-weight: bold">Đề nghị xử lý nhà</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
                                                         23:17:05</span>
@@ -278,7 +278,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao nhà</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F302_khau_hao_nha.aspx" style="font-weight: bold">Khấu hao nhà</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
                                                         23:22:17</span>
@@ -302,7 +302,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý nhà</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo kê khai nhà</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         15:05:17</span>
@@ -318,7 +318,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị trang cấp nhà</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo đề nghị xử lý nhà</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         14:10:57</span>
@@ -374,7 +374,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về oto của đơn vị chủ quản, theo dõi sử dụng oto, báo cáo cho tổng cục
+                                                    Tập hợp các thông tin về oto của đơn vị sử dụng, theo dõi sử dụng oto, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -398,7 +398,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a href="#" style="font-weight: bold">Danh mục Ô tô </a>&nbsp;<br>
+                                                    <a href="/QuanLyTaiSan/ChucNang/F500_QuanLyOto.aspx" style="font-weight: bold">Quản lý danh sách Ô tô </a>&nbsp;<br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-31
                                                         14:45:58</span>
                                                 </td>
@@ -413,7 +413,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai Ô tô</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F410_DeNghiXuLyOto.aspx" style="font-weight: bold">Đề nghị xử lý Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
                                                         23:17:05</span>
@@ -429,7 +429,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao Ô tô</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F103_KhauHaoOto.aspx" style="font-weight: bold">Khấu hao Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
                                                         23:22:17</span>
@@ -454,7 +454,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý Ô tô</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo kê khai Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         15:05:17</span>
@@ -470,7 +470,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị trang cấp Ô tô</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo đề nghị xử lý Ô tô</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         14:10:57</span>
@@ -526,7 +526,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Tập hợp các thông tin về các tài sản khác của đơn vị chủ quản, theo dõi sử dụng tài sản này, báo cáo cho tổng cục
+                                                    Tập hợp các thông tin về các tài sản khác của đơn vị sử dụng, theo dõi sử dụng tài sản này, báo cáo cho tổng cục
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -550,7 +550,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a href="#" style="font-weight: bold">Danh mục tài sản khác</a>
+                                                    <a href="/QuanLyTaiSan/ChucNang/F200_DanhMucTaiSanKhac.aspx" style="font-weight: bold">Quản lý danh sách tài sản khác</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-31
                                                         14:45:58</span>
@@ -566,7 +566,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Kê khai tài sản khác</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F202_DeNghiXuLyTaiSanKhac.aspx" style="font-weight: bold">Đề nghị xử lý tài sản khác</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-21
                                                         23:17:05</span>
@@ -582,7 +582,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Khấu hao tài sản khác</a>
+                                                    <a class="link_OtherNews" href="/QuanLyTaiSan/ChucNang/F303_khau_hao_tai_san_khac.aspx" style="font-weight: bold">Khấu hao tài sản khác</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-16
                                                         23:22:17</span>
@@ -606,7 +606,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị xử lý tài sản khác</a>
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo kê khai tài sản khác</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
                                                         15:05:17</span>
@@ -622,7 +622,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="OtherNews_td">
-                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Đề nghị trang cấp tài sản
+                                                    <a class="link_OtherNews" href="#" style="font-weight: bold">Báo cáo đề nghị xử lý tài sản
                                                         khác</a>
                                                     <br>
                                                     <span class="HotNews_DateText">Ngày cập nhật:</span> <span class="HotNews_date">2013-07-29
