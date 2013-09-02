@@ -114,7 +114,7 @@ SELECT ID, TEN_CHUC_NANG, URL_FORM, TRANG_THAI_YN, VI_TRI, CHUC_NANG_PARENT_ID, 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="VI_TRI" msprop:Generator_ColumnVarNameInTable="columnVI_TRI" msprop:Generator_ColumnPropNameInRow="VI_TRI" msprop:Generator_ColumnPropNameInTable="VI_TRIColumn" msprop:Generator_UserColumnName="VI_TRI" type="xs:int" />
+              <xs:element name="VI_TRI" msprop:Generator_ColumnVarNameInTable="columnVI_TRI" msprop:Generator_ColumnPropNameInRow="VI_TRI" msprop:Generator_ColumnPropNameInTable="VI_TRIColumn" msprop:Generator_UserColumnName="VI_TRI" type="xs:decimal" />
               <xs:element name="CHUC_NANG_PARENT_ID" msprop:Generator_ColumnVarNameInTable="columnCHUC_NANG_PARENT_ID" msprop:Generator_ColumnPropNameInRow="CHUC_NANG_PARENT_ID" msprop:Generator_ColumnPropNameInTable="CHUC_NANG_PARENT_IDColumn" msprop:Generator_UserColumnName="CHUC_NANG_PARENT_ID" type="xs:decimal" minOccurs="0" />
               <xs:element name="HIEN_THI_YN" msprop:Generator_ColumnVarNameInTable="columnHIEN_THI_YN" msprop:Generator_ColumnPropNameInRow="HIEN_THI_YN" msprop:Generator_ColumnPropNameInTable="HIEN_THI_YNColumn" msprop:Generator_UserColumnName="HIEN_THI_YN">
                 <xs:simpleType>

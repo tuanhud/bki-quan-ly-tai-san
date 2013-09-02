@@ -419,7 +419,7 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_CHUC_NANGRow AddHT_CHUC_NANGRow(string TEN_CHUC_NANG, string URL_FORM, string TRANG_THAI_YN, int VI_TRI, decimal CHUC_NANG_PARENT_ID, string HIEN_THI_YN) {
+            public HT_CHUC_NANGRow AddHT_CHUC_NANGRow(string TEN_CHUC_NANG, string URL_FORM, string TRANG_THAI_YN, decimal VI_TRI, decimal CHUC_NANG_PARENT_ID, string HIEN_THI_YN) {
                 HT_CHUC_NANGRow rowHT_CHUC_NANGRow = ((HT_CHUC_NANGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -484,7 +484,7 @@ namespace WebDS {
                 base.Columns.Add(this.columnURL_FORM);
                 this.columnTRANG_THAI_YN = new global::System.Data.DataColumn("TRANG_THAI_YN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTRANG_THAI_YN);
-                this.columnVI_TRI = new global::System.Data.DataColumn("VI_TRI", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnVI_TRI = new global::System.Data.DataColumn("VI_TRI", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVI_TRI);
                 this.columnCHUC_NANG_PARENT_ID = new global::System.Data.DataColumn("CHUC_NANG_PARENT_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCHUC_NANG_PARENT_ID);
@@ -697,9 +697,9 @@ namespace WebDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int VI_TRI {
+            public decimal VI_TRI {
                 get {
-                    return ((int)(this[this.tableHT_CHUC_NANG.VI_TRIColumn]));
+                    return ((decimal)(this[this.tableHT_CHUC_NANG.VI_TRIColumn]));
                 }
                 set {
                     this[this.tableHT_CHUC_NANG.VI_TRIColumn] = value;
