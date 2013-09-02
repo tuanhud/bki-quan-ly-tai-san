@@ -80,7 +80,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     // Load dữ liệu vào combo trạng thái
     private void load_data_trang_thai()
     {
-        WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
+        WinFormControls.load_data_to_cbo_tu_dien(
+            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
             , WinFormControls.eTAT_CA.NO
             , m_ddl_trang_thai);
     }
@@ -235,6 +236,35 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         set_form_mode();
     }
 
+    private void update_nha()
+    {
+        if (!check_validate_data_is_ok()) return;
+        if (m_hdf_id.Value != "-1")
+        {
+            fill_form_data_to_us();
+            m_us_dm_dat.Update();
+            Thread.Sleep(2000);
+            clear_form_data();
+            load_form_data();
+            m_lbl_mess.Text = "Đã cập nhật dữ liệu thành công!";
+        }
+        else
+        {
+            m_lbl_mess.Text = "Bạn chưa chọn dữ liệu để cập nhật";
+        }
+    }
+
+    private void add_new_nha()
+    {
+        if (!check_validate_data_is_ok()) return;
+        if (m_hdf_id.Value == "-1") return;
+        fill_form_data_to_us();
+        m_us_dm_dat.Update();
+        Thread.Sleep(2000);
+        clear_form_data();
+        load_form_data();
+        m_lbl_mess.Text = "Đã thêm mới dữ liệu thành công!";
+    }
     #endregion
 
     #region Events
@@ -252,50 +282,26 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
-    public override void VerifyRenderingInServerForm(Control control) {
+    public override void VerifyRenderingInServerForm(Control control)
+    {
         //base.VerifyRenderingInServerForm(control);
     }
-
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
         {
-            if (!check_validate_data_is_ok()) return;
-            if (m_hdf_id.Value == "-1")
-            {
-                fill_form_data_to_us();
-                m_us_dm_dat.Update();
-                Thread.Sleep(2000);
-                clear_form_data();
-                load_form_data();
-                m_lbl_mess.Text = "Đã thêm mới dữ liệu thành công!";
-            }
+            add_new_nha();
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cmd_cap_nhat_Click(object sender, EventArgs e)
     {
         try
         {
-            if (!check_validate_data_is_ok()) return;
-            if (m_hdf_id.Value != "-1")
-            {
-                fill_form_data_to_us();
-                m_us_dm_dat.Update();
-                Thread.Sleep(2000);
-                clear_form_data();
-                load_form_data();
-                m_lbl_mess.Text = "Đã cập nhật dữ liệu thành công!";
-            }
-            else
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn dữ liệu để cập nhật";
-            }
+            update_nha();
         }
         catch (Exception v_e)
         {
@@ -314,7 +320,6 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_ddl_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -353,7 +358,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
-        try {
+        try
+        {
             // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
             m_grv_danh_sach_nha.AllowPaging = false;
             load_data_grid();  // đây là hàm load lại dữ liệu lên lưới
@@ -364,11 +370,11 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
                         , 0
                         , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -414,6 +420,4 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
     }
     #endregion
-
-
 }
