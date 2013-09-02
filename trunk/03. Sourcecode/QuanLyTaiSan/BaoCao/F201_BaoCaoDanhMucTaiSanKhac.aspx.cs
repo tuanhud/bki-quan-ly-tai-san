@@ -100,49 +100,37 @@ public partial class Default2 : System.Web.UI.Page
         }
         switch (v_str_id_trang_thai) {
             case CONST_QLDB.TRANG_THAI.KE_KHAI:
+                ip_e_formmode = f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC;
                 break;
             case CONST_QLDB.TRANG_THAI.DE_NGHI_XU_LY:
+                ip_e_formmode = f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY;
                 break;
         }
         switch (v_str_loai_bao_cao)
             {
             case CONST_QLDB.LOAI_BAO_CAO.DVSD:
-                    v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
+                    v_f401_bc_dm_tai_san_khac.export_excel(ip_e_formmode
                         , ref v_obj_parameter);
                     Response.Clear();
                     v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
                     Response.Redirect(v_str_output_file, false);
                     break;
             case CONST_QLDB.LOAI_BAO_CAO.DVCQ:
-                    v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC
-                        , ref v_obj_parameter);
-                    Response.Clear();
-                    v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-                    Response.Redirect(v_str_output_file, false);
-                    break;
-            case CONST_QLDB.LOAI_BAO_CAO.BLD:
-                    v_f401_bc_dm_tai_san_khac.export_excel(f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY
-                        , ref v_obj_parameter);
-                    Response.Clear();
-                    v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-                    Response.Redirect(v_str_output_file, false);
-                    break;
-                case "4":
                     m_grv_danh_sach_tai_san_khac.AllowPaging = false;
                     load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
                     // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
                     WinformReport.export_gridview_2_excel(
                                 m_grv_danh_sach_tai_san_khac
-                                , "DS tai san khac nguyen gia lon hon 500tr.xls"
+                                , "DS tai san khac.xls"
                                 ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
                     break;
-                case "5":
+            case CONST_QLDB.LOAI_BAO_CAO.BLD:
                     m_grv_danh_sach_tai_san_khac.AllowPaging = false;
                     load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
                     // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
                     WinformReport.export_gridview_2_excel(
                                 m_grv_danh_sach_tai_san_khac
-                                , "DS tai san khac nguyen gia nhỏ hon 500tr.xls"
+                                , "DS tai san khac.xls"
                                 ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
                     break;
             }
