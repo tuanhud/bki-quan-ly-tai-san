@@ -46,6 +46,10 @@ namespace WebUS
             public const string TREN_500 = "TSK_TREN_500";
             public const string DUOI_500 = "TSK_DUOI_500";
         }
+        public class TRANG_THAI {
+            public const string KE_KHAI = "KE_KHAI";
+            public const string DE_NGHI_XU_LY = "DE_NGHI_XU_LY";
+        }
     }
 
     
