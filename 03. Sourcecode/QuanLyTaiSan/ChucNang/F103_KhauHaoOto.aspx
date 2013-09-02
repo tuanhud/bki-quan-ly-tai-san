@@ -61,8 +61,7 @@
                 <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                     <tr>
                         <td align="right" style="width: 20%;">
-                            <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
-                        </td>
+                            &nbsp;</td>
                         <td align="left" colspan="1" style="width: 30%">
                             &nbsp;
                         </td>
@@ -97,7 +96,7 @@
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
                             <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" Width="85%"
-                                ValidationGroup="m_vlg_oto">
+                                AutoPostBack="true" onselectedindexchanged="m_cbo_don_vi_su_dung_tai_san_up_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="right" colspan="1" class="cssManField" style="width: 20%">
@@ -114,16 +113,18 @@
                             <span>Loại ô tô</span>
                         </td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_loai_o_to_up" runat="Server" Width="85%" ValidationGroup="m_vlg_oto">
+                            <asp:DropDownList ID="m_cbo_loai_o_to_up" runat="Server" Width="85%" 
+                                AutoPostBack="true" onselectedindexchanged="m_cbo_loai_o_to_up_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="right" style="width: 20%;" class="cssManField">
                             <span>Tên tài sản</span>
                         </td>
                         <td align="left" colspan="1" style="width: 30%">
-                            <asp:TextBox ID="m_txt_ten_tai_san" runat="server" class="tb" Width="85%" OnTextChanged="m_txt_ten_tai_san_TextChanged"
-                                AutoPostBack="true"></asp:TextBox>
-                        </td>
+                            <asp:DropDownList ID="m_ddl_ten_tai_san" runat="server" Width="85%" AutoPostBack="true"
+                                onselectedindexchanged="m_ddl_ten_tai_san_SelectedIndexChanged">
+                            </asp:DropDownList>
+                         </td>
                     </tr>
                     <tr>
                         <td align="right" class="cssManField" colspan="1" style="width: 20%">
@@ -452,7 +453,4 @@
             </td>
         </tr>
     </table>
-    <triggers>
-        <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
-    </triggers>
 </asp:Content>

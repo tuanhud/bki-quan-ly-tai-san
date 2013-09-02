@@ -16,22 +16,22 @@ using System.Threading;
 
 public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 {
-
     #region Members
     private US_GD_KHAU_HAO m_us_gd_kh = new US_GD_KHAU_HAO();
     #endregion
 
-    #region private methods
+    #region Private methods
     private bool check_validate_data_is_valid()
     {
         if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
         {
-            m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
+            m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
             return false;
         }
-        if (m_hdf_id.Value.Equals(String.Empty))
+        String v_str_id_oto = m_ddl_ten_tai_san.SelectedValue;
+        if (v_str_id_oto.Equals(String.Empty) || v_str_id_oto.Equals("-1"))
         {
-            m_lbl_mess.Text = "Bạn chưa chọn tài sản";
+            m_lbl_message.Text = "Bạn chưa chọn tài sản";
             return false;
         }
         return true;
@@ -54,6 +54,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void load_data_from_us(decimal ip_dc_id_oto)
     {
+        if (ip_dc_id_oto < 1) return;
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(ip_dc_id_oto);
         m_lbl_ma_tai_san.Text = v_us_dm_oto.strMA_TAI_SAN;
         m_lbl_nhan_hieu.Text = v_us_dm_oto.strNHAN_HIEU;
@@ -69,6 +70,8 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void them_moi_khau_hao(decimal ip_dc_id)
     {
+        if (!check_validate_data_is_valid()) return;
+
         US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(ip_dc_id);
 
@@ -91,6 +94,8 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         // Thực hiện cập nhật
         v_us_gd_khau_hao.Insert();
         v_us_dm_oto.Update();
+        load_form_data();
+        m_lbl_message.Text = "Cập nhật thành công";
     }
 
     private void load_cbo_loai_xe()
@@ -115,6 +120,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void load_form_data()
     {
+        clear_form_data();
         load_data_to_bo_tinh_up();
         load_data_to_bo_tinh_down();
         load_data_to_cbo_trang_thai_up();
@@ -139,6 +145,26 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         WinFormControls.load_data_to_cbo_bo_tinh(
             WinFormControls.eTAT_CA.YES
             , m_cbo_bo_tinh_down);
+    }
+
+    private void load_data_to_ten_tai_san()
+    {
+        DS_V_DM_OTO v_ds_v_dm_oto = new DS_V_DM_OTO();
+        US_V_DM_OTO v_us_v_dm_oto = new US_V_DM_OTO();
+        v_us_v_dm_oto.FillDatasetLoadDataToGridOto_by_tu_khoa(
+            String.Empty
+            , CIPConvert.ToDecimal(m_cbo_bo_tinh_up.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan_up.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san_up.SelectedValue)
+            , ID_TRANG_THAI_OTO.DANG_SU_DUNG
+            , CIPConvert.ToDecimal(m_cbo_loai_o_to_up.SelectedValue)
+            , CONST_QLDB.MA_TAT_CA
+            , Person.get_user_name()
+            , v_ds_v_dm_oto);
+        m_ddl_ten_tai_san.DataSource = v_ds_v_dm_oto.V_DM_OTO;
+        m_ddl_ten_tai_san.DataTextField = V_DM_OTO.TEN_TAI_SAN;
+        m_ddl_ten_tai_san.DataValueField = V_DM_OTO.ID;
+        m_ddl_ten_tai_san.DataBind();
     }
 
     private void load_data_to_dv_chu_quan_up(string ip_str_id_bo_tinh)
@@ -210,6 +236,16 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         m_grv_dm_oto.DataSource = v_ds_v_gd_khau_hao_oto.V_GD_KHAU_HAO_DM_OTO;
         m_grv_dm_oto.DataBind();
     }
+
+    private void xoa_khau_hao(decimal ip_dc_id_kh, decimal ip_dc_id_oto, decimal ip_dc_gia_tri_kh)
+    {
+        US_DM_OTO v_us_dm_oto = new US_DM_OTO(ip_dc_id_oto);  
+        m_us_gd_kh.DeleteByID(ip_dc_id_kh);
+        v_us_dm_oto.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
+        v_us_dm_oto.Update();
+        Thread.Sleep(2000);
+        load_data_to_grid();
+    }
     #endregion
 
     #region Events
@@ -237,6 +273,8 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         {
             load_data_to_dv_chu_quan_up(m_cbo_bo_tinh_up.SelectedValue);
             load_data_to_dv_su_dung_up(m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
+            load_data_to_ten_tai_san();
+            load_data_from_us(CIPConvert.ToDecimal(m_ddl_ten_tai_san.SelectedValue));
         }
         catch (System.Exception ex)
         {
@@ -248,10 +286,24 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         try
         {
             load_data_to_dv_su_dung_up(m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
+            load_data_to_ten_tai_san();
+            load_data_from_us(CIPConvert.ToDecimal(m_ddl_ten_tai_san.SelectedValue));
         }
         catch (System.Exception ex)
         {
             CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
+    protected void m_cbo_loai_o_to_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_ten_tai_san();
+            load_data_from_us(CIPConvert.ToDecimal(m_ddl_ten_tai_san.SelectedValue));
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e)
@@ -277,34 +329,12 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-    protected void m_txt_ten_tai_san_TextChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            if (!m_hdf_id.Value.Equals(String.Empty))
-            {
-                clear_form_data();
-                decimal v_dc_id = CIPConvert.ToDecimal(m_hdf_id.Value);
-                load_data_from_us(v_dc_id);
-            }
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
         {
-            if (!m_hdf_id.Value.Equals(String.Empty))
-            {
-                Thread.Sleep(1000);
-                if (!check_validate_data_is_valid()) return;
-                them_moi_khau_hao(CIPConvert.ToDecimal(m_hdf_id.Value));
-                clear_form_data();
-                m_lbl_message.Text = "Cập nhật thành công";
-            }
+            them_moi_khau_hao(CIPConvert.ToDecimal(m_ddl_ten_tai_san.SelectedValue));
+            Thread.Sleep(1000);
         }
         catch (Exception v_e)
         {
@@ -315,6 +345,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            m_lbl_message.Text = "";
             clear_form_data();
         }
         catch (Exception v_e)
@@ -346,13 +377,13 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[rowIndex].Value);
                 m_us_gd_kh = new US_GD_KHAU_HAO(v_dc_id_kh);
+                decimal v_dc_id_oto = m_us_gd_kh.dcID_TAI_SAN;
+                decimal v_dc_gia_tri_kh = m_us_gd_kh.dcGIA_TRI_KHAU_HAO;
 
                 switch (e.CommandName)
                 {
                     case "DeleteComp":
-                        Thread.Sleep(2000);
-                        m_us_gd_kh.DeleteByID(v_dc_id_kh);
-                        load_data_to_grid();
+                        xoa_khau_hao(v_dc_id_kh, v_dc_id_oto, v_dc_gia_tri_kh);
                         break;
                 }
             }
@@ -400,5 +431,28 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_ddl_ten_tai_san_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_from_us(CIPConvert.ToDecimal(m_ddl_ten_tai_san.SelectedValue));
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cbo_don_vi_su_dung_tai_san_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_ten_tai_san();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
+
 }
