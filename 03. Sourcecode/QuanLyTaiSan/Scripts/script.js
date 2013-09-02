@@ -40,7 +40,9 @@ function getFormatedNumberString(ip_str_number) {
     if (isNaN(ip_str_number))
         ip_str_number = "0";
     sign = (ip_str_number == (ip_str_number = Math.abs(ip_str_number)));
-    v_digits = parseFloat(ip_str_number) - Math.floor(ip_str_number);
+    v_digits = Number(ip_str_number) - Math.floor(ip_str_number);
+    v_digits = Math.floor(v_digits * 10000 + 0.50000000001);
+    v_digits = (v_digits / 10000).toString();
     ip_str_number = Math.floor(ip_str_number).toString();
     v_digits = v_digits.toString().substr(1, 3);
     for (var i = 0; i < Math.floor((ip_str_number.length - (1 + i)) / 3); i++)
