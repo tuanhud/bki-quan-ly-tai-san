@@ -21,10 +21,10 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            set_form_title_and_cbo();
+            //set_form_title_and_cbo();
             if (!IsPostBack)
             {
-                
+                set_form_title_and_cbo();
                 WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                     , ip_e_tat_ca
@@ -48,7 +48,7 @@ public partial class Default2 : System.Web.UI.Page
                 set_inital_value_of_combox();
                 search_tai_san_khac();
             }
-            
+            //load_data_to_cbo_loai_tai_san();
         }
         catch (System.Exception ex)
         {
@@ -240,7 +240,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN();
         DS_DM_LOAI_TAI_SAN v_ds_dm_loai_tai_san = new DS_DM_LOAI_TAI_SAN();
-        v_us_dm_loai_tai_san.FillDataset(v_ds_dm_loai_tai_san, "WHERE ID_LOAI_TAI_SAN_PARENT =" + ID_LOAI_TAI_SAN.TAI_SAN_KHAC);
+        v_us_dm_loai_tai_san.FillDataset(v_ds_dm_loai_tai_san, "WHERE ID_LOAI_TAI_SAN_PARENT =" + ID_LOAI_TAI_SAN.TAI_SAN_KHAC + "OR ID=" + ID_LOAI_TAI_SAN.TAI_SAN_KHAC);
         m_cbo_loai_tai_san.DataSource = v_ds_dm_loai_tai_san.DM_LOAI_TAI_SAN;
         m_cbo_loai_tai_san.DataTextField = DM_LOAI_TAI_SAN.TEN_LOAI_TAI_SAN;
         m_cbo_loai_tai_san.DataValueField = DM_LOAI_TAI_SAN.ID;
