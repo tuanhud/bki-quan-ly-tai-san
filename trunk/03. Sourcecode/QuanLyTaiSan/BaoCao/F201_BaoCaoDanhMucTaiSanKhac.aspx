@@ -211,7 +211,7 @@
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                                 height: 100%">
                                                 <tr>
-                                                    <td colspan="3" style="height: 39px">
+                                                    <td colspan="4" style="height: 39px">
                                                         Hiện trạng sử dụng
                                                     </td>
                                                 </tr>
