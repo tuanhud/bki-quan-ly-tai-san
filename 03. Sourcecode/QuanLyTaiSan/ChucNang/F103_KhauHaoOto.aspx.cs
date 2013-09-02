@@ -133,10 +133,10 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         load_data_to_bo_tinh_down();
         load_data_to_cbo_trang_thai_up();
         load_data_to_cbo_trang_thai_down();
-        load_data_to_dv_chu_quan_up(m_cbo_bo_tinh_up.SelectedValue);
-        load_data_to_dv_chu_quan_down(m_cbo_bo_tinh_down.SelectedValue);
-        load_data_to_dv_su_dung_up(m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
-        load_data_to_dv_su_dung_down(m_cbo_don_vi_chu_quan_down.SelectedValue, m_cbo_bo_tinh_down.SelectedValue);
+        load_data_to_dv_chu_quan_up();
+        load_data_to_dv_chu_quan_down();
+        load_data_to_dv_su_dung_up();
+        load_data_to_dv_su_dung_down();
         load_cbo_loai_xe();
         load_data_to_grid();
     }
@@ -280,8 +280,8 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
-            load_data_to_dv_chu_quan_up(m_cbo_bo_tinh_up.SelectedValue);
-            load_data_to_dv_su_dung_up(m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
+            load_data_to_dv_chu_quan_up();
+            load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -294,7 +294,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
-            load_data_to_dv_su_dung_up(m_cbo_don_vi_chu_quan_up.SelectedValue, m_cbo_bo_tinh_up.SelectedValue);
+            load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -340,8 +340,8 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
-            load_data_to_dv_chu_quan_down(m_cbo_bo_tinh_down.SelectedValue);
-            load_data_to_dv_su_dung_down(m_cbo_don_vi_chu_quan_down.SelectedValue, m_cbo_bo_tinh_down.SelectedValue);
+            load_data_to_dv_chu_quan_down();
+            load_data_to_dv_su_dung_down();
         }
         catch (System.Exception ex)
         {
@@ -352,7 +352,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
-            load_data_to_dv_su_dung_down(m_cbo_don_vi_chu_quan_down.SelectedValue, m_cbo_bo_tinh_down.SelectedValue);
+            load_data_to_dv_su_dung_down();
         }
         catch (System.Exception ex)
         {
