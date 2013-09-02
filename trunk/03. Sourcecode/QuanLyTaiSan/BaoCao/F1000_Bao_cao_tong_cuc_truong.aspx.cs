@@ -133,7 +133,7 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
             v_us_dm_loc_bao_cao.DataRow2Me(v_ds_dm_loc_bao_cao.DM_LOC_BAO_CAO.Rows[0]);
             string v_str_url = v_us_dm_loc_bao_cao.strDUONG_DAN
                 + (v_us_dm_loc_bao_cao.strDUONG_DAN.IndexOf("aspx?") == -1 ? "?" : "&") 
-                + CONST_QLDB.MA_THAM_SO_ID_DVSD + "="
+                + CONST_QLDB.MA_THAM_SO_URL.ID_DVSD + "="
                 + m_lst_don_vi_su_dung.SelectedValue;                        
             Response.Redirect(v_str_url, false);
         }
