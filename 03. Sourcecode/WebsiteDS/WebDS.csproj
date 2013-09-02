@@ -169,6 +169,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_TONG_HOP_HIEN_TRANG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_TONG_HOP_HIEN_TRANG_TSK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_TONG_HOP_HIEN_TRANG_TSK.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_BC_THHTSD_NHA_DAT.cs">
       <DependentUpon>DS_V_BC_THHTSD_NHA_DAT.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -502,6 +507,17 @@
     </None>
     <None Include="DS_RPT_TONG_HOP_HIEN_TRANG.xss">
       <DependentUpon>DS_RPT_TONG_HOP_HIEN_TRANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_TONG_HOP_HIEN_TRANG_TSK.xsc">
+      <DependentUpon>DS_RPT_TONG_HOP_HIEN_TRANG_TSK.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_TONG_HOP_HIEN_TRANG_TSK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_TONG_HOP_HIEN_TRANG_TSK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_TONG_HOP_HIEN_TRANG_TSK.xss">
+      <DependentUpon>DS_RPT_TONG_HOP_HIEN_TRANG_TSK.xsd</DependentUpon>
     </None>
     <None Include="DS_V_BC_THHTSD_NHA_DAT.xsc">
       <DependentUpon>DS_V_BC_THHTSD_NHA_DAT.xsd</DependentUpon>
