@@ -857,7 +857,7 @@ namespace WebUS
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_str_id_bo_tinh);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_str_id_dv_chu_quan);
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_str_id_dv_su_dung);
-            v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai_dat", ip_str_id_trang_thai);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_str_id_trang_thai);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_dv);
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
