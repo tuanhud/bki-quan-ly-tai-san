@@ -50,6 +50,7 @@ namespace IP.Core.WinFormControls
             LOAI_HINH_DON_VI
                 , PHAN_LOAI_TAI_SAN
             , LOAI_BAO_CAO
+            , TINH_TRANG_TAI_SAN
         }
 
         public static void load_data_to_cbo_dia_chi(
@@ -167,6 +168,11 @@ namespace IP.Core.WinFormControls
                 case eLOAI_TU_DIEN.LOAI_BAO_CAO:
                     v_str_loai_trang_thai = MA_LOAI_TU_DIEN.LOAI_BAO_CAO;
                     break;
+                case eLOAI_TU_DIEN.TINH_TRANG_TAI_SAN:
+                    v_str_loai_trang_thai = MA_LOAI_TU_DIEN.TINH_TRANG_TAI_SAN;
+                    break;
+
+
             }
             v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
                 v_str_loai_trang_thai
