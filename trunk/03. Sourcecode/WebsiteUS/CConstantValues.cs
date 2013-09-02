@@ -78,6 +78,7 @@ namespace WebUS
         public const string TRANG_THAI_TAI_SAN_KHAC = "TRANG_THAI_TAI_SAN_KHAC";
         public const string LOAI_HINH_DON_VI = "LOAI_HINH_DON_VI";
         public const string LOAI_BAO_CAO = "LOAI_BAO_CAO";
+        public const string TINH_TRANG_TAI_SAN = "TINH_TRANG_TAI_SAN";
     }
 
     public class ID_TRANG_THAI_DAT
