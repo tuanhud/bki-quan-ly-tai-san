@@ -191,7 +191,10 @@ public partial class Default2 : System.Web.UI.Page
                 m_lbl_tieu_de.Text += "TÀI SẢN KHÁC DƯỚI 500 TRIỆU ĐỒNG";
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_NHO_HON_500);
                 break;
-
+            case CONST_QLDB.LOAI_TAI_SAN.TAI_SAN_KHAC:
+                m_lbl_tieu_de.Text += "TÀI SẢN KHÁC";
+                m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC);
+                break;
         }
     }
 
