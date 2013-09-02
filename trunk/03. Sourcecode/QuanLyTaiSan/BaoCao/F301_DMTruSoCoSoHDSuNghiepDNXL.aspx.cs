@@ -46,9 +46,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     private void export_excel()
     {
         string v_str_output_file = "";
-        if (Request.QueryString["id_loai_bao_cao"] != null)
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
         {
-            string v_id = Request.QueryString["id_loai_bao_cao"];
+            string v_id = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             f402_bao_cao_danh_muc_tru_so_lam_viec v_f402_bc_dm_nha = new f402_bao_cao_danh_muc_tru_so_lam_viec();
             CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
             form_2_objExcelAssetParameters(v_obj_parameter);
@@ -135,9 +135,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         string v_str_user_name = Person.get_user_name();
         if (v_str_user_name.Equals(null)) return;
 
-        if (Request.QueryString["id_loai_bao_cao"] != null)
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
         {
-            id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+            id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         }
         switch (id_loai_bao_cao)
         {
@@ -188,9 +188,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     private void form_title()
     {
         string id_loai_bao_cao = "";
-        if (Request.QueryString["id_loai_bao_cao"] != null)
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
         {
-            id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+            id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         }
 
         switch (id_loai_bao_cao)
@@ -236,8 +236,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         m_cbo_loai_hinh_don_vi.SelectedValue = v_us_don_vi_su_dung.strLOAI_HINH_DON_VI;
         m_cbo_don_vi_su_dung_tai_san.SelectedValue = ip_id_dvsd.ToString();
         m_lbl_mess.Text = "";
-        if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
-        string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
+        string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         switch (v_str_id_loai_bao_cao)
         {
             case "1":
@@ -286,8 +286,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                 m_lbl_mess.Text = "";
                 form_title();
                 format_label_disable();
-                if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
-                string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
+                string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
                 WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                             WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                             , WinFormControls.eTAT_CA.YES
@@ -442,8 +442,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
-            string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+            if (Request.QueryString[ CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
+            string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             m_lbl_mess.Text = "";
             switch (v_str_id_loai_bao_cao)
             {
@@ -520,8 +520,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
-            if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
-            string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
+            string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             switch (v_str_id_loai_bao_cao)
             {
                 case "1":
@@ -586,8 +586,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
-            if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
-            string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
+            string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             switch (v_str_id_loai_bao_cao)
             {
                 case "1":
@@ -670,8 +670,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
-            if (Request.QueryString["id_loai_bao_cao"].Equals(null)) return;
-            string v_str_id_loai_bao_cao = Request.QueryString["id_loai_bao_cao"];
+            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
+            string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             switch (v_str_id_loai_bao_cao)
             {
                 case "1":
