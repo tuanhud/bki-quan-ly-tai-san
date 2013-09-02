@@ -30,14 +30,14 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     #endregion
 
     #region Private Methods
-    private void load_form_data()
+    private void load_data_2_form()
     {
         load_data_bo_tinh();
         load_data_don_vi_chu_quan();
         load_data_don_vi_su_dung();
         load_data_trang_thai();
         load_data_tinh_trang_dat();
-        load_data_grid();
+        load_data_2_grid();
         set_form_mode();
     }
 
@@ -96,7 +96,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             , m_ddl_tinh_trang_dat);
     }
 
-    private void load_data_grid()
+    private void load_data_2_grid()
     {
         m_lbl_thong_tin_dat.Text = "DANH SÁCH ĐẤT";
         US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT();
@@ -279,7 +279,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         return true;
     }
 
-    private void clear_form_data()
+    private void reset_controls_in_form()
     {
         m_hdf_id.Value = C_STR_NEW_ID_DAT;
         m_txt_dia_chi.Text = "";
@@ -301,6 +301,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
 
     private void update_nha() {
+        m_e_form_mode = DataEntryFormMode.UpdateDataState;
+        m_lbl_mess.Text = "";
         if (!check_validate_data_is_ok()) return;
         if (m_hdf_id.Value == C_STR_NEW_ID_DAT) {
             m_lbl_mess.Text = "Bạn chưa chọn dữ liệu để cập nhật";
@@ -310,21 +312,25 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         form_2_us_dm_dat();
         m_us_dm_dat.Update();
         Thread.Sleep(2000);
-        clear_form_data();
-        load_form_data();
+        reset_controls_in_form();
+        m_txt_tu_khoa.Text  = m_us_dm_dat.strMA_TAI_SAN;
+        load_data_2_form();
         m_lbl_mess.Text = "Đã cập nhật dữ liệu đất thành công!";
 
     }
 
     private void add_new_nha()
     {
+        m_e_form_mode = DataEntryFormMode.InsertDataState;
+        m_lbl_mess.Text = "";
         if (!check_validate_data_is_ok()) return;
         if (m_hdf_id.Value != C_STR_NEW_ID_DAT) return;
         form_2_us_dm_dat();
         m_us_dm_dat.Insert();
         Thread.Sleep(2000);
-        clear_form_data();
-        load_form_data();
+        reset_controls_in_form();
+        m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
+        load_data_2_form();
         m_lbl_mess.Text = "Đã thêm mới dữ liệu đất thành công!";
     }
     #endregion
@@ -336,7 +342,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                load_form_data();
+                load_data_2_form();
             }
         }
         catch (Exception v_e)
@@ -375,7 +381,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try
         {
             Thread.Sleep(2000);
-            clear_form_data();
+            reset_controls_in_form();
         }
         catch (Exception v_e)
         {
@@ -410,7 +416,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try
         {
             Thread.Sleep(2000);
-            load_data_grid();
+            load_data_2_grid();
         }
         catch (Exception v_e)
         {
@@ -424,7 +430,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
             m_grv_danh_sach_nha.AllowPaging = false;
-            load_data_grid();  // đây là hàm load lại dữ liệu lên lưới
+            load_data_2_grid();  // đây là hàm load lại dữ liệu lên lưới
             // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
             WinformReport.export_gridview_2_excel(
                         m_grv_danh_sach_nha
@@ -443,7 +449,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
-            load_data_grid();
+            load_data_2_grid();
         }
         catch (Exception v_e)
         {
@@ -458,20 +464,20 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_dat = CIPConvert.ToDecimal(m_grv_danh_sach_nha.DataKeys[rowIndex].Value);
-
+                m_lbl_mess.Text ="";
                 switch (e.CommandName)
                 {
                     case "EditComp":
                         Thread.Sleep(2000);
                         m_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
                         m_e_form_mode = DataEntryFormMode.UpdateDataState;
-                        load_form_data();
+                        load_data_2_form();
                         us_dm_dat_2_form();
                         break;
                     case "DeleteComp":
                         Thread.Sleep(2000);
                         m_us_dm_dat.DeleteByID(v_dc_id_dat);
-                        load_form_data();
+                        load_data_2_form();
                         break;
                 }
             }
