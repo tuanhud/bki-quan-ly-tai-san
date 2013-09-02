@@ -704,7 +704,7 @@ namespace WebUS
             }
         }
 
-        public bool check_ma_tai_san_valid(string ip_str_ma_tai_san)
+        public bool check_ma_tai_san_is_valid(string ip_str_ma_tai_san)
         {
             US_DM_NHA v_us_dm_nha = new US_DM_NHA();
             DS_DM_NHA v_ds_dm_nha = new DS_DM_NHA();
