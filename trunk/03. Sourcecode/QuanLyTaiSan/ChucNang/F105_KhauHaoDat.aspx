@@ -56,9 +56,8 @@
                 <span class="cssManField">Bộ, tỉnh</span>
             </td>
             <td style="width: 29%" align="left">
-                <asp:DropDownList ID="m_cbo_bo_tinh_up" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
-                    AutoPostBack="True" OnSelectedIndexChanged="m_cbo_bo_tinh_up_SelectedIndexChanged"
-                    Style="height: 22px">
+                <asp:DropDownList ID="m_cbo_bo_tinh_up" runat="server" Width="85%"
+                    AutoPostBack="True" OnSelectedIndexChanged="m_cbo_bo_tinh_up_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
@@ -67,7 +66,7 @@
                 <span class="cssManField">Đơn vị chủ quản</span>
             </td>
             <td align="left" style="width: 29%;">
-                <asp:DropDownList ID="m_cbo_don_vi_chu_quan_up" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan_up" runat="server" Width="85%"
                     AutoPostBack="True" OnSelectedIndexChanged="m_cbo_don_vi_chu_quan_up_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
@@ -79,8 +78,8 @@
                 <span class="cssManField">Đơn vị sử dụng</span>
             </td>
             <td align="left">
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_up" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
-                    AutoPostBack="True">
+                <asp:DropDownList ID="m_cbo_don_vi_su_dung_up" runat="server" Width="85%"
+                    AutoPostBack="True" onselectedindexchanged="m_cbo_don_vi_su_dung_up_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td>
@@ -89,7 +88,7 @@
                 <span class="cssManField">Trạng thái đất</span>
             </td>
             <td align="left">
-                <asp:DropDownList ID="m_cbo_trang_thai_dat_up" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
+                <asp:DropDownList ID="m_cbo_trang_thai_dat_up" runat="server" Width="85%"
                     Enabled="false">
                 </asp:DropDownList>
             </td>
@@ -101,8 +100,9 @@
                 <span class="cssManField">Địa chỉ</span>
             </td>
             <td align="left">
-                <asp:TextBox ID="m_txt_dia_chi" class="tb" runat="server" Width="85%"
-                    AutoPostBack="True" OnTextChanged="m_txt_dia_chi_TextChanged"> </asp:TextBox>
+                <asp:DropDownList ID="m_cbo_dia_chi" runat="server" Width="85%" AutoPostBack="true"
+                    onselectedindexchanged="m_cbo_dia_chi_SelectedIndexChanged">
+                </asp:DropDownList>
             </td>
             <td>
             </td>
@@ -176,7 +176,7 @@
                 <span>Mã phiếu</span>
             </td>
             <td colspan="1" style="width: 29%">
-                <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox csscurrency"
+                <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox"
                     Width="85%" ValidationGroup="m_vlg_dat"> </asp:TextBox>
             </td>
             <td align="left" style="width: 1%;">
@@ -212,7 +212,7 @@
                 <span>Ngày duyệt </span>
             </td>
             <td style="width: 29%" align="left">
-                <asp:TextBox ID="m_txt_ngay_duyet" runat="Server" CssClass=" cssTextBox" Width="85%"
+                <asp:TextBox ID="m_txt_ngay_duyet" runat="Server" CssClass="cssTextBox" Width="85%"
                     ValidationGroup="m_vlg_dat"> </asp:TextBox>
             </td>
             <td align="left" style="width: 1%;">
@@ -227,7 +227,7 @@
                     Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_dat" OnClick="m_cmd_tao_moi_Click" />
                 <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                     Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
-                <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
+                <asp:HiddenField ID="m_hdf_id" runat="server" Value=""/>
             </td>
             <td>
             </td>
@@ -284,10 +284,11 @@
             <td align="left">
                 <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
                     Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
-            </td>
-            <td align="left">
+                    &nbsp;
                 <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
                     Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
+            </td>
+            <td align="left">
             </td>
             <td align="left">
             </td>
