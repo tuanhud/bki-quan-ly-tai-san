@@ -45,6 +45,7 @@ namespace WebUS
         public class LOAI_TAI_SAN {
             public const string TREN_500 = "TSK_TREN_500";
             public const string DUOI_500 = "TSK_DUOI_500";
+            public const string TAI_SAN_KHAC = "TAI_SAN_KHAC";
         }
         public class TRANG_THAI {
             public const string KE_KHAI = "KE_KHAI";
