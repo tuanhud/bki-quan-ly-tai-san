@@ -39,7 +39,7 @@ public class WinformReport
                                , params int[] ip_i_invisible_columns
                                 )
     {
-
+        if (ip_grv.Rows.Count == 0) return;
         HttpContext.Current.Response.Clear();
         //Response.Buffer = true;
         HttpContext.Current.Response.AddHeader("content-disposition", "attachment;filename=" + ip_str_filename);
