@@ -342,9 +342,9 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             {
                 load_data_2_form();
                 //Code này là chức năng liên quan đến from F1000
-                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_ID_NHA] != null)
+                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_NHA] != null)
                 {
-                    decimal v_dc_id_nha = CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_ID_NHA]);
+                    decimal v_dc_id_nha = CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_NHA]);
                     m_us_dm_nha = new US_DM_NHA(v_dc_id_nha);
                     load_data_from_us();
                 }
