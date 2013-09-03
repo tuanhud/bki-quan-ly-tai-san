@@ -150,8 +150,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             {
                 //load data to combobox trang thai o to
                 string v_str_id_loai_bao_cao = "";
-                if (Request.QueryString["LOAI_BAO_CAO"] == null) return;
-                v_str_id_loai_bao_cao = Request.QueryString["LOAI_BAO_CAO"];
+                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+                v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
                 load_data_to_cbo_loai_xe(WinFormControls.eTAT_CA.YES);
                 switch (v_str_id_loai_bao_cao)
                 {
@@ -271,8 +271,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         {
             m_lbl_mess.Text = "";
             string v_str_id_loai_bao_cao = "";
-            if (Request.QueryString["LOAI_BAO_CAO"] == null) return;
-            v_str_id_loai_bao_cao = Request.QueryString["LOAI_BAO_CAO"];
+            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+            v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             switch (v_str_id_loai_bao_cao)
             {
                 case LOAI_BAO_CAO.KE_KHAI:
@@ -322,8 +322,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         {
             m_lbl_mess.Text = "";
             string v_str_id_loai_bao_cao = "";
-            if (Request.QueryString["LOAI_BAO_CAO"] == null) return;
-            v_str_id_loai_bao_cao = Request.QueryString["LOAI_BAO_CAO"];
+            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+            v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             switch (v_str_id_loai_bao_cao)
             {
                 case LOAI_BAO_CAO.KE_KHAI:
@@ -379,8 +379,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         {
             m_lbl_mess.Text = "";
             string v_str_id_loai_bao_cao = "";
-            if (Request.QueryString["LOAI_BAO_CAO"] == null) return;
-            v_str_id_loai_bao_cao = Request.QueryString["LOAI_BAO_CAO"];
+            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+            v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             switch (v_str_id_loai_bao_cao)
             {
                 case LOAI_BAO_CAO.KE_KHAI:
