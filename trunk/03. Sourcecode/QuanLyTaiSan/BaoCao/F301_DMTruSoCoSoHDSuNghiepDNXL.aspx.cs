@@ -233,7 +233,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     private void Select_cac_cbo_theo_id_dvsd(decimal ip_id_dvsd)
     {
         US_DM_DON_VI v_us_don_vi_su_dung = new US_DM_DON_VI(ip_id_dvsd);
-        US_DM_DON_VI v_us_don_vi_chu_quan = new US_DM_DON_VI(v_us_don_vi_su_dung.dcID_DON_VI_CAP_TREN);        
+        US_DM_DON_VI v_us_don_vi_chu_quan = new US_DM_DON_VI(v_us_don_vi_su_dung.dcID_DON_VI_CAP_TREN);
         m_cbo_bo_tinh.SelectedValue = v_us_don_vi_chu_quan.dcID_DON_VI_CAP_TREN.ToString();
         m_cbo_don_vi_chu_quan.SelectedValue = v_us_don_vi_chu_quan.dcID.ToString();
         m_cbo_loai_hinh_don_vi.SelectedValue = v_us_don_vi_su_dung.strLOAI_HINH_DON_VI;
@@ -278,7 +278,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
     }
 
-    private void set_inital_form_load() {
+    private void set_inital_form_load()
+    {
         m_lbl_mess.Text = "";
         form_title();
         format_label_disable();
@@ -290,10 +291,11 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                     , m_cbo_loai_hinh_don_vi
                     );
         WinFormControls.eTAT_CA v_e_tat_ca = WinFormControls.eTAT_CA.NO;
-        switch (v_str_id_loai_bao_cao) {
+        switch (v_str_id_loai_bao_cao)
+        {
             case C_STR_LOAI_KE_KHAI:
                 v_e_tat_ca = WinFormControls.eTAT_CA.NO;
-                
+
                 break;
             case C_STR_LOAI_DE_NGHI_XU_LY:
                 v_e_tat_ca = WinFormControls.eTAT_CA.NO;
@@ -317,7 +319,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             , v_e_tat_ca
             , m_cbo_don_vi_su_dung_tai_san
             );
-        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals("")) {
+        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
+        {
             m_cbo_dia_chi.DataSource = null;
             m_cbo_dia_chi.DataBind();
             return;
@@ -325,22 +328,23 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
 
         //load data to combobox trang thai nha
         WinFormControls.load_data_to_cbo_tu_dien(
-            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
+            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
             , v_e_tat_ca
             , m_cbo_trang_thai
             );
 
-        switch (v_str_id_loai_bao_cao) {
+        switch (v_str_id_loai_bao_cao)
+        {
             case C_STR_LOAI_KE_KHAI:
-                 m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString();
+                m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString();
                 m_cbo_trang_thai.Enabled = false;
                 break;
             case C_STR_LOAI_DE_NGHI_XU_LY:
-                 m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_NHA.DE_NGHI_XU_LY.ToString();
+                m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_NHA.DE_NGHI_XU_LY.ToString();
                 m_cbo_trang_thai.Enabled = false;
                 break;
             case C_STR_LOAI_THONG_KE:
-                 m_cbo_trang_thai.SelectedValue = CONST_QLDB.ID_TAT_CA.ToString();
+                m_cbo_trang_thai.SelectedValue = CONST_QLDB.ID_TAT_CA.ToString();
                 m_cbo_trang_thai.Enabled = false;
                 break;
             default:
@@ -356,7 +360,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
            , m_cbo_dia_chi
            );
         //Select các cbo theo id dơn vị sử dụng khi có id_don_vi_su_dung trên url
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD] != null) {
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD] != null)
+        {
             decimal v_id_don_vi_su_dung = CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD]);
             Select_cac_cbo_theo_id_dvsd(v_id_don_vi_su_dung);
         }
@@ -393,13 +398,16 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
             string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             m_lbl_mess.Text = "";
             WinFormControls.eTAT_CA v_e_tat_ca = WinFormControls.eTAT_CA.NO;
-            switch (v_str_id_loai_bao_cao) {
+            switch (v_str_id_loai_bao_cao)
+            {
                 case C_STR_LOAI_KE_KHAI:
                     v_e_tat_ca = WinFormControls.eTAT_CA.NO;
                     break;
@@ -432,7 +440,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             m_pnl_thong_tin_nha_dat.Visible = false;
             m_grv_nha.Visible = false;
         }
-        catch (System.Exception v_e) {
+        catch (System.Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
@@ -505,7 +514,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                            , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                            , ID_TRANG_THAI_DAT.DANG_SU_DUNG
                            , m_cbo_loai_hinh_don_vi.SelectedValue
-                           ,v_e_tat_ca
+                           , v_e_tat_ca
                            , m_cbo_dia_chi);
             US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue));
             m_cbo_loai_hinh_don_vi.SelectedValue = v_us_dm_don_vi.strLOAI_HINH_DON_VI;
@@ -576,7 +585,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                             , v_e_tat_ca
                             , m_cbo_don_vi_su_dung_tai_san
                     );
-            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals("")) {
+            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
+            {
                 m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
                 return;
             }
