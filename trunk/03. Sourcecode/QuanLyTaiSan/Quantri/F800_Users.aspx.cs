@@ -15,6 +15,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     #region Members
     US_HT_NGUOI_SU_DUNG m_us_user = new US_HT_NGUOI_SU_DUNG();
     DS_HT_NGUOI_SU_DUNG m_ds_user = new DS_HT_NGUOI_SU_DUNG();
+    DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
     #endregion
 
     #region Data Structures
@@ -23,23 +24,27 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
 
     #region Private Methods
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        try {
-            
-            if (!this.IsPostBack) {
+    private void set_control_by_form_mode() {
+        switch (m_e_form_mode) {
+            case DataEntryFormMode.InsertDataState:
+                m_cmd_cap_nhat.Visible = false;
+                m_cmd_tao_moi.Visible = true;
                 m_txt_ten_dang_nhap.ReadOnly = false;
-                load_cbo_user_group();
-                load_cbo_user_group_grv();
-                load_data_2_grid();
-            }    
-            
-        }catch(Exception v_e){
-            this.Response.Write(v_e.ToString());
+                break;
+            case DataEntryFormMode.SelectDataState:
+                break;
+            case DataEntryFormMode.UpdateDataState:
+                m_cmd_cap_nhat.Visible = true;
+                m_cmd_tao_moi.Visible = false;
+                m_txt_ten_dang_nhap.ReadOnly = true;
+                break;
+            case DataEntryFormMode.ViewDataState:
+                break;
+            default:
+                break;
         }
-
     }
-
+    
     private void load_data_2_grid()
     {
         try {
@@ -88,6 +93,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     private void delete_dm_tu_dien(int i_int_row_index) {
         try
         {
+            m_lbl_mess.Text = "";
             decimal v_dc_id_dm_tu_dien = CIPConvert.ToDecimal(m_grv_dm_tu_dien.DataKeys[i_int_row_index].Value);
             m_us_user.DeleteByID(v_dc_id_dm_tu_dien);
             load_data_2_grid();
@@ -121,6 +127,8 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             m_txt_ten_dang_nhap.Text = "";
             m_txt_mat_khau_go_lai.Text = "";
             m_txt_mat_khau.Text = "";
+            m_lbl_mess.Text = "";
+            m_lbl_thong_bao.Text = "";
             this.m_hdf_id_user_group.Value = "";
         }
         catch (Exception v_e)
@@ -128,54 +136,58 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             throw v_e;
         }
     }
-    private bool check_validate() {
+    private bool check_validate_is_ok() {
         if (this.m_cbo_user_group.SelectedItem ==null)
         {
             this.m_ctv_ma_tu_dien.IsValid = false;
             return false;
         }
-        if (this.m_txt_ten_dang_nhap.Text.Trim().Equals(""))
+        if ((!CValidateTextBox.IsValid(m_txt_ten_dang_nhap, DataType.StringType, allowNull.NO))&& (m_e_form_mode == DataEntryFormMode.InsertDataState))
         {
             this.m_ctv_ma_tu_dien.IsValid = false;
             return false;
         }
-     
+
+        if (!CValidateTextBox.IsValid(m_txt_ho_va_ten, DataType.StringType, allowNull.NO)) return false;
+        if ((!CValidateTextBox.IsValid(m_txt_mat_khau, DataType.StringType, allowNull.NO)) && (m_e_form_mode == DataEntryFormMode.InsertDataState)) {
+            this.m_ctv_ten_tu_ngan.IsValid = false;
+            return false;
+        }
+        if ((!CValidateTextBox.IsValid(m_txt_mat_khau_go_lai, DataType.StringType, allowNull.NO))&& (m_e_form_mode == DataEntryFormMode.InsertDataState)) {
+            this.m_ctv_mk_go_lai.IsValid = false;
+            return false;
+        }
+        if ((!check_ten_dang_nhap_is_ok()) && (m_e_form_mode == DataEntryFormMode.InsertDataState)) { 
+            m_lbl_mess.Text = "Tên đăng nhập đã tồn tại, vui lòng nhập Tên đăng nhập khác!"; 
+            return false; 
+        }
+        if ((this.m_hdf_id_user_group.Value == "") && (m_e_form_mode == DataEntryFormMode.UpdateDataState)) {
+            m_lbl_mess.Text = "Bạn phải chọn Người dùng cần cập nhật!"; return false; 
+        }
         return true;
     }
-    private bool check_ten_dang_nhap() {
-        try
-        {
+    private bool check_ten_dang_nhap_is_ok() {
+        
             US_HT_NGUOI_SU_DUNG v_us_ht = new US_HT_NGUOI_SU_DUNG();
             if (v_us_ht.CheckByTenTruyCap(m_txt_ten_dang_nhap.Text.Trim())) return false;
              return true;
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
+        
     }
     private void insert_user()
     {
         try{
+            m_lbl_mess.Text = "";
             m_grv_dm_tu_dien.EditIndex = -1;
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
             if (Page.IsValid) {
-                if (!check_validate()) return;
-                if (this.m_txt_mat_khau.Text.Trim().Equals(""))
-                {
-                    this.m_ctv_ten_tu_ngan.IsValid = false;
-                    return;
-                }
-                if (this.m_txt_mat_khau_go_lai.Text.Trim().Equals(""))
-                {
-                    this.m_ctv_mk_go_lai.IsValid = false;
-                    return;
-                }
-                if (!check_ten_dang_nhap()) { m_lbl_mess.Text = "Tên đăng nhập đã tồn tại, vui lòng nhập Tên đăng nhập khác"; return; }
+                if (!check_validate_is_ok()) return;
+               
                 form_2_us_object();
                 
                 m_us_user.Insert();
-                m_lbl_mess.Text = "Đã tạo mới tài khoản thành công.";
                 clear_data();
+                m_lbl_mess.Text = "Đã tạo mới tài khoản thành công.";
+                
                 load_data_2_grid();
             }
         }
@@ -189,24 +201,29 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     {
         try
         {
+            m_lbl_mess.Text = "";
             m_grv_dm_tu_dien.EditIndex = -1;
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
             if (Page.IsValid)
             {
-                if (this.m_hdf_id_user_group.Value == "") { m_lbl_mess.Text = "Bạn phải chọn Người dùng cần cập nhật."; return; }
-                if (!check_validate()) return;
+                
+                if (!check_validate_is_ok()) return;
                 form_2_us_object();
                 
                 m_us_user.dcID = CIPConvert.ToDecimal(this.m_hdf_id_user_group.Value);
                 m_us_user.Update();
-                m_lbl_mess.Text = "Đã cập nhật tài khoản thành công.";
                 clear_data();
+                m_lbl_mess.Text = "Đã cập nhật tài khoản thành công!";
+                
                 m_grv_dm_tu_dien.EditIndex = -1;
                 load_data_2_grid();
+                m_e_form_mode = DataEntryFormMode.InsertDataState;
+                set_control_by_form_mode();
             }
         }
         catch (Exception v_e)
         {
-            m_lbl_mess.Text = "Lỗi trong quá trình cập nhật bản ghi.";
+            m_lbl_mess.Text = "Lỗi trong quá trình cập nhật bản ghi!";
             throw v_e;
         }
     }
@@ -241,6 +258,25 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     // events
     //
     //
+    protected void Page_Load(object sender, EventArgs e) {
+        try {
+
+            if (!this.IsPostBack) {
+                m_txt_ten_dang_nhap.ReadOnly = false;
+                load_cbo_user_group();
+                load_cbo_user_group_grv();
+                load_data_2_grid();
+                m_e_form_mode = DataEntryFormMode.InsertDataState;
+                set_control_by_form_mode();
+            }
+
+        }
+        catch (Exception v_e) {
+            this.Response.Write(v_e.ToString());
+        }
+
+    }
+
     protected void m_cbo_loai_tu_dien_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -271,7 +307,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            
             delete_dm_tu_dien(e.RowIndex);
         }
         catch (Exception v_e)
@@ -285,8 +321,10 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
-            m_txt_ten_dang_nhap.ReadOnly = true;
+            
             load_update_user(e.NewSelectedIndex);
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            set_control_by_form_mode();
         }
         catch (Exception v_e)
         {
@@ -311,6 +349,8 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         {
             m_lbl_mess.Text = "";
             clear_data();
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            set_control_by_form_mode();
         }
         catch (Exception v_e)
         {
@@ -321,9 +361,9 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            
             update_user();
-            m_txt_ten_dang_nhap.ReadOnly = false;
+            
         }
         catch (Exception v_e)
         {

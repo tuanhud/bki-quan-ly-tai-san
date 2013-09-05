@@ -222,6 +222,7 @@ public partial class Quantri_F810_PhanQuyenUserGroup : System.Web.UI.Page
         {
             load_cbo_chuc_nang_phan_mem();
             load_cbo_chuc_nang_phan_mem_user();
+            m_lbl_mess.Text = "";
 
         }
         catch (Exception v_e)

@@ -17,7 +17,7 @@
 	    <tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="Label4" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;N&lt;/U&gt;hóm người dùng"/>
+                Text="Nhóm người dùng"/>
 		</td>
 		<td style="width:30%;">
 		    <asp:DropDownList id="m_cbo_user_group" runat="server" Width="264px" 
@@ -33,7 +33,7 @@
 	    <tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="lblFullName0" CssClass="cssManField" runat="server" 
-                Text="Họ và tên người dùng" />
+                Text="Họ và tên người dùng(*)" />
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_ho_va_ten" CssClass="cssTextBox"  runat="server" 
@@ -48,7 +48,7 @@
 	<tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="lblFullName" CssClass="cssManField" runat="server" 
-                Text="Tên đăng nhập" />
+                Text="Tên đăng nhập(*)" />
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_ten_dang_nhap" CssClass="cssTextBox"  runat="server" 
@@ -63,7 +63,7 @@
 	    <tr>
 		<td align="right" >
 		    <asp:label id="lblAnswer0" runat="server" CssClass="cssManField" 
-                Text="Mật khẩu" />
+                Text="Mật khẩu(*)" />
 		</td>
 		<td align="left">
 		    <asp:textbox id="m_txt_mat_khau" accessKey="m" runat="server"  Width="150px" 
@@ -71,7 +71,7 @@
 		</td>
 		<td >
 			<asp:customvalidator id="m_ctv_ten_tu_ngan" runat="server" 
-                ControlToValidate="m_txt_mat_khau" ErrorMessage="Mật khẩu không được để trống, ít nhất 5 ký tự" 
+                ControlToValidate="m_txt_mat_khau" ErrorMessage="Mật khẩu không được để trống!" 
                 Display="Static" Text="*" />
 		    <asp:CompareValidator ID="m_ctv_mat_khau" runat="server" 
                 ControlToCompare="m_txt_mat_khau" ControlToValidate="m_txt_mat_khau_go_lai" 
@@ -81,7 +81,7 @@
 	<tr>
 		<td align="right" >
 		    <asp:label id="lblAnswer" runat="server" CssClass="cssManField" 
-                Text="Nhập lại mật khẩu" />
+                Text="Nhập lại mật khẩu(*)" />
 		</td>
 		<td align="left">
 		    <asp:textbox id="m_txt_mat_khau_go_lai" accessKey="m" runat="server"  
@@ -115,12 +115,12 @@
 	    <td></td>
 		<td colspan="2" align="left">
 			<asp:button id="m_cmd_tao_moi" accessKey="c" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Tạo mới(c)" onclick="m_cmd_tao_moi_Click"  />&nbsp;
+                runat="server" Width="98px" height = "24px" Text="Tạo mới(c)" onclick="m_cmd_tao_moi_Click"  />&nbsp;
 			<asp:button id="m_cmd_cap_nhat" accessKey="u" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Cập nhật(u)" 
+                runat="server" Width="98px" height = "24px"  Text="Cập nhật(u)" 
                 onclick="m_cmd_cap_nhat_Click"  />&nbsp;
 			<asp:button id="btnCancel" accessKey="r" CssClass="cssButton" runat="server" 
-                Width="98px" Text="Xóa trắng(r)" onclick="btnCancel_Click" />
+                Width="98px" height = "24px"  Text="Xóa trắng(r)" onclick="btnCancel_Click" />
 		</td>
 	</tr>
     <tr>
