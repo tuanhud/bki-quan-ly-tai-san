@@ -54,9 +54,8 @@
                         <span class="cssManField">Tên đơn vị:</span>
                     </td>
                     <td>
-                    <asp:TextBox ID="m_txt_ten_don_vi" CssClass="cssTextBox" runat="server" MaxLength="50"
+                        <asp:TextBox ID="m_txt_ten_don_vi" CssClass="cssTextBox" runat="server" MaxLength="50"
                             Width="90%" />
-                        
                     </td>
                     <td style="width: 1%">
                     </td>
@@ -92,7 +91,7 @@
             </table>
             <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                 <tr>
-                    <td class="cssPageTitleBG">
+                    <td class="cssPageTitleBG" colspan="6">
                         <asp:Label ID="m_lbl_thong_tin_don_vi" runat="server" CssClass="cssManField" ForeColor="White" />
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                     </td>
@@ -108,6 +107,7 @@
                 <tr>
                     <td colspan="2" align="center">
                         <asp:HiddenField ID="m_hdf_id_don_vi" runat="server" Visible="False" />
+                        <asp:HiddenField ID="m_hdf_form_mode" Value="0" runat="server" Visible="False" />
                     </td>
                 </tr>
                 <tr>
