@@ -113,6 +113,12 @@ namespace WebUS
         public const decimal DV_SU_DUNG = 576;
     }
 
+    public class LEVEL_MODE
+    {
+        public const decimal BO_TINH = 3;
+        public const decimal DV_CHU_QUAN = 2;
+        public const decimal DV_SU_DUNG = 1;
+    }
     public class ID_LOAI_TAI_SAN
     {
         public const decimal DAT = 1;
