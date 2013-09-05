@@ -174,12 +174,16 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
                     v_str_dc_id_loai_don_vi = CIPConvert.ToStr(ID_LOAI_DON_VI.DV_SU_DUNG);
                     break;
             }
+            m_ds_don_vi.Clear();
             m_us_don_vi.FillDataset_Load_data_to_grid_danh_muc_don_vi(
                 m_ds_don_vi
                 , CIPConvert.ToDecimal(v_str_dc_id_loai_don_vi)
                 , v_str_user_name
                 );
             m_grv_dm_don_vi.DataSource = m_ds_don_vi.DM_DON_VI;
+            load_title(v_str_loai_don_vi);
+            string v_str_thong_tin = " (Có " + m_ds_don_vi.DM_DON_VI.Rows.Count + " bản ghi)";
+            m_lbl_thong_tin_don_vi.Text += v_str_thong_tin;
             m_grv_dm_don_vi.DataBind();
 
         }
@@ -256,20 +260,20 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         switch (check_form_mode(m_hdf_form_mode))
         {
             case LOAI_FORM.THEM:
-               // m_us_don_vi.dcSTT = null;
-               string v_str_loai_don_vi = Request.QueryString["LOAI_DON_VI"];
-               if (v_str_loai_don_vi.Equals(LOAI_DON_VI.BO_TINH))
+                // m_us_don_vi.dcSTT = null;
+                string v_str_loai_don_vi = Request.QueryString["LOAI_DON_VI"];
+                if (v_str_loai_don_vi.Equals(LOAI_DON_VI.BO_TINH))
                 {
                     m_us_don_vi.dcLEVEL_MODE = LEVEL_MODE.BO_TINH;
                 }
-               if (v_str_loai_don_vi.Equals(LOAI_DON_VI.DV_CHU_QUAN))
-               {
-                   m_us_don_vi.dcLEVEL_MODE = LEVEL_MODE.DV_CHU_QUAN;
-               }
-               if (v_str_loai_don_vi.Equals(LOAI_DON_VI.DV_SU_DUNG))
-               {
-                   m_us_don_vi.dcLEVEL_MODE = LEVEL_MODE.DV_SU_DUNG;
-               }
+                if (v_str_loai_don_vi.Equals(LOAI_DON_VI.DV_CHU_QUAN))
+                {
+                    m_us_don_vi.dcLEVEL_MODE = LEVEL_MODE.DV_CHU_QUAN;
+                }
+                if (v_str_loai_don_vi.Equals(LOAI_DON_VI.DV_SU_DUNG))
+                {
+                    m_us_don_vi.dcLEVEL_MODE = LEVEL_MODE.DV_SU_DUNG;
+                }
                 break;
             case LOAI_FORM.SUA:
                 US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_hdf_id_don_vi.Value));
@@ -290,6 +294,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     }
     private void xoa_trang()
     {
+        reset_thong_bao();
         m_txt_ten_don_vi.Text = "";
         m_txt_ma_don_vi.Text = "";
         this.m_hdf_id_don_vi.Value = "";
@@ -303,6 +308,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     }
     private void update_don_vi()
     {
+        reset_thong_bao();
         if (Page.IsValid)
         {
             if (!check_validate()) return;
@@ -315,6 +321,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     }
     private void insert_user()
     {
+        reset_thong_bao();
         if (Page.IsValid)
         {
             if (!check_validate()) return;
@@ -343,6 +350,47 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
                 break;
         }
     }
+    private void set_inital_form_mode()
+    {
+        string v_str_loai_don_vi = "";
+        if (Request.QueryString["LOAI_DON_VI"].Equals("")) return;
+        v_str_loai_don_vi = Request.QueryString["LOAI_DON_VI"];
+        load_title(v_str_loai_don_vi);
+        load_data_to_cbo_loai_don_vi();
+        switch (v_str_loai_don_vi)
+        {
+            case LOAI_DON_VI.BO_TINH:
+                m_cbo_don_vi_cap_tren.DataSource = null;
+                m_cbo_don_vi_cap_tren.Items.Insert(0, new ListItem("Không có cấp trên", "Không có cấp trên"));
+                m_cbo_don_vi_cap_tren.DataBind();
+                m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.BO_TINH);
+                break;
+            case LOAI_DON_VI.DV_CHU_QUAN:
+                WinFormControls.load_data_to_cbo_bo_tinh(
+                    WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_cap_tren
+                    );
+                m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.DV_CHU_QUAN);
+                break;
+            case LOAI_DON_VI.DV_SU_DUNG:
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    CONST_QLDB.ID_TAT_CA.ToString()
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_cap_tren
+                    );
+                m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.DV_SU_DUNG);
+                break;
+
+        }
+        m_cmd_cap_nhat.Visible = false;
+        m_cmd_tao_moi.Visible = true;
+
+        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+            , WinFormControls.eTAT_CA.NO
+            , m_cbo_loai_hinh_don_vi);
+        load_data_2_grid();
+    }
     #endregion
 
     #region Events
@@ -352,44 +400,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                string v_str_loai_don_vi = "";
-                if (Request.QueryString["LOAI_DON_VI"].Equals("")) return;
-                v_str_loai_don_vi = Request.QueryString["LOAI_DON_VI"];
-                load_title(v_str_loai_don_vi);
-                load_data_to_cbo_loai_don_vi();
-                switch (v_str_loai_don_vi)
-                {
-                    case LOAI_DON_VI.BO_TINH:
-                        m_cbo_don_vi_cap_tren.DataSource = null;
-                        m_cbo_don_vi_cap_tren.Items.Insert(0, new ListItem("Không có cấp trên", "Không có cấp trên"));
-                        m_cbo_don_vi_cap_tren.DataBind();
-                        m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.BO_TINH);
-                        break;
-                    case LOAI_DON_VI.DV_CHU_QUAN:
-                        WinFormControls.load_data_to_cbo_bo_tinh(
-                            WinFormControls.eTAT_CA.NO
-                            , m_cbo_don_vi_cap_tren
-                            );
-                        m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.DV_CHU_QUAN);
-                        break;
-                    case LOAI_DON_VI.DV_SU_DUNG:
-                        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                            CONST_QLDB.ID_TAT_CA.ToString()
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_don_vi_cap_tren
-                            );
-                        m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.DV_SU_DUNG);
-                        break;
-
-                }
-                m_cmd_cap_nhat.Visible = false;
-                m_cmd_tao_moi.Visible = true;
-
-                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                    , WinFormControls.eTAT_CA.NO
-                    , m_cbo_loai_hinh_don_vi);
-                load_data_2_grid();
+                set_inital_form_mode();
             }
         }
         catch (Exception v_e)
@@ -401,7 +412,6 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
-            reset_thong_bao();
             update_don_vi();
         }
         catch (Exception v_e)
@@ -413,7 +423,6 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
-            reset_thong_bao();
             insert_user();
         }
         catch (Exception v_e)
@@ -425,23 +434,9 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
-            // m_grv_dm_don_vi.Columns[1].Visible = true;
             m_cmd_tao_moi.Visible = true;
             m_cmd_cap_nhat.Visible = false;
-            m_lbl_mess.Text = "";
             xoa_trang();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_grv_dm_don_vi_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-    {
-        try
-        {
-            m_lbl_mess.Text = "";
-            load_update_don_vi(e.NewSelectedIndex);
         }
         catch (Exception v_e)
         {
@@ -478,26 +473,13 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             throw v_e;
         }
     }
-    protected void m_cbo_loai_don_vi_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            load_data_2_grid();
-        }
-        catch (Exception v_e)
-        {
-
-            throw v_e;
-        }
-    }
     protected void m_grv_dm_don_vi_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
         try
         {
-            // m_grv_dm_don_vi.Columns[1].Visible = false;
+            reset_thong_bao();
             m_cmd_tao_moi.Visible = false;
             m_cmd_cap_nhat.Visible = true;
-            m_lbl_mess.Text = "";
             xoa_trang();
             load_update_don_vi(e.RowIndex);
         }
