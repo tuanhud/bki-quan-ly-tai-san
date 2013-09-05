@@ -157,7 +157,7 @@ namespace WebUS
             pm_objDR["ID_DON_VI_CAP_TREN"] = System.Convert.DBNull;
         }
 
-        public decimal dcSTT
+        public decimal ?dcSTT
         {
             get
             {
@@ -231,7 +231,16 @@ namespace WebUS
 
 
         #region Addtional
-
+        public bool check_is_having_ma_don_vi(string ip_str_ma_don_vi)
+        {
+            DS_DM_DON_VI v_ds_dm_don_vi = new DS_DM_DON_VI();
+            CStoredProc v_cstore = new CStoredProc("pr_DM_DON_VI_check_ma_don_vi");
+            v_cstore.addNVarcharInputParam("@ip_str_ma_don_vi", ip_str_ma_don_vi);
+            v_cstore.fillDataSetByCommand(this, v_ds_dm_don_vi);
+            if (v_ds_dm_don_vi.DM_DON_VI.Rows.Count == 0)
+                return false;
+            return true;
+        }
         public bool InitUSWithIDIsOK(decimal ip_dc_id_don_vi) {
             pm_objDS = new DS_DM_DON_VI();
             pm_strTableName = c_TableName;
