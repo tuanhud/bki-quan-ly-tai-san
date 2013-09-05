@@ -345,7 +345,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                 break;
             case C_STR_LOAI_THONG_KE:
                 m_cbo_trang_thai.SelectedValue = CONST_QLDB.ID_TAT_CA.ToString();
-                m_cbo_trang_thai.Enabled = false;
+                m_cbo_trang_thai.Enabled = true;
                 break;
             default:
                 break;
@@ -421,8 +421,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
 
             }
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                            m_cbo_bo_tinh.SelectedValue
-                            , v_e_tat_ca, m_cbo_don_vi_chu_quan);
+                    m_cbo_bo_tinh.SelectedValue
+                    , v_e_tat_ca, m_cbo_don_vi_chu_quan);
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
                     m_cbo_loai_hinh_don_vi.SelectedValue
                     , m_cbo_don_vi_chu_quan.SelectedValue
