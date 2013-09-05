@@ -17,7 +17,7 @@
 	    <tr>
 		<td align="right">
 			<asp:label id="Label4" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;N&lt;/U&gt;hóm người dùng (Quyền)"/>
+                Text="Nhóm người dùng (Quyền)"/>
 		</td>
 		<td >
 		    <asp:DropDownList id="m_cbo_user_group" runat="server" Width="300px" 
