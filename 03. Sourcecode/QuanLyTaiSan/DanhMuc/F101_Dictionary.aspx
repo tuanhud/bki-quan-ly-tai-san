@@ -20,7 +20,7 @@
 	    <tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="Label4" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;L&lt;/U&gt;oại từ điển"/>
+                Text="Loại từ điển"/>
 		</td>
 		<td style="width:30%;">
 		    <asp:DropDownList id="m_cbo_loai_tu_dien" runat="server" Width="264px" 
@@ -35,7 +35,7 @@
 	<tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="lblFullName" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;M&lt;/U&gt;ã từ điển" />
+                Text="Mã từ điển" />
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_ma_tu_dien" CssClass="cssTextBox"  runat="server" 
@@ -50,7 +50,7 @@
 	    <tr>
 		<td align="right" >
 		    <asp:label id="lblAnswer0" runat="server" CssClass="cssManField" 
-                Text="&lt;U&gt;T&lt;/U&gt;ên ngắn" />
+                Text="Tên ngắn" />
 		</td>
 		<td align="left">
 		    <asp:textbox id="m_txt_ten_ngan" accessKey="m" runat="server" 
@@ -65,7 +65,7 @@
 	<tr>
 		<td align="right" >
 		    <asp:label id="lblAnswer" runat="server" CssClass="cssManField" 
-                Text="Tê&lt;U&gt;n&lt;/U&gt;" />
+                Text="Tên" />
 		</td>
 		<td align="left">
 		    <asp:textbox id="m_txt_ten" accessKey="m" runat="server" 
@@ -98,12 +98,12 @@
 	    <td></td>
 		<td colspan="2" align="left">
 			<asp:button id="m_cmd_tao_moi" accessKey="c" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Tạo mới(c)" onclick="m_cmd_tao_moi_Click"  />&nbsp;
+                runat="server" Width="98px" height ="24px" Text="Tạo mới(c)" onclick="m_cmd_tao_moi_Click"  />&nbsp;
 			<asp:button id="m_cmd_cap_nhat" accessKey="u" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Cập nhật(u)" 
+                runat="server" Width="98px" height ="24px" Text="Cập nhật(u)" 
                 onclick="m_cmd_cap_nhat_Click"  />&nbsp;
 			<asp:button id="btnCancel" accessKey="r" CssClass="cssButton" runat="server" 
-                Width="98px" Text="Xóa trắng(r)" onclick="btnCancel_Click" />
+                Width="98px" height ="24px" Text="Xóa trắng(r)" onclick="btnCancel_Click" />
 		</td>
 	</tr>
     <tr>

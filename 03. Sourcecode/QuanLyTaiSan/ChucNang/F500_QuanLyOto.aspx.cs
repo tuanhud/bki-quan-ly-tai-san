@@ -273,9 +273,10 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         if (!check_validate_data_is_ok()) return;
         form_2_us_object(m_us_dm_oto);
         m_us_dm_oto.Insert();
-        m_lbl_mess.Text = "Thêm bản ghi thành công!";
+        
         reset_control();
         load_data_to_grid();
+        m_lbl_mess.Text = "Thêm bản ghi thành công!";
     }
 
     private void update_data()
@@ -490,7 +491,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
 
     }
-    #endregion
+  
     protected void m_cmd_export_excel_Click(object sender, EventArgs e)
     {
         try
@@ -502,4 +503,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+
+
+    #endregion
 }

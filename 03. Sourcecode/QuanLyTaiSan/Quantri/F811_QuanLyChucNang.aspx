@@ -19,7 +19,7 @@
 	<tr>
 		<td align="right" style="width:15%;">
 			<asp:label id="lbl_content" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;T&lt;/U&gt;ên chức năng" />
+                Text="Tên chức năng" />
 		</td>
 		<td style="width:30%;">
 			<asp:textbox id="m_txt_ten_chuc_nang" CssClass="cssTextBox" CausesValidation="false" 
@@ -34,7 +34,7 @@
 	    <tr>
 		<td align="right" >
 			<asp:label id="lbl_loai_hop_dong" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;U&lt;/U&gt;RL của chức năng" AccessKey="L" />
+                Text="URL của chức năng" AccessKey="L" />
 		    </td>
 		<td align="left">
             <asp:TextBox ID="m_txt_url_form" Width="90%" runat="server">
@@ -46,7 +46,7 @@
 	<tr>
 		<td align="right" >
 			<asp:label id="lbl_ma_don_vi_tinh" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;C&lt;/U&gt;hức năng cha" />
+                Text="Chức năng cha" />
 		</td>
 		<td align="left">
 		    <asp:DropDownList ID="m_cbo_chuc_nang_cha" runat="server" Width="80%" 
@@ -108,13 +108,13 @@
 	    <td></td>
 		<td colspan="2" align="left">
 			<asp:button id="m_cmd_tao_moi" accessKey="c" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Tạo mới(c)" 
+                runat="server" Width="98px" height = "24px" Text="Tạo mới(c)" 
                 onclick="m_cmd_tao_moi_Click" />&nbsp;
 			<asp:button id="m_cmd_cap_nhat" accessKey="u" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Cập nhật(u)" 
+                runat="server" Width="98px" height = "24px" Text="Cập nhật(u)" 
                 onclick="m_cmd_cap_nhat_Click"  />&nbsp;
 			<asp:button id="btnCancel" accessKey="r" CssClass="cssButton" runat="server" 
-                Width="98px" Text="Xóa trắng(r)" onclick="btnCancel_Click" />
+                Width="98px" height = "24px" Text="Xóa trắng(r)" onclick="btnCancel_Click" />
                 <asp:HiddenField ID="hdf_id" runat = "server" Value="" />
 		</td>
 	</tr>

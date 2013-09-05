@@ -15,23 +15,48 @@ using System.Data;
 
 public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            load_data_2_cbo_parent();
-            load_data_2_cbo_chuc_nang_search();
-            load_data_2_cbo_vi_tri();
-            load_data_2_grid(CIPConvert.ToDecimal(m_cbo_chuc_nang_cap_1.SelectedValue));
-        }
+
+    #region Public Interfaces
+    public string mapping_yn(object ip_obj_str_yn) {
+        if (CIPConvert.ToStr(ip_obj_str_yn).Equals("Y")) return "Có";
+        return "Không";
     }
+
+    public string mapping_chuc_nang_parrent_by_id(object ip_dc_chuc_nang_parrent_id) {
+
+        return "";
+    }
+    #endregion
 
     #region Members
     US_HT_CHUC_NANG m_us_ht_chuc_nang = new US_HT_CHUC_NANG();
     DS_HT_CHUC_NANG m_ds_ht_chuc_nang = new DS_HT_CHUC_NANG();
+    DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
     #endregion
 
     #region Private Methods
+    private void set_control_by_form_mode(){
+        switch (m_e_form_mode) {
+            case DataEntryFormMode.InsertDataState:
+                m_cmd_cap_nhat.Visible = false;
+                m_cmd_tao_moi.Visible = true;
+                m_cbo_vi_tri.Enabled = true;
+                break;
+            case DataEntryFormMode.SelectDataState:
+                break;
+            case DataEntryFormMode.UpdateDataState:
+                m_cmd_cap_nhat.Visible = true;
+                m_cmd_tao_moi.Visible = false;
+                m_cbo_vi_tri.Enabled = false;
+                break;
+            case DataEntryFormMode.ViewDataState:
+                break;
+            default:
+                break;
+        }
+    }
+
+
     private void load_data_2_grid(decimal ip_dc_id_parent)
     {
         m_us_ht_chuc_nang.load_all_data_by_root_parent_id(ip_dc_id_parent, m_ds_ht_chuc_nang);
@@ -94,6 +119,8 @@ public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
     }
     private void reset_control()
     {
+        m_lbl_mess.Text = "";
+        m_lbl_thong_bao.Text = "";
         m_txt_ten_chuc_nang.Text = "";
         m_txt_url_form.Text = "";
         m_cbo_chuc_nang_cap_1.SelectedIndex = 0;
@@ -122,25 +149,27 @@ public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
     }
     #endregion
 
-    #region Public Interfaces
-    public string mapping_yn(object ip_obj_str_yn)
-    {
-        if (CIPConvert.ToStr(ip_obj_str_yn).Equals("Y")) return "Có";
-        return "Không";
-    }
-
-    public string mapping_chuc_nang_parrent_by_id(object ip_dc_chuc_nang_parrent_id)
-    {
-
-        return "";
-    }
-    #endregion
+    
 
     #region Events
+
+    protected void Page_Load(object sender, EventArgs e) {
+        if (!IsPostBack) {
+            load_data_2_cbo_parent();
+            load_data_2_cbo_chuc_nang_search();
+            load_data_2_cbo_vi_tri();
+            load_data_2_grid(CIPConvert.ToDecimal(m_cbo_chuc_nang_cap_1.SelectedValue));
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+
+            set_control_by_form_mode();
+        }
+    }
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
         {
+            m_lbl_mess.Text = "";
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
             // thu thập dữ liệu
             form_2_us_obj();
             // Insert
@@ -160,6 +189,8 @@ public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
     {
         try
         {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_lbl_mess.Text = "";
             // thu thập dữ liệu
             form_2_us_obj();
             m_us_ht_chuc_nang.dcID = CIPConvert.ToDecimal(hdf_id.Value);
@@ -169,9 +200,9 @@ public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
             load_data_2_grid(CIPConvert.ToDecimal(m_cbo_chuc_nang_cap_1.SelectedValue));
             // Reset lại control
             reset_control();
-            m_cmd_tao_moi.Enabled = true;
-            m_cmd_cap_nhat.Enabled = false;
-            m_cbo_vi_tri.Enabled = true;
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            set_control_by_form_mode();
+
             m_lbl_mess.Text = "Cập nhật dữ liệu thành công!";
         }
         catch (Exception v_e)
@@ -200,6 +231,8 @@ public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
         try
         {
             reset_control();
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            set_control_by_form_mode();
         }
         catch (Exception v_e)
         {
@@ -210,8 +243,8 @@ public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
     {
         try
         {
-            m_cmd_tao_moi.Enabled = false;
-            m_cmd_cap_nhat.Enabled = true;
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            set_control_by_form_mode();
             m_lbl_mess.Text = "";
             load_data_2_us_by_id(e.NewSelectedIndex);
         }
