@@ -42,8 +42,6 @@
                 <asp:TextBox ID="m_txt_ten_nhom_quyen" CssClass="cssTextBox" CausesValidation="false"
                     runat="server" MaxLength="64" Width="495px" />
                 &nbsp;
-                <asp:RequiredFieldValidator ID="m_ct_noi_dung" runat="server" ControlToValidate="m_txt_ten_nhom_quyen"
-                    ErrorMessage="Bạn phải nhập tên nhóm quyền" Text="*" />
             </td>
             <td style="width: 5%;">
                 &nbsp;
@@ -51,7 +49,7 @@
         </tr>
         <tr>
             <td align="right">
-                <asp:Label ID="lbl_mo_ta" CssClass="cssManField" runat="server" Text="&lt;U&gt;M&lt;/U&gt;ô tả" />
+                <asp:Label ID="lbl_mo_ta" CssClass="cssManField" runat="server" Text="Mô tả" />
             </td>
             <td valign="top" colspan="2">
                 <asp:TextBox ID="m_txt_mo_ta" runat="server" TextMode="MultiLine" Width="495px" Height="83px"></asp:TextBox>
@@ -70,11 +68,11 @@
             </td>
             <td colspan="2" align="left">
                 <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" />&nbsp;
+                    Width="98px" Height="25px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" />&nbsp;
                 <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click1" />&nbsp;
+                    Width="98px" Height="25px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click1" />&nbsp;
                 <asp:Button ID="btnCancel" AccessKey="r" CssClass="cssButton" runat="server" Width="98px"
-                    Text="Xóa trắng(r)" />
+                    Height="25px" Text="Xóa trắng(r)" OnClick="btnCancel_Click" />
                 <asp:HiddenField ID="hdf_id" runat="server" Value="" />
             </td>
         </tr>
@@ -90,6 +88,23 @@
             <td>
                 &nbsp;
             </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <asp:Label ID="Label1" Visible="true" runat="server" CssClass="cssManField">Tìm kiếm nhóm người sử dụng</asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="m_txt_search_key" CssClass="cssTextBox" CausesValidation="false"
+                    runat="server"  Width="495px" />
+                <asp:Button ID="m_cmd_tim_kiem" AccessKey="c" CssClass="cssButton" runat="server" Width="98px"
+                    Height="25px" Text="Tìm kiếm" OnClick="m_cmd_tim_kiem_Click" />
+            </td>
+            <td>
+                
+            </td>
         </tr>
         <tr>
             <td align="center" colspan="3" style="height: 450px;" valign="top">
@@ -102,8 +117,8 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                             <ItemTemplate>
-                                <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa" CausesValidation ="false"
-                                    OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
+                                <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
+                                    CausesValidation="false" OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
                                     <img src="../Images/Button/deletered.png" alt="Delete" />
                                 </asp:LinkButton>
                             </ItemTemplate>
@@ -115,7 +130,7 @@
                      <img alt="Xóa" src="../Images/Button/edit.png" />
                                 </asp:LinkButton>
                             </ItemTemplate>
-                            <ItemStyle HorizontalAlign="Center" ></ItemStyle>
+                            <ItemStyle HorizontalAlign="Center"></ItemStyle>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                             <ItemTemplate>
