@@ -135,7 +135,7 @@ namespace WebUS
             pm_objDR["ID_LOAI_DON_VI"] = System.Convert.DBNull;
         }
 
-        public decimal ?dcID_DON_VI_CAP_TREN
+        public decimal dcID_DON_VI_CAP_TREN
         {
             get
             {
@@ -157,7 +157,7 @@ namespace WebUS
             pm_objDR["ID_DON_VI_CAP_TREN"] = System.Convert.DBNull;
         }
 
-        public decimal ?dcSTT
+        public decimal dcSTT
         {
             get
             {
