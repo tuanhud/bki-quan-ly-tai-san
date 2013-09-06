@@ -409,7 +409,8 @@
                                 Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
                                 PageSize="15" ShowHeader="true" OnRowUpdating="m_grv_tai_san_khac_RowUpdating"
                                 OnRowDeleting="m_grv_tai_san_khac_RowDeleting" EmptyDataText="Không có dữ liệu."
-                                OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging">
+                                OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging" 
+                                onselectedindexchanged="m_grv_tai_san_khac_SelectedIndexChanged">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                                         <ItemTemplate>

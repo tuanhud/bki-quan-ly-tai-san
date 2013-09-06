@@ -49,6 +49,7 @@ public partial class Default2 : System.Web.UI.Page
             , m_ds_v_tai_san_khac);
         m_grv_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
         string v_str_thong_tin = " (Có " + m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
+        m_lbl_title.Text = "DANH SÁCH TÀI SẢN KHÁC";
         m_lbl_title.Text += v_str_thong_tin;
         m_grv_tai_san_khac.DataBind();
     }
@@ -246,6 +247,26 @@ public partial class Default2 : System.Web.UI.Page
         m_txt_khac.Text = "";
         m_e_form_mode = DataEntryFormMode.InsertDataState;
     }
+    private void set_form_mode()
+    {
+        switch (m_e_form_mode)
+        {
+            case DataEntryFormMode.InsertDataState:
+                m_cmd_tao_moi.Visible = true;
+                m_cmd_cap_nhat.Visible = false;
+                break;
+            case DataEntryFormMode.SelectDataState:
+                break;
+            case DataEntryFormMode.UpdateDataState:
+                m_cmd_tao_moi.Visible = false;
+                m_cmd_cap_nhat.Visible = true;
+                break;
+            case DataEntryFormMode.ViewDataState:
+                break;
+            default:
+                break;
+        }
+    }
     private void update_data()
     {
         if (hdf_id.Value.Trim().Equals(""))
@@ -319,26 +340,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         //base.VerifyRenderingInServerForm(control);
     }
-    private void set_form_mode()
-    {
-        switch (m_e_form_mode)
-        {
-            case DataEntryFormMode.InsertDataState:
-                m_cmd_tao_moi.Visible = true;
-                m_cmd_cap_nhat.Visible = false;
-                break;
-            case DataEntryFormMode.SelectDataState:
-                break;
-            case DataEntryFormMode.UpdateDataState:
-                m_cmd_tao_moi.Visible = false;
-                m_cmd_cap_nhat.Visible = true;
-                break;
-            case DataEntryFormMode.ViewDataState:
-                break;
-            default:
-                break;
-        }
-    }
+    
     protected void m_cmd_cap_nhat_Click(object sender, EventArgs e)
     {
         try

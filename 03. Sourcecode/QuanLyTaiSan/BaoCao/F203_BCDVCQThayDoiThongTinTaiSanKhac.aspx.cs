@@ -120,6 +120,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
                 , m_txt_tim_kiem.Text
                 , v_ds_v_dm_tai_san_khac_history);
             m_grv_tai_san_khac_history.DataSource = v_ds_v_dm_tai_san_khac_history;
+            m_lbl_title.Text = "THÔNG TIN THAY ĐỔI";
             string v_str_thong_tin = " (Có " + v_ds_v_dm_tai_san_khac_history.V_DM_TAI_SAN_KHAC_HISTORY.Rows.Count + " bản ghi)";
             m_lbl_title.Text += v_str_thong_tin;
             m_grv_tai_san_khac_history.DataBind();

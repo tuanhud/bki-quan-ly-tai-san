@@ -139,6 +139,7 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
             , m_txt_tim_kiem.Text
             , v_ds_v_dm_nha_history);
         m_grv_nha_history.DataSource = v_ds_v_dm_nha_history;
+        m_lbl_title.Text = "THÔNG TIN THAY ĐỔI";
         string v_str_thong_tin = " (Có " + v_ds_v_dm_nha_history.V_DM_NHA_HISTORY.Rows.Count + " bản ghi)";
         m_lbl_title.Text += v_str_thong_tin;
         m_grv_nha_history.DataBind();
