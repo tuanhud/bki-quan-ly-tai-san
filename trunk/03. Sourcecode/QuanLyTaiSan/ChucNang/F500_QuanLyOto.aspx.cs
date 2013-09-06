@@ -25,7 +25,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
     IP.Core.IPUserService.US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
     IP.Core.IPData.DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-    DataEntryFormMode m_init_mode = DataEntryFormMode.ViewDataState;
+    DataEntryFormMode m_init_mode = DataEntryFormMode.InsertDataState;
 
 
     #endregion
@@ -87,7 +87,26 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
 
     }
-
+    private void set_form_mode()
+    {
+        switch (m_init_mode)
+        {
+            case DataEntryFormMode.InsertDataState:
+                m_cmd_tao_moi.Visible = true;
+                m_cmd_cap_nhat.Visible = false;
+                break;
+            case DataEntryFormMode.SelectDataState:
+                break;
+            case DataEntryFormMode.UpdateDataState:
+                m_cmd_tao_moi.Visible = false;
+                m_cmd_cap_nhat.Visible = true;
+                break;
+            case DataEntryFormMode.ViewDataState:
+                break;
+            default:
+                break;
+        }
+    }
     private void reset_control()
     {
         m_txt_bien_kiem_soat.Text = "";
@@ -236,16 +255,56 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
     private bool check_validate_data_is_ok()
     {
-        if (!CValidateTextBox.IsValid(m_txt_ma_ts, DataType.StringType, allowNull.NO)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_ten_ts, DataType.StringType, allowNull.NO)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_nguon_ns, DataType.NumberType, allowNull.NO)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_nguon_khac, DataType.NumberType, allowNull.NO)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_nam_su_dung, DataType.NumberType, allowNull.YES)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_nam_san_xuat, DataType.NumberType, allowNull.YES)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_gia_tri_con_lai, DataType.NumberType, allowNull.NO)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_qlnn, DataType.NumberType, allowNull.YES)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
-        if (!CValidateTextBox.IsValid(m_txt_khong_kinh_doanh, DataType.NumberType, allowNull.YES)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_ma_ts, DataType.StringType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng mã tài sản";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_ten_ts, DataType.StringType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng tên tài sản";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_nguon_ns, DataType.NumberType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng nguồn ngân sách";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_nguon_khac, DataType.NumberType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng nguồn khác";
+            return false; 
+        }
+        if (!CValidateTextBox.IsValid(m_txt_nam_su_dung, DataType.DateType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng năm sử dụng";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_nam_san_xuat, DataType.DateType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng năm sản xuất";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_gia_tri_con_lai, DataType.NumberType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng giá trị còn lại";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_qlnn, DataType.NumberType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng quản lý nhà nước";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_kinh_doanh, DataType.NumberType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng kinh doanh";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_khong_kinh_doanh, DataType.NumberType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng không kinh doanh";
+            return false;
+        }
         if ((m_txt_nam_su_dung.Text.Trim().Length > 0) & (m_txt_nam_san_xuat.Text.Trim().Length > 0))
         {
             if (CIPConvert.ToDecimal(m_txt_nam_su_dung.Text) < CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text))
@@ -263,7 +322,26 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             }
         }
 
-
+        /*if (m_init_mode == DataEntryFormMode.UpdateDataState)
+        {
+            m_us_dm_oto = new US_DM_OTO(CIPConvert.ToDecimal(m_hdf_id.Value));
+            if (m_us_dm_oto.strMA_TAI_SAN != m_txt_ma_ts.Text)
+            {
+                if (!m_us_dm_oto.check_ma_valid(m_txt_ma_ts.Text))
+                {
+                    m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
+                    return false;
+                }
+            }
+        }
+        if (m_init_mode == DataEntryFormMode.InsertDataState)
+        {
+            if (!m_us_dm_oto.check_ma_valid(m_txt_ma_ts.Text.Trim()))
+            {
+                m_lbl_mess.Text = "Mã tài sản này đã tồn tại";
+                return false;
+            };
+        }*/
         return true;
     }
 
@@ -291,9 +369,9 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         form_2_us_object(m_us_dm_oto);
         m_us_dm_oto.Update();
         reset_control();
+        set_form_mode();
         m_lbl_mess.Text = "Cập nhật dữ liệu thành công!";
         m_grv_dm_oto.EditIndex = -1;
-        m_init_mode = DataEntryFormMode.ViewDataState;
         load_data_to_grid();
     }
 
@@ -326,7 +404,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+
+            /*m_lbl_mess.Text = "";
             if (m_init_mode == DataEntryFormMode.UpdateDataState)
             {
                 m_cmd_tao_moi.Enabled = false;
@@ -334,10 +413,11 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             else
             {
                 m_cmd_tao_moi.Enabled = true;
-            }
+            }*/
+            
             if (!IsPostBack)
             {
-
+                set_form_mode();
                 WinFormControls.load_data_to_cbo_bo_tinh(
                      WinFormControls.eTAT_CA.NO
                      , m_ddl_bo_tinh);
@@ -378,6 +458,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            m_init_mode = DataEntryFormMode.UpdateDataState;
             update_data();
         }
         catch (System.Exception v_e)
@@ -390,6 +471,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         try
         {
             reset_control();
+            set_form_mode();
         }
         catch (Exception v_e)
         {
@@ -474,8 +556,9 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 switch (e.CommandName)
                 {
                     case "EditComp":
-                        m_init_mode = DataEntryFormMode.UpdateDataState;
                         load_data_2_us_by_id(rowIndex);
+                        m_init_mode = DataEntryFormMode.UpdateDataState;
+                        set_form_mode();
                         load_data_to_grid();
                         break;
                     case "DeleteComp":
@@ -506,4 +589,5 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
 
     #endregion
+ 
 }

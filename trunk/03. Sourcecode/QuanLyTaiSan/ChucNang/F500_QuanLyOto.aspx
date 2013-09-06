@@ -130,8 +130,8 @@
                                 </td>
                                 <td align="left" class="style1" style="width: 30%">
                                     <asp:TextBox ID="m_txt_bien_kiem_soat" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="m_rfv_nhan_hieu" runat="server" ControlToValidate="m_txt_ten_nhan_hieu"
-                                        ErrorMessage="Bạn phải nhập biển kiểm soát" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="m_rfv_nhan_hieu" runat="server" ControlToValidate="m_txt_bien_kiem_soat"
+                                        ErrorMessage="Bạn phải nhập Biển kiểm soát" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -211,8 +211,8 @@
                                 <td align="left" class="style1" style="width: 30%">
                                     <asp:TextBox ID="m_txt_nguon_khac" runat="server" CssClass="cssTextBox csscurrency"
                                         Width="85%"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="m_rfv_nguon_ns1" runat="server" ControlToValidate="m_txt_nguon_ns"
-                                        ErrorMessage="Bạn phải nhập Nguồn NS" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="m_rfv_nguon_ns1" runat="server" ControlToValidate="m_txt_nguon_khac"
+                                        ErrorMessage="Bạn phải nhập Nguồn Khác" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>

@@ -27,7 +27,7 @@ public partial class Default2 : System.Web.UI.Page
                 set_form_title_and_cbo();
                 WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                    , ip_e_tat_ca
+                    , WinFormControls.eTAT_CA.YES
                     , m_cbo_loai_hinh_don_vi
                     );
                 WinFormControls.load_data_to_cbo_bo_tinh(
