@@ -390,6 +390,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         }
         m_cmd_cap_nhat.Visible = false;
         m_cmd_tao_moi.Visible = true;
+        m_cmd_xoa_trang.Visible = false;
 
         WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
             WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
@@ -445,6 +446,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
+            m_cmd_xoa_trang.Visible = false;
             set_form(LOAI_FORM.THEM);
             insert_user();
         }
@@ -460,6 +462,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             m_cmd_tao_moi.Visible = true;
             m_cmd_cap_nhat.Visible = false;
             xoa_trang();
+            m_cmd_xoa_trang.Visible = false;
         }
         catch (Exception v_e)
         {
@@ -503,6 +506,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             reset_thong_bao();
             m_cmd_tao_moi.Visible = false;
             m_cmd_cap_nhat.Visible = true;
+            m_cmd_xoa_trang.Visible = true;
             xoa_trang();
             load_update_don_vi(e.RowIndex);
         }
