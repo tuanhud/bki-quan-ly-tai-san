@@ -864,5 +864,28 @@ namespace WebUS
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        #region "Additional Functions"
+        public void FillDataSetByKeyWord(
+            string ip_str_id_bo_tinh
+            , string ip_str_id_dv_chu_quan
+            , string ip_str_id_dv_su_dung
+            , string ip_str_id_trang_thai
+            , string ip_str_user_name
+            , string ip_str_loai_hinh_dv
+            , string ip_str_tu_khoa
+            , DS_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC op_ds_v_gd_khau_hao_dm_ts_khac)
+        {
+            CStoredProc v_obj_procedure = new CStoredProc("pr_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC_Load_data_to_grid_by_tu_khoa");
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_str_id_bo_tinh);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_str_id_dv_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_str_id_dv_su_dung);
+            v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_str_id_trang_thai);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_dv);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_v_gd_khau_hao_dm_ts_khac);
+        }
+        #endregion
     }
 }
