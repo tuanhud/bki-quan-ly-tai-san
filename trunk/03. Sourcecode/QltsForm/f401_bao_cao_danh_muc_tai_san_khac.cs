@@ -33,6 +33,7 @@ namespace QltsForm
 
     public class f401_bao_cao_danh_muc_tai_san_khac : System.Windows.Forms.Form
     {
+        #region inital_control
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
@@ -57,7 +58,6 @@ namespace QltsForm
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
         private System.ComponentModel.IContainer components;
-
         public f401_bao_cao_danh_muc_tai_san_khac()
         {
             //
@@ -70,10 +70,6 @@ namespace QltsForm
             //
             format_controls();
         }
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -85,7 +81,8 @@ namespace QltsForm
             }
             base.Dispose(disposing);
         }
-
+        #endregion
+       
         #region Windows Form Designer generated code
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -448,19 +445,19 @@ namespace QltsForm
                 v_us_dm_don_vi = new US_DM_DON_VI();
             }
 
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1); ;
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport(); ;
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
-                    v_obj_exe_report = new CExcelWebReport("BC-026 Bao cao danh muc tai san khac.xls", 12, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSK, 12, 1);
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
-                    v_obj_exe_report = new CExcelWebReport("BC-024 Bao cao danh muc tai san khac de nghi xu ly.xls", 12, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSK_DE_NGHI_XU_LY, 12, 1);
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
-                    v_obj_exe_report = new CExcelWebReport("BC-28 Danh muc tai san khac giao cho don vi cong lap tu chu tai chinh.xls", 14, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSK_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH, 14, 1);
                     load_data_2_grid(op_obj_excel_parameters);
                     break;
                 default:
@@ -918,11 +915,7 @@ namespace QltsForm
 
         #endregion
 
-        //
-        //
-        //		EVENT HANLDERS
-        //
-        //
+        #region events
         private void f401_bao_cao_danh_muc_tai_san_khac_Load(object sender, System.EventArgs e)
         {
             try
@@ -996,7 +989,7 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+        #endregion
     }
 }
 
