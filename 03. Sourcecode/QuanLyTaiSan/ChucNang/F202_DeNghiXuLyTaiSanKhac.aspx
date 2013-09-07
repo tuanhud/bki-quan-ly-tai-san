@@ -106,7 +106,12 @@
                             <span class="cssManField">&nbsp;</span>
                         </td>
                         <td>
-                            &nbsp;
+                            <span class="cssManField">
+                            Chú ý:
+                            <br />
+                            - Chọn trạng thái tài sản là "1-Đang sử dụng" để lập đề nghị xử lý
+                            <br />- Chọn trạng thái tài sản là "2-Đề nghị xử lý" để hủy đề nghị xử lý
+                        </span>
                         </td>
                     </tr>
                     <tr>
