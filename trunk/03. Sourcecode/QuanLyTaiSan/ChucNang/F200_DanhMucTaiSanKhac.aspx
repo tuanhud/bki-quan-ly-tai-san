@@ -362,8 +362,9 @@
                 <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                     <tr>
                         <td class="cssPageTitleBG" colspan="4">
-                            <asp:Label ID="m_lbl_title" runat="server" Text="DANH SÁCH TÀI SẢN KHÁC " CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
-                            </span><span class="expand-collapse-text"></span>
+                            <asp:Label ID="m_lbl_title" runat="server" Text="DANH SÁCH TÀI SẢN KHÁC " CssClass="cssPageTitle"></asp:Label><span
+                                class="expand-collapse-text initial-expand"> </span><span class="expand-collapse-text">
+                                </span>
                         </td>
                     </tr>
                     <tr>
@@ -409,12 +410,11 @@
                                 Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
                                 PageSize="15" ShowHeader="true" OnRowUpdating="m_grv_tai_san_khac_RowUpdating"
                                 OnRowDeleting="m_grv_tai_san_khac_RowDeleting" EmptyDataText="Không có dữ liệu."
-                                OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging" 
-                                onselectedindexchanged="m_grv_tai_san_khac_SelectedIndexChanged">
+                                OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa" 
+                                            <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
                                                 OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
 
 
@@ -558,9 +558,9 @@
                     </tr>
                 </table>
             </ContentTemplate>
-                            <triggers>
-<asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
-</triggers>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+            </Triggers>
         </asp:UpdatePanel>
     </div>
     <asp:UpdateProgress ID="Updateprogress1" runat="server">
