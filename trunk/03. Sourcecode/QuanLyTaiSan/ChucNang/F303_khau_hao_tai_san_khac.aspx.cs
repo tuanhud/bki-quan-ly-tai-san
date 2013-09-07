@@ -117,6 +117,16 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
+        m_lbl_khau_hao_tai_san_khac.Text = "DANH SÁCH CÁC LẦN KHẤU HAO";
+        US_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC v_us_gd_khau_hao_tai_san_khac = new US_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC();
+        DS_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC v_ds_gd_khau_hao_tai_san_khac = new DS_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC();
+        //code
+
+
+        m_grv_tai_san_khac.DataSource = v_ds_gd_khau_hao_tai_san_khac.V_GD_KHAU_HAO_DM_TAI_SAN_KHAC;
+        string v_str_thong_tin = " (Có " + v_ds_gd_khau_hao_tai_san_khac.V_GD_KHAU_HAO_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
+        m_lbl_khau_hao_tai_san_khac.Text += v_str_thong_tin;
+        m_grv_tai_san_khac.DataBind();
     }
 
     private void load_data_from_us()
