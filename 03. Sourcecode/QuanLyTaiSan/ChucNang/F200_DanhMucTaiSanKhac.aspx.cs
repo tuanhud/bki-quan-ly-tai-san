@@ -18,24 +18,12 @@ public partial class Default2 : System.Web.UI.Page
     US_DM_TAI_SAN_KHAC m_us_tai_san_khac = new US_DM_TAI_SAN_KHAC();
     DS_DM_TAI_SAN_KHAC m_ds_tai_san_khac = new DS_DM_TAI_SAN_KHAC();
     DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
-
-
     #endregion
     #region Data Structures
     #endregion
     #region Private Methods
     private void load_data_2_grid()
     {
-        /*try {
-            m_ds_tai_san_khac.DM_TAI_SAN_KHAC.Clear();
-            m_us_tai_san_khac.search(m_txt_tim_kiem.Text.Trim(), m_ds_tai_san_khac);
-            m_grv_tai_san_khac.DataSource = m_ds_tai_san_khac.DM_TAI_SAN_KHAC;
-            m_grv_tai_san_khac.DataBind();
-        }
-        catch (Exception v_e) {
-            throw v_e;
-        }
-         */
         US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
         DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
         m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Clear();
@@ -302,15 +290,9 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-
-
             if (!this.IsPostBack)
             {
-                /*load_data_2_grid();
-                load_data_2_cbo_bo_tinh();
-                load_data_2_cbo_trang_thai_tai_san();*/
                 set_form_mode();
-
                 WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.NO
                     , m_cbo_bo_tinh);
@@ -323,13 +305,9 @@ public partial class Default2 : System.Web.UI.Page
                     , m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_su_dung);
-                //load_data_2_cbo_trang_thai_tai_san();
                 WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.NO, m_cbo_trang_thai_tai_san);
                 load_data_2_grid();
             }
-
-            /*load_data_2_cbo_don_vi_chu_quan();
-            load_data_2_cbo_don_vi_su_dung();*/
         }
         catch (Exception v_e)
         {
@@ -340,7 +318,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         //base.VerifyRenderingInServerForm(control);
     }
-    
     protected void m_cmd_cap_nhat_Click(object sender, EventArgs e)
     {
         try
@@ -383,12 +360,6 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
-        /*m_ds_don_vi.DM_DON_VI.Clear();
-        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_DON_VI_CAP_TREN = "+m_cbo_bo_tinh.SelectedValue+"");
-        m_cbo_don_vi_chu_quan.DataSource = m_ds_don_vi.DM_DON_VI;
-        m_cbo_don_vi_chu_quan.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_don_vi_chu_quan.DataValueField = DM_DON_VI.ID;
-        m_cbo_don_vi_chu_quan.DataBind();*/
         try
         {
             m_lbl_mess.Text = "";
@@ -411,12 +382,6 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
-        /*m_ds_don_vi.DM_DON_VI.Clear();
-        m_us_don_vi.FillDataset(m_ds_don_vi, "Where ID_DON_VI_CAP_TREN = " + m_cbo_don_vi_chu_quan.SelectedValue + "");
-        m_cbo_don_vi_su_dung.DataSource = m_ds_don_vi.DM_DON_VI;
-        m_cbo_don_vi_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
-        m_cbo_don_vi_su_dung.DataValueField = DM_DON_VI.ID;
-        m_cbo_don_vi_su_dung.DataBind();*/
         try
         {
             m_lbl_mess.Text = "";
@@ -448,7 +413,6 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
-
     protected void m_cmd_search_Click(object sender, EventArgs e)
     {
         try
@@ -474,7 +438,6 @@ public partial class Default2 : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
-
             CSystemLog_301.ExceptionHandle(v_e);
         }
 
@@ -492,10 +455,6 @@ public partial class Default2 : System.Web.UI.Page
 
             CSystemLog_301.ExceptionHandle(v_e);
         }
-
-    }
-    protected void m_txt_khong_kinh_doanh_TextChanged(object sender, EventArgs e)
-    {
 
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
@@ -518,5 +477,4 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
     #endregion
-
 }
