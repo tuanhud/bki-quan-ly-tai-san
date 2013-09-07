@@ -479,6 +479,9 @@
                 </tr>
             </table>
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+        </Triggers>
     </asp:UpdatePanel>
     <asp:UpdateProgress ID="UpdateProgress1" runat="server">
         <ProgressTemplate>
