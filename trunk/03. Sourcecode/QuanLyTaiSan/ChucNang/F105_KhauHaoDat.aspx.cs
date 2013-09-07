@@ -137,7 +137,6 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 
     private void them_moi_khau_hao()
     {
-        if (!check_validate_data_is_valid()) return;
         US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
         US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
 
@@ -305,6 +304,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
     {
         try
         {
+            if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
         }
         catch (Exception v_e)
