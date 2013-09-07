@@ -137,6 +137,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         load_data_to_dv_su_dung_up();
         load_data_to_dv_su_dung_down();
         load_cbo_loai_xe();
+        load_data_to_ten_tai_san();
         load_data_to_grid();
     }
 
@@ -307,6 +308,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         try
         {
             load_data_to_ten_tai_san();
+            load_data_from_us();
         }
         catch (Exception v_e)
         {
@@ -318,6 +320,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         try
         {
             load_data_to_ten_tai_san();
+            load_data_from_us();
         }
         catch (Exception v_e)
         {
