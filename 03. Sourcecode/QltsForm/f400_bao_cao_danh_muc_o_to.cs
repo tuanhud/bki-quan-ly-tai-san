@@ -33,8 +33,9 @@ namespace QltsForm {
 
 
 	public class f400_bao_cao_danh_muc_o_to : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
+    {
+        #region inital_control
+        internal System.Windows.Forms.ImageList ImageList;
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
@@ -60,8 +61,7 @@ namespace QltsForm {
         private TextBox m_txt_search;
         private Label label7;
 		private System.ComponentModel.IContainer components;
-
-		public f400_bao_cao_danh_muc_o_to()
+        public f400_bao_cao_danh_muc_o_to()
 		{
 			//
 			// Required for Windows Form Designer support
@@ -73,21 +73,7 @@ namespace QltsForm {
 			//
 			format_controls();
 		}
-
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        #endregion
 
 		#region Windows Form Designer generated code
 		/// <summary>
@@ -478,7 +464,7 @@ namespace QltsForm {
                         , op_obj_excel_parameters.dcID_LOAI_TAI_SAN
                         , ID_TRANG_THAI_OTO.DANG_SU_DUNG
                         , op_obj_excel_parameters.strKEY_SEARCH);
-                    v_obj_exe_report = new CExcelWebReport("BC-002 Bao cao ke khai xe o to.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_KK, 13, 1);
                     break;
                 case eFormMode.O_TO_DE_NGHI_XU_LY:
                     load_data_2_grid(
@@ -488,7 +474,7 @@ namespace QltsForm {
                         , op_obj_excel_parameters.dcID_LOAI_TAI_SAN                                           
                         , ID_TRANG_THAI_OTO.DE_NGHI_XU_LY
                         , op_obj_excel_parameters.strKEY_SEARCH);
-                    v_obj_exe_report = new CExcelWebReport("BC-005 Danh muc xe oto de nghi xu ly.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_DNXL, 13, 1);
                     break;
                 case eFormMode.O_TO_GIAO_DON_VI_SU_NGHIEP:
                     // Chỗ này đang chưa chuẩn vì chưa hiểu sự nghiệp là gì
@@ -499,7 +485,7 @@ namespace QltsForm {
                         , op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN
                         , ID_TRANG_THAI_OTO.DANG_SU_DUNG
                         , op_obj_excel_parameters.strKEY_SEARCH);
-                    v_obj_exe_report = new CExcelWebReport("BC-023 Bao cao danh muc xe o to giao cho don vi su nghiep cong lap tu chu tai chinh.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_DVTCTC, 13, 1);
                     break;
                 default:
                     break;
@@ -610,6 +596,21 @@ namespace QltsForm {
 		#endregion
 
 		#region Private Methods
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+
+            m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
+            m_cbo_bo_tinh.SelectedValueChanged += new EventHandler(m_cbo_bo_tinh_SelectedValueChanged);
+            m_cbo_don_vi_chu_quan.SelectedValueChanged += new EventHandler(m_cbo_don_vi_chu_quan_SelectedValueChanged);
+            m_cbo_don_vi_su_dung.SelectedValueChanged += new EventHandler(m_cbo_don_vi_su_dung_SelectedValueChanged);
+            m_cbo_trang_thai_tai_san.SelectedValueChanged += new EventHandler(m_cbo_trang_thai_tai_san_SelectedValueChanged);
+
+        }
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
@@ -650,12 +651,6 @@ namespace QltsForm {
 
             
 		}
-
-        
-      
-
-       
-
         private void load_data_2_cbo_trang_thai_oto() {
 
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
@@ -669,8 +664,6 @@ namespace QltsForm {
             m_cbo_trang_thai_tai_san.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
             m_cbo_trang_thai_tai_san.SelectedValueChanged += new EventHandler(m_cbo_bo_tinh_SelectedValueChanged);
         }
-
-
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
 			v_htb.Add(V_DM_OTO.NGUON_GOC_XE, e_col_Number.NGUON_GOC_XE);
@@ -723,7 +716,6 @@ namespace QltsForm {
                 , "{0}");
 			m_fg.Redraw = true;
 		}
-
         private void export_excel() {
             CExcelReport v_obj_exe_report = new CExcelReport("BC-002 Bao cao ke khai xe o to.xls", 13, 1); ;
             switch (m_e_form_mode) {
@@ -748,29 +740,26 @@ namespace QltsForm {
             v_obj_exe_report.FindAndReplace(false);
             v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
         }
-		private void grid2us_object(US_V_DM_OTO i_us
+		private void grid2us_object(
+            US_V_DM_OTO i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-
-	
-		private void us_object2grid(US_V_DM_OTO i_us
+		private void us_object2grid(
+            US_V_DM_OTO i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
-
-
 		private void insert_v_dm_oto(){			
 		//	f400_bao_cao_danh_muc_o_to_de_nghi_xu_ly_DE v_fDE = new  f400_bao_cao_danh_muc_o_to_de_nghi_xu_ly_DE();								
 		//	v_fDE.display();
 			//load_data_2_grid();
 		}
-
 		private void update_v_dm_oto(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
@@ -779,7 +768,6 @@ namespace QltsForm {
 		//	v_fDE.display(m_us);
 			//load_data_2_grid();
 		}
-				
 		private void delete_v_dm_oto(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
@@ -799,7 +787,6 @@ namespace QltsForm {
 				v_objErrHandler.showErrorMessage();
 			}
 		}
-
 		private void view_v_dm_oto(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
@@ -807,25 +794,13 @@ namespace QltsForm {
 		//	f400_bao_cao_danh_muc_o_to_de_nghi_xu_ly_DE v_fDE = new f400_bao_cao_danh_muc_o_to_de_nghi_xu_ly_DE();			
 		//	v_fDE.display(m_us);
 		}
-
         #endregion
-        private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 
-            m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
-            m_cbo_bo_tinh.SelectedValueChanged += new EventHandler(m_cbo_bo_tinh_SelectedValueChanged);
-            m_cbo_don_vi_chu_quan.SelectedValueChanged += new EventHandler(m_cbo_don_vi_chu_quan_SelectedValueChanged);
-            m_cbo_don_vi_su_dung.SelectedValueChanged += new EventHandler(m_cbo_don_vi_su_dung_SelectedValueChanged);
-            m_cbo_trang_thai_tai_san.SelectedValueChanged += new EventHandler(m_cbo_trang_thai_tai_san_SelectedValueChanged);
-
-		}
-
-        void m_cbo_trang_thai_tai_san_SelectedValueChanged(object sender, EventArgs e) {
-            try {
+        #region events
+        void m_cbo_trang_thai_tai_san_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
 
                 if (m_cbo_trang_thai_tai_san.SelectedValue == null) return;
                 if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
@@ -838,30 +813,34 @@ namespace QltsForm {
             , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue)
             , m_txt_search.Text);
             }
-            catch (Exception v_e) {
-                
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        void m_cmd_export_excel_Click(object sender, EventArgs e) {
-            try {
+        void m_cmd_export_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 export_excel();
             }
-            catch (Exception v_e) {
-                
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        void m_cbo_don_vi_chu_quan_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
 
-        void m_cbo_don_vi_chu_quan_SelectedValueChanged(object sender, EventArgs e) {
-            try {
-             
                 QltsFormControls.load_data_to_cbo_don_vi_su_dung(
                     CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
                     , QltsFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung);            
+                    , m_cbo_don_vi_su_dung);
                 if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
                 if (m_cbo_trang_thai_tai_san.SelectedValue == null) return;
                 load_data_2_grid(
@@ -872,14 +851,16 @@ namespace QltsForm {
             , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue)
             , m_txt_search.Text);
             }
-            catch (Exception v_e) {
-                
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        void m_cbo_don_vi_su_dung_SelectedValueChanged(object sender, EventArgs e) {
-            try {
+        void m_cbo_don_vi_su_dung_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
                 if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
 
 
@@ -888,7 +869,7 @@ namespace QltsForm {
                 m_txt_loai_hinh_don_vi.Text = v_us_dm_don_vi.strLOAI_HINH_DON_VI;
                 m_txt_ma_don_vi.Text = v_us_dm_don_vi.strMA_DON_VI;
 
-                
+
                 if (m_cbo_trang_thai_tai_san.SelectedValue == null) return;
                 load_data_2_grid(
                 CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
@@ -899,16 +880,83 @@ namespace QltsForm {
                 , m_txt_search.Text);
 
             }
-            catch (Exception v_e) {
-                
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void f400_bao_cao_danh_muc_o_to_de_nghi_xu_ly_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-     
-
-        void m_cbo_bo_tinh_SelectedValueChanged(object sender, EventArgs e) {
-            try {
+        }
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_dm_oto();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_oto();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_dm_oto();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_dm_oto();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        void m_cbo_bo_tinh_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
                 QltsFormControls.load_data_to_cbo_don_vi_chu_quan(
                 CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
                 , QltsFormControls.eTAT_CA.YES
@@ -917,7 +965,7 @@ namespace QltsForm {
                     CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
                     , QltsFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung);            
+                    , m_cbo_don_vi_su_dung);
                 if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
                 if (m_cbo_trang_thai_tai_san.SelectedValue == null) return;
                 load_data_2_grid(
@@ -929,73 +977,13 @@ namespace QltsForm {
             , m_txt_search.Text);
 
             }
-            catch (Exception v_e) {
-                
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-		
-
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f400_bao_cao_danh_muc_o_to_de_nghi_xu_ly_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
-
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
+        #endregion
 	}
 }
 
