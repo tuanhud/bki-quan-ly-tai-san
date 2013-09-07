@@ -154,8 +154,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         switch (id_loai_bao_cao)
         {
             case "1":
-                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_loai_hinh(
-                    CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
+                    ""
+                    ,CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
@@ -166,28 +167,30 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                     );
                 break;
             case "2":
-                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_loai_hinh(
-                    CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                    , m_cbo_loai_hinh_don_vi.SelectedValue
-                    , v_str_user_name
-                    , v_ds_v_dm_nha
-                    );
+                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
+                     ""
+                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                     , m_cbo_loai_hinh_don_vi.SelectedValue
+                     , v_str_user_name
+                     , v_ds_v_dm_nha
+                     );
                 break;
             case "3":
-                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_loai_hinh(
-                    CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                    , m_cbo_loai_hinh_don_vi.SelectedValue
-                    , v_str_user_name
-                    , v_ds_v_dm_nha
-                    );
+                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
+                     ""
+                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+                     , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                     , m_cbo_loai_hinh_don_vi.SelectedValue
+                     , v_str_user_name
+                     , v_ds_v_dm_nha
+                     );
                 break;
         }
         m_grv_nha.DataSource = v_ds_v_dm_nha.V_DM_NHA;
@@ -287,7 +290,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         }
         m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
     }
-
     private void set_inital_form_load()
     {
         reset_thong_bao();
@@ -378,7 +380,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         }
         //------------------------------------------------------------------------
     }
-
     #endregion
 
     #region events
@@ -561,6 +562,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         try
         {
             if (!check_validate_data_is_ok()) return;
+            Thread.Sleep(1000);
             export_excel();
         }
 
