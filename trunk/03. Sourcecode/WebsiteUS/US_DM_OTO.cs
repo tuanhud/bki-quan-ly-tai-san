@@ -650,7 +650,7 @@ namespace WebUS
             v_store.fillDataSetByCommand(this, op_ds_dm_oto);
         }
         #endregion
-
+        #region Addtional
         public void FillDatasetBySearch(WebDS.DS_DM_OTO m_ds_dm_oto, 
                                         string v_str_tu_khoa, 
                                         decimal v_dc_id_trang_thai,
@@ -674,5 +674,16 @@ namespace WebUS
             cstored.addNVarcharInputParam("@QUERY",v_str_query);
             cstored.fillDataSetByCommand(this, m_ds_dm_oto);
         }
+        public bool check_ma_valid(string ip_str_ma_tai_san)
+        {
+            DS_DM_OTO v_ds_dm_oto = new DS_DM_OTO();
+            CStoredProc v_cstore = new CStoredProc("pr_DM_OTO_check_ma_tai_san_khac");
+            v_cstore.addNVarcharInputParam("@ip_str_ma_tai_san", ip_str_ma_tai_san);
+            v_cstore.fillDataSetByCommand(this, v_ds_dm_oto);
+            if (v_ds_dm_oto.DM_OTO.Rows.Count == 0)
+                return true;
+            return false;
+        }
+        #endregion
     }
 }
