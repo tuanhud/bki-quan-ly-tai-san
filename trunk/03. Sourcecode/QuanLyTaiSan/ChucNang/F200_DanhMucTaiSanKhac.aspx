@@ -291,7 +291,7 @@
                                     </td>
                                     <td align="left" style="width: 30%;">
                                         <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency"
-                                            align="left" Width="85%" ValidationGroup="m_vlg_tsk" OnTextChanged="m_txt_khong_kinh_doanh_TextChanged"></asp:TextBox>
+                                            align="left" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         (*)
