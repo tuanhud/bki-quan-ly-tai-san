@@ -51,6 +51,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
+        m_lbl_thong_tin_khau_hao_dat.Text = "DANH SÁCH KHẤU HAO ĐẤT";
         US_V_GD_KHAU_HAO_DM_DAT v_us_v_gd_khau_hao_dm_dat = new US_V_GD_KHAU_HAO_DM_DAT();
         DS_V_GD_KHAU_HAO_DM_DAT v_ds_v_gd_khau_hao_dm_dat = new DS_V_GD_KHAU_HAO_DM_DAT();
 
@@ -64,6 +65,8 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
             m_txt_tu_khoa.Text.Trim(),
             v_ds_v_gd_khau_hao_dm_dat);
         m_grv_danh_sach_dat.DataSource = v_ds_v_gd_khau_hao_dm_dat.V_GD_KHAU_HAO_DM_DAT;
+        string v_str_thong_tin = " (Có " + v_ds_v_gd_khau_hao_dm_dat.V_GD_KHAU_HAO_DM_DAT.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_khau_hao_dat.Text += v_str_thong_tin;
         m_grv_danh_sach_dat.DataBind();
     }
 

@@ -243,8 +243,10 @@
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <span class="cssPageTitle">Danh sách khấu hao đất</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_thong_tin_khau_hao_dat" runat="Server" class="cssPageTitle"
+                            Text="DANH SÁCH KHẤU HAO ĐẤT"></asp:Label>
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
