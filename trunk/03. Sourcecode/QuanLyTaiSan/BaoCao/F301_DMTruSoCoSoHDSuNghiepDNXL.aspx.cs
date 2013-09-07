@@ -83,7 +83,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             }
             Response.Clear();
             v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-            Response.Redirect(v_str_output_file, true);
+            Response.Redirect(v_str_output_file, false);
         }
 
     }
