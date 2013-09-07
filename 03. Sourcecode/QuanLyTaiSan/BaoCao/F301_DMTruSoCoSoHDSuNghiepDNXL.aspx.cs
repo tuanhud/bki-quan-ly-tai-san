@@ -29,6 +29,14 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     #endregion
 
     #region Private Methods
+    private void thong_bao(string ip_str_thong_bao)
+    {
+        m_lbl_mess.Text = ip_str_thong_bao;
+    }
+    private void reset_thong_bao()
+    {
+        m_lbl_mess.Text = "";
+    }
     private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter)
     {
         op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
@@ -105,25 +113,25 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     private bool check_validate_data_is_ok()
     {
-        m_lbl_mess.Text = "";
+        reset_thong_bao();
         if (m_cbo_bo_tinh.SelectedValue.Equals(""))
         {
-            m_lbl_mess.Text = "Không có Bộ, tỉnh!";
+            thong_bao("Không có Bộ, tỉnh!");
             return false;
         }
         if (m_cbo_don_vi_chu_quan.SelectedValue.Equals(""))
         {
-            m_lbl_mess.Text = "Không có Đơn vị chủ quản!";
+            thong_bao("Không có Đơn vị chủ quản!");
             return false;
         }
         if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
         {
-            m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+            thong_bao("Không có Đơn vị sử dụng!");
             return false;
         }
         if (m_cbo_dia_chi.SelectedValue.Equals(""))
         {
-            m_lbl_mess.Text = "Không có Địa Chỉ Đất!";
+            thong_bao("Không có Địa Chỉ Đất!");
             return false;
         }
 
@@ -131,6 +139,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     private void load_data_to_grid_nha()
     {
+        
         DS_V_DM_NHA v_ds_v_dm_nha = new DS_V_DM_NHA();
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         string v_id_dat = m_cbo_dia_chi.SelectedValue;
@@ -182,6 +191,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                 break;
         }
         m_grv_nha.DataSource = v_ds_v_dm_nha.V_DM_NHA;
+        if (v_ds_v_dm_nha.V_DM_NHA.Count == 0) thong_bao("Không có kết quả tìm kiếm phù hợp!");
         Thread.Sleep(1000);
         string v_str_thong_tin = " (Có " + v_ds_v_dm_nha.V_DM_NHA.Rows.Count + " bản ghi)";
         m_lbl_title.Text += v_str_thong_tin;
@@ -238,7 +248,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         m_cbo_don_vi_chu_quan.SelectedValue = v_us_don_vi_chu_quan.dcID.ToString();
         m_cbo_loai_hinh_don_vi.SelectedValue = v_us_don_vi_su_dung.strLOAI_HINH_DON_VI;
         m_cbo_don_vi_su_dung_tai_san.SelectedValue = ip_id_dvsd.ToString();
-        m_lbl_mess.Text = "";
+        reset_thong_bao();
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
         string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         switch (v_str_id_loai_bao_cao)
@@ -280,7 +290,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
 
     private void set_inital_form_load()
     {
-        m_lbl_mess.Text = "";
+        reset_thong_bao();
         form_title();
         format_label_disable();
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
@@ -359,6 +369,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
            , v_e_tat_ca
            , m_cbo_dia_chi
            );
+        m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
         //Select các cbo theo id dơn vị sử dụng khi có id_don_vi_su_dung trên url
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD] != null)
         {
@@ -389,7 +400,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             m_grv_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid_nha();
         }
@@ -404,7 +415,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         {
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
             string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             WinFormControls.eTAT_CA v_e_tat_ca = WinFormControls.eTAT_CA.NO;
             switch (v_str_id_loai_bao_cao)
             {
@@ -449,7 +460,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
             string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             WinFormControls.eTAT_CA v_e_tat_ca = WinFormControls.eTAT_CA.NO;
@@ -491,7 +502,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
             string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             WinFormControls.eTAT_CA v_e_tat_ca = WinFormControls.eTAT_CA.NO;
@@ -531,7 +542,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         try
         {
             m_lbl_title.Text = "THÔNG TIN NHÀ ĐẤT";
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             //m_lbl_total_dat.Text = "";
             //m_lbl_total_nha.Text = "";
             if (!check_validate_data_is_ok()) return;
@@ -562,7 +573,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO].Equals(null)) return;
             string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
             WinFormControls.eTAT_CA v_e_tat_ca = WinFormControls.eTAT_CA.NO;
@@ -587,7 +598,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                     );
             if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(""))
             {
-                m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+                thong_bao("Không có Đơn vị sử dụng!");
                 return;
             }
             WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
