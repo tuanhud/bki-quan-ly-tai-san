@@ -3,7 +3,6 @@
 
 <%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI" TagPrefix="asp" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         $(function () {
@@ -311,8 +310,10 @@
             <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <span class="cssPageTitle">Danh sách các lần đã khấu hao</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_danh_sach_khau_hao_nha" runat="Server" class="cssPageTitle"
+                            Text="DANH SÁCH CÁC LẦN KHẤU HAO"></asp:Label>
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
