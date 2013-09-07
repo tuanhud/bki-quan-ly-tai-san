@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
-    CodeFile="F102_DeNghiXuLyNha.aspx.cs" Inherits="ChucNang_F102_DeNghiXuLyNha" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    EnableEventValidation="false" CodeFile="F102_DeNghiXuLyNha.aspx.cs" Inherits="ChucNang_F102_DeNghiXuLyNha" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-<asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         // Hàm này dùng để check all checkbox trên lưới
         function SelectAllCheckboxes(spanChk) {
@@ -20,12 +20,12 @@
                 }
         }
     </script>
-</asp:content>
-<asp:content id="Content2" contentplaceholderid="MainContent" runat="Server">
-    <asp:scriptmanager id="ScriptManager1" runat="server">
-    </asp:scriptmanager>
-    <asp:updatepanel id="UpdatePanel1" runat="server">
-        <contenttemplate>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td colspan="4">
@@ -83,8 +83,15 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right" style="width: 15%">
+                        
                     </td>
                     <td align="left" style="width: 30%;">
+                        <span class="cssManField">
+                            Chú ý:
+                            <br />
+                            - Chọn trạng thái nhà là "1-Đang sử dụng" để lập đề nghị xử lý
+                            <br />- Chọn trạng thái nhà là "2-Đề nghị xử lý" để hủy đề nghị xử lý
+                        </span>
                     </td>
                 </tr>
                 <tr>
@@ -96,7 +103,7 @@
                         </asp:TextBox>
                     </td>
                     <td>
-                        </td>
+                    </td>
                     <td>
                     </td>
                 </tr>
@@ -104,15 +111,12 @@
                     <td>
                     </td>
                     <td>
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" 
-                            CssClass="cssButton" Height="24px" OnClick="m_cmd_tim_kiem_Click" 
-                            Text="Tìm kiếm" Width="98px" />
-                        
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
+                            Height="24px" OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm" Width="98px" />
                     </td>
                     <td>
-                        <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" 
-                            CssClass="cssButton" Height="25px" OnClick="m_cmd_xuat_excel_Click" 
-                            Text="Xuất Excel" Width="98px" />
+                        <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
+                            Height="25px" OnClick="m_cmd_xuat_excel_Click" Text="Xuất Excel" Width="98px" />
                     </td>
                     <td>
                     </td>
@@ -218,7 +222,9 @@
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
                                                 <td colspan="7" style="height: 50px">
-                                                    Hiện trạng sử dụng <br/>(m2)
+                                                    Hiện trạng sử dụng
+                                                    <br />
+                                                    (m2)
                                                 </td>
                                             </tr>
                                             <tr>
@@ -280,7 +286,7 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Trạng thái" DataField="TEN_TRANG_THAI"/>
+                                <asp:BoundField HeaderText="Trạng thái" DataField="TEN_TRANG_THAI" />
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
@@ -295,13 +301,13 @@
                     </td>
                 </tr>
             </table>
-        </contenttemplate>
+        </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
         </Triggers>
-    </asp:updatepanel>
-    <asp:updateprogress runat="server">
-        <progresstemplate>
+    </asp:UpdatePanel>
+    <asp:UpdateProgress runat="server">
+        <ProgressTemplate>
             <div class="cssLoadWapper">
                 <div class="cssLoadContent">
                     <img src="../Images/loadingBar.gif" alt="" />
@@ -309,6 +315,6 @@
                         Đang gửi yêu cầu, hãy đợi ...</p>
                 </div>
             </div>
-        </progresstemplate>
-    </asp:updateprogress>
-</asp:content>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+</asp:Content>

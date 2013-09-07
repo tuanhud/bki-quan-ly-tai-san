@@ -85,6 +85,12 @@
                     <td>
                         </td>
                     <td>
+                        <span class="cssManField">
+                            Chú ý:
+                            <br />
+                            - Chọn trạng thái đất là "1-Đang sử dụng" để lập đề nghị xử lý
+                            <br />- Chọn trạng thái đất là "2-Đề nghị xử lý" để hủy đề nghị xử lý
+                        </span>
                     </td>
                 </tr>
                 <tr>
