@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F301_DMTruSoCoSoHDSuNghiepDNXL.aspx.cs" Inherits="BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL" %>
-    <%@ Import Namespace="WebUS" %>
-    <%@ Import Namespace="WebDS.CDBNames" %>
+
+<%@ Import Namespace="WebUS" %>
+<%@ Import Namespace="WebDS.CDBNames" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -314,14 +315,13 @@
                                         <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                
                                 <asp:TemplateField>
                                     <ItemTemplate>
                                         <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
                                             NavigateUrl='<%# "~/ChucNang/F100_QuanLyNha.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_NHA+"="+Eval(V_DM_NHA.ID) %>'
                                             ImageUrl="~/Images/Button/detail.png">Chi tiết</asp:HyperLink>
                                     </ItemTemplate>
-                                </asp:TemplateField>                                                               
+                                </asp:TemplateField>
                                 <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="6%" />
                                 <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" HeaderStyle-Width="7%" />
                                 <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" HeaderStyle-Width="7%" />
