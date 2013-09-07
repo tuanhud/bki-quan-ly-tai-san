@@ -58,72 +58,56 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
     #endregion
     #region Private Methods
-    
     private bool check_validate_data_is_ok()
     {
-
-        //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
-        //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
-        //Sử lý sau
-        try
+        DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+        DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
+        if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
         {
-            DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-            DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-            if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
-            {
-                return false;
-            }
-            
+            return false;
         }
-        catch (Exception)
-        {
-
-        }
-        return true;   
+        return true;
     }
-
     private void load_data_to_grid()
     {
-            if (!check_validate_data_is_ok()) return;
-            string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
-            DateTime v_tsk_tu_ngay;
-            DateTime v_tsk_den_ngay;
-            if (m_txt_tu_ngay.Text.Trim().Length > 0)
-            {
-                v_tsk_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-            }
-            else
-            {
-                v_tsk_tu_ngay = CIPConvert.ToDatetime("01/01/1900");
-            }
-            if (m_txt_den_ngay.Text.Trim().Length > 0)
-            {
-                v_tsk_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-            }
-            else
-            {
-                v_tsk_den_ngay = CIPConvert.ToDatetime("01/01/3000");
-            }
-
-
-            DS_V_DM_TAI_SAN_KHAC_HISTORY v_ds_v_dm_tai_san_khac_history = new DS_V_DM_TAI_SAN_KHAC_HISTORY();
-            US_V_DM_TAI_SAN_KHAC_HISTORY v_us_v_dm_tai_san_khac_history = new US_V_DM_TAI_SAN_KHAC_HISTORY();
-            v_us_v_dm_tai_san_khac_history.FillDataset(
-                CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                ,CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
-                , v_tsk_tu_ngay
-                , v_tsk_den_ngay
-                , Person.get_user_name()
-                , m_txt_tim_kiem.Text
-                , v_ds_v_dm_tai_san_khac_history);
-            m_grv_tai_san_khac_history.DataSource = v_ds_v_dm_tai_san_khac_history;
-            m_lbl_title.Text = "THÔNG TIN THAY ĐỔI";
-            string v_str_thong_tin = " (Có " + v_ds_v_dm_tai_san_khac_history.V_DM_TAI_SAN_KHAC_HISTORY.Rows.Count + " bản ghi)";
-            m_lbl_title.Text += v_str_thong_tin;
-            m_grv_tai_san_khac_history.DataBind();
+        if (!check_validate_data_is_ok()) return;
+        string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
+        DateTime v_tsk_tu_ngay;
+        DateTime v_tsk_den_ngay;
+        if (m_txt_tu_ngay.Text.Trim().Length > 0)
+        {
+            v_tsk_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+        }
+        else
+        {
+            v_tsk_tu_ngay = CIPConvert.ToDatetime("01/01/1900");
+        }
+        if (m_txt_den_ngay.Text.Trim().Length > 0)
+        {
+            v_tsk_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
+        }
+        else
+        {
+            v_tsk_den_ngay = CIPConvert.ToDatetime("01/01/3000");
+        }
+        DS_V_DM_TAI_SAN_KHAC_HISTORY v_ds_v_dm_tai_san_khac_history = new DS_V_DM_TAI_SAN_KHAC_HISTORY();
+        US_V_DM_TAI_SAN_KHAC_HISTORY v_us_v_dm_tai_san_khac_history = new US_V_DM_TAI_SAN_KHAC_HISTORY();
+        v_us_v_dm_tai_san_khac_history.FillDataset(
+            CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+            , CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
+            , v_tsk_tu_ngay
+            , v_tsk_den_ngay
+            , Person.get_user_name()
+            , m_txt_tim_kiem.Text
+            , v_ds_v_dm_tai_san_khac_history);
+        m_grv_tai_san_khac_history.DataSource = v_ds_v_dm_tai_san_khac_history;
+        m_lbl_title.Text = "THÔNG TIN THAY ĐỔI";
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_tai_san_khac_history.V_DM_TAI_SAN_KHAC_HISTORY.Rows.Count + " bản ghi)";
+        m_lbl_title.Text += v_str_thong_tin;
+        m_grv_tai_san_khac_history.DataBind();
     }
     #endregion
     #region Events
@@ -138,7 +122,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         {
             CSystemLog_301.ExceptionHandle(ex);
         }
-        
+
     }
     public override void VerifyRenderingInServerForm(Control control)
     {
@@ -148,8 +132,6 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     {
         try
         {
-            /*load_data_to_cbo_don_vi_chu_quan();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
@@ -171,8 +153,6 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     {
         try
         {
-            /*load_data_to_cbo_don_vi_su_dung();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                 m_cbo_don_vi_chu_quan.SelectedValue
@@ -219,21 +199,21 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         try
         {
             Thread.Sleep(2000);
-                // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
-                m_grv_tai_san_khac_history.AllowPaging = false;
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_tai_san_khac_history
-                            , "DS tai san khac thay doi thong tin.xls"
-                            , 0
-                            , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+            // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
+            m_grv_tai_san_khac_history.AllowPaging = false;
+            load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+            // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+            WinformReport.export_gridview_2_excel(
+                        m_grv_tai_san_khac_history
+                        , "DS tai san khac thay doi thong tin.xls"
+                        , 0
+                        , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
         }
         catch (Exception ex)
         {
             CSystemLog_301.ExceptionHandle(ex);
         }
-        
+
     }
     protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
     {
