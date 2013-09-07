@@ -711,11 +711,11 @@ namespace QltsForm
             {
                 case eFormMode.DANH_MUC_TRU_SO_LAM_VIEC:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport("BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep.xls", 21, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-18 BCDM TSLM-CSHDSN.xls", 21, 1);
                     break;
                 case eFormMode.DE_NGHI_XU_LY:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport("BC-017. Bao cao danh mục tru so lam viec, co so hoat dong su nghiep de nghi xu ly.xls", 21, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-17 BCDM TSLM-CSHDSN DNXL.xls", 21, 1);
                     break;
                 case eFormMode.TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
