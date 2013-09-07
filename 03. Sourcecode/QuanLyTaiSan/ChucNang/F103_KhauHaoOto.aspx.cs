@@ -78,7 +78,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void them_moi_khau_hao()
     {
-        if (!check_validate_data_is_valid()) return;
         decimal v_dc_id_tai_san = CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue);
         US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(v_dc_id_tai_san);
@@ -440,6 +439,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
             Thread.Sleep(1000);
         }
