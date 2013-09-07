@@ -16,45 +16,7 @@ using IP.Core.QltsFormControls;
 
 
 public partial class Default2 : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        try
-        {
-            //set_form_title_and_cbo();
-            if (!IsPostBack)
-            {
-                set_form_title_and_cbo();
-                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_loai_hinh_don_vi
-                    );
-                WinFormControls.load_data_to_cbo_bo_tinh(
-                    ip_e_tat_ca
-                    , m_cbo_bo_tinh);
-                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                    m_cbo_bo_tinh.SelectedValue
-                    , ip_e_tat_ca
-                    , m_cbo_don_vi_chu_quan);
-                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                    m_cbo_loai_hinh_don_vi.SelectedValue
-                    , m_cbo_don_vi_chu_quan.SelectedValue
-                    , m_cbo_bo_tinh.SelectedValue
-                    , ip_e_tat_ca
-                    , m_cbo_don_vi_su_dung_tai_san);
-                load_data_to_cbo_trang_thai();
-                load_data_to_cbo_loai_tai_san();
-                set_inital_value_of_combox();
-                search_tai_san_khac();
-            }
-            //load_data_to_cbo_loai_tai_san();
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-    }
+{ 
     #region Member
     US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
     DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
@@ -83,7 +45,6 @@ public partial class Default2 : System.Web.UI.Page
         op_obj_parameter.strMA_LOAI_HINH_DON_VI = m_cbo_loai_hinh_don_vi.SelectedValue;
         op_obj_parameter.strUSER_NAME = Person.get_user_name();
     }
-
     private void export_excel()
     {
         string v_str_output_file = "";
@@ -147,7 +108,6 @@ public partial class Default2 : System.Web.UI.Page
             m_cbo_trang_thai.SelectedValue = v_str_id_trang_thai;           
         }
     }
-
     private void set_form_title_and_cbo() {
        
         string v_str_loai_bao_cao = "";
@@ -197,7 +157,6 @@ public partial class Default2 : System.Web.UI.Page
                 break;
         }
     }
-
     private void load_data_to_grid()
     {
         m_lbl_title.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ)";
@@ -233,12 +192,6 @@ public partial class Default2 : System.Web.UI.Page
         }
         return true;
     }
-    private void load_data_to_cbo_trang_thai()
-    {
-        WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);         
-
-      
-    }
     private void load_data_to_cbo_loai_tai_san()
     {
         US_DM_LOAI_TAI_SAN v_us_dm_loai_tai_san = new US_DM_LOAI_TAI_SAN();
@@ -260,6 +213,45 @@ public partial class Default2 : System.Web.UI.Page
     }
     #endregion
     #region Events
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!IsPostBack)
+            {
+                set_form_title_and_cbo();
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_loai_hinh_don_vi
+                    );
+                WinFormControls.load_data_to_cbo_bo_tinh(
+                    ip_e_tat_ca
+                    , m_cbo_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , ip_e_tat_ca
+                    , m_cbo_don_vi_chu_quan);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_chu_quan.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , ip_e_tat_ca
+                    , m_cbo_don_vi_su_dung_tai_san);
+                WinFormControls.load_data_to_cbo_tu_dien(
+                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_trang_thai);
+                load_data_to_cbo_loai_tai_san();
+                set_inital_value_of_combox();
+                search_tai_san_khac();
+            }
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+    }
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -321,7 +313,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-
             search_tai_san_khac();
         }
         catch (System.Exception ex)
