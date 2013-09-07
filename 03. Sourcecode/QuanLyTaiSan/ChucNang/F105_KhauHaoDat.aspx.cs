@@ -33,6 +33,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         load_data_to_dv_su_dung_down();
         load_data_to_dia_chi();
         load_data_to_grid();
+        load_data_from_us();
     }
 
     private void load_data_trang_thai()
@@ -127,7 +128,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 
     private void load_data_from_us()
     {
-        if (m_cbo_dia_chi.Items.Count == 00) return;
+        if (m_cbo_dia_chi.Items.Count == 0) return;
         US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
         m_lbl_ma_tai_san.Text = v_us_dm_dat.strMA_TAI_SAN;
         m_lbl_dt_khuon_vien.Text = v_us_dm_dat.dcDT_KHUON_VIEN.ToString("#,##0.00");
@@ -255,6 +256,18 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         }
         load_data_to_dv_su_dung_up();
     }
+    protected void m_cbo_don_vi_su_dung_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_dia_chi();
+            load_data_from_us();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -288,18 +301,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-    }
-    protected void m_cbo_don_vi_su_dung_up_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            load_data_to_dia_chi();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
+    }  
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try

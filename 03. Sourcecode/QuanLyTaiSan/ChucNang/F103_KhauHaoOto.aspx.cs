@@ -139,6 +139,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         load_cbo_loai_xe();
         load_data_to_ten_tai_san();
         load_data_to_grid();
+        load_data_from_us();
     }
 
     private void load_data_to_bo_tinh_up()
