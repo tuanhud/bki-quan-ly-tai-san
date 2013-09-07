@@ -322,7 +322,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             }
         }
 
-        /*if (m_init_mode == DataEntryFormMode.UpdateDataState)
+        if (m_init_mode == DataEntryFormMode.UpdateDataState)
         {
             m_us_dm_oto = new US_DM_OTO(CIPConvert.ToDecimal(m_hdf_id.Value));
             if (m_us_dm_oto.strMA_TAI_SAN != m_txt_ma_ts.Text)
@@ -341,7 +341,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 m_lbl_mess.Text = "Mã tài sản này đã tồn tại";
                 return false;
             };
-        }*/
+        }
         return true;
     }
 
