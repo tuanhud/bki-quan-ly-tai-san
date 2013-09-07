@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     EnableEventValidation="false" CodeFile="F302_khau_hao_nha.aspx.cs" Inherits="ChucNang_F302_khau_hao_nha" %>
 
+<%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         $(function () {
@@ -37,6 +40,11 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate></ContentTemplate>
+    </asp:UpdatePanel>
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
@@ -103,18 +111,20 @@
                             <span class="cssManField">Thuộc khu đất</span>
                         </td>
                         <td align="left">
-                            <asp:DropDownList ID="m_cbo_thuoc_khu_dat" runat="server" Width="85%" ValidationGroup="m_vlg_nha">
+                            <asp:DropDownList ID="m_cbo_thuoc_khu_dat" runat="server" Width="85%" 
+                                ValidationGroup="m_vlg_nha" AutoPostBack="true"
+                                onselectedindexchanged="m_cbo_thuoc_khu_dat_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td>
                         </td>
                         <td align="right">
-                            <span class="cssManField">Nhà</span>
+                            <span class="cssManField">Tên tài sản</span>
                         </td>
                         <td align="left">
-                            <asp:TextBox ID="m_txt_nha" class="tb" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
-                                AutoPostBack="True" OnTextChanged="m_txt_nha_TextChanged">
-                            </asp:TextBox>
+                            <asp:DropDownList ID="m_cbo_ten_tai_san" runat="server" Width="85%" 
+                                onselectedindexchanged="m_cbo_ten_tai_san_SelectedIndexChanged" AutoPostBack="true">
+                            </asp:DropDownList>
                         </td>
                         <td>
                         </td>
@@ -230,7 +240,7 @@
                             <span>Mã phiếu</span>
                         </td>
                         <td colspan="1" style="width: 29%">
-                            <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox csscurrency"
+                            <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox"
                                 Width="85%" ValidationGroup="m_vlg_nha">
                             </asp:TextBox>
                         </td>
