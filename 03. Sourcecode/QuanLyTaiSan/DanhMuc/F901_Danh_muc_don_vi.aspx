@@ -26,7 +26,7 @@
                 <tr>
                     <td colspan="4">
                         <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
-                            ValidationGroup="m_vlg_danh_muc_trang_thai" />
+                            ValidationGroup="m_vlg_dm_don_vi" />
                         <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                     </td>
                 </tr>
@@ -39,6 +39,8 @@
                             Width="90%" />
                     </td>
                     <td style="width: 1%">
+                        <asp:RequiredFieldValidator runat="Server" ID="m_rfv_ma_don_vi" Text="(*)" ControlToValidate="m_txt_ma_don_vi"
+                            ErrorMessage="Bạn phải nhập Mã Đơn Vị!" ValidationGroup="m_vlg_dm_don_vi"></asp:RequiredFieldValidator>
                     </td>
                     <td align="right" style="width: 15%">
                         <span class="cssManField">Loại đơn vị:</span>
@@ -58,9 +60,11 @@
                             Width="90%" />
                     </td>
                     <td style="width: 1%">
+                        <asp:RequiredFieldValidator ID="m_rfv_ten_don_vi" runat="Server" ControlToValidate="m_txt_ten_don_vi"
+                            ValidationGroup="m_vlg_dm_don_vi" ErrorMessage="Bạn phải nhập Tên Đơn Vị!" Text="(*)"></asp:RequiredFieldValidator>
                     </td>
                     <td align="right">
-                        <span class="cssManField">Đơn vị cấp trên:</span>
+                        <asp:Label ID="m_lbl_don_vi_cap_tren" class="cssManField" runat="Server" Text="Đơn vị cấp trên"></asp:Label>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_don_vi_cap_tren" runat="server" Width="91%" CssClass="cssDorpdownlist"
@@ -107,15 +111,15 @@
                 <tr>
                     <td colspan="2" align="center">
                         <asp:HiddenField ID="m_hdf_id_don_vi" runat="server" Visible="False" />
-                        <asp:HiddenField ID="m_hdf_form_mode" Value="0" runat="server" Visible="False" />
+                        <asp:HiddenField ID="m_hdf_form_mode" runat="server" Visible="False" />
                     </td>
                 </tr>
                 <tr>
                     <td align="center">
                         <asp:GridView ID="m_grv_dm_don_vi" runat="server" AutoGenerateColumns="False" Width="80%"
                             DataKeyNames="ID" AllowPaging="True" PageSize="15" CellPadding="4" ForeColor="#333333"
-                            CssClass="cssGrid" OnRowDeleting="m_grv_dm_don_vi_RowDeleting" 
-                            OnPageIndexChanging="m_grv_dm_don_vi_PageIndexChanging" OnRowUpdating="m_grv_dm_don_vi_RowUpdating">
+                            CssClass="cssGrid" OnRowDeleting="m_grv_dm_don_vi_RowDeleting" OnPageIndexChanging="m_grv_dm_don_vi_PageIndexChanging"
+                            OnRowUpdating="m_grv_dm_don_vi_RowUpdating">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>

@@ -52,15 +52,15 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     #region Private Methods
     private string check_form_mode(HiddenField ip_hdf_form_mode)
     {
-        if (ip_hdf_form_mode.Value.Equals(0))
+        if (ip_hdf_form_mode.Value.Equals("0"))
         {
             return LOAI_FORM.THEM;
         }
-        if (ip_hdf_form_mode.Value.Equals(1))
+        if (ip_hdf_form_mode.Value.Equals("1"))
         {
             return LOAI_FORM.SUA;
         }
-        if (ip_hdf_form_mode.Value.Equals(2))
+        if (ip_hdf_form_mode.Value.Equals("2"))
         {
             return LOAI_FORM.XOA;
         }
@@ -70,12 +70,12 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         if (!CValidateTextBox.IsValid(m_txt_ma_don_vi, DataType.StringType, allowNull.NO))
         {
-            m_lbl_mess.Text = "Bạn chưa Nhập đúng Mã Đơn Vị!";
+            thong_bao("Bạn chưa Nhập đúng Mã Đơn Vị!");
             return false;
         }
         if (!CValidateTextBox.IsValid(m_txt_ten_don_vi, DataType.StringType, allowNull.NO))
         {
-            m_lbl_mess.Text = "Bạn chưa Nhập đúng Tên Đơn Vị!";
+            thong_bao ( "Bạn chưa Nhập đúng Tên Đơn Vị!");
             return false;
         }
         if ((check_form_mode(m_hdf_form_mode).Equals(LOAI_FORM.SUA))
@@ -88,7 +88,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         {
             if (m_us_don_vi.check_is_having_ma_don_vi(m_txt_ma_don_vi.Text))
             {
-                thong_bao("Mã tài sản này đã tồn tại!");
+                thong_bao("Mã tài sản này đã tồn tại! "+check_form_mode(m_hdf_form_mode));
                 return false;
             }
         }
@@ -99,7 +99,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             {
                 if (m_us_don_vi.check_is_having_ma_don_vi(m_txt_ma_don_vi.Text))
                 {
-                    thong_bao("Mã tài sản này đã tồn tại!");
+                    thong_bao("Mã tài sản này đã tồn tại! "+check_form_mode(m_hdf_form_mode));
                     return false;
                 }
             }
@@ -364,6 +364,8 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
                 m_cbo_don_vi_cap_tren.Items.Insert(0, new ListItem("Không có cấp trên", "Không có cấp trên"));
                 m_cbo_don_vi_cap_tren.DataBind();
                 m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.BO_TINH);
+                m_lbl_don_vi_cap_tren.Visible = false;
+                m_cbo_don_vi_cap_tren.Visible = false;
                 break;
             case LOAI_DON_VI.DV_CHU_QUAN:
                 WinFormControls.load_data_to_cbo_bo_tinh(
@@ -371,6 +373,8 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
                     , m_cbo_don_vi_cap_tren
                     );
                 m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.DV_CHU_QUAN);
+                m_lbl_don_vi_cap_tren.Visible = true;
+                m_cbo_don_vi_cap_tren.Visible = true;
                 break;
             case LOAI_DON_VI.DV_SU_DUNG:
                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
@@ -379,6 +383,8 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
                     , m_cbo_don_vi_cap_tren
                     );
                 m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(ID_LOAI_DON_VI.DV_SU_DUNG);
+                m_lbl_don_vi_cap_tren.Visible = true;
+                m_cbo_don_vi_cap_tren.Visible = true;
                 break;
 
         }
@@ -390,6 +396,21 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             , WinFormControls.eTAT_CA.NO
             , m_cbo_loai_hinh_don_vi);
         load_data_2_grid();
+    }
+    private void set_form(string ip_loai_form)
+    {
+        if (ip_loai_form.Equals(LOAI_FORM.THEM))
+        {
+            m_hdf_form_mode.Value = "0";
+        }
+        if (ip_loai_form.Equals(LOAI_FORM.SUA))
+        {
+            m_hdf_form_mode.Value = "1";
+        }
+        if (ip_loai_form.Equals(LOAI_FORM.XOA))
+        {
+            m_hdf_form_mode.Value = "2";
+        }
     }
     #endregion
 
@@ -412,6 +433,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
+            set_form(LOAI_FORM.SUA);
             update_don_vi();
         }
         catch (Exception v_e)
@@ -423,6 +445,7 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
     {
         try
         {
+            set_form(LOAI_FORM.THEM);
             insert_user();
         }
         catch (Exception v_e)
