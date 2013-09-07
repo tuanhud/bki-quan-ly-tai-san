@@ -476,13 +476,24 @@ namespace QltsForm {
                         , op_obj_excel_parameters.strKEY_SEARCH);
                     v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_DE_NGHI_XU_LY, 13, 1);
                     break;
+                case eFormMode.THONG_KE_O_TO:
+                    // Chỗ này đang chưa chuẩn vì chưa hiểu sự nghiệp là gì
+                    load_data_2_grid(
+                        op_obj_excel_parameters.dcID_BO_TINH
+                        , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
+                        , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
+                        , op_obj_excel_parameters.dcID_LOAI_TAI_SAN
+                        , op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN
+                        , op_obj_excel_parameters.strKEY_SEARCH);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_THONG_KE, 13, 1);
+                    break;
                 case eFormMode.O_TO_GIAO_DON_VI_SU_NGHIEP:
                     // Chỗ này đang chưa chuẩn vì chưa hiểu sự nghiệp là gì
                     load_data_2_grid(
                         op_obj_excel_parameters.dcID_BO_TINH
                         , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
                         , op_obj_excel_parameters.dcID_DON_VI_SU_DUNG
-                        , op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN
+                        , op_obj_excel_parameters.dcID_LOAI_TAI_SAN
                         , ID_TRANG_THAI_OTO.DANG_SU_DUNG
                         , op_obj_excel_parameters.strKEY_SEARCH);
                     v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH, 13, 1);
@@ -496,6 +507,9 @@ namespace QltsForm {
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", op_obj_excel_parameters.strTEN_DON_VI_SU_DUNG);
             v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_us_don_vi.strMA_DON_VI);
             v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", v_us_don_vi.strLOAI_HINH_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<NGAY>", DateTime.Now.Day);
+            v_obj_exe_report.AddFindAndReplaceItem("<THANG>", DateTime.Now.Month);
+            v_obj_exe_report.AddFindAndReplaceItem("<NAM>", DateTime.Now.Year);
 
             v_obj_exe_report.FindAndReplace(false);
             v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
@@ -582,6 +596,7 @@ namespace QltsForm {
             KE_KHAI_O_TO
             , O_TO_DE_NGHI_XU_LY
             , O_TO_GIAO_DON_VI_SU_NGHIEP
+            , THONG_KE_O_TO
         }
 		#endregion
 
