@@ -92,6 +92,10 @@ public partial class BaoCao_F205_TH_HTSD_tai_san_khac_Chi_tiet_theo_tung_don_vi 
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_chu_quan
                     );
+                load_data_to_grid(
+                m_cbo_bo_tinh.SelectedValue
+                , m_cbo_don_vi_chu_quan.SelectedValue
+                );
             }
         }
         catch (System.Exception ex)
