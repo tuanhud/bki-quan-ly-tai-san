@@ -67,39 +67,16 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
     DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
     #endregion
     #region Private Methods
-
-    private void export_excel()
-    {
-        string v_str_bo_tinh = m_cbo_bo_tinh.SelectedItem.Text;
-        string v_str_don_vi_chu_quan = m_cbo_don_vi_chu_quan.SelectedItem.Text;
-        decimal v_dc_id_dv_su_dung = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue);
-        string v_str_output_file = "";
-        f401_bao_cao_danh_muc_tai_san_khac v_f401_bc_dm_tai_san_khac = new f401_bao_cao_danh_muc_tai_san_khac();  
-    }
-
     private bool check_validate_data_is_ok()
     {
-
-        //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
-        //if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES)) return false;
-        //Sử lý sau
-        try
+        DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+        DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
+        if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
         {
-            DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-            DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-            if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
-            {
-                return false;
-            }
-
-        }
-        catch (Exception)
-        {
-
+            return false;
         }
         return true;
     }
-
     private void load_data_to_grid()
     {
         if (!check_validate_data_is_ok()) return;
@@ -122,8 +99,6 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
         {
             v_tsk_den_ngay = CIPConvert.ToDatetime("01/01/3000");
         }
-
-
         DS_V_DM_NHA_HISTORY v_ds_v_dm_nha_history = new DS_V_DM_NHA_HISTORY();
         US_V_DM_NHA_HISTORY v_us_v_dm_nha_history = new US_V_DM_NHA_HISTORY();
         v_us_v_dm_nha_history.FillDataset(
@@ -146,7 +121,6 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
     }
     private void load_data_to_thong_tin_nha_dat()
     {
-
         decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
         if (v_dc_id_dat == -1)
         {
@@ -166,7 +140,6 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
         m_lbl_bi_lan_chiem.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_BI_LAN_CHIEM, "#,##0.00");
         m_lbl_su_dung_vao_muc_dich_khac.Text = CIPConvert.ToStr(v_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC, "#,##0.00");
         m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(v_us_dm_dat.dcGT_THEO_SO_KE_TOAN, "#,##0.00");
-
     }
     #endregion
     #region Events
@@ -191,8 +164,6 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
     {
         try
         {
-            /*load_data_to_cbo_don_vi_chu_quan();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
@@ -214,8 +185,6 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
     {
         try
         {
-            /*load_data_to_cbo_don_vi_su_dung();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                 m_cbo_don_vi_chu_quan.SelectedValue
@@ -282,15 +251,15 @@ public partial class BaoCao_F311_BCDVCQ_Thay_doi_thong_tin_Nha : System.Web.UI.P
         try
         {
             Thread.Sleep(2000);
-                // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
-                m_grv_nha_history.AllowPaging = false;
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_nha_history
-                            , "DS nha thay doi thong tin.xls"
-                            , 0
-                            , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+            // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
+            m_grv_nha_history.AllowPaging = false;
+            load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+            // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+            WinformReport.export_gridview_2_excel(
+                        m_grv_nha_history
+                        , "DS nha thay doi thong tin.xls"
+                        , 0
+                        , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
 
         }
         catch (Exception ex)
