@@ -86,8 +86,7 @@
                             <span class="cssManField">Đơn vị sử dụng tài sản:</span></td>
                         <td>
                             <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" 
-                                AutoPostBack="True" 
-                                OnSelectedIndexChanged="m_cbo_don_vi_su_dung_SelectedIndexChanged" TabIndex="3" 
+                                AutoPostBack="True" TabIndex="3" 
                                 Width="90%">
                             </asp:DropDownList>
                         </td>
@@ -98,8 +97,7 @@
                         </td>
                         <td>
                             <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" 
-                                OnSelectedIndexChanged="m_cbo_trang_thai_tai_san_khac_SelectedIndexChanged" 
-                                TabIndex="4" Width="90%" Enabled="False">
+                                TabIndex="4" Width="90%">
                             </asp:DropDownList>
                         </td>
                         <td align="right">
