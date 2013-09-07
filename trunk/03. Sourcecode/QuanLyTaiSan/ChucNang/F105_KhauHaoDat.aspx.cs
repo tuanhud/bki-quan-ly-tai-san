@@ -366,11 +366,14 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_danh_sach_dat.DataKeys[rowIndex].Value);
+                US_GD_KHAU_HAO v_us_gd_kh = new US_GD_KHAU_HAO(v_dc_id_kh);
+                decimal v_dc_id_dat = v_us_gd_kh.dcID_TAI_SAN;
+                decimal v_dc_gia_tri_kh = v_us_gd_kh.dcGIA_TRI_KHAU_HAO;
 
                 switch (e.CommandName)
                 {
                     case "DeleteComp":
-                        xoa_khau_hao(v_dc_id_kh, v_dc_id_kh, v_dc_id_kh);
+                        xoa_khau_hao(v_dc_id_kh, v_dc_id_dat, v_dc_gia_tri_kh);
                         break;
                 }
             }
