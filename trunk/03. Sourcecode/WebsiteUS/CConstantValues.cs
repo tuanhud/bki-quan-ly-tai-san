@@ -9,7 +9,7 @@ namespace WebUS
         //BAO CAO OTO
         public const string BCDM_OTO_KE_KHAI = "BC-02 BCDM-OTO-KK.xls";
         public const string BCDM_OTO_DE_NGHI_XU_LY = "BC-05 BCDM-OTO-DNXL.xls";
-        public const string BCDM_OTO_THONG_KE = "";
+        public const string BCDM_OTO_THONG_KE = "BC-01 BCDM-OTO-TK.xls";
         public const string BCDM_OTO_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-23 BCDM-OTO-DVTCTC.xls";
         //BAO CAO TRU SO LAM VIEC
         public const string BCDM_TSLM_KE_KHAI = "BC-18 BCDM-TSLM-KK.xls";
