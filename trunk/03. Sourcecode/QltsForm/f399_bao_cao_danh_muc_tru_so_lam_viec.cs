@@ -687,17 +687,17 @@ namespace QltsForm
                 ,
             TONG_DT_SAN_XD = 10
                 ,
-           // ID_DAT = 20
-                //,
+            // ID_DAT = 20
+            //,
             GIA_TRI_CON_LAI = 7
                 ,
             NAM_XAY_DUNG = 3
-           //     ,
-           // //ID_DON_VI_SU_DUNG = 25
-           //     ,
-           // //ID_DON_VI_CHU_QUAN = 26
-           //     ,
-           //// ID_DON_VI_DAU_TU = 27
+                //     ,
+                // //ID_DON_VI_SU_DUNG = 25
+                //     ,
+                // //ID_DON_VI_CHU_QUAN = 26
+                //     ,
+                //// ID_DON_VI_DAU_TU = 27
                ,
             CAP_HANG = 2
                 ,
@@ -713,23 +713,23 @@ namespace QltsForm
                 ,
             SO_TANG = 8
                 ,
-           // ID_LOAI_TAI_SAN = 19
-             //   ,
+            // ID_LOAI_TAI_SAN = 19
+            //   ,
             TEN_TAI_SAN = 1
                 ,
             ID = 0
                 ,
             BI_LAN_CHIEM = 16
-            //    ,
-            //NGAY_CAP_NHAT_CUOI = 22
+                //    ,
+                //NGAY_CAP_NHAT_CUOI = 22
                 ,
             //MA_TAI_SAN = 18
-              //  ,
+            //  ,
             BO_TRONG = 15
                 ,
             TRU_SO_LAM_VIEC = 11
-              //  ,
-            //ID_NGUOI_DUYET = 24
+                //  ,
+                //ID_NGUOI_DUYET = 24
                 , NGUON_KHAC = 6
 
         }
@@ -772,7 +772,7 @@ namespace QltsForm
             {
                 CSystemLog_301.ExceptionHandle(ex);
             }
-            
+
         }
         private void load_data_to_cbo_bo_tinh()
         {
@@ -896,11 +896,11 @@ namespace QltsForm
             //v_htb.Add(DM_NHA.ID_NGUOI_LAP, e_col_Number.ID_NGUOI_LAP);
             v_htb.Add(DM_NHA.LAM_NHA_O, e_col_Number.LAM_NHA_O);
             v_htb.Add(DM_NHA.SO_TANG, e_col_Number.SO_TANG);
-           // v_htb.Add(DM_NHA.ID_LOAI_TAI_SAN, e_col_Number.ID_LOAI_TAI_SAN);
+            // v_htb.Add(DM_NHA.ID_LOAI_TAI_SAN, e_col_Number.ID_LOAI_TAI_SAN);
             v_htb.Add(DM_NHA.TEN_TAI_SAN, e_col_Number.TEN_TAI_SAN);
-           // v_htb.Add(DM_NHA.ID, e_col_Number.ID);
+            // v_htb.Add(DM_NHA.ID, e_col_Number.ID);
             v_htb.Add(DM_NHA.BI_LAN_CHIEM, e_col_Number.BI_LAN_CHIEM);
-          //  v_htb.Add(DM_NHA.NGAY_CAP_NHAT_CUOI, e_col_Number.NGAY_CAP_NHAT_CUOI);
+            //  v_htb.Add(DM_NHA.NGAY_CAP_NHAT_CUOI, e_col_Number.NGAY_CAP_NHAT_CUOI);
             //v_htb.Add(DM_NHA.MA_TAI_SAN, e_col_Number.MA_TAI_SAN);
             v_htb.Add(DM_NHA.BO_TRONG, e_col_Number.BO_TRONG);
             v_htb.Add(DM_NHA.TRU_SO_LAM_VIEC, e_col_Number.TRU_SO_LAM_VIEC);
@@ -995,11 +995,7 @@ namespace QltsForm
         }
         #endregion
 
-        //
-        //
-        //		EVENT HANLDERS
-        //
-        //
+        #region events
         private void f399_DM_NHA_Load(object sender, System.EventArgs e)
         {
             try
@@ -1146,7 +1142,7 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
-
+        #endregion
     }
 }
 

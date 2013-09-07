@@ -709,17 +709,17 @@ namespace QltsForm
             CExcelWebReport v_obj_exe_report = new CExcelWebReport();
             switch (m_e_form_mode)
             {
-                case eFormMode.DANH_MUC_TRU_SO_LAM_VIEC:
+                case eFormMode.KE_KHAI:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport("BC-18 BCDM TSLM-CSHDSN.xls", 21, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_KK, 21, 1);
                     break;
                 case eFormMode.DE_NGHI_XU_LY:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport("BC-17 BCDM TSLM-CSHDSN DNXL.xls", 21, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_DNXL, 21, 1);
                     break;
-                case eFormMode.TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP:
+                case eFormMode.THONG_KE:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport("BC-004 Bao cao danh muc tru so lam viec co so hoat dong su nghiep giao cho don vi su nghiep cong lap tu chu tai chinh.xls", 21, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_TK, 21, 1);
                     break;
                 default:
                     break;
@@ -799,11 +799,15 @@ namespace QltsForm
 
         public enum eFormMode
         {
+            KE_KHAI
+                ,
             DANH_MUC_TRU_SO_LAM_VIEC
             ,
             DE_NGHI_XU_LY
             ,
             TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP
+            , 
+            THONG_KE
         }
         #endregion
 
