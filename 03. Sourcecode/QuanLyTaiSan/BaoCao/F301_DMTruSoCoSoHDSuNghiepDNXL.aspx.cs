@@ -66,7 +66,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             switch (v_id)
             {
                 case "1":
-                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DANH_MUC_TRU_SO_LAM_VIEC
+                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.KE_KHAI
                                             , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
                                             , ref v_obj_parameter);
                     break;
@@ -76,7 +76,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                                             , ref v_obj_parameter);
                     break;
                 case "3":
-                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP
+                    v_f402_bc_dm_nha.export_excel(f402_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.THONG_KE
                                             , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
                                             , ref v_obj_parameter);
                     break;
