@@ -13,14 +13,14 @@ namespace WebUS
         public const string BCDM_OTO_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-23 BCDM-OTO-DVTCTC.xls";
         //BAO CAO TRU SO LAM VIEC
         public const string BCDM_TSLM_KE_KHAI = "BC-18 BCDM-TSLM-KK.xls";
-        public const string BCDM_TSLM_DNXL = "BC-17 BCDM-TSLM-DNXL.xls";
-        public const string BCDM_TSLM_TK = "BC-19 BCDM-TSLM-TK.xls";
-        public const string BCDM_TSLM_DVTCTC = "BC-04 BCDM-TSLM-DVTCTC.xls";
+        public const string BCDM_TSLM_DE_NGHI_XU_LY = "BC-17 BCDM-TSLM-DNXL.xls";
+        public const string BCDM_TSLM_THONG_KE = "BC-19 BCDM-TSLM-TK.xls";
+        public const string BCDM_TSLM_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-04 BCDM-TSLM-DVTCTC.xls";
         //BAO CAO TAI SAN KHAC
         public const string BCDM_TSK = "BC-26 BCDM-TSK.xls";
-        public const string BCDM_TSK_DNXL = "BC-24 BCDM-TSK-DNXL.xls";
+        public const string BCDM_TSK_DE_NGHI_XU_LY = "BC-24 BCDM-TSK-DNXL.xls";
         public const string BCDM_TST_TREN500TRIEU_KK = "BC-25 BCDM-TSKTREN500TRIEU-KK.xls";
-        public const string BCDM_TSK_DVTCTC = "BC-28 BCDM-TSK-DVTCTC.xls";
+        public const string BCDM_TSK_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-28 BCDM-TSK-DVTCTC.xls";
     }
     public class LOAI_BAO_CAO
     {
