@@ -23,11 +23,8 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
     #endregion
 
     #region private methods
-
-    private void load_data_to_grid() {
-
-
-
+    private void load_data_to_grid() 
+    {
         DS_RPT_TONG_HOP_HIEN_TRANG_TSK v_ds_v_tong_hop_hien_trang_tsk = new DS_RPT_TONG_HOP_HIEN_TRANG_TSK();
         US_RPT_TONG_HOP_HIEN_TRANG_TSK v_us_v_tong_hop_hien_trang_tsk = new US_RPT_TONG_HOP_HIEN_TRANG_TSK();
         v_us_v_tong_hop_hien_trang_tsk.FillDataset_tong_hop_chung(
@@ -38,7 +35,8 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
         m_grv_tai_san_khac.DataSource = v_ds_v_tong_hop_hien_trang_tsk;
         m_grv_tai_san_khac.DataBind();
     }
-    private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter) {
+    private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter) 
+    {
         op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
         op_obj_parameter.strTEN_BO_TINH = m_cbo_bo_tinh.SelectedItem.Text;
         op_obj_parameter.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue);
@@ -70,9 +68,12 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
     #endregion
 
     #region Events
-    protected void Page_Load(object sender, EventArgs e) {
-        try {
-            if (!IsPostBack) {
+    protected void Page_Load(object sender, EventArgs e) 
+    {
+        try 
+        {
+            if (!IsPostBack) 
+            {
                 //1. load data to combobox bộ, tỉnh 
                 WinFormControls.load_data_to_cbo_bo_tinh(
                          WinFormControls.eTAT_CA.YES
@@ -84,23 +85,17 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_chu_quan);
                 load_data_to_grid();
-                //3. load data to cobobox đơn vị sử dụng
-                /*WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                    m_cbo_don_vi_chu_quan.SelectedValue
-                    , m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung_tai_san);*/
-                //4. load data to combobox trạng thái
             }
         }
-        catch (System.Exception ex) {
+        catch (System.Exception ex) 
+        {
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
-            /*load_data_to_cbo_don_vi_chu_quan();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
+    protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e) 
+    {
+        try 
+        {
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
@@ -110,13 +105,15 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
         catch (System.Exception ex) {
             CSystemLog_301.ExceptionHandle(ex);
         }
-
     }
-    public override void VerifyRenderingInServerForm(Control control) {
+    public override void VerifyRenderingInServerForm(Control control) 
+    {
         //base.VerifyRenderingInServerForm(control);
     }
-    protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e) {
-        try {
+    protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e) 
+    {
+        try 
+        {
             Thread.Sleep(2000);
             m_grv_tai_san_khac.Visible = true;
             load_data_to_grid();
