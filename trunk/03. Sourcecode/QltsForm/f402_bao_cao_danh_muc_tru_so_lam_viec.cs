@@ -711,15 +711,15 @@ namespace QltsForm
             {
                 case eFormMode.KE_KHAI:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_KK, 21, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_KE_KHAI, 21, 1);
                     break;
                 case eFormMode.DE_NGHI_XU_LY:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_DNXL, 21, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_DE_NGHI_XU_LY, 21, 1);
                     break;
                 case eFormMode.THONG_KE:
                     load_data_2_grid(op_obj_excel_parameters, ip_dc_id_dat);
-                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_TK, 21, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_TSLM_THONG_KE, 21, 1);
                     break;
                 default:
                     break;
