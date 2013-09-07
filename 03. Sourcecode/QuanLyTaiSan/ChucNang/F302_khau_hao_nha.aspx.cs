@@ -204,6 +204,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         // Thực hiện cập nhật
         v_us_gd_khau_hao.Insert();
         v_us_dm_nha.Update();
+        m_lbl_mess.Text = "Cập nhật thành công";
     }
 
     private void xoa_khau_hao(decimal ip_dc_id_kh, decimal ip_dc_id_nha, decimal ip_dc_gia_tri_kh)
@@ -212,7 +213,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         m_us_gd_khau_hao.DeleteByID(ip_dc_id_kh);
         v_us_dm_nha.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
         v_us_dm_nha.Update();
-        load_data_to_grid();
     }
 
     private void clear_form_data()
@@ -240,7 +240,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
             return false;
         }
         string v_str_id_nha = m_cbo_ten_tai_san.SelectedValue;
-        if (v_str_id_nha.Equals(String.Empty) || v_str_id_nha.Equals("-1"))
+        if (v_str_id_nha.Equals(String.Empty) || v_str_id_nha.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_mess.Text = "Bạn chưa chọn tài sản";
             return false;
@@ -296,6 +296,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         try {
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
+            load_form_data();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(this, v_e);
@@ -419,6 +420,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
                 {
                     case "DeleteComp":
                         xoa_khau_hao(v_dc_id_kh, v_dc_id_nha, v_dc_gia_tri_kh);
+                        load_data_to_grid();
                         break;
                 }
             }
