@@ -5,10 +5,6 @@
     TagPrefix="asp" %>
 <asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
     <style type="text/css">
-        a
-        {
-            text-decoration: none;
-        }
     </style>
     <script type="text/javascript">
         // Hàm này dùng để check all checkbox trên lưới
