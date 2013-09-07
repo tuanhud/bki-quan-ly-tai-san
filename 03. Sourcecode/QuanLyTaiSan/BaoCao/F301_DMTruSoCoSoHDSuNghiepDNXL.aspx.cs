@@ -139,67 +139,28 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     private void load_data_to_grid_nha()
     {
-
         DS_V_DM_NHA v_ds_v_dm_nha = new DS_V_DM_NHA();
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         string v_id_dat = m_cbo_dia_chi.SelectedValue;
-        string id_loai_bao_cao = "";
         string v_str_user_name = Person.get_user_name();
         if (v_str_user_name.Equals(null)) return;
-
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
-        {
-            id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
-        }
-        switch (id_loai_bao_cao)
-        {
-            case "1":
-                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
-                    ""
-                    , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
-                    , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                    , m_cbo_loai_hinh_don_vi.SelectedValue
-                    , v_str_user_name
-                    , v_ds_v_dm_nha
-                    );
-                break;
-            case "2":
-                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
-                     ""
-                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                     , m_cbo_loai_hinh_don_vi.SelectedValue
-                     , v_str_user_name
-                     , v_ds_v_dm_nha
-                     );
-                break;
-            case "3":
-                v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
-                     ""
-                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
-                     , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                     , m_cbo_loai_hinh_don_vi.SelectedValue
-                     , v_str_user_name
-                     , v_ds_v_dm_nha
-                     );
-                break;
-        }
+        v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
+            ""
+            , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+            , m_cbo_loai_hinh_don_vi.SelectedValue
+            , v_str_user_name
+            , v_ds_v_dm_nha
+            );
         m_grv_nha.DataSource = v_ds_v_dm_nha.V_DM_NHA;
         if (v_ds_v_dm_nha.V_DM_NHA.Count == 0) thong_bao("Không có kết quả tìm kiếm phù hợp!");
         Thread.Sleep(1000);
         string v_str_thong_tin = " (Có " + v_ds_v_dm_nha.V_DM_NHA.Rows.Count + " bản ghi)";
         m_lbl_title.Text += v_str_thong_tin;
         m_grv_nha.DataBind();
-
     }
     private void form_title()
     {
@@ -531,7 +492,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
           );
         m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
     }
-    
+
     #endregion
 
     #region events
