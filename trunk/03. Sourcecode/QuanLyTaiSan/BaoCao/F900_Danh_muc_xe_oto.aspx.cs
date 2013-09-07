@@ -32,20 +32,20 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     #region Private Methods
     private bool check_validate_data_is_ok()
     {
-        m_lbl_mess.Text = "";
+        reset_thong_bao();
         if (m_cbo_bo_tinh.SelectedValue.Equals(""))
         {
-            m_lbl_mess.Text = "Không có Bộ, tỉnh!";
+            thong_bao( "Không có Bộ, tỉnh!");
             return false;
         }
         if (m_cbo_don_vi_quan_ly.SelectedValue.Equals(""))
         {
-            m_lbl_mess.Text = "Không có Đơn vị chủ quản!";
+            thong_bao("Không có Đơn vị chủ quản!");
             return false;
         }
         if (m_cbo_don_vi_su_dung.SelectedValue.Equals(""))
         {
-            m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+            thong_bao("Không có Đơn vị sử dụng!");
             return false;
         }
         return true;
@@ -112,8 +112,19 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);
     }
 
+    private void thong_bao(string ip_str_thong_bao)
+    {
+        m_lbl_mess.Text = ip_str_thong_bao;
+    }
+
+    private void reset_thong_bao()
+    {
+        m_lbl_mess.Text = "";
+    }
+
     private void load_data_to_grid_oto()
     {
+        reset_thong_bao();
         m_lbl_thong_tin_oto.Text = "DANH SÁCH Ô TÔ";
         if (!check_validate_data_is_ok()) return;
         System.Threading.Thread.Sleep(1000);
@@ -133,12 +144,116 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                , v_ds_v_dm_oto
             );
         m_grv_bao_cao_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
+        if (v_ds_v_dm_oto.V_DM_OTO.Count == 0) thong_bao("Không có kết quả tìm kiếm phù hợp!");
         string v_str_thong_tin = " (Có " + v_ds_v_dm_oto.V_DM_OTO.Rows.Count + " bản ghi)";
         m_lbl_thong_tin_oto.Text += v_str_thong_tin;
         m_grv_bao_cao_oto.DataBind();
         m_grv_bao_cao_oto.Visible = true;
     }
 
+    private void set_inital_form()
+    {
+        //load data to combobox trang thai o to
+        string v_str_id_loai_bao_cao = "";
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+        load_data_to_cbo_loai_xe(WinFormControls.eTAT_CA.YES);
+        switch (v_str_id_loai_bao_cao)
+        {
+            case LOAI_BAO_CAO.KE_KHAI:
+                WinFormControls.load_data_to_cbo_bo_tinh
+                    (
+                     WinFormControls.eTAT_CA.NO
+                     , m_cbo_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_quan_ly);
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_loai_hinh_don_vi
+                    );
+                //load data to combobox trang thai nha
+                m_lbl_title.Text = "BÁO CÁO KÊ KHAI Ô TÔ";
+                WinFormControls.load_data_to_cbo_tu_dien(
+                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_trang_thai
+                    );
+                m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DANG_SU_DUNG.ToString();
+                m_cbo_trang_thai.Enabled = false;
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_su_dung
+                    );
+                break;
+            case LOAI_BAO_CAO.DE_NGHI_XU_LY:
+                WinFormControls.load_data_to_cbo_bo_tinh
+                    (
+                     WinFormControls.eTAT_CA.NO
+                     , m_cbo_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_quan_ly);
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_loai_hinh_don_vi
+                    );
+                //load data to combobox trang thai nha
+                m_lbl_title.Text = "BÁO CÁO ĐỀ NGHỊ XỬ LÝ Ô TÔ";
+                WinFormControls.load_data_to_cbo_tu_dien(
+                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_trang_thai
+                    );
+                m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DE_NGHI_XU_LY.ToString();
+                m_cbo_trang_thai.Enabled = false;
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_su_dung
+                    );
+                break;
+            case LOAI_BAO_CAO.THONG_KE:
+                WinFormControls.load_data_to_cbo_bo_tinh
+                    (
+                     WinFormControls.eTAT_CA.YES
+                     , m_cbo_bo_tinh);
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                    m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_quan_ly);
+                WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
+                    WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_loai_hinh_don_vi
+                    );
+                //load data to combobox trang thai nha
+                m_lbl_title.Text = "BÁO CÁO ĐỀ NGHỊ XỬ LÝ Ô TÔ";
+                WinFormControls.load_data_to_cbo_tu_dien(
+                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_trang_thai
+                    );
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung
+                    );
+                break;
+        }
+        m_cmd_tim_kiem_Click(m_cmd_tim_kiem, EventArgs.Empty);
+    }
     #endregion
 
     #region Events
@@ -148,105 +263,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         {
             if (!this.IsPostBack)
             {
-                //load data to combobox trang thai o to
-                string v_str_id_loai_bao_cao = "";
-                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
-                v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
-                load_data_to_cbo_loai_xe(WinFormControls.eTAT_CA.YES);
-                switch (v_str_id_loai_bao_cao)
-                {
-                    case LOAI_BAO_CAO.KE_KHAI:
-                        WinFormControls.load_data_to_cbo_bo_tinh
-                            (
-                             WinFormControls.eTAT_CA.NO
-                             , m_cbo_bo_tinh);
-                        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                            m_cbo_bo_tinh.SelectedValue
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_don_vi_quan_ly);
-                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                            , WinFormControls.eTAT_CA.YES
-                            , m_cbo_loai_hinh_don_vi
-                            );
-                        //load data to combobox trang thai nha
-                        m_lbl_title.Text = "BÁO CÁO KÊ KHAI Ô TÔ";
-                        WinFormControls.load_data_to_cbo_tu_dien(
-                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_trang_thai
-                            );
-                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DANG_SU_DUNG.ToString();
-                        m_cbo_trang_thai.Enabled = false;
-                        WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                            m_cbo_loai_hinh_don_vi.SelectedValue
-                            , m_cbo_don_vi_quan_ly.SelectedValue
-                            , m_cbo_bo_tinh.SelectedValue
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_don_vi_su_dung
-                            );
-                        break;
-                    case LOAI_BAO_CAO.DE_NGHI_XU_LY:
-                        WinFormControls.load_data_to_cbo_bo_tinh
-                            (
-                             WinFormControls.eTAT_CA.NO
-                             , m_cbo_bo_tinh);
-                        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                            m_cbo_bo_tinh.SelectedValue
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_don_vi_quan_ly);
-                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                            , WinFormControls.eTAT_CA.YES
-                            , m_cbo_loai_hinh_don_vi
-                            );
-                        //load data to combobox trang thai nha
-                        m_lbl_title.Text = "BÁO CÁO ĐỀ NGHỊ XỬ LÝ Ô TÔ";
-                        WinFormControls.load_data_to_cbo_tu_dien(
-                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_trang_thai
-                            );
-                        m_cbo_trang_thai.SelectedValue = ID_TRANG_THAI_OTO.DE_NGHI_XU_LY.ToString();
-                        m_cbo_trang_thai.Enabled = false;
-                        WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                            m_cbo_loai_hinh_don_vi.SelectedValue
-                            , m_cbo_don_vi_quan_ly.SelectedValue
-                            , m_cbo_bo_tinh.SelectedValue
-                            , WinFormControls.eTAT_CA.NO
-                            , m_cbo_don_vi_su_dung
-                            );
-                        break;
-                    case LOAI_BAO_CAO.THONG_KE:
-                        WinFormControls.load_data_to_cbo_bo_tinh
-                            (
-                             WinFormControls.eTAT_CA.YES
-                             , m_cbo_bo_tinh);
-                        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                            m_cbo_bo_tinh.SelectedValue
-                            , WinFormControls.eTAT_CA.YES
-                            , m_cbo_don_vi_quan_ly);
-                        WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
-                            WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
-                            , WinFormControls.eTAT_CA.YES
-                            , m_cbo_loai_hinh_don_vi
-                            );
-                        //load data to combobox trang thai nha
-                        m_lbl_title.Text = "BÁO CÁO ĐỀ NGHỊ XỬ LÝ Ô TÔ";
-                        WinFormControls.load_data_to_cbo_tu_dien(
-                            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
-                            , WinFormControls.eTAT_CA.YES
-                            , m_cbo_trang_thai
-                            );
-                        WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                            m_cbo_loai_hinh_don_vi.SelectedValue
-                            , m_cbo_don_vi_quan_ly.SelectedValue
-                            , m_cbo_bo_tinh.SelectedValue
-                            , WinFormControls.eTAT_CA.YES
-                            , m_cbo_don_vi_su_dung
-                            );
-                        break;
-                }
+                set_inital_form();
             }
         }
         catch (Exception v_e)
@@ -269,7 +286,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             string v_str_id_loai_bao_cao = "";
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
             v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
@@ -320,7 +337,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             string v_str_id_loai_bao_cao = "";
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
             v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
@@ -377,7 +394,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             string v_str_id_loai_bao_cao = "";
             if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
             v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
@@ -414,7 +431,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             
             if (m_cbo_don_vi_su_dung.SelectedValue.Equals(""))
             {
-                m_lbl_mess.Text = "Không có Đơn vị sử dụng!";
+                thong_bao("Không có Đơn vị sử dụng!");
                 return;
             }
         }
