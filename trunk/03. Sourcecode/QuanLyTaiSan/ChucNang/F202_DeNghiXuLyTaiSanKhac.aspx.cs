@@ -28,10 +28,6 @@ public partial class Default2 : System.Web.UI.Page
     #region Private methods
     private void load_form_data()
     {
-        //load_data_bo_tinh();
-        //load_data_don_vi_chu_quan(m_cbo_bo_tinh.SelectedValue);
-        //load_data_don_vi_su_dung(m_cbo_don_vi_chu_quan.SelectedValue, m_cbo_bo_tinh.SelectedValue);
-        //load_data_trang_thai();
         WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                     , WinFormControls.eTAT_CA.YES
@@ -72,6 +68,7 @@ public partial class Default2 : System.Web.UI.Page
                     , m_ds_v_tai_san_khac);
         m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
         string v_str_thong_tin = " (Có " + m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
+        m_lbl_title.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ)";
         m_lbl_title.Text += v_str_thong_tin;
         m_grv_danh_sach_tai_san_khac.DataBind();
     }
@@ -98,7 +95,6 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
     #endregion
-
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -111,11 +107,9 @@ public partial class Default2 : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
-
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         try
@@ -142,13 +136,10 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            /*load_data_to_cbo_don_vi_chu_quan();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
@@ -169,8 +160,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            /*load_data_to_cbo_don_vi_su_dung();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
             m_lbl_mess.Text = "";
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                 m_cbo_don_vi_chu_quan.SelectedValue
@@ -183,30 +172,6 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(ex);
         }
 
-    }
-
-    protected void m_cbo_don_vi_su_dung_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            //load_data_to_grid();  
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-
-    protected void m_cbo_trang_thai_tai_san_khac_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            //load_data_to_grid(); 
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
     }
     protected void m_cmd_de_nghi_xu_ly_Click(object sender, EventArgs e)
     {
@@ -271,7 +236,6 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
-
     protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -291,4 +255,3 @@ public partial class Default2 : System.Web.UI.Page
     }
     #endregion
 }
-    
