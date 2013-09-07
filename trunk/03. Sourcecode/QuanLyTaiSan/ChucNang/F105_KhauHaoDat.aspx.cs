@@ -160,7 +160,6 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         // Thực hiện cập nhật
         v_us_gd_khau_hao.Insert();
         v_us_dm_dat.Update();
-        load_form_data();
         m_lbl_mess.Text = "Cập nhật thành công";
     }
 
@@ -184,7 +183,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
             return false;
         }
         string v_str_id_dat = m_cbo_dia_chi.SelectedValue;
-        if (v_str_id_dat.Equals("") || v_str_id_dat.Equals("-1"))
+        if (v_str_id_dat.Equals("") || v_str_id_dat.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_mess.Text = "Bạn chưa chọn tài sản";
             return false;
@@ -205,7 +204,6 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         v_us_gd_khau_hao.DeleteByID(ip_dc_id_kh);
         v_us_dm_dat.dcGT_THEO_SO_KE_TOAN += ip_dc_gia_tri_kh;
         v_us_dm_dat.Update();
-        load_data_to_grid();
     }
     #endregion
 
@@ -308,6 +306,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         {
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
+            load_form_data();
         }
         catch (Exception v_e)
         {
@@ -376,6 +375,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
                 {
                     case "DeleteComp":
                         xoa_khau_hao(v_dc_id_kh, v_dc_id_dat, v_dc_gia_tri_kh);
+                        load_data_to_grid();
                         break;
                 }
             }

@@ -29,7 +29,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             return false;
         }
         string v_str_id_oto = m_cbo_ten_tai_san.SelectedValue;
-        if (v_str_id_oto.Equals(String.Empty) || v_str_id_oto.Equals("-1"))
+        if (v_str_id_oto.Equals(String.Empty) || v_str_id_oto.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_message.Text = "Bạn chưa chọn tài sản";
             return false;
@@ -101,7 +101,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         // Thực hiện cập nhật
         v_us_gd_khau_hao.Insert();
         v_us_dm_oto.Update();
-        load_form_data();
         m_lbl_message.Text = "Cập nhật thành công";
     }
 
@@ -254,7 +253,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         m_us_gd_kh.DeleteByID(ip_dc_id_kh);
         v_us_dm_oto.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
         v_us_dm_oto.Update();
-        load_data_to_grid();
     }
     #endregion
 
@@ -392,6 +390,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
                 {
                     case "DeleteComp":
                         xoa_khau_hao(v_dc_id_kh, v_dc_id_oto, v_dc_gia_tri_kh);
+                        load_data_to_grid();
                         break;
                 }
             }
@@ -445,6 +444,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         {
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
+            load_form_data();
             Thread.Sleep(1000);
         }
         catch (Exception v_e)
