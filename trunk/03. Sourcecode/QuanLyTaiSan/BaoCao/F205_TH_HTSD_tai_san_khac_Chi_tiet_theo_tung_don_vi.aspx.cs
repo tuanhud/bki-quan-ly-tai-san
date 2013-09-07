@@ -59,11 +59,11 @@ public partial class BaoCao_F205_TH_HTSD_tai_san_khac_Chi_tiet_theo_tung_don_vi 
     private void export_excel()
     {
         string v_str_output_file = "";
-        f320_RPT_TONG_HOP_HIEN_TRANG v_f320_tong_hop_thsn_theo_loai_hinh_don_vi = new f320_RPT_TONG_HOP_HIEN_TRANG();
+        frm_RPT_TONG_HOP_HIEN_TRANG_TSK v_f200_tong_hop_chung = new frm_RPT_TONG_HOP_HIEN_TRANG_TSK();
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
-        v_f320_tong_hop_thsn_theo_loai_hinh_don_vi.export_excel_TH_THSD(
-           f320_RPT_TONG_HOP_HIEN_TRANG.TINH_HINH_SU_DUNG.DON_VI_SU_DUNG
+        v_f200_tong_hop_chung.export_excel_TH_THSD(
+           frm_RPT_TONG_HOP_HIEN_TRANG_TSK.TINH_HINH_SU_DUNG.DON_VI_SU_DUNG
                                  , ref v_obj_parameter
                                );
         Response.Clear();
