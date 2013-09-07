@@ -35,7 +35,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         reset_thong_bao();
         if (m_cbo_bo_tinh.SelectedValue.Equals(""))
         {
-            thong_bao( "Không có Bộ, tỉnh!");
+            thong_bao("Không có Bộ, tỉnh!");
             return false;
         }
         if (m_cbo_don_vi_quan_ly.SelectedValue.Equals(""))
@@ -90,22 +90,24 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
-
-
-        if (v_obj_parameter.dcID_TRANG_THAI_TAI_SAN == ID_TRANG_THAI_OTO.DANG_SU_DUNG)
+        string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+        switch (v_str_id_loai_bao_cao)
         {
-
-            v_f400_bc_dm_oto.export_excel(
-                f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
-                , ref v_obj_parameter);
-        }
-        else if (v_obj_parameter.dcID_TRANG_THAI_TAI_SAN == ID_TRANG_THAI_OTO.DE_NGHI_XU_LY)
-        {
-
-            v_f400_bc_dm_oto.export_excel(
-                f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
-                , ref v_obj_parameter);
-
+            case LOAI_BAO_CAO.KE_KHAI:
+                v_f400_bc_dm_oto.export_excel(
+                        f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
+                       , ref v_obj_parameter);
+                break;
+            case LOAI_BAO_CAO.DE_NGHI_XU_LY:
+                v_f400_bc_dm_oto.export_excel(
+                       f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
+                       , ref v_obj_parameter);
+                break;
+            case LOAI_BAO_CAO.THONG_KE:
+                v_f400_bc_dm_oto.export_excel(
+                      f400_bao_cao_danh_muc_o_to.eFormMode.THONG_KE_O_TO
+                      , ref v_obj_parameter);
+                break;
         }
         Response.Clear();
         v_obj_parameter.strFILE_NAME_RESULT = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
@@ -417,7 +419,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                         , WinFormControls.eTAT_CA.NO
                         , m_cbo_don_vi_su_dung
                         );
-                    break;      
+                    break;
                 case LOAI_BAO_CAO.THONG_KE:
                     WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
                         m_cbo_loai_hinh_don_vi.SelectedValue
@@ -428,7 +430,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
                         );
                     break;
             }
-            
+
             if (m_cbo_don_vi_su_dung.SelectedValue.Equals(""))
             {
                 thong_bao("Không có Đơn vị sử dụng!");
