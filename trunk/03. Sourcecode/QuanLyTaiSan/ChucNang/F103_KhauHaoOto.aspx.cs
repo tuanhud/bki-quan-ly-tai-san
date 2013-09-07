@@ -230,6 +230,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
+        m_lbl_thong_tin_khau_hao.Text = "DANH SÁCH CÁC LẦN KHẤU HAO";
         US_V_GD_KHAU_HAO_DM_OTO v_us_v_gd_khau_hao_oto = new US_V_GD_KHAU_HAO_DM_OTO();
         DS_V_GD_KHAU_HAO_DM_OTO v_ds_v_gd_khau_hao_oto = new DS_V_GD_KHAU_HAO_DM_OTO();
 
@@ -244,12 +245,14 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             , Person.get_user_name()
             , v_ds_v_gd_khau_hao_oto);
         m_grv_dm_oto.DataSource = v_ds_v_gd_khau_hao_oto.V_GD_KHAU_HAO_DM_OTO;
+        string v_str_thong_tin = " (Có " + v_ds_v_gd_khau_hao_oto.V_GD_KHAU_HAO_DM_OTO.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_khau_hao.Text += v_str_thong_tin;
         m_grv_dm_oto.DataBind();
     }
 
     private void xoa_khau_hao(decimal ip_dc_id_kh, decimal ip_dc_id_oto, decimal ip_dc_gia_tri_kh)
     {
-        US_DM_OTO v_us_dm_oto = new US_DM_OTO(ip_dc_id_oto);  
+        US_DM_OTO v_us_dm_oto = new US_DM_OTO(ip_dc_id_oto);
         m_us_gd_kh.DeleteByID(ip_dc_id_kh);
         v_us_dm_oto.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
         v_us_dm_oto.Update();
