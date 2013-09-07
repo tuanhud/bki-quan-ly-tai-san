@@ -52,19 +52,19 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
         op_obj_parameter.strMA_LOAI_HINH_DON_VI = CONST_QLDB.TAT_CA;
         op_obj_parameter.strUSER_NAME = Person.get_user_name();
     }
-    /*private void export_excel() {
+    private void export_excel() {
         string v_str_output_file = "";
-        f320_RPT_TONG_HOP_HIEN_TRANG v_f320_tong_hop_thsn_theo_loai_hinh_don_vi = new f320_RPT_TONG_HOP_HIEN_TRANG();
+        frm_RPT_TONG_HOP_HIEN_TRANG_TSK v_f200_tong_hop_chung = new frm_RPT_TONG_HOP_HIEN_TRANG_TSK();
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
-        v_f320_tong_hop_thsn_theo_loai_hinh_don_vi.export_excel_TH_THSD(
-           f320_RPT_TONG_HOP_HIEN_TRANG.TINH_HINH_SU_DUNG.TONG_HOP_CHUNG
+        v_f200_tong_hop_chung.export_excel_TH_THSD(
+           frm_RPT_TONG_HOP_HIEN_TRANG_TSK.TINH_HINH_SU_DUNG.TONG_HOP_CHUNG
                                  , ref v_obj_parameter
                                );
         Response.Clear();
         v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
         Response.Redirect(v_str_output_file, false);
-    }*/
+    }
     #endregion
 
     #region Events
@@ -134,7 +134,7 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
                         , "DS tong hop chung nha dat.xls"
                         ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
              */
-            //export_excel();
+            export_excel();
         }
         catch (Exception ex) {
             CSystemLog_301.ExceptionHandle(ex);
