@@ -464,7 +464,7 @@ namespace QltsForm {
                         , op_obj_excel_parameters.dcID_LOAI_TAI_SAN
                         , ID_TRANG_THAI_OTO.DANG_SU_DUNG
                         , op_obj_excel_parameters.strKEY_SEARCH);
-                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_KK, 13, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_KE_KHAI, 13, 1);
                     break;
                 case eFormMode.O_TO_DE_NGHI_XU_LY:
                     load_data_2_grid(
@@ -474,7 +474,7 @@ namespace QltsForm {
                         , op_obj_excel_parameters.dcID_LOAI_TAI_SAN                                           
                         , ID_TRANG_THAI_OTO.DE_NGHI_XU_LY
                         , op_obj_excel_parameters.strKEY_SEARCH);
-                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_DNXL, 13, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_DE_NGHI_XU_LY, 13, 1);
                     break;
                 case eFormMode.O_TO_GIAO_DON_VI_SU_NGHIEP:
                     // Chỗ này đang chưa chuẩn vì chưa hiểu sự nghiệp là gì
@@ -485,7 +485,7 @@ namespace QltsForm {
                         , op_obj_excel_parameters.dcID_TRANG_THAI_TAI_SAN
                         , ID_TRANG_THAI_OTO.DANG_SU_DUNG
                         , op_obj_excel_parameters.strKEY_SEARCH);
-                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_DVTCTC, 13, 1);
+                    v_obj_exe_report = new CExcelWebReport(TEN_BAO_CAO.BCDM_OTO_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH, 13, 1);
                     break;
                 default:
                     break;
