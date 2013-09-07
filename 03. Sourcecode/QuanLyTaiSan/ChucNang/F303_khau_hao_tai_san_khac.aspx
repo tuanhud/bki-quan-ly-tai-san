@@ -46,7 +46,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Khấu hao Tài sản khác</span> <span class="expand-collapse-text initial-expand">
+                        <span class="cssPageTitle">KHẤU HAO TÀI SẢN KHÁC</span> <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
@@ -86,9 +86,8 @@
                                     <span class="cssManField">Đơn vị sử dụng tài sản</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" 
-                                        Width="85%" AutoPostBack="true"
-                                        onselectedindexchanged="m_cbo_don_vi_su_dung_tai_san_up_SelectedIndexChanged">
+                                    <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" Width="85%"
+                                        AutoPostBack="true" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_tai_san_up_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -109,7 +108,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:DropDownList ID="m_cbo_ten_tai_san" runat="server" Width="85%" AutoPostBack="true"
-                                        onselectedindexchanged="m_cbo_ten_tai_san_SelectedIndexChanged">
+                                        OnSelectedIndexChanged="m_cbo_ten_tai_san_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -224,8 +223,8 @@
                                     <span>Mã phiếu</span>
                                 </td>
                                 <td colspan="1" style="width: 29%">
-                                    <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox"
-                                        Width="85%" ValidationGroup="m_vlg_tai_san_khac">
+                                    <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
+                                        ValidationGroup="m_vlg_tai_san_khac">
                                     </asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -297,8 +296,9 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Danh sách các lần đã khấu hao</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_khau_hao_tai_san_khac" runat="Server" class="cssPageTitle" Text="DANH SÁCH CÁC LẦN KHẤU HAO"></asp:Label>
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
