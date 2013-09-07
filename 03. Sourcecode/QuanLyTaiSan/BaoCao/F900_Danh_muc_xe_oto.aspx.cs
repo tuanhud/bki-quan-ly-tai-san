@@ -256,6 +256,130 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
         m_cmd_tim_kiem_Click(m_cmd_tim_kiem, EventArgs.Empty);
     }
+
+    private void load_data_from_select_bo_tinh()
+    {
+        reset_thong_bao();
+        string v_str_id_loai_bao_cao = "";
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+        switch (v_str_id_loai_bao_cao)
+        {
+            case LOAI_BAO_CAO.KE_KHAI:
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                     m_cbo_bo_tinh.SelectedValue
+                     , WinFormControls.eTAT_CA.NO, m_cbo_don_vi_quan_ly);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_su_dung);
+                break;
+            case LOAI_BAO_CAO.DE_NGHI_XU_LY:
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                      m_cbo_bo_tinh.SelectedValue
+                      , WinFormControls.eTAT_CA.NO, m_cbo_don_vi_quan_ly);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_su_dung);
+                break;
+            case LOAI_BAO_CAO.THONG_KE:
+                WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+                     m_cbo_bo_tinh.SelectedValue
+                     , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_quan_ly);
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung);
+                break;
+        }
+        m_grv_bao_cao_oto.Visible = false;
+    }
+    private void load_data_from_select_don_vi_quan_ly()
+    {
+        reset_thong_bao();
+        string v_str_id_loai_bao_cao = "";
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+        switch (v_str_id_loai_bao_cao)
+        {
+            case LOAI_BAO_CAO.KE_KHAI:
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                   m_cbo_loai_hinh_don_vi.SelectedValue
+                   , m_cbo_don_vi_quan_ly.SelectedValue
+                   , m_cbo_bo_tinh.SelectedValue
+                   , WinFormControls.eTAT_CA.NO
+                   , m_cbo_don_vi_su_dung);
+                break;
+            case LOAI_BAO_CAO.DE_NGHI_XU_LY:
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                  m_cbo_loai_hinh_don_vi.SelectedValue
+                  , m_cbo_don_vi_quan_ly.SelectedValue
+                  , m_cbo_bo_tinh.SelectedValue
+                  , WinFormControls.eTAT_CA.NO
+                  , m_cbo_don_vi_su_dung);
+                break;
+            case LOAI_BAO_CAO.THONG_KE:
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                  m_cbo_loai_hinh_don_vi.SelectedValue
+                  , m_cbo_don_vi_quan_ly.SelectedValue
+                  , m_cbo_bo_tinh.SelectedValue
+                  , WinFormControls.eTAT_CA.YES
+                  , m_cbo_don_vi_su_dung);
+                break;
+        }
+
+        m_grv_bao_cao_oto.Visible = false;
+    }
+    private void load_data_from_select_loai_hinh_don_vi()
+    {
+        reset_thong_bao();
+        string v_str_id_loai_bao_cao = "";
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+        switch (v_str_id_loai_bao_cao)
+        {
+            case LOAI_BAO_CAO.KE_KHAI:
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_su_dung
+                    );
+                break;
+            case LOAI_BAO_CAO.DE_NGHI_XU_LY:
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_don_vi_su_dung
+                    );
+                break;
+            case LOAI_BAO_CAO.THONG_KE:
+                WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
+                    m_cbo_loai_hinh_don_vi.SelectedValue
+                    , m_cbo_don_vi_quan_ly.SelectedValue
+                    , m_cbo_bo_tinh.SelectedValue
+                    , WinFormControls.eTAT_CA.YES
+                    , m_cbo_don_vi_su_dung
+                    );
+                break;
+        }
+
+        if (m_cbo_don_vi_su_dung.SelectedValue.Equals(""))
+        {
+            thong_bao("Không có Đơn vị sử dụng!");
+            return;
+        }
+    }
     #endregion
 
     #region Events
@@ -288,47 +412,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            reset_thong_bao();
-            string v_str_id_loai_bao_cao = "";
-            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
-            v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
-            switch (v_str_id_loai_bao_cao)
-            {
-                case LOAI_BAO_CAO.KE_KHAI:
-                    WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                         m_cbo_bo_tinh.SelectedValue
-                         , WinFormControls.eTAT_CA.NO, m_cbo_don_vi_quan_ly);
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                        m_cbo_loai_hinh_don_vi.SelectedValue
-                        , m_cbo_don_vi_quan_ly.SelectedValue
-                        , m_cbo_bo_tinh.SelectedValue
-                        , WinFormControls.eTAT_CA.NO
-                        , m_cbo_don_vi_su_dung);
-                    break;
-                case LOAI_BAO_CAO.DE_NGHI_XU_LY:
-                    WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                          m_cbo_bo_tinh.SelectedValue
-                          , WinFormControls.eTAT_CA.NO, m_cbo_don_vi_quan_ly);
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                        m_cbo_loai_hinh_don_vi.SelectedValue
-                        , m_cbo_don_vi_quan_ly.SelectedValue
-                        , m_cbo_bo_tinh.SelectedValue
-                        , WinFormControls.eTAT_CA.NO
-                        , m_cbo_don_vi_su_dung);
-                    break;
-                case LOAI_BAO_CAO.THONG_KE:
-                    WinFormControls.load_data_to_cbo_don_vi_chu_quan(
-                         m_cbo_bo_tinh.SelectedValue
-                         , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_quan_ly);
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                        m_cbo_loai_hinh_don_vi.SelectedValue
-                        , m_cbo_don_vi_quan_ly.SelectedValue
-                        , m_cbo_bo_tinh.SelectedValue
-                        , WinFormControls.eTAT_CA.YES
-                        , m_cbo_don_vi_su_dung);
-                    break;
-            }
-            m_grv_bao_cao_oto.Visible = false;
+            load_data_from_select_bo_tinh();
         }
         catch (System.Exception ex)
         {
@@ -339,39 +423,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            reset_thong_bao();
-            string v_str_id_loai_bao_cao = "";
-            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
-            v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
-            switch (v_str_id_loai_bao_cao)
-            {
-                case LOAI_BAO_CAO.KE_KHAI:
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                       m_cbo_loai_hinh_don_vi.SelectedValue
-                       , m_cbo_don_vi_quan_ly.SelectedValue
-                       , m_cbo_bo_tinh.SelectedValue
-                       , WinFormControls.eTAT_CA.NO
-                       , m_cbo_don_vi_su_dung);
-                    break;
-                case LOAI_BAO_CAO.DE_NGHI_XU_LY:
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                      m_cbo_loai_hinh_don_vi.SelectedValue
-                      , m_cbo_don_vi_quan_ly.SelectedValue
-                      , m_cbo_bo_tinh.SelectedValue
-                      , WinFormControls.eTAT_CA.NO
-                      , m_cbo_don_vi_su_dung);
-                    break;
-                case LOAI_BAO_CAO.THONG_KE:
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                      m_cbo_loai_hinh_don_vi.SelectedValue
-                      , m_cbo_don_vi_quan_ly.SelectedValue
-                      , m_cbo_bo_tinh.SelectedValue
-                      , WinFormControls.eTAT_CA.YES
-                      , m_cbo_don_vi_su_dung);
-                    break;
-            }
-
-            m_grv_bao_cao_oto.Visible = false;
+            load_data_from_select_don_vi_quan_ly();
         }
         catch (System.Exception ex)
         {
@@ -396,46 +448,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         try
         {
-            reset_thong_bao();
-            string v_str_id_loai_bao_cao = "";
-            if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
-            v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
-            switch (v_str_id_loai_bao_cao)
-            {
-                case LOAI_BAO_CAO.KE_KHAI:
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                        m_cbo_loai_hinh_don_vi.SelectedValue
-                        , m_cbo_don_vi_quan_ly.SelectedValue
-                        , m_cbo_bo_tinh.SelectedValue
-                        , WinFormControls.eTAT_CA.NO
-                        , m_cbo_don_vi_su_dung
-                        );
-                    break;
-                case LOAI_BAO_CAO.DE_NGHI_XU_LY:
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                        m_cbo_loai_hinh_don_vi.SelectedValue
-                        , m_cbo_don_vi_quan_ly.SelectedValue
-                        , m_cbo_bo_tinh.SelectedValue
-                        , WinFormControls.eTAT_CA.NO
-                        , m_cbo_don_vi_su_dung
-                        );
-                    break;
-                case LOAI_BAO_CAO.THONG_KE:
-                    WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-                        m_cbo_loai_hinh_don_vi.SelectedValue
-                        , m_cbo_don_vi_quan_ly.SelectedValue
-                        , m_cbo_bo_tinh.SelectedValue
-                        , WinFormControls.eTAT_CA.YES
-                        , m_cbo_don_vi_su_dung
-                        );
-                    break;
-            }
-
-            if (m_cbo_don_vi_su_dung.SelectedValue.Equals(""))
-            {
-                thong_bao("Không có Đơn vị sử dụng!");
-                return;
-            }
+            load_data_from_select_loai_hinh_don_vi();
         }
         catch (System.Exception v_e)
         {
