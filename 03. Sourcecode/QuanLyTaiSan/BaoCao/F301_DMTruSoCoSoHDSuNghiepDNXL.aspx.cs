@@ -84,7 +84,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             Response.Clear();
             v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
             Response.Redirect(v_str_output_file, false);
-
         }
 
     }
@@ -363,8 +362,6 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             default:
                 break;
         }
-
-        m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
         //Select các cbo theo id dơn vị sử dụng khi có id_don_vi_su_dung trên url
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD] != null)
         {
@@ -372,6 +369,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             Select_cac_cbo_theo_id_dvsd(v_id_don_vi_su_dung);
         }
         //------------------------------------------------------------------------
+        //load data to combobox dia chi
         WinFormControls.load_data_to_cbo_dia_chi_theo_loai_hinh(
           CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
           , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
@@ -381,6 +379,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
           , v_e_tat_ca
           , m_cbo_dia_chi
           );
+        m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
     }
     #endregion
 
