@@ -22,7 +22,6 @@ public partial class BaoCao_F309_TH_HTSD_nha_dat_Chi_tiet_theo_tung_don_vi : Sys
     #endregion
 
     #region private methods
-    #region private methods
     private void load_data_to_grid(string ip_str_id_bo_tinh, string ip_str_id_don_vi_chu_quan)
     {
         DS_RPT_TONG_HOP_HIEN_TRANG v_ds_rpt_tong_hop_hien_trang = new DS_RPT_TONG_HOP_HIEN_TRANG();
@@ -71,8 +70,6 @@ public partial class BaoCao_F309_TH_HTSD_nha_dat_Chi_tiet_theo_tung_don_vi : Sys
         v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
         Response.Redirect(v_str_output_file, false);
     }
-    #endregion
-
     #endregion
 
     #region Events
