@@ -133,6 +133,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private void form_2_us_object(US_DM_OTO ip_us_oto)
     {
+        ip_us_oto.dcID_NGUOI_LAP = CIPConvert.ToDecimal(Person.get_user_id());
         if (!m_hdf_id.Value.Equals(String.Empty))
         {
             ip_us_oto.dcID = CIPConvert.ToDecimal(m_hdf_id.Value);
