@@ -146,7 +146,7 @@ public partial class Default2 : System.Web.UI.Page
     }
     private void form_2_us_object()
     {
-
+        m_us_tai_san_khac.dcID_NGUOI_LAP = CIPConvert.ToDecimal(Person.get_user_id());
         m_us_tai_san_khac.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue);
         m_us_tai_san_khac.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue);
         m_us_tai_san_khac.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san.SelectedValue);
