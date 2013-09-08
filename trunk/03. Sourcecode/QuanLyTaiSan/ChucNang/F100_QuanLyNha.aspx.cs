@@ -354,6 +354,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         else {
             m_us_dm_nha.dcKHAC = CIPConvert.ToDecimal(m_txt_khac.Text);
         }
+        m_us_dm_nha.dcID_NGUOI_LAP = CIPConvert.ToDecimal(Person.get_user_id());
         m_us_dm_nha.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_ddl_trang_thai_nha.SelectedValue);
         m_us_dm_nha.dcID_DAT = CIPConvert.ToDecimal(m_ddl_thuoc_khu_dat.SelectedValue);
 
