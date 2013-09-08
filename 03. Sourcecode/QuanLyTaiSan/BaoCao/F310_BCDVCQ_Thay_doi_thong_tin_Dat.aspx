@@ -162,6 +162,7 @@
                     <Columns>
                         <asp:BoundField HeaderText="NGÀY CẬP NHẬT CUỐI" DataField="NGAY_CAP_NHAT_CUOI" ItemStyle-HorizontalAlign="right" />
                         <asp:BoundField HeaderText="LỊCH SỬ CẬP NHẬT" DataField="GHI_CHU_LICH_SU" ItemStyle-HorizontalAlign="left" />
+                        <asp:BoundField HeaderText="ĐƠN VỊ THAY ĐỔI" DataField="USER_GROUP_NAME" />
                         <asp:BoundField HeaderText="MÃ TÀI SẢN" DataField="MA_TAI_SAN" />
                         <asp:BoundField HeaderText="ĐỊA CHỈ" DataField="DIA_CHI" />
                         <asp:BoundField HtmlEncode="false" HeaderText="DIỆN TÍCH KHUÔN VIÊN <br/> (m2)" DataField="DT_KHUON_VIEN"
