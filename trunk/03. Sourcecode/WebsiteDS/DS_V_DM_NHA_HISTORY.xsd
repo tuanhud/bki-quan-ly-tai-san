@@ -2,17 +2,18 @@
 <xs:schema id="DS_V_DM_NHA_HISTORY" targetNamespace="http://tempuri.org/DS_V_DM_NHA_HISTORY.xsd" xmlns:mstns="http://tempuri.org/DS_V_DM_NHA_HISTORY.xsd" xmlns="http://tempuri.org/DS_V_DM_NHA_HISTORY.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_QLTSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_QLTSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WebDS.Properties.Settings.GlobalReference.Default.BKI_QLTSConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_QLTSConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_QLTSConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WebDS.Properties.Settings.GlobalReference.Default.BKI_QLTSConnectionString3" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_NHA_HISTORYTableAdapter" GeneratorDataComponentClassName="V_DM_NHA_HISTORYTableAdapter" Name="V_DM_NHA_HISTORY" UserDataComponentName="V_DM_NHA_HISTORYTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_QLTSConnectionString (Settings)" DbObjectName="BKI_QLTS.dbo.V_DM_NHA_HISTORY" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BKI_QLTSConnectionString3 (Settings)" DbObjectName="BKI_QLTS.dbo.V_DM_NHA_HISTORY" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TEN_DV_SU_DUNG, TEN_DV_CHU_QUAN, TEN_DV_BO_TINH, TEN_TRANG_THAI, TEN_TINH_TRANG, DIA_CHI, LOAI_HINH_DON_VI, TEN_LOAI_HINH_DVSD, ID, TEN_TAI_SAN, MA_TAI_SAN, ID_LOAI_TAI_SAN, ID_DAT, CAP_HANG, SO_TANG, NGAY_THANG_NAM_SU_DUNG, NAM_XAY_DUNG, DT_XAY_DUNG, TONG_DT_SAN_XD, NGUON_NS, NGUON_KHAC, GIA_TRI_CON_LAI, TRU_SO_LAM_VIEC, CO_SO_HDSN, LAM_NHA_O, CHO_THUE, BO_TRONG, BI_LAN_CHIEM, KHAC, ID_TRANG_THAI, NGAY_CAP_NHAT_CUOI, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_DON_VI_SU_DUNG, ID_DON_VI_CHU_QUAN, ID_DON_VI_DAU_TU, ID_NHA, GHI_CHU_LICH_SU, ID_TINH_TRANG FROM dbo.V_DM_NHA_HISTORY</CommandText>
+                    <CommandText>SELECT TEN_DV_SU_DUNG, TEN_DV_CHU_QUAN, TEN_DV_BO_TINH, TEN_TRANG_THAI, TEN_TINH_TRANG, DIA_CHI, LOAI_HINH_DON_VI, TEN_LOAI_HINH_DVSD, ID, TEN_TAI_SAN, MA_TAI_SAN, ID_LOAI_TAI_SAN, ID_DAT, CAP_HANG, SO_TANG, NGAY_THANG_NAM_SU_DUNG, NAM_XAY_DUNG, DT_XAY_DUNG, TONG_DT_SAN_XD, NGUON_NS, NGUON_KHAC, GIA_TRI_CON_LAI, TRU_SO_LAM_VIEC, CO_SO_HDSN, LAM_NHA_O, CHO_THUE, BO_TRONG, BI_LAN_CHIEM, KHAC, ID_TRANG_THAI, NGAY_CAP_NHAT_CUOI, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_DON_VI_SU_DUNG, ID_DON_VI_CHU_QUAN, ID_DON_VI_DAU_TU, ID_NHA, GHI_CHU_LICH_SU, ID_TINH_TRANG, USER_GROUP_NAME FROM dbo.V_DM_NHA_HISTORY</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -58,6 +59,7 @@
               <Mapping SourceColumn="ID_NHA" DataSetColumn="ID_NHA" />
               <Mapping SourceColumn="GHI_CHU_LICH_SU" DataSetColumn="GHI_CHU_LICH_SU" />
               <Mapping SourceColumn="ID_TINH_TRANG" DataSetColumn="ID_TINH_TRANG" />
+              <Mapping SourceColumn="USER_GROUP_NAME" DataSetColumn="USER_GROUP_NAME" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -69,7 +71,7 @@
   <xs:element name="DS_V_DM_NHA_HISTORY" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_NHA_HISTORY" msprop:Generator_UserDSName="DS_V_DM_NHA_HISTORY">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_NHA_HISTORY" msprop:Generator_TableClassName="V_DM_NHA_HISTORYDataTable" msprop:Generator_TableVarName="tableV_DM_NHA_HISTORY" msprop:Generator_TablePropName="V_DM_NHA_HISTORY" msprop:Generator_RowDeletingName="V_DM_NHA_HISTORYRowDeleting" msprop:Generator_RowChangingName="V_DM_NHA_HISTORYRowChanging" msprop:Generator_RowEvHandlerName="V_DM_NHA_HISTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_NHA_HISTORYRowDeleted" msprop:Generator_UserTableName="V_DM_NHA_HISTORY" msprop:Generator_RowChangedName="V_DM_NHA_HISTORYRowChanged" msprop:Generator_RowEvArgName="V_DM_NHA_HISTORYRowChangeEvent" msprop:Generator_RowClassName="V_DM_NHA_HISTORYRow">
+        <xs:element name="V_DM_NHA_HISTORY" msprop:Generator_TableClassName="V_DM_NHA_HISTORYDataTable" msprop:Generator_TableVarName="tableV_DM_NHA_HISTORY" msprop:Generator_TablePropName="V_DM_NHA_HISTORY" msprop:Generator_RowDeletingName="V_DM_NHA_HISTORYRowDeleting" msprop:Generator_UserTableName="V_DM_NHA_HISTORY" msprop:Generator_RowChangingName="V_DM_NHA_HISTORYRowChanging" msprop:Generator_RowEvHandlerName="V_DM_NHA_HISTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_NHA_HISTORYRowDeleted" msprop:Generator_RowEvArgName="V_DM_NHA_HISTORYRowChangeEvent" msprop:Generator_RowChangedName="V_DM_NHA_HISTORYRowChanged" msprop:Generator_RowClassName="V_DM_NHA_HISTORYRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TEN_DV_SU_DUNG" msprop:Generator_ColumnVarNameInTable="columnTEN_DV_SU_DUNG" msprop:Generator_ColumnPropNameInRow="TEN_DV_SU_DUNG" msprop:Generator_ColumnPropNameInTable="TEN_DV_SU_DUNGColumn" msprop:Generator_UserColumnName="TEN_DV_SU_DUNG">
@@ -177,6 +179,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_TINH_TRANG" msprop:Generator_ColumnVarNameInTable="columnID_TINH_TRANG" msprop:Generator_ColumnPropNameInRow="ID_TINH_TRANG" msprop:Generator_ColumnPropNameInTable="ID_TINH_TRANGColumn" msprop:Generator_UserColumnName="ID_TINH_TRANG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="USER_GROUP_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_GROUP_NAME" msprop:Generator_ColumnPropNameInRow="USER_GROUP_NAME" msprop:Generator_ColumnPropNameInTable="USER_GROUP_NAMEColumn" msprop:Generator_UserColumnName="USER_GROUP_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
