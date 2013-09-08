@@ -106,7 +106,7 @@
                             </tr>
                             <tr>
                                 <td align="right">
-                                    <span class="cssManField">Thuộc khu đất</span>
+                                    <span class="cssManField">Địa chỉ</span>
                                 </td>
                                 <td align="left">
                                     <asp:DropDownList ID="m_cbo_thuoc_khu_dat" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
@@ -344,7 +344,7 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right">
-                        <span class="cssManField">Địa chỉ đất </span>
+                        <span class="cssManField">Địa chỉ</span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4">
