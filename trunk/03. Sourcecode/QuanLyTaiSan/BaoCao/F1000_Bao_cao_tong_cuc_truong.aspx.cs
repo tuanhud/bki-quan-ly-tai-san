@@ -16,20 +16,7 @@ using System.Data;
 
 public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        try
-        {
-            if (!IsPostBack)
-            {
-                load_form_data();
-            }
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
+  
 
     #region Members
 
@@ -40,7 +27,7 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
     #endregion
 
     #region Private Methods
-    private void load_form_data()
+    private void set_inital_form_load()
     {
         load_data_don_vi_chu_quan();
         load_list_don_vi_su_dung();
@@ -108,23 +95,33 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
         m_lst_loai_tai_san.DataValueField = DM_LOAI_TAI_SAN.ID;
         m_lst_loai_tai_san.DataBind();
     }
-    private bool da_chon_du_lieu_tim_kiem()
+    private bool is_all_filter_data_selected()
     {
-        if (m_lst_don_vi_su_dung.SelectedIndex < 0) return false;
-        if (m_lst_loai_tai_san.SelectedIndex < 0) return false;
-        if (m_lst_loai_bao_cao.SelectedIndex < 0) return false;
+        if (m_lst_don_vi_su_dung.SelectedIndex < 0) {
+            m_lbl_mess.Text = "Bạn chưa chọn đơn vị sử dụng tài sản cần báo cáo!";
+            return false;
+        }
+        if (m_lst_loai_bao_cao.SelectedIndex < 0) {
+            m_lbl_mess.Text = "Bạn chưa chọn loại báo cáo!";
+            return false;
+        }
+        if (m_lst_loai_tai_san.SelectedIndex < 0) {
+            m_lbl_mess.Text = "Bạn chưa chọn loại tài sản cần báo cáo!";
+            return false;
+        }
+        
         return true;
     }
-    private void den_ba0_cao_duoc_chon()
+    private void show_data_report()
     {
         m_lbl_mess.Text = "";
         US_DM_LOC_BAO_CAO v_us_dm_loc_bao_cao = new US_DM_LOC_BAO_CAO();
         DS_DM_LOC_BAO_CAO v_ds_dm_loc_bao_cao = new DS_DM_LOC_BAO_CAO();
-        if (!da_chon_du_lieu_tim_kiem())
-        {
-            m_lbl_mess.Text = "Chưa chọn đủ các trường lọc!";
-            return;
-        }
+        if (!is_all_filter_data_selected()) return;
+        
+        
+        
+        
          v_us_dm_loc_bao_cao.FillDatasetByLoaiTS_LoaiBC(
                  CIPConvert.ToDecimal(m_lst_loai_tai_san.SelectedValue)
                  , CIPConvert.ToDecimal(m_lst_loai_bao_cao.SelectedValue)
@@ -143,7 +140,17 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
     }
     #endregion
 
-    #region Even
+    #region Event
+    protected void Page_Load(object sender, EventArgs e) {
+        try {
+            if (!IsPostBack) {
+                set_inital_form_load();
+            }
+        }
+        catch (Exception v_e) {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_ddl_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -159,7 +166,7 @@ public partial class BaoCao_F1000_Bao_cao_tong_cuc_truong : System.Web.UI.Page
     {
         try
         {            
-            den_ba0_cao_duoc_chon();
+            show_data_report();
         }
         catch (System.Exception ex)
         {
