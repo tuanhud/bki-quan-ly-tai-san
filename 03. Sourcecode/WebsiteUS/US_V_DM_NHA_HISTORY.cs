@@ -22,7 +22,7 @@ namespace WebUS
     public class US_V_DM_NHA_HISTORY : US_Object
     {
         private const string c_TableName = "V_DM_NHA_HISTORY";
-        #region Public Properties
+        #region "Public Properties"
         public string strTEN_DV_SU_DUNG
         {
             get
@@ -881,8 +881,30 @@ namespace WebUS
             pm_objDR["ID_TINH_TRANG"] = System.Convert.DBNull;
         }
 
+        public string strUSER_GROUP_NAME
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "USER_GROUP_NAME", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["USER_GROUP_NAME"] = value;
+            }
+        }
+
+        public bool IsUSER_GROUP_NAMENull()
+        {
+            return pm_objDR.IsNull("USER_GROUP_NAME");
+        }
+
+        public void SetUSER_GROUP_NAMENull()
+        {
+            pm_objDR["USER_GROUP_NAME"] = System.Convert.DBNull;
+        }
+
         #endregion
-        #region Init Functions
+        #region "Init Functions"
         public US_V_DM_NHA_HISTORY()
         {
             pm_objDS = new DS_V_DM_NHA_HISTORY();
