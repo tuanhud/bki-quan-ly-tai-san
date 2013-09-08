@@ -60,6 +60,15 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
     #region Private Methods
     private bool check_validate_data_is_ok()
     {
+        if (m_txt_tu_ngay.Text.Trim().Length == 0)
+        {
+            m_txt_tu_ngay.Text = CIPConvert.ToStr("01/01/1900");
+        }
+
+        if (m_txt_den_ngay.Text.Trim().Length == 0)
+        {
+            m_txt_den_ngay.Text = CIPConvert.ToStr("01/01/3000");
+        }
         DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
         DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
         if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
