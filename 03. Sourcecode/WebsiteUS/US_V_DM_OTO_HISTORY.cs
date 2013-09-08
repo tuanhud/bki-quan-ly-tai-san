@@ -22,7 +22,7 @@ namespace WebUS
 	public class US_V_DM_OTO_HISTORY : US_Object
 	{
 		private const string c_TableName = "V_DM_OTO_HISTORY";
-        #region Public Properties
+        #region "Public Properties"
         public string strTEN_DV_SU_DUNG
         {
             get
@@ -837,32 +837,55 @@ namespace WebUS
             pm_objDR["ID_TINH_TRANG"] = System.Convert.DBNull;
         }
 
+        public string strUSER_GROUP_NAME
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "USER_GROUP_NAME", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["USER_GROUP_NAME"] = value;
+            }
+        }
+
+        public bool IsUSER_GROUP_NAMENull()
+        {
+            return pm_objDR.IsNull("USER_GROUP_NAME");
+        }
+
+        public void SetUSER_GROUP_NAMENull()
+        {
+            pm_objDR["USER_GROUP_NAME"] = System.Convert.DBNull;
+        }
+
         #endregion
-		#region Init Functions
-		public US_V_DM_OTO_HISTORY() 
-		{
-			pm_objDS = new DS_V_DM_OTO_HISTORY();
-			pm_strTableName = c_TableName;
-			pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
-		}
+        #region "Init Functions"
+        public US_V_DM_OTO_HISTORY()
+        {
+            pm_objDS = new DS_V_DM_OTO_HISTORY();
+            pm_strTableName = c_TableName;
+            pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
+        }
 
-		public US_V_DM_OTO_HISTORY(DataRow i_objDR): this()
-		{
-			this.DataRow2Me(i_objDR);
-		}
+        public US_V_DM_OTO_HISTORY(DataRow i_objDR)
+            : this()
+        {
+            this.DataRow2Me(i_objDR);
+        }
 
-		public US_V_DM_OTO_HISTORY(decimal i_dbID) 
-		{
-			pm_objDS = new DS_V_DM_OTO_HISTORY();
-			pm_strTableName = c_TableName;
-			IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
-			v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
-			SqlCommand v_cmdSQL;
-			v_cmdSQL = v_objMkCmd.getSelectCmd();
-			this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
-			pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
-		}
-		#endregion
+        public US_V_DM_OTO_HISTORY(decimal i_dbID)
+        {
+            pm_objDS = new DS_V_DM_OTO_HISTORY();
+            pm_strTableName = c_TableName;
+            IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
+            v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
+            SqlCommand v_cmdSQL;
+            v_cmdSQL = v_objMkCmd.getSelectCmd();
+            this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
+            pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+        }
+        #endregion
         #region Addtional
         public void FillDataset(
             decimal ip_dc_bo_tinh
