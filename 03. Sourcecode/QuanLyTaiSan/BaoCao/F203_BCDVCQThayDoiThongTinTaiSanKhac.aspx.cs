@@ -69,6 +69,16 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         {
             m_txt_den_ngay.Text = CIPConvert.ToStr("01/01/3000");
         }
+        if (!CValidateTextBox.IsValid(m_txt_den_ngay, DataType.DateType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng ngày kết thúc";
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng ngày bắt đầu";
+            return false;
+        }
         DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
         DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
         if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
@@ -83,22 +93,8 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
         DateTime v_tsk_tu_ngay;
         DateTime v_tsk_den_ngay;
-        if (m_txt_tu_ngay.Text.Trim().Length > 0)
-        {
-            v_tsk_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-        }
-        else
-        {
-            v_tsk_tu_ngay = CIPConvert.ToDatetime("01/01/1900");
-        }
-        if (m_txt_den_ngay.Text.Trim().Length > 0)
-        {
-            v_tsk_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-        }
-        else
-        {
-            v_tsk_den_ngay = CIPConvert.ToDatetime("01/01/3000");
-        }
+        v_tsk_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+        v_tsk_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
         DS_V_DM_TAI_SAN_KHAC_HISTORY v_ds_v_dm_tai_san_khac_history = new DS_V_DM_TAI_SAN_KHAC_HISTORY();
         US_V_DM_TAI_SAN_KHAC_HISTORY v_us_v_dm_tai_san_khac_history = new US_V_DM_TAI_SAN_KHAC_HISTORY();
         v_us_v_dm_tai_san_khac_history.FillDataset(
