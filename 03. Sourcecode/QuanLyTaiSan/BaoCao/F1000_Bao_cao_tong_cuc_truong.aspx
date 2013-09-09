@@ -39,11 +39,12 @@
                                 OnSelectedIndexChanged="m_ddl_don_vi_chu_quan_SelectedIndexChanged" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
-                        <td>&nbsp;</td>
                         <td>
-                            <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="l" 
-                                CssClass="cssButton" Height="23px" OnClick="m_cmd_tim_kiem_Click" 
-                                Text="Chọn báo cáo" Width="98px" />
+                            &nbsp;
+                        </td>
+                        <td>
+                            <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="l" CssClass="cssButton"
+                                Height="23px" OnClick="m_cmd_tim_kiem_Click" Text="Chọn báo cáo" Width="98px" />
                         </td>
                     </tr>
                     <tr>
@@ -107,10 +108,13 @@
                         </td>
                         <td colspan="2" align="left">
                             &nbsp; &nbsp;
-                            </td>
+                        </td>
                     </tr>
-                </table>                
+                </table>
             </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="m_cmd_tim_kiem" />
+            </Triggers>
         </asp:UpdatePanel>
     </div>
     <asp:UpdateProgress ID="Updateprogress1" runat="server">
