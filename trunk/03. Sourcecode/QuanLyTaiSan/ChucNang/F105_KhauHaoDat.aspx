@@ -324,14 +324,6 @@
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Sửa">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="m_lbt_edit" runat="server" CommandName="EditComp" ToolTip="Sửa"
-                                            CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
-                                    <img src="../Images/Button/edit.png" alt="Edit" />
-                                        </asp:LinkButton>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %>

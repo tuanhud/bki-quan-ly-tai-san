@@ -400,6 +400,8 @@
                                             <tr>
                                                 <td colspan="3" style="height: 35px">
                                                     Giá trị theo sổ kế toán
+                                                    <br />
+                                                    (đồng)
                                                 </td>
                                             </tr>
                                             <tr>
@@ -426,19 +428,19 @@
                                             <tr>
                                                 <td style="width: 33%; border-right: solid; border-right-width: 1px" height="40px"
                                                     align="right">
-                                                    <%# Eval("NGUON_NS", "{0:#,###}")%>
+                                                    <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 33%; border-right: solid; border-right-width: 1px" align="right">
-                                                    <%# Eval("NGUON_KHAC", "{0:#,###}")%>
+                                                    <%# Eval("NGUON_KHAC", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 33%;" align="right">
-                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
+                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0}")%>
                                                 </td>
                                             </tr>
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" />
+                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"/>
                                 <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                             </Columns>
