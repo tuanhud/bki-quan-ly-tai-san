@@ -20,7 +20,7 @@
                 <tr>
                     <td colspan="4">
                         <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
-                            ValidationGroup="m_vlg_nha" />
+                            ValidationGroup="m_vlg_dat" />
                         <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                     </td>
                 </tr>
@@ -32,7 +32,7 @@
                                     <span class="cssManField">Bộ, tỉnh</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:DropDownList ID="m_ddl_bo_tinh" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                                    <asp:DropDownList ID="m_ddl_bo_tinh" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
                                         AutoPostBack="True" OnSelectedIndexChanged="m_ddl_bo_tinh_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
@@ -42,7 +42,7 @@
                                     <span class="cssManField">Đơn vị chủ quản</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
-                                    <asp:DropDownList ID="m_ddl_don_vi_chu_quan" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                                    <asp:DropDownList ID="m_ddl_don_vi_chu_quan" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
                                         OnSelectedIndexChanged="m_ddl_don_vi_chu_quan_SelectedIndexChanged" AutoPostBack="True">
                                     </asp:DropDownList>
                                 </td>
@@ -54,7 +54,7 @@
                                     <span class="cssManField">Đơn vị sử dụng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_nha">
+                                    <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_dat">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -63,7 +63,7 @@
                                     <span class="cssManField">Trạng thái</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
-                                    <asp:DropDownList ID="m_ddl_trang_thai" runat="server" Width="85%" ValidationGroup="m_vlg_nha">
+                                    <asp:DropDownList ID="m_ddl_trang_thai" runat="server" Width="85%" ValidationGroup="m_vlg_dat">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -75,20 +75,20 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_dia_chi" runat="server" CssClass="cssTextBox" Width="85%"
-                                        ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                        ValidationGroup="m_vlg_dat"></asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_dia_chi" runat="server" ControlToValidate="m_txt_dia_chi"
-                                        ErrorMessage="Bạn phải nhập Địa chỉ" Text="*" ValidationGroup="m_vlg_nha" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        ErrorMessage="Bạn phải nhập Địa chỉ" Text="*" ValidationGroup="m_vlg_dat" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                                 <td align="right" style="width: 15%">
                                     <span class="cssManField">Mã tài sản</span><td align="left" style="width: 30%;">
                                         <asp:TextBox ID="m_txt_ma_tai_san" runat="server" CssClass="cssTextBox" Width="85%"
-                                            ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                            ValidationGroup="m_vlg_dat"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         <asp:RequiredFieldValidator ID="m_rfv_ma_tai_san" runat="server" ControlToValidate="m_txt_ma_tai_san"
-                                            ErrorMessage="Bạn phải nhập Mã tài sản" Text="*" ValidationGroup="m_vlg_nha"
+                                            ErrorMessage="Bạn phải nhập Mã tài sản" Text="*" ValidationGroup="m_vlg_dat"
                                             ForeColor="Red"></asp:RequiredFieldValidator>
                                     </td>
                             </tr>
@@ -98,7 +98,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
-                                        ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     
@@ -108,7 +108,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_nguyen_gia" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     
@@ -120,7 +120,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_dien_tich_khuon_vien" runat="server" CssClass="cssTextBox csscurrency"
-                                        ValidationGroup="m_vlg_nha" Width="85%">0</asp:TextBox>
+                                        ValidationGroup="m_vlg_dat" Width="85%">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     &nbsp;</td>
@@ -152,7 +152,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_tru_so_lam_viec" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
 
@@ -162,7 +162,7 @@
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:TextBox ID="m_txt_co_so_hdsn" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
 
@@ -174,7 +174,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_lam_nha_o" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
 
@@ -184,7 +184,7 @@
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:TextBox ID="m_txt_cho_thue" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
 
@@ -196,7 +196,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_bo_trong" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
 
@@ -206,7 +206,7 @@
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:TextBox ID="m_txt_bi_lan_chiem" runat="server" CssClass="cssTextBox csscurrency"
-                                        Width="85%" ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
 
@@ -218,7 +218,7 @@
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
-                                        ValidationGroup="m_vlg_nha">0</asp:TextBox>
+                                        ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
 
@@ -253,10 +253,10 @@
                                 </td>
                                 <td colspan="4" align="left">
                                     <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_nha"
+                                        Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_dat"
                                         Height="24px" />
                                     <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_nha"
+                                        Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_dat"
                                         Height="24px" />
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" Height="24px" />
