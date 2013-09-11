@@ -164,6 +164,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_TANG_GIAM_TAI_SAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_TANG_GIAM_TAI_SAN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_RPT_TONG_HOP_HIEN_TRANG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -506,6 +511,17 @@
     </None>
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_TANG_GIAM_TAI_SAN.xsc">
+      <DependentUpon>DS_RPT_TANG_GIAM_TAI_SAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_TANG_GIAM_TAI_SAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_TANG_GIAM_TAI_SAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_TANG_GIAM_TAI_SAN.xss">
+      <DependentUpon>DS_RPT_TANG_GIAM_TAI_SAN.xsd</DependentUpon>
     </None>
     <None Include="DS_RPT_TONG_HOP_HIEN_TRANG.xsc">
       <DependentUpon>DS_RPT_TONG_HOP_HIEN_TRANG.xsd</DependentUpon>
