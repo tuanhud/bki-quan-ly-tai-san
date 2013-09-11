@@ -305,8 +305,17 @@ public partial class Default2 : System.Web.UI.Page
                     , m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_su_dung);
-                WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.NO, m_cbo_trang_thai_tai_san);
+                WinFormControls.load_data_to_cbo_tu_dien(
+                    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC
+                    , WinFormControls.eTAT_CA.NO
+                    , m_cbo_trang_thai_tai_san);
                 load_data_2_grid();
+                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_TAI_SAN_KHAC] != null)
+                {
+                    decimal v_dc_id_tai_san_khac = CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_TAI_SAN_KHAC]);
+                    m_us_tai_san_khac = new US_DM_TAI_SAN_KHAC(v_dc_id_tai_san_khac);
+                    us_object_2_form(m_us_tai_san_khac);
+                }
             }
         }
         catch (Exception v_e)
