@@ -481,7 +481,7 @@ namespace WebUS
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_RPT_TANG_GIAM_TAI_SAN_tong_hop_chung");
             v_obj_procedure.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_id_bo_tinh);
-            v_obj_procedure.addDecimalInputParam("@ip_id_dv_chu_quan", ip_dc_id_don_vi_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_obj_procedure.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
@@ -499,7 +499,7 @@ namespace WebUS
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_RPT_TANG_GIAM_TAI_SAN_chi_tiet_theo_loai_hinh");
             v_obj_procedure.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_id_bo_tinh);
-            v_obj_procedure.addDecimalInputParam("@ip_id_dv_chu_quan", ip_dc_id_don_vi_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_obj_procedure.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
@@ -517,7 +517,7 @@ namespace WebUS
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_RPT_TANG_GIAM_TAI_SAN_chi_tiet_theo_don_vi");
             v_obj_procedure.addDecimalInputParam("@ip_id_bo_tinh", ip_dc_id_bo_tinh);
-            v_obj_procedure.addDecimalInputParam("@ip_id_dv_chu_quan", ip_dc_id_don_vi_chu_quan);
+            v_obj_procedure.addDecimalInputParam("@ip_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_obj_procedure.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
