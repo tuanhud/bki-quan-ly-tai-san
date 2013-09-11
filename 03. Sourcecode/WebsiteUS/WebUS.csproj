@@ -95,6 +95,7 @@
     <Compile Include="US_HT_QUYEN_USER.cs" />
     <Compile Include="US_HT_THAM_SO_HE_THONG.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
+    <Compile Include="US_RPT_TANG_GIAM_TAI_SAN.cs" />
     <Compile Include="US_RPT_TONG_HOP_HIEN_TRANG.cs" />
     <Compile Include="US_RPT_TONG_HOP_HIEN_TRANG_OTO.cs" />
     <Compile Include="US_RPT_TONG_HOP_HIEN_TRANG_TSK.cs" />
