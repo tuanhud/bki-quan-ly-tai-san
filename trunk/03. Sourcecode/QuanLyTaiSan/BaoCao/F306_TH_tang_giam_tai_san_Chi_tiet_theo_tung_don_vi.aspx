@@ -25,7 +25,7 @@
             </td>
             <td style="width: 34%">
                 <asp:DropDownList ID="m_cbo_bo_tinh" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="1" onselectedindexchanged="m_cbo_bo_tinh_SelectedIndexChanged">
+                    TabIndex="1" OnSelectedIndexChanged="m_cbo_bo_tinh_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
@@ -34,32 +34,10 @@
                 <span class="cssManField">Đơn vị chủ quản:</span>
             </td>
             <td style="width: 34%">
-                <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="2" 
-                    onselectedindexchanged="m_cbo_don_vi_chu_quan_SelectedIndexChanged">
+                <asp:DropDownList ID="m_cbo_don_vi_chu_quan" Width="90%" runat="Server" TabIndex="2">
                 </asp:DropDownList>
             </td>
             <td style="width: 1%">
-            </td>
-        </tr>
-        <tr>
-            <td align="right">
-                <span class="cssManField">Đơn vị sử dụng tài sản:</span>
-            </td>
-            <td>
-                <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="3">
-                </asp:DropDownList>
-            </td>
-            <td>
-            </td>
-            <td align="right">
-                <span class="cssManField">Trạng thái:</span>
-            </td>
-            <td>
-                <asp:DropDownList ID="m_cbo_trang_thai" Width="90%" runat="Server" AutoPostBack="True"
-                    TabIndex="3">
-                </asp:DropDownList>
             </td>
         </tr>
         <tr>
@@ -92,12 +70,12 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" 
-                    onclick="m_cmd_loc_du_lieu_Click" />
+                    Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" OnClick="m_cmd_loc_du_lieu_Click" />
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
                     Width="98px" Text="Xuất Excel (x)" Height="22px" />
             </td>
             <td>
+                &nbsp;
             </td>
             <td>
             </td>
@@ -121,18 +99,18 @@
                     EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                     ForeColor="#333333" AllowSorting="True" PageSize="10">
                     <Columns>
-                        <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="20%" DataTextField="TEN_TAI_SAN"
+                        <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="20%" DataTextField="TAI_SAN"
                             NavigateUrl="" />
                         <asp:TemplateField HeaderStyle-Width="20%" HeaderStyle-Height="75px">
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                     <tr>
-                                        <td colspan="3" style="height: 40px">
+                                        <td colspan="3" style="height: 45px">
                                             SỐ ĐẦU KỲ
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="1" rowspan="1" style="width: 25%">
+                                        <td colspan="1" rowspan="1" style="width: 25%; height: 30px">
                                             Số lượng
                                         </td>
                                         <td colspan="1" rowspan="1" style="width: 25%;">
@@ -148,13 +126,13 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
                                         <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
-                                            <%# Eval("SO_LUONG", "{0:0,000.00}")%>
+                                            <%# Eval("SO_DAU_KY_SO_LUONG")%>
                                         </td>
                                         <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                            <%# Eval("DIEN_TICH", "{0:0,000.00}")%>
+                                            <%# Eval("SO_DAU_KY_DIEN_TICH", "{0:0,000.00}")%>
                                         </td>
                                         <td style="width: 50%;" align="right">
-                                            <%# Eval("NGUYEN_GIA", "{0:0,000.00}")%>
+                                            <%# Eval("SO_DAU_KY_NGUYEN_GIA", "{0:0,000.00}")%>
                                         </td>
                                     </tr>
                                 </table>
@@ -164,12 +142,12 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                     <tr>
-                                        <td colspan="3" style="height: 40px">
+                                        <td colspan="3" style="height: 45px">
                                             SỐ TĂNG TRONG KỲ
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="1" rowspan="1" style="width: 25%">
+                                        <td colspan="1" rowspan="1" style="width: 25%; height: 30px">
                                             Số lượng
                                         </td>
                                         <td colspan="1" rowspan="1" style="width: 25%;">
@@ -185,13 +163,13 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
                                         <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
-                                            <%# Eval("SO_LUONG", "{0:0,000.00}")%>
+                                            <%# Eval("SO_TANG_TRONG_KY_SO_LUONG")%>
                                         </td>
                                         <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                            <%# Eval("DIEN_TICH", "{0:0,000.00}")%>
+                                            <%# Eval("SO_TANG_TRONG_KY_DIEN_TICH", "{0:0,000.00}")%>
                                         </td>
                                         <td style="width: 50%;" align="right">
-                                            <%# Eval("NGUYEN_GIA", "{0:0,000.00}")%>
+                                            <%# Eval("SO_TANG_TRONG_KY_NGUYEN_GIA", "{0:0,000.00}")%>
                                         </td>
                                     </tr>
                                 </table>
@@ -201,12 +179,12 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                     <tr>
-                                        <td colspan="3" style="height: 40px">
+                                        <td colspan="3" style="height: 45px">
                                             SỐ GIẢM TRONG KỲ
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="1" rowspan="1" style="width: 25%">
+                                        <td colspan="1" rowspan="1" style="width: 25%;height:30px">
                                             Số lượng
                                         </td>
                                         <td colspan="1" rowspan="1" style="width: 25%">
@@ -222,13 +200,13 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
                                         <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
-                                            <%# Eval("SO_LUONG", "{0:0,000.00}")%>
+                                            <%# Eval("SO_GIAM_TRONG_KY_SO_LUONG")%>
                                         </td>
                                         <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                            <%# Eval("DIEN_TICH", "{0:0,000.00}")%>
+                                            <%# Eval("SO_GIAM_TRONG_KY_DIEN_TICH", "{0:0,000.00}")%>
                                         </td>
                                         <td style="width: 50%;" align="right">
-                                            <%# Eval("NGUYEN_GIA", "{0:0,000.00}")%>
+                                            <%# Eval("SO_GIAM_TRONG_KY_NGUYEN_GIA", "{0:0,000.00}")%>
                                         </td>
                                     </tr>
                                 </table>
@@ -238,12 +216,12 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                     <tr>
-                                        <td colspan="3" style="height: 40px">
+                                        <td colspan="3" style="height: 45px">
                                             SỐ CUỐI KỲ
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="1" rowspan="1" style="width: 25%">
+                                        <td colspan="1" rowspan="1" style="width: 25%;height:30px">
                                             Số lượng
                                         </td>
                                         <td colspan="1" rowspan="1" style="width: 25%;">
@@ -259,13 +237,13 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
                                         <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
-                                            <%# Eval("SO_LUONG", "{0:0,000.00}")%>
+                                            <%# Eval("SO_CUOI_KY_SO_LUONG")%>
                                         </td>
                                         <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                            <%# Eval("DIEN_TICH", "{0:0,000.00}")%>
+                                            <%# Eval("SO_CUOI_KY_DIEN_TICH", "{0:0,000.00}")%>
                                         </td>
                                         <td style="width: 50%;" align="right">
-                                            <%# Eval("NGUYEN_GIA", "{0:0,000.00}")%>
+                                            <%# Eval("SO_CUOI_KY_NGUYEN_GIA", "{0:0,000.00}")%>
                                         </td>
                                     </tr>
                                 </table>

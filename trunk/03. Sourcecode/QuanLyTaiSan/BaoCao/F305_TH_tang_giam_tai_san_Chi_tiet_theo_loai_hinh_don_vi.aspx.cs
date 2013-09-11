@@ -20,53 +20,82 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
     #endregion
 
     #region private methods
-    private void load_data_to_cbo_trang_thai()
+    private void thongbao(string ip_str_thong_bao)
     {
-        try
+        m_lbl_mess.Text = ip_str_thong_bao;
+    }
+    private void reset_thong_bao()
+    {
+        m_lbl_mess.Text = "";
+    }
+    private bool check_validate_data_is_ok()
+    {
+        if (m_txt_tu_ngay.Text.Equals(""))
         {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
-            m_cbo_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-            m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
-            m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
-            //m_cbo_trang_thai_o_to_up.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
-            m_cbo_trang_thai.DataBind();
-            m_cbo_trang_thai.Items.Insert(0, new ListItem(CONST_QLDB.TAT_CA, CONST_QLDB.ID_TAT_CA.ToString()));
-
+            m_txt_tu_ngay.Text = CIPConvert.ToStr("01/01/1900");
         }
-        catch (System.Exception ex)
+        if (m_txt_den_ngay.Text.Equals(""))
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            m_txt_den_ngay.Text = CIPConvert.ToStr("01/01/3000");
+        }
+        if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES))
+        {
+            thongbao("Bạn chưa nhập đúng Từ Ngày!");
+            return false;
+        }
+        if (!CValidateTextBox.IsValid(m_txt_den_ngay, DataType.DateType, allowNull.YES))
+        {
+            thongbao("Bạn chưa nhập đúng Đến Ngày!");
+            return false;
+        }
+        DateTime v_dat_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+        DateTime v_dat_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
+        if (v_dat_den_ngay.CompareTo(v_dat_tu_ngay) < 0)
+        {
+            thongbao("Bạn nhập chưa đúng Từ Ngày, Đến Ngày!");
+            return false;
         }
 
+        return true;
+    }
+    private void load_data_to_grid_tai_san()
+    {
+        string v_str_user_name = Person.get_user_name();
+        if (v_str_user_name.Equals("")) return;
+        if (!check_validate_data_is_ok()) return;
+        DS_RPT_TANG_GIAM_TAI_SAN v_ds_rpt_tang_giam_tai_san = new DS_RPT_TANG_GIAM_TAI_SAN();
+        US_RPT_TANG_GIAM_TAI_SAN v_us_rpt_tang_giam_tai_san = new US_RPT_TANG_GIAM_TAI_SAN();
+        v_us_rpt_tang_giam_tai_san.FillDataSet_chi_tiet_theo_loai_hinh(
+            v_str_user_name
+            , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+            , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+            , CIPConvert.ToDatetime(m_txt_tu_ngay.Text)
+            , CIPConvert.ToDatetime(m_txt_den_ngay.Text)
+            , v_ds_rpt_tang_giam_tai_san
+            );
+        m_grv_tai_san.DataSource = v_ds_rpt_tang_giam_tai_san.RPT_TANG_GIAM_TAI_SAN;
+        m_grv_tai_san.DataBind();
     }
     #endregion
 
     #region Events
+
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
             if (!IsPostBack)
             {
-                //1. load data to combobox bộ, tỉnh 
                 WinFormControls.load_data_to_cbo_bo_tinh(
-                         WinFormControls.eTAT_CA.YES
-                         , m_cbo_bo_tinh);
-                //2. load data to combobox đơn vị chủ quản
+                    WinFormControls.eTAT_CA.YES
+                    , m_cbo_bo_tinh
+                    );
                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_cbo_bo_tinh.SelectedValue
                     , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_chu_quan);
-                //3. load data to cobobox đơn vị sử dụng
-                WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                    m_cbo_don_vi_chu_quan.SelectedValue
-                    , m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
-                    , m_cbo_don_vi_su_dung_tai_san);
-                //4. load data to combobox trạng thái
-                load_data_to_cbo_trang_thai();
+                    , m_cbo_don_vi_chu_quan
+                    );
+                load_data_to_grid_tai_san();
             }
         }
         catch (System.Exception ex)
@@ -78,70 +107,32 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
     {
         try
         {
-            /*load_data_to_cbo_don_vi_chu_quan();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
-            m_lbl_mess.Text = "";
+            reset_thong_bao();
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
-                , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan.SelectedValue
-                , m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_su_dung_tai_san);
+                , m_cbo_don_vi_chu_quan
+                );
             m_grv_tai_san.Visible = false;
         }
         catch (System.Exception ex)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, ex);
         }
 
     }
-    protected void m_cbo_don_vi_chu_quan_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            /*load_data_to_cbo_don_vi_su_dung();
-            m_grv_danh_sach_tai_san_khac.Visible = false;*/
-            m_lbl_mess.Text = "";
-            WinFormControls.load_data_to_cbo_don_vi_su_dung(
-                m_cbo_don_vi_chu_quan.SelectedValue
-                , m_cbo_bo_tinh.SelectedValue
-                , WinFormControls.eTAT_CA.YES
-                , m_cbo_don_vi_su_dung_tai_san);
-            m_grv_tai_san.Visible = false;
-        }
-        catch (System.Exception ex)
-        {
-            CSystemLog_301.ExceptionHandle(ex);
-        }
-
-    }
-
     protected void m_cmd_loc_du_lieu_Click(object sender, EventArgs e)
     {
         try
         {
-            if (m_cbo_don_vi_chu_quan.SelectedValue == "")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị chủ quản";
-                return;
-            }
-            if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == "")
-            {
-                m_lbl_mess.Text = "Bạn chưa chọn Đơn vị sử dụng";
-                return;
-            }
-            else
-            {
-                m_grv_tai_san.Visible = true;
-                //load_data_to_grid();
-            }
+            load_data_to_grid_tai_san();
+            m_grv_tai_san.Visible = true;
         }
         catch (System.Exception ex)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+
     #endregion
 }
