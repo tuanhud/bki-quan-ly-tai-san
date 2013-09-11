@@ -38,7 +38,7 @@
                 <tr>
                     <td colspan="2">
                         <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
-                            ValidationGroup="m_vlg_nha" />
+                            ValidationGroup="m_vlg_oto" />
                         <asp:Label ID="Label2" runat="server" CssClass="cssManField" />
                     </td>
                 </tr>
