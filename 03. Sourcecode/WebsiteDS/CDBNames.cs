@@ -510,5 +510,24 @@ namespace WebDS.CDBNames
         public const string LOAI_HINH_DON_VI = "LOAI_HINH_DON_VI";
         public const string TEN_DON_VI = "TEN_DON_VI";
     }
+    public class RPT_TONG_HOP_HIEN_TRANG_OTO
+    {
+        public const string ID = "ID";
+        public const string USER_NAME = "USER_NAME";
+        public const string STT = "STT";
+        public const string LEVEL_MODE = "LEVEL_MODE";
+        public const string TEN_TAI_SAN = "TEN_TAI_SAN";
+        public const string SO_LUONG = "SO_LUONG";
+        public const string NGUON_NS = "NGUON_NS";
+        public const string NGUON_KHAC = "NGUON_KHAC";
+        public const string GIA_TRI_CON_LAI = "GIA_TRI_CON_LAI";
+        public const string QUAN_LY_NN = "QUAN_LY_NN";
+        public const string KINH_DOANH = "KINH_DOANH";
+        public const string KHONG_KINH_DOANH = "KHONG_KINH_DOANH";
+        public const string HD_KHAC = "HD_KHAC";
+        public const string LOAI_HINH_DON_VI = "LOAI_HINH_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+    }
+
 }
 
