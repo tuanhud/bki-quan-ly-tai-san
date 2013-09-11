@@ -43,7 +43,7 @@
                         <span class="cssManField">Bộ, tỉnh</span>
                     </td>
                     <td style="width: 30%" align="left">
-                        <asp:DropDownList ID="m_ddl_bo_tinh" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                        <asp:DropDownList ID="m_ddl_bo_tinh" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
                             AutoPostBack="True" OnSelectedIndexChanged="m_ddl_bo_tinh_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
@@ -51,7 +51,7 @@
                         <span class="cssManField">Đơn vị chủ quản</span>
                     </td>
                     <td align="left" style="width: 30%;">
-                        <asp:DropDownList ID="m_ddl_don_vi_chu_quan" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                        <asp:DropDownList ID="m_ddl_don_vi_chu_quan" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
                             OnSelectedIndexChanged="m_ddl_don_vi_chu_quan_SelectedIndexChanged" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
@@ -61,7 +61,7 @@
                         <span class="cssManField">Đơn vị sử dụng</span>
                     </td>
                     <td style="width: 30%" align="left">
-                        <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
+                        <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
                             AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
@@ -70,7 +70,7 @@
                     </td>
                     <td align="left" style="width: 30%;">
                         <asp:DropDownList ID="m_ddl_trang_thai_nha" runat="server" Width="85%" 
-                            ValidationGroup="m_vlg_nha">
+                            ValidationGroup="m_vlg_dat">
                         </asp:DropDownList>
                     </td>
                 </tr>
