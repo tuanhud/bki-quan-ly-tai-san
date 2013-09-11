@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F205_TH_HTSD_tai_san_khac_Chi_tiet_theo_tung_don_vi.aspx.cs"
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false" CodeFile="F205_TH_HTSD_tai_san_khac_Chi_tiet_theo_tung_don_vi.aspx.cs"
     Inherits="BaoCao_F205_TH_HTSD_tai_san_khac_Chi_tiet_theo_tung_don_vi" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
