@@ -138,7 +138,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Ngày, tháng, năm sử dụng</span>
+                                    <span class="cssManField">Năm sử dụng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"
@@ -470,7 +470,7 @@
                                 <asp:BoundField HeaderText="Tên đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="Cấp hạng" DataField="CAP_HANG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
+                                <asp:BoundField HeaderText="Năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
                                     ItemStyle-HorizontalAlign="Center" />
                                 <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
