@@ -16,7 +16,8 @@ using System.Data;
 using WebDS;
 
 
-namespace WebUS{
+namespace WebUS
+{
 
 public class US_V_BC_THHTSD_NHA_DAT : US_Object
 {
