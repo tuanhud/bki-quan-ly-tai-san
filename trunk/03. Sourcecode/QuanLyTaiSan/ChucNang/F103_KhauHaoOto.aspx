@@ -99,7 +99,7 @@
                             </tr>
                             <tr>
                                 <td align="right" class="cssManField" style="width: 20%;">
-                                    <span>Đơn vi sử dụng tài sản</span>
+                                    <span>Đơn vị sử dụng tài sản</span>
                                 </td>
                                 <td align="left" colspan="1" style="width: 30%">
                                     <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_up" runat="server" Width="85%"
