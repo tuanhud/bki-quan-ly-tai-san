@@ -14,7 +14,7 @@
                 <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
-                            <span class="cssPageTitle">TỔNG HỢP HIỆN TRẠNG SỬ DỤNG TÀI SẢN KHÁC</span> <span
+                            <span class="cssPageTitle">TỔNG HỢP HIỆN TRẠNG SỬ DỤNG Ô TÔ</span> <span
                                 class="expand-collapse-text"></span>
                             <br />
                             <span class="cssPageTitle">Phần 1: Tổng hợp chung</span><span class="expand-collapse-text initial-expand"></span>
@@ -23,7 +23,7 @@
                     <tr>
                         <td colspan="6">
                             <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
-                                ValidationGroup="m_vlg_tai_san_nha_dat" />
+                                ValidationGroup="m_vlg_tai_san_khac" />
                             <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                         </td>
                     </tr>
