@@ -159,7 +159,6 @@ public partial class Default2 : System.Web.UI.Page
     }
     private void load_data_to_grid()
     {
-        m_lbl_title.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ)";
         m_grv_danh_sach_tai_san_khac.Visible = true;
         US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
         DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
@@ -173,9 +172,10 @@ public partial class Default2 : System.Web.UI.Page
                     , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_loai_tai_san.SelectedValue)
                     , m_ds_v_tai_san_khac);
-        m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
+        m_lbl_title.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ)";
         string v_str_thong_tin = " (Có " + m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
         m_lbl_title.Text += v_str_thong_tin;
+        m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
         m_grv_danh_sach_tai_san_khac.DataBind();
     }
     private bool check_validate_is_ok()
@@ -206,8 +206,6 @@ public partial class Default2 : System.Web.UI.Page
     {
         if (!check_validate_is_ok())
             return;
-
-
         Thread.Sleep(2000);
         load_data_to_grid();
     }
