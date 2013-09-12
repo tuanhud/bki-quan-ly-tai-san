@@ -528,6 +528,28 @@ namespace WebDS.CDBNames
         public const string LOAI_HINH_DON_VI = "LOAI_HINH_DON_VI";
         public const string TEN_DON_VI = "TEN_DON_VI";
     }
+   public class RPT_TANG_GIAM_TAI_SAN
+    {
+        public const string ID = "ID";
+        public const string STT = "STT";
+        public const string LEVEL_MODE = "LEVEL_MODE";
+        public const string USER_NAME = "USER_NAME";
+        public const string TAI_SAN = "TAI_SAN";
+        public const string SO_DAU_KY_SO_LUONG = "SO_DAU_KY_SO_LUONG";
+        public const string SO_DAU_KY_DIEN_TICH = "SO_DAU_KY_DIEN_TICH";
+        public const string SO_DAU_KY_NGUYEN_GIA = "SO_DAU_KY_NGUYEN_GIA";
+        public const string SO_TANG_TRONG_KY_SO_LUONG = "SO_TANG_TRONG_KY_SO_LUONG";
+        public const string SO_TANG_TRONG_KY_DIEN_TICH = "SO_TANG_TRONG_KY_DIEN_TICH";
+        public const string SO_TANG_TRONG_KY_NGUYEN_GIA = "SO_TANG_TRONG_KY_NGUYEN_GIA";
+        public const string SO_GIAM_TRONG_KY_SO_LUONG = "SO_GIAM_TRONG_KY_SO_LUONG";
+        public const string SO_GIAM_TRONG_KY_DIEN_TICH = "SO_GIAM_TRONG_KY_DIEN_TICH";
+        public const string SO_GIAM_TRONG_KY_NGUYEN_GIA = "SO_GIAM_TRONG_KY_NGUYEN_GIA";
+        public const string SO_CUOI_KY_SO_LUONG = "SO_CUOI_KY_SO_LUONG";
+        public const string SO_CUOI_KY_DIEN_TICH = "SO_CUOI_KY_DIEN_TICH";
+        public const string SO_CUOI_KY_NGUYEN_GIA = "SO_CUOI_KY_NGUYEN_GIA";
+        public const string LOAI_HINH_DON_VI = "LOAI_HINH_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
+    }
 
 }
 
