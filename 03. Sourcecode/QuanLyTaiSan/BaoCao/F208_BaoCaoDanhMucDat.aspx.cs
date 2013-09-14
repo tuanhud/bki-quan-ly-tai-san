@@ -124,18 +124,18 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         {
             case CONST_QLDB.LOAI_BAO_CAO.DVSD:
                 // KÊ KHAI ĐƠN VỊ SỬ DỤNG
-                m_lbl_tieu_de.Text = "BÁO CÁO";
+                m_lbl_tieu_de.Text = "BÁO CÁO ĐẤT";
                 m_cbo_trang_thai.Enabled = false;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.NO;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.DVCQ:
-                m_lbl_tieu_de.Text = "THỐNG KÊ ";
+                m_lbl_tieu_de.Text = "THỐNG KÊ ĐẤT";
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.BLD:
-                m_lbl_tieu_de.Text = "THỐNG KÊ ";
+                m_lbl_tieu_de.Text = "THỐNG KÊ ĐẤT";
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;

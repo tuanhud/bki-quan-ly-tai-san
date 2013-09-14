@@ -345,6 +345,12 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             if (!IsPostBack)
             {
                 load_data_2_form();
+                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DAT] != null)
+                {
+                    decimal v_dc_id_dat = CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DAT]);
+                    m_us_dm_dat = new US_DM_DAT(v_dc_id_dat);
+                    us_dm_dat_2_form();
+                }
             }
         }
         catch (Exception v_e)
