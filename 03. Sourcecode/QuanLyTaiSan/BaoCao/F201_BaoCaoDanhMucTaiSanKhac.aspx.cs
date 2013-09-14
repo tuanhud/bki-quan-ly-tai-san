@@ -144,15 +144,15 @@ public partial class Default2 : System.Web.UI.Page
         }
         switch (v_str_loai_tai_san_khac) {
             case CONST_QLDB.LOAI_TAI_SAN.TREN_500:
-                m_lbl_tieu_de.Text += "TÀI SẢN KHÁC TRÊN 500 TRIỆU ĐỒNG";
+                m_lbl_tieu_de.Text += " TÀI SẢN KHÁC TRÊN 500 TRIỆU ĐỒNG";
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_LON_HON_500);
                 break;
             case CONST_QLDB.LOAI_TAI_SAN.DUOI_500:
-                m_lbl_tieu_de.Text += "TÀI SẢN KHÁC DƯỚI 500 TRIỆU ĐỒNG";
+                m_lbl_tieu_de.Text += " TÀI SẢN KHÁC DƯỚI 500 TRIỆU ĐỒNG";
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_NHO_HON_500);
                 break;
             case CONST_QLDB.LOAI_TAI_SAN.TAI_SAN_KHAC:
-                m_lbl_tieu_de.Text += "TÀI SẢN KHÁC";
+                m_lbl_tieu_de.Text += " TÀI SẢN KHÁC";
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC);
                 break;
         }
