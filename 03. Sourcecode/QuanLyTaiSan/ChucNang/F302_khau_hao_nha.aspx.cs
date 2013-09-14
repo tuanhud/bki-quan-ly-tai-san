@@ -44,6 +44,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
 
     private void load_data_from_us()
     {
+        clear_form_data();
         if (m_cbo_ten_tai_san.Items.Count == 0) return;
         decimal v_dc_id_nha = CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue);
         if (v_dc_id_nha < 1) return;
@@ -83,8 +84,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
             , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan_down.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_down.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue)
-            , CIPConvert.ToDecimal(m_cbo_trang_thai_nha_up.SelectedValue)
-            , CONST_QLDB.ID_TAT_CA.ToString()
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.MA_TAT_CA
             , Person.get_user_name()
             , v_ds_v_gd_kh_dm_nha);
         m_grv_danh_sach_nha.DataSource = v_ds_v_gd_kh_dm_nha.V_GD_KHAU_HAO_DM_NHA;
@@ -159,7 +160,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
                  , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan_down.SelectedValue)
                  , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_down.SelectedValue)
                  , ID_TRANG_THAI_DAT.DANG_SU_DUNG
-                 , WinFormControls.eTAT_CA.NO
+                 , WinFormControls.eTAT_CA.YES
                  , m_cbo_dia_chi);
     }
 
@@ -187,7 +188,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     {
         decimal v_dc_id_nha = CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue);
         decimal v_dc_gia_tri_khau_hao = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
-        US_DM_NHA v_us_dm_nha = new US_DM_NHA();
+        US_DM_NHA v_us_dm_nha = new US_DM_NHA(v_dc_id_nha);
         US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
 
         // Lấy thông tin mới cho giao dịch khấu hao
