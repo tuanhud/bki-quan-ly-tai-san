@@ -138,6 +138,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
 
     private void load_data_from_us()
     {
+        clear_form_data();
         if (m_cbo_ten_tai_san.Items.Count == 0) return;
         decimal v_dc_id = CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue);
         if (v_dc_id < 1) return;
