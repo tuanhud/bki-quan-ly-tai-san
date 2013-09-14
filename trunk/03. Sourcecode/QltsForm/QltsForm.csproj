@@ -108,6 +108,9 @@
     <Compile Include="f210_RPT_TONG_HOP_HIEN_TRANG_OTO.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="f220_bao_cao_danh_muc_dat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f320_RPT_TONG_HOP_HIEN_TRANG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f210_RPT_TONG_HOP_HIEN_TRANG_OTO.resx">
       <DependentUpon>f210_RPT_TONG_HOP_HIEN_TRANG_OTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f220_bao_cao_danh_muc_dat.resx">
+      <DependentUpon>f220_bao_cao_danh_muc_dat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f320_RPT_TONG_HOP_HIEN_TRANG.resx">
       <DependentUpon>f320_RPT_TONG_HOP_HIEN_TRANG.cs</DependentUpon>
