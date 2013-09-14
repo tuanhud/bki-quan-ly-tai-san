@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    EnableEventValidation="false" CodeFile="F208_BaoCaoDanhMucDat.aspx.cs" Inherits="BaoCao_F208_BaoCaoDanhMucDat" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
+    CodeFile="F208_BaoCaoDanhMucDat.aspx.cs" Inherits="BaoCao_F208_BaoCaoDanhMucDat" %>
 
 <%@ Import Namespace="WebUS" %>
 <%@ Import Namespace="WebDS.CDBNames" %>
@@ -79,9 +79,11 @@
                     </tr>
                     <tr>
                         <td align="right">
-                            &nbsp;</td>
+                            &nbsp;
+                        </td>
                         <td>
-                            &nbsp;</td>
+                            &nbsp;
+                        </td>
                         <td align="right">
                             <span class="cssManField">Trạng thái:</span>
                         </td>
@@ -112,8 +114,9 @@
                 <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
-                                <asp:Label ID="m_lbl_title" runat="server" Text="DANH MỤC ĐẤT" CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
-                            </span><span class="expand-collapse-text"></span>
+                            <asp:Label ID="m_lbl_title" runat="server" Text="DANH MỤC ĐẤT" CssClass="cssPageTitle"></asp:Label><span
+                                class="expand-collapse-text initial-expand"> </span><span class="expand-collapse-text">
+                                </span>
                         </td>
                     </tr>
                     <tr>
@@ -130,46 +133,53 @@
                     <tr>
                         <td align="center" colspan="3" style="height: 450px;" valign="top">
                             <asp:GridView ID="m_grv_danh_sach_dat" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_dat_PageIndexChanging">
-                            <AlternatingRowStyle BackColor="White" />
-                            <EditRowStyle BackColor="#7C6F57" />
-                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
-                            <PagerSettings Position="TopAndBottom" />
-                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#E3EAEB" />
-                            <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
-                                ForeColor="#333333"></SelectedRowStyle>
-                            <Columns>
-                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <%# Container.DataItemIndex + 1 %>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
-                                <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
-                                <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
-                                    DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="DT Trụ sở làm việc (m2)" DataField="DT_TRU_SO_LAM_VIEC"
-                                    ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="DT Cơ sở hoạt động sự nghiệp (m2)" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP"
-                                    ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="DT Làm nhà ở (m2)" DataField="DT_LAM_NHA_O" ItemStyle-HorizontalAlign="Right"
-                                    DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"
-                                    DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG" ItemStyle-HorizontalAlign="Right"
-                                    DataFormatString="{0:#,##0.00}"/>
-                                <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"
-                                    DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
-                                    ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
-                                    ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
-                                <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
-                            </Columns>
-                        </asp:GridView>
+                                Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
+                                EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_dat_PageIndexChanging">
+                                <AlternatingRowStyle BackColor="White" />
+                                <EditRowStyle BackColor="#7C6F57" />
+                                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
+                                <PagerSettings Position="TopAndBottom" />
+                                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#E3EAEB" />
+                                <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
+                                    ForeColor="#333333"></SelectedRowStyle>
+                                <Columns>
+                                    <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <%# Container.DataItemIndex + 1 %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
+                                                NavigateUrl='<%# "~/ChucNang/F101_QuanLyDat.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_DAT+"="+Eval(V_DM_DAT.ID) %>'
+                                                ImageUrl="~/Images/Button/detail.png">Chi tiết</asp:HyperLink>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
+                                    <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
+                                    <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
+                                        DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="DT Trụ sở làm việc (m2)" DataField="DT_TRU_SO_LAM_VIEC"
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="DT Cơ sở hoạt động sự nghiệp (m2)" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP"
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="DT Làm nhà ở (m2)" DataField="DT_LAM_NHA_O" ItemStyle-HorizontalAlign="Right"
+                                        DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"
+                                        DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG" ItemStyle-HorizontalAlign="Right"
+                                        DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"
+                                        DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                    <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
+                                </Columns>
+                            </asp:GridView>
                         </td>
                     </tr>
                 </table>

@@ -67,6 +67,35 @@ namespace WebDS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
     }
 
+    public class V_DM_DAT
+    {
+        public const string TEN_DV_SU_DUNG = "TEN_DV_SU_DUNG";
+        public const string TEN_DV_CHU_QUAN = "TEN_DV_CHU_QUAN";
+        public const string TEN_DV_BO_TINH = "TEN_DV_BO_TINH";
+        public const string TEN_TRANG_THAI = "TEN_TRANG_THAI";
+        public const string TEN_TINH_TRANG = "TEN_TINH_TRANG";
+        public const string ID = "ID";
+        public const string MA_TAI_SAN = "MA_TAI_SAN";
+        public const string ID_LOAI_TAI_SAN = "ID_LOAI_TAI_SAN";
+        public const string DIA_CHI = "DIA_CHI";
+        public const string DT_KHUON_VIEN = "DT_KHUON_VIEN";
+        public const string DT_TRU_SO_LAM_VIEC = "DT_TRU_SO_LAM_VIEC";
+        public const string DT_CO_SO_HOAT_DONG_SU_NGHIEP = "DT_CO_SO_HOAT_DONG_SU_NGHIEP";
+        public const string DT_LAM_NHA_O = "DT_LAM_NHA_O";
+        public const string DT_CHO_THUE = "DT_CHO_THUE";
+        public const string DT_BO_TRONG = "DT_BO_TRONG";
+        public const string DT_BI_LAN_CHIEM = "DT_BI_LAN_CHIEM";
+        public const string DT_SU_DUNG_MUC_DICH_KHAC = "DT_SU_DUNG_MUC_DICH_KHAC";
+        public const string GT_THEO_SO_KE_TOAN = "GT_THEO_SO_KE_TOAN";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string NGAY_CAP_NHAT_CUOI = "NGAY_CAP_NHAT_CUOI";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string ID_DON_VI_SU_DUNG = "ID_DON_VI_SU_DUNG";
+        public const string ID_DON_VI_CHU_QUAN = "ID_DON_VI_CHU_QUAN";
+        public const string SO_NAM_DA_SU_DUNG = "SO_NAM_DA_SU_DUNG";
+        public const string ID_TINH_TRANG = "ID_TINH_TRANG";
+    }
 
     public class V_DM_OTO
     {

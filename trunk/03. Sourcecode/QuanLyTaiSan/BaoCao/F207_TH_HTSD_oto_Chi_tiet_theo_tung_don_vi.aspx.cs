@@ -56,20 +56,20 @@ public partial class BaoCao_F207_TH_HTSD_oto_Chi_tiet_theo_tung_don_vi : System.
         op_obj_parameter.strMA_LOAI_HINH_DON_VI = CONST_QLDB.TAT_CA;
         op_obj_parameter.strUSER_NAME = Person.get_user_name();
     }
-    /*private void export_excel()
+    private void export_excel()
     {
         string v_str_output_file = "";
-        frm_RPT_TONG_HOP_HIEN_TRANG_OTO v_f200_tong_hop_chung = new frm_RPT_TONG_HOP_HIEN_TRANG_OTO();
+        f210_RPT_TONG_HOP_HIEN_TRANG_OTO v_f210_tong_hop_chung = new f210_RPT_TONG_HOP_HIEN_TRANG_OTO();
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
-        v_f200_tong_hop_chung.export_excel_TH_THSD(
-           frm_RPT_TONG_HOP_HIEN_TRANG_OTO.TINH_HINH_SU_DUNG.DON_VI_SU_DUNG
+        v_f210_tong_hop_chung.export_excel_TH_THSD(
+           f210_RPT_TONG_HOP_HIEN_TRANG_OTO.TINH_HINH_SU_DUNG.DON_VI_SU_DUNG
                                  , ref v_obj_parameter
                                );
         Response.Clear();
         v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
         Response.Redirect(v_str_output_file, false);
-    }*/
+    }
     #endregion
 
     #region Events
@@ -137,7 +137,7 @@ public partial class BaoCao_F207_TH_HTSD_oto_Chi_tiet_theo_tung_don_vi : System.
         try
         {
             Thread.Sleep(1000);
-            //export_excel();
+            export_excel();
         }
         catch (System.Exception ex)
         {
