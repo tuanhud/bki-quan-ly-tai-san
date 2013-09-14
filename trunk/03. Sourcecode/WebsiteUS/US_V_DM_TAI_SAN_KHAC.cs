@@ -766,7 +766,10 @@ namespace WebUS
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
             v_obj_procedure.fillDataSetByCommand(this, op_dat_v_dm_tai_san_khac);
         }
-        public void search_by_name(DS_V_DM_TAI_SAN_KHAC op_ds_v_dm_tai_san_khac, string ip_str_name, decimal ip_dc_don_vi_su_dung)
+        public void search_by_name(
+            DS_V_DM_TAI_SAN_KHAC op_ds_v_dm_tai_san_khac
+            , string ip_str_name
+            , decimal ip_dc_don_vi_su_dung)
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_DM_TAI_SAN_KHAC_Search_by_name");
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_dv_su_dung", ip_dc_don_vi_su_dung);
