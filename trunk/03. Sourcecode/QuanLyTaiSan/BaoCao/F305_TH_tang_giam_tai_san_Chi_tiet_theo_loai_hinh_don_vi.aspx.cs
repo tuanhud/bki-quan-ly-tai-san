@@ -12,7 +12,8 @@ using WebDS.CDBNames;
 using QltsForm;
 using WebUS;
 using WebDS;
-
+using System.Threading;
+using IP.Core.QltsFormControls;
 public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_don_vi : System.Web.UI.Page
 {
     #region Members
@@ -20,6 +21,40 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
     #endregion
 
     #region private methods
+    private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter)
+    {
+        op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
+        op_obj_parameter.strTEN_BO_TINH = m_cbo_bo_tinh.SelectedItem.Text;
+        op_obj_parameter.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue);
+        op_obj_parameter.strTEN_DON_VI_CHU_QUAN = m_cbo_don_vi_chu_quan.SelectedItem.Text;
+        op_obj_parameter.dcID_DON_VI_SU_DUNG = CONST_QLDB.ID_TAT_CA;
+        op_obj_parameter.strTEN_DON_VI_SU_DUNG = CONST_QLDB.TAT_CA;
+        op_obj_parameter.dcID_TRANG_THAI_TAI_SAN = CONST_QLDB.ID_TAT_CA;
+        op_obj_parameter.strTEN_TRANG_THAI_TAI_SAN = CONST_QLDB.TAT_CA;
+        op_obj_parameter.strKEY_SEARCH = String.Empty;
+        op_obj_parameter.dcID_LOAI_TAI_SAN = CONST_QLDB.ID_TAT_CA;
+        op_obj_parameter.strTEN_LOAI_TAI_SAN = CONST_QLDB.TAT_CA;
+        op_obj_parameter.strLOAI_HINH_DON_VI = CONST_QLDB.TAT_CA;
+        op_obj_parameter.strMA_LOAI_HINH_DON_VI = CONST_QLDB.TAT_CA;
+        op_obj_parameter.strUSER_NAME = Person.get_user_name();
+        op_obj_parameter.datDEN_NGAY = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
+        op_obj_parameter.datTU_NGAY = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+    }
+    private void export_excel()
+    {
+        if (!check_validate_data_is_ok()) return;
+        string v_str_output_file = "";
+        F330_RPT_TANG_GIAM_TAI_SAN v_f330_tang_giam_tai_san = new F330_RPT_TANG_GIAM_TAI_SAN();
+        CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
+        form_2_objExcelAssetParameters(v_obj_parameter);
+        v_f330_tang_giam_tai_san.export_excel(
+           F330_RPT_TANG_GIAM_TAI_SAN.TANG_GIAM_TAI_SAN.CHI_TIET_THEO_LOAI_HINH
+                                 , ref v_obj_parameter
+                               );
+        Response.Clear();
+        v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+        Response.Redirect(v_str_output_file, false);
+    }
     private void thongbao(string ip_str_thong_bao)
     {
         m_lbl_mess.Text = ip_str_thong_bao;
@@ -133,6 +168,19 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Thread.Sleep(1000);
+            export_excel();
+        }
+        catch (System.Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(this, ex);
+        }
+    }
 
     #endregion
+   
 }
