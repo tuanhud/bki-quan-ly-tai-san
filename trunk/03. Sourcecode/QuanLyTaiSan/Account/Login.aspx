@@ -101,7 +101,7 @@
 		                                    <td colspan="4" align="center" valign="middle" 
                                                 style="height:34px;background-color:#dddddd; color: #0000FF;" 
                                                 class="style1">
-		                                        Copyright © 2013 - Designed by 3T-BKIndex Group. 
+		                                        Copyright © 2013 - 3T-BKIndex Group. 
 		                                    </td>
 	                                    </tr>
                                     </table>
