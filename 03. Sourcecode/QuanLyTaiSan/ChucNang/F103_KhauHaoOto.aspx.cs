@@ -60,6 +60,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void load_data_from_us()
     {
+        clear_form_data();
         if (m_cbo_ten_tai_san.Items.Count == 0) return;
         decimal v_dc_id_oto = CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue);
         if (v_dc_id_oto < 1) return;
@@ -241,7 +242,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san_down.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_trang_thai_o_to_down.SelectedValue)
             , CONST_QLDB.ID_TAT_CA
-            , CONST_QLDB.ID_TAT_CA.ToString()
+            , CONST_QLDB.MA_TAT_CA
             , Person.get_user_name()
             , v_ds_v_gd_khau_hao_oto);
         m_grv_dm_oto.DataSource = v_ds_v_gd_khau_hao_oto.V_GD_KHAU_HAO_DM_OTO;
