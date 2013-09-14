@@ -253,6 +253,8 @@ namespace QltsForm
             v_obj_exe_report.AddFindAndReplaceItem("<NGAY>", DateTime.Now.Day);
             v_obj_exe_report.AddFindAndReplaceItem("<THANG>", DateTime.Now.Month);
             v_obj_exe_report.AddFindAndReplaceItem("<NAM>", DateTime.Now.Year);
+            v_obj_exe_report.AddFindAndReplaceItem("<TU_NGAY>", op_obj_excel_parameters.datTU_NGAY.ToShortDateString());
+            v_obj_exe_report.AddFindAndReplaceItem("<DEN_NGAY>", op_obj_excel_parameters.datDEN_NGAY.ToShortDateString());
             v_obj_exe_report.FindAndReplace(false);
             v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
             op_obj_excel_parameters.strFILE_NAME_RESULT = v_obj_exe_report.GetStrOutputFileNameWithPath();
