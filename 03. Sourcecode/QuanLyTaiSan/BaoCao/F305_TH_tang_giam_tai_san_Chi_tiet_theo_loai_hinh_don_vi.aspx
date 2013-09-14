@@ -1,16 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_don_vi.aspx.cs" Inherits="BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_don_vi" %>
 
+<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-     <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <contenttemplate>
+    <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
                 <span class="cssPageTitle">TỔNG HỢP TÌNH HÌNH TĂNG, GIẢM TÀI SẢN NHÀ NƯỚC</span>
                 <span class="expand-collapse-text"></span>
                 <br />
-                <span class="cssPageTitle">Phần 1: Chi tiết theo loại hình đơn vị</span><span class="expand-collapse-text initial-expand"></span>
+                <span class="cssPageTitle">Phần 1: Tổng hợp chung</span><span class="expand-collapse-text initial-expand"></span>
             </td>
         </tr>
         <tr>
@@ -73,7 +80,8 @@
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
                     Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" OnClick="m_cmd_loc_du_lieu_Click" />
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Xuất Excel (x)" Height="22px" />
+                    Width="98px" Text="Xuất Excel (x)" Height="22px" 
+                    onclick="m_cmd_xuat_excel_Click" />
             </td>
             <td>
                 &nbsp;
@@ -264,4 +272,21 @@
             </td>
         </tr>
     </table>
+    </contenttemplate>
+            <triggers>
+                <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+            </triggers>
+        </asp:UpdatePanel>
+    </div>
+    <asp:UpdateProgress ID="Updateprogress1" runat="server">
+        <progresstemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
+            </div>
+        </progresstemplate>
+    </asp:UpdateProgress>
 </asp:Content>
