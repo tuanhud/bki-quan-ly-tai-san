@@ -1,9 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F304_TH_tang_giam_tai_san_Tong_hop_chung.aspx.cs" Inherits="BaoCao_F304_TH_tang_giam_tai_san_Tong_hop_chung" %>
-
+<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <contenttemplate>
     <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
@@ -73,7 +79,8 @@
                 <asp:Button ID="m_cmd_loc_du_lieu" AccessKey="l" CssClass="cssButton" runat="server"
                     Width="98px" Text="Lọc dữ liệu(l)" Height="23px" TabIndex="5" OnClick="m_cmd_loc_du_lieu_Click" />
                 <asp:Button ID="m_cmd_xuat_excel" AccessKey="x" CssClass="cssButton" runat="server"
-                    Width="98px" Text="Xuất Excel (x)" Height="22px" />
+                    Width="98px" Text="Xuất Excel (x)" Height="22px" 
+                    onclick="m_cmd_xuat_excel_Click" />
             </td>
             <td>
                 &nbsp;
@@ -264,4 +271,21 @@
             </td>
         </tr>
     </table>
+    </contenttemplate>
+            <triggers>
+                <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+            </triggers>
+        </asp:UpdatePanel>
+    </div>
+    <asp:UpdateProgress ID="Updateprogress1" runat="server">
+        <progresstemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
+            </div>
+        </progresstemplate>
+    </asp:UpdateProgress>
 </asp:Content>
