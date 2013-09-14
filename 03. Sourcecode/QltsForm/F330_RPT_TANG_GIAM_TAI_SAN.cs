@@ -215,16 +215,41 @@ namespace QltsForm
            , ref IP.Core.QltsFormControls.CObjExcelAssetParameters op_obj_excel_parameters)
         {
             m_obj_trans = get_trans_object(m_fg);
-            US_DM_DON_VI v_us_dm_don_vi=new US_DM_DON_VI(op_obj_excel_parameters.dcID_BO_TINH);
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("", 1, 1);
+            string v_str_ma_don_vi="";
+            if (op_obj_excel_parameters.dcID_BO_TINH !=-1)
+            {
+                US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(op_obj_excel_parameters.dcID_BO_TINH);
+                v_str_ma_don_vi = v_us_dm_don_vi.strMA_DON_VI;
+            }
+
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-330 BCTH-TGTS.xls", 16, 1);
             load_data_to_grid_tai_san(ip_tang_giam_tai_san
                 , op_obj_excel_parameters.strUSER_NAME
                 ,op_obj_excel_parameters.dcID_BO_TINH
                 ,op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
                 ,op_obj_excel_parameters.datTU_NGAY
                 ,op_obj_excel_parameters.datDEN_NGAY);
+            switch (ip_tang_giam_tai_san)
+            {
+                case TANG_GIAM_TAI_SAN.TONG_HOP_CHUNG:
+                    v_obj_exe_report.AddFindAndReplaceItem("<LOAI_BAO_CAO>"
+                        , "Phần 1: Tổng hợp chung" 
+                        );
+                    break;
+                case TANG_GIAM_TAI_SAN.CHI_TIET_THEO_LOAI_HINH:
+                   v_obj_exe_report.AddFindAndReplaceItem("<LOAI_BAO_CAO>"
+                         , "Phần 2: Chi tiết theo loại hình đơn vị"
+                         );
+                    break;
+                case TANG_GIAM_TAI_SAN.CHI_TIET_THEO_DON_VI:
+                    v_obj_exe_report.AddFindAndReplaceItem("<LOAI_BAO_CAO>"
+                        , "Phần 3: Chi tiết theo từng đơn vị"
+                        );
+                    break;
+            }
             v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", op_obj_excel_parameters.strTEN_BO_TINH);
-            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_us_dm_don_vi.strMA_DON_VI);
+            v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", v_str_ma_don_vi);
+            v_obj_exe_report.AddFindAndReplaceItem("<CHU_QUAN>", op_obj_excel_parameters.strTEN_DON_VI_CHU_QUAN);
             v_obj_exe_report.AddFindAndReplaceItem("<NGAY>", DateTime.Now.Day);
             v_obj_exe_report.AddFindAndReplaceItem("<THANG>", DateTime.Now.Month);
             v_obj_exe_report.AddFindAndReplaceItem("<NAM>", DateTime.Now.Year);
