@@ -315,7 +315,7 @@
                                         <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField>
+                                <asp:TemplateField HeaderText="CHI TIẾT">
                                     <ItemTemplate>
                                         <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
                                             NavigateUrl='<%# "~/ChucNang/F100_QuanLyNha.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_NHA+"="+Eval(V_DM_NHA.ID) %>'
