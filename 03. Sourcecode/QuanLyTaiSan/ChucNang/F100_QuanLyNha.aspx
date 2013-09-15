@@ -439,7 +439,7 @@
                 <tr>
                     <td align="center" colspan="3" style="height: 450px;" valign="top">
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
+                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True" CssClass="cssGrid"
                             EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnRowCommand="m_grv_danh_sach_nha_RowCommand"
                             OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                             <Columns>
@@ -474,7 +474,7 @@
                                     ItemStyle-HorizontalAlign="Center" />
                                 <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
-                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
+                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; color:White">
                                             <tr>
                                                 <td colspan="3" style="height: 50px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
@@ -504,13 +504,13 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                             text-align: right">
                                             <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                                <%# Eval("NGUON_NS", "{0:#,##0.00}")%>
+                                                <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                             </td>
                                             <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                                <%# Eval("NGUON_KHAC", "{0:#,##0.00}")%>
+                                                <%# Eval("NGUON_KHAC", "{0:#,##0}")%>
                                             </td>
                                             <td style="width: 33%; height: 50px;">
-                                                <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0.00}")%>
+                                                <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0}")%>
                                             </td>
                                         </table>
                                     </ItemTemplate>
@@ -520,9 +520,9 @@
                                 <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" />
                                 <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
-                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
+                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; color:White">
                                             <tr>
-                                                <td colspan="7" style="height: 50px">
+                                                <td colspan="7" style="height: 50px; text-align:center">
                                                     HIỆN TRẠNG SỬ DỤNG
                                                     <br />
                                                     (m2)
@@ -563,25 +563,25 @@
                                             border-collapse: collapse;">
                                             <tr>
                                                 <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                                    <%# Eval("TRU_SO_LAM_VIEC", "{0:#,##0.00}")%>
+                                                    <%# Eval("TRU_SO_LAM_VIEC", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("CO_SO_HDSN", "{0:#,##0.00}")%>
+                                                    <%# Eval("CO_SO_HDSN", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("LAM_NHA_O", "{0:#,##0.00}")%>
+                                                    <%# Eval("LAM_NHA_O", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("CHO_THUE", "{0:#,##0.00}")%>
+                                                    <%# Eval("CHO_THUE", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("BO_TRONG", "{0:#,##0.00}")%>
+                                                    <%# Eval("BO_TRONG", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("BI_LAN_CHIEM", "{0:#,##0.00}")%>
+                                                    <%# Eval("BI_LAN_CHIEM", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%">
-                                                    <%# Eval("KHAC", "{0:#,##0.00}")%>
+                                                    <%# Eval("KHAC", "{0:#,##0}")%>
                                                 </td>
                                             </tr>
                                         </table>
