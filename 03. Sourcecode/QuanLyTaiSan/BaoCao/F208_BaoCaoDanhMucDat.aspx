@@ -162,9 +162,9 @@
                                     <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
                                         DataFormatString="{0:#,##0.00}" />
                                     <asp:BoundField HeaderText="DT Trụ sở làm việc (m2)" DataField="DT_TRU_SO_LAM_VIEC"
-                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="DT Cơ sở hoạt động sự nghiệp (m2)" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP"
-                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="DT Làm nhà ở (m2)" DataField="DT_LAM_NHA_O" ItemStyle-HorizontalAlign="Right"
                                         DataFormatString="{0:#,##0.00}" />
                                     <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"
@@ -174,9 +174,9 @@
                                     <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"
                                         DataFormatString="{0:#,##0.00}" />
                                     <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
-                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
-                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
                                 </Columns>
                             </asp:GridView>

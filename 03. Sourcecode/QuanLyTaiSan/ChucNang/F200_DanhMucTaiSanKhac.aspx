@@ -530,16 +530,16 @@
                                                 <tr>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px" height="40px"
                                                         align="right">
-                                                        <%# Eval("QLNN") %>
+                                                        <%# Eval("QLNN", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px" align="right">
-                                                        <%# Eval("KINH_DOANH") %>
+                                                        <%# Eval("KINH_DOANH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px" align="right">
-                                                        <%# Eval("KHONG_KINH_DOANH") %>
+                                                        <%# Eval("KHONG_KINH_DOANH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px" align="right">
-                                                        <%# Eval("HD_KHAC") %>
+                                                        <%# Eval("HD_KHAC", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
                                             </table>
