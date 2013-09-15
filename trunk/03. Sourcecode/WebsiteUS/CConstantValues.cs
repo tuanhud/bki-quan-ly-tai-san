@@ -71,7 +71,12 @@ namespace WebUS
         }
     }
 
-    
+    public class ID_USER_GROUP {
+        public const decimal TESTER = 1;
+        public const decimal TONG_CUC = 2;
+        public const decimal ADMIN = 5;
+
+    }
 
     public class SESSION
     {
@@ -81,7 +86,8 @@ namespace WebUS
 
         public const string AccounLoginYN = "AccounLoginYN";
         public const string UserQuyen = "user_quyen";
-        public const string QuyenGV = "QuyenGV";
+        //public const string QuyenGV = "QuyenGV";
+        public const string Allow2DeleteDataYN = "Allow2DeleteDataYN";
     }
 
     public class MA_LOAI_TU_DIEN

@@ -101,7 +101,7 @@
 		                                    <td colspan="4" align="center" valign="middle" 
                                                 style="height:34px;background-color:#dddddd; color: #0000FF;" 
                                                 class="style1">
-		                                         Tổng cục đường bộ Việt Nam - Bộ Giao thông - Vận Tải. 
+		                                         Tổng cục đường bộ Việt Nam - Bộ GTVT 
 		                                    </td>
 	                                    </tr>
                                     </table>
