@@ -126,6 +126,8 @@ public partial class Default2 : System.Web.UI.Page
                 m_cbo_trang_thai.Enabled = false;                
                 m_cbo_loai_tai_san.Enabled = false;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.NO;
+                m_txt_tim_kiem.Visible = false;
+                m_lbl_tim_kiem.Visible = false;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.DVCQ:
                 m_lbl_tieu_de.Text = "THỐNG KÊ ";
@@ -164,8 +166,9 @@ public partial class Default2 : System.Web.UI.Page
         DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
         US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
         DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
-        m_us_v_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue),
-                    Person.get_user_name()
+        m_us_v_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(CIPConvert.ToStr(m_txt_tim_kiem.Text)
+                    , CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
+                    , Person.get_user_name()
                     , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
                     , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
