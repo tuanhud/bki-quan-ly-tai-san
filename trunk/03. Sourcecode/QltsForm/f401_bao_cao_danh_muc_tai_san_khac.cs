@@ -704,7 +704,8 @@ namespace QltsForm
             US_V_DM_TAI_SAN_KHAC v_us_v_dm_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
             DS_V_DM_TAI_SAN_KHAC v_ds_v_dm_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
             v_us_v_dm_tai_san_khac.FillDataSetLoadDataToGridTaiSanKhacLoaiHinh(
-                op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
+                 op_obj_excel_parameters.strKEY_SEARCH
+                , op_obj_excel_parameters.strMA_LOAI_HINH_DON_VI
                 , op_obj_excel_parameters.strUSER_NAME
                 , op_obj_excel_parameters.dcID_BO_TINH
                 , op_obj_excel_parameters.dcID_DON_VI_CHU_QUAN
