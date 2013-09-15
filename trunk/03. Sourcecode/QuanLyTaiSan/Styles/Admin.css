@@ -323,6 +323,12 @@ body
     border-bottom-color: #b0b0d9;
 }
 
+.cssGrid tr td
+{
+    padding: 0 2px 0 2px;
+    vertical-align: middle;    
+}
+
 .cssGridAlterCell2
 {
     font-family: Tahoma, Arial, Times New Roman;
