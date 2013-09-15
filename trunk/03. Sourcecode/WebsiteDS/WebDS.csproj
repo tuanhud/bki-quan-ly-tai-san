@@ -257,6 +257,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_TANG_GIAM_TAI_SAN_DAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_DAT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_TANG_GIAM_TAI_SAN_NHA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_NHA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_TANG_GIAM_TAI_SAN_OTO.cs">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_OTO.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DS_V_GD_TANG_GIAM_TAI_SAN_OTO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_OTO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_THANH_TOAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -698,6 +722,50 @@
     </None>
     <None Include="DS_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC.xss">
       <DependentUpon>DS_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_DAT.xsc">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_DAT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_DAT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_TANG_GIAM_TAI_SAN_DAT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_DAT.xss">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_DAT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.xsc">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.xss">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_KHAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_NHA.xsc">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_NHA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_NHA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_TANG_GIAM_TAI_SAN_NHA.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_NHA.xss">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_NHA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_OTO.xsc">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_OTO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_OTO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_TANG_GIAM_TAI_SAN_OTO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_TANG_GIAM_TAI_SAN_OTO.xss">
+      <DependentUpon>DS_V_GD_TANG_GIAM_TAI_SAN_OTO.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_THANH_TOAN.xsc">
       <DependentUpon>DS_V_GD_THANH_TOAN.xsd</DependentUpon>
