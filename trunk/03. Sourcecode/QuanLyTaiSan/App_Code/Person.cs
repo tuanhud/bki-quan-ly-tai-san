@@ -31,4 +31,9 @@ public class Person
     {
         return HttpContext.Current.Session[SESSION.UserID] != null;
     }
+
+    public static bool Allow2DeleteData()
+    {
+        return HttpContext.Current.Session[SESSION.Allow2DeleteDataYN].ToString() == "Y";
+    }
 }
