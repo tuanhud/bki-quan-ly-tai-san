@@ -292,6 +292,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             if (!this.IsPostBack)
             {
+                m_grv_tai_san_khac.Columns[0].Visible = Person.Allow2DeleteData();
                 set_form_mode();
                 WinFormControls.load_data_to_cbo_bo_tinh(
                     WinFormControls.eTAT_CA.NO
