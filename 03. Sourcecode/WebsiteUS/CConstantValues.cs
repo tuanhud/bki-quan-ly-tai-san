@@ -98,6 +98,7 @@ namespace WebUS
         public const string LOAI_HINH_DON_VI = "LOAI_HINH_DON_VI";
         public const string LOAI_BAO_CAO = "LOAI_BAO_CAO";
         public const string TINH_TRANG_TAI_SAN = "TINH_TRANG_TAI_SAN";
+        public const string LY_DO_TANG_GIAM_TS = "LY_DO_TANG_GIAM_TS";
     }
 
     public class ID_TRANG_THAI_DAT
@@ -195,5 +196,14 @@ namespace WebUS
         public const string TO_CHUC_CTXHNN = "TO_CHUC_CTXHNN";
         public const string TO_CHUC_XH = "TO_CHUC_XH";
         public const string TO_CHUC_XH_NN = "TO_CHUC_XH_NN";
+    }
+
+    public class ID_LY_DO_TANG_GIAM_TAI_SAN
+    {
+        public const decimal CAI_TAO_NANG_CAP = 638;
+        public const decimal DIEU_CHUYEN = 636;
+        public const decimal SUA_CHUA_LON = 639;
+        public const decimal THANH_LY = 633;
+        public const decimal TRANG_CAP_MUA_MOI = 637;
     }
 }
