@@ -470,6 +470,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            Thread.Sleep(2000);
             // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
             m_grv_tai_san_khac.AllowPaging = false;
             load_data_2_grid();  // đây là hàm load lại dữ liệu lên lưới
@@ -486,4 +487,17 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
     #endregion
+    protected void m_cmd_an_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Thread.Sleep(2000);
+            m_grv_tai_san_khac.Columns[0].Visible = false;
+        }
+        catch (Exception v_e)
+        {
+            
+             CSystemLog_301.ExceptionHandle(this, v_e);
+        }    
+    }
 }

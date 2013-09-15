@@ -390,6 +390,9 @@
                                 Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
                         </td>
                         <td align="left">
+                            <asp:Button ID="m_cmd_an" runat="server" CausesValidation="False" 
+                                CssClass="cssButton" Height="25px" OnClick="m_cmd_an_Click" Text="Ẩn" 
+                                Width="98px" />
                         </td>
                     </tr>
                     <tr>
