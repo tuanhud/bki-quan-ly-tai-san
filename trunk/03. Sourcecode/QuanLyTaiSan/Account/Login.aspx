@@ -101,7 +101,7 @@
 		                                    <td colspan="4" align="center" valign="middle" 
                                                 style="height:34px;background-color:#dddddd; color: #0000FF;" 
                                                 class="style1">
-		                                        Copyright © 2013 - 3T-BKIndex Group. 
+		                                         Tổng cục đường bộ Việt Nam - Bộ Giao thông - Vận Tải. 
 		                                    </td>
 	                                    </tr>
                                     </table>
