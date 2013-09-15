@@ -249,16 +249,16 @@
                                                 border-collapse: collapse;color:white">
                                                 <tr>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px" height="40px">
-                                                        <%# Eval("QLNN") %>
+                                                        <%# Eval("QLNN", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px">
-                                                        <%# Eval("KINH_DOANH") %>
+                                                        <%# Eval("KINH_DOANH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px">
-                                                        <%# Eval("KHONG_KINH_DOANH") %>
+                                                        <%# Eval("KHONG_KINH_DOANH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 25%">
-                                                        <%# Eval("HD_KHAC") %>
+                                                        <%# Eval("HD_KHAC", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
                                             </table>
