@@ -878,7 +878,7 @@ namespace WebDS {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnMA_TAI_SAN.AllowDBNull = false;
-                this.columnMA_TAI_SAN.MaxLength = 15;
+                this.columnMA_TAI_SAN.MaxLength = 35;
                 this.columnID_LOAI_TAI_SAN.AllowDBNull = false;
                 this.columnDIA_CHI.AllowDBNull = false;
                 this.columnDIA_CHI.MaxLength = 250;
@@ -1826,7 +1826,7 @@ namespace WebDS.DS_V_DM_DAT_HISTORYTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WebDS.Properties.Settings.Default.BKI_QLTSConnectionString;
+            this._connection.ConnectionString = global::WebDS.Properties.Settings.Default.BKI_QLTSConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
