@@ -390,29 +390,29 @@ EnableEventValidation="false" CodeFile="F311_BCDVCQ_Thay_doi_thong_tin_Nha.aspx.
                         <asp:BoundField HeaderText="NĂM SỬ DỤNG" DataField="NGAY_THANG_NAM_SU_DUNG" />
                         <asp:BoundField HeaderText="NĂM XÂY DỰNG" DataField="NAM_XAY_DUNG" />
                         <asp:BoundField HtmlEncode="false" HeaderText="DIỆN TÍC XÂY DỰNG <br/> (m2)" DataField="DT_XAY_DUNG"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="TỔNG DIỆN TÍCH SÀN XÂY DỰNG <br/>(m2)" HtmlEncode="false"
-                            DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         
                         <asp:BoundField HeaderText="NGUỒN NGÂN SÁCH <br/> (ngàn đồng)" HtmlEncode="false"
-                            DataField="NGUON_NS" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="NGUON_NS" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="NGUỒN KHÁC <br/> (ngàn đồng)" HtmlEncode="false"
-                            DataField="NGUON_KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="NGUON_KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="GIÁ TRỊ CÒN LẠI <br/> (ngàn đồng)" HtmlEncode="false"
-                            DataField="GIA_TRI_CON_LAI" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="GIA_TRI_CON_LAI" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="DIỆN TÍCH TRỤ SỞ LÀM VIỆC <br/> (m2)" HtmlEncode="false" DataField="TRU_SO_LAM_VIEC"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="DIỆN TÍCH CƠ SỞ HĐSN <br/> (m2)" HtmlEncode="false" DataField="CO_SO_HDSN"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="DIỆN TÍCH LÀM NHÀ Ở <br/> (m2)" HtmlEncode="false" DataField="LAM_NHA_O"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="DIỆN TÍCH CHO THUÊ <br/> (m2)" HtmlEncode="false" DataField="CHO_THUE"
-                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="DIỆN TÍCH BỎ TRỐNG <br/> (m2)" HtmlEncode="false" DataField="BO_TRONG" />
                         <asp:BoundField HeaderText="DIỆN TÍCH BỊ LẤN CHIẾM  <br/> (m2)" HtmlEncode="false"
-                            DataField="BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                         <asp:BoundField HeaderText="DIỆN TÍCH SỬ DỤNG VÀO MỤC ĐÍCH KHÁC <br/> (m2)" HtmlEncode="false"
-                            DataField="KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                            DataField="KHAC" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                     </Columns>
                 </asp:GridView>
             </td>

@@ -177,11 +177,11 @@
                                     <asp:BoundField HeaderText="NĂM SỬ DỤNG" DataField="NAM_SU_DUNG" />
                                     <asp:BoundField HeaderText="NĂM SẢN XUẤT" DataField="NAM_SAN_XUAT" />
                                     <asp:BoundField HeaderText="NGUỒN NGÂN SÁCH <br/> (VNĐ)" HtmlEncode="false" DataField="NGUON_NS"
-                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="NGUỒN KHÁC <br/> (VNĐ)" HtmlEncode="false" DataField="NGUON_KHAC"
-                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="GIÁ TRỊ CÒN LẠI <br/> (VNĐ)" HtmlEncode="false" DataField="GIA_TRI_CON_LAI"
-                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0.00}" />
+                                        ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="QUẢN LÝ NHÀ NƯỚC" DataField="QLNN" />
                                     <asp:BoundField HeaderText="KINH DOANH" DataField="KINH_DOANH" />
                                     <asp:BoundField HeaderText="KHÔNG KINH DOANH" DataField="KHONG_KINH_DOANH" />
