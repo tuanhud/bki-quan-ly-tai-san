@@ -344,6 +344,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
+                m_grv_danh_sach_nha.Columns[0].Visible = Person.Allow2DeleteData();
                 load_data_2_form();
                 if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DAT] != null)
                 {
