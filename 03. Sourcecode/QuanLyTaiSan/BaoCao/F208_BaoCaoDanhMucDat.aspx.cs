@@ -103,18 +103,24 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
                 m_lbl_tieu_de.Text = "BÁO CÁO ĐẤT";
                 m_cbo_trang_thai.Enabled = false;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.NO;
+                m_txt_tim_kiem.Visible = false;
+                m_lbl_tim_kiem.Visible = false;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.DVCQ:
                 m_lbl_tieu_de.Text = "THỐNG KÊ ĐẤT";
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;
+                m_txt_tim_kiem.Visible = true;
+                m_lbl_tim_kiem.Visible = true;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.BLD:
                 m_lbl_tieu_de.Text = "THỐNG KÊ ĐẤT";
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;
+                m_txt_tim_kiem.Visible = true;
+                m_lbl_tim_kiem.Visible = true;
                 break;
             default:
                 throw new Exception("Chưa cấu hình loại báo cáo có mã:" + v_str_loai_bao_cao);
@@ -133,7 +139,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
                     , CIPConvert.ToStr(m_cbo_trang_thai.SelectedValue)
                     , Person.get_user_name()
                     , CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
-                    , String.Empty
+                    , CIPConvert.ToStr(m_txt_tim_kiem.Text)
                     , m_ds_v_dat);
         m_lbl_title.Text = "DANH MỤC ĐẤT";
         string v_str_thong_tin = " (Có " + m_ds_v_dat.V_DM_DAT.Rows.Count + " bản ghi)";
