@@ -68,7 +68,7 @@ public partial class Quantri_F811_QuanLyChucNang : System.Web.UI.Page
         US_HT_CHUC_NANG v_us_ht_chuc_nang = new US_HT_CHUC_NANG();
         DS_HT_CHUC_NANG v_ds_ht_chuc_nang = new DS_HT_CHUC_NANG();
 
-        v_us_ht_chuc_nang.FillDataset(v_ds_ht_chuc_nang, " WHERE CHUC_NANG_PARENT_ID = 0 ORDER BY ID");
+        v_us_ht_chuc_nang.FillDataset(v_ds_ht_chuc_nang, " WHERE CHUC_NANG_PARENT_ID IS NULL ORDER BY ID");
 
         m_cbo_chuc_nang_cha.Items.Add(new ListItem("Không có", "0"));
         for (int v_i = 0; v_i < v_ds_ht_chuc_nang.HT_CHUC_NANG.Rows.Count; v_i++)
