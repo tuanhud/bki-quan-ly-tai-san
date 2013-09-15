@@ -450,6 +450,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     protected void Page_Load(object sender, EventArgs e) {
         try {
             if (!IsPostBack) {
+                m_grv_danh_sach_nha.Columns[0].Visible = Person.Allow2DeleteData();
                 load_data_2_form();
                 //Code này là chức năng liên quan đến from F1000
                 if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_NHA] != null) {
