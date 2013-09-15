@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     EnableEventValidation="false" CodeFile="F201_BaoCaoDanhMucTaiSanKhac.aspx.cs"
     Inherits="Default2" %>
+
 <%@ Import Namespace="WebUS" %>
 <%@ Import Namespace="WebDS.CDBNames" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
@@ -95,6 +96,15 @@
                     </tr>
                     <tr>
                         <td align="right">
+                            <asp:Label ID="m_lbl_tim_kiem" runat="server" CssClass="cssManField" 
+                                Visible="False">Tìm kiếm:</asp:Label>
+&nbsp;</td>
+                        <td valign="top" colspan="2">
+                            <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
                             &nbsp;
                         </td>
                         <td valign="top" colspan="2">
@@ -115,9 +125,9 @@
                 <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
-                                <asp:Label ID="m_lbl_title" runat="server" Text="DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG
+                            <asp:Label ID="m_lbl_title" runat="server" Text="DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG
                                 SỰ NGHIỆP VÀ XE Ô TÔ)" CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
-                            </span><span class="expand-collapse-text"></span>
+                                </span><span class="expand-collapse-text"></span>
                         </td>
                     </tr>
                     <tr>
@@ -144,12 +154,12 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField>
-                                    <ItemTemplate>
-                                        <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
-                                            NavigateUrl='<%# "~/ChucNang/F200_DanhMucTaiSanKhac.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_TAI_SAN_KHAC+"="+Eval(V_DM_TAI_SAN_KHAC.ID) %>'
-                                            ImageUrl="~/Images/Button/detail.png">Chi tiết</asp:HyperLink>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
+                                                NavigateUrl='<%# "~/ChucNang/F200_DanhMucTaiSanKhac.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_TAI_SAN_KHAC+"="+Eval(V_DM_TAI_SAN_KHAC.ID) %>'
+                                                ImageUrl="~/Images/Button/detail.png">Chi tiết</asp:HyperLink>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                     <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" />
                                     <asp:BoundField HeaderText="ĐƠN VỊ CHỦ QUẢN" DataField="TEN_DV_CHU_QUAN" />
                                     <asp:BoundField HeaderText="ĐƠN VỊ SỬ DỤNG" DataField="TEN_DV_SU_DUNG" />
@@ -172,7 +182,7 @@
                                     <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;
-                                                height: 100%;color:white">
+                                                height: 100%; color: white">
                                                 <tr>
                                                     <td colspan="3" style="height: 35px; text-align: center">
                                                         Giá trị theo sổ kế toán (VNĐ)
@@ -217,7 +227,7 @@
                                     <asp:TemplateField>
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
-                                                height: 100%; color:white">
+                                                height: 100%; color: white">
                                                 <tr>
                                                     <td colspan="4" style="height: 39px; text-align: center">
                                                         Hiện trạng sử dụng
@@ -246,7 +256,7 @@
                                         </HeaderTemplate>
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="text-align: right;
-                                                border-collapse: collapse;color:white">
+                                                border-collapse: collapse">
                                                 <tr>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px" height="40px">
                                                         <%# Eval("QLNN", "{0:#,###}")%>
