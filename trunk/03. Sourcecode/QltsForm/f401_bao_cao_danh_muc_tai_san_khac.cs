@@ -495,19 +495,19 @@ namespace QltsForm
                 v_us_dm_don_vi = new US_DM_DON_VI();
             }
 
-            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 13, 1); ;
+            CExcelWebReport v_obj_exe_report = new CExcelWebReport("BC-26 BCDM-TSK.xls", 12, 1); ;
             switch (m_e_form_mode)
             {
                 case eFormMode.KE_KHAI_TAI_SAN_KHAC:
-                    v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 12, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-26 BCDM-TSK.xls", 12, 1);
                     load_data_2_grid_tai_san_co_nguyen_gia_tren_500_trieu(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY:
-                    v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-24 BCDM-TSK-DNXL.xls", 12, 1);
                     load_data_2_grid_tai_san_co_nguyen_gia_tren_500_trieu(op_obj_excel_parameters);
                     break;
                 case eFormMode.TAI_SAN_KHAC_GIAO_DON_VI_SU_NGHIEP:
-                    v_obj_exe_report = new CExcelWebReport("BC-025 Bao cao ke khai tai san co nguyen gia tu 500 trieu dong tro len.xls", 13, 1);
+                    v_obj_exe_report = new CExcelWebReport("BC-28 BCDM-TSK-DVTCTC.xls", 14, 1);
                     load_data_2_grid_tai_san_co_nguyen_gia_tren_500_trieu(op_obj_excel_parameters);
                     break;
                 default:
