@@ -172,25 +172,25 @@
                                     <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;
-                                                height: 100%">
+                                                height: 100%;color:white">
                                                 <tr>
-                                                    <td colspan="3" style="height: 35px">
+                                                    <td colspan="3" style="height: 35px; text-align: center">
                                                         Giá trị theo sổ kế toán (VNĐ)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2" style="width: 66%">
+                                                    <td colspan="2" style="width: 66%; text-align: center">
                                                         Nguyên giá
                                                     </td>
-                                                    <td rowspan="2" style="width: 33%">
+                                                    <td rowspan="2" style="width: 33%; text-align: center">
                                                         Giá trị còn lại
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 33%">
+                                                    <td style="width: 33%; text-align: center">
                                                         Nguồn NS
                                                     </td>
-                                                    <td style="width: 33%">
+                                                    <td style="width: 33%; text-align: center">
                                                         Nguồn khác
                                                     </td>
                                                 </tr>
@@ -217,28 +217,28 @@
                                     <asp:TemplateField>
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
-                                                height: 100%">
+                                                height: 100%; color:white">
                                                 <tr>
-                                                    <td colspan="4" style="height: 39px">
+                                                    <td colspan="4" style="height: 39px; text-align: center">
                                                         Hiện trạng sử dụng
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td rowspan="2" style="width: 25%">
+                                                    <td rowspan="2" style="width: 25%; text-align: center">
                                                         Quản lý nhà nước
                                                     </td>
-                                                    <td colspan="2" style="width: 50%">
+                                                    <td colspan="2" style="width: 50%; text-align: center">
                                                         Hoạt đông sự nghiệp
                                                     </td>
-                                                    <td rowspan="2" style="width: 25%">
+                                                    <td rowspan="2" style="width: 25%; text-align: center">
                                                         Khác
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 25%">
+                                                    <td style="width: 25%; text-align: center">
                                                         Kinh doanh
                                                     </td>
-                                                    <td style="width: 25%">
+                                                    <td style="width: 25%; text-align: center">
                                                         Không kinh doanh
                                                     </td>
                                                 </tr>
@@ -246,7 +246,7 @@
                                         </HeaderTemplate>
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="text-align: right;
-                                                border-collapse: collapse;">
+                                                border-collapse: collapse;color:white">
                                                 <tr>
                                                     <td style="width: 25%; border-right: solid; border-right-width: 1px" height="40px">
                                                         <%# Eval("QLNN") %>
