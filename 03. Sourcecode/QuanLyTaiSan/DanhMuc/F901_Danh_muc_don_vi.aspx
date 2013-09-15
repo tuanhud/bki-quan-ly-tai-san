@@ -123,6 +123,19 @@
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
+                            <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
+                                                OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
+
+
+
+                     <img src="../Images/Button/deletered.png" alt="Delete" />
+                                
+
+                                            </asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center"
                                     Visible="False">
                                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
