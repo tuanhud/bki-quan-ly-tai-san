@@ -476,25 +476,25 @@
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; color:White">
                                             <tr>
-                                                <td colspan="3" style="height: 50px">
+                                                <td colspan="3" style="height: 50px; text-align:center">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
                                                     (VNĐ)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" rowspan="1">
+                                                <td colspan="2" rowspan="1" style="text-align:center">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="width: 33.33%; height: 60px">
+                                                <td rowspan="2" style="width: 33.33%; height: 60px; text-align:center">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 33.33%">
+                                                <td style="width: 33.33%; text-align:center">
                                                     Nguồn NS
                                                 </td>
-                                                <td style="width: 33.33%">
+                                                <td style="width: 33.33%; text-align:center">
                                                     Nguồn khác
                                                 </td>
                                             </tr>
@@ -529,30 +529,30 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="2" style="width: 14%; height: 60px">
+                                                <td rowspan="2" style="width: 14%; height: 60px; text-align:center">
                                                     Trụ sở làm việc
                                                 </td>
-                                                <td rowspan="2" style="width: 14%">
+                                                <td rowspan="2" style="width: 14%; text-align:center">
                                                     Cơ sở HĐSN
                                                 </td>
-                                                <td rowspan="1" colspan="5">
+                                                <td rowspan="1" colspan="5" style="text-align:center">
                                                     Sử dụng khác
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align:center">
                                                     Làm nhà ở
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align:center">
                                                     Cho thuê
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align:center">
                                                     Bỏ trống
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align:center">
                                                     Bị lấn chiếm
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align:center">
                                                     Khác
                                                 </td>
                                             </tr>
