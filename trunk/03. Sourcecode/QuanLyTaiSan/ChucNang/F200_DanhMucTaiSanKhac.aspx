@@ -346,11 +346,11 @@
                                     </td>
                                     <td colspan="4" align="left">
                                         <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
-                                            Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_tsk" />&nbsp;
+                                            Width="98px" Height = "24px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_tsk" />&nbsp;
                                         <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
-                                            Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_tsk" />&nbsp;
+                                            Width="98px" Height = "24px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_tsk" />&nbsp;
                                         <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
-                                            Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
+                                            Width="98px" Height = "24px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
                                         <asp:HiddenField ID="hdf_id" runat="server" Value="" />
                                     </td>
                                 </tr>
