@@ -112,6 +112,10 @@
     <Compile Include="US_V_GD_KHAU_HAO_DM_NHA.cs" />
     <Compile Include="US_V_GD_KHAU_HAO_DM_OTO.cs" />
     <Compile Include="US_V_GD_KHAU_HAO_DM_TAI_SAN_KHAC.cs" />
+    <Compile Include="US_V_GD_TANG_GIAM_TAI_SAN_DAT.cs" />
+    <Compile Include="US_V_GD_TANG_GIAM_TAI_SAN_KHAC.cs" />
+    <Compile Include="US_V_GD_TANG_GIAM_TAI_SAN_NHA.cs" />
+    <Compile Include="US_V_GD_TANG_GIAM_TAI_SAN_OTO.cs" />
     <Compile Include="US_V_HT_USER_DV_QUAN_LY.cs" />
   </ItemGroup>
   <ItemGroup>
