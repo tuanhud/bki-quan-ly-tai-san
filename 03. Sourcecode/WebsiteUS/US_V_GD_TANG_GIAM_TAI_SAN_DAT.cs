@@ -963,7 +963,7 @@ namespace WebUS
            , string ip_str_user_name
            , string ip_str_loai_hinh_dv
            , string ip_str_tu_khoa
-           , DS_V_GD_KHAU_HAO_DM_DAT op_ds_v_gd_khau_hao_dm_dat)
+           , DS_V_GD_TANG_GIAM_TAI_SAN_DAT op_ds_v_gd_tang_giam_ts_dat)
         {
             CStoredProc v_obj_procedure = new CStoredProc("pr_V_GD_TANG_GIAM_TAI_SAN_DAT");
             v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_str_id_bo_tinh);
@@ -973,7 +973,7 @@ namespace WebUS
             v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_dv);
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
-            v_obj_procedure.fillDataSetByCommand(this, op_ds_v_gd_khau_hao_dm_dat);
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_v_gd_tang_giam_ts_dat);
         }
         #endregion
     }
