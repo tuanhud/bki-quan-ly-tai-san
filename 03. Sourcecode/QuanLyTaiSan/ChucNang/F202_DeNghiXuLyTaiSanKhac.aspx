@@ -100,13 +100,13 @@
                                 TabIndex="4" Width="90%">
                             </asp:DropDownList>
                         </td>
-                        <td align="left" colspan ="2">
+                        <td align="left" colspan ="2" rowspan = "2">
                            
                             <span class="cssManField">
                             Chú ý:
                             <br />
-                            - Chọn trạng thái "1-Đang sử dụng", ấn tìm kiếm để chọn tài sản lập đề nghị xử lý
-                            <br />- Chọn trạng thái "2-Đề nghị xử lý", ấn tìm kiếm để chọn tài sản hủy đề nghị xử lý
+                            - Chọn trạng thái "1-Đang sử dụng"-> Ấn tìm kiếm -> Chọn tài sản lập đề nghị xử lý
+                            <br />- Chọn trạng thái "2-Đề nghị xử lý"-> Ấn tìm kiếm -> Chọn tài sản hủy đề nghị xử lý
                         </span>
                         </td>
                     </tr>
