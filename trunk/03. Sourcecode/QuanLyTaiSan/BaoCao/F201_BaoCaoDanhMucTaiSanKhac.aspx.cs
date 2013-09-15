@@ -134,12 +134,16 @@ public partial class Default2 : System.Web.UI.Page
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;
+                m_txt_tim_kiem.Visible = true;
+                m_lbl_tim_kiem.Visible = true;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.BLD:
                 m_lbl_tieu_de.Text = "THỐNG KÊ ";
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;
+                m_txt_tim_kiem.Visible = true;
+                m_lbl_tim_kiem.Visible = true;
                 break;
             default:
                 throw new Exception("Chưa cấu hình loại báo cáo có mã:" + v_str_loai_bao_cao);
