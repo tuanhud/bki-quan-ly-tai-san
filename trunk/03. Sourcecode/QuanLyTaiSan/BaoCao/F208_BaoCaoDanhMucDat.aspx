@@ -79,10 +79,12 @@
                     </tr>
                     <tr>
                         <td align="right">
-                            &nbsp;
+                            <asp:Label ID="m_lbl_tim_kiem" runat="server" CssClass="cssManField" 
+                                Visible="False">Tìm kiếm:</asp:Label>
                         </td>
                         <td>
                             &nbsp;
+                            <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%"></asp:TextBox>
                         </td>
                         <td align="right">
                             <span class="cssManField">Trạng thái:</span>
