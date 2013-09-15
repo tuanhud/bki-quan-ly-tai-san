@@ -82,14 +82,14 @@
                         <asp:DropDownList ID="m_ddl_thuoc_khu_dat" runat="server" Width="85%" ValidationGroup="m_vlg_nha">
                         </asp:DropDownList>
                     </td>
-                    <td align="left" colspan = "2" style="width: 15%">
+                    <td align="left" colspan = "2" rowspan = "2" style="width: 15%">
                         
                     
                         <span class="cssManField">
                             Chú ý:
                             <br />
-                            - Chọn trạng thái "1-Đang sử dụng", ấn tìm kiếm để chọn tài sản lập đề nghị xử lý
-                            <br />- Chọn trạng thái "2-Đề nghị xử lý", ấn tìm kiếm để chọn tài sản để hủy đề nghị xử lý
+                            - Chọn trạng thái "1-Đang sử dụng" -> Ấn tìm kiếm -> Chọn tài sản lập đề nghị xử lý
+                            <br />- Chọn trạng thái "2-Đề nghị xử lý"-> Ấn tìm kiếm -> Chọn tài sản để hủy đề nghị xử lý
                         </span>
                     </td>
                 </tr>

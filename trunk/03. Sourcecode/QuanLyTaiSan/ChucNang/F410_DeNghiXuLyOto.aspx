@@ -104,12 +104,12 @@
                                     &nbsp;
                                 </td>
                                
-                                <td align="left" colspan="2" style="width: 30%;">
+                                <td align="left" colspan="2" rowspan = "2" style="width: 30%;">
                                     <span class="cssManField">Chú ý:
                                     <br />
-                                    - Chọn trạng thái &quot;1-Đang sử dụng&quot;, ấn tìm kiếm để chọn tài sản lập đề nghị xử lý
+                                    - Chọn trạng thái &quot;1-Đang sử dụng&quot;-> Ấn tìm kiếm -> Chọn tài sản lập đề nghị xử lý
                                     <br />
-                                    - Chọn trạng thái &quot;2-Đề nghị xử lý&quot;, ấn tìm kiếm để chọn tài sản hủy đề nghị xử lý </span>
+                                    - Chọn trạng thái &quot;2-Đề nghị xử lý&quot;-> Ấn tìm kiếm -> Chọn tài sản hủy đề nghị xử lý </span>
                                 </td>
                             </tr>
                             <tr>

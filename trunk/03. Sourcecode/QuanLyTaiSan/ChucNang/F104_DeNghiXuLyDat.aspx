@@ -82,14 +82,13 @@
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%">
                         </asp:TextBox>
                     </td>
-                    <td>
-                        </td>
-                    <td>
-                        <span class="cssManField">
+                  
+                    <td colspan = "2" rowspan = "2">
+                        <span class="cssManField" >
                             Chú ý:
                             <br />
-                            - Chọn trạng thái đất là "1-Đang sử dụng" để lập đề nghị xử lý
-                            <br />- Chọn trạng thái đất là "2-Đề nghị xử lý" để hủy đề nghị xử lý
+                            - Chọn trạng thái "1-Đang sử dụng" -> Ấn tìm kiếm -> Chọn tài sản để lập đề nghị xử lý
+                            <br />- Chọn trạng thái "2-Đề nghị xử lý" -> Ấn tìm kiếm -> Chọn tài sản để hủy đề nghị xử lý
                         </span>
                     </td>
                 </tr>
@@ -105,10 +104,7 @@
                     Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
 
                     </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
+                    
                 </tr>
                 <tr>
                     <td colspan="4">
