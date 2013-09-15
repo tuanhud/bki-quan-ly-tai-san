@@ -13,10 +13,9 @@ using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
-using WebDS;
+using WebDS.CDBNames;
 
-
-namespace AuctionUS
+namespace WebUS
 {
 
     public class US_V_GD_TANG_GIAM_TAI_SAN_KHAC : US_Object
