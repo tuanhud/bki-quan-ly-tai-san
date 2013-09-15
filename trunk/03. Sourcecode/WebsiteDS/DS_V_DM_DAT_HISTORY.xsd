@@ -118,7 +118,7 @@
               <xs:element name="MA_TAI_SAN" msprop:Generator_ColumnVarNameInTable="columnMA_TAI_SAN" msprop:Generator_ColumnPropNameInRow="MA_TAI_SAN" msprop:Generator_ColumnPropNameInTable="MA_TAI_SANColumn" msprop:Generator_UserColumnName="MA_TAI_SAN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
+                    <xs:maxLength value="35" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
