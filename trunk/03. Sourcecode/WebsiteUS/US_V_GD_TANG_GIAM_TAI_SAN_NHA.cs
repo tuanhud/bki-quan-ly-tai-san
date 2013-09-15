@@ -1029,5 +1029,29 @@ public class US_V_GD_TANG_GIAM_TAI_SAN_NHA : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    #region "Addional"
+    public void FillDatasetLoadDataToGridNha_by_tu_khoa(
+        string ip_str_tu_khoa
+        , decimal ip_dc_id_bo_tinh
+        , decimal ip_dc_id_don_vi_chu_quan
+        , decimal ip_dc_id_don_vi_su_dung
+        , decimal ip_dc_id_dat
+        , decimal ip_dc_id_trang_thai
+        , string ip_str_loai_hinh_don_vi
+        , string ip_str_user_name
+        , DS_V_GD_TANG_GIAM_TAI_SAN_NHA op_ds_v_gd_tang_giam_tai_san_nha)
+    {
+        CStoredProc v_obj_procedure = new CStoredProc("pr_V_GD_TANG_GIAM_TAI_SAN_NHA");
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_bo_tinh", ip_dc_id_bo_tinh);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_chu_quan", ip_dc_id_don_vi_chu_quan);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_don_vi_su_dung", ip_dc_id_don_vi_su_dung);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_dat", ip_dc_id_dat);
+        v_obj_procedure.addNVarcharInputParam("@ip_str_loai_hinh_don_vi", ip_str_loai_hinh_don_vi);
+        v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
+        v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+        v_obj_procedure.fillDataSetByCommand(this, op_ds_v_gd_tang_giam_tai_san_nha);
+    }
+    #endregion
 	}
 }
