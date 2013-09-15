@@ -13,6 +13,7 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
     #region Members
     US_CM_DM_TU_DIEN m_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
     DS_CM_DM_TU_DIEN m_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+    private DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
     #endregion
 
     #region Data Structures
@@ -20,22 +21,26 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
     #endregion
 
     #region Private Methods
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        try {
-            if (!this.IsPostBack) {
-                load_cbo_loai_tu_dien();
-                load_cbo_loai_tu_dien_grv();
-                load_data_2_grid();
-            }    
-            
-        }catch(Exception v_e){
-            this.Response.Write(v_e.ToString());
+    private void set_form_mode() {
+        switch (m_e_form_mode) {
+            case DataEntryFormMode.InsertDataState:
+                m_cmd_tao_moi.Visible = true;
+                m_cmd_cap_nhat.Visible = false;
+                break;
+            case DataEntryFormMode.SelectDataState:
+                break;
+            case DataEntryFormMode.UpdateDataState:
+                m_cmd_tao_moi.Visible = false;
+                m_cmd_cap_nhat.Visible = true;
+                break;
+            case DataEntryFormMode.ViewDataState:
+                break;
+            default:
+                break;
         }
-
     }
 
+    
     private void load_data_2_grid()
     {
         try {
@@ -115,23 +120,19 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
             throw v_e;
         }
     }
-    private void clear_dm_tu_dien()
+    private void reset_control_in_form()
     {
-        try
-        {
+        
+            m_lbl_mess.Text = "";
             m_grv_dm_tu_dien.EditIndex = -1;
             m_txt_ma_tu_dien.Text = "";
             m_txt_ten.Text = "";
             m_txt_ten_ngan.Text = "";
             m_txt_ghi_chu.Text = "";
             this.m_hdf_id_dm_tu_dien.Value = "";
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
+       
     }
-    private bool check_validate() {
+    private bool check_validate_is_ok() {
         if (this.m_cbo_loai_tu_dien.SelectedItem ==null)
         {
             this.m_ctv_ma_tu_dien.IsValid = false;
@@ -152,61 +153,71 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
             this.m_ctv_ten.IsValid = false;
             return false;
         }
-       
+        if ((m_e_form_mode == DataEntryFormMode.InsertDataState)&&(!check_ma_tu_dien_is_valided_for_insert())) { 
+            m_lbl_mess.Text = "Mã từ điển này đã tồn tại, nhập mã khác!"; 
+            return false; 
+        }
+        if ((m_e_form_mode  == DataEntryFormMode.UpdateDataState)&&(this.m_hdf_id_dm_tu_dien.Value == "")) { 
+            m_lbl_mess.Text = "Bạn phải chọn Từ điển cần Cập nhật!"; 
+            return false; 
+        }
         return true;
     }
-    private bool check_ma_tu_dien() {
-        try
-        {
+    private bool check_ma_tu_dien_is_valided_for_insert() {
+       
              if(m_us_dm_tu_dien.check_exist_ma_tu_dien(m_txt_ma_tu_dien.Text.TrimEnd())) return false;
              return true;
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
+        
     }
     private void insert_dm_tu_dien()
     {
         try{
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_lbl_mess.Text = "";
             m_grv_dm_tu_dien.EditIndex = -1;
             if (Page.IsValid) {
-                if (!check_validate()) return;
-                if (!check_ma_tu_dien()) { m_lbl_mess.Text = "Mã từ điển này đã tồn tại, nhập mã khác"; return; }
+                if (!check_validate_is_ok()) return;
+                
                 form_2_us_object();
                 m_us_dm_tu_dien.Insert();
-                m_lbl_mess.Text = "Đã thêm mới thành công.";
-                clear_dm_tu_dien();
+                
+                reset_control_in_form();
+                set_form_mode();
+                m_lbl_mess.Text = "Đã thêm mới thành công!";
                 load_data_2_grid();
             }
         }
         catch (Exception v_e)
         {
-            m_lbl_mess.Text = "Lỗi trong quá trình thêm mới bản ghi.";
+            m_lbl_mess.Text = "Lỗi trong quá trình thêm mới bản ghi!";
             throw v_e;
         }
     }
     private void update_dm_tu_dien()
     {
-        try
-        {
+        try {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_lbl_mess.Text = "";
             m_grv_dm_tu_dien.EditIndex = -1;
             if (Page.IsValid)
             {
-                if (this.m_hdf_id_dm_tu_dien.Value == "") { m_lbl_mess.Text = "Bạn phải chọn Từ điển cần Cập nhật."; return; }
-                if (!check_validate()) return;
+                
+                if (!check_validate_is_ok()) return;
                 form_2_us_object();
                 m_us_dm_tu_dien.dcID = CIPConvert.ToDecimal(this.m_hdf_id_dm_tu_dien.Value);
                 m_us_dm_tu_dien.Update();
-                m_lbl_mess.Text = "Đã cập nhật bản ghi thành công.";
-                clear_dm_tu_dien();
+                
+                reset_control_in_form();
+                m_lbl_mess.Text = "Đã cập nhật bản ghi thành công!";
+                m_e_form_mode = DataEntryFormMode.InsertDataState;
+                set_form_mode();
                 m_grv_dm_tu_dien.EditIndex = -1;
                 load_data_2_grid();
             }
         }
         catch (Exception v_e)
         {
-            m_lbl_mess.Text = "Lỗi trong quá trình cập nhật bản ghi.";
+            m_lbl_mess.Text = "Lỗi trong quá trình cập nhật bản ghi!";
             throw v_e;
         }
     }
@@ -236,6 +247,22 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
     // events
     //
     //
+    protected void Page_Load(object sender, EventArgs e) {
+        try {
+            if (!this.IsPostBack) {
+                load_cbo_loai_tu_dien();
+                load_cbo_loai_tu_dien_grv();
+                load_data_2_grid();
+                set_form_mode();
+            }
+
+        }
+        catch (Exception v_e) {
+            this.Response.Write(v_e.ToString());
+        }
+
+    }
+
     protected void m_cbo_loai_tu_dien_grv_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -266,8 +293,10 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
     {
         try
         {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_lbl_mess.Text = "";
             load_update_dm_tu_dien(e.NewSelectedIndex);
+            set_form_mode();
         }
         catch (Exception v_e)
         {
@@ -290,8 +319,9 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
-            clear_dm_tu_dien();
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            reset_control_in_form();
+            set_form_mode();
         }
         catch (Exception v_e)
         {
