@@ -153,7 +153,7 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
   background: #007ccf url(../Images/overlay.png) repeat-x 0 -110px;
   line-height: 100%;
   border-radius: 1em;
-  font: normal 0.5333333333333333em Arial, Helvetica, sans-serif;
+  font: normal 0.533333em Arial, Helvetica, sans-serif;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -180,7 +180,6 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 #wapper a:hover {
   background: #000;
@@ -195,7 +194,6 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  text-shadow: 0 1px 0 #ffffff;
 }
 #wapper ul ul li:hover a,
 #wapper li:hover li a {
@@ -218,19 +216,18 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 #wapper li:hover > ul, #wapper li li:hover > ul, #wapper li li li:hover > ul{
 display:block;
 }
-#wapper li:hover > ul ul ul, #wapper li:hover > ul ul ul ul{
+ #wapper li:hover > ul ul ul ul{
 display:none;
 }
 #wapper ul ul {
   display: none;
   margin: 0;
   padding: 0;
-  width: 185px;
+  width: 180px;
   position: absolute;
   top: 40px;
   left: 0;
@@ -245,7 +242,7 @@ display:none;
 }
 #wapper li ul ul {
 left:185px;
-margin:-40px 0px 0px 0px;
+margin:-40px 0px 0px -5px;
 }
 #wapper ul ul li {
   float: none;
