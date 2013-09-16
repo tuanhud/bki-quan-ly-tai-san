@@ -57,7 +57,8 @@
                                             <span class="cssManField">Lý do</span>
                                         </td>
                                         <td>
-                                            <asp:DropDownList ID="m_cbo_ly_do_thay_doi" Width="85%" runat="server">
+                                            <asp:DropDownList ID="m_cbo_ly_do_thay_doi" Width="85%" runat="server" AutoPostBack="true"
+                                                onselectedindexchanged="m_cbo_ly_do_thay_doi_SelectedIndexChanged">
                                             </asp:DropDownList>
                                         </td>
                                         <td align="right">

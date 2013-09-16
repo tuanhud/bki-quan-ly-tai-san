@@ -424,6 +424,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             form_2_us_nha();
             m_us_dm_nha.Insert();
             m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
+            m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
             m_lbl_mess.Text = "Đã thêm mới dữ liệu nhà thành công!";
         }
     }
@@ -453,6 +454,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     private void them_moi_tang_giam()
     {
         US_GD_TANG_GIAM_TAI_SAN v_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
+        m_us_dm_nha = new US_DM_NHA(CIPConvert.ToDecimal(m_hdf_id.Value));
         v_us_gd_tang_giam_tai_san.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
         v_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = CIPConvert.ToDatetime(m_txt_ngay_tang_giam.Text);
         v_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
@@ -470,16 +472,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         v_us_gd_tang_giam_tai_san.Insert();
 
         // Phần cập nhật thông tin cho DM
-        if (m_rbl_loai.SelectedValue == "N")
-        {
-            m_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DA_THANH_LY;
-            m_us_dm_nha.Update();
-        }
-        else
-        {
-            m_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DE_NGHI_TRANG_CAP;
-            m_us_dm_nha.Update();
-        }
         load_data_2_form();
     }
 
@@ -488,6 +480,20 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         m_txt_ngay_duyet.Text = "";
         m_txt_ma_phieu.Text = "";
         m_txt_ngay_tang_giam.Text = "";
+    }
+
+    private void lua_chon_loai_tang_giam()
+    {
+        decimal v_dc_loai_tang_giam = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
+        if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY
+            || v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN)
+        {
+            m_rbl_loai.SelectedValue = "N";
+        }
+        else
+        {
+            m_rbl_loai.SelectedValue = "Y";
+        }
     }
     // Kết thúc tăng giảm
 
@@ -702,6 +708,17 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+
+    protected void m_cbo_ly_do_thay_doi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            lua_chon_loai_tang_giam();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
-    
 }
