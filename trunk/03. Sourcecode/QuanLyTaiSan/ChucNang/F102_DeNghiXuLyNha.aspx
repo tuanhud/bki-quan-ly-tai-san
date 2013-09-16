@@ -142,7 +142,7 @@
                 <tr>
                     <td align="center" colspan="4" style="height: 450px;" valign="top">
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
+                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True" CssClass="cssGrid"
                             EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                             <Columns>
                                 <asp:TemplateField>
@@ -172,27 +172,27 @@
                                     ItemStyle-HorizontalAlign="Center" />
                                 <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
-                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
+                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; color: White">
                                             <tr>
-                                                <td colspan="3" style="height: 50px">
+                                                <td colspan="3" style="height: 50px; text-align:center">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
                                                     (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" rowspan="1">
+                                                <td colspan="2" rowspan="1" style="text-align:center">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="width: 33.33%; height: 60px">
+                                                <td rowspan="2" style="width: 33.33%; height: 60px; text-align:center">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 33.33%">
+                                                <td style="width: 33.33%; text-align:center">
                                                     Nguồn NS
                                                 </td>
-                                                <td style="width: 33.33%">
+                                                <td style="width: 33.33%; text-align:center">
                                                     Nguồn khác
                                                 </td>
                                             </tr>
@@ -202,55 +202,56 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                             text-align: right">
                                             <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                                <%# Eval("NGUON_NS", "{0:#,##0.00}")%>
+                                                <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                             </td>
                                             <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                                <%# Eval("NGUON_KHAC", "{0:#,##0.00}")%>
+                                                <%# Eval("NGUON_KHAC", "{0:#,##0}")%>
                                             </td>
                                             <td style="width: 33%; height: 50px;">
-                                                <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0.00}")%>
+                                                <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0}")%>
                                             </td>
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Số tầng" DataField="SO_TANG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="DT xây dựng" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right" />
-                                <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" />
+                                <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" 
+                                    DataFormatString=""/>
                                 <asp:TemplateField HeaderStyle-Height="110px">
                                     <HeaderTemplate>
-                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
+                                        <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; color:White">
                                             <tr>
-                                                <td colspan="7" style="height: 50px">
+                                                <td colspan="7" style="height: 50px; text-align: center">
                                                     Hiện trạng sử dụng
                                                     <br />
                                                     (m2)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="2" style="width: 14%; height: 60px;">
+                                                <td rowspan="2" style="width: 14%; height: 60px; text-align: center">
                                                     Trụ sở làm việc
                                                 </td>
-                                                <td rowspan="2" style="width: 14%">
+                                                <td rowspan="2" style="width: 14%; text-align: center">
                                                     Cơ sở HĐSN
                                                 </td>
-                                                <td colspan="5">
+                                                <td colspan="5" style="text-align: center">
                                                     Sử dụng khác
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align: center">
                                                     Làm nhà ở
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align: center">
                                                     Cho thuê
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align: center">
                                                     Bỏ trống
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align: center">
                                                     Bị lấn chiếm
                                                 </td>
-                                                <td style="width: 14%">
+                                                <td style="width: 14%; text-align: center">
                                                     Khác
                                                 </td>
                                             </tr>
@@ -261,25 +262,25 @@
                                             border-collapse: collapse;">
                                             <tr>
                                                 <td style="width: 14%; height: 60px; border-right: 1px solid gray;">
-                                                    <%# Eval("TRU_SO_LAM_VIEC", "{0:#,##0.00}")%>
+                                                    <%# Eval("TRU_SO_LAM_VIEC", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("CO_SO_HDSN", "{0:#,##0.00}")%>
+                                                    <%# Eval("CO_SO_HDSN", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("LAM_NHA_O", "{0:#,##0.00}")%>
+                                                    <%# Eval("LAM_NHA_O", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("CHO_THUE", "{0:#,##0.00}")%>
+                                                    <%# Eval("CHO_THUE", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("BO_TRONG", "{0:#,##0.00}")%>
+                                                    <%# Eval("BO_TRONG", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 14%; border-right: 1px solid gray;">
-                                                    <%# Eval("BI_LAN_CHIEM", "{0:#,##0.00}")%>
+                                                    <%# Eval("BI_LAN_CHIEM", "{0:#,##0}")%>
                                                 </td>
-                                                <td style="width: 14%">
-                                                    <%# Eval("KHAC", "{0:#,##0.00}")%>
+                                                <td style="width: 14%;">
+                                                    <%# Eval("KHAC", "{0:#,##0}")%>
                                                 </td>
                                             </tr>
                                         </table>

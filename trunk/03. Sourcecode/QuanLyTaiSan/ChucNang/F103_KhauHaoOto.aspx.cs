@@ -28,18 +28,27 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
             return false;
         }
+        
         string v_str_id_oto = m_cbo_ten_tai_san.SelectedValue;
         if (v_str_id_oto.Equals(String.Empty) || v_str_id_oto.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_message.Text = "Bạn chưa chọn tài sản";
             return false;
         }
+
         decimal v_dc_gia_tri_kh = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
         if (v_dc_gia_tri_kh <= 0)
         {
             m_lbl_message.Text = "Giá trị khấu hao phải lớn hơn 0";
             return false;
         }
+
+        if (!m_us_gd_kh.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
+        {
+            m_lbl_message.Text = "Mã phiếu này đã tồn tại";
+            return false;
+        }
+        
         return true;
     }
 
@@ -72,9 +81,9 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         m_lbl_nam_san_xuat.Text = v_us_dm_oto.dcNAM_SAN_XUAT.ToString();
         m_lbl_nam_su_dung.Text = v_us_dm_oto.dcNAM_SU_DUNG.ToString();
         m_lbl_chuc_dang_su_dung.Text = v_us_dm_oto.strCHUC_DANH_SU_DUNG;
-        m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_oto.dcNGUON_NS.ToString("#,##0.00");
-        m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_oto.dcNGUON_KHAC.ToString("#,##0.00");
-        m_lbl_gia_tri_con_lai.Text = v_us_dm_oto.dcGIA_TRI_CON_LAI.ToString("#,##0.00");
+        m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_oto.dcNGUON_NS.ToString("#,##0");
+        m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_oto.dcNGUON_KHAC.ToString("#,##0");
+        m_lbl_gia_tri_con_lai.Text = v_us_dm_oto.dcGIA_TRI_CON_LAI.ToString("#,##0");
     }
 
     private void them_moi_khau_hao()
@@ -82,9 +91,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         decimal v_dc_id_tai_san = CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue);
         US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(v_dc_id_tai_san);
-
         decimal v_dc_gia_tri_khau_hao = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
-
         // Lấy thông tin mới cho giao dịch khấu hao
         v_us_gd_khau_hao.dcID_TAI_SAN = v_dc_id_tai_san;
         v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = v_us_dm_oto.dcID_LOAI_TAI_SAN;
@@ -95,10 +102,8 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         v_us_gd_khau_hao.datNGAY_LAP = CIPConvert.ToDatetime(m_txt_ngay_lap.Text);
         v_us_gd_khau_hao.dcID_NGUOI_LAP = Person.get_user_id();
         v_us_gd_khau_hao.dcID_NGUOI_DUYET = Person.get_user_id();
-
         // Cập nhật cho nhà
         v_us_dm_oto.dcGIA_TRI_CON_LAI = v_us_dm_oto.dcGIA_TRI_CON_LAI - v_dc_gia_tri_khau_hao;
-
         // Thực hiện cập nhật
         v_us_gd_khau_hao.Insert();
         v_us_dm_oto.Update();
@@ -213,16 +218,6 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void clear_form_data()
     {
-        m_lbl_ma_tai_san.Text = "";
-        m_lbl_nhan_hieu.Text = "";
-        m_lbl_bien_kiem_soat.Text = "";
-        m_lbl_nuoc_san_xuat.Text = "";
-        m_lbl_nam_san_xuat.Text = "";
-        m_lbl_nam_su_dung.Text = "";
-        m_lbl_chuc_dang_su_dung.Text = "";
-        m_lbl_nguyen_gia_nguon_ns.Text = "";
-        m_lbl_nguyen_gia_nguon_khac.Text = "";
-        m_lbl_gia_tri_con_lai.Text = "";
         m_txt_ma_phieu.Text = "";
         m_txt_gia_tri_khau_hao.Text = "";
         m_txt_ngay_lap.Text = "";
@@ -258,6 +253,15 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         m_us_gd_kh.DeleteByID(ip_dc_id_kh);
         v_us_dm_oto.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
         v_us_dm_oto.Update();
+    }
+
+    private void export_gridview_2_excel()
+    {
+        m_grv_dm_oto.AllowPaging = false;
+        load_data_to_grid();
+        WinformReport.export_gridview_2_excel(m_grv_dm_oto
+            , "DM khau hao oto.xls"
+            , 0);
     }
     #endregion
 
@@ -365,28 +369,14 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-    protected void m_hdf_id_ValueChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            if (!m_hdf_id.Value.Equals(String.Empty))
-            {
-                load_data_from_us();
-            }
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
     protected void m_grv_dm_oto_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
         {
             if (!e.CommandName.Equals(String.Empty))
             {
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
-                decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[rowIndex].Value);
+                int v_dc_rowIndex = Convert.ToInt32(e.CommandArgument);
+                decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[v_dc_rowIndex].Value);
                 m_us_gd_kh = new US_GD_KHAU_HAO(v_dc_id_kh);
                 decimal v_dc_id_oto = m_us_gd_kh.dcID_TAI_SAN;
                 decimal v_dc_gia_tri_kh = m_us_gd_kh.dcGIA_TRI_KHAU_HAO;
@@ -432,11 +422,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
-            m_grv_dm_oto.AllowPaging = false;
-            load_data_to_grid();
-            WinformReport.export_gridview_2_excel(m_grv_dm_oto
-                , "DM khau hao oto.xls"
-                , 0);
+            export_gridview_2_excel();
         }
         catch (Exception v_e)
         {

@@ -292,9 +292,9 @@
                                 <td colspan="4" align="left">
                                     <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
                                         Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_oto" OnClick="m_cmd_tao_moi_Click" />
-                                    <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
+                                    <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
                                         Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
-                                    <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
+                                    <asp:HiddenField ID="m_hdf_id" runat="server" Value=""/>
                                 </td>
                             </tr>
                         </table>
@@ -406,23 +406,24 @@
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="3" style="height: 15px">
-                                                    Giá trị theo sổ kế toán (VNĐ)
+                                                <td colspan="3" style="height: 45px; text-align:center">
+                                                    Giá trị theo sổ kế toán 
+                                                    <br />(VNĐ)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" style="width: 66%; height: 20px">
+                                                <td colspan="2" style="width: 66%; height: 20px; text-align:center">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="width: 33%; height: 80px">
+                                                <td rowspan="2" style="width: 33%; height: 80px; text-align:center">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 33%">
+                                                <td style="width: 33%; text-align:center">
                                                     Nguồn NS
                                                 </td>
-                                                <td style="width: 33%">
+                                                <td style="width: 33%; text-align:center">
                                                     Nguồn khác
                                                 </td>
                                             </tr>
