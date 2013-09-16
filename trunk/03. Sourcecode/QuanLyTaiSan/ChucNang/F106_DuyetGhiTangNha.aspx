@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
     CodeFile="F106_DuyetGhiTangNha.aspx.cs" Inherits="ChucNang_F106_DuyetGhiTangNha" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
@@ -280,7 +280,7 @@
                         <span class="cssManField">Từ khóa </span>
                     </td>
                     <td style="width: 30%" colspan="1">
-                        <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%">
+                        <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%" CausesValidation="false">
                         </asp:TextBox>
                     </td>
                     <td align="right" style="width: 20%" colspan="1">
@@ -315,6 +315,22 @@
                             onpageindexchanging="m_grv_danh_sach_nha_PageIndexChanging" 
                             onrowcommand="m_grv_danh_sach_nha_RowCommand">
                             <Columns>
+                                <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="DeleteComp" ToolTip="Xóa"
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
+                                    <img src="../Images/Button/deletered.png" alt="Delete" />
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Sửa" ItemStyle-Width="2%">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_edit" runat="server" CommandName="EditComp" ToolTip="Sửa"
+                                            CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
+                                    <img src="../Images/Button/edit.png" alt="Edit" />
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center" 
                                     HeaderStyle-Height="30px" ItemStyle-Height="30px">
                                     <ItemTemplate>
@@ -345,6 +361,9 @@
                 </tr>
             </table>
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+        </Triggers>
     </asp:UpdatePanel>
     <asp:UpdateProgress ID="UpdateProgress1" runat="server">
         <ProgressTemplate>
