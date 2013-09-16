@@ -118,13 +118,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 25%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 25%;">
+                                                    <td colspan="1" rowspan="1" style="width: 30%;">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 50%;">
+                                                    <td colspan="1" rowspan="1" style="width: 40%;">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -133,14 +133,14 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
+                                                    <td style="width: 30%; border-right: 1px solid gray; height: 45px" align="right">
                                                         <%# Eval("SO_DAU_KY_SO_LUONG")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_DAU_KY_DIEN_TICH", "{0:0,000.00}")%>
+                                                    <td style="width: 30%; border-right: 1px solid gray" align="right">
+                                                        <%# Eval("SO_DAU_KY_DIEN_TICH", "{0:0,000}")%>
                                                     </td>
-                                                    <td style="width: 50%;" align="right">
-                                                        <%# Eval("SO_DAU_KY_NGUYEN_GIA", "{0:0,000.00}")%>
+                                                    <td style="width: 40%;" align="right">
+                                                        <%# Eval("SO_DAU_KY_NGUYEN_GIA", "{0:0,000}")%>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -155,13 +155,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 25%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 25%;">
+                                                    <td colspan="1" rowspan="1" style="width: 30%;">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 50%;">
+                                                    <td colspan="1" rowspan="1" style="width: 40%;">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -170,14 +170,14 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
+                                                    <td style="width: 30%; border-right: 1px solid gray; height: 45px" align="right">
                                                         <%# Eval("SO_TANG_TRONG_KY_SO_LUONG")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_TANG_TRONG_KY_DIEN_TICH", "{0:0,000.00}")%>
+                                                    <td style="width: 30%; border-right: 1px solid gray" align="right">
+                                                        <%# Eval("SO_TANG_TRONG_KY_DIEN_TICH", "{0:0,000}")%>
                                                     </td>
-                                                    <td style="width: 50%;" align="right">
-                                                        <%# Eval("SO_TANG_TRONG_KY_NGUYEN_GIA", "{0:0,000.00}")%>
+                                                    <td style="width: 40%;" align="right">
+                                                        <%# Eval("SO_TANG_TRONG_KY_NGUYEN_GIA", "{0:0,000}")%>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -192,13 +192,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 25%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 25%">
+                                                    <td colspan="1" rowspan="1" style="width: 30%">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 50%">
+                                                    <td colspan="1" rowspan="1" style="width: 40%">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -207,14 +207,14 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
+                                                    <td style="width: 30%; border-right: 1px solid gray; height: 45px" align="right">
                                                         <%# Eval("SO_GIAM_TRONG_KY_SO_LUONG")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_GIAM_TRONG_KY_DIEN_TICH", "{0:0,000.00}")%>
+                                                    <td style="width: 30%; border-right: 1px solid gray" align="right">
+                                                        <%# Eval("SO_GIAM_TRONG_KY_DIEN_TICH", "{0:0,000}")%>
                                                     </td>
-                                                    <td style="width: 50%;" align="right">
-                                                        <%# Eval("SO_GIAM_TRONG_KY_NGUYEN_GIA", "{0:0,000.00}")%>
+                                                    <td style="width: 40%;" align="right">
+                                                        <%# Eval("SO_GIAM_TRONG_KY_NGUYEN_GIA", "{0:0,000}")%>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -229,13 +229,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 25%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 25%;">
+                                                    <td colspan="1" rowspan="1" style="width: 30%;">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 50%;">
+                                                    <td colspan="1" rowspan="1" style="width: 40%;">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -244,14 +244,14 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: 1px solid gray; height: 45px" align="right">
+                                                    <td style="width: 30%; border-right: 1px solid gray; height: 45px" align="right">
                                                         <%# Eval("SO_CUOI_KY_SO_LUONG")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_CUOI_KY_DIEN_TICH", "{0:0,000.00}")%>
+                                                    <td style="width: 30%; border-right: 1px solid gray" align="right">
+                                                        <%# Eval("SO_CUOI_KY_DIEN_TICH", "{0:0,000}")%>
                                                     </td>
-                                                    <td style="width: 50%;" align="right">
-                                                        <%# Eval("SO_CUOI_KY_NGUYEN_GIA", "{0:0,000.00}")%>
+                                                    <td style="width: 40%;" align="right">
+                                                        <%# Eval("SO_CUOI_KY_NGUYEN_GIA", "{0:0,000}")%>
                                                     </td>
                                                 </tr>
                                             </table>
