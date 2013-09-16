@@ -147,75 +147,126 @@ font-size:0.85em;
 font-family:Verdana, Arial, Helvetica, sans-serif;
 }
 
-#nav, #nav ul{
-margin:0px;
-padding:0;
-list-style-type:none;
-list-style-position:outside;
-position:relative;
-line-height:2em; 
+#wapper ul {
+  margin: 0;
+  padding: 7px 6px 0;
+  background: #007ccf url(Images/overlay.png) repeat-x 0 -110px;
+  line-height: 100%;
+  border-radius: 1em;
+  font: normal 0.5333333333333333em Arial, Helvetica, sans-serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  width: auto;
 }
-#nav
-{
-    padding-left:20px;
-    margin-bottom:10px;
-    margin-left:30px;
- }
- #wapper
- {
-     margin-bottom:10px;
-     height:34px;
-     background:#007acf;
- }
- 
-#nav a{
+#wapper li {
+  margin: 0 5px;
+  padding: 0 0 8px;
+  float: left;
+  position: relative;
+  list-style: none;
+}
+#wapper a,
+#wapper a:link {
+  font-weight: bold;
+  font-size: 13px;
+  color: #e7e5e5;
+  text-decoration: none;
+  display: block;
+  padding: 8px 20px;
+  margin: 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+#wapper a:hover {
+  background: #000;
+  color: #fff;
+}
+#nav .active a,
+#nav li:hover > a {
+  background: #039aff url(Images/overlay.png) repeat-x 0 -40px;
+  background: #666666 url(Images/overlay.png) repeat-x 0 -40px;
+  color: #444;
+  border-top: solid 1px  #f8f8f8;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 0 #ffffff;
+}
+#wapper ul ul li:hover a,
+#wapper li:hover li a {
+  background: none;
+  border: none;
+  color: #666;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+#wapper li:hover li {
+  background: #d2e5f2;
+  border: none;
+  color: #666;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+#wapper ul ul a:hover {
+  background: #007ccf url(Images/overlay.png) repeat-x 0 -100px !important;
+  color: #fff !important;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+#wapper li:hover > ul, #wapper li li:hover > ul, #wapper li li li:hover > ul{
 display:block;
-padding:1px 9px;
-font-weight: bold;
-border:1px solid #333;
-color:white;
-text-decoration:none;
-background-color:#007acf;
-height:30px;
 }
-
-#nav a:hover{
-color: white;
-background: #BFCBD6;
-}
-
-#nav li{
-float:left;
-position:relative;
-}
-
-#nav ul {
-position:absolute;
-display:none;
-width:1em;
-top:34px;
-}
-
-#nav li ul a{
-width:240px;
-height:auto;
-float:left;
-}
-
-#nav ul ul{
-top:auto;
-}	
-
-#nav li ul ul {
-left:250px;
-margin:0px 0 0 10px;
-}
-
-#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li:hover ul ul ul ul{
+#wapper li:hover > ul ul ul, #wapper li:hover > ul ul ul ul{
 display:none;
 }
-#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul{
-display:block;
+#wapper ul ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 185px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: url(Images/overlay.png) repeat-x 0 0;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+#wapper li ul ul {
+left:185px;
+margin:-40px 0px 0px 0px;
+}
+#wapper ul ul li {
+  float: none;
+  margin: 0;
+  padding: 3px;
+}
+#wapper ul ul a,
+#wapper ul ul a:link {
+  font-weight: normal;
+  font-size: 12px;
+}
+#wapper ul:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+* html #wapper ul {
+  height: 1%;
 }
 
 /* FORM ELEMENTS   
