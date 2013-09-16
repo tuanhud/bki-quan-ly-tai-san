@@ -233,6 +233,8 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
                 , "De nghi tang giam tai san khac.xls");
     }
     #endregion
+
+    #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -246,6 +248,10 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
+    }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
     }
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -387,4 +393,6 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    #endregion
+
 }

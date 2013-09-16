@@ -228,6 +228,11 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             v_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DA_THANH_LY;
             v_us_dm_nha.Update();
         }
+        else
+        {
+            v_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DE_NGHI_TRANG_CAP;
+            v_us_dm_nha.Update();
+        }
 
         m_lbl_message.Text = "Cập nhật thành công";
     }
@@ -271,6 +276,10 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
+    }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
     }
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e)
     {
