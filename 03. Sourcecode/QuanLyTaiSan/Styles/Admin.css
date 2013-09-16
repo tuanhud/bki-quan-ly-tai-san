@@ -630,6 +630,19 @@ body
     width: 355px;
     height: 65px;
     border: 1px solid;
+    z-index: 999;
+    box-shadow: 3px 3px gray;
+    background-color: White;
+    position: relative;
+}
+
+.cssLoadContent2
+{
+    margin: 250px auto 0 auto;
+    padding: 10px 0 10px 0;
+    width: 80%;
+    height: auto;
+    border: 1px solid;
     z-index: 9999;
     box-shadow: 3px 3px gray;
     background-color: White;
