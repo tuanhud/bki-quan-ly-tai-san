@@ -393,7 +393,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         m_txt_ma_tai_san.Text = "";
         m_lbl_mess.Text = "";
         m_lbl_thong_bao.Text = "";
-        m_e_form_mode = DataEntryFormMode.InsertDataState;
         set_form_mode();
     }
 
