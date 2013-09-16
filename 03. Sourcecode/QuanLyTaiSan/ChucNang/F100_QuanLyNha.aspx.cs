@@ -48,7 +48,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
 
     // Load dữ liệu vào form
     private void load_data_2_form() {
-
+        reset_controls_in_form();
         load_data_bo_tinh();
         load_data_don_vi_chu_quan();
         load_data_don_vi_su_dung();
@@ -58,6 +58,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         load_data_tinh_trang_nha();
         load_data_to_grid();
         set_form_mode();
+        hidden_panel_tang_giam();
         m_txt_ten_tai_san.Focus();
     }
 
@@ -157,6 +158,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             , WinFormControls.eTAT_CA.NO
             , m_ddl_tinh_trang_nha);
     }
+
     private bool check_validate_data_is_ok() {
         if (m_ddl_thuoc_khu_dat.SelectedValue == "") {
             m_lbl_mess.Text = "Bạn chưa chọn khu đất!";
@@ -404,16 +406,13 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         m_lbl_mess.Text = "";
         m_e_form_mode = DataEntryFormMode.UpdateDataState;
         if (!check_validate_data_is_ok()) return;
-
         form_2_us_nha();
         Thread.Sleep(2000);
         m_us_dm_nha.Update();
         m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
         reset_controls_in_form();
-
         load_data_2_form();
         m_lbl_mess.Text = "Đã cập nhật dữ liệu nhà thành công!";
-
     }
 
     private void insert_nha() {
@@ -425,11 +424,72 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             form_2_us_nha();
             m_us_dm_nha.Insert();
             m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
-            reset_controls_in_form();
-            load_data_2_form();
             m_lbl_mess.Text = "Đã thêm mới dữ liệu nhà thành công!";
         }
     }
+
+    // Phần liên quan đến tăng giảm tài sản
+    private void load_data_to_ly_do()
+    {
+        WinFormControls.load_data_to_cbo_tu_dien(
+            WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
+            , WinFormControls.eTAT_CA.NO
+            , m_cbo_ly_do_thay_doi);
+    }
+
+    private void hidden_panel_tang_giam()
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_pnl_confirm_tg.Visible = false;
+    }
+
+    private void display_panel_tang_giam()
+    {
+        load_data_to_ly_do();
+        m_pnl_confirm_tg.Visible = true;
+        m_mtv_1.SetActiveView(m_view_confirm);
+    }
+
+    private void them_moi_tang_giam()
+    {
+        US_GD_TANG_GIAM_TAI_SAN v_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
+        v_us_gd_tang_giam_tai_san.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
+        v_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = CIPConvert.ToDatetime(m_txt_ngay_tang_giam.Text);
+        v_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
+        v_us_gd_tang_giam_tai_san.strTANG_GIA_TRI_TAI_SAN_YN = m_rbl_loai.SelectedValue;
+
+        v_us_gd_tang_giam_tai_san.dcID_TAI_SAN = m_us_dm_nha.dcID;
+        v_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = m_us_dm_nha.dcID_LOAI_TAI_SAN;
+        v_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
+        v_us_gd_tang_giam_tai_san.dcDIEN_TICH = m_us_dm_nha.dcDT_XAY_DUNG;
+        v_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = m_us_dm_nha.dcNGUON_NS + m_us_dm_nha.dcNGUON_KHAC;
+
+        v_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
+        v_us_gd_tang_giam_tai_san.dcID_NGUOI_DUYET = Person.get_user_id();
+
+        v_us_gd_tang_giam_tai_san.Insert();
+
+        // Phần cập nhật thông tin cho DM
+        if (m_rbl_loai.SelectedValue == "N")
+        {
+            m_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DA_THANH_LY;
+            m_us_dm_nha.Update();
+        }
+        else
+        {
+            m_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DE_NGHI_TRANG_CAP;
+            m_us_dm_nha.Update();
+        }
+        load_data_2_form();
+    }
+
+    private void clear_panel_data()
+    {
+        m_txt_ngay_duyet.Text = "";
+        m_txt_ma_phieu.Text = "";
+        m_txt_ngay_tang_giam.Text = "";
+    }
+    // Kết thúc tăng giảm
 
     private void export_gridview_2_excel() {
         //Đoạn mã nguồn này để gridview không phân trang. 
@@ -472,6 +532,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e) {
         try {
             insert_nha();
+            display_panel_tang_giam();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(this, v_e);
@@ -491,6 +552,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         try {
             Thread.Sleep(1000);
             reset_controls_in_form();
+            them_moi_tang_giam();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(this, v_e);
@@ -536,6 +598,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
                         Thread.Sleep(2000);
                         m_us_dm_nha.DeleteByID(v_dc_id_nha);
                         load_data_2_form();
+                        m_lbl_mess.Text = "Đã xóa bản ghi thành công";
                         break;
                 }
             }
@@ -586,5 +649,59 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+
+    protected void m_cmd_tao_tang_giam_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            them_moi_tang_giam();
+            reset_controls_in_form();
+            load_data_2_form();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+
+    protected void m_cmd_huy_bo_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_panel_data();
+            hidden_panel_tang_giam();
+            reset_controls_in_form();
+            load_data_2_form();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+
+    protected void m_cmd_confirm_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_mtv_1.SetActiveView(m_view_them_moi_tg);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);        	
+        }
+    }
+
+    protected void m_cmd_reject_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            hidden_panel_tang_giam();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
+    
 }
