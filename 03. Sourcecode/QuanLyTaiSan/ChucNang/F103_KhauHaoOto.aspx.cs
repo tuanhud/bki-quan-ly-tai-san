@@ -400,6 +400,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
                     case "DeleteComp":
                         xoa_khau_hao(v_dc_id_kh, v_dc_id_oto, v_dc_gia_tri_kh);
                         load_data_to_grid();
+                        m_lbl_message.Text = "Đã xóa bản ghi thành công";
                         break;
                 }
             }
