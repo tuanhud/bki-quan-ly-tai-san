@@ -349,6 +349,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_us_dm_oto.Insert();
         
         reset_control();
+        m_hdf_id.Value = m_us_dm_oto.dcID.ToString();
         load_data_to_grid();
         m_lbl_mess.Text = "Thêm bản ghi thành công!";
     }
@@ -462,6 +463,10 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             m_rbl_loai.SelectedValue = "Y";
         }
     }
+    private void clear_message()
+    {
+        m_lbl_mess.Text = "";
+    }
     #endregion
 
     #region Events
@@ -516,6 +521,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             insert_data();
             display_panel_tang_giam();
         }
@@ -528,6 +534,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_init_mode = DataEntryFormMode.UpdateDataState;
             update_data();
         }
@@ -540,6 +547,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             reset_control();
             set_form_mode();
         }
@@ -552,6 +560,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_grv_dm_oto.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
@@ -564,6 +573,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             // Thu thập dữ liệu search
             string v_str_tu_khoa_tim_kiem = m_txt_tim_kiem.Text.Trim();
             // Search Môn học
@@ -578,6 +588,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                    m_ddl_bo_tinh.SelectedValue
                    , WinFormControls.eTAT_CA.NO
@@ -598,6 +609,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                     m_ddl_dv_chu_quan.SelectedValue
                     , m_ddl_bo_tinh.SelectedValue
@@ -616,6 +628,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             if (!e.CommandName.Equals(String.Empty))
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
@@ -646,6 +659,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             export_to_excel();
         }
         catch (System.Exception ex)
@@ -657,6 +671,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             them_moi_tang_giam();
             reset_control();
         }
