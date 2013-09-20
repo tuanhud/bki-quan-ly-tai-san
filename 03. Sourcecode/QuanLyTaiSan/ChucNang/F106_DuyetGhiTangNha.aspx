@@ -311,7 +311,7 @@
                     <td colspan="4">
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" 
+                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" CssClass="cssGrid"
                             onpageindexchanging="m_grv_danh_sach_nha_PageIndexChanging" 
                             onrowcommand="m_grv_danh_sach_nha_RowCommand">
                             <Columns>
@@ -340,10 +340,11 @@
                                 <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU"/>
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
                                 <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="Diện tích" DataField="DIEN_TICH" ItemStyle-HorizontalAlign="Right"/>
+                                <asp:BoundField HeaderText="Diện tích" DataField="DIEN_TICH" ItemStyle-HorizontalAlign="Right" 
+                                    DataFormatString="{0:#,##0}"/>
                                 <asp:BoundField HeaderText="Lý do tăng giảm" DataField="LY_DO_TANG_GIAM_TAI_SAN" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Giá trị nguyên giá tăng giảm" DataField="GIA_TRI_NGUYEN_GIA_TANG_GIAM" 
-                                    DataFormatString="{0:#,##0.00}" ItemStyle-HorizontalAlign="Right"/>
+                                    DataFormatString="{0:#,##0}" ItemStyle-HorizontalAlign="Right"/>
                                 <asp:BoundField HeaderText="Ngày tăng giảm tài sản" DataField="NGAY_TANG_GIAM_TAI_SAN" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                             </Columns>
