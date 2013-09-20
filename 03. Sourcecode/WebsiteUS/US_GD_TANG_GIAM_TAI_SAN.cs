@@ -14,7 +14,7 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using WebDS;
-
+using WebDS.CDBNames;
 
 namespace WebUS
 {
@@ -312,6 +312,15 @@ namespace WebUS
             v_cmdSQL = v_objMkCmd.getSelectCmd();
             this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+        }
+        #endregion
+
+        #region "Additional Functions"
+        public bool check_valid_ma_phieu(string ip_str_ma_phieu)
+        {
+            DS_GD_TANG_GIAM_TAI_SAN v_ds_gd_tang_giam = new DS_GD_TANG_GIAM_TAI_SAN();
+            this.FillDataset(v_ds_gd_tang_giam, "where " + GD_TANG_GIAM_TAI_SAN.MA_PHIEU + " = " + ip_str_ma_phieu);
+            return v_ds_gd_tang_giam.GD_TANG_GIAM_TAI_SAN.Rows.Count == 0;
         }
         #endregion
     }
