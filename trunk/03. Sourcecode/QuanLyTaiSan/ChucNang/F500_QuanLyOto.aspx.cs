@@ -64,7 +64,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             throw v_e;
         }
     }
-
     // Load dữ liệu vào combo trạng thái
     private void load_data_trang_thai()
     {
@@ -164,7 +163,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         ip_us_oto.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_ddl_dv_sd_ts.SelectedValue);
         ip_us_oto.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_ddl_dv_chu_quan.SelectedValue);
     }
-
     /// <summary>
     /// Load dữ liệu từ US đổ vào form
     /// </summary>
@@ -211,7 +209,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
         m_ddl_trang_thai_oto.SelectedValue = ip_us_oto.dcID_TRANG_THAI.ToString();
     }
-
     private void load_data_to_grid()
     {
         try
@@ -253,7 +250,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         // Đẩy us lên form
         us_obj_2_form(v_us_dm_oto);
     }
-
     private bool check_validate_data_is_ok()
     {
         if (!CValidateTextBox.IsValid(m_txt_ma_ts, DataType.StringType, allowNull.NO))
@@ -345,7 +341,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
         return true;
     }
-
     private void insert_data()
     {
         if (m_init_mode == DataEntryFormMode.UpdateDataState) return;
@@ -357,7 +352,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         load_data_to_grid();
         m_lbl_mess.Text = "Thêm bản ghi thành công!";
     }
-
     private void update_data()
     {
         if (m_hdf_id.Value == "")
@@ -375,7 +369,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_grv_dm_oto.EditIndex = -1;
         load_data_to_grid();
     }
-
     private void search_oto(string ip_str_tu_khoa)
     {
         m_lbl_thong_bao.Text = "";
@@ -393,6 +386,81 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
         m_grv_dm_oto.DataBind();
         if (m_ds_dm_oto.DM_OTO.Rows.Count == 0) m_lbl_thong_bao.Text = "Không có ô tô nào thỏa mãn!";
+    }
+    private void load_data_to_ly_do()
+    {
+        WinFormControls.load_data_to_cbo_tu_dien(
+            WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
+            , WinFormControls.eTAT_CA.NO
+            , m_cbo_ly_do_thay_doi);
+    }
+    private void hidden_panel_tang_giam()
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_pnl_confirm_tg.Visible = false;
+    }
+    private void display_panel_tang_giam()
+    {
+        load_data_to_ly_do();
+        m_pnl_confirm_tg.Visible = true;
+        m_mtv_1.SetActiveView(m_view_confirm);
+    }
+    private void them_moi_tang_giam()
+    {
+        US_GD_TANG_GIAM_TAI_SAN v_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
+        m_us_dm_oto = new US_DM_OTO(CIPConvert.ToDecimal(m_hdf_id.Value));
+        v_us_gd_tang_giam_tai_san.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
+        v_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = CIPConvert.ToDatetime(m_txt_ngay_tang_giam.Text);
+        v_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
+        v_us_gd_tang_giam_tai_san.strTANG_GIA_TRI_TAI_SAN_YN = m_rbl_loai.SelectedValue;
+
+        v_us_gd_tang_giam_tai_san.dcID_TAI_SAN = m_us_dm_oto.dcID;
+        v_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = m_us_dm_oto.dcID_LOAI_TAI_SAN;
+        v_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
+        v_us_gd_tang_giam_tai_san.dcDIEN_TICH = m_us_dm_oto.dcKINH_DOANH + m_us_dm_oto.dcKHONG_KINH_DOANH;
+        v_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = m_us_dm_oto.dcNGUON_NS + m_us_dm_oto.dcNGUON_KHAC;
+
+        v_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
+        v_us_gd_tang_giam_tai_san.dcID_NGUOI_DUYET = Person.get_user_id();
+
+        v_us_gd_tang_giam_tai_san.Insert();
+
+        // Phần cập nhật thông tin cho DM
+        set_form_mode();
+        WinFormControls.load_data_to_cbo_bo_tinh(
+             WinFormControls.eTAT_CA.NO
+             , m_ddl_bo_tinh);
+        WinFormControls.load_data_to_cbo_don_vi_chu_quan(
+            m_ddl_bo_tinh.SelectedValue
+            , WinFormControls.eTAT_CA.NO
+            , m_ddl_dv_chu_quan);
+        WinFormControls.load_data_to_cbo_don_vi_su_dung(
+            m_ddl_dv_chu_quan.SelectedValue
+            , m_ddl_bo_tinh.SelectedValue
+            , WinFormControls.eTAT_CA.NO
+            , m_ddl_dv_sd_ts);
+        load_2_cbo_loaits();
+        load_data_trang_thai();
+        load_data_to_grid();
+    }
+    private void clear_panel_data()
+    {
+        m_txt_ngay_duyet.Text = "";
+        m_txt_ma_phieu.Text = "";
+        m_txt_ngay_tang_giam.Text = "";
+    }
+    private void lua_chon_loai_tang_giam()
+    {
+        decimal v_dc_loai_tang_giam = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
+        if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY
+            || v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN)
+        {
+            m_rbl_loai.SelectedValue = "N";
+        }
+        else
+        {
+            m_rbl_loai.SelectedValue = "Y";
+        }
     }
     #endregion
 
@@ -434,6 +502,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 load_2_cbo_loaits();
                 load_data_trang_thai();
                 load_data_to_grid();
+                hidden_panel_tang_giam();
             }
         }
         catch (Exception v_e)
@@ -448,7 +517,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         try
         {
             insert_data();
-
+            display_panel_tang_giam();
         }
         catch (Exception v_e)
         {
@@ -479,7 +548,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             CSystemLog_301.Equals(this, v_e);
         }
     }
-
     protected void m_grv_dm_oto_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -544,7 +612,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
 
     }
-
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
@@ -575,7 +642,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         }
 
     }
-  
     protected void m_cmd_export_excel_Click(object sender, EventArgs e)
     {
         try
@@ -587,8 +653,64 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+    protected void m_cmd_tao_tang_giam_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            them_moi_tang_giam();
+            reset_control();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_huy_bo_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_panel_data();
+            hidden_panel_tang_giam();
+            reset_control();
 
-
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_confirm_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_mtv_1.SetActiveView(m_view_them_moi_tg);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_reject_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            hidden_panel_tang_giam();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cbo_ly_do_thay_doi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            lua_chon_loai_tang_giam();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
- 
 }
