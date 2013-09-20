@@ -56,7 +56,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         load_data_to_grid();
         set_form_mode();
         hidden_panel_tang_giam();
-        m_txt_ten_tai_san.Focus();
     }
     private void load_data_to_grid() {
         // TODO
