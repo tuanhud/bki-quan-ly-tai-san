@@ -187,6 +187,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         m_us_gd_khau_hao.DeleteByID(ip_dc_id_kh);
         v_us_dm_ts_khac.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
         v_us_dm_ts_khac.Update();
+        m_lbl_mess.Text = "Đã xóa thành công bản ghi";
     }
 
     private void clear_form_data()
@@ -223,6 +224,11 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         if (v_dc_gia_tri_kh <= 0)
         {
             m_lbl_mess.Text = "Giá trị khấu hao phải lớn hơn 0";
+            return false;
+        }
+        if (!m_us_gd_khau_hao.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
+        {
+            m_lbl_mess.Text = "Mã phiếu này đã tồn tại";
             return false;
         }
         return true;
