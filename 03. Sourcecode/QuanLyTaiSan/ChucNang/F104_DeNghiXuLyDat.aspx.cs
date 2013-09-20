@@ -32,20 +32,14 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
         load_data_to_grid();
         m_lbl_message.Text = "";
     }
-
-    // Load dữ liệu vào combo bộ tỉnh
     private void load_data_bo_tinh()
     {
         WinFormControls.load_data_to_cbo_bo_tinh(WinFormControls.eTAT_CA.YES, m_ddl_bo_tinh);
     }
-
-    // Load dữ liệu vào combo đơn vị chủ quản
     private void load_data_don_vi_chu_quan()
     {
         WinFormControls.load_data_to_cbo_don_vi_chu_quan(m_ddl_bo_tinh.SelectedValue, WinFormControls.eTAT_CA.YES, m_ddl_don_vi_chu_quan);
     }
-
-    // Load dữ liệu vào combo đơn vị sử dụng
     private void load_data_don_vi_su_dung()
     {
         WinFormControls.load_data_to_cbo_don_vi_su_dung(
@@ -54,15 +48,12 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
             , WinFormControls.eTAT_CA.YES
             , m_ddl_don_vi_su_dung);
     }
-
-    // Load dữ liệu vào combo trạng thái
     private void load_data_trang_thai()
     {
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
             , WinFormControls.eTAT_CA.YES
             , m_ddl_trang_thai_nha);
     }
-
     private void set_trang_thai_cmd()
     {
         decimal v_dc_trang_thai = CIPConvert.ToDecimal(m_ddl_trang_thai_nha.SelectedValue);
@@ -85,7 +76,6 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
         m_cmd_de_nghi_xu_ly.Visible = false;
         m_cmd_huy_de_nghi_xu_ly.Visible = false;
     }
-
     private void load_data_to_grid()
     {
         US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT();
@@ -102,6 +92,10 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
 
         m_grv_danh_sach_nha.DataSource = v_ds_v_dm_dat.V_DM_DAT;
         m_grv_danh_sach_nha.DataBind();
+    }
+    private void clear_message()
+    {
+        m_lbl_message.Text = "";
     }
     #endregion
 
@@ -124,11 +118,9 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         try
         {
-            if (!IsPostBack)
-            {
-                load_data_don_vi_chu_quan();
-                load_data_don_vi_su_dung();
-            }
+            clear_message();
+            load_data_don_vi_chu_quan();
+            load_data_don_vi_su_dung();
         }
         catch (Exception v_e)
         {
@@ -139,10 +131,8 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         try
         {
-            if (!IsPostBack)
-            {
-                load_data_don_vi_su_dung();
-            }
+            clear_message();
+            load_data_don_vi_su_dung();
         }
         catch (Exception v_e)
         {
@@ -153,6 +143,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             Thread.Sleep(2000);
             m_lbl_message.Text = "";
             load_data_to_grid();
@@ -167,6 +158,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             Thread.Sleep(2000);
             foreach (GridViewRow row in m_grv_danh_sach_nha.Rows)
             {
@@ -200,6 +192,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             Thread.Sleep(2000);
             foreach (GridViewRow row in m_grv_danh_sach_nha.Rows)
             {
@@ -233,6 +226,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid();
@@ -246,6 +240,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_grv_danh_sach_nha.AllowPaging = false;
             load_data_to_grid();
             WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha, "DS de nghi xu ly dat.xls", 0);
@@ -259,6 +254,5 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     {
         //base.VerifyRenderingInServerForm(control);
     }
-
     #endregion
 }
