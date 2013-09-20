@@ -264,6 +264,11 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             , "DM khau hao oto.xls"
             , 0);
     }
+
+    private void clear_message()
+    {
+        m_lbl_message.Text = "";
+    }
     #endregion
 
     #region Events
@@ -289,6 +294,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
@@ -303,6 +309,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
@@ -316,6 +323,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -328,6 +336,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -340,6 +349,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_from_us();
         }
         catch (Exception v_e)
@@ -351,6 +361,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_down();
             load_data_to_dv_su_dung_down();
         }
@@ -363,6 +374,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_down();
         }
         catch (System.Exception ex)
@@ -374,8 +386,9 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
-            if (!e.CommandName.Equals(String.Empty))
+            if (!e.CommandName.Equals(String.Empty) && !e.CommandName.Equals("Page"))
             {
+                clear_message();
                 int v_dc_rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[v_dc_rowIndex].Value);
                 m_us_gd_kh = new US_GD_KHAU_HAO(v_dc_id_kh);
@@ -423,6 +436,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             export_gridview_2_excel();
         }
         catch (Exception v_e)
@@ -434,6 +448,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
             load_form_data();
@@ -448,7 +463,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         try
         {
-            m_lbl_message.Text = "";
+            clear_message();
             clear_form_data();
         }
         catch (Exception v_e)
