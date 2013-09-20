@@ -186,7 +186,7 @@
                     </td>
                     <td align="left" style="width: 1%;">
                         <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
-                            ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_dat" ForeColor="Red"> </asp:RequiredFieldValidator>
+                            ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_dat" ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                     <td colspan="1" style="width: 20%" align="right" class="cssManField">
                         <span>Giá trị khấu hao </span>
@@ -197,7 +197,7 @@
                     </td>
                     <td align="left" style="width: 1%;">
                         <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                            ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_dat"
+                            ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="(*)" ValidationGroup="m_vlg_dat"
                             ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -211,7 +211,7 @@
                     </td>
                     <td align="left" style="width: 1%" class="cssManField">
                         <asp:RequiredFieldValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
-                            ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="*" ValidationGroup="m_vlg_dat"> </asp:RequiredFieldValidator>
+                            ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="(*)" ValidationGroup="m_vlg_dat"> </asp:RequiredFieldValidator>
                     </td>
                     <td align="right" class="cssManField">
                         <span>Ngày duyệt </span>
@@ -222,7 +222,7 @@
                     </td>
                     <td align="left" style="width: 1%;">
                         <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ControlToValidate="m_txt_ngay_duyet"
-                            ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="*" ValidationGroup="m_vlg_dat"
+                            ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="(*)" ValidationGroup="m_vlg_dat"
                             ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                 </tr>
