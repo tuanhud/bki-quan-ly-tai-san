@@ -324,6 +324,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         form_2_us_dm_dat();
         m_us_dm_dat.Insert();
         Thread.Sleep(2000);
+        m_hdf_id.Value = m_us_dm_dat.dcID.ToString();
         m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
         reset_controls_in_form();
 
