@@ -10,6 +10,116 @@
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
+            <asp:Panel ID="m_pnl_confirm_tg" runat="server">
+                <div class="cssLoadWapper">
+                    <asp:MultiView ID="m_mtv_1" runat="server">
+                        <asp:View ID="m_view_confirm" runat="server">
+                            <div class="cssLoadContent2">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                                    <tr>
+                                        <td>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center">
+                                            <span class="cssManField">Bạn có muốn thêm dữ liệu vào duyệt ghi tăng tài sản?</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center">
+                                            <asp:Button ID="m_cmd_confirm" AccessKey="c" CssClass="cssButton" runat="server"
+                                                Height="24px" Width="98px" Text="Đồng ý" CausesValidation="false" OnClick="m_cmd_confirm_Click" />
+                                            &nbsp;
+                                            <asp:Button ID="m_cmd_reject" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
+                                                Height="24px" Width="98px" Text="Hủy bỏ" OnClick="m_cmd_reject_Click" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </asp:View>
+                        <asp:View ID="m_view_them_moi_tg" runat="server">
+                            <div class="cssLoadContent2">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <span class="cssManField">CHI TIẾT DUYỆT GHI TĂNG GIẢM</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <span class="cssManField">Lý do</span>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="m_cbo_ly_do_thay_doi" Width="85%" runat="server" AutoPostBack="true"
+                                                OnSelectedIndexChanged="m_cbo_ly_do_thay_doi_SelectedIndexChanged">
+                                            </asp:DropDownList>
+                                        </td>
+                                        <td align="right">
+                                            <span class="cssManField">Loại đề nghị</span>
+                                        </td>
+                                        <td>
+                                            <asp:RadioButtonList ID="m_rbl_loai" runat="server" RepeatDirection="Horizontal"
+                                                CssClass="cssManField" Enabled="False">
+                                                <asp:ListItem Value="Y" Selected="True">Duyệt ghi tăng</asp:ListItem>
+                                                <asp:ListItem Value="N">Duyệt ghi giảm</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" style="width: 15%">
+                                            <span class="cssManField">Mã phiếu</span>
+                                        </td>
+                                        <td align="left" style="width: 30%">
+                                            <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
+                                                ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ErrorMessage="Bạn phải nhập Mã phiếu"
+                                                Text="(*)" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                        </td>
+                                        <td align="right" style="width: 15%">
+                                            <span class="cssManField">Ngày tăng giảm tài sản</span>
+                                        </td>
+                                        <td align="left" style="width: 30%">
+                                            <asp:TextBox ID="m_txt_ngay_tang_giam" runat="server" CssClass="cssTextBox" Width="85%"
+                                                ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="m_rfv_ngay_tang_giam" runat="server" ErrorMessage="Bạn phải nhập Ngày lập"
+                                                Text="(*)" ControlToValidate="m_txt_ngay_tang_giam" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" style="width: 15%">
+                                            <span class="cssManField">Ngày duyệt</span>
+                                        </td>
+                                        <td align="left" style="width: 30%">
+                                            <asp:TextBox ID="m_txt_ngay_duyet" runat="server" CssClass="cssTextBox" Width="85%"
+                                                ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ErrorMessage="Bạn phải nhập ngày duyệt"
+                                                Text="(*)" ControlToValidate="m_txt_ngay_duyet" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" align="center">
+                                            <asp:Button ID="m_cmd_tao_tang_giam" AccessKey="c" CssClass="cssButton" runat="server"
+                                                Height="24px" Width="98px" Text="Tạo mới" ValidationGroup="m_vlg_tang_giam" OnClick="m_cmd_tao_tang_giam_Click" />
+                                            <asp:Button ID="m_cmd_huy_bo" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
+                                                Height="24px" Width="98px" Text="Hủy bỏ" OnClick="m_cmd_huy_bo_Click" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </asp:View>
+                    </asp:MultiView>
+                </div>
+            </asp:Panel>
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
@@ -79,7 +189,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_dia_chi" runat="server" ControlToValidate="m_txt_dia_chi"
-                                        ErrorMessage="Bạn phải nhập Địa chỉ" Text="*" ValidationGroup="m_vlg_dat" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        ErrorMessage="Bạn phải nhập Địa chỉ" Text="(*)" ValidationGroup="m_vlg_dat" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                                 <td align="right" style="width: 15%">
                                     <span class="cssManField">Mã tài sản</span><td align="left" style="width: 30%;">
@@ -88,7 +198,7 @@
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         <asp:RequiredFieldValidator ID="m_rfv_ma_tai_san" runat="server" ControlToValidate="m_txt_ma_tai_san"
-                                            ErrorMessage="Bạn phải nhập Mã tài sản" Text="*" ValidationGroup="m_vlg_dat"
+                                            ErrorMessage="Bạn phải nhập Mã tài sản" Text="(*)" ValidationGroup="m_vlg_dat"
                                             ForeColor="Red"></asp:RequiredFieldValidator>
                                     </td>
                             </tr>
@@ -101,7 +211,6 @@
                                         ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-                                    
                                 </td>
                                 <td align="right" style="width: 15%">
                                     <span class="cssManField">Giá trị theo sổ kế toán (VNĐ)</span>
@@ -111,7 +220,6 @@
                                         Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-                                    
                                 </td>
                             </tr>
                             <tr>
@@ -123,7 +231,8 @@
                                         ValidationGroup="m_vlg_dat" Width="85%">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-                                    &nbsp;</td>
+                                    &nbsp;
+                                </td>
                                 <td align="right" style="width: 15%">
                                 </td>
                                 <td align="left" style="width: 30%;">
@@ -155,7 +264,6 @@
                                         Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-
                                 </td>
                                 <td align="right" style="width: 15%">
                                     <span class="cssManField">Cơ sở HĐSN (m2)</span>
@@ -165,7 +273,6 @@
                                         Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-
                                 </td>
                             </tr>
                             <tr>
@@ -177,7 +284,6 @@
                                         Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-
                                 </td>
                                 <td align="right" style="width: 15%">
                                     <span class="cssManField">Cho thuê (m2)</span>
@@ -187,7 +293,6 @@
                                         Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-
                                 </td>
                             </tr>
                             <tr>
@@ -199,7 +304,6 @@
                                         Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-
                                 </td>
                                 <td align="right" style="width: 15%">
                                     <span class="cssManField">Bị lấn chiếm (m2)</span>
@@ -209,7 +313,6 @@
                                         Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-
                                 </td>
                             </tr>
                             <tr>
@@ -221,13 +324,12 @@
                                         ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
-
                                 </td>
                                 <td align="right">
-                                 <span class="cssManField">Tình trạng đất</span>
+                                    <span class="cssManField">Tình trạng đất</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
-                                 <asp:DropDownList ID="m_ddl_tinh_trang_dat" runat="server" Width="85%">
+                                    <asp:DropDownList ID="m_ddl_tinh_trang_dat" runat="server" Width="85%">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -373,7 +475,7 @@
                                 <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
                                     ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
-                                <asp:BoundField HeaderText="Tình trạng đất" DataField="TEN_TINH_TRANG"/>
+                                <asp:BoundField HeaderText="Tình trạng đất" DataField="TEN_TINH_TRANG" />
                             </Columns>
                         </asp:GridView>
                     </td>
