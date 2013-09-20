@@ -79,7 +79,7 @@
                                             <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
                                                 ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ErrorMessage="Bạn phải nhập Mã phiếu"
-                                                Text="*" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                                Text="(*)" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
                                         </td>
                                         <td align="right" style="width: 15%">
                                             <span class="cssManField">Ngày tăng giảm tài sản</span>
@@ -88,7 +88,7 @@
                                             <asp:TextBox ID="m_txt_ngay_tang_giam" runat="server" CssClass="cssTextBox" Width="85%"
                                                 ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="m_rfv_ngay_tang_giam" runat="server" ErrorMessage="Bạn phải nhập Ngày lập"
-                                                Text="*" ControlToValidate="m_txt_ngay_tang_giam" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                                Text="(*)" ControlToValidate="m_txt_ngay_tang_giam" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -99,7 +99,7 @@
                                             <asp:TextBox ID="m_txt_ngay_duyet" runat="server" CssClass="cssTextBox" Width="85%"
                                                 ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ErrorMessage="Bạn phải nhập ngày duyệt"
-                                                Text="*" ControlToValidate="m_txt_ngay_duyet" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                                Text="(*)" ControlToValidate="m_txt_ngay_duyet" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
                                         </td>
                                         <td>
                                         </td>
@@ -497,7 +497,6 @@
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" Height="24px" />
                                     <asp:HiddenField ID="m_hdf_id" runat="server" Value="-1" />
-                                    <asp:HiddenField ID="m_hdf_lua_chon" runat="server" />
                                 </td>
                             </tr>
                         </table>
