@@ -16,10 +16,6 @@ using System.Threading;
 
 public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
 
-    #region Public Interfaces
-
-    #endregion
-
     #region Members
     private US_GD_KHAU_HAO m_us_gd_khau_hao = new US_GD_KHAU_HAO();
     #endregion
@@ -217,6 +213,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         m_us_gd_khau_hao.DeleteByID(ip_dc_id_kh);
         v_us_dm_nha.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
         v_us_dm_nha.Update();
+        m_lbl_mess.Text = "Đã xóa thành công bản ghi";
     }
 
     private void clear_form_data()
@@ -243,16 +240,24 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
             m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
             return false;
         }
+
         string v_str_id_nha = m_cbo_ten_tai_san.SelectedValue;
         if (v_str_id_nha.Equals(String.Empty) || v_str_id_nha.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_mess.Text = "Bạn chưa chọn tài sản";
             return false;
         }
+
         decimal v_dc_gia_tri_kh = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
         if (v_dc_gia_tri_kh <= 0)
         {
             m_lbl_mess.Text = "Giá trị khấu hao phải lớn hơn 0";
+            return false;
+        }
+
+        if (!m_us_gd_khau_hao.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
+        {
+            m_lbl_mess.Text = "Mã phiếu này đã tồn tại";
             return false;
         }
         return true;
@@ -275,13 +280,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         try {
             Thread.Sleep(1000);
             load_data_to_grid();
-        }
-        catch (Exception v_e) {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_hdf_id_ValueChanged(object sender, EventArgs e) {
-        try {
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(this, v_e);

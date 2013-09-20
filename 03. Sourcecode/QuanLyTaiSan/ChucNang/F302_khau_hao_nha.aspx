@@ -243,7 +243,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
-                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_nha" ForeColor="Red">
+                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_nha" ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
                                 <td colspan="1" style="width: 20%" align="right" class="cssManField">
@@ -256,7 +256,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_nha"
+                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="(*)" ValidationGroup="m_vlg_nha"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
@@ -270,9 +270,9 @@
                                         ValidationGroup="m_vlg_nha">
                                     </asp:TextBox>
                                 </td>
-                                <td align="left" style="width: 1%" class="cssManField">
+                                <td align="left" style="width: 1%">
                                     <asp:RequiredFieldValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
-                                        ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="*" ValidationGroup="m_vlg_nha">
+                                        ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="(*)" ValidationGroup="m_vlg_nha">
                                     </asp:RequiredFieldValidator>
                                 </td>
                                 <td align="right" class="cssManField">
@@ -285,7 +285,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ControlToValidate="m_txt_ngay_duyet"
-                                        ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="*" ValidationGroup="m_vlg_nha"
+                                        ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="(*)" ValidationGroup="m_vlg_nha"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
@@ -296,7 +296,7 @@
                                         Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_nha" OnClick="m_cmd_tao_moi_Click" />
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                         Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
-                                    <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
+                                    <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
                                 </td>
                                 <td>
                                 </td>
@@ -386,7 +386,7 @@
                 <tr>
                     <td align="center" colspan="4" style="height: 450px;" valign="top">
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
+                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True" CssClass="cssGrid"
                             EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging"
                             OnRowCommand="m_grv_danh_sach_nha_RowCommand">
                             <Columns>
