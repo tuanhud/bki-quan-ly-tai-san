@@ -253,6 +253,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         m_us_gd_kh.DeleteByID(ip_dc_id_kh);
         v_us_dm_oto.dcGIA_TRI_CON_LAI += ip_dc_gia_tri_kh;
         v_us_dm_oto.Update();
+        m_lbl_message.Text = "Đã xóa thành công bản ghi";
     }
 
     private void export_gridview_2_excel()

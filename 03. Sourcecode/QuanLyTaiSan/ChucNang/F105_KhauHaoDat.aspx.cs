@@ -18,6 +18,7 @@ using System.Threading;
 public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 {
     #region Members
+    private US_GD_KHAU_HAO m_us_gd_kh = new US_GD_KHAU_HAO();
     #endregion
 
     #region Private Methods
@@ -194,7 +195,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 
         if (!m_us_gd_kh.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
         {
-            m_lbl_message.Text = "Mã phiếu này đã tồn tại";
+            m_lbl_mess.Text = "Mã phiếu này đã tồn tại";
             return false;
         }
         return true;
@@ -207,6 +208,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         v_us_gd_khau_hao.DeleteByID(ip_dc_id_kh);
         v_us_dm_dat.dcGT_THEO_SO_KE_TOAN += ip_dc_gia_tri_kh;
         v_us_dm_dat.Update();
+        m_lbl_mess.Text = "Đã xóa thành công bản ghi";
     }
     #endregion
 
