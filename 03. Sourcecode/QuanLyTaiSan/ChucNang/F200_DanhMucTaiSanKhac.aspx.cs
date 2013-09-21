@@ -278,10 +278,11 @@ public partial class Default2 : System.Web.UI.Page
     private void insert_data()
     {
         if (!check_validate_data_is_ok()) return;
-
+        
         form_2_us_object();
         m_us_tai_san_khac.Insert();
         load_data_2_grid();
+        hdf_id.Value = m_us_tai_san_khac.dcID.ToString();
         m_lbl_mess.Text = "Tạo mới thành công!";
     }
     private void load_data_to_ly_do()
