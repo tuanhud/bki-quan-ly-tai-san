@@ -416,6 +416,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
             m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
             m_lbl_mess.Text = "Đã thêm mới dữ liệu nhà thành công!";
+            display_panel_tang_giam();
         }
     }
     private void load_data_to_ly_do()
@@ -522,7 +523,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         try {
             clear_message();
             insert_nha();
-            display_panel_tang_giam();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(this, v_e);
