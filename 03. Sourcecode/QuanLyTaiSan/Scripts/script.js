@@ -22,18 +22,18 @@
     });
 });
 
-function getFormatedNumberString(ip_str_number) {
-    ip_str_number = ip_str_number.toString().replace(/\$|\,/g, '');
-    if (isNaN(ip_str_number))
-        ip_str_number = "0";
-    sign = (ip_str_number == (ip_str_number = Math.abs(ip_str_number)));
-    ip_str_number = Math.floor(ip_str_number * 100 + 0.50000000001);
-    ip_str_number = Math.floor(ip_str_number / 100).toString();
-    for (var i = 0; i < Math.floor((ip_str_number.length - (1 + i)) / 3); i++)
-        ip_str_number = ip_str_number.substring(0, ip_str_number.length - (4 * i + 3)) + ',' +
-            ip_str_number.substring(ip_str_number.length - (4 * i + 3));
-    return (((sign) ? '' : '-') + ip_str_number);
-}
+//function getFormatedNumberString(ip_str_number) {
+//    ip_str_number = ip_str_number.toString().replace(/\$|\,/g, '');
+//    if (isNaN(ip_str_number))
+//        ip_str_number = "0";
+//    sign = (ip_str_number == (ip_str_number = Math.abs(ip_str_number)));
+//    ip_str_number = Math.floor(ip_str_number * 100 + 0.50000000001);
+//    ip_str_number = Math.floor(ip_str_number / 100).toString();
+//    for (var i = 0; i < Math.floor((ip_str_number.length - (1 + i)) / 3); i++)
+//        ip_str_number = ip_str_number.substring(0, ip_str_number.length - (4 * i + 3)) + ',' +
+//            ip_str_number.substring(ip_str_number.length - (4 * i + 3));
+//    return (((sign) ? '' : '-') + ip_str_number);
+//}
 
 //function getFormatedNumberString(ip_str_number) {
 //    ip_str_number = ip_str_number.toString().replace(/\$|\,/g, '');
@@ -50,6 +50,19 @@ function getFormatedNumberString(ip_str_number) {
 //            ip_str_number.substring(ip_str_number.length - (4 * i + 3));
 //    return (((sign) ? '' : '-') + ip_str_number + v_digits);
 //}
+
+function getFormatedNumberString(ip_str_number) {
+    ip_str_number = ip_str_number.toString().replace(/\$|\,/g, '');
+    if (isNaN(ip_str_number))
+        ip_str_number = "0";
+    sign = (ip_str_number == (ip_str_number = Math.abs(ip_str_number)));
+    ip_str_number = Math.floor(ip_str_number * 100 + 0.50000000001);
+    ip_str_number = Math.floor(ip_str_number / 100).toString();
+    for (var i = 0; i < Math.floor((ip_str_number.length - (1 + i)) / 3); i++)
+        ip_str_number = ip_str_number.substring(0, ip_str_number.length - (4 * i + 3)) + ',' +
+            ip_str_number.substring(ip_str_number.length - (4 * i + 3));
+    return (((sign) ? ip_str_number : '0'));
+}
 
 function getNumber(ip_str_number) {
     ip_str_number = ip_str_number.toString().replace(/\$|\,/g, '');
