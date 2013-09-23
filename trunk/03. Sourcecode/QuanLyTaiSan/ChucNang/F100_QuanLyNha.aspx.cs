@@ -413,6 +413,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             Thread.Sleep(2000);
             form_2_us_nha();
             m_us_dm_nha.Insert();
+            reset_controls_in_form();
             m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
             m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
             m_lbl_mess.Text = "Đã thêm mới dữ liệu nhà thành công!";
