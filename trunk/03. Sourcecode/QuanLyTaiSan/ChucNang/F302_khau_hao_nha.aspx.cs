@@ -219,14 +219,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     private void clear_form_data()
     {
         m_hdf_id.Value = "";
-        m_lbl_nguyen_gia_nguon_khac.Text = "";
-        m_lbl_nguyen_gia_nguon_ns.Text = "";
-        m_lbl_gia_tri_con_lai.Text = "";
-        m_lbl_ten_tai_san.Text = "";
-        m_lbl_ma_tai_san.Text = "";
-        m_lbl_cap_hang.Text = "";
-        m_lbl_nam_xay_dung.Text = "";
-        m_lbl_ngay_thang_nam_du_dung.Text = "";
         m_txt_ma_phieu.Text = "";
         m_txt_ngay_duyet.Text = "";
         m_txt_ngay_lap.Text = "";
