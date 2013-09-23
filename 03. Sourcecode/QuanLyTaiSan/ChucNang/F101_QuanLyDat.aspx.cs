@@ -310,7 +310,6 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         Thread.Sleep(2000);
         m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
         reset_controls_in_form();
-
         load_data_2_form();
         m_lbl_mess.Text = "Đã cập nhật dữ liệu đất thành công!";
 
@@ -327,9 +326,9 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         m_hdf_id.Value = m_us_dm_dat.dcID.ToString();
         m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
         reset_controls_in_form();
-
         load_data_2_form();
         m_lbl_mess.Text = "Đã thêm mới dữ liệu đất thành công!";
+        display_panel_tang_giam();
     }
     private void clear_message()
     {
@@ -429,7 +428,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             clear_message();
             add_new_dat();
-            display_panel_tang_giam();
+            
         }
         catch (Exception v_e)
         {
