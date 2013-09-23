@@ -319,7 +319,7 @@ namespace WebUS
         public bool check_valid_ma_phieu(string ip_str_ma_phieu)
         {
             DS_GD_TANG_GIAM_TAI_SAN v_ds_gd_tang_giam = new DS_GD_TANG_GIAM_TAI_SAN();
-            this.FillDataset(v_ds_gd_tang_giam, "where " + GD_TANG_GIAM_TAI_SAN.MA_PHIEU + " = " + ip_str_ma_phieu);
+            this.FillDataset(v_ds_gd_tang_giam, "where " + GD_TANG_GIAM_TAI_SAN.MA_PHIEU + " = '" + ip_str_ma_phieu + "'");
             return v_ds_gd_tang_giam.GD_TANG_GIAM_TAI_SAN.Rows.Count == 0;
         }
         #endregion
