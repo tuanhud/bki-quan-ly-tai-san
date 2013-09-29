@@ -389,10 +389,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         m_lbl_thong_bao.Text = "";
         set_form_mode();
     }
-    private decimal get_id_bo_tinh(decimal ip_dc_id_don_vi_chu_quan) {
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(ip_dc_id_don_vi_chu_quan);
-        return v_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
-    }
     private void update_nha() {
         m_lbl_mess.Text = "";
         m_e_form_mode = DataEntryFormMode.UpdateDataState;
