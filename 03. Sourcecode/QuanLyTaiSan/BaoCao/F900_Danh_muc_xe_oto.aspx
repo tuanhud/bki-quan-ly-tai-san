@@ -117,7 +117,7 @@
                 <tr>
                     <td>
                         <asp:GridView ID="m_grv_bao_cao_oto" AllowPaging="true" runat="server" AutoGenerateColumns="False"
-                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" PageSize="10"
+                            Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" PageSize="15"
                             EmptyDataText="Không có dữ liệu phù hợp!" OnPageIndexChanging="m_grv_bao_cao_oto_PageIndexChanging">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
@@ -189,13 +189,13 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
                                                 <td style="width: 33.5%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("NGUON_NS", "{0:0,000}")%>
+                                                    <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 33.5%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("NGUON_KHAC", "{0:0,000}")%>
+                                                    <%# Eval("NGUON_KHAC", "{0:###,##0}")%>
                                                 </td>
                                                 <td style="width: 33%; height: 50px" align="right">
-                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:0,000}")%>
+                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:###,##0}")%>
                                                 </td>
                                             </tr>
                                         </table>
