@@ -556,6 +556,7 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
+                                    <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                     <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
                                     <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />
@@ -566,7 +567,7 @@
                                                 height: 100%">
                                                 <tr style="height: 30%">
                                                     <td colspan="3" style="height: 100%">
-                                                        Giá trị theo sổ kế toán
+                                                        Giá trị theo sổ kế toán (VNĐ)
                                                     </td>
                                                 </tr>
                                                 <tr style="height: 30%">
@@ -591,14 +592,14 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
-                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px" height="40px"
+                                                    <td style="width: 33%; border-right: 1px solid gray;" height="40px"
                                                         align="right">
                                                         <%# Eval("NGUON_NS", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px" align="right">
+                                                    <td style="width: 33%; border-right: 1px solid gray;" align="right">
                                                         <%# Eval("NGUON_KHAC", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px" align="right">
+                                                    <td style="width: 33%; border-right: 1px solid gray;" align="right">
                                                         <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
@@ -611,7 +612,7 @@
                                                 height: 100%">
                                                 <tr style="height: 30%">
                                                     <td colspan="4" style="height: 60px">
-                                                        Hiện trạng sử dụng
+                                                        Hiện trạng sử dụng (cái, chiếc)
                                                     </td>
                                                 </tr>
                                                 <tr style="height: 30%">
@@ -638,17 +639,17 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px" height="40px"
+                                                    <td style="width: 25%; border-right: 1px solid gray;" height="40px"
                                                         align="right">
                                                         <%# Eval("QLNN", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px" align="right">
+                                                    <td style="width: 25%; border-right: 1px solid gray;" align="right">
                                                         <%# Eval("KINH_DOANH", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px" align="right">
+                                                    <td style="width: 25%; border-right: 1px solid gray;" align="right">
                                                         <%# Eval("KHONG_KINH_DOANH", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px" align="right">
+                                                    <td style="width: 25%; border-right: 1px solid gray;" align="right">
                                                         <%# Eval("HD_KHAC", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
