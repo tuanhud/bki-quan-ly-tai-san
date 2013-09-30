@@ -81,10 +81,10 @@
                 </tr>
                 <tr>
                     <td colspan="1" align="right">
-                        <asp:Label ID="m_lbl_tim_kiem" runat="server" Text="Tìm kiếm:" CssClass="cssManField"></asp:Label>
+                        <asp:Label ID="m_lbl_tu_khoa" runat="server" Text="Từ khoá:" CssClass="cssManField"></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" Style="width: 89%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Style="width: 89%"></asp:TextBox>
                     </td>
                 </tr>
                 <tr style="height: 10px">
