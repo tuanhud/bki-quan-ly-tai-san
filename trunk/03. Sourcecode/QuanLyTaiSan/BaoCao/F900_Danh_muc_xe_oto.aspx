@@ -79,7 +79,7 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <span class="cssManField">Từ khóa:</span>&nbsp;
+                        <asp:Label ID="m_lbl_tu_khoa" runat="server" CssClass="cssManField" Text="Từ khoá:"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="95%"></asp:TextBox>
@@ -189,13 +189,13 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
                                                 <td style="width: 33.5%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("NGUON_NS", "{0:#,###.00}")%>
+                                                    <%# Eval("NGUON_NS", "{0:0,000}")%>
                                                 </td>
                                                 <td style="width: 33.5%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("NGUON_KHAC", "{0:#,###.00}")%>
+                                                    <%# Eval("NGUON_KHAC", "{0:0,000}")%>
                                                 </td>
                                                 <td style="width: 33%; height: 50px" align="right">
-                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:#,###.00}")%>
+                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:0,000}")%>
                                                 </td>
                                             </tr>
                                         </table>
