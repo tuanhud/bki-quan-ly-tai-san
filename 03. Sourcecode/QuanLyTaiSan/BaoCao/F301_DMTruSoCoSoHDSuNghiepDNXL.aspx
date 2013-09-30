@@ -342,7 +342,7 @@
                                 <asp:BoundField HeaderText="NĂM XÂY DỰNG" HeaderStyle-Width="2%" DataField="NAM_XAY_DUNG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" HeaderStyle-Width="2%" DataField="NGAY_THANG_NAM_SU_DUNG">
+                                <asp:BoundField HeaderText="NĂM SỬ DỤNG" HeaderStyle-Width="2%" DataField="NGAY_THANG_NAM_SU_DUNG">
                                     <ItemStyle HorizontalAlign="center" />
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderStyle-Width="18.5%" HeaderStyle-Height="110px">
