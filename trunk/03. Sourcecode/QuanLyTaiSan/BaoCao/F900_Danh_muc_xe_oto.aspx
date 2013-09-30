@@ -169,7 +169,7 @@
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="3" style="height: 50px">
+                                                <td colspan="3" style="height: 60px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
                                                     (đồng)
@@ -179,15 +179,15 @@
                                                 <td colspan="2" style="height: 30px">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="height: 60px">
+                                                <td rowspan="2" style="height: 60px;width: 33.33%">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 33.5%">
+                                                <td style="width: 33.33%">
                                                     Nguồn NS
                                                 </td>
-                                                <td style="width: 33.5%;">
+                                                <td style="width: 33.33%;">
                                                     Nguồn khác
                                                 </td>
                                             </tr>
@@ -196,13 +196,13 @@
                                     <ItemTemplate>
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td style="width: 33.5%; border-right: 1px solid gray;" align="right">
+                                                <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
                                                     <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                                 </td>
-                                                <td style="width: 33.5%; border-right: 1px solid gray;" align="right">
+                                                <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
                                                     <%# Eval("NGUON_KHAC", "{0:###,##0}")%>
                                                 </td>
-                                                <td style="width: 33%; height: 50px" align="right">
+                                                <td style="width: 33.33%; height: 60px" align="right">
                                                     <%# Eval("GIA_TRI_CON_LAI", "{0:###,##0}")%>
                                                 </td>
                                             </tr>
@@ -214,7 +214,7 @@
                                     <HeaderTemplate>
                                         <table border="1" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="4" style="height: 50px">
+                                                <td colspan="4" style="height: 60px">
                                                     HIỆN TRẠNG SỬ DỤNG
                                                     <br />
                                                     (chiếc)
@@ -244,7 +244,7 @@
                                     <ItemTemplate>
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                             <tr>
-                                                <td style="width: 25%; border-right: 1px solid gray; height: 50px" align="right">
+                                                <td style="width: 25%; border-right: 1px solid gray; height: 60px" align="right">
                                                     <%# Eval("QLNN") %>
                                                 </td>
                                                 <td style="width: 25%; border-right: 1px solid gray;" align="right">
