@@ -132,7 +132,7 @@
                                                 height: 100%">
                                                 <tr>
                                                     <td colspan="4" style="height: 39px">
-                                                        Hiện trạng sử dụng
+                                                        Hiện trạng sử dụng (cái, chiếc)
                                                     </td>
                                                 </tr>
                                                 <tr>
