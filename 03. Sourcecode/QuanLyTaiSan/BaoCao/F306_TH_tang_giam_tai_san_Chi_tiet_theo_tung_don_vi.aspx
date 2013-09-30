@@ -17,7 +17,7 @@
                             <span class="cssPageTitle">TỔNG HỢP TÌNH HÌNH TĂNG, GIẢM TÀI SẢN NHÀ NƯỚC</span>
                             <span class="expand-collapse-text"></span>
                             <br />
-                            <span class="cssPageTitle">Phần 1: Tổng hợp chung</span><span class="expand-collapse-text initial-expand"></span>
+                            <span class="cssPageTitle">Phần 3: Chi tiết theo từng đơn vị</span><span class="expand-collapse-text initial-expand"></span>
                         </td>
                     </tr>
                     <tr>
