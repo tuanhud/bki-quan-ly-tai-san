@@ -157,7 +157,12 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         //load data to combobox trang thai o to
         string v_str_id_loai_bao_cao = "";
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null)
+        {
+            Response.Clear();
+            Response.Redirect("/QuanLyTaiSan/", false);
+            return;
+        }
         v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         load_data_to_cbo_loai_xe(WinFormControls.eTAT_CA.YES);
         WinFormControls.eTAT_CA v_e_tat_ca = WinFormControls.eTAT_CA.NO;
@@ -223,7 +228,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             m_cbo_loai_hinh_don_vi.SelectedValue
             , m_cbo_don_vi_quan_ly.SelectedValue
             , m_cbo_bo_tinh.SelectedValue
-            ,v_e_tat_ca
+            , v_e_tat_ca
             , m_cbo_don_vi_su_dung
             );
         m_cmd_tim_kiem_Click(m_cmd_tim_kiem, EventArgs.Empty);
@@ -233,7 +238,12 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         reset_thong_bao();
         string v_str_id_loai_bao_cao = "";
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null)
+        {
+            Response.Clear();
+            Response.Redirect("/QuanLyTaiSan/", false);
+            return;
+        }
         v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         switch (v_str_id_loai_bao_cao)
         {
@@ -277,7 +287,12 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         reset_thong_bao();
         string v_str_id_loai_bao_cao = "";
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null)
+        {
+            Response.Clear();
+            Response.Redirect("/QuanLyTaiSan/",false);
+            return;
+        }
         v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         switch (v_str_id_loai_bao_cao)
         {
@@ -313,7 +328,12 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         reset_thong_bao();
         string v_str_id_loai_bao_cao = "";
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null)
+        {
+            Response.Clear();
+            Response.Redirect("/QuanLyTaiSan/", false);
+            return;
+        }
         v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         switch (v_str_id_loai_bao_cao)
         {
