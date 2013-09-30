@@ -254,7 +254,7 @@
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                                 <tr>
                                                     <td colspan="7" style="height: 39px">
-                                                        Hiện trạng sử dụng
+                                                        Hiện trạng sử dụng (cái, chiếc)
                                                     </td>
                                                 </tr>
                                                 <tr>
