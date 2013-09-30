@@ -186,7 +186,7 @@
                                                 height: 100%; color: white">
                                                 <tr>
                                                     <td colspan="3" style="height: 35px; text-align: center">
-                                                        Giá trị theo sổ kế toán (đồng)
+                                                        Giá trị theo sổ kế toán (VNĐ)
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -212,13 +212,13 @@
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                                 text-align: right">
                                                 <tr>
-                                                    <td style="width: 33%; border-right: 1px solid gray;" height="40px">
+                                                    <td style="width: 33%; border-right: 1px solid gray" height="40px">
                                                         <%# Eval("NGUON_NS", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 33%; border-right: 1px solid gray;">
+                                                    <td style="width: 33%; border-right: 1px solid gray">
                                                         <%# Eval("NGUON_KHAC", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 33%"; border-right: 1px solid gray;">
+                                                    <td style="width: 33%">
                                                         <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
@@ -231,7 +231,7 @@
                                                 height: 100%; color: white">
                                                 <tr>
                                                     <td colspan="4" style="height: 39px; text-align: center">
-                                                        Hiện trạng sử dụng
+                                                        Hiện trạng sử dụng (cái, chiếc)
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -259,16 +259,16 @@
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="text-align: right;
                                                 border-collapse: collapse">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: 1px solid gray;" height="40px">
+                                                    <td style="width: 25%; border-right: 1px solid gray" height="40px">
                                                         <%# Eval("QLNN", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: 1px solid gray;"">
+                                                    <td style="width: 25%; border-right: 1px solid gray"">
                                                         <%# Eval("KINH_DOANH", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: 1px solid gray;">
+                                                    <td style="width: 25%; border-right: 1px solid gray">
                                                         <%# Eval("KHONG_KINH_DOANH", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%"; border-right: 1px solid gray;">
+                                                    <td style="width: 25%">
                                                         <%# Eval("HD_KHAC", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
