@@ -508,6 +508,13 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 load_data_trang_thai();
                 load_data_to_grid();
                 hidden_panel_tang_giam();
+                //Code này là chức năng liên quan đến from F1000
+                if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_OTO] != null)
+                {
+                    decimal v_dc_id_oto = CIPConvert.ToDecimal(Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_OTO]);
+                    m_us_dm_oto = new US_DM_OTO(v_dc_id_oto);
+                    us_obj_2_form(m_us_dm_oto);
+                }
             }
         }
         catch (Exception v_e)
