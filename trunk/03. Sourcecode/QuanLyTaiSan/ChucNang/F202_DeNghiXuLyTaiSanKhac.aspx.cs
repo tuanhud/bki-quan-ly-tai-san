@@ -28,6 +28,7 @@ public partial class Default2 : System.Web.UI.Page
     #region Private methods
     private void load_form_data()
     {
+        m_lbl_tieu_de.Text = "DANH SÁCH TÀI SẢN KHÁC";
         WinFormControls.load_data_to_cbo_loai_hinh_don_vi(
                     WinFormControls.eLOAI_TU_DIEN.LOAI_HINH_DON_VI
                     , WinFormControls.eTAT_CA.YES
@@ -68,8 +69,8 @@ public partial class Default2 : System.Web.UI.Page
                     , m_ds_v_tai_san_khac);
         m_grv_danh_sach_tai_san_khac.DataSource = m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC;
         string v_str_thong_tin = " (Có " + m_ds_v_tai_san_khac.V_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
-        m_lbl_title.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ)";
-        m_lbl_title.Text += v_str_thong_tin;
+        m_lbl_tieu_de.Text = "DANH SÁCH TÀI SẢN KHÁC";
+        m_lbl_tieu_de.Text += v_str_thong_tin;
         m_grv_danh_sach_tai_san_khac.DataBind();
     }
 
@@ -114,7 +115,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            m_lbl_title.Text = "DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP VÀ XE Ô TÔ)";
+            m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC";
             Thread.Sleep(2000);
             load_data_to_grid();
             set_trang_thai_cmd();

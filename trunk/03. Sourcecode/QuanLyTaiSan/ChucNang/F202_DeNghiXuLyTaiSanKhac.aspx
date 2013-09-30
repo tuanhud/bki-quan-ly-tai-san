@@ -144,13 +144,6 @@
                 </table>
                 <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                     <tr>
-                        <td class="cssPageTitleBG" colspan="6">
-                        <asp:Label ID="m_lbl_title" runat="server" Text="DANH MỤC TÀI SẢN KHÁC (TRỪ TRỤ SỞ LÀM VIỆC, CƠ SỞ HOẠT ĐỘNG
-                                SỰ NGHIỆP VÀ XE Ô TÔ)" CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
-                            </span><span class="expand-collapse-text"></span>
-                        </td>
-                    </tr>
-                    <tr>
                         <td align="right">
                         </td>
                         <td align="left">
@@ -182,13 +175,13 @@
                                 AllowSorting="True" PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp"
                                 OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
+                                    <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false" >
                                         <ItemTemplate>
                                             <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
                                                 ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Select">
+                                    <asp:TemplateField HeaderText="Select" ItemStyle-HorizontalAlign="Center">
                                         <ItemTemplate>
                                             <asp:CheckBox runat="server" ID="chkItem" ToolTip='<%# Eval("ID") %>' />
                                             <asp:CheckBox runat="server" ID="chkTrangThai" Visible="false" />
@@ -198,6 +191,11 @@
                                                 runat="server" />
                                         </HeaderTemplate>
                                     </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                     <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN"
                                         NavigateUrl="" HeaderStyle-Width="20%" />
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
