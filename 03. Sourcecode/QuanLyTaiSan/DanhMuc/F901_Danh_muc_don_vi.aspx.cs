@@ -234,8 +234,8 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
             m_cbo_don_vi_cap_tren.Items.Insert(0, new ListItem("Không có cấp trên", "Không có cấp trên"));
         }
         m_cbo_don_vi_cap_tren.DataBind();
-        m_txt_ma_don_vi.Text = i_us_don_vi.strMA_DON_VI;
-        m_txt_ten_don_vi.Text = i_us_don_vi.strTEN_DON_VI;
+        m_txt_ma_don_vi.Text = i_us_don_vi.strMA_DON_VI.Trim();
+        m_txt_ten_don_vi.Text = i_us_don_vi.strTEN_DON_VI.Trim();
         m_cbo_loai_don_vi.SelectedValue = CIPConvert.ToStr(i_us_don_vi.dcID_LOAI_DON_VI);
         m_cbo_loai_don_vi.DataBind();
         m_cbo_loai_hinh_don_vi.SelectedValue = CIPConvert.ToStr(i_us_don_vi.strLOAI_HINH_DON_VI);
