@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F900_Danh_muc_xe_oto.aspx.cs" Inherits="BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly" %>
-
+<%@ Import Namespace="WebUS" %>
+<%@ Import Namespace="WebDS.CDBNames" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -124,6 +125,13 @@
                                 <asp:TemplateField HeaderStyle-Width="2%" ItemStyle-HorizontalAlign="center" HeaderText="STT">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                               <asp:TemplateField HeaderStyle-Width="2%" HeaderText="CHI TIẾT" ItemStyle-HorizontalAlign='center' HeaderStyle-HorizontalAlign='center'>
+                                    <ItemTemplate>
+                                        <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
+                                            NavigateUrl='<%# "~/ChucNang/F500_QuanLyOto.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_OTO+"="+Eval(V_DM_OTO.ID) %>'
+                                            ImageUrl="~/Images/Button/detail.png">Chi tiết</asp:HyperLink>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="ĐƠN VỊ BỘ TỈNH" DataField="TEN_DV_BO_TINH" HeaderStyle-Width="6%" />
