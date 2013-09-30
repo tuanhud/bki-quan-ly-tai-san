@@ -145,7 +145,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         string v_str_user_name = Person.get_user_name();
         if (v_str_user_name.Equals(null)) return;
         v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
-            ""
+            m_txt_tim_kiem.Text
             , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
@@ -418,13 +418,21 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         {
             case C_STR_LOAI_KE_KHAI:
                 v_e_tat_ca = WinFormControls.eTAT_CA.NO;
-
+                m_txt_tim_kiem.Visible = false;
+                m_lbl_tim_kiem.Visible = false;
+                m_txt_tim_kiem.Text = "";
                 break;
             case C_STR_LOAI_DE_NGHI_XU_LY:
                 v_e_tat_ca = WinFormControls.eTAT_CA.NO;
+                m_txt_tim_kiem.Visible = false;
+                m_lbl_tim_kiem.Visible = false;
+                m_txt_tim_kiem.Text = "";
                 break;
             case C_STR_LOAI_THONG_KE:
                 v_e_tat_ca = WinFormControls.eTAT_CA.YES;
+                m_txt_tim_kiem.Visible = true;
+                m_lbl_tim_kiem.Visible = true;
+                m_txt_tim_kiem.Text = "";
                 break;
         }
 

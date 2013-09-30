@@ -79,6 +79,14 @@
                         </asp:DropDownList>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="1" align="right">
+                        <asp:Label ID="m_lbl_tim_kiem" runat="server" Text="Tìm kiếm:" CssClass="cssManField"></asp:Label>
+                    </td>
+                    <td colspan="1">
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" Style="width: 89%"></asp:TextBox>
+                    </td>
+                </tr>
                 <tr style="height: 10px">
                     <td>
                     </td>
