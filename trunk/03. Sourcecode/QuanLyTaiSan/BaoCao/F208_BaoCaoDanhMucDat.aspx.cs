@@ -71,6 +71,15 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
                             , "DS đất.xls"
                             ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
                 break;
+            case CONST_QLDB.LOAI_BAO_CAO.DVSD:
+                m_grv_danh_sach_dat.AllowPaging = false;
+                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                WinformReport.export_gridview_2_excel(
+                            m_grv_danh_sach_dat
+                            , "DS đất.xls"
+                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+                break;
         }
     }
     private void set_inital_value_of_combox()
@@ -90,7 +99,21 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
     }
     private void set_form_title_and_cbo()
     {
-
+        string v_str_kieu_bc = "";
+        string v_str_id_trang_thai = "";
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
+        {
+            v_str_id_trang_thai = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
+        }
+        switch (v_str_id_trang_thai)
+        {
+            case "597":
+                v_str_kieu_bc = "KÊ KHAI ĐẤT";
+                break;
+            case "594":
+                v_str_kieu_bc = "ĐỀ NGHỊ XỬ LÝ ĐẤT";
+                break;
+        }
         string v_str_loai_bao_cao = "";
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
         {
@@ -100,7 +123,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         {
             case CONST_QLDB.LOAI_BAO_CAO.DVSD:
                 // KÊ KHAI ĐƠN VỊ SỬ DỤNG
-                m_lbl_tieu_de.Text = "BÁO CÁO ĐẤT";
+                m_lbl_tieu_de.Text = "BÁO CÁO " + v_str_kieu_bc;
                 m_cbo_trang_thai.Enabled = false;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.NO;
                 m_txt_tim_kiem.Visible = false;

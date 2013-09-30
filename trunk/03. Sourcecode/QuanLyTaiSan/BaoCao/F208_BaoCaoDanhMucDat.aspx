@@ -83,8 +83,7 @@
                                 Visible="False">Tìm kiếm:</asp:Label>
                         </td>
                         <td>
-                            &nbsp;
-                            <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="90%"></asp:TextBox>
                         </td>
                         <td align="right">
                             <span class="cssManField">Trạng thái:</span>
@@ -152,7 +151,7 @@
                                             <%# Container.DataItemIndex + 1 %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Chi tiết">
                                         <ItemTemplate>
                                             <asp:HyperLink ID="m_lnk_lop_mon_detail" runat="server" Target="_blank" ToolTip="Xem chi tiết"
                                                 NavigateUrl='<%# "~/ChucNang/F101_QuanLyDat.aspx?"+CONST_QLDB.MA_THAM_SO_URL.ID_DAT+"="+Eval(V_DM_DAT.ID) %>'
@@ -160,6 +159,11 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
+                                    <asp:BoundField HeaderText="Đơn vị bộ tỉnh" DataField="TEN_DV_BO_TINH" />
+                                    <asp:BoundField HeaderText="Đơn vị chủ quản" DataField="TEN_DV_CHU_QUAN" />
+                                    <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
+                                    <asp:BoundField HeaderText="Trạng thái" DataField="TEN_TRANG_THAI" />
+                                    <asp:BoundField HeaderText="Tình trạng" DataField="TEN_TINH_TRANG" />
                                     <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
                                     <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
                                         DataFormatString="{0:#,##0.00}" />
