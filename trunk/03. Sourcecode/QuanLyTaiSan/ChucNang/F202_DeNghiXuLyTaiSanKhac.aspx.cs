@@ -55,6 +55,7 @@ public partial class Default2 : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
+        
         US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
         DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
         US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
@@ -101,6 +102,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            m_lbl_mess.Text = "";
             if (!IsPostBack)
             {
                 load_form_data();
@@ -231,6 +233,7 @@ public partial class Default2 : System.Web.UI.Page
             Thread.Sleep(2000);
             load_data_to_grid();
             set_trang_thai_cmd();
+            m_lbl_mess.Text = "Đã cập nhập thành công";
         }
         catch (Exception v_e)
         {
