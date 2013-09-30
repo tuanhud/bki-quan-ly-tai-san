@@ -53,7 +53,7 @@ namespace WebUS
             public const string ID_NHA = "ip_id_nha";
             public const string ID_TAI_SAN_KHAC = "ip_id_tai_san_khac";
             public const string ID_DAT = "ip_id_dat";
-            
+            public const string ID_OTO = "ip_id_oto";
         }
         public class LOAI_BAO_CAO {
             public const string DVSD = "DVSD";
