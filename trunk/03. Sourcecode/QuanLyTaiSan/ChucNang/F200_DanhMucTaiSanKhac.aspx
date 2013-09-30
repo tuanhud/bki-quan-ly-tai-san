@@ -559,7 +559,7 @@
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                     <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
                                     <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />
-                                    <asp:BoundField HeaderText="Ngày, tháng, năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center" />
+                                    <asp:BoundField HeaderText="Năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center" />
                                     <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;
