@@ -11,6 +11,8 @@ using IP.Core.IPCommon;
 using WebUS;
 using IP.Core.WinFormControls;
 using System.Threading;
+using IP.Core.IPBusinessService;
+using IP.Core.IPException;
 
 public partial class Default2 : System.Web.UI.Page
 {
