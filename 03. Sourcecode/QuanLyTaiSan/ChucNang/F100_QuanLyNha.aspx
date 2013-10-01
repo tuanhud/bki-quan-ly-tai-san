@@ -517,8 +517,8 @@
                         <span class="cssManField">Từ khóa</span>
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%"
-                            CausesValidation="false"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%" AutoPostBack="true"
+                            CausesValidation="false" ontextchanged="m_txt_tu_khoa_TextChanged"></asp:TextBox>
                     </td>
                     <td align="left">
                     </td>
