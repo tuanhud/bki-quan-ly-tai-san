@@ -275,7 +275,7 @@ namespace WebUS
         public bool check_ma_khau_hao_is_valid(string ip_str_ma_phieu)
         {
             DS_GD_KHAU_HAO v_ds_gd_khau_hao = new DS_GD_KHAU_HAO();
-            this.FillDataset(v_ds_gd_khau_hao, "where " + GD_KHAU_HAO.MA_PHIEU + " = " + ip_str_ma_phieu);
+            this.FillDataset(v_ds_gd_khau_hao, "where " + GD_KHAU_HAO.MA_PHIEU + " = '" + ip_str_ma_phieu + "'");
             return v_ds_gd_khau_hao.GD_KHAU_HAO.Rows.Count == 0;
         }
         #endregion
