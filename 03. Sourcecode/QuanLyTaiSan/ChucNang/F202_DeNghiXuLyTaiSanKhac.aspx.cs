@@ -258,4 +258,24 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
     #endregion
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Thread.Sleep(2000);
+            // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
+            m_grv_danh_sach_tai_san_khac.AllowPaging = false;
+            load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+            // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+            WinformReport.export_gridview_2_excel(
+                        m_grv_danh_sach_tai_san_khac
+                        , "DS tsk de nghi xu ly.xls"
+                        , 0); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+        }
+        catch (Exception ex)
+        {
+            CSystemLog_301.ExceptionHandle(ex);
+        }
+
+    }
 }
