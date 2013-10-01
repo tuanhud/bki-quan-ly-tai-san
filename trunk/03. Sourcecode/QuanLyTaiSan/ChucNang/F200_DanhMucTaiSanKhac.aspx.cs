@@ -287,6 +287,7 @@ public partial class Default2 : System.Web.UI.Page
         hdf_id.Value = m_us_tai_san_khac.dcID.ToString();
         reset_control();
         m_lbl_mess.Text = "Tạo mới thành công!";
+        display_panel_tang_giam();
     }
     private void load_data_to_ly_do()
     {
