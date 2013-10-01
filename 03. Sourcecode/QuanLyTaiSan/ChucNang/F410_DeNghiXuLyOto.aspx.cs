@@ -62,6 +62,8 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
     }
     private void load_data_to_grid()
     {
+        m_lbl_ket_qua_loc_du_lieu.Text = "Kết quả lọc dữ liệu";
+
         US_V_DM_OTO v_us_v_dm_oto = new US_V_DM_OTO();
         DS_V_DM_OTO v_ds_v_dm_oto = new DS_V_DM_OTO();
 
@@ -71,10 +73,14 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
             , CIPConvert.ToDecimal(m_ddl_dv_chu_quan.SelectedValue)
             , CIPConvert.ToDecimal(m_ddl_dv_sd_ts.SelectedValue)
             , CIPConvert.ToDecimal(m_ddl_trang_thai_oto.SelectedValue)
-            , CIPConvert.ToDecimal(m_ddl_trang_thai_oto.SelectedValue)
-            , CONST_QLDB.ID_TAT_CA.ToString()
+            , CONST_QLDB.ID_TAT_CA
+            , CONST_QLDB.MA_TAT_CA
             , Person.get_user_name()
             , v_ds_v_dm_oto);
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_oto.V_DM_OTO.Rows.Count + " bản ghi)";
+        m_lbl_ket_qua_loc_du_lieu.Text += v_str_thong_tin;
+
+
         m_grv_dm_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
         m_grv_dm_oto.DataBind();
     }
