@@ -1,10 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="F410_DeNghiXuLyOto.aspx.cs"
-    Inherits="ChucNang_F410_DeNghiXuLyOto" %>
+    Inherits="ChucNang_F410_DeNghiXuLyOto" EnableEventValidation="false" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-<asp:content id="Content1" contentplaceholderid="HeadContent" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <style type="text/css">
+        
     </style>
     <script type="text/javascript">
         // Hàm này dùng để check all checkbox trên lưới
@@ -22,17 +23,19 @@
                 }
         }
     </script>
-</asp:content>
-<asp:content id="Content2" contentplaceholderid="MainContent" runat="Server">
-    <asp:scriptmanager id="ScriptManager1" runat="server">
-    </asp:scriptmanager>
-    <asp:updatepanel id="UpdatePanel1" runat="server">
-        <contenttemplate>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <!--  Quan ly oto  -->
                 <tr>
                     <td class="cssPageTitleBG" colspan="2">
                         <asp:Label ID="Label1" runat="server" CssClass="cssPageTitle" Text="Quản lý ô tô" />
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
@@ -103,13 +106,14 @@
                                 <td align="left" style="width: 35%" colspan="1">
                                     &nbsp;
                                 </td>
-                               
-                                <td align="left" colspan="2" rowspan = "2" style="width: 30%;">
+                                <td align="left" colspan="2" rowspan="2" style="width: 30%;">
                                     <span class="cssManField">Chú ý:
-                                    <br />
-                                    - Chọn trạng thái &quot;1-Đang sử dụng&quot;-> Ấn tìm kiếm -> Chọn tài sản lập đề nghị xử lý
-                                    <br />
-                                    - Chọn trạng thái &quot;2-Đề nghị xử lý&quot;-> Ấn tìm kiếm -> Chọn tài sản hủy đề nghị xử lý </span>
+                                        <br />
+                                        - Chọn trạng thái &quot;1-Đang sử dụng&quot;-> Ấn tìm kiếm -> Chọn tài sản lập đề
+                                        nghị xử lý
+                                        <br />
+                                        - Chọn trạng thái &quot;2-Đề nghị xử lý&quot;-> Ấn tìm kiếm -> Chọn tài sản hủy
+                                        đề nghị xử lý </span>
                                 </td>
                             </tr>
                             <tr>
@@ -128,15 +132,15 @@
                                     &nbsp;
                                 </td>
                                 <td align="left" colspan="1" style="width: 35%">
-                                    <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" 
-                                        CssClass="cssButton" Height="24px" OnClick="m_cmd_tim_kiem_Click" 
-                                        Text="Tìm kiếm(s)" Width="98px" />
-                                        &nbsp;
+                                    <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" CssClass="cssButton"
+                                        Height="24px" OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px" />
+                                    &nbsp;
                                     <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
                                         Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
                                 </td>
                                 <td align="left" style="width: 15%;" colspan="1">
-                                    &nbsp;</td>
+                                    &nbsp;
+                                </td>
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%;">
@@ -236,8 +240,10 @@
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="3" style="height: 15px">
+                                                <td colspan="3" style="height: 45px">
                                                     Giá trị theo sổ kế toán
+                                                    <br />
+                                                    (VND)
                                                 </td>
                                             </tr>
                                             <tr>
@@ -278,7 +284,7 @@
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                             <tr>
-                                                <td colspan="7" style="height: 15px;">
+                                                <td colspan="7" style="height: 45px;">
                                                     Hiện trạng sử dụng
                                                 </td>
                                             </tr>
@@ -337,10 +343,13 @@
                 </tr>
                 <!--End Gridview-->
             </table>
-        </contenttemplate>
-    </asp:updatepanel>
-    <asp:updateprogress runat="server">
-        <progresstemplate>
+        </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+        </Triggers>
+    </asp:UpdatePanel>
+    <asp:UpdateProgress runat="server">
+        <ProgressTemplate>
             <div class="cssLoadWapper">
                 <div class="cssLoadContent">
                     <img src="../Images/loadingBar.gif" alt="" />
@@ -348,6 +357,6 @@
                         Đang gửi yêu cầu, hãy đợi ...</p>
                 </div>
             </div>
-        </progresstemplate>
-    </asp:updateprogress>
-</asp:content>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+</asp:Content>
