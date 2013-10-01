@@ -412,6 +412,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             reset_controls_in_form();
             m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
             m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
+            load_data_2_form();
             m_lbl_mess.Text = "Đã thêm mới dữ liệu nhà thành công!";
             display_panel_tang_giam();
         }
