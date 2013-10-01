@@ -47,6 +47,12 @@
                             <div class="cssLoadContent2">
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
+                                        <td colspan="2">
+                                            <asp:Label ID="m_lbl_mess_tg" runat="server" Text="" CssClass="cssManField"
+                                             ForeColor="Blue"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td colspan="2" align="center">
                                             <span class="cssManField">CHI TIẾT DUYỆT GHI TĂNG GIẢM</span>
                                         </td>
