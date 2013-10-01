@@ -154,7 +154,7 @@
                                 <td align="left" style="width: 1%;">
                                 </td>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Ngày, tháng, năm sử dụng</span>
+                                    <span class="cssManField">Năm sử dụng</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:Label ID="m_lbl_ngay_thang_nam_su_dung" runat="Server" CssClass="cssManField"
@@ -229,7 +229,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
-                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_nha" ForeColor="Red">
+                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_tai_san_khac" ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
                                 <td colspan="1" style="width: 20%" align="right" class="cssManField">
@@ -242,7 +242,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_nha"
+                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="(*)" ValidationGroup="m_vlg_tai_san_khac"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
@@ -258,7 +258,7 @@
                                 </td>
                                 <td align="left" style="width: 1%" class="cssManField">
                                     <asp:RequiredFieldValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
-                                        ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="*" ValidationGroup="m_vlg_nha">
+                                        ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="(*)" ValidationGroup="m_vlg_tai_san_khac">
                                     </asp:RequiredFieldValidator>
                                 </td>
                                 <td align="right" class="cssManField">
@@ -271,7 +271,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ControlToValidate="m_txt_ngay_duyet"
-                                        ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="*" ValidationGroup="m_vlg_nha"
+                                        ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="(*)" ValidationGroup="m_vlg_tai_san_khac"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
@@ -354,7 +354,7 @@
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
-                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
+                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" CausesValidation="false"/>
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
