@@ -372,7 +372,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_thong_tin_dat" runat="server" Text="DANH SÁCH ĐẤT" CLASS="cssPageTitle"></asp:Label>
+                        <asp:Label ID="m_lbl_thong_tin_dat" runat="server" Text="DANH SÁCH ĐẤT" CssClass="cssPageTitle"></asp:Label>
                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                         </span>
                     </td>
