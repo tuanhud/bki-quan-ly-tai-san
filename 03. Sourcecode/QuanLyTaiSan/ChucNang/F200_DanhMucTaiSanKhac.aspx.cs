@@ -651,6 +651,16 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_2_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
-    
 }
