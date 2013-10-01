@@ -233,6 +233,11 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         }
         return true;
     }
+
+    private void clear_message()
+    {
+        m_lbl_mess.Text = "";
+    }
     #endregion
 
     #region Events
@@ -254,6 +259,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             if (!m_hdf_id.Value.Equals(String.Empty))
             {
                 clear_form_data();
@@ -270,6 +276,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             clear_form_data();
         }
         catch (Exception v_e)
@@ -281,6 +288,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -292,6 +300,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
             clear_form_data();
@@ -307,6 +316,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_ts();
@@ -321,6 +331,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_ts();
             load_data_from_us();
@@ -334,6 +345,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_ten_ts();
             load_data_from_us();
         }
@@ -346,6 +358,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_from_us();
         }
         catch (Exception v_e)
@@ -357,6 +370,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_down();
             load_data_to_dv_su_dung_down();
         }
@@ -369,6 +383,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_down();
         }
         catch (Exception v_e)
@@ -380,6 +395,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_grv_tai_san_khac.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
@@ -392,6 +408,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             if (!e.CommandName.Equals(String.Empty))
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
@@ -418,6 +435,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_grv_tai_san_khac.AllowPaging = false;
             load_data_to_grid();
             WinformReport.export_gridview_2_excel(m_grv_tai_san_khac
