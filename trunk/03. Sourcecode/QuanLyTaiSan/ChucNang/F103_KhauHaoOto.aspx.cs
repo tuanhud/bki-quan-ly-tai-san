@@ -23,16 +23,16 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     #region Private methods
     private bool check_validate_data_is_valid()
     {
-        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
-        {
-            m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
-            return false;
-        }
-        
         string v_str_id_oto = m_cbo_ten_tai_san.SelectedValue;
         if (v_str_id_oto.Equals(String.Empty) || v_str_id_oto.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_message.Text = "Bạn chưa chọn tài sản";
+            return false;
+        }
+
+        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
+        {
+            m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
             return false;
         }
 

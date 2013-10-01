@@ -375,7 +375,7 @@
                 </tr>
                 <tr>
                     <td align="center" colspan="4" style="height: 450px;" valign="top">
-                        <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                        <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="cssGrid"
                             Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True"
                             PageSize="15" ShowHeader="true" OnRowCommand="m_grv_dm_oto_RowCommand" EmptyDataText="Không có dữ liệu phù hợp">
                             <Columns>
