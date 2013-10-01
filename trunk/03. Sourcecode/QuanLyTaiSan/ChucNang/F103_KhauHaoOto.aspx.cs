@@ -48,6 +48,18 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             m_lbl_message.Text = "Mã phiếu này đã tồn tại";
             return false;
         }
+
+        if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO)) 
+        {
+            m_lbl_message.Text = "Lỗi: Ngày duyệt không đúng định dạng";
+            return false;
+        }
+
+        if (!CValidateTextBox.IsValid(m_txt_ngay_lap, DataType.DateType, allowNull.NO))
+        {
+            m_lbl_message.Text = "Lỗi: Ngày lập không đúng định dạng";
+            return false;
+        }
         
         return true;
     }

@@ -231,6 +231,17 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
             m_lbl_mess.Text = "Mã phiếu này đã tồn tại";
             return false;
         }
+        if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Lỗi: Ngày duyệt không đúng định dạng";
+            return false;
+        }
+
+        if (!CValidateTextBox.IsValid(m_txt_ngay_lap, DataType.DateType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Lỗi: Ngày lập không đúng định dạng";
+            return false;
+        }
         return true;
     }
 
