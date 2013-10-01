@@ -186,6 +186,11 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
             , CONST_QLDB.MA_TAT_CA
             , Person.get_user_name()
             , v_ds_v_gd_tg_tsoto);
+
+        string v_str_thong_tin = " (Có " + v_ds_v_gd_tg_tsoto.V_GD_TANG_GIAM_TAI_SAN_OTO.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin.Text += v_str_thong_tin;
+
+
         m_grv_danh_sach_oto.DataSource = v_ds_v_gd_tg_tsoto.V_GD_TANG_GIAM_TAI_SAN_OTO;
         m_grv_danh_sach_oto.DataBind();
     }
@@ -202,6 +207,12 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
         if (m_cbo_ten_tai_san.Items.Count == 0)
         {
             m_lbl_message.Text = "Bạn chưa lựa chọn tài sản";
+            return false;
+        }
+
+        if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
+        {
+            m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
             return false;
         }
         return true;
@@ -258,6 +269,11 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
                 m_grv_danh_sach_oto
                 , "De nghi tang giam oto.xls");
     }
+
+    private void clear_message()
+    {
+        m_lbl_message.Text = "";
+    }
     #endregion
 
     #region Events
@@ -283,6 +299,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
@@ -297,6 +314,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
@@ -310,6 +328,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -322,6 +341,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_from_us();
         }
         catch (Exception v_e)
@@ -333,6 +353,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -345,6 +366,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_down();
             load_data_to_dv_su_dung_down();
         }
@@ -357,6 +379,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_down();
         }
         catch (Exception v_e)
@@ -381,6 +404,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             clear_form_data();
         }
         catch (Exception v_e)
@@ -402,6 +426,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -413,6 +438,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             export_gridview_to_excel();
         }
         catch (Exception v_e)
@@ -424,6 +450,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             select_loai_tang_giam();
         }
         catch (Exception v_e)
@@ -435,6 +462,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
         }
         catch (Exception v_e)
         {
@@ -445,6 +473,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_grv_danh_sach_oto.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
