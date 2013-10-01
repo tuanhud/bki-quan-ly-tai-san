@@ -224,7 +224,7 @@
                 </tr>
                 <tr>
                     <td colspan="4" align="center">
-                        <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server" CausesValidation="false"
+                        <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server" 
                             Height="24px" Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" />
                         <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
                             Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
@@ -292,12 +292,12 @@
                     <td align="right">
                     </td>
                     <td align="left">
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton" CausesValidation="false"
                             Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
-                            Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
+                            Height="24px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
                     </td>
                     <td align="left">
                     </td>
