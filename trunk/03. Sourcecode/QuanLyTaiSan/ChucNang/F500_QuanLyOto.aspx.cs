@@ -252,39 +252,14 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private bool check_validate_data_is_ok()
     {
-        if (!CValidateTextBox.IsValid(m_txt_ma_ts, DataType.StringType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng mã tài sản";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_ten_ts, DataType.StringType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng tên tài sản";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_nguon_ns, DataType.NumberType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng nguồn ngân sách";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_nguon_khac, DataType.NumberType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng nguồn khác";
-            return false; 
-        }
-        if (!CValidateTextBox.IsValid(m_txt_nam_su_dung, DataType.DateType, allowNull.YES))
+        if (!CValidateTextBox.IsValid(m_txt_nam_su_dung, DataType.NumberType, allowNull.YES))
         {
             m_lbl_mess.Text = "Chưa nhập đúng năm sử dụng";
             return false;
         }
-        if (!CValidateTextBox.IsValid(m_txt_nam_san_xuat, DataType.DateType, allowNull.YES))
+        if (!CValidateTextBox.IsValid(m_txt_nam_san_xuat, DataType.NumberType, allowNull.YES))
         {
             m_lbl_mess.Text = "Chưa nhập đúng năm sản xuất";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_gia_tri_con_lai, DataType.NumberType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng giá trị còn lại";
             return false;
         }
         if (!CValidateTextBox.IsValid(m_txt_qlnn, DataType.NumberType, allowNull.YES))
@@ -347,10 +322,9 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         if (!check_validate_data_is_ok()) return;
         form_2_us_object(m_us_dm_oto);
         m_us_dm_oto.Insert();
-        
         reset_control();
-        m_hdf_id.Value = m_us_dm_oto.dcID.ToString();
         load_data_to_grid();
+        m_hdf_id.Value = m_us_dm_oto.dcID.ToString();
         m_lbl_mess.Text = "Thêm bản ghi thành công!";
     }
     private void update_data()
@@ -402,6 +376,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private void display_panel_tang_giam()
     {
+        if (m_hdf_id.Value == "") return;
         load_data_to_ly_do();
         m_pnl_confirm_tg.Visible = true;
         m_mtv_1.SetActiveView(m_view_confirm);
@@ -680,7 +655,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             clear_message();
             them_moi_tang_giam();
-            reset_control();
         }
         catch (Exception v_e)
         {
