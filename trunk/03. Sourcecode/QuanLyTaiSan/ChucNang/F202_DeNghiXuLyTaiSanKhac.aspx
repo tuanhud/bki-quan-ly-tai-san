@@ -75,19 +75,19 @@
                     </tr>
                     <tr>
                         <td align="right">
-                            &nbsp;<span class="cssManField">Loại hình đơn vị:</span></td>
+                            &nbsp;<span class="cssManField">Loại hình đơn vị:</span>
+                        </td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" 
-                                onselectedindexchanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged" 
+                            <asp:DropDownList ID="m_cbo_loai_hinh_don_vi" runat="Server" OnSelectedIndexChanged="m_cbo_loai_hinh_don_vi_SelectedIndexChanged"
                                 Width="90%" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <td align="right">
-                            <span class="cssManField">Đơn vị sử dụng tài sản:</span></td>
+                            <span class="cssManField">Đơn vị sử dụng tài sản:</span>
+                        </td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" 
-                                AutoPostBack="True" TabIndex="3" 
-                                Width="90%">
+                            <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" AutoPostBack="True"
+                                TabIndex="3" Width="90%">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -96,18 +96,17 @@
                             &nbsp;<span class="cssManField">Trạng thái: </span>
                         </td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" 
-                                TabIndex="4" Width="90%">
+                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%">
                             </asp:DropDownList>
                         </td>
-                        <td align="left" colspan ="2" rowspan = "2">
-                           
-                            <span class="cssManField">
-                            Chú ý:
-                            <br />
-                            - Chọn trạng thái "1-Đang sử dụng"-> Ấn tìm kiếm -> Chọn tài sản lập đề nghị xử lý
-                            <br />- Chọn trạng thái "2-Đề nghị xử lý"-> Ấn tìm kiếm -> Chọn tài sản hủy đề nghị xử lý
-                        </span>
+                        <td align="left" colspan="2" rowspan="2">
+                            <span class="cssManField">Chú ý:
+                                <br />
+                                - Chọn trạng thái "1-Đang sử dụng"-> Ấn tìm kiếm -> Chọn tài sản lập đề nghị xử
+                                lý
+                                <br />
+                                - Chọn trạng thái "2-Đề nghị xử lý"-> Ấn tìm kiếm -> Chọn tài sản hủy đề nghị xử
+                                lý </span>
                         </td>
                     </tr>
                     <tr>
@@ -138,6 +137,9 @@
                         <td colspan="2" align="left">
                             <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
                                 Height="24px" Width="98px" Text="Tìm kiếm(s)" OnClick="m_cmd_tim_kiem_Click" />&nbsp;
+                            <asp:Button ID="m_cmd_xuat_excel" AccessKey="l" CssClass="cssButton" 
+                                runat="server" Height="24px"
+                                Width="98px" Text="Xuất Excel(x)" onclick="m_cmd_xuat_excel_Click"/>
                             &nbsp;
                         </td>
                     </tr>
@@ -150,8 +152,7 @@
                             <asp:Button ID="m_cmd_de_nghi_xu_ly" runat="server" AccessKey="c" CssClass="cssButton"
                                 Text="Đề nghị xử lý" Height="24px" Width="98px" OnClick="m_cmd_de_nghi_xu_ly_Click" />
                             <asp:Button ID="m_cmd_huy_de_nghi_xu_ly" runat="server" CssClass="cssButton" Height="24px"
-                                Text="Hủy" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" 
-                                Visible="False" />
+                                Text="Hủy" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" Visible="False" />
                         </td>
                         <td align="left">
                         </td>
@@ -176,7 +177,7 @@
                                 AllowSorting="True" PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp"
                                 OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false" >
+                                    <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
                                         <ItemTemplate>
                                             <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
                                                 ID="lbt_hop_dong_gv" runat="server" NavigateUrl=''></asp:HyperLink>
@@ -193,12 +194,12 @@
                                         </HeaderTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <%# Container.DataItemIndex + 1 %>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                    <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN"
-                                        NavigateUrl="" HeaderStyle-Width="20%" />
+                                        <ItemTemplate>
+                                            <%# Container.DataItemIndex + 1 %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl=""
+                                        HeaderStyle-Width="20%" />
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                     <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                     <asp:BoundField HeaderText="Năm sản xuất" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
