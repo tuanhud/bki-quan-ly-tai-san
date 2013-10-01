@@ -181,6 +181,9 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             , CONST_QLDB.MA_TAT_CA
             , Person.get_user_name()
             , v_ds_v_gd_tg_tsn);
+
+        string v_str_thong_tin = " (Có " + v_ds_v_gd_tg_tsn.V_GD_TANG_GIAM_TAI_SAN_NHA.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_nha.Text += v_str_thong_tin;
         m_grv_danh_sach_nha.DataSource = v_ds_v_gd_tg_tsn.V_GD_TANG_GIAM_TAI_SAN_NHA;
         m_grv_danh_sach_nha.DataBind();
     }
