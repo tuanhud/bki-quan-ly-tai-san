@@ -462,5 +462,16 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
     {
         //base.VerifyRenderingInServerForm(control);
     }
+    protected void m_txt_tu_khoa_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
 }
