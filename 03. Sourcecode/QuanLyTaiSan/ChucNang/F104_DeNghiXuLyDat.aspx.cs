@@ -78,6 +78,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     }
     private void load_data_to_grid()
     {
+        m_lbl_thong_tin_dat.Text = "DANH SÁCH ĐẤT ";
         US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT();
         DS_V_DM_DAT v_ds_v_dm_dat = new DS_V_DM_DAT();
         v_us_v_dm_dat.FillDataSetByKeyWord(
