@@ -169,6 +169,8 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
+        m_lbl_thong_tin_nha.Text = "Danh sách duyệt ghi tăng giảm tài sản";
+
         US_V_GD_TANG_GIAM_TAI_SAN_NHA v_us_v_gd_tg_tsn = new US_V_GD_TANG_GIAM_TAI_SAN_NHA();
         DS_V_GD_TANG_GIAM_TAI_SAN_NHA v_ds_v_gd_tg_tsn = new DS_V_GD_TANG_GIAM_TAI_SAN_NHA();
         v_us_v_gd_tg_tsn.FillDatasetLoadDataToGridNha_by_tu_khoa(

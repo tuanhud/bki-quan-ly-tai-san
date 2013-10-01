@@ -148,6 +148,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
 
     private void load_data_to_grid()
     {
+        m_lbl_thong_tin.Text = "Danh sách duyệt ghi tăng giảm tài sản khác";
         US_V_GD_TANG_GIAM_TAI_SAN_KHAC v_us_v_gd_tg_tsk = new US_V_GD_TANG_GIAM_TAI_SAN_KHAC();
         DS_V_GD_TANG_GIAM_TAI_SAN_KHAC v_ds_v_gd_tg_tsk = new DS_V_GD_TANG_GIAM_TAI_SAN_KHAC();
         v_us_v_gd_tg_tsk.FillDataSetByKeyWord(
@@ -159,6 +160,10 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
             , CONST_QLDB.MA_TAT_CA
             , m_txt_tu_khoa.Text.Trim()
             , v_ds_v_gd_tg_tsk);
+
+        string v_str_thong_tin = " (Có " + v_ds_v_gd_tg_tsk.V_GD_TANG_GIAM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin.Text += v_str_thong_tin;
+
         m_grv_danh_sach_tai_san_khac.DataSource = v_ds_v_gd_tg_tsk.V_GD_TANG_GIAM_TAI_SAN_KHAC;
         m_grv_danh_sach_tai_san_khac.DataBind();
     }
@@ -175,6 +180,12 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         if (m_cbo_ten_tai_san.Items.Count == 0)
         {
             m_lbl_mess.Text = "Bạn chưa lựa chọn tài sản";
+            return false;
+        }
+
+        if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
+        {
+            m_lbl_mess.Text = "Lỗi: Mã phiểu này đã tồn tại";
             return false;
         }
         return true;
@@ -232,6 +243,11 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
                 m_grv_danh_sach_tai_san_khac
                 , "De nghi tang giam tai san khac.xls");
     }
+
+    private void clear_message()
+    {
+        m_lbl_mess.Text = "";
+    }
     #endregion
 
     #region Events
@@ -257,6 +273,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
@@ -271,6 +288,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
@@ -284,6 +302,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -296,6 +315,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_from_us();
         }
         catch (Exception v_e)
@@ -307,6 +327,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_down();
             load_data_to_dv_su_dung_down();
         }
@@ -319,6 +340,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_down();
         }
         catch (Exception v_e)
@@ -330,6 +352,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -341,6 +364,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             export_gridview_to_excel();
         }
         catch (Exception v_e)
@@ -365,6 +389,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             clear_form_data();
         }
         catch (Exception v_e)
@@ -386,7 +411,21 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             select_loai_tang_giam();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_grv_danh_sach_tai_san_khac_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            clear_message();
+            m_grv_danh_sach_tai_san_khac.PageIndex = e.NewPageIndex;
+            load_data_to_grid();
         }
         catch (Exception v_e)
         {
@@ -395,4 +434,5 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     }
     #endregion
 
+    
 }
