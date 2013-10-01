@@ -193,9 +193,21 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
 
         if (!CValidateTextBox.IsValid(m_txt_ma_tai_san, DataType.StringType, allowNull.NO)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_ten_tai_san, DataType.StringType, allowNull.NO)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_cap_hang, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_nam_xd, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_ngay_su_dung, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_cap_hang, DataType.NumberType, allowNull.YES)) 
+        {
+            m_lbl_mess.Text = "Lỗi: Cấp hạng không đúng định dạng số";
+            return false; 
+        }
+        if (!CValidateTextBox.IsValid(m_txt_nam_xd, DataType.NumberType, allowNull.YES)) 
+        {
+            m_lbl_mess.Text = "Lỗi: Năm xây dựng không đúng định dạng số";
+            return false; 
+        }
+        if (!CValidateTextBox.IsValid(m_txt_ngay_su_dung, DataType.NumberType, allowNull.YES)) 
+        {
+            m_lbl_mess.Text = "Lỗi: Năm sử dụng không đúng định dạng số";
+            return false; 
+        }
         if (!CValidateTextBox.IsValid(m_txt_nguyen_gia, DataType.NumberType, allowNull.YES)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_nguyen_gia_nguon_khac, DataType.NumberType, allowNull.YES)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_gia_tri_con_lai, DataType.NumberType, allowNull.YES)) { return false; }
