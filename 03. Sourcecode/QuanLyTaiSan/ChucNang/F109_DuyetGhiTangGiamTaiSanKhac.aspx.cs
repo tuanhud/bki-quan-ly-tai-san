@@ -201,7 +201,6 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
             return false;
         }
         return true;
-        return true;
     }
 
     private void them_moi_tang_giam()
