@@ -231,7 +231,7 @@
                                     <span class="cssManField">Cấp hạng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:TextBox ID="m_txt_cap_hang" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
+                                    <asp:TextBox ID="m_txt_cap_hang" runat="server" CssClass="cssTextBox" Width="85%"
                                         ValidationGroup="m_vlg_nha"></asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -240,7 +240,7 @@
                                     <span class="cssManField">Năm xây dựng</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
-                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox csscurrency" Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox" Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                 </td>
@@ -250,7 +250,7 @@
                                     <span class="cssManField">Năm sử dụng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
+                                    <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"
                                         ValidationGroup="m_vlg_nha"></asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
