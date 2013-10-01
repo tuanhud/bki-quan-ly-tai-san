@@ -144,6 +144,10 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
             , CONST_QLDB.MA_TAT_CA
             , m_txt_tu_khoa.Text.Trim()
             , v_ds_v_gd_tg_tsd);
+        string v_str_thong_tin = " (Có " + v_ds_v_gd_tg_tsd.V_GD_TANG_GIAM_TAI_SAN_DAT.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_dat.Text += v_str_thong_tin;
+
+
         m_grv_danh_sach_dat.DataSource = v_ds_v_gd_tg_tsd.V_GD_TANG_GIAM_TAI_SAN_DAT;
         m_grv_danh_sach_dat.DataBind();
     }
@@ -160,6 +164,12 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         if (m_cbo_dia_chi.Items.Count == 0)
         {
             m_lbl_message.Text = "Bạn chưa lựa chọn tài sản";
+            return false;
+        }
+
+        if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
+        {
+            m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
             return false;
         }
         return true;
@@ -217,6 +227,11 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
                 m_grv_danh_sach_dat
                 , "De nghi tang giam dat.xls");
     }
+
+    private void clear_message()
+    {
+        m_lbl_message.Text = "";
+    }
     #endregion
 
     #region Events
@@ -242,6 +257,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_dia_chi();
@@ -256,6 +272,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_up();
             load_data_to_dia_chi();
             load_data_from_us();
@@ -269,6 +286,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dia_chi();
             load_data_from_us();
         }
@@ -281,6 +299,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_from_us();
         }
         catch (Exception v_e)
@@ -292,6 +311,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_chu_quan_down();
             load_data_to_dv_su_dung_down();
         }
@@ -304,6 +324,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_dv_su_dung_down();
         }
         catch (Exception v_e)
@@ -315,6 +336,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             select_loai_tang_giam();
         }
         catch (Exception v_e)
@@ -339,6 +361,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             clear_form_data();
         }
         catch (Exception v_e)
@@ -360,6 +383,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -371,6 +395,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             export_gridview_to_excel();
         }
         catch (Exception v_e)
@@ -392,6 +417,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_grv_danh_sach_dat.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
