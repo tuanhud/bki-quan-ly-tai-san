@@ -1,4 +1,4 @@
-Option Explicit On 
+Option Explicit On
 Option Strict On
 
 Imports C1.Win.C1FlexGrid
@@ -67,12 +67,17 @@ Public Class CExcelWebReport
 
     Private Sub init_excel()
         Dim v_strFileName As String
+        Dim oldCI As System.Globalization.CultureInfo = _
+      System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = _
+                    New System.Globalization.CultureInfo("en-US")
         v_strFileName = GetOutputFileNameWithPath()
         If Not CopyFileSuccess(v_strFileName) Then Exit Sub
         m_objExcelWorkbook = m_objExcelApp.Workbooks.Open(v_strFileName)
         m_objExcelApp.Workbooks(1).Worksheets.Select(1)
         m_objExcelWorksheet = CType(m_objExcelApp.Workbooks(1).Worksheets(1), Excel.Worksheet)
         m_init_successful = True
+
     End Sub
 
     'Tra ve xem co copy thanh cong hay khong
@@ -170,7 +175,7 @@ Public Class CExcelWebReport
             'Cap nhat by tinhth :i_b_show = true de kill object Excel
             If i_b_show Then
                 m_objExcelApp.Visible = False
-              
+
                 Unmount()
             End If
         Catch v_e As Exception
@@ -220,7 +225,7 @@ Public Class CExcelWebReport
             'Cap nhat by tinhth :i_b_show = true de kill object Excel
             If i_b_show Then
                 m_objExcelApp.Visible = False
-                
+
                 Unmount()
             End If
         Catch v_e As Exception
