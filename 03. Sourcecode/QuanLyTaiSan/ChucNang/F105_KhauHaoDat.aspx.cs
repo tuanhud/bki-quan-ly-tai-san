@@ -213,7 +213,10 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 
     private void clear_message()
     {
-        m_lbl_mess.Text = "";
+        m_txt_ma_phieu.Text = "";
+        m_txt_gia_tri_khau_hao.Text = "";
+        m_txt_ngay_lap.Text = "";
+        m_txt_ngay_duyet.Text = "";
     }
 
     private void export_gridview_2_excel()
