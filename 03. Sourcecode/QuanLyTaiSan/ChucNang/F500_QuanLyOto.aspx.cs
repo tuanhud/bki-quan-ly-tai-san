@@ -653,7 +653,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
-            clear_message();
             if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
             {
                 m_lbl_mess_tg.Text = "Lỗi: Ngày duyệt không đúng định dạng";
