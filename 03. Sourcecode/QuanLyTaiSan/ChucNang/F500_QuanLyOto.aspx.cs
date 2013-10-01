@@ -242,7 +242,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private void load_data_2_us_by_id(int ip_i_id)
     {
-        
+
         decimal v_dc_id_dm_oto = CIPConvert.ToDecimal(m_grv_dm_oto.DataKeys[ip_i_id].Value);
         m_hdf_id.Value = v_dc_id_dm_oto.ToString();
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(v_dc_id_dm_oto);
@@ -463,7 +463,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             {
                 m_cmd_tao_moi.Enabled = true;
             }*/
-            
+
             if (!IsPostBack)
             {
                 set_form_mode();
@@ -711,6 +711,17 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         try
         {
             lua_chon_loai_tang_giam();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_grid();
         }
         catch (Exception v_e)
         {
