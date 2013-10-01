@@ -41,6 +41,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     private void load_data_to_grid()
     {
         // TODO
+        m_lbl_thong_tin_nha.Text = "DANH SÁCH NHÀ";
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         DS_V_DM_NHA v_ds_v_dm_Nha = new DS_V_DM_NHA();
 
