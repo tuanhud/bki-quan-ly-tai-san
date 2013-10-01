@@ -448,6 +448,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     }
     private void them_moi_tang_giam()
     {
+
         US_GD_TANG_GIAM_TAI_SAN v_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
         m_us_dm_nha = new US_DM_NHA(CIPConvert.ToDecimal(m_hdf_id.Value));
         v_us_gd_tang_giam_tai_san.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
@@ -652,6 +653,16 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     {
         try
         {
+            if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
+            {
+                m_lbl_mess_tg.Text = "Lỗi: Ngày duyệt không đúng định dạng";
+                return;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ngay_tang_giam, DataType.DateType, allowNull.NO))
+            {
+                m_lbl_mess_tg.Text = "Lỗi: Ngày tính tăng giảm không đúng định dạng";
+                return;
+            }
             them_moi_tang_giam();
         }
         catch (Exception v_e)
