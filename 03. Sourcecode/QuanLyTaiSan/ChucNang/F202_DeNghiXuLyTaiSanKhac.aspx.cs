@@ -257,7 +257,6 @@ public partial class Default2 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
-    #endregion
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
         try
@@ -278,4 +277,10 @@ public partial class Default2 : System.Web.UI.Page
         }
 
     }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
+    #endregion
+    
 }

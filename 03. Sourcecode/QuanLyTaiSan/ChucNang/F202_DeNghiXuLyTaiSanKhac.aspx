@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="F202_DeNghiXuLyTaiSanKhac.aspx.cs" Inherits="Default2" %>
+    EnableEventValidation="false" CodeFile="F202_DeNghiXuLyTaiSanKhac.aspx.cs" Inherits="Default2" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
@@ -137,9 +137,8 @@
                         <td colspan="2" align="left">
                             <asp:Button ID="m_cmd_tim_kiem" AccessKey="l" CssClass="cssButton" runat="server"
                                 Height="24px" Width="98px" Text="Tìm kiếm(s)" OnClick="m_cmd_tim_kiem_Click" />&nbsp;
-                            <asp:Button ID="m_cmd_xuat_excel" AccessKey="l" CssClass="cssButton" 
-                                runat="server" Height="24px"
-                                Width="98px" Text="Xuất Excel(x)" onclick="m_cmd_xuat_excel_Click"/>
+                            <asp:Button ID="m_cmd_xuat_excel" AccessKey="l" CssClass="cssButton" runat="server"
+                                Height="24px" Width="98px" Text="Xuất Excel(x)" OnClick="m_cmd_xuat_excel_Click" />
                             &nbsp;
                         </td>
                     </tr>
@@ -316,6 +315,9 @@
                     </tr>
                 </table>
             </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="m_cmd_xuat_excel" />
+            </Triggers>
         </asp:UpdatePanel>
     </div>
     <asp:UpdateProgress ID="Updateprogress1" runat="server">
