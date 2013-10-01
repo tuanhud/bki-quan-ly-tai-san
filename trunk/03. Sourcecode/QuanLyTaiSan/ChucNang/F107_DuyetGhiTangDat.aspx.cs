@@ -133,6 +133,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
+        m_lbl_thong_tin_dat.Text = "Danh sách duyệt ghi tăng đất ";
         US_V_GD_TANG_GIAM_TAI_SAN_DAT v_us_v_gd_tg_tsd = new US_V_GD_TANG_GIAM_TAI_SAN_DAT();
         DS_V_GD_TANG_GIAM_TAI_SAN_DAT v_ds_v_gd_tg_tsd = new DS_V_GD_TANG_GIAM_TAI_SAN_DAT();
         v_us_v_gd_tg_tsd.FillDataSetByKeyWord(

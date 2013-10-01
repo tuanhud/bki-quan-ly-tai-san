@@ -21,8 +21,7 @@
                 </tr>
                 <tr>
                     <td colspan="6">
-                        <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
-                            ValidationGroup="m_vlg_tai_san_khac" />
+                        <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"/>
                         <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                     </td>
                 </tr>
@@ -121,7 +120,7 @@
                     <td align="left" style="width: 1%;">
                     </td>
                     <td align="right" style="width: 15%">
-                        <span class="cssManField">Ngày, tháng, năm sử dụng</span>
+                        <span class="cssManField">Năm sử dụng</span>
                     </td>
                     <td align="left" style="width: 30%;">
                         <asp:Label ID="m_lbl_ngay_thang_nam_su_dung" runat="Server" CssClass="cssManField"
@@ -216,7 +215,7 @@
                     <td align="left" style="width: 30%">
                         <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ErrorMessage="Bạn phải nhập Mã phiếu"
-                            Text="*" ControlToValidate="m_txt_ma_phieu"></asp:RequiredFieldValidator>
+                            Text="(*)" ControlToValidate="m_txt_ma_phieu"></asp:RequiredFieldValidator>
                     </td>
                     <td align="left" style="width: 1%;">
                     </td>
@@ -226,7 +225,7 @@
                     <td align="left" style="width: 30%">
                         <asp:TextBox ID="m_txt_ngay_tang_giam" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="m_rfv_ngay_tang_giam" runat="server" ErrorMessage="Bạn phải nhập Ngày lập"
-                            Text="*" ControlToValidate="m_txt_ngay_tang_giam"></asp:RequiredFieldValidator>
+                            Text="(*)" ControlToValidate="m_txt_ngay_tang_giam"></asp:RequiredFieldValidator>
                     </td>
                     <td align="left" style="width: 1%;">
                     </td>
@@ -238,7 +237,7 @@
                     <td align="left" style="width: 30%">
                         <asp:TextBox ID="m_txt_ngay_duyet" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ErrorMessage="Bạn phải nhập ngày duyệt"
-                            Text="*" ControlToValidate="m_txt_ngay_duyet"></asp:RequiredFieldValidator>
+                            Text="(*)" ControlToValidate="m_txt_ngay_duyet"></asp:RequiredFieldValidator>
                     </td>
                     <td align="left" style="width: 1%;">
                     </td>
@@ -267,8 +266,8 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Danh sách duyệt ghi tăng giảm tài sản khác</span> <span
-                            class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        <asp:Label ID="m_lbl_thong_tin" runat="server" Text="Danh sách duyệt ghi tăng giảm tài sản khác" CssClass="cssPageTitle"></asp:Label>
+                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                             </span>
                     </td>
                 </tr>
@@ -325,7 +324,7 @@
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
-                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
+                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" CausesValidation="false"/>
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
@@ -343,7 +342,9 @@
                     <td colspan="4">
                         <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True"
                             AutoGenerateColumns="False" Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333"
-                            AllowSorting="True" EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true">
+                            AllowSorting="True" EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" 
+                            ShowHeader="true" 
+                            onpageindexchanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                             <Columns>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center" HeaderStyle-Height="60px"
                                     ItemStyle-Height="30px">

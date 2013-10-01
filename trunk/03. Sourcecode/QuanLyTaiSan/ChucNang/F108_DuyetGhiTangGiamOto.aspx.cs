@@ -174,6 +174,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
+        m_lbl_thong_tin.Text = "Danh sách duyệt ghi tăng ô tô ";
         US_V_GD_TANG_GIAM_TAI_SAN_OTO v_us_v_gd_tg_tsoto = new US_V_GD_TANG_GIAM_TAI_SAN_OTO();
         DS_V_GD_TANG_GIAM_TAI_SAN_OTO v_ds_v_gd_tg_tsoto = new DS_V_GD_TANG_GIAM_TAI_SAN_OTO();
         v_us_v_gd_tg_tsoto.FillDatasetLoadDataToGridOto_by_tu_khoa(
