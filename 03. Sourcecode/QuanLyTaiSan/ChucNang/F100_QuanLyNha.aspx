@@ -231,7 +231,7 @@
                                     <span class="cssManField">Cấp hạng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:TextBox ID="m_txt_cap_hang" runat="server" CssClass="cssTextBox" Width="85%"
+                                    <asp:TextBox ID="m_txt_cap_hang" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                         ValidationGroup="m_vlg_nha"></asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -240,7 +240,7 @@
                                     <span class="cssManField">Năm xây dựng</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
-                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox" Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
+                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox csscurrency" Width="85%" ValidationGroup="m_vlg_nha"></asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                 </td>
@@ -250,7 +250,7 @@
                                     <span class="cssManField">Năm sử dụng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"
+                                    <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                         ValidationGroup="m_vlg_nha"></asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -504,7 +504,7 @@
                     </td>
                 </tr>
             </table>
-            <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
+            <table cellspacing="0" cellpadding="2" style="width: 120%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
                         <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="DANH SÁCH NHÀ" CLASS="cssPageTitle"></asp:Label>
@@ -579,6 +579,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
+                                <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                 <asp:BoundField HeaderText="Bộ tỉnh" DataField="TEN_DV_BO_TINH" />
                                 <asp:BoundField HeaderText="Tên đơn vị chủ quản" DataField="TEN_DV_CHU_QUAN" />
                                 <asp:BoundField HeaderText="Tên đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
