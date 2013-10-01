@@ -601,6 +601,16 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     {
         try
         {
+            if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
+            {
+                m_lbl_mess_tg.Text = "Lỗi: Ngày duyệt không đúng định dạng";
+                return;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ngay_tang_giam, DataType.DateType, allowNull.NO))
+            {
+                m_lbl_mess_tg.Text = "Lỗi: Ngày tính tăng giảm không đúng định dạng";
+                return;
+            }
             them_moi_tang_giam();
         }
         catch (Exception v_e)
