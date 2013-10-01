@@ -124,13 +124,13 @@
                 <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                     <tr>
                         <td class="cssPageTitleBG" colspan="4">
-                            <span class="cssPageTitle">Quản lý tài sản khác</span> <span class="expand-collapse-text initial-expand">
+                            <span class="cssPageTitle">Quản lý tài sản khác</span><span class="expand-collapse-text initial-expand">
                             </span><span class="expand-collapse-text"></span>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="4">
-                            <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true" />
+                            <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true" ValidationGroup="m_vlg_tsk"/>
                             <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                         </td>
                     </tr>
@@ -235,7 +235,7 @@
                                         <span class="cssManField">Năm sản xuất</span>
                                     </td>
                                     <td style="width: 30%" align="left">
-                                        <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
+                                        <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox csscurrency" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         (*)
@@ -246,7 +246,7 @@
                                         <span class="cssManField">Năm sử dụng</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
-                                        <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox" Width="85%"
+                                        <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
                                             ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
