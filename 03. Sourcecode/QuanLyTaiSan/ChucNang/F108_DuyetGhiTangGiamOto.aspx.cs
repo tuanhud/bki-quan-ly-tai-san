@@ -229,7 +229,6 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
             return false;
         }
         return true;
-        return true;
     }
 
     private void them_moi_tang_giam()
