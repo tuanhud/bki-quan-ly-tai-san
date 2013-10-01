@@ -199,6 +199,7 @@
                                     <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN"
                                         NavigateUrl="" HeaderStyle-Width="20%" />
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
+                                    <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                     <asp:BoundField HeaderText="Năm sản xuất" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
                                         HeaderStyle-Width="3.5%">
                                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
