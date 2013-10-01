@@ -150,7 +150,8 @@
                             <asp:Button ID="m_cmd_de_nghi_xu_ly" runat="server" AccessKey="c" CssClass="cssButton"
                                 Text="Đề nghị xử lý" Height="24px" Width="98px" OnClick="m_cmd_de_nghi_xu_ly_Click" />
                             <asp:Button ID="m_cmd_huy_de_nghi_xu_ly" runat="server" CssClass="cssButton" Height="24px"
-                                Text="Hủy" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" />
+                                Text="Hủy" Width="98px" OnClick="m_cmd_huy_de_nghi_xu_ly_Click" 
+                                Visible="False" />
                         </td>
                         <td align="left">
                         </td>
