@@ -124,7 +124,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center" class="cssManField">
-                        <span>GIÁ TRỊ CÒN LẠI</span>
+                        <span>GIÁ TRỊ THEO SỔ KỂ TOÁN</span>
                     </td>
                     <td>
                     </td>
