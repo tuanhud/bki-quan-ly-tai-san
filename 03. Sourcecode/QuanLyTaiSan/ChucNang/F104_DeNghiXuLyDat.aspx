@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Danh sách đất</span> <span class="expand-collapse-text initial-expand">
+                        <asp:Label ID="m_lbl_thong_tin_dat" runat="server" Text="DANH SÁCH ĐẤT" CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>

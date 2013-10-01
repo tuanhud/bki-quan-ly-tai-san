@@ -89,7 +89,8 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
             , CONST_QLDB.ID_TAT_CA.ToString()
             , m_txt_tu_khoa.Text.Trim()
             , v_ds_v_dm_dat);
-
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_dat.V_DM_DAT.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_dat.Text += v_str_thong_tin;
         m_grv_danh_sach_nha.DataSource = v_ds_v_dm_dat.V_DM_DAT;
         m_grv_danh_sach_nha.DataBind();
     }
