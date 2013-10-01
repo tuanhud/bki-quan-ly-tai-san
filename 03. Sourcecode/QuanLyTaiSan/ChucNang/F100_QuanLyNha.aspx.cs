@@ -409,10 +409,9 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             Thread.Sleep(2000);
             form_2_us_nha();
             m_us_dm_nha.Insert();
-            reset_controls_in_form();
-            m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
-            m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
+            m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text; 
             load_data_2_form();
+            m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
             m_lbl_mess.Text = "Đã thêm mới dữ liệu nhà thành công!";
             display_panel_tang_giam();
         }
@@ -457,6 +456,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
 
         // Phần cập nhật thông tin cho DM
         load_data_2_form();
+        m_lbl_mess.Text = "Đã cập thông tin tăng giảm thành công";
     }
     private void clear_panel_data()
     {
@@ -641,8 +641,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         try
         {
             them_moi_tang_giam();
-            reset_controls_in_form();
-            load_data_2_form();
         }
         catch (Exception v_e)
         {
@@ -655,7 +653,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         {
             clear_panel_data();
             hidden_panel_tang_giam();
-            reset_controls_in_form();
             load_data_2_form();
         }
         catch (Exception v_e)
@@ -679,6 +676,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         try
         {
             hidden_panel_tang_giam();
+            load_data_2_form();
         }
         catch (Exception v_e)
         {
