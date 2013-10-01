@@ -654,7 +654,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         try
         {
             clear_message();
-            them_moi_tang_giam();
             if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
             {
                 m_lbl_mess_tg.Text = "Lỗi: Ngày duyệt không đúng định dạng";
@@ -665,6 +664,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 m_lbl_mess_tg.Text = "Lỗi: Ngày tính tăng giảm không đúng định dạng";
                 return;
             }
+            them_moi_tang_giam();
         }
         catch (Exception v_e)
         {
