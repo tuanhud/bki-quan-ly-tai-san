@@ -51,6 +51,11 @@
                             <div class="cssLoadContent2">
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
+                                        <td colspan="2">
+                                            <asp:Label ID="m_lbl_mess_tg" runat="server" Text="" CssClass="cssManField" ForeColor="Blue"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td colspan="2" align="center">
                                             <span class="cssManField">CHI TIẾT DUYỆT GHI TĂNG GIẢM</span>
                                         </td>
@@ -474,8 +479,9 @@
                         <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" Width="100%"></asp:TextBox>
                     </td>
                     <td align="left" style="width: 30%;" colspan="1">
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" CssClass="cssButton" CausesValidation="false"
-                            OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px" Height="24px" />
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" CssClass="cssButton"
+                            CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm(s)" Width="98px"
+                            Height="24px" />
                         <asp:Button ID="m_cmd_export_excel" runat="server" AccessKey="x" CssClass="cssButton"
                             Text="Xuất Excel(x)" Width="98px" Height="24px" OnClick="m_cmd_export_excel_Click" />
                     </td>
