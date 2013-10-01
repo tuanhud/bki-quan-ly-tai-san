@@ -34,7 +34,8 @@
                 </tr>
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Danh sách nhà</span> <span class="expand-collapse-text initial-expand">
+                        <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="DANH SÁCH NHÀ" CLASS="cssPageTitle"></asp:Label>
+                        <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
@@ -100,10 +101,6 @@
                     <td>
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%">
                         </asp:TextBox>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
                     </td>
                 </tr>
                 <tr>
@@ -217,7 +214,7 @@
                                 <asp:BoundField HeaderText="DT xây dựng" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" 
                                     DataFormatString=""/>
-                                <asp:TemplateField HeaderStyle-Height="110px">
+                                <asp:TemplateField HeaderStyle-Height="110px" HeaderStyle-Width="30%">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse; color:White">
                                             <tr>

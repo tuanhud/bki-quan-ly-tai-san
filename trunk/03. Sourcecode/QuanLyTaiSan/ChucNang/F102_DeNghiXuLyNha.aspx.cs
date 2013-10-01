@@ -54,6 +54,8 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             , CONST_QLDB.ID_TAT_CA.ToString()
             , Person.get_user_name()
             , v_ds_v_dm_Nha);
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_Nha.V_DM_NHA.Rows.Count + " bản ghi)";
+        m_lbl_thong_tin_nha.Text += v_str_thong_tin;
 
         m_grv_danh_sach_nha.DataSource = v_ds_v_dm_Nha.V_DM_NHA;
         m_grv_danh_sach_nha.DataBind();

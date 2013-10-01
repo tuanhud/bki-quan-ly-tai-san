@@ -26,9 +26,6 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     public const string C_STR_NEW_ID_DAT = "-1";
     #endregion
 
-    #region Public Interfaces
-    #endregion
-
     #region Private Methods
     private void load_data_2_form()
     {
@@ -261,6 +258,38 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
                 }
             }
         }
+
+
+        if (CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text) < CIPConvert.ToDecimal(m_txt_tru_so_lam_viec.Text) )
+        {
+            m_lbl_mess.Text = "Lỗi: Diện tích khuôn viên nhỏ hơn diện tích trụ sở làm việc.";
+            return false;
+        }
+
+        if (CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text) < CIPConvert.ToDecimal(m_txt_lam_nha_o.Text))
+        {
+            m_lbl_mess.Text = "Lỗi: Diện tích khuôn viên nhỏ hơn diện tích làm nhà ở.";
+            return false;
+        }
+
+        if (CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text) < CIPConvert.ToDecimal(m_txt_co_so_hdsn.Text))
+        {
+            m_lbl_mess.Text = "Lỗi: Diện tích khuôn viên nhỏ hơn diện tích cơ sở hoạt động sự nghiệp.";
+            return false;
+        }
+
+        if (CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text) < CIPConvert.ToDecimal(m_txt_khac.Text))
+        {
+            m_lbl_mess.Text = "Lỗi: Diện tích khuôn viên nhỏ hơn diện tích sử dụng mục đích khác.";
+            return false;
+        }
+
+        if (CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text) < CIPConvert.ToDecimal(m_txt_bo_trong.Text))
+        {
+            m_lbl_mess.Text = "Lỗi: Diện tích khuôn viên nhỏ hơn diện tích bỏ trống.";
+            return false;
+        }
+
         if (!CValidateTextBox.IsValid(m_txt_nam_xd, DataType.NumberType, allowNull.YES)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_nguyen_gia, DataType.NumberType, allowNull.YES)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_dien_tich_khuon_vien, DataType.NumberType, allowNull.YES)) { return false; }
