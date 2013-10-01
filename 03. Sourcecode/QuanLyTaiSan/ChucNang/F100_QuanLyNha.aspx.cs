@@ -664,6 +664,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
                 return;
             }
             them_moi_tang_giam();
+            load_data_2_form();
         }
         catch (Exception v_e)
         {
