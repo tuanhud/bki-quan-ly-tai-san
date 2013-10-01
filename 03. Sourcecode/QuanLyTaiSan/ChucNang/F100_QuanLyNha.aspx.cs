@@ -150,7 +150,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         if (m_e_form_mode == DataEntryFormMode.InsertDataState) {
             if (!m_us_dm_nha.check_ma_tai_san_is_valid(m_txt_ma_tai_san.Text)) {
                 m_lbl_mess.Text = "Lỗi: Mã tài sản nhà này đã tồn tại!";
-
                 return false;
             }
         }
