@@ -168,7 +168,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 20%">
-                                    <span class="cssManField">Ngày, tháng, năm sử dụng</span>
+                                    <span class="cssManField">Năm sử dụng</span>
                                 </td>
                                 <td style="width: 29%" align="left">
                                     <asp:Label ID="m_lbl_ngay_thang_nam_du_dung" runat="Server" class="cssManField" Style="color: blue">
@@ -183,7 +183,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" align="center" class="cssManField">
-                                    <span>GIÁ TRỊ CÒN LẠI</span>
+                                    <span>GIÁ TRỊ THEO SỔ KẾ TOÁN</span>
                                 </td>
                                 <td>
                                 </td>
