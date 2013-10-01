@@ -48,6 +48,11 @@
                                 <div class="cssLoadContent2">
                                     <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                         <tr>
+                                            <td colspan="2">
+                                                <asp:Label ID="m_lbl_mess_tg" runat="server" Text="" CssClass="cssManField" ForeColor="Blue"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td colspan="2" align="center">
                                                 <span class="cssManField">CHI TIẾT DUYỆT GHI TĂNG GIẢM</span>
                                             </td>
@@ -130,7 +135,8 @@
                     </tr>
                     <tr>
                         <td colspan="4">
-                            <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true" ValidationGroup="m_vlg_tsk"/>
+                            <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"
+                                ValidationGroup="m_vlg_tsk" />
                             <asp:Label ID="m_lbl_mess" runat="server" CssClass="cssManField" />
                         </td>
                     </tr>
@@ -235,7 +241,8 @@
                                         <span class="cssManField">Năm sản xuất</span>
                                     </td>
                                     <td style="width: 30%" align="left">
-                                        <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox csscurrency" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
+                                        <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
+                                            ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         (*)
@@ -246,8 +253,8 @@
                                         <span class="cssManField">Năm sử dụng</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
-                                        <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
-                                            ValidationGroup="m_vlg_tsk"></asp:TextBox>
+                                        <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox csscurrency"
+                                            Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         (*)
@@ -592,8 +599,7 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
-                                                    <td style="width: 33%; border-right: 1px solid gray;" height="40px"
-                                                        align="right">
+                                                    <td style="width: 33%; border-right: 1px solid gray;" height="40px" align="right">
                                                         <%# Eval("NGUON_NS", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 33%; border-right: 1px solid gray;" align="right">
@@ -639,8 +645,7 @@
                                         <ItemTemplate>
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: 1px solid gray;" height="40px"
-                                                        align="right">
+                                                    <td style="width: 25%; border-right: 1px solid gray;" height="40px" align="right">
                                                         <%# Eval("QLNN", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: 1px solid gray;" align="right">
