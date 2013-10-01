@@ -173,6 +173,19 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
             m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
             return false;
         }
+
+        if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
+        {
+            m_lbl_message.Text = "Lỗi: Ngày duyệt không đúng định dạng";
+            return false;
+        }
+
+        if (!CValidateTextBox.IsValid(m_txt_ngay_tang_giam, DataType.DateType, allowNull.NO))
+        {
+            m_lbl_message.Text = "Lỗi: Ngày tính tăng giảm không đúng định dạng";
+            return false;
+        }
+        return true;
         return true;
     }
 
