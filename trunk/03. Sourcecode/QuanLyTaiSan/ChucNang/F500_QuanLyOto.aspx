@@ -476,7 +476,8 @@
                         <asp:Label ID="lbl_ghi_chu0" runat="server" CssClass="cssManField" Text="Từ khóa tìm kiếm" />
                     </td>
                     <td align="left" colspan="1" style="width: 25%">
-                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" CssClass="cssTextBox" AutoPostBack="true"
+                            Width="100%" OnTextChanged="m_txt_tim_kiem_TextChanged"></asp:TextBox>
                     </td>
                     <td align="left" style="width: 30%;" colspan="1">
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="c" CssClass="cssButton"
