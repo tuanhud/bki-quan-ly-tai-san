@@ -280,12 +280,11 @@ public partial class Default2 : System.Web.UI.Page
     private void insert_data()
     {
         if (!check_validate_data_is_ok()) return;
-        
         form_2_us_object();
         m_us_tai_san_khac.Insert();
         load_data_2_grid();
-        hdf_id.Value = m_us_tai_san_khac.dcID.ToString();
         reset_control();
+        hdf_id.Value = m_us_tai_san_khac.dcID.ToString();
         m_lbl_mess.Text = "Tạo mới thành công!";
         display_panel_tang_giam();
     }
@@ -329,6 +328,7 @@ public partial class Default2 : System.Web.UI.Page
 
         // Phần cập nhật thông tin cho DM
         reset_control();
+        m_lbl_mess.Text = "Đã cập nhật thông tin tăng giảm thành công";
     }
     private void clear_panel_data()
     {
@@ -600,6 +600,7 @@ public partial class Default2 : System.Web.UI.Page
             clear_panel_data();
             hidden_panel_tang_giam();
             reset_control();
+            load_data_2_grid();
         }
         catch (Exception v_e)
         {
@@ -622,6 +623,7 @@ public partial class Default2 : System.Web.UI.Page
         try
         {
             hidden_panel_tang_giam();
+            load_data_2_grid();
         }
         catch (Exception v_e)
         {

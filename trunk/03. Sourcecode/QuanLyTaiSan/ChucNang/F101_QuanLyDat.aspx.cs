@@ -352,10 +352,9 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         form_2_us_dm_dat();
         m_us_dm_dat.Insert();
         Thread.Sleep(2000);
-        reset_controls_in_form();
+        load_data_2_form();
         m_hdf_id.Value = m_us_dm_dat.dcID.ToString();
         m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
-        load_data_2_form();
         m_lbl_mess.Text = "Đã thêm mới dữ liệu đất thành công!";
         display_panel_tang_giam();
     }
@@ -403,6 +402,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
 
         // Phần cập nhật thông tin cho DM
         load_data_2_form();
+        m_lbl_mess.Text = "Đã cập nhật thông tin tăng giảm thành công";
     }
     private void clear_panel_data()
     {
@@ -598,8 +598,6 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try
         {
             them_moi_tang_giam();
-            reset_controls_in_form();
-            load_data_2_form();
         }
         catch (Exception v_e)
         {
@@ -612,7 +610,6 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         {
             clear_panel_data();
             hidden_panel_tang_giam();
-            reset_controls_in_form();
             load_data_2_form();
         }
         catch (Exception v_e)
@@ -636,6 +633,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try
         {
             hidden_panel_tang_giam();
+            load_data_2_form();
         }
         catch (Exception v_e)
         {
