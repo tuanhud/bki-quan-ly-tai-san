@@ -402,7 +402,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e) {
         try {
-            if (!e.CommandName.Equals(String.Empty)) 
+            if (!e.CommandName.Equals(String.Empty) && !e.CommandName.Equals("Page")) 
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_danh_sach_nha.DataKeys[rowIndex].Value);
