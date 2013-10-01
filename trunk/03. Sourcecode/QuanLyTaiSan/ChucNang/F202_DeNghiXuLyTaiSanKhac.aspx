@@ -210,7 +210,7 @@
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;">
                                                 <tr>
-                                                    <td colspan="3" style="height: 35px">
+                                                    <td colspan="3" style="height: 50px">
                                                         Giá trị theo sổ kế toán (VNĐ)
                                                     </td>
                                                 </tr>
