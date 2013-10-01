@@ -214,7 +214,8 @@
                         <span class="cssManField">Từ khóa </span>
                     </td>
                     <td style="width: 30%" colspan="1">
-                        <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%"> </asp:TextBox>
+                        <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" AutoPostBack="true"
+                            Width="85%" ontextchanged="m_txt_tu_khoa_TextChanged"> </asp:TextBox>
                     </td>
                     <td>
                     </td>
