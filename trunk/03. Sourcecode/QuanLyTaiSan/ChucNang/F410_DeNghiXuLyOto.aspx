@@ -235,7 +235,7 @@
                                 <asp:BoundField HeaderText="Nguồn gốc xe" DataField="NGUON_GOC_XE" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="Ngày/tháng/năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="Năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:TemplateField HeaderStyle-Width="20%">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
