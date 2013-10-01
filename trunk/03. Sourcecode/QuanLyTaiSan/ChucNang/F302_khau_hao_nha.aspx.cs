@@ -227,16 +227,16 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
 
     private bool check_validate_data_is_valid()
     {
-        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
-        {
-            m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
-            return false;
-        }
-
         string v_str_id_nha = m_cbo_ten_tai_san.SelectedValue;
         if (v_str_id_nha.Equals(String.Empty) || v_str_id_nha.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_mess.Text = "Bạn chưa chọn tài sản";
+            return false;
+        }
+
+        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
+        {
+            m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
             return false;
         }
 
@@ -254,6 +254,11 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         }
         return true;
     }
+
+    private void clear_message()
+    {
+        m_lbl_mess.Text = "";
+    }
     #endregion
 
     #region Events
@@ -270,6 +275,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e) {
         try {
+            clear_message();
             Thread.Sleep(1000);
             load_data_to_grid();
         }
@@ -279,6 +285,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e) {
         try {
+            clear_message();
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
@@ -299,6 +306,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e) {
         try {
+            clear_message();
             clear_form_data();
         }
         catch (Exception v_e) {
@@ -307,6 +315,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
         try {
+            clear_message();
             m_grv_danh_sach_nha.AllowPaging = false;
             load_data_to_grid();
             WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha
@@ -319,6 +328,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e) {
         try {
+            clear_message();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_khu_dat_up();
@@ -331,6 +341,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cbo_don_vi_chu_quan_up_SelectedIndexChanged(object sender, EventArgs e) {
         try {
+            clear_message();
             load_data_to_dv_su_dung_up();
             load_data_to_khu_dat_up();
             load_data_to_ten_tai_san();
@@ -342,6 +353,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cbo_don_vi_su_dung_up_SelectedIndexChanged(object sender, EventArgs e) {
         try {
+            clear_message();
             load_data_to_khu_dat_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
@@ -354,6 +366,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     {
         try
         {
+            clear_message();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -366,6 +379,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     {
         try
         {
+            clear_message();
             load_data_from_us();
         }
         catch (Exception v_e)
@@ -375,6 +389,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e) {
         try {
+            clear_message();
             load_data_to_dv_chu_quan_down();
             load_data_to_dv_su_dung_down();
             load_data_to_khu_dat_down();
@@ -385,6 +400,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cbo_don_vi_chu_quan_down_SelectedIndexChanged(object sender, EventArgs e) {
         try {
+            clear_message();
             load_data_to_dv_su_dung_down();
             load_data_to_khu_dat_down();
         }
@@ -394,6 +410,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_cbo_don_vi_su_dung_down_SelectedIndexChanged(object sender, EventArgs e) {
         try {
+            clear_message();
             load_data_to_khu_dat_down();
         }
         catch (Exception v_e) {
@@ -402,6 +419,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     }
     protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e) {
         try {
+            clear_message();
             if (!e.CommandName.Equals(String.Empty) && !e.CommandName.Equals("Page")) 
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
