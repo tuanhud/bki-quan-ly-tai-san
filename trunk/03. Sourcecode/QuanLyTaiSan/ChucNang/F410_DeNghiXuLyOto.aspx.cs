@@ -239,5 +239,9 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
     #endregion
 }
