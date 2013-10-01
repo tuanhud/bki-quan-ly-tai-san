@@ -285,6 +285,7 @@ public partial class Default2 : System.Web.UI.Page
         m_us_tai_san_khac.Insert();
         load_data_2_grid();
         hdf_id.Value = m_us_tai_san_khac.dcID.ToString();
+        reset_control();
         m_lbl_mess.Text = "Tạo mới thành công!";
     }
     private void load_data_to_ly_do()
