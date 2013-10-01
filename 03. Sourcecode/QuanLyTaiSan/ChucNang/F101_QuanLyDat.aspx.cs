@@ -376,6 +376,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     }
     private void display_panel_tang_giam()
     {
+        if (CIPConvert.ToDecimal(m_hdf_id.Value) < 0) return;
         load_data_to_ly_do();
         m_pnl_confirm_tg.Visible = true;
         m_mtv_1.SetActiveView(m_view_confirm);
