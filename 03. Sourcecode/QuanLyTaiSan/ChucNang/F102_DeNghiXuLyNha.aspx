@@ -80,7 +80,9 @@
                         <span class="cssManField">Thuộc khu đất</span>
                     </td>
                     <td style="width: 30%" align="left">
-                        <asp:DropDownList ID="m_ddl_thuoc_khu_dat" runat="server" Width="85%" ValidationGroup="m_vlg_nha">
+                        <asp:DropDownList ID="m_ddl_thuoc_khu_dat" runat="server" Width="85%" 
+                            ValidationGroup="m_vlg_nha" 
+                            onselectedindexchanged="m_ddl_thuoc_khu_dat_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="left" colspan = "2" rowspan = "2" style="width: 15%">

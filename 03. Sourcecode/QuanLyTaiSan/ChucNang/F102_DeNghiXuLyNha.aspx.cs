@@ -127,6 +127,11 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         m_cmd_de_nghi_xu_ly.Visible = false;
         m_cmd_huy_de_nghi_xu_ly.Visible = false;
     }
+
+    private void clear_message()
+    {
+        m_lbl_message.Text = "";
+    }
     #endregion
 
     #region Events
@@ -152,7 +157,6 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
-            Thread.Sleep(2000);
             load_data_to_grid();
             set_trang_thai_cmd();
             m_lbl_message.Text = "";
@@ -166,7 +170,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
-            Thread.Sleep(1000);
+            clear_message();
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
@@ -179,6 +183,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_don_vi_su_dung();
             load_data_dat();
         }
@@ -191,6 +196,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_don_vi_chu_quan();
             load_data_don_vi_su_dung();
             load_data_dat();
@@ -204,6 +210,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_dat();
         }
         catch (Exception v_e)
@@ -213,6 +220,14 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
     }
     protected void m_ddl_trang_thai_nha_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
 
     }
     protected void m_cmd_de_nghi_xu_ly_Click(object sender, EventArgs e)
@@ -294,7 +309,17 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-    } 
+    }
+    protected void m_ddl_thuoc_khu_dat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
-  
 }
