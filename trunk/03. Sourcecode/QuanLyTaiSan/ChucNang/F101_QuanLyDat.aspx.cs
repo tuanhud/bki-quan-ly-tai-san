@@ -259,6 +259,21 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             }
         }
 
+        if (!CValidateTextBox.IsValid(m_txt_nguyen_gia, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_dien_tich_khuon_vien, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_tru_so_lam_viec, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_lam_nha_o, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_co_so_hdsn, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_cho_thue, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_bo_trong, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_bi_lan_chiem, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_khac, DataType.NumberType, allowNull.YES)) { return false; }
+        if (!CValidateTextBox.IsValid(m_txt_nam_xd, DataType.NumberType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Lỗi: Số năm đã sử dụng không đúng định dạng số";
+            return false;
+        }
+
         if (CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text) < CIPConvert.ToDecimal(m_txt_tru_so_lam_viec.Text) )
         {
             m_lbl_mess.Text = "Lỗi: Diện tích khuôn viên nhỏ hơn diện tích trụ sở làm việc.";
@@ -289,20 +304,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             return false;
         }
 
-        if (!CValidateTextBox.IsValid(m_txt_nam_xd, DataType.NumberType, allowNull.YES)) 
-        {
-            m_lbl_mess.Text = "Lỗi: Số năm đã sử dụng không đúng định dạng số";
-            return false; 
-        }
-        if (!CValidateTextBox.IsValid(m_txt_nguyen_gia, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_dien_tich_khuon_vien, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_tru_so_lam_viec, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_lam_nha_o, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_co_so_hdsn, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_cho_thue, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_bo_trong, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_bi_lan_chiem, DataType.NumberType, allowNull.YES)) { return false; }
-        if (!CValidateTextBox.IsValid(m_txt_khac, DataType.NumberType, allowNull.YES)) { return false; }
+        
 
         return true;
     }
