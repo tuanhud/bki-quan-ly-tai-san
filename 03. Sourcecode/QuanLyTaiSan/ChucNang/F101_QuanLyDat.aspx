@@ -48,8 +48,7 @@
                                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                     <tr>
                                         <td colspan="2">
-                                            <asp:Label ID="m_lbl_mess_tg" runat="server" Text="" CssClass="cssManField"
-                                             ForeColor="Blue"></asp:Label>
+                                            <asp:Label ID="m_lbl_mess_tg" runat="server" Text="" CssClass="cssManField" ForeColor="Blue"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
@@ -170,7 +169,8 @@
                                     <span class="cssManField">Đơn vị sử dụng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_dat">
+                                    <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
+                                        AutoPostBack="true" OnSelectedIndexChanged="m_ddl_don_vi_su_dung_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -179,7 +179,8 @@
                                     <span class="cssManField">Trạng thái</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
-                                    <asp:DropDownList ID="m_ddl_trang_thai" runat="server" Width="85%" ValidationGroup="m_vlg_dat">
+                                    <asp:DropDownList ID="m_ddl_trang_thai" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
+                                        AutoPostBack="true" OnSelectedIndexChanged="m_ddl_trang_thai_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -213,8 +214,7 @@
                                     <span class="cssManField">Số năm đã sử dụng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox" Width="85%"
-                                        ValidationGroup="m_vlg_dat">0</asp:TextBox>
+                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox" Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                 </td>
@@ -389,7 +389,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" AutoPostBack="true"
-                            Width="85%" CausesValidation="false" ontextchanged="m_txt_tu_khoa_TextChanged"></asp:TextBox>
+                            Width="85%" CausesValidation="false" OnTextChanged="m_txt_tu_khoa_TextChanged"></asp:TextBox>
                     </td>
                     <td align="left">
                     </td>
