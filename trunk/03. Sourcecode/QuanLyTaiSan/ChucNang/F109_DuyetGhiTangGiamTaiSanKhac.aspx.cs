@@ -448,6 +448,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -455,5 +456,28 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cbo_don_vi_su_dung_tai_san_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cbo_trang_thai_tai_san_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
+    
 }
