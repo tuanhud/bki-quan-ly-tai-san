@@ -87,7 +87,8 @@
                         </td>
                         <td>
                             <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" AutoPostBack="True"
-                                TabIndex="3" Width="90%">
+                                TabIndex="3" Width="90%" 
+                                onselectedindexchanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -96,7 +97,8 @@
                             &nbsp;<span class="cssManField">Trạng thái: </span>
                         </td>
                         <td>
-                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%">
+                            <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%" AutoPostBack="true"
+                                onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="left" colspan="2" rowspan="2">
