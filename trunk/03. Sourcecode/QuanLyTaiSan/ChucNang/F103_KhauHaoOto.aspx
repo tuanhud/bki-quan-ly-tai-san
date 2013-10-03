@@ -335,14 +335,16 @@
                     </td>
                     <td style="width: 30%" align="left" colspan="1">
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_down" runat="server" Width="85%"
-                            ValidationGroup="m_vlg_oto">
+                            ValidationGroup="m_vlg_oto" AutoPostBack="true"
+                            onselectedindexchanged="m_cbo_don_vi_su_dung_tai_san_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td colspan="1" align="right" style="width: 20%">
                         <span class="cssManField">Trạng thái ô tô</span>
                     </td>
                     <td align="left" colspan="1" style="width: 30%;">
-                        <asp:DropDownList ID="m_cbo_trang_thai_o_to_down" runat="server" Width="85%">
+                        <asp:DropDownList ID="m_cbo_trang_thai_o_to_down" runat="server" Width="85%" AutoPostBack="true"
+                            onselectedindexchanged="m_cbo_trang_thai_o_to_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
