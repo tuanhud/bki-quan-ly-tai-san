@@ -671,6 +671,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_2_grid();
         }
         catch (Exception v_e)
