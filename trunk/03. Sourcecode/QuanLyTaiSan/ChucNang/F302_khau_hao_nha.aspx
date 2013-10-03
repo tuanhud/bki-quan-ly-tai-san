@@ -347,7 +347,8 @@
                         <span class="cssManField">Địa chỉ</span>
                     </td>
                     <td>
-                        <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4">
+                        <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4" AutoPostBack="true"
+                            onselectedindexchanged="m_cbo_dia_chi_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
