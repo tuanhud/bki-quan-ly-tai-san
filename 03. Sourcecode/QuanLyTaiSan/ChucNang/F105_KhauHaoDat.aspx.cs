@@ -446,4 +446,16 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
     }
     #endregion  
     
+    protected void m_cbo_don_vi_su_dung_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+
+    }
 }
