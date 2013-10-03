@@ -164,31 +164,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
                 }
             }
         }
-        if ((CIPConvert.ToDecimal(m_txt_nguyen_gia.Text) + CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_khac.Text))
-            < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text)) {
-            m_lbl_mess.Text = "Lỗi: Giá trị còn lại lớn hơn tổng nguyên giá!";
-            return false;
-        }
-        if ((m_hdf_id.Value == C_STR_NEW_ID_NHA) && (m_e_form_mode == DataEntryFormMode.UpdateDataState)) {
-            m_lbl_mess.Text = "Lỗi: Bạn chưa chọn dữ liệu để cập nhật!";
-            return false;
-        }
-
-        decimal v_dc_dt_san_xd = CIPConvert.ToDecimal(m_txt_tong_dien_tich_xay_dung.Text);
-        decimal v_dc_dt_xd = CIPConvert.ToDecimal(m_txt_dien_tich_xay_dung.Text);
-        if (v_dc_dt_san_xd < v_dc_dt_xd)
-        {
-            m_lbl_mess.Text = "Lỗi: Tổng diện tích sàn xây dựng phải lớn hơn hoặc bằng diện tích xây dựng";
-            return false;
-        }
-
-        decimal v_dc_nam_xd = CIPConvert.ToDecimal(m_txt_nam_xd.Text);
-        decimal v_dc_nam_su_dung = CIPConvert.ToDecimal(m_txt_ngay_su_dung.Text);
-        if (v_dc_nam_su_dung < v_dc_nam_xd)
-        {
-            m_lbl_mess.Text = "Lỗi: Năm sử dụng phải lớn hơn hoặc bằng năm xây dựng";
-            return false;
-        }
 
         if (!CValidateTextBox.IsValid(m_txt_ma_tai_san, DataType.StringType, allowNull.NO)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_ten_tai_san, DataType.StringType, allowNull.NO)) { return false; }
@@ -220,6 +195,34 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         if (!CValidateTextBox.IsValid(m_txt_bo_trong, DataType.NumberType, allowNull.YES)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_bi_lan_chiem, DataType.NumberType, allowNull.YES)) { return false; }
         if (!CValidateTextBox.IsValid(m_txt_khac, DataType.NumberType, allowNull.YES)) { return false; }
+
+        if ((CIPConvert.ToDecimal(m_txt_nguyen_gia.Text) + CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_khac.Text))
+            < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text))
+        {
+            m_lbl_mess.Text = "Lỗi: Giá trị còn lại lớn hơn tổng nguyên giá!";
+            return false;
+        }
+        if ((m_hdf_id.Value == C_STR_NEW_ID_NHA) && (m_e_form_mode == DataEntryFormMode.UpdateDataState))
+        {
+            m_lbl_mess.Text = "Lỗi: Bạn chưa chọn dữ liệu để cập nhật!";
+            return false;
+        }
+
+        decimal v_dc_dt_san_xd = CIPConvert.ToDecimal(m_txt_tong_dien_tich_xay_dung.Text);
+        decimal v_dc_dt_xd = CIPConvert.ToDecimal(m_txt_dien_tich_xay_dung.Text);
+        if (v_dc_dt_san_xd < v_dc_dt_xd)
+        {
+            m_lbl_mess.Text = "Lỗi: Tổng diện tích sàn xây dựng phải lớn hơn hoặc bằng diện tích xây dựng";
+            return false;
+        }
+
+        decimal v_dc_nam_xd = CIPConvert.ToDecimal(m_txt_nam_xd.Text);
+        decimal v_dc_nam_su_dung = CIPConvert.ToDecimal(m_txt_ngay_su_dung.Text);
+        if (v_dc_nam_su_dung < v_dc_nam_xd)
+        {
+            m_lbl_mess.Text = "Lỗi: Năm sử dụng phải lớn hơn hoặc bằng năm xây dựng";
+            return false;
+        }
         return true;
     }
     private void load_data_trang_thai_nha() {
