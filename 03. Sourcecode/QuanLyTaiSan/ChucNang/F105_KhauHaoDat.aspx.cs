@@ -437,6 +437,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -444,8 +445,6 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion  
-    
     protected void m_cbo_don_vi_su_dung_down_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -458,4 +457,5 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         }
 
     }
+    #endregion  
 }

@@ -207,7 +207,8 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung_down" Width="85%" runat="Server" AutoPostBack="True"
-                            TabIndex="3">
+                            TabIndex="3" 
+                            onselectedindexchanged="m_cbo_don_vi_su_dung_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="right">

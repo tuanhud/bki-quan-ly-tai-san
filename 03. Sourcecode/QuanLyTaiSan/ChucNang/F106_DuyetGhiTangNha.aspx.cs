@@ -518,6 +518,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
