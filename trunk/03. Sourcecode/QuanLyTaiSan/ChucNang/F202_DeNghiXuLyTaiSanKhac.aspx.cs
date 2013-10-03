@@ -96,6 +96,11 @@ public partial class Default2 : System.Web.UI.Page
                 break;
         }
     }
+
+    private void clear_message()
+    {
+        m_lbl_mess.Text = "";
+    }
     #endregion
     #region Events
     protected void Page_Load(object sender, EventArgs e)
@@ -117,6 +122,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_lbl_tieu_de.Text = "DANH MỤC TÀI SẢN KHÁC";
             Thread.Sleep(2000);
             load_data_to_grid();
@@ -131,6 +137,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             m_grv_danh_sach_tai_san_khac.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
@@ -143,7 +150,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            clear_message();
             WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                 m_cbo_bo_tinh.SelectedValue
                 , WinFormControls.eTAT_CA.YES, m_cbo_don_vi_chu_quan);
@@ -163,7 +170,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            m_lbl_mess.Text = "";
+            clear_message();
             WinFormControls.load_data_to_cbo_don_vi_su_dung(
                 m_cbo_don_vi_chu_quan.SelectedValue
                 , m_cbo_bo_tinh.SelectedValue
@@ -178,6 +185,7 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void m_cmd_de_nghi_xu_ly_Click(object sender, EventArgs e)
     {
+        clear_message();
         try
         {
             foreach (GridViewRow row in m_grv_danh_sach_tai_san_khac.Rows)
@@ -210,6 +218,7 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void m_cmd_huy_de_nghi_xu_ly_Click(object sender, EventArgs e)
     {
+        clear_message();
         try
         {
             foreach (GridViewRow row in m_grv_danh_sach_tai_san_khac.Rows)
@@ -244,6 +253,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
     m_cbo_loai_hinh_don_vi.SelectedValue
     , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
@@ -261,7 +271,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
-            Thread.Sleep(2000);
+            clear_message();
             // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
             m_grv_danh_sach_tai_san_khac.AllowPaging = false;
             load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
@@ -281,6 +291,29 @@ public partial class Default2 : System.Web.UI.Page
     {
         //base.VerifyRenderingInServerForm(control);
     }
+    protected void m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
+
     
 }
