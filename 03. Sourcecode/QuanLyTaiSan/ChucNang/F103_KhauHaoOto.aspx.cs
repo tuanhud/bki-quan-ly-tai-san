@@ -495,5 +495,13 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         }
     }
     #endregion
-    
+
+    protected void m_cbo_don_vi_su_dung_tai_san_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void m_cbo_trang_thai_o_to_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
