@@ -128,7 +128,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
             , m_cbo_trang_thai_tai_san_up.SelectedValue
             , Person.get_user_name()
             , CONST_QLDB.MA_TAT_CA
-            , String.Empty
+            , m_txt_tu_khoa.Text.Trim()
             , v_ds_gd_khau_hao_tai_san_khac);
         m_grv_tai_san_khac.DataSource = v_ds_gd_khau_hao_tai_san_khac.V_GD_KHAU_HAO_DM_TAI_SAN_KHAC;
         string v_str_thong_tin = " (Có " + v_ds_gd_khau_hao_tai_san_khac.V_GD_KHAU_HAO_DM_TAI_SAN_KHAC.Rows.Count + " bản ghi)";
