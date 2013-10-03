@@ -554,9 +554,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     protected void m_cmd_xoa_trang_Click(object sender, EventArgs e) {
         try {
             clear_message();
-            Thread.Sleep(1000);
             reset_controls_in_form();
-            them_moi_tang_giam();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(this, v_e);
