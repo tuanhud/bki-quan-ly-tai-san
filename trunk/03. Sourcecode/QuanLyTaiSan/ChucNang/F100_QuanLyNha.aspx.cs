@@ -729,6 +729,40 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_ddl_trang_thai_nha_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+
+    }
+    protected void m_ddl_thuoc_khu_dat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_ddl_don_vi_dau_tu_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
-    
+
 }
