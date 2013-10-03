@@ -4,6 +4,12 @@
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            width: 21%;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -249,7 +255,7 @@
                             TabIndex="1" OnSelectedIndexChanged="m_cbo_bo_tinh_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
-                    <td align="right" style="width: 20%" colspan="1">
+                    <td align="right" colspan="1" class="style1">
                         <span class="cssManField">Đơn vị chủ quản </span>
                     </td>
                     <td style="width: 30%" colspan="1">
@@ -267,11 +273,12 @@
                             TabIndex="3" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
-                    <td align="right">
+                    <td align="right" class="style1">
                         <span class="cssManField">Địa chỉ</span>
                     </td>
                     <td>
-                        <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4">
+                        <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4" AutoPostBack="true"
+                            onselectedindexchanged="m_cbo_dia_chi_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -284,7 +291,7 @@
                             Width="85%" CausesValidation="false" ontextchanged="m_txt_tu_khoa_TextChanged">
                         </asp:TextBox>
                     </td>
-                    <td align="right" style="width: 20%" colspan="1">
+                    <td align="right" colspan="1" class="style1">
                     </td>
                     <td style="width: 30%" colspan="1">
                     </td>
@@ -296,7 +303,7 @@
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton" CausesValidation="false"
                             Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
                     </td>
-                    <td align="left">
+                    <td align="left" class="style1">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
                             Height="24px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
                     </td>

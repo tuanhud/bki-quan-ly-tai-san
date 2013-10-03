@@ -525,6 +525,18 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cbo_dia_chi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion       
+    
     
 }
