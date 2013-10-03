@@ -519,6 +519,4 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     }
     #endregion
-
-    
 }
