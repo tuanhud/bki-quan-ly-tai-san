@@ -71,7 +71,7 @@
                     </td>
                     <td align="left" style="width: 30%;">
                         <asp:DropDownList ID="m_ddl_trang_thai_nha" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
-                            OnSelectedIndexChanged="m_ddl_trang_thai_nha_SelectedIndexChanged">
+                            AutoPostBack="true" OnSelectedIndexChanged="m_ddl_trang_thai_nha_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -81,7 +81,7 @@
                     </td>
                     <td style="width: 30%" align="left">
                         <asp:DropDownList ID="m_ddl_thuoc_khu_dat" runat="server" Width="85%" 
-                            ValidationGroup="m_vlg_nha" 
+                            ValidationGroup="m_vlg_nha" AutoPostBack="true"
                             onselectedindexchanged="m_ddl_thuoc_khu_dat_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
