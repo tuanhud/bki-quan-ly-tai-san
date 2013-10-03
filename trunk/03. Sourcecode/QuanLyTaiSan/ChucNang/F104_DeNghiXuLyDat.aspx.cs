@@ -146,8 +146,6 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
         try
         {
             clear_message();
-            Thread.Sleep(2000);
-            m_lbl_message.Text = "";
             load_data_to_grid();
             set_trang_thai_cmd();
         }
@@ -229,7 +227,6 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
         try
         {
             clear_message();
-            Thread.Sleep(1000);
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
@@ -255,6 +252,17 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
     public override void VerifyRenderingInServerForm(Control control)
     {
         //base.VerifyRenderingInServerForm(control);
+    }
+    protected void m_ddl_don_vi_su_dung_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     #endregion
 }
