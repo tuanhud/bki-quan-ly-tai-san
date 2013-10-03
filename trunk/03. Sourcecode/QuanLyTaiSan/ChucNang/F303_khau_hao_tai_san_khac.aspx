@@ -378,7 +378,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="DeleteComp" ToolTip="Xóa"
+                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="DeleteComp" ToolTip="Xóa" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'
                                             OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
                      <img src="../Images/Button/deletered.png" alt="Delete" />
                                         </asp:LinkButton>

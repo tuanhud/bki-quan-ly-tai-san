@@ -304,7 +304,7 @@
                 <tr>
                     <td colspan="4">
                         <asp:GridView ID="m_grv_danh_sach_dat" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
+                            Width="100%" DataKeyNames="ID_KH" CellPadding="4" ForeColor="#333333" AllowSorting="True"
                             EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_dat_PageIndexChanging"
                             OnRowCommand="m_grv_danh_sach_dat_RowCommand">
                             <AlternatingRowStyle BackColor="White" />
