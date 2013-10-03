@@ -160,6 +160,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
+                                <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                 <asp:BoundField HeaderText="Bộ tỉnh" DataField="TEN_DV_BO_TINH" />
                                 <asp:BoundField HeaderText="Đơn vị chủ quản" DataField="TEN_DV_CHU_QUAN" />
                                 <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
