@@ -420,7 +420,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         try
         {
             clear_message();
-            if (!e.CommandName.Equals(String.Empty))
+            if (!e.CommandName.Equals(String.Empty) && !e.CommandName.Equals("Page"))
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_tai_san_khac.DataKeys[rowIndex].Value);
