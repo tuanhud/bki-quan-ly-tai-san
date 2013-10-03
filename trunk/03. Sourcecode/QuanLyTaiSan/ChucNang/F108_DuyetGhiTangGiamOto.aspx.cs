@@ -499,6 +499,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             load_data_to_grid();
         }
         catch (Exception v_e)
