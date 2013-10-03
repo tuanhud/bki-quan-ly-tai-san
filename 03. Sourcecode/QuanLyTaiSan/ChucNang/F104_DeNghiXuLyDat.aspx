@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
-    CodeFile="F104_DeNghiXuLyDat.aspx.cs" Inherits="ChucNang_F104_DeNghiXuLyDat" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    EnableEventValidation="false" CodeFile="F104_DeNghiXuLyDat.aspx.cs" Inherits="ChucNang_F104_DeNghiXuLyDat" %>
+
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         // Hàm này dùng để check all checkbox trên lưới
@@ -34,8 +34,9 @@
                 </tr>
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_thong_tin_dat" runat="server" Text="DANH SÁCH ĐẤT" CssClass="cssPageTitle"></asp:Label><span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_thong_tin_dat" runat="server" Text="DANH SÁCH ĐẤT" CssClass="cssPageTitle"></asp:Label><span
+                            class="expand-collapse-text initial-expand"> </span><span class="expand-collapse-text">
+                            </span>
                     </td>
                 </tr>
                 <tr>
@@ -62,15 +63,14 @@
                     </td>
                     <td style="width: 30%" align="left">
                         <asp:DropDownList ID="m_ddl_don_vi_su_dung" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
-                            AutoPostBack="True">
+                            AutoPostBack="True" OnSelectedIndexChanged="m_ddl_don_vi_su_dung_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="right" style="width: 15%">
                         <span class="cssManField">Trạng thái nhà</span>
                     </td>
                     <td align="left" style="width: 30%;">
-                        <asp:DropDownList ID="m_ddl_trang_thai_nha" runat="server" Width="85%" 
-                            ValidationGroup="m_vlg_dat">
+                        <asp:DropDownList ID="m_ddl_trang_thai_nha" runat="server" Width="85%" ValidationGroup="m_vlg_dat">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -82,29 +82,26 @@
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" Width="85%">
                         </asp:TextBox>
                     </td>
-                  
-                    <td colspan = "2" rowspan = "2">
-                        <span class="cssManField" >
-                            Chú ý:
+                    <td colspan="2" rowspan="2">
+                        <span class="cssManField">Chú ý:
                             <br />
-                            - Chọn trạng thái "1-Đang sử dụng" -> Ấn tìm kiếm -> Chọn tài sản để lập đề nghị xử lý
-                            <br />- Chọn trạng thái "2-Đề nghị xử lý" -> Ấn tìm kiếm -> Chọn tài sản để hủy đề nghị xử lý
-                        </span>
+                            - Chọn trạng thái "1-Đang sử dụng" -> Ấn tìm kiếm -> Chọn tài sản để lập đề nghị
+                            xử lý
+                            <br />
+                            - Chọn trạng thái "2-Đề nghị xử lý" -> Ấn tìm kiếm -> Chọn tài sản để hủy đề nghị
+                            xử lý </span>
                     </td>
                 </tr>
                 <tr>
                     <td>
                     </td>
                     <td>
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" 
-                            CssClass="cssButton" Height="24px" OnClick="m_cmd_tim_kiem_Click" 
-                            Text="Tìm kiếm" Width="98px" />
-                            &nbsp;
-                            <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
-                    Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
-
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
+                            Height="24px" OnClick="m_cmd_tim_kiem_Click" Text="Tìm kiếm" Width="98px" />
+                        &nbsp;
+                        <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
+                            Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
                     </td>
-                    
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -170,7 +167,7 @@
                                 <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG" ItemStyle-HorizontalAlign="Right"
-                                    DataFormatString="{0:#,##0}"/>
+                                    DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
