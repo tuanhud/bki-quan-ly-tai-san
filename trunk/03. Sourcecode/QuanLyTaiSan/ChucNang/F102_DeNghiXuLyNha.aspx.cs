@@ -302,7 +302,6 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         {
             m_grv_danh_sach_nha.AllowPaging = false;
             load_data_to_grid();
-
             WinformReport.export_gridview_2_excel(m_grv_danh_sach_nha, "DS de nghi xu ly nha.xls", 0);
         }
         catch (Exception v_e)
