@@ -301,7 +301,8 @@
                         <span class="cssManField">Trạng thái ô tô</span>
                     </td>
                     <td align="left" colspan="1" style="width: 30%;">
-                        <asp:DropDownList ID="m_cbo_trang_thai_o_to_down" runat="server" Width="85%">
+                        <asp:DropDownList ID="m_cbo_trang_thai_o_to_down" runat="server" Width="85%" AutoPostBack="true" 
+                            onselectedindexchanged="m_cbo_trang_thai_o_to_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>

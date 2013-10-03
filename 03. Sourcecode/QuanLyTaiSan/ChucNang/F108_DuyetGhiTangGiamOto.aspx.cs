@@ -506,6 +506,16 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
-    
+    protected void m_cbo_trang_thai_o_to_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    #endregion 
 }
