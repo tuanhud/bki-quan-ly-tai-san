@@ -290,7 +290,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             m_lbl_mess.Text = "Chưa nhập đúng không kinh doanh";
             return false;
         }
-        if ((m_txt_nam_su_dung.Text.Trim().Length > 0) & (m_txt_nam_san_xuat.Text.Trim().Length > 0))
+        if ((m_txt_nam_su_dung.Text.Trim().Length > 0) && (m_txt_nam_san_xuat.Text.Trim().Length > 0))
         {
             if (CIPConvert.ToDecimal(m_txt_nam_su_dung.Text) < CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text))
             {
