@@ -215,12 +215,25 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             m_lbl_ket_qua_loc_du_lieu.Text = "DANH SÁCH Ô TÔ";
             // Đổ dữ liệu từ US vào DS
-            m_us_dm_oto.FillDataset(m_ds_dm_oto);
+
+            US_V_DM_OTO v_us_v_dm_oto = new US_V_DM_OTO();
+            DS_V_DM_OTO v_ds_v_dm_oto = new DS_V_DM_OTO();
+
+            v_us_v_dm_oto.FillDatasetLoadDataToGridOto_by_tu_khoa(
+                m_txt_tim_kiem.Text.Trim()
+                , CONST_QLDB.ID_TAT_CA
+                , CONST_QLDB.ID_TAT_CA
+                , CONST_QLDB.ID_TAT_CA
+                , CONST_QLDB.ID_TAT_CA
+                , CONST_QLDB.ID_TAT_CA
+                , CONST_QLDB.MA_TAT_CA
+                , Person.get_user_name()
+                , v_ds_v_dm_oto);
 
             // Treo dữ liệu lên lưới
-            string v_str_thong_tin = " (Có " + m_ds_dm_oto.DM_OTO.Rows.Count + " bản ghi)";
+            string v_str_thong_tin = " (Có " + v_ds_v_dm_oto.V_DM_OTO.Rows.Count + " bản ghi)";
             m_lbl_ket_qua_loc_du_lieu.Text += v_str_thong_tin;
-            m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
+            m_grv_dm_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
             m_grv_dm_oto.DataBind();
 
         }
