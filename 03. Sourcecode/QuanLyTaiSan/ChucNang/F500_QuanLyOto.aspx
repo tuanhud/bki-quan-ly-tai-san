@@ -277,12 +277,12 @@
                                     <asp:Label ID="Label18" CssClass="cssManField" runat="server" Text="Năm sử dụng" />
                                 </td>
                                 <td align="left" class="style1" style="width: 30%">
-                                    <asp:TextBox ID="m_txt_nam_su_dung" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                                    <asp:TextBox ID="m_txt_nam_su_dung" runat="server" CssClass="cssTextBox cssNumber" Width="85%"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%;">
-                                    <asp:Label ID="Label14" CssClass="cssManField" runat="server" Text="Số chỗ ngồi" />
+                                    <asp:Label ID="Label14" CssClass="cssManField csscurrency" runat="server" Text="Số chỗ ngồi" />
                                 </td>
                                 <td align="left" colspan="1" style="width: 30%">
                                     <asp:TextBox ID="m_txt_tai_trong" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
