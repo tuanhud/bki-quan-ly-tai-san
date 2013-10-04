@@ -122,7 +122,7 @@
     <tr>
 		<td align="right">
 			<asp:label id="Label5" CssClass="cssManField" runat="server" 
-                Text="&lt;U&gt;L&lt;/U&gt;oại từ điển"/>
+                Text="Loại từ điển"/>
         </td>
         <td >
 		    <asp:DropDownList id="m_cbo_loai_tu_dien_grv" runat="server" Width="264px" 
