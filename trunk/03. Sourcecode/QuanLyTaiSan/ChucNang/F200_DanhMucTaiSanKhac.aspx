@@ -243,7 +243,7 @@
                                         <span class="cssManField">Năm sản xuất</span>
                                     </td>
                                     <td style="width: 30%" align="left">
-                                        <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
+                                        <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
                                             ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
@@ -255,7 +255,7 @@
                                         <span class="cssManField">Năm sử dụng</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
-                                        <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox csscurrency"
+                                        <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox cssNumber"
                                             Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">

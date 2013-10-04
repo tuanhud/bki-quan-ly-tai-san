@@ -214,7 +214,7 @@
                                     <span class="cssManField">Số năm đã sử dụng</span>
                                 </td>
                                 <td style="width: 30%" align="left">
-                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox" Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
+                                    <asp:TextBox ID="m_txt_nam_xd" runat="server" CssClass="cssTextBox cssNumber" Width="85%" ValidationGroup="m_vlg_dat">0</asp:TextBox>
                                 </td>
                                 <td align="left" style="width: 1%;">
                                 </td>
