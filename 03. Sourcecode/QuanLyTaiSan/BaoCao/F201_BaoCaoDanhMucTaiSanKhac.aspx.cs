@@ -112,11 +112,25 @@ public partial class Default2 : System.Web.UI.Page
         }
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null) {
             v_str_id_trang_thai = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
-            m_cbo_trang_thai.SelectedValue = v_str_id_trang_thai;           
+            m_cbo_trang_thai.SelectedValue = v_str_id_trang_thai;
         }
     }
     private void set_form_title_and_cbo() {
-       
+        string v_str_kieu_bc = "";
+        string v_str_id_trang_thai = "";
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
+        {
+            v_str_id_trang_thai = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
+        }
+        switch (v_str_id_trang_thai)
+        {
+            case "588":
+                //v_str_kieu_bc = "KÊ KHAI ";
+                break;
+            case "585":
+                v_str_kieu_bc = "ĐỀ NGHỊ XỬ LÝ";
+                break;
+        }
         string v_str_loai_bao_cao = "";
         string v_str_loai_tai_san_khac = "";
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null) {
@@ -129,7 +143,7 @@ public partial class Default2 : System.Web.UI.Page
         switch (v_str_loai_bao_cao) {
             case CONST_QLDB.LOAI_BAO_CAO.DVSD:
                 // KÊ KHAI ĐƠN VỊ SỬ DỤNG
-                m_lbl_tieu_de.Text = "BÁO CÁO";
+                m_lbl_tieu_de.Text = "BÁO CÁO " + v_str_kieu_bc;
                 m_cbo_trang_thai.Enabled = false;                
                 m_cbo_loai_tai_san.Enabled = false;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.NO;
@@ -145,7 +159,7 @@ public partial class Default2 : System.Web.UI.Page
                 m_lbl_tim_kiem.Visible = true;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.BLD:
-                m_lbl_tieu_de.Text = "THỐNG KÊ ";
+                m_lbl_tieu_de.Text = "THỐNG KÊ " + v_str_kieu_bc;
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;
