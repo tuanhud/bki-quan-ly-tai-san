@@ -108,7 +108,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         switch (v_str_id_trang_thai)
         {
             case "597":
-                v_str_kieu_bc = "KÊ KHAI ĐẤT";
+                v_str_kieu_bc = "ĐẤT";
                 break;
             case "594":
                 v_str_kieu_bc = "ĐỀ NGHỊ XỬ LÝ ĐẤT";
@@ -138,7 +138,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
                 m_lbl_tim_kiem.Visible = true;
                 break;
             case CONST_QLDB.LOAI_BAO_CAO.BLD:
-                m_lbl_tieu_de.Text = "THỐNG KÊ ĐẤT";
+                m_lbl_tieu_de.Text = "THỐNG KÊ " + v_str_kieu_bc;
                 m_cbo_trang_thai.Enabled = true;
                 m_cbo_trang_thai.Enabled = true;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.YES;
