@@ -100,6 +100,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
     private void set_form_title_and_cbo()
     {
         string v_str_kieu_bc = "";
+        string v_str = "";
         string v_str_id_trang_thai = "";
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
         {
@@ -108,9 +109,11 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         switch (v_str_id_trang_thai)
         {
             case "597":
+                v_str = "KÊ KHAI ";
                 v_str_kieu_bc = "ĐẤT";
                 break;
             case "594":
+                v_str = "";
                 v_str_kieu_bc = "ĐỀ NGHỊ XỬ LÝ ĐẤT";
                 break;
         }
@@ -123,7 +126,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         {
             case CONST_QLDB.LOAI_BAO_CAO.DVSD:
                 // KÊ KHAI ĐƠN VỊ SỬ DỤNG
-                m_lbl_tieu_de.Text = "BÁO CÁO " + v_str_kieu_bc;
+                m_lbl_tieu_de.Text = "BÁO CÁO "+ v_str + v_str_kieu_bc;
                 m_cbo_trang_thai.Enabled = false;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.NO;
                 m_txt_tim_kiem.Visible = false;
