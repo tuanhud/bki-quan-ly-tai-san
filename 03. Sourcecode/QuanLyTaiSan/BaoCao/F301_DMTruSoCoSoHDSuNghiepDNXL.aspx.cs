@@ -56,7 +56,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     private void export_excel()
     {
-        string v_str_output_file = "";
+        /*string v_str_output_file = "";
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
         {
             string v_id = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
@@ -84,8 +84,14 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             Response.Clear();
             v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
             Response.Redirect(v_str_output_file, false);
-        }
-
+        }*/
+            m_grv_nha.AllowPaging = false;
+                    load_data_to_grid_nha();  // đây là hàm load lại dữ liệu lên lưới
+                    // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                    WinformReport.export_gridview_2_excel(
+                                m_grv_nha
+                                , "DS nha.xls"
+                                ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
     }
     private void load_data_to_thong_tin_nha_dat()
     {
@@ -534,6 +540,10 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     #endregion
 
     #region events
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         try
