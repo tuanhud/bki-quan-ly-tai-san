@@ -8,6 +8,8 @@ using IP.Core.IPData;
 using IP.Core.IPUserService;
 using WebDS.CDBNames;
 using IP.Core.IPCommon;
+using System.Threading;
+
 public partial class DanhMuc_Dictionary : System.Web.UI.Page
 {
     #region Members
@@ -43,7 +45,6 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
     
     private void load_data_2_grid()
     {
-        try {
             m_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(CIPConvert.ToStr(m_cbo_loai_tu_dien_grv.SelectedValue), m_ds_dm_tu_dien);
             m_grv_dm_tu_dien.DataSource = m_ds_dm_tu_dien.CM_DM_TU_DIEN;
             m_grv_dm_tu_dien.DataBind();
@@ -53,15 +54,9 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
                 m_lbl_thong_bao.Visible = true;
             }
             else m_lbl_thong_bao.Visible = false;
-        }
-        catch (Exception v_e) {
-            throw v_e;
-        }
     }
     private void load_cbo_loai_tu_dien()
     {
-        try
-        {
             US_CM_DM_LOAI_TD v_us_loai_tu_dien = new US_CM_DM_LOAI_TD();
             DS_CM_DM_LOAI_TD v_ds_loai_tu_dien = new DS_CM_DM_LOAI_TD();
             v_us_loai_tu_dien.FillDataset(v_ds_loai_tu_dien);
@@ -69,16 +64,9 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
             m_cbo_loai_tu_dien.DataTextField = CM_DM_LOAI_TD.TEN_LOAI;
             m_cbo_loai_tu_dien.DataValueField = CM_DM_LOAI_TD.ID;
             m_cbo_loai_tu_dien.DataBind();
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
     }
     private void load_cbo_loai_tu_dien_grv()
     {
-        try
-        {
             US_CM_DM_LOAI_TD v_us_loai_tu_dien = new US_CM_DM_LOAI_TD();
             DS_CM_DM_LOAI_TD v_ds_loai_tu_dien = new DS_CM_DM_LOAI_TD();
             v_us_loai_tu_dien.FillDataset(v_ds_loai_tu_dien);
@@ -86,39 +74,19 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
             m_cbo_loai_tu_dien_grv.DataTextField = CM_DM_LOAI_TD.TEN_LOAI;
             m_cbo_loai_tu_dien_grv.DataValueField = CM_DM_LOAI_TD.MA_LOAI;
             m_cbo_loai_tu_dien_grv.DataBind();
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
     }
     private void delete_dm_tu_dien(int i_int_row_index) {
-        try
-        {
             decimal v_dc_id_dm_tu_dien = CIPConvert.ToDecimal(m_grv_dm_tu_dien.DataKeys[i_int_row_index].Value);
             m_us_dm_tu_dien.DeleteByID(v_dc_id_dm_tu_dien);
             load_data_2_grid();
             m_lbl_mess.Text = "Xóa bản ghi thành công.";
-        }
-        catch (Exception v_e)
-        {
-            m_lbl_mess.Text = "Lỗi trong quá trình xóa bản ghi.";
-            throw v_e;
-        }
     }
     private void load_update_dm_tu_dien(int i_int_row_index)
     {
-        try
-        {
             decimal v_dc_id_dm_tu_dien = CIPConvert.ToDecimal(m_grv_dm_tu_dien.DataKeys[i_int_row_index].Value);
             US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN(v_dc_id_dm_tu_dien);
             m_hdf_id_dm_tu_dien.Value = CIPConvert.ToStr(v_dc_id_dm_tu_dien);
             us_object_2_form(v_us_dm_tu_dien);
-        }
-        catch (Exception v_e)
-        {
-            throw v_e;
-        }
     }
     private void reset_control_in_form()
     {
@@ -171,7 +139,6 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
     }
     private void insert_dm_tu_dien()
     {
-        try{
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_lbl_mess.Text = "";
             m_grv_dm_tu_dien.EditIndex = -1;
@@ -186,16 +153,9 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
                 m_lbl_mess.Text = "Đã thêm mới thành công!";
                 load_data_2_grid();
             }
-        }
-        catch (Exception v_e)
-        {
-            m_lbl_mess.Text = "Lỗi trong quá trình thêm mới bản ghi!";
-            throw v_e;
-        }
     }
     private void update_dm_tu_dien()
     {
-        try {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_lbl_mess.Text = "";
             m_grv_dm_tu_dien.EditIndex = -1;
@@ -214,12 +174,6 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
                 m_grv_dm_tu_dien.EditIndex = -1;
                 load_data_2_grid();
             }
-        }
-        catch (Exception v_e)
-        {
-            m_lbl_mess.Text = "Lỗi trong quá trình cập nhật bản ghi!";
-            throw v_e;
-        }
     }
     private void us_object_2_form(US_CM_DM_TU_DIEN i_us_dm_tu_dien) {
         m_cbo_loai_tu_dien.SelectedValue = CIPConvert.ToStr(i_us_dm_tu_dien.dcID_LOAI_TU_DIEN);
@@ -308,6 +262,7 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
+            Thread.Sleep(2000);
             insert_dm_tu_dien();
         }
         catch (Exception v_e)
@@ -320,6 +275,7 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
         try
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            Thread.Sleep(2000);
             reset_control_in_form();
             set_form_mode();
         }
@@ -333,6 +289,7 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
+
             update_dm_tu_dien();
         }
         catch (Exception v_e)
@@ -340,5 +297,20 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-   
+
+    protected void m_grv_dm_tu_dien_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        try
+        {
+            m_lbl_mess.Text = "";
+            load_update_dm_tu_dien(e.RowIndex);
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            us_object_2_form(m_us_dm_tu_dien);
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+        
+    }
 }
