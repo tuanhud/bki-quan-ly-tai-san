@@ -289,7 +289,7 @@ public partial class DanhMuc_Dictionary : System.Web.UI.Page
         try
         {
             m_lbl_mess.Text = "";
-
+            Thread.Sleep(2000);
             update_dm_tu_dien();
         }
         catch (Exception v_e)

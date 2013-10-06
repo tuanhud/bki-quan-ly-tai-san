@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F101_Dictionary.aspx.cs" Inherits="DanhMuc_Dictionary" %>
-
+<%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
+    TagPrefix="asp" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
     <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
         <tr>
             <td class="cssPageTitleBG" colspan="3">
@@ -139,10 +145,10 @@
                         <asp:BoundField DataField="GHI_CHU" ItemStyle-HorizontalAlign="Center" HeaderText="Ghi chú">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
-                        <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center" ButtonType="Image" DeleteImageUrl="../Images/Button/deletered.png">
+                        <asp:CommandField HeaderText="Xóa" DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center" ButtonType="Image" DeleteImageUrl="../Images/Button/deletered.png">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>  
                         </asp:CommandField>
-                        <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center" ButtonType="Image" SelectImageUrl="../Images/Button/edit.png">
+                        <asp:CommandField HeaderText="Sửa" SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center" ButtonType="Image" SelectImageUrl="../Images/Button/edit.png">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>
                         </asp:CommandField>
                     </Columns>
@@ -157,4 +163,18 @@
             </td>
         </tr>
     </table>
+                </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    <asp:UpdateProgress ID="Updateprogress1" runat="server">
+        <ProgressTemplate>
+            <div class="cssLoadWapper">
+                <div class="cssLoadContent">
+                    <img src="../Images/loadingBar.gif" alt="" />
+                    <p>
+                        Đang gửi yêu cầu, hãy đợi ...</p>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>
