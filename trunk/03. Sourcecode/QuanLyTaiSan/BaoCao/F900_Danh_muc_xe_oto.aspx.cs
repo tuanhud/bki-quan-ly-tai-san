@@ -87,7 +87,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     private void export_excel()
     {
 
-        f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
+        /*f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
         string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
@@ -111,7 +111,14 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
         Response.Clear();
         v_obj_parameter.strFILE_NAME_RESULT = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-        Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);
+        Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);*/
+        m_grv_bao_cao_oto.AllowPaging = false;
+        load_data_to_grid_oto();  // đây là hàm load lại dữ liệu lên lưới
+        // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+        WinformReport.export_gridview_2_excel(
+                    m_grv_bao_cao_oto
+                    , "DS oto.xls"
+                    ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
     }
 
     private void thong_bao(string ip_str_thong_bao)
@@ -375,6 +382,10 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     #endregion
 
     #region Events
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        //base.VerifyRenderingInServerForm(control);
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         try
