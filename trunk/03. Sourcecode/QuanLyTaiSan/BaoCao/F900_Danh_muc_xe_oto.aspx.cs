@@ -154,7 +154,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
             );
         m_grv_bao_cao_oto.DataSource = v_ds_v_dm_oto.V_DM_OTO;
         if (v_ds_v_dm_oto.V_DM_OTO.Count == 0) thong_bao("Không có kết quả tìm kiếm phù hợp!");
-        //System.Threading.Thread.Sleep(1000);
+        System.Threading.Thread.Sleep(1000);
         string v_str_thong_tin = " (Có " + v_ds_v_dm_oto.V_DM_OTO.Rows.Count + " bản ghi)";
         m_lbl_thong_tin_oto.Text += v_str_thong_tin;
         m_grv_bao_cao_oto.DataBind();

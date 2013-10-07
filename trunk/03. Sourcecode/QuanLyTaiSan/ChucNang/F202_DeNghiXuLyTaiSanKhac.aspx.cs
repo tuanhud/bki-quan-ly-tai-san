@@ -283,7 +283,9 @@ public partial class Default2 : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            if (ex.Message != "Thread was being aborted.") {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
         }
 
     }
