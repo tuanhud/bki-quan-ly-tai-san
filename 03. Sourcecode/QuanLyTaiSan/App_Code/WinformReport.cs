@@ -57,8 +57,8 @@ public class WinformReport
             //}
             //ip_grv.DataBind();
             // Ẩn các cột phân trang ở cả đầu và cuối
-            ip_grv.TopPagerRow.Visible = false;
-            ip_grv.BottomPagerRow.Visible = false;
+            if(ip_grv.TopPagerRow != null) ip_grv.TopPagerRow.Visible = false;
+            if (ip_grv.BottomPagerRow != null) ip_grv.BottomPagerRow.Visible = false;
 
             ip_grv.HeaderRow.BackColor = Color.White;
             foreach (TableCell cell in ip_grv.HeaderRow.Cells)
