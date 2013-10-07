@@ -444,8 +444,9 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
         catch (Exception v_e)
         {
-
-            CSystemLog_301.ExceptionHandle(v_e);
+            if (v_e.Message != "Thread was being aborted.") {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
     protected void m_cbo_loai_hinh_don_vi_SelectedIndexChanged(object sender, EventArgs e)
