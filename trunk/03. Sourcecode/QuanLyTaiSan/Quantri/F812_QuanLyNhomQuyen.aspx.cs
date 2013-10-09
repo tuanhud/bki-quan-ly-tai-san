@@ -16,8 +16,6 @@ using System.Data;
 public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
 {
 
-
-
     #region Public Interfaces
     public string mapping_yn(object ip_obj_str_yn) {
         if (CIPConvert.ToStr(ip_obj_str_yn).Equals("Y")) return "Có";
@@ -31,6 +29,7 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
 
 
     #endregion
+   
     #region Members
     US_HT_USER_GROUP m_us_ht_user_group= new US_HT_USER_GROUP();
     DS_HT_USER_GROUP m_ds_ht_user_group = new DS_HT_USER_GROUP();
@@ -96,7 +95,6 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
     {
 
     }
-
     private bool check_validate_is_ok() {
         if (!CValidateTextBox.IsValid(m_txt_ten_nhom_quyen, DataType.StringType, allowNull.NO)) {
             m_lbl_mess.Text = "Bạn phải nhập tên nhóm quyền!";
@@ -104,7 +102,6 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
         }
         return true;
     }
-
     private void insert_user_group() {
         if (!check_validate_is_ok()) return;
         // thu thập dữ liệu
@@ -120,9 +117,9 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
         // thong báo
         m_lbl_mess.Text = "Thêm bản ghi thành công!";
     }
-
     private void update_usser_group(){
         // thu thập dữ liệu
+        if (!check_validate_is_ok()) return;
         form_2_us_obj();
         m_us_ht_user_group.dcID = CIPConvert.ToDecimal(hdf_id.Value);
         // Update
@@ -141,8 +138,6 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
 
     }
     #endregion
-
-    
 
     #region Events
     protected void Page_Load(object sender, EventArgs e) {
@@ -224,8 +219,6 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
-
     protected void btnCancel_Click(object sender, EventArgs e) {
         try {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
@@ -248,4 +241,6 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
+    #endregion
 }
+    
