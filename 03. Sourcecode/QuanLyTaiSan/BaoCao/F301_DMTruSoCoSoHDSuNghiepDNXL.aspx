@@ -359,7 +359,8 @@
                                                 <td colspan="2" rowspan="1" style="text-align: center; color: White; font-weight: bold">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="width: 33.33%; height: 60px; text-align: center; color: White; font-weight: bold">
+                                                <td rowspan="2" style="width: 33.33%; height: 60px; text-align: center; color: White;
+                                                    font-weight: bold">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
@@ -411,7 +412,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="2" style="width: 14.28%; height: 60px; text-align: center; color: White; font-weight: bold">
+                                                <td rowspan="2" style="width: 14.28%; height: 60px; text-align: center; color: White;
+                                                    font-weight: bold">
                                                     Trụ sở làm việc
                                                 </td>
                                                 <td rowspan="2" style="width: 14.28%; text-align: center; color: White; font-weight: bold">
@@ -469,6 +471,8 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="TRẠNG THÁI" DataField="TEN_TRANG_THAI" HeaderStyle-Width="6%"
+                                    ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="TÌNH TRẠNG" DataField="TEN_TINH_TRANG" HeaderStyle-Width="4%"
                                     ItemStyle-HorizontalAlign="Center" />
                                 <asp:TemplateField HeaderText="LOẠI HÌNH ĐƠN VỊ">
                                     <ItemTemplate>
