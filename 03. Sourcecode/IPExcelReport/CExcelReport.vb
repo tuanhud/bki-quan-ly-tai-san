@@ -26,6 +26,9 @@ Public Class CExcelReport
     Private m_b_set_style As Boolean = True
 
     Public FindAndReplaceCollection As Hashtable
+    Public Sub New()
+
+    End Sub
 
     Public Sub New(ByVal i_strTemplateFileWithoutPath As String _
                             , ByVal i_iSheetStartRow As Integer _
