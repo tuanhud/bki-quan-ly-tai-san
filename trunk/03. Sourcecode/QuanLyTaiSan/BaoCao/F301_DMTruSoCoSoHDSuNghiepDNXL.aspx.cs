@@ -28,17 +28,17 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     const string C_STR_LOAI_THONG_KE = "3";
     public enum THONG_TIN_DAT
     {
-        LOAI_HINH_DON_VI = 16,
-        MA_DON_VI = 17,
-        DT_KHUON_VIEN_DAT=18,
-        HTSD_LAM_TRU_SO_LAM_VIEC=19,
-        HTSD_CO_SO_HDSN=20,
-        HTSD_LAM_NHA_O=21,
-        HTSD_CHO_THUE=22,
-        HTSD_BO_TRONG=23,
-        HTSD_BI_LAN_CHIEM=24,
-        HTSD_SU_DUNG_VAO_MUC_DICH_KHAC=25,
-        GIA_TRI_THEO_SO_KE_TOAN=26
+        LOAI_HINH_DON_VI = 17,
+        MA_DON_VI = 18,
+        DT_KHUON_VIEN_DAT=19,
+        HTSD_LAM_TRU_SO_LAM_VIEC=20,
+        HTSD_CO_SO_HDSN=21,
+        HTSD_LAM_NHA_O=22,
+        HTSD_CHO_THUE=23,
+        HTSD_BO_TRONG=24,
+        HTSD_BI_LAN_CHIEM=25,
+        HTSD_SU_DUNG_VAO_MUC_DICH_KHAC=26,
+        GIA_TRI_THEO_SO_KE_TOAN=27
     }
   
     // loai_hinh_don_vi =24
