@@ -1,0 +1,17 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteDS\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll.config
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll.config
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteDS\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll.config
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteDS\bin\Debug\WebDS.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteDS\obj\Debug\WebDS.pdb

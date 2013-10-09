@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47241F9C-DC8E-4200-9D2E-340D87E74688}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QltsForm</RootNamespace>
+    <AssemblyName>QltsForm</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\QltsForm.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\QltsForm.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid, Version=2.5.20044.189, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.Classic, Version=2.5.20044.189, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.Classic.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input">
+      <HintPath>..\DLL\C1.Win.C1Input.dll</HintPath>
+    </Reference>
+    <Reference Include="SiSButton, Version=1.0.1494.35082, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SiSButton.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationControl.cs" />
+    <Compile Include="f100_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f100_menu.Designer.cs">
+      <DependentUpon>f100_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f210_RPT_TONG_HOP_HIEN_TRANG_OTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f220_bao_cao_danh_muc_dat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f320_RPT_TONG_HOP_HIEN_TRANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F330_RPT_TANG_GIAM_TAI_SAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f399_bao_cao_danh_muc_tru_so_lam_viec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f400_bao_cao_danh_muc_o_to.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f401_bao_cao_danh_muc_tai_san_khac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f402_bao_cao_danh_muc_tru_so_lam_viec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f200_RPT_TONG_HOP_HIEN_TRANG_TSK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QltsFormControls.cs" />
+    <EmbeddedResource Include="f100_menu.resx">
+      <DependentUpon>f100_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f210_RPT_TONG_HOP_HIEN_TRANG_OTO.resx">
+      <DependentUpon>f210_RPT_TONG_HOP_HIEN_TRANG_OTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f220_bao_cao_danh_muc_dat.resx">
+      <DependentUpon>f220_bao_cao_danh_muc_dat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f320_RPT_TONG_HOP_HIEN_TRANG.resx">
+      <DependentUpon>f320_RPT_TONG_HOP_HIEN_TRANG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F330_RPT_TANG_GIAM_TAI_SAN.resx">
+      <DependentUpon>F330_RPT_TANG_GIAM_TAI_SAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f399_bao_cao_danh_muc_tru_so_lam_viec.resx">
+      <DependentUpon>f399_bao_cao_danh_muc_tru_so_lam_viec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f400_bao_cao_danh_muc_o_to.resx">
+      <DependentUpon>f400_bao_cao_danh_muc_o_to.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f401_bao_cao_danh_muc_tai_san_khac.resx">
+      <DependentUpon>f401_bao_cao_danh_muc_tai_san_khac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f402_bao_cao_danh_muc_tru_so_lam_viec.resx">
+      <DependentUpon>f402_bao_cao_danh_muc_tru_so_lam_viec.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f200_RPT_TONG_HOP_HIEN_TRANG_TSK.resx">
+      <DependentUpon>f200_RPT_TONG_HOP_HIEN_TRANG_TSK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Report\Output\0238A100" />
+    <None Include="Report\Output\BC-002 Bao cao ke khai xe o to-585720266752.xls" />
+    <None Include="Report\Output\BC-002 Bao cao ke khai xe o to-613109792768.xls" />
+    <None Include="Report\Output\BC-01 BCDM-OTO-TK-369854152704.xls" />
+    <None Include="Report\Output\BC-01 BCDM-OTO-TK-370998575104.xls" />
+    <None Include="Report\Output\BC-02 BCDM-OTO-KK-822200958976.xls" />
+    <None Include="Report\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-67043483648.xls" />
+    <None Include="Report\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-677807063040.xls" />
+    <None Include="Report\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-733974626304.xls" />
+    <None Include="Report\Output\BC-19 BCDM-TSLM-TK-26088892416.xls" />
+    <None Include="Report\Output\BC-321 Bao cao tong hop tinh hinh su dung nha dat - chi tiet theo tung don vi-863781126144.xls" />
+    <None Include="Report\Templates\BC-01 BCDM-OTO-TK.xls" />
+    <None Include="Report\Templates\BC-02 BCDM-OTO-KK.xls" />
+    <None Include="Report\Templates\BC-04 BCDM-TSLM-DVTCTC.xls" />
+    <None Include="Report\Templates\BC-05 BCDM-OTO-DNXL.xls" />
+    <None Include="Report\Templates\BC-17 BCDM-TSLM-DNXL.xls" />
+    <None Include="Report\Templates\BC-18 BCDM-TSLM-KK.xls" />
+    <None Include="Report\Templates\BC-19 BCDM-TSLM-TK.xls" />
+    <None Include="Report\Templates\BC-23 BCDM-OTO-DVTCTC.xls" />
+    <None Include="Report\Templates\BC-24 BCDM-TSK-DNXL.xls" />
+    <None Include="Report\Templates\BC-25 BCDM-TSKTREN500TRIEU-KK.xls" />
+    <None Include="Report\Templates\BC-26 BCDM-TSK.xls" />
+    <None Include="Report\Templates\BC-28 BCDM-TSK-DVTCTC.xls" />
+    <None Include="Report\Templates\BC-319 BCTH-THSDND-THC.xls" />
+    <None Include="Report\Templates\BC-320 BCTH-THSDND-LH.xls" />
+    <None Include="Report\Templates\BC-321 BCTH-THSDND-CT.xls" />
+    <None Include="Report\Templates\BC-330 BCTH-TGTS.xls" />
+    <None Include="Report\Templates\BC-400 BCTH-THSDTSK-CT.xls" />
+    <None Include="Report\Templates\BC-400 BCTH-THSDTSK-THC.xls" />
+    <None Include="Report\Templates\BC-410 BCTH-THSDOTO-CT.xls" />
+    <None Include="Report\Templates\BC-410 BCTH-THSDOTO-THC.xls" />
+    <None Include="Report\Templates\BC-410 BCTH-THSDTSK-CT.xls" />
+    <None Include="Report\Templates\BC-410 BCTH-THSDTSK-THC.xls" />
+    <None Include="Report\Templates\F260_file_template_import.xls" />
+    <None Include="Report\Templates\F706_BaoCaoTongHopCVGV.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IPBusinessService\IPBusinessService.vbproj">
+      <Project>{73CA732C-2CFB-4A14-B0B9-F43763B1C2F3}</Project>
+      <Name>IPBusinessService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPCommon\IPCommon.vbproj">
+      <Project>{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}</Project>
+      <Name>IPCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPData\IPData.vbproj">
+      <Project>{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}</Project>
+      <Name>IPData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPExcelReport\IPExcelReport.vbproj">
+      <Project>{957C06D0-FF42-4C7A-B5E8-7E15C1522B59}</Project>
+      <Name>IPExcelReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPExcelWebReport\IPExcelWebReport.vbproj">
+      <Project>{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}</Project>
+      <Name>IPExcelWebReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPException\IPException.vbproj">
+      <Project>{B73156C2-7034-4DEA-A308-5E1782FF8DB4}</Project>
+      <Name>IPException</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPSystemAdmin\IPSystemAdmin.vbproj">
+      <Project>{455CD3A5-79BA-480A-B9BD-D4A7DDA397A8}</Project>
+      <Name>IPSystemAdmin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPUserService\IPUserService.vbproj">
+      <Project>{B490EA92-2990-4CBB-B58B-12901AFCCCB5}</Project>
+      <Name>IPUserService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebsiteDS\WebDS.csproj">
+      <Project>{F5D819BA-1743-4C56-B6F3-682281528C06}</Project>
+      <Name>WebDS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebsiteUS\WebUS.csproj">
+      <Project>{07E0D691-3694-4D86-9301-8954C940D1E8}</Project>
+      <Name>WebUS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Report\Templates\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Reports\Output\" />
+    <Folder Include="bin\Debug\Reports\Templates\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

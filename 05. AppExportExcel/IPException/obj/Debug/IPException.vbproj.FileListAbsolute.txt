@@ -1,0 +1,20 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPException\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPException\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPException\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPException\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPException\obj\Debug\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPException\obj\Debug\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPException\obj\Debug\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPException\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPException\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPException\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPException\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPException\obj\Debug\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPException\obj\Debug\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPException\obj\Debug\IPException.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPException\bin\IPException.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPException\bin\IPException.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPException\bin\IPException.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPException\obj\Debug\IPException.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPException\obj\Debug\IPException.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPException\obj\Debug\IPException.pdb

@@ -1,0 +1,23 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\bin\IPData.dll.config
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\bin\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\bin\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\bin\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\obj\Debug\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\obj\Debug\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPData\obj\Debug\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\bin\IPData.dll.config
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\bin\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\bin\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\bin\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\obj\Debug\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\obj\Debug\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPData\obj\Debug\IPData.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPData\bin\IPData.dll.config
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPData\bin\IPData.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPData\bin\IPData.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPData\bin\IPData.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPData\obj\Debug\IPData.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPData\obj\Debug\IPData.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPData\obj\Debug\IPData.pdb

@@ -1,0 +1,30 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\bin\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\bin\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\bin\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\bin\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\bin\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\bin\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\bin\IPBusinessService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\bin\IPBusinessService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\bin\IPBusinessService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\bin\IPException.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\bin\IPException.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\bin\IPException.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache

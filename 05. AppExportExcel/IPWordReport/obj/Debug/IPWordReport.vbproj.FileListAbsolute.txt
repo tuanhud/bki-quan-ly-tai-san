@@ -1,0 +1,38 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\bin\Interop.Word.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\bin\Interop.VBIDE.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\bin\Interop.Word.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\bin\Interop.VBIDE.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\bin\IP.Core.IPWordReport.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\bin\Interop.Word.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\bin\Interop.VBIDE.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
