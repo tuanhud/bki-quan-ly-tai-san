@@ -62,7 +62,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     public string get_ma_don_vi_su_dung()
     {
         string v_str_ma_don_vi = "";
-        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue != null) return v_str_ma_don_vi;
+        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == null) return v_str_ma_don_vi;
         if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_ma_don_vi;
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue));
         return v_us_dm_don_vi.strMA_DON_VI;
