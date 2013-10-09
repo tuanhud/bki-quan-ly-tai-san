@@ -75,9 +75,10 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     public string get_thong_tin_dat(THONG_TIN_DAT e_thong_tin_dat)
     {
+        string v_str_thong_tin="";
+        if (m_cbo_dia_chi.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_thong_tin; 
         decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
         US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT(v_dc_id_dat);
-        string v_str_thong_tin="";
         switch(e_thong_tin_dat)
         {
             case THONG_TIN_DAT.DT_KHUON_VIEN_DAT:
