@@ -148,7 +148,11 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             return false;
         }
 
-        if (!CValidateTextBox.IsValid(m_txt_ho_va_ten, DataType.StringType, allowNull.NO)) return false;
+        if (!CValidateTextBox.IsValid(m_txt_ho_va_ten, DataType.StringType, allowNull.NO))
+        {
+            this.m_ctv_ma_tu_dien0.IsValid = false;
+            return false;
+        }
         if ((!CValidateTextBox.IsValid(m_txt_mat_khau, DataType.StringType, allowNull.NO)) && (m_e_form_mode == DataEntryFormMode.InsertDataState)) {
             this.m_ctv_ten_tu_ngan.IsValid = false;
             return false;
@@ -253,11 +257,9 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     }
     #endregion
 
-    //
-    //
-    // events
-    //
-    //
+
+    #region events
+
     protected void Page_Load(object sender, EventArgs e) {
         try {
 
@@ -370,4 +372,5 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    #endregion
 }
