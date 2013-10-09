@@ -1,0 +1,70 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\obj\Debug\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\obj\Debug\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPUserService\obj\Debug\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\obj\Debug\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\obj\Debug\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPUserService\obj\Debug\IPUserService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPUserService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPUserService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPUserService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPBusinessService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPCommon.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPData.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPException.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\CrystalDecisions.Shared.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\CrystalDecisions.Windows.Forms.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\C1.Common.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\CrystalDecisions.ReportSource.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPBusinessService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPBusinessService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPCommon.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPCommon.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPData.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPData.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPException.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\bin\IPException.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\obj\Debug\IPUserService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\obj\Debug\IPUserService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\obj\Debug\IPUserService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPUserService\obj\Debug\IPUserService.vbprojResolveAssemblyReference.cache

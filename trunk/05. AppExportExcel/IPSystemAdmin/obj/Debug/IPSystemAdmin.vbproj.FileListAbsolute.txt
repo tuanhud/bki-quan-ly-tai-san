@@ -1,0 +1,102 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\SiSButton.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\SiSMenu.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\bin\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\GenerateResource-ResGen.read.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\GenerateResource-ResGen.write.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\SiSButton.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\SiSMenu.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\bin\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\GenerateResource-ResGen.read.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\GenerateResource-ResGen.write.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPSystemAdmin.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\C1.Common.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\C1.Win.C1FlexGrid.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPCommon.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPData.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPException.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPUserService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\SiSButton.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\SiSMenu.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.Shared.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.Windows.Forms.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\CrystalDecisions.ReportSource.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPBusinessService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPCommon.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPCommon.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPData.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPData.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPException.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPException.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPUserService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\bin\IPUserService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbprojResolveAssemblyReference.cache
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f100_TuDien.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f101_Dang_Nhap.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f102_TuDien_DE.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IP.Core.IPSystemAdmin.f996_license.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.vbproj.GenerateResource.Cache
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPSystemAdmin\obj\Debug\IPSystemAdmin.pdb

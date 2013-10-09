@@ -1,0 +1,55 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\IPExcelReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\IPExcelReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\IPExcelReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\Interop.Excel.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\Interop.Office.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\bin\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\IPExcelReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\IPExcelReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\IPExcelReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\Interop.Excel.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\Interop.Office.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\bin\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\IPExcelReport.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\IPExcelReport.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\IPExcelReport.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\Interop.Excel.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\Interop.Office.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\IPCommon.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\C1.Common.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\IPCommon.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\IPCommon.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll

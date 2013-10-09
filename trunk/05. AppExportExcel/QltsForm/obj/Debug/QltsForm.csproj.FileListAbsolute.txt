@@ -1,0 +1,171 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\GenerateResource-ResGen.read.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\GenerateResource-ResGen.write.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\QltsForm.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1Input.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\SiSButton.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\WebUS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\Interop.Excel.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\WebDS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\WebUS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f100_menu.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f400_bao_cao_danh_muc_o_to.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f401_bao_cao_danh_muc_tai_san_khac.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f402_bao_cao_danh_muc_tru_so_lam_viec.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.Properties.Resources.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f399_bao_cao_danh_muc_tru_so_lam_viec.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\QltsForm.dll.config
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\bin\Debug\QltsForm.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.dll.licenses
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f320_RPT_TONG_HOP_HIEN_TRANG.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.frm_RPT_TONG_HOP_HIEN_TRANG_TSK.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f210_RPT_TONG_HOP_HIEN_TRANG_OTO.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f220_bao_cao_danh_muc_dat.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\QltsForm\obj\Debug\QltsForm.F330_RPT_TANG_GIAM_TAI_SAN.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\QltsForm.exe.config
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\QltsForm.exe
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\QltsForm.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1Input.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\SiSButton.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\WebUS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\Interop.Excel.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\Interop.Microsoft.Office.Core.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\WebDS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\bin\Debug\WebUS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f100_menu.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f210_RPT_TONG_HOP_HIEN_TRANG_OTO.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f220_bao_cao_danh_muc_dat.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f320_RPT_TONG_HOP_HIEN_TRANG.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.F330_RPT_TANG_GIAM_TAI_SAN.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f399_bao_cao_danh_muc_tru_so_lam_viec.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f400_bao_cao_danh_muc_o_to.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f401_bao_cao_danh_muc_tai_san_khac.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f402_bao_cao_danh_muc_tru_so_lam_viec.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.frm_RPT_TONG_HOP_HIEN_TRANG_TSK.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.Properties.Resources.resources
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\GenerateResource-ResGen.read.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\GenerateResource-ResGen.write.1.tlog
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.exe.licenses
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\QltsForm\obj\Debug\QltsForm.exe
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\QltsForm.exe.config
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.exe
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\QltsForm.exe
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\QltsForm.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\C1.Common.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1FlexGrid.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\C1.Win.C1Input.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPCommon.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPData.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPException.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPUserService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\SiSButton.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\WebDS.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\WebUS.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\Interop.Excel.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\Interop.Microsoft.Office.Core.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPBusinessService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPCommon.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPCommon.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPData.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPData.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPExcelReport.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPExcelWebReport.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPException.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPException.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPSystemAdmin.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPUserService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\IPUserService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\WebDS.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\WebUS.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.csprojResolveAssemblyReference.cache
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f100_menu.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f210_RPT_TONG_HOP_HIEN_TRANG_OTO.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f220_bao_cao_danh_muc_dat.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f320_RPT_TONG_HOP_HIEN_TRANG.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.F330_RPT_TANG_GIAM_TAI_SAN.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f399_bao_cao_danh_muc_tru_so_lam_viec.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f400_bao_cao_danh_muc_o_to.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f401_bao_cao_danh_muc_tai_san_khac.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.f402_bao_cao_danh_muc_tru_so_lam_viec.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.frm_RPT_TONG_HOP_HIEN_TRANG_TSK.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.Properties.Resources.resources
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.csproj.GenerateResource.Cache
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\obj\Debug\QltsForm.exe.licenses
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\CrystalDecisions.Shared.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\QltsForm\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\0. TuDM\1. Project\Excel\05. AppExportExcel\QltsForm\bin\Debug\QltsForm.exe.config
+D:\0. TuDM\1. Project\Excel\05. AppExportExcel\QltsForm\obj\Debug\QltsForm.exe
+D:\0. TuDM\1. Project\Excel\05. AppExportExcel\QltsForm\obj\Debug\QltsForm.pdb

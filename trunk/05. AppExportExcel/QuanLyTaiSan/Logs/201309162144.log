@@ -1,0 +1,2 @@
+20130916 21:44:58 Control 'ctl00_MainContent_m_grv_danh_sach_dat' of type 'GridView' must be placed inside a form tag with runat=server.
+System.Web

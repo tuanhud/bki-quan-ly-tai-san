@@ -1,0 +1,3 @@
+20130902 17:19:48 The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DM_DAT_HISTORY_DM_DAT". The conflict occurred in database "BKI_QLTS", table "dbo.DM_DAT", column 'ID'.
+The statement has been terminated.
+.Net SqlClient Data Provider

@@ -1,0 +1,82 @@
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1Input.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\bin\Debug\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\SVN\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\C1.Common.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1Input.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPData.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPException.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPData.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPData.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPException.pdb
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\bin\Debug\IPException.xml
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.dll
+E:\PROJECT.28. QUAN LY TAI SAN TONG CUC DUONG BO\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\WebUS.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\C1.Common.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1FlexGrid.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\C1.Win.C1Input.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPData.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.Shared.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPException.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPCommon.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPData.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPData.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPUserService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\WebDS.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPBusinessService.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPException.pdb
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\bin\Debug\IPException.xml
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.csprojResolveAssemblyReference.cache
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.dll
+D:\0. TuDM\1. Project\Excel\03. Sourcecode\WebsiteUS\obj\Debug\WebUS.pdb
