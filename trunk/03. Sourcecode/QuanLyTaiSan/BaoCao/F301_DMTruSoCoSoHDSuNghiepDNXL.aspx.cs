@@ -26,9 +26,91 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     const string C_STR_LOAI_KE_KHAI = "1";
     const string C_STR_LOAI_DE_NGHI_XU_LY = "2";
     const string C_STR_LOAI_THONG_KE = "3";
+    public enum THONG_TIN_DAT
+    {
+        LOAI_HINH_DON_VI = 16,
+        MA_DON_VI = 17,
+        DT_KHUON_VIEN_DAT=18,
+        HTSD_LAM_TRU_SO_LAM_VIEC=19,
+        HTSD_CO_SO_HDSN=20,
+        HTSD_LAM_NHA_O=21,
+        HTSD_CHO_THUE=22,
+        HTSD_BO_TRONG=23,
+        HTSD_BI_LAN_CHIEM=24,
+        HTSD_SU_DUNG_VAO_MUC_DICH_KHAC=25,
+        GIA_TRI_THEO_SO_KE_TOAN=26
+    }
+  
+    // loai_hinh_don_vi =24
     #endregion
 
     #region Private Methods
+    private void format_grid(bool ip_hide)
+    {
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.LOAI_HINH_DON_VI].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.MA_DON_VI].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.DT_KHUON_VIEN_DAT].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_LAM_TRU_SO_LAM_VIEC].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_CO_SO_HDSN].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_LAM_NHA_O].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_CHO_THUE].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_BO_TRONG].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_BI_LAN_CHIEM].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_SU_DUNG_VAO_MUC_DICH_KHAC].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.GIA_TRI_THEO_SO_KE_TOAN].Visible = ip_hide;
+    }
+    public string get_ma_don_vi_su_dung()
+    {
+        string v_str_ma_don_vi = "";
+        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue != null) return v_str_ma_don_vi;
+        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_ma_don_vi;
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue));
+        return v_us_dm_don_vi.strMA_DON_VI;
+    }
+    public string get_ten_loai_hinh_don_vi()
+    {
+        if (m_cbo_loai_hinh_don_vi.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return "Tất cả";
+        US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(MA_LOAI_TU_DIEN.LOAI_HINH_DON_VI, m_cbo_loai_hinh_don_vi.SelectedValue);
+        return v_us_cm_dm_tu_dien.strTEN;
+    }
+    public string get_thong_tin_dat(THONG_TIN_DAT e_thong_tin_dat)
+    {
+        decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
+        US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT(v_dc_id_dat);
+        string v_str_thong_tin="";
+        switch(e_thong_tin_dat)
+        {
+            case THONG_TIN_DAT.DT_KHUON_VIEN_DAT:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_KHUON_VIEN);
+                break;
+            case THONG_TIN_DAT.GIA_TRI_THEO_SO_KE_TOAN:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcGT_THEO_SO_KE_TOAN);
+                break;
+            case THONG_TIN_DAT.HTSD_BI_LAN_CHIEM:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_BI_LAN_CHIEM);
+                break;
+            case THONG_TIN_DAT.HTSD_BO_TRONG:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_BO_TRONG);
+                break;
+            case THONG_TIN_DAT.HTSD_CO_SO_HDSN:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP);
+                break;
+            case THONG_TIN_DAT.HTSD_CHO_THUE:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_CHO_THUE);
+                break;
+            case THONG_TIN_DAT.HTSD_LAM_NHA_O:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_LAM_NHA_O);
+                break;
+            case THONG_TIN_DAT.HTSD_LAM_TRU_SO_LAM_VIEC:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_TRU_SO_LAM_VIEC);
+                break;
+            case THONG_TIN_DAT.HTSD_SU_DUNG_VAO_MUC_DICH_KHAC:
+                v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC);
+                break;
+
+        }
+                return v_str_thong_tin;
+    }
     private void thong_bao(string ip_str_thong_bao)
     {
         m_lbl_mess.Text = ip_str_thong_bao;
@@ -432,6 +514,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     private void set_inital_form_load()
     {
+        format_grid(false);
         reset_thong_bao();
         form_title();
         format_label_disable();
@@ -536,6 +619,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
           );
         m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
     }
+   
 
     #endregion
 
@@ -621,7 +705,9 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         {
             if (!check_validate_data_is_ok()) return;
             Thread.Sleep(1000);
+            format_grid(true);
             export_excel();
+            format_grid(false);
         }
 
         catch (Exception v_e)
