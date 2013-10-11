@@ -10,7 +10,6 @@ Imports System.Web.UI.WebControls
 Public Class CExcelReport
     Private Const c_ReportTemplatesDir As String = "Reports\Templates\"
     Private Const c_ReportOutputDir As String = "Reports\Output\"
-
     Protected m_strOutputPath As String = ""
     Protected m_strTemplatesPath As String = ""
 
@@ -67,6 +66,21 @@ Public Class CExcelReport
         v_strRandomName = m_strOutputPath & m_strTemplateFileNameWithoutPath.Replace(".xls", "") & "-" & CType(Rnd() * 1000000000000, Int64) & ".xls"
         Return v_strRandomName
     End Function
+    Public Function GetCountRow() As Integer
+        Try
+            m_objExcelApp = New Excel.Application
+            Dim oldCI As System.Globalization.CultureInfo = _
+            System.Threading.Thread.CurrentThread.CurrentCulture
+            System.Threading.Thread.CurrentThread.CurrentCulture = _
+                        New System.Globalization.CultureInfo("en-US")
+            m_objExcelApp.Workbooks.Open(m_strTemplateFileNameWithPath)
+            m_objExcelApp.Workbooks(1).Worksheets.Select(1)
+            m_objExcelWorksheet = CType(m_objExcelApp.Workbooks(1).Worksheets(1), Excel.Worksheet)
+            Return m_objExcelWorksheet.UsedRange.Rows.Count
+        Catch v_e As Exception
+            Throw v_e
+        End Try
+    End Function
 
     Public Sub Export2Grid(ByVal i_fg As C1FlexGrid _
                             , ByVal i_iSheetStartRow As Integer _
@@ -82,16 +96,12 @@ Public Class CExcelReport
             m_objExcelApp.Workbooks(1).Worksheets.Select(1)
             m_objExcelWorksheet = CType(m_objExcelApp.Workbooks(1).Worksheets(1), Excel.Worksheet)
             Dim v_iGridRow As Integer
+
             'Dim v_min_grid_row As Integer
             'v_min_grid_row = Math.Min(i_fg.Rows.Count - 1, m_objExcelWorksheet.Cells.Rows.Count)
             For v_iGridRow = i_fg.Rows.Fixed To i_fg.Rows.Count - 1
-                If (v_iGridRow < m_objExcelWorksheet.Cells.Rows.Count) Then
                     i_fg(v_iGridRow, i_iGridCol) = _
                     CType(m_objExcelWorksheet.Cells(i_iSheetStartRow + v_iGridRow - i_fg.Rows.Fixed, i_iSheetCol), Excel.Range).Value
-                Else : Exit For
-
-                End If
-
 
             Next
             m_objExcelApp.Workbooks.Close()
