@@ -167,6 +167,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f200_RPT_TONG_HOP_HIEN_TRANG_TSK.resx">
       <DependentUpon>f200_RPT_TONG_HOP_HIEN_TRANG_TSK.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="F403_tao_bao_cao_danh_muc_oto.resx">
       <DependentUpon>F403_tao_bao_cao_danh_muc_oto.cs</DependentUpon>

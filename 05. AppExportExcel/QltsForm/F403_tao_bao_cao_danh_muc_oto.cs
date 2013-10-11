@@ -22,364 +22,910 @@ using WebDS;
 using WebDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPExcelReport;
 
 namespace QltsForm
 {
 
 
 
-	public class F403_tao_bao_cao_danh_muc_oto : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
-		private System.ComponentModel.IContainer components;
+    public class F403_tao_bao_cao_danh_muc_oto : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_oto;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private Panel panel1;
+        internal SIS.Controls.Button.SiSButton m_cmd_browser;
+        private Label m_lbl_thong_bao;
+        private Label label7;
+        private TextBox m_txt_file_path;
+        private ComboBox m_cbo_loai_hinh_don_vi;
+        private ComboBox m_cbo_loai_xe;
+        private ComboBox m_cbo_trang_thai;
+        private ComboBox m_cbo_don_vi_su_dung;
+        private ComboBox m_cbo_don_vi_chu_quan;
+        private ComboBox m_cbo_bo_tinh;
+        private Label m_lbl_ten_bao_cao;
+        private Label label1;
+        private Label m_lbl_trang_thai;
+        private Label m_lbl_don_vi_chu_quan;
+        private Label lbl;
+        private Label m_lbl_don_vi_su_dung;
+        private Label m_lbl_bo_tinh;
+        private Panel panel2;
+        private C1FlexGrid m_fg_oto_excel;
+        private OpenFileDialog m_openDiaglog;
+        private System.ComponentModel.IContainer components;
 
-		public F403_tao_bao_cao_danh_muc_oto()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public F403_tao_bao_cao_danh_muc_oto()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(F403_tao_bao_cao_danh_muc_oto));
-			this.ImageList = new System.Windows.Forms.ImageList(this.components);
-			this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-			this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_view = new SIS.Controls.Button.SiSButton();
-			this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-			this.m_pnl_out_place_dm.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// ImageList
-			// 
-			this.ImageList.ImageSize = new System.Drawing.Size(16, 16);
-			this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-			this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-			// 
-			// m_pnl_out_place_dm
-			// 
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-			this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.m_pnl_out_place_dm.DockPadding.All = 4;
-			this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
-			this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-			this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
-			this.m_pnl_out_place_dm.TabIndex = 19;
-			// 
-			// m_cmd_delete
-			// 
-			this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_delete.ImageIndex = 4;
-			this.m_cmd_delete.ImageList = this.ImageList;
-			this.m_cmd_delete.Location = new System.Drawing.Point(506, 4);
-			this.m_cmd_delete.Name = "m_cmd_delete";
-			this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_delete.TabIndex = 14;
-			this.m_cmd_delete.Text = "&Xoá";
-			// 
-			// m_cmd_update
-			// 
-			this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_update.ImageIndex = 3;
-			this.m_cmd_update.ImageList = this.ImageList;
-			this.m_cmd_update.Location = new System.Drawing.Point(418, 4);
-			this.m_cmd_update.Name = "m_cmd_update";
-			this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_update.TabIndex = 13;
-			this.m_cmd_update.Text = "&Sửa";
-			// 
-			// m_cmd_insert
-			// 
-			this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_insert.ImageIndex = 2;
-			this.m_cmd_insert.ImageList = this.ImageList;
-			this.m_cmd_insert.Location = new System.Drawing.Point(330, 4);
-			this.m_cmd_insert.Name = "m_cmd_insert";
-			this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_insert.TabIndex = 12;
-			this.m_cmd_insert.Text = "&Thêm";
-			// 
-			// m_cmd_exit
-			// 
-			this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_exit.ImageIndex = 12;
-			this.m_cmd_exit.ImageList = this.ImageList;
-			this.m_cmd_exit.Location = new System.Drawing.Point(594, 4);
-			this.m_cmd_exit.Name = "m_cmd_exit";
-			this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_exit.TabIndex = 11;
-			this.m_cmd_exit.Text = "Thoát (Esc)";
-			// 
-			// m_cmd_view
-			// 
-			this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-			this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_view.ImageIndex = 18;
-			this.m_cmd_view.ImageList = this.ImageList;
-			this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-			this.m_cmd_view.Name = "m_cmd_view";
-			this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_view.TabIndex = 21;
-			this.m_cmd_view.Text = "Xem";
-			// 
-			// m_fg
-			// 
-			this.m_fg.ColumnInfo = @"18,1,0,0,0,85,Columns:0{Width:13;}	 11{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}17{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}14{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}2{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}16{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}3{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}7{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}12{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}9{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}10{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}4{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}13{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}5{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}6{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}1{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}8{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}15{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	";
-			this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_fg.Location = new System.Drawing.Point(0, 0);
-			this.m_fg.Name = "m_fg";
-			this.m_fg.Size = new System.Drawing.Size(686, 373);
-			this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(@"Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	");
-			this.m_fg.TabIndex = 20;
-			// 
-			// F403_tao_bao_cao_danh_muc_oto
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(686, 409);
-			this.Controls.Add(this.m_fg);
-			this.Controls.Add(this.m_pnl_out_place_dm);
-			this.Name = "F403_tao_bao_cao_danh_muc_oto";
-			this.Text = "F403_tao_bao_cao_danh_muc_oto";
-			this.Load += new System.EventHandler(this.F403_tao_bao_cao_danh_muc_oto_Load);
-			this.m_pnl_out_place_dm.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-			this.ResumeLayout(false);
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F403_tao_bao_cao_danh_muc_oto));
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_fg_oto = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_browser = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.m_txt_file_path = new System.Windows.Forms.TextBox();
+            this.m_cbo_loai_hinh_don_vi = new System.Windows.Forms.ComboBox();
+            this.m_cbo_loai_xe = new System.Windows.Forms.ComboBox();
+            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.m_cbo_don_vi_su_dung = new System.Windows.Forms.ComboBox();
+            this.m_cbo_don_vi_chu_quan = new System.Windows.Forms.ComboBox();
+            this.m_cbo_bo_tinh = new System.Windows.Forms.ComboBox();
+            this.m_lbl_ten_bao_cao = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_trang_thai = new System.Windows.Forms.Label();
+            this.m_lbl_don_vi_chu_quan = new System.Windows.Forms.Label();
+            this.lbl = new System.Windows.Forms.Label();
+            this.m_lbl_don_vi_su_dung = new System.Windows.Forms.Label();
+            this.m_lbl_bo_tinh = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.m_fg_oto_excel = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_openDiaglog = new System.Windows.Forms.OpenFileDialog();
+            this.m_pnl_out_place_dm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_oto)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_oto_excel)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
+            // m_pnl_out_place_dm
+            // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 405);
+            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
+            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(903, 36);
+            this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.TabIndex = 21;
+            this.m_cmd_xuat_excel.Text = "Xuất excel";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(811, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // m_fg_oto
+            // 
+            this.m_fg_oto.ColumnInfo = resources.GetString("m_fg_oto.ColumnInfo");
+            this.m_fg_oto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg_oto.Location = new System.Drawing.Point(0, 0);
+            this.m_fg_oto.Name = "m_fg_oto";
+            this.m_fg_oto.Size = new System.Drawing.Size(903, 181);
+            this.m_fg_oto.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_oto.Styles"));
+            this.m_fg_oto.TabIndex = 20;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_browser);
+            this.panel1.Controls.Add(this.m_lbl_thong_bao);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.m_txt_file_path);
+            this.panel1.Controls.Add(this.m_cbo_loai_hinh_don_vi);
+            this.panel1.Controls.Add(this.m_cbo_loai_xe);
+            this.panel1.Controls.Add(this.m_cbo_trang_thai);
+            this.panel1.Controls.Add(this.m_cbo_don_vi_su_dung);
+            this.panel1.Controls.Add(this.m_cbo_don_vi_chu_quan);
+            this.panel1.Controls.Add(this.m_cbo_bo_tinh);
+            this.panel1.Controls.Add(this.m_lbl_ten_bao_cao);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_lbl_trang_thai);
+            this.panel1.Controls.Add(this.m_lbl_don_vi_chu_quan);
+            this.panel1.Controls.Add(this.lbl);
+            this.panel1.Controls.Add(this.m_lbl_don_vi_su_dung);
+            this.panel1.Controls.Add(this.m_lbl_bo_tinh);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(903, 224);
+            this.panel1.TabIndex = 21;
+            // 
+            // m_cmd_browser
+            // 
+            this.m_cmd_browser.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_browser.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_browser.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_browser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_browser.ImageIndex = 5;
+            this.m_cmd_browser.ImageList = this.ImageList;
+            this.m_cmd_browser.Location = new System.Drawing.Point(398, 143);
+            this.m_cmd_browser.Name = "m_cmd_browser";
+            this.m_cmd_browser.Size = new System.Drawing.Size(33, 28);
+            this.m_cmd_browser.TabIndex = 17;
+            // 
+            // m_lbl_thong_bao
+            // 
+            this.m_lbl_thong_bao.AutoSize = true;
+            this.m_lbl_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(383, 185);
+            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
+            this.m_lbl_thong_bao.TabIndex = 27;
+            this.m_lbl_thong_bao.Text = " ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(69, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "File excel";
+            // 
+            // m_txt_file_path
+            // 
+            this.m_txt_file_path.Location = new System.Drawing.Point(129, 149);
+            this.m_txt_file_path.Name = "m_txt_file_path";
+            this.m_txt_file_path.Size = new System.Drawing.Size(254, 20);
+            this.m_txt_file_path.TabIndex = 25;
+            // 
+            // m_cbo_loai_hinh_don_vi
+            // 
+            this.m_cbo_loai_hinh_don_vi.FormattingEnabled = true;
+            this.m_cbo_loai_hinh_don_vi.Location = new System.Drawing.Point(129, 87);
+            this.m_cbo_loai_hinh_don_vi.Name = "m_cbo_loai_hinh_don_vi";
+            this.m_cbo_loai_hinh_don_vi.Size = new System.Drawing.Size(254, 21);
+            this.m_cbo_loai_hinh_don_vi.TabIndex = 21;
+            // 
+            // m_cbo_loai_xe
+            // 
+            this.m_cbo_loai_xe.FormattingEnabled = true;
+            this.m_cbo_loai_xe.Location = new System.Drawing.Point(585, 116);
+            this.m_cbo_loai_xe.Name = "m_cbo_loai_xe";
+            this.m_cbo_loai_xe.Size = new System.Drawing.Size(256, 21);
+            this.m_cbo_loai_xe.TabIndex = 24;
+            // 
+            // m_cbo_trang_thai
+            // 
+            this.m_cbo_trang_thai.FormattingEnabled = true;
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(129, 116);
+            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(254, 21);
+            this.m_cbo_trang_thai.TabIndex = 22;
+            // 
+            // m_cbo_don_vi_su_dung
+            // 
+            this.m_cbo_don_vi_su_dung.FormattingEnabled = true;
+            this.m_cbo_don_vi_su_dung.Location = new System.Drawing.Point(585, 87);
+            this.m_cbo_don_vi_su_dung.Name = "m_cbo_don_vi_su_dung";
+            this.m_cbo_don_vi_su_dung.Size = new System.Drawing.Size(256, 21);
+            this.m_cbo_don_vi_su_dung.TabIndex = 23;
+            // 
+            // m_cbo_don_vi_chu_quan
+            // 
+            this.m_cbo_don_vi_chu_quan.FormattingEnabled = true;
+            this.m_cbo_don_vi_chu_quan.Location = new System.Drawing.Point(585, 56);
+            this.m_cbo_don_vi_chu_quan.Name = "m_cbo_don_vi_chu_quan";
+            this.m_cbo_don_vi_chu_quan.Size = new System.Drawing.Size(256, 21);
+            this.m_cbo_don_vi_chu_quan.TabIndex = 20;
+            // 
+            // m_cbo_bo_tinh
+            // 
+            this.m_cbo_bo_tinh.FormattingEnabled = true;
+            this.m_cbo_bo_tinh.Location = new System.Drawing.Point(129, 56);
+            this.m_cbo_bo_tinh.Name = "m_cbo_bo_tinh";
+            this.m_cbo_bo_tinh.Size = new System.Drawing.Size(254, 21);
+            this.m_cbo_bo_tinh.TabIndex = 18;
+            // 
+            // m_lbl_ten_bao_cao
+            // 
+            this.m_lbl_ten_bao_cao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_ten_bao_cao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_bao_cao.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_ten_bao_cao.Name = "m_lbl_ten_bao_cao";
+            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(903, 39);
+            this.m_lbl_ten_bao_cao.TabIndex = 19;
+            this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI XE Ô TÔ";
+            this.m_lbl_ten_bao_cao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Loại hình đơn vị:";
+            // 
+            // m_lbl_trang_thai
+            // 
+            this.m_lbl_trang_thai.AutoSize = true;
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(531, 119);
+            this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
+            this.m_lbl_trang_thai.Size = new System.Drawing.Size(44, 13);
+            this.m_lbl_trang_thai.TabIndex = 11;
+            this.m_lbl_trang_thai.Text = "Loại xe:";
+            // 
+            // m_lbl_don_vi_chu_quan
+            // 
+            this.m_lbl_don_vi_chu_quan.AutoSize = true;
+            this.m_lbl_don_vi_chu_quan.Location = new System.Drawing.Point(489, 59);
+            this.m_lbl_don_vi_chu_quan.Name = "m_lbl_don_vi_chu_quan";
+            this.m_lbl_don_vi_chu_quan.Size = new System.Drawing.Size(89, 13);
+            this.m_lbl_don_vi_chu_quan.TabIndex = 16;
+            this.m_lbl_don_vi_chu_quan.Text = "Đơn vị chủ quản:";
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(61, 119);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(58, 13);
+            this.lbl.TabIndex = 15;
+            this.lbl.Text = "Trạng thái:";
+            // 
+            // m_lbl_don_vi_su_dung
+            // 
+            this.m_lbl_don_vi_su_dung.AutoSize = true;
+            this.m_lbl_don_vi_su_dung.Location = new System.Drawing.Point(493, 90);
+            this.m_lbl_don_vi_su_dung.Name = "m_lbl_don_vi_su_dung";
+            this.m_lbl_don_vi_su_dung.Size = new System.Drawing.Size(82, 13);
+            this.m_lbl_don_vi_su_dung.TabIndex = 14;
+            this.m_lbl_don_vi_su_dung.Text = "Đơn vị sử dụng:";
+            // 
+            // m_lbl_bo_tinh
+            // 
+            this.m_lbl_bo_tinh.AutoSize = true;
+            this.m_lbl_bo_tinh.Location = new System.Drawing.Point(75, 59);
+            this.m_lbl_bo_tinh.Name = "m_lbl_bo_tinh";
+            this.m_lbl_bo_tinh.Size = new System.Drawing.Size(45, 13);
+            this.m_lbl_bo_tinh.TabIndex = 13;
+            this.m_lbl_bo_tinh.Text = "Bộ/tỉnh:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_fg_oto_excel);
+            this.panel2.Controls.Add(this.m_fg_oto);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 224);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(903, 181);
+            this.panel2.TabIndex = 22;
+            // 
+            // m_fg_oto_excel
+            // 
+            this.m_fg_oto_excel.ColumnInfo = resources.GetString("m_fg_oto_excel.ColumnInfo");
+            this.m_fg_oto_excel.Location = new System.Drawing.Point(12, 32);
+            this.m_fg_oto_excel.Name = "m_fg_oto_excel";
+            this.m_fg_oto_excel.Size = new System.Drawing.Size(848, 175);
+            this.m_fg_oto_excel.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_oto_excel.Styles"));
+            this.m_fg_oto_excel.TabIndex = 28;
+            // 
+            // m_openDiaglog
+            // 
+            this.m_openDiaglog.FileName = "openFileDialog1";
+            // 
+            // F403_tao_bao_cao_danh_muc_oto
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(903, 441);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Name = "F403_tao_bao_cao_danh_muc_oto";
+            this.Text = "F403_tao_bao_cao_danh_muc_oto";
+            this.Load += new System.EventHandler(this.F403_tao_bao_cao_danh_muc_oto_Load);
+            this.m_pnl_out_place_dm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_oto)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_oto_excel)).EndInit();
+            this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			NGUON_NS = 11,HD_KHAC = 17,QLNN = 14,NHAN_HIEU = 2,KHONG_KINH_DOANH = 16,BIEN_KIEM_SOAT = 3,NAM_SU_DUNG = 7,NGUON_KHAC = 12,CHUC_DANH_SU_DUNG = 9,NGUON_GOC_XE = 10,SO_CHO_NGOI = 4,GIA_TRI_CON_LAI = 13,NUOC_SAN_XUAT = 5,NAM_SAN_XUAT = 6,TEN_TAI_SAN = 1,CONG_SUAT_XE = 8,KINH_DOANH = 15
-		}			
-		#endregion
+        #region Data Structure
+        public enum eFormMode
+        {
+            KE_KHAI
+                ,
+            DANH_MUC_TRU_SO_LAM_VIEC
+            ,
+            DE_NGHI_XU_LY
+            ,
+            TRU_SO_GIAO_CHO_DON_VI_SU_NGHIEP
+            ,
+            THONG_KE
+        }
+        private enum e_col_Number
+        {
+            NGUON_NS = 11
+,
+            HD_KHAC = 17
+                ,
+            QLNN = 14
+                ,
+            NHAN_HIEU = 2
+                ,
+            KHONG_KINH_DOANH = 16
+                ,
+            BIEN_KIEM_SOAT = 3
+                ,
+            NAM_SU_DUNG = 7
+                ,
+            NGUON_KHAC = 12
+                ,
+            CHUC_DANH_SU_DUNG = 9
+                ,
+            NGUON_GOC_XE = 10
+                ,
+            SO_CHO_NGOI = 4
+                ,
+            GIA_TRI_CON_LAI = 13
+                ,
+            NUOC_SAN_XUAT = 5
+                ,
+            NAM_SAN_XUAT = 6
+                ,
+            TEN_TAI_SAN = 1
+                ,
+            CONG_SUAT_XE = 8
+                , KINH_DOANH = 15
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_DM_OTO m_ds = new DS_DM_OTO();
-		US_DM_OTO m_us = new US_DM_OTO();
-		#endregion
+        }
+        private enum e_col_Excel_number
+        {
+            STT = 1,
+            CHI_TIET = 2,
+            DON_VI_BO_TINH = 3,
+            DON_VI_CHU_QUAN = 4,
+            DON_VI_SU_DUNG = 5,
+            TAI_SAN = 6,
+            LOAI_XE = 7,
+            NHAN_HIEU = 8,
+            BIEN_KIEM_SOAT = 9,
+            SO_CHO_NGOI_TAI_TRONG = 10,
+            NUOC_SAN_XUAT = 11,
+            NAM_SAN_XUAT = 12,
+            NAM_SU_DUNG = 13,
+            CONG_SUAT_XE = 14,
+            CHUC_DANH_SU_DUNG = 15,
+            NGUON_GOC_XE = 16,
+            NGUON_NS = 17,
+            NGUON_KHAC = 18,
+            GIA_TRI_CON_LAI = 19,
+            QLNN = 20,
+            KINH_DOANH = 21,
+            KHONG_KD = 22,
+            HD_KHAC = 23,
+            TRANG_THAI = 24,
+            TINH_TRANG = 25,
+            LOAI_HINH_DON_VI = 26,
+            MA_DON_VI_SU_DUNG = 27
+        }
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this);
-			CControlFormat.setC1FlexFormat(m_fg);
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_OTO.NGUON_NS, e_col_Number.NGUON_NS);			v_htb.Add(DM_OTO.HD_KHAC, e_col_Number.HD_KHAC);			v_htb.Add(DM_OTO.QLNN, e_col_Number.QLNN);			v_htb.Add(DM_OTO.NHAN_HIEU, e_col_Number.NHAN_HIEU);			v_htb.Add(DM_OTO.KHONG_KINH_DOANH, e_col_Number.KHONG_KINH_DOANH);			v_htb.Add(DM_OTO.BIEN_KIEM_SOAT, e_col_Number.BIEN_KIEM_SOAT);			v_htb.Add(DM_OTO.NAM_SU_DUNG, e_col_Number.NAM_SU_DUNG);			v_htb.Add(DM_OTO.NGUON_KHAC, e_col_Number.NGUON_KHAC);			v_htb.Add(DM_OTO.CHUC_DANH_SU_DUNG, e_col_Number.CHUC_DANH_SU_DUNG);			v_htb.Add(DM_OTO.NGUON_GOC_XE, e_col_Number.NGUON_GOC_XE);			v_htb.Add(DM_OTO.SO_CHO_NGOI, e_col_Number.SO_CHO_NGOI);			v_htb.Add(DM_OTO.GIA_TRI_CON_LAI, e_col_Number.GIA_TRI_CON_LAI);			v_htb.Add(DM_OTO.NUOC_SAN_XUAT, e_col_Number.NUOC_SAN_XUAT);			v_htb.Add(DM_OTO.NAM_SAN_XUAT, e_col_Number.NAM_SAN_XUAT);			v_htb.Add(DM_OTO.TEN_TAI_SAN, e_col_Number.TEN_TAI_SAN);			v_htb.Add(DM_OTO.CONG_SUAT_XE, e_col_Number.CONG_SUAT_XE);			v_htb.Add(DM_OTO.KINH_DOANH, e_col_Number.KINH_DOANH);									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_OTO.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_DM_OTO();			
-			m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
-		private void grid2us_object(US_DM_OTO i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_DM_OTO m_ds = new DS_DM_OTO();
+        US_DM_OTO m_us = new US_DM_OTO();
+        eFormMode m_e_form_mode = eFormMode.KE_KHAI;
+        #endregion
 
-	
-		private void us_object2grid(US_DM_OTO i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+        #region Private Methods
+        private void export_excel()
+        {
+            CExcelReport v_obj_exe_report = new CExcelReport();
+            switch (m_e_form_mode)
+            {
+                case eFormMode.KE_KHAI:
+                    v_obj_exe_report = new CExcelReport(TEN_BAO_CAO.BCDM_OTO_KE_KHAI, 13, 1);
+                    break;
+                case eFormMode.DE_NGHI_XU_LY:
+                    v_obj_exe_report = new CExcelReport(TEN_BAO_CAO.BCDM_OTO_DE_NGHI_XU_LY, 13, 1);
+                    break;
+
+            }
+            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", m_cbo_bo_tinh.Text);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_cbo_don_vi_chu_quan.Text);
+            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_cbo_don_vi_su_dung.Text);
+            if (m_fg_oto_excel[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG] != null)
+                v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", m_fg_oto_excel[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG]);
+            else v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", "");
+            v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", m_cbo_loai_hinh_don_vi.Text);
+            v_obj_exe_report.AddFindAndReplaceItem("<NGAY>", DateTime.Now.Day);
+            v_obj_exe_report.AddFindAndReplaceItem("<THANG>", DateTime.Now.Month);
+            v_obj_exe_report.AddFindAndReplaceItem("<NAM>", DateTime.Now.Year);
+
+            v_obj_exe_report.FindAndReplace(false);
+            v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg_oto, 2, m_fg_oto.Cols.Count - 1, true);
+        }
+        private void load_excel_2_grid_excel()
+        {
+
+            IP.Core.IPExcelReport.CExcelReport v_obj_excel_report
+               = new IP.Core.IPExcelReport.CExcelReport(m_txt_file_path.Text);
+            m_fg_oto.Rows.Count = 500;
+            m_fg_oto_excel.Rows.Count = 500;
+
+            for (int v_i_grid_col = 1; v_i_grid_col < m_fg_oto_excel.Cols.Count; v_i_grid_col++)
+            {
+                v_obj_excel_report.Export2Grid(
+                m_fg_oto_excel
+                , 5
+                , v_i_grid_col
+                , v_i_grid_col);
+            }
+            for (int v_i_cur_row = m_fg_oto_excel.Rows.Count - 1; v_i_cur_row > m_fg_oto_excel.Rows.Fixed; v_i_cur_row--)
+            {
+                if (m_fg_oto_excel[v_i_cur_row, 1] == null)
+                {
+                    m_fg_oto_excel.Rows.Remove(v_i_cur_row);
+                }
+                else
+                    if (m_fg_oto_excel[v_i_cur_row, 1].ToString().Trim().Length == 0)
+                    {
+                        m_fg_oto_excel.Rows.Remove(v_i_cur_row);
+                    }
+            }
 
 
-		private void insert_dm_oto(){			
-		//	F403_tao_bao_cao_danh_muc_oto_DE v_fDE = new  F403_tao_bao_cao_danh_muc_oto_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        }
+        // load du lieu len control cua form
+        private void load_grid_excel_2_form()
+        {
 
-		private void update_dm_oto(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	F403_tao_bao_cao_danh_muc_oto_DE v_fDE = new F403_tao_bao_cao_danh_muc_oto_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_dm_oto(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_DM_OTO v_us = new US_DM_OTO();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
+            // load data to combobox
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_oto_excel)) return;
+            m_cbo_don_vi_su_dung.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.DON_VI_SU_DUNG]);
+            m_cbo_don_vi_chu_quan.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.DON_VI_CHU_QUAN]);
+            m_cbo_bo_tinh.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.DON_VI_BO_TINH]);
+            m_cbo_trang_thai.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.TRANG_THAI]);
+            m_cbo_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
+            m_cbo_loai_xe.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.LOAI_XE]);
 
-		private void view_dm_oto(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	F403_tao_bao_cao_danh_muc_oto_DE v_fDE = new F403_tao_bao_cao_danh_muc_oto_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
-		#endregion
+            //load data 2 grid
+            load_data_from_data_table_to_grid(get_data_table_from_excel_grid(), m_fg_oto);
+        }
+        decimal sum(C1FlexGrid ip_fg, e_col_Excel_number ip_e_col_Excel_number)
+        {
+            decimal sum = 0;
+            for (int i = 1; i < ip_fg.Rows.Count; ++i)
+            {
+                if (ip_fg[i, (int)ip_e_col_Excel_number] != null)
+                    sum += CIPConvert.ToDecimal(ip_fg[i, (int)ip_e_col_Excel_number]);
+            }
+            return sum;
+        }
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void F403_tao_bao_cao_danh_muc_oto_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        private void open_excel_file_and_load_2_form()
+        {
+            m_openDiaglog.Filter = "File Excel|*.xls";
+            m_openDiaglog.Title = "Hãy chọn file excel";
+            m_openDiaglog.FileName = "Chọn file excel";
+            DialogResult result = m_openDiaglog.ShowDialog();
+            if (result == DialogResult.OK) // Test result.
+            {
+                m_txt_file_path.Text = m_openDiaglog.FileName;
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            //1. Dua du lieu tu file excel len grid excel
+            m_lbl_thong_bao.Text = "Chương trình đang xử lý, vui lòng chờ đợi!";
+            load_excel_2_grid_excel();
+            //2. Dua du lieu tu grid excel len form (grid + controls khac)
+            load_grid_excel_2_form();
+            m_lbl_thong_bao.Text = "Chương trình đã Tạo xong Báo Cáo!";
+        }
+        //format thong tin nha dat
+        private void format_controls_in_form()
+        {
+            m_cbo_don_vi_su_dung.Enabled = false;
+            m_cbo_don_vi_chu_quan.Enabled = false;
+            m_cbo_bo_tinh.Enabled = false;
+            m_cbo_trang_thai.Enabled = false;
+            m_cbo_loai_xe.Enabled = false;
+            m_cbo_loai_hinh_don_vi.Enabled = false;
+        }
+        private void xoa_trang_control()
+        {
+            m_fg_oto.DataSource = null;
+            m_fg_oto_excel.DataSource = null;
+        }
+        //load data from c1flexgrid to datatable
+        private DataTable get_data_table_from_excel_grid()
+        {
+            DataTable v_dtb = new DataTable("BangTam");
+            v_dtb.Columns.Add("STT", typeof(object));
+            v_dtb.Columns.Add("TÊN TÀI SẢN", typeof(object));
+            v_dtb.Columns.Add("NHÃN HIỆU", typeof(object));
+            v_dtb.Columns.Add("BIỂN KIỂM SOÁT", typeof(object));
+            v_dtb.Columns.Add("SỐ CHỖ NGỒI/TẢI TRỌNG", typeof(object));
+            v_dtb.Columns.Add("NƯỚC SẢN XUẤT", typeof(object));
+            v_dtb.Columns.Add("NĂM SẢN XUẤT", typeof(object));
+            v_dtb.Columns.Add("NĂM SỬ DỤNG", typeof(object));
+            v_dtb.Columns.Add("CÔNG SUẤT XE", typeof(object));
+            v_dtb.Columns.Add("CHỨC DANH SỬ DỤNG", typeof(object));
+            v_dtb.Columns.Add("NGUỒN GỐC XE", typeof(object));
+            v_dtb.Columns.Add("NGUỒN NS", typeof(object));
+            v_dtb.Columns.Add("NGUỒN KHÁC", typeof(object));
+            v_dtb.Columns.Add("GIÁ TRỊ CÒN LẠI", typeof(object));
+            v_dtb.Columns.Add("QLNN", typeof(object));
+            v_dtb.Columns.Add("KINH DOANH", typeof(object));
+            v_dtb.Columns.Add("KHÔNG KD", typeof(object));
+            v_dtb.Columns.Add("KHÁC", typeof(object));
+            int v_stt = 1;
+            for (int row = m_fg_oto_excel.Rows.Fixed; row < m_fg_oto_excel.Rows.Count; row++)
+            {
+                DataRow v_dtr = v_dtb.NewRow();
+                v_dtr[0] = v_stt++;
+                v_dtr[1] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.TAI_SAN);
+                v_dtr[2] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.NHAN_HIEU);
+                v_dtr[3] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.BIEN_KIEM_SOAT);
+                v_dtr[4] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.SO_CHO_NGOI_TAI_TRONG);
+                v_dtr[5] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.NUOC_SAN_XUAT);
+                v_dtr[6] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.NAM_SAN_XUAT);
+                v_dtr[7] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.NAM_SU_DUNG);
+                v_dtr[8] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.CONG_SUAT_XE);
+                v_dtr[9] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.CHUC_DANH_SU_DUNG);
+                v_dtr[10] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.NGUON_GOC_XE);
+                v_dtr[11] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.NGUON_NS);
+                v_dtr[12] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.NGUON_KHAC);
+                v_dtr[13] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.GIA_TRI_CON_LAI);
+                v_dtr[14] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.QLNN);
+                v_dtr[15] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.KINH_DOANH);
+                v_dtr[16] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.KHONG_KD);
+                v_dtr[17] = m_fg_oto_excel.GetData(row, (int)e_col_Excel_number.HD_KHAC);
+                v_dtb.Rows.Add(v_dtr);
+            }
+            return v_dtb;
+        }
+        private void format_grid()
+        {
+            m_fg_oto.Visible = true;
+            m_fg_oto_excel.Visible = false;
+        }
+        private void load_data_from_data_table_to_grid(DataTable i_dtb, C1FlexGrid i_fg)
+        {
+            i_fg.DataSource = i_dtb.DefaultView;
+        }
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this);
+            CControlFormat.setC1FlexFormat(m_fg_oto);
+            set_define_events();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load()
+        {
+            format_controls_in_form();
+            format_grid();
+            //m_obj_trans = get_trans_object(m_fg);
+            //load_data_2_grid();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(DM_OTO.NGUON_NS, e_col_Number.NGUON_NS);
+            v_htb.Add(DM_OTO.HD_KHAC, e_col_Number.HD_KHAC);
+            v_htb.Add(DM_OTO.QLNN, e_col_Number.QLNN);
+            v_htb.Add(DM_OTO.NHAN_HIEU, e_col_Number.NHAN_HIEU);
+            v_htb.Add(DM_OTO.KHONG_KINH_DOANH, e_col_Number.KHONG_KINH_DOANH);
+            v_htb.Add(DM_OTO.BIEN_KIEM_SOAT, e_col_Number.BIEN_KIEM_SOAT);
+            v_htb.Add(DM_OTO.NAM_SU_DUNG, e_col_Number.NAM_SU_DUNG);
+            v_htb.Add(DM_OTO.NGUON_KHAC, e_col_Number.NGUON_KHAC);
+            v_htb.Add(DM_OTO.CHUC_DANH_SU_DUNG, e_col_Number.CHUC_DANH_SU_DUNG);
+            v_htb.Add(DM_OTO.NGUON_GOC_XE, e_col_Number.NGUON_GOC_XE);
+            v_htb.Add(DM_OTO.SO_CHO_NGOI, e_col_Number.SO_CHO_NGOI);
+            v_htb.Add(DM_OTO.GIA_TRI_CON_LAI, e_col_Number.GIA_TRI_CON_LAI);
+            v_htb.Add(DM_OTO.NUOC_SAN_XUAT, e_col_Number.NUOC_SAN_XUAT);
+            v_htb.Add(DM_OTO.NAM_SAN_XUAT, e_col_Number.NAM_SAN_XUAT);
+            v_htb.Add(DM_OTO.TEN_TAI_SAN, e_col_Number.TEN_TAI_SAN);
+            v_htb.Add(DM_OTO.CONG_SUAT_XE, e_col_Number.CONG_SUAT_XE);
+            v_htb.Add(DM_OTO.KINH_DOANH, e_col_Number.KINH_DOANH);
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.DM_OTO.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid()
+        {
+            m_ds = new DS_DM_OTO();
+            m_us.FillDataset(m_ds);
+            m_fg_oto.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg_oto, m_obj_trans);
+            m_fg_oto.Redraw = true;
+        }
+        private void grid2us_object(US_DM_OTO i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg_oto.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void us_object2grid(US_DM_OTO i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg_oto.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_dm_oto();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
 
-	}
+        private void insert_dm_oto()
+        {
+            //	F403_tao_bao_cao_danh_muc_oto_DE v_fDE = new  F403_tao_bao_cao_danh_muc_oto_DE();								
+            //	v_fDE.display();
+            load_data_2_grid();
+        }
+
+        private void update_dm_oto()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_oto)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_oto, m_fg_oto.Row)) return;
+            grid2us_object(m_us, m_fg_oto.Row);
+            //	F403_tao_bao_cao_danh_muc_oto_DE v_fDE = new F403_tao_bao_cao_danh_muc_oto_DE();
+            //	v_fDE.display(m_us);
+            load_data_2_grid();
+        }
+
+        private void delete_dm_oto()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_oto)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_oto, m_fg_oto.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_DM_OTO v_us = new US_DM_OTO();
+            grid2us_object(v_us, m_fg_oto.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg_oto.Rows.Remove(m_fg_oto.Row);
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+
+        private void view_dm_oto()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_oto)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_oto, m_fg_oto.Row)) return;
+            grid2us_object(m_us, m_fg_oto.Row);
+            //	F403_tao_bao_cao_danh_muc_oto_DE v_fDE = new F403_tao_bao_cao_danh_muc_oto_DE();			
+            //	v_fDE.display(m_us);
+        }
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_browser.Click += new System.EventHandler(this.m_cmd_browser_Click);
+            m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
+        }
+        #endregion
+
+        #region Events
+        private void F403_tao_bao_cao_danh_muc_oto_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        private void m_cmd_browser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                xoa_trang_control();
+                open_excel_file_and_load_2_form();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        //private void m_cmd_insert_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        insert_dm_oto();
+        //    }
+        //    catch (Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
+
+        //private void m_cmd_update_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        update_dm_oto();
+        //    }
+        //    catch (Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
+
+        //private void m_cmd_delete_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        delete_dm_oto();
+        //    }
+        //    catch (Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
+
+        //private void m_cmd_view_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        view_dm_oto();
+        //    }
+        //    catch (Exception v_e)
+        //    {
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
+        #endregion
+
+
+
+
+
+
+    }
 }
 
