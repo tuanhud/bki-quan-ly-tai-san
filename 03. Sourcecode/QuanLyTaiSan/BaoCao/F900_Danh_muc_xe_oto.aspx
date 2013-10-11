@@ -264,6 +264,16 @@
                                     ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="TÌNH TRẠNG" DataField="TEN_TINH_TRANG" HeaderStyle-Width="2%"
                                     ItemStyle-HorizontalAlign="Center" />
+                                    <asp:TemplateField HeaderText="LOẠI HÌNH ĐƠN VỊ">
+                                    <ItemTemplate>
+                                        <%#get_ten_loai_hinh_don_vi()%>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="MÃ ĐƠN VI SỬ DỤNG">
+                                    <ItemTemplate>
+                                        <%#get_ma_don_vi_su_dung()%>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                             <EditRowStyle BackColor="#7C6F57" />
                             <HeaderStyle BackColor="#810c15" Font-Bold="True" ForeColor="White" />
