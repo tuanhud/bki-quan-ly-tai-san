@@ -29,7 +29,34 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     #region Member
     #endregion
 
+    #region Data Structure
+    enum e_col_grid
+    {
+        LOAI_HINH_DON_VI=20,
+        MA_DON_VI=21
+    }
+    #endregion
+
     #region Private Methods
+    private void format_grid_export_excel(bool ip_hide)
+    {
+        m_grv_bao_cao_oto.Columns[(int)e_col_grid.LOAI_HINH_DON_VI].Visible = ip_hide;
+        m_grv_bao_cao_oto.Columns[(int)e_col_grid.MA_DON_VI].Visible = ip_hide;
+    }
+    public string get_ma_don_vi_su_dung()
+    {
+        string v_str_ma_don_vi = "";
+        if (m_cbo_don_vi_su_dung.SelectedValue == null) return v_str_ma_don_vi;
+        if (m_cbo_don_vi_su_dung.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_ma_don_vi;
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung.SelectedValue));
+        return v_us_dm_don_vi.strMA_DON_VI;
+    }
+    public string get_ten_loai_hinh_don_vi()
+    {
+        if (m_cbo_loai_hinh_don_vi.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return "Tất cả";
+        US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(MA_LOAI_TU_DIEN.LOAI_HINH_DON_VI, m_cbo_loai_hinh_don_vi.SelectedValue);
+        return v_us_cm_dm_tu_dien.strTEN;
+    }
     private bool check_validate_data_is_ok()
     {
         reset_thong_bao();
@@ -163,6 +190,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
 
     private void set_inital_form()
     {
+        format_grid_export_excel(false);
         //load data to combobox trang thai o to
         string v_str_id_loai_bao_cao = "";
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null)
@@ -440,7 +468,9 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         try
         {
             if (!check_validate_data_is_ok()) return;
+            format_grid_export_excel(true);
             export_excel();
+            format_grid_export_excel(false);
         }
         catch (Exception v_e)
         {
