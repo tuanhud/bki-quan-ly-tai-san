@@ -126,7 +126,7 @@
     <Compile Include="f401_bao_cao_danh_muc_tai_san_khac.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="f402_bao_cao_danh_muc_tru_so_lam_viec.cs">
+    <Compile Include="f402_tao_bao_cao_danh_muc_tru_so_lam_viec.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f200_RPT_TONG_HOP_HIEN_TRANG_TSK.cs">
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="f401_bao_cao_danh_muc_tai_san_khac.resx">
       <DependentUpon>f401_bao_cao_danh_muc_tai_san_khac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="f402_bao_cao_danh_muc_tru_so_lam_viec.resx">
-      <DependentUpon>f402_bao_cao_danh_muc_tru_so_lam_viec.cs</DependentUpon>
+    <EmbeddedResource Include="f402_tao_bao_cao_danh_muc_tru_so_lam_viec.resx">
+      <DependentUpon>f402_tao_bao_cao_danh_muc_tru_so_lam_viec.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f200_RPT_TONG_HOP_HIEN_TRANG_TSK.resx">
