@@ -64,7 +64,7 @@ namespace QltsForm
         {
             try
             {
-                f402_bao_cao_danh_muc_tru_so_lam_viec v_frm402 = new f402_bao_cao_danh_muc_tru_so_lam_viec();
+                f402_tao_bao_cao_danh_muc_tru_so_lam_viec v_frm402 = new f402_tao_bao_cao_danh_muc_tru_so_lam_viec();
                 v_frm402.display();
                 //    f399_bao_cao_danh_muc_tru_so_lam_viec v_frm = new f399_bao_cao_danh_muc_tru_so_lam_viec();
                 //    v_frm.display();
@@ -103,14 +103,17 @@ namespace QltsForm
             }
         }
 
-        private void kêKhaiTrụSởLàmViệcToolStripMenuItem1_Click(object sender, EventArgs e) {
-            try {
-                f402_bao_cao_danh_muc_tru_so_lam_viec v_frm402 = new f402_bao_cao_danh_muc_tru_so_lam_viec();
+        private void kêKhaiTrụSởLàmViệcToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f402_tao_bao_cao_danh_muc_tru_so_lam_viec v_frm402 = new f402_tao_bao_cao_danh_muc_tru_so_lam_viec();
                 v_frm402.display();
                 //    f399_bao_cao_danh_muc_tru_so_lam_viec v_frm = new f399_bao_cao_danh_muc_tru_so_lam_viec();
                 //    v_frm.display();
             }
-            catch (Exception v_e) {
+            catch (Exception v_e)
+            {
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
