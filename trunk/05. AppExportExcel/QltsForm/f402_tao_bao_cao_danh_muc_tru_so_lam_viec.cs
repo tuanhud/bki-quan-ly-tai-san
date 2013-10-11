@@ -131,6 +131,7 @@ namespace QltsForm
             this.m_fg_nha = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_cmd_browser = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.m_txt_file_path = new System.Windows.Forms.TextBox();
             this.m_cbo_loai_hinh_don_vi = new System.Windows.Forms.ComboBox();
@@ -148,8 +149,8 @@ namespace QltsForm
             this.m_lbl_bo_tinh = new System.Windows.Forms.Label();
             this.m_grb_thong_tin_nha_dat = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_fg_excel_dat = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_thong_tin_nha_dat = new System.Windows.Forms.Panel();
+            this.m_fg_excel_dat = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.label6 = new System.Windows.Forms.Label();
             this.m_lbl_dia_chi = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -174,14 +175,13 @@ namespace QltsForm
             this.m_lbl_su_dung_vao_muc_dich_khac = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.m_openDiaglog = new System.Windows.Forms.OpenFileDialog();
-            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nha)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.m_grb_thong_tin_nha_dat.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_dat)).BeginInit();
             this.m_pnl_thong_tin_nha_dat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_dat)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -354,6 +354,17 @@ namespace QltsForm
             this.m_cmd_browser.Size = new System.Drawing.Size(33, 28);
             this.m_cmd_browser.TabIndex = 0;
             // 
+            // m_lbl_thong_bao
+            // 
+            this.m_lbl_thong_bao.AutoSize = true;
+            this.m_lbl_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(488, 187);
+            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
+            this.m_lbl_thong_bao.TabIndex = 10;
+            this.m_lbl_thong_bao.Text = " ";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -365,15 +376,15 @@ namespace QltsForm
             // 
             // m_txt_file_path
             // 
-            this.m_txt_file_path.Location = new System.Drawing.Point(185, 154);
+            this.m_txt_file_path.Location = new System.Drawing.Point(184, 154);
             this.m_txt_file_path.Name = "m_txt_file_path";
-            this.m_txt_file_path.Size = new System.Drawing.Size(254, 20);
+            this.m_txt_file_path.Size = new System.Drawing.Size(255, 20);
             this.m_txt_file_path.TabIndex = 9;
             // 
             // m_cbo_loai_hinh_don_vi
             // 
             this.m_cbo_loai_hinh_don_vi.FormattingEnabled = true;
-            this.m_cbo_loai_hinh_don_vi.Location = new System.Drawing.Point(641, 91);
+            this.m_cbo_loai_hinh_don_vi.Location = new System.Drawing.Point(184, 90);
             this.m_cbo_loai_hinh_don_vi.Name = "m_cbo_loai_hinh_don_vi";
             this.m_cbo_loai_hinh_don_vi.Size = new System.Drawing.Size(256, 21);
             this.m_cbo_loai_hinh_don_vi.TabIndex = 8;
@@ -397,7 +408,7 @@ namespace QltsForm
             // m_cbo_don_vi_su_dung
             // 
             this.m_cbo_don_vi_su_dung.FormattingEnabled = true;
-            this.m_cbo_don_vi_su_dung.Location = new System.Drawing.Point(184, 91);
+            this.m_cbo_don_vi_su_dung.Location = new System.Drawing.Point(641, 91);
             this.m_cbo_don_vi_su_dung.Name = "m_cbo_don_vi_su_dung";
             this.m_cbo_don_vi_su_dung.Size = new System.Drawing.Size(256, 21);
             this.m_cbo_don_vi_su_dung.TabIndex = 8;
@@ -432,7 +443,7 @@ namespace QltsForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(545, 94);
+            this.label1.Location = new System.Drawing.Point(88, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
@@ -450,7 +461,7 @@ namespace QltsForm
             // m_lbl_don_vi_chu_quan
             // 
             this.m_lbl_don_vi_chu_quan.AutoSize = true;
-            this.m_lbl_don_vi_chu_quan.Location = new System.Drawing.Point(545, 64);
+            this.m_lbl_don_vi_chu_quan.Location = new System.Drawing.Point(542, 64);
             this.m_lbl_don_vi_chu_quan.Name = "m_lbl_don_vi_chu_quan";
             this.m_lbl_don_vi_chu_quan.Size = new System.Drawing.Size(89, 13);
             this.m_lbl_don_vi_chu_quan.TabIndex = 0;
@@ -468,7 +479,7 @@ namespace QltsForm
             // m_lbl_don_vi_su_dung
             // 
             this.m_lbl_don_vi_su_dung.AutoSize = true;
-            this.m_lbl_don_vi_su_dung.Location = new System.Drawing.Point(94, 94);
+            this.m_lbl_don_vi_su_dung.Location = new System.Drawing.Point(549, 94);
             this.m_lbl_don_vi_su_dung.Name = "m_lbl_don_vi_su_dung";
             this.m_lbl_don_vi_su_dung.Size = new System.Drawing.Size(82, 13);
             this.m_lbl_don_vi_su_dung.TabIndex = 0;
@@ -504,16 +515,6 @@ namespace QltsForm
             this.panel2.Size = new System.Drawing.Size(971, 134);
             this.panel2.TabIndex = 25;
             // 
-            // m_fg_excel_dat
-            // 
-            this.m_fg_excel_dat.ColumnInfo = resources.GetString("m_fg_excel_dat.ColumnInfo");
-            this.m_fg_excel_dat.Enabled = false;
-            this.m_fg_excel_dat.Location = new System.Drawing.Point(16, 14);
-            this.m_fg_excel_dat.Name = "m_fg_excel_dat";
-            this.m_fg_excel_dat.Size = new System.Drawing.Size(971, 149);
-            this.m_fg_excel_dat.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel_dat.Styles"));
-            this.m_fg_excel_dat.TabIndex = 1;
-            // 
             // m_pnl_thong_tin_nha_dat
             // 
             this.m_pnl_thong_tin_nha_dat.Controls.Add(this.m_fg_excel_dat);
@@ -545,6 +546,16 @@ namespace QltsForm
             this.m_pnl_thong_tin_nha_dat.Name = "m_pnl_thong_tin_nha_dat";
             this.m_pnl_thong_tin_nha_dat.Size = new System.Drawing.Size(971, 186);
             this.m_pnl_thong_tin_nha_dat.TabIndex = 2;
+            // 
+            // m_fg_excel_dat
+            // 
+            this.m_fg_excel_dat.ColumnInfo = resources.GetString("m_fg_excel_dat.ColumnInfo");
+            this.m_fg_excel_dat.Enabled = false;
+            this.m_fg_excel_dat.Location = new System.Drawing.Point(16, 14);
+            this.m_fg_excel_dat.Name = "m_fg_excel_dat";
+            this.m_fg_excel_dat.Size = new System.Drawing.Size(971, 149);
+            this.m_fg_excel_dat.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel_dat.Styles"));
+            this.m_fg_excel_dat.TabIndex = 1;
             // 
             // label6
             // 
@@ -767,25 +778,14 @@ namespace QltsForm
             // 
             this.m_openDiaglog.FileName = "openFileDialog1";
             // 
-            // m_lbl_thong_bao
-            // 
-            this.m_lbl_thong_bao.AutoSize = true;
-            this.m_lbl_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(488, 187);
-            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
-            this.m_lbl_thong_bao.TabIndex = 10;
-            this.m_lbl_thong_bao.Text = " ";
-            // 
-            // f402_bao_cao_danh_muc_tru_so_lam_viec
+            // f402_tao_bao_cao_danh_muc_tru_so_lam_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(977, 588);
             this.Controls.Add(this.m_grb_thong_tin_nha_dat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "f402_bao_cao_danh_muc_tru_so_lam_viec";
+            this.Name = "f402_tao_bao_cao_danh_muc_tru_so_lam_viec";
             this.Text = "f402_bao_cao_danh_muc_tru_so_lam_viec";
             this.Load += new System.EventHandler(this.f402_bao_cao_danh_muc_tru_so_lam_viec_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -794,9 +794,9 @@ namespace QltsForm
             this.groupBox1.PerformLayout();
             this.m_grb_thong_tin_nha_dat.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_dat)).EndInit();
             this.m_pnl_thong_tin_nha_dat.ResumeLayout(false);
             this.m_pnl_thong_tin_nha_dat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_dat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1393,8 +1393,8 @@ namespace QltsForm
 
             IP.Core.IPExcelReport.CExcelReport v_obj_excel_report
                = new IP.Core.IPExcelReport.CExcelReport(m_txt_file_path.Text);
-            m_fg_nha.Rows.Count = 10;
-            m_fg_excel_dat.Rows.Count = 10;
+            m_fg_nha.Rows.Count = 500;
+            m_fg_excel_dat.Rows.Count = 500;
 
             for (int v_i_grid_col = 1; v_i_grid_col < m_fg_excel_dat.Cols.Count; v_i_grid_col++)
             {
