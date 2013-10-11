@@ -1393,8 +1393,9 @@ namespace QltsForm
 
             IP.Core.IPExcelReport.CExcelReport v_obj_excel_report
                = new IP.Core.IPExcelReport.CExcelReport(m_txt_file_path.Text);
-            m_fg_nha.Rows.Count = 500;
-            m_fg_excel_dat.Rows.Count = 500;
+            int v_int_excel_row_cout = v_obj_excel_report.GetCountRow();
+            m_fg_nha.Rows.Count = v_int_excel_row_cout;
+            m_fg_excel_dat.Rows.Count = v_int_excel_row_cout;
 
             for (int v_i_grid_col = 1; v_i_grid_col < m_fg_excel_dat.Cols.Count; v_i_grid_col++)
             {
