@@ -118,5 +118,11 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void kêKhaiÔTôToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            F403_tao_bao_cao_danh_muc_oto v_frm = new F403_tao_bao_cao_danh_muc_oto();
+            v_frm.display();
+        }
     }
 }
