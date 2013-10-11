@@ -38,6 +38,7 @@
             this.tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tạoBáoCáoKêKhaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kêKhaiÔTôToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,7 +147,8 @@
             // tạoBáoCáoKêKhaiToolStripMenuItem
             // 
             this.tạoBáoCáoKêKhaiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kêKhaiTrụSởLàmViệcToolStripMenuItem1});
+            this.kêKhaiTrụSởLàmViệcToolStripMenuItem1,
+            this.kêKhaiÔTôToolStripMenuItem1});
             this.tạoBáoCáoKêKhaiToolStripMenuItem.Name = "tạoBáoCáoKêKhaiToolStripMenuItem";
             this.tạoBáoCáoKêKhaiToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
             this.tạoBáoCáoKêKhaiToolStripMenuItem.Text = "Tạo báo cáo kê khai";
@@ -157,6 +159,13 @@
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Text = "Kê khai trụ sở làm việc";
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Click += new System.EventHandler(this.kêKhaiTrụSởLàmViệcToolStripMenuItem1_Click);
+            // 
+            // kêKhaiÔTôToolStripMenuItem1
+            // 
+            this.kêKhaiÔTôToolStripMenuItem1.Name = "kêKhaiÔTôToolStripMenuItem1";
+            this.kêKhaiÔTôToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.kêKhaiÔTôToolStripMenuItem1.Text = "Kê khai ô tô";
+            this.kêKhaiÔTôToolStripMenuItem1.Click += new System.EventHandler(this.kêKhaiÔTôToolStripMenuItem1_Click);
             // 
             // f100_menu
             // 
@@ -193,6 +202,7 @@
         private System.Windows.Forms.ToolStripMenuItem tHTHSDNhàDấtChiTiếtTheoTừngĐơnVịToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tạoBáoCáoKêKhaiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kêKhaiTrụSởLàmViệcToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem kêKhaiÔTôToolStripMenuItem1;
     }
 }
 
