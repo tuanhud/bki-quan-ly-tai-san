@@ -862,7 +862,7 @@ namespace QltsForm
         {
             try
             {
-                xoa_trang_control();
+                //xoa_trang_control();
                 open_excel_file_and_load_2_form();
             }
             catch (Exception v_e)
