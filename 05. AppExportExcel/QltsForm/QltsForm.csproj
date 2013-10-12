@@ -105,6 +105,12 @@
     <Compile Include="f100_menu.Designer.cs">
       <DependentUpon>f100_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="f101_menu_tao_bao_cao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f101_menu_tao_bao_cao.Designer.cs">
+      <DependentUpon>f101_menu_tao_bao_cao.cs</DependentUpon>
+    </Compile>
     <Compile Include="f210_RPT_TONG_HOP_HIEN_TRANG_OTO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <Compile Include="QltsFormControls.cs" />
     <EmbeddedResource Include="f100_menu.resx">
       <DependentUpon>f100_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f101_menu_tao_bao_cao.resx">
+      <DependentUpon>f101_menu_tao_bao_cao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f210_RPT_TONG_HOP_HIEN_TRANG_OTO.resx">
       <DependentUpon>f210_RPT_TONG_HOP_HIEN_TRANG_OTO.cs</DependentUpon>
