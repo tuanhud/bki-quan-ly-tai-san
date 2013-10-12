@@ -72,7 +72,7 @@ namespace QltsForm
         private Label label20;
         private Label label6;
         private Label m_lbl_lam_co_so_hd_su_nghiep;
-        private C1FlexGrid m_fg_excel_dat;
+        private C1FlexGrid m_fg_excel_nha;
         internal SIS.Controls.Button.SiSButton m_cmd_browser;
         private Label label7;
         private TextBox m_txt_file_path;
@@ -82,6 +82,7 @@ namespace QltsForm
         private ComboBox m_cbo_loai_hinh_don_vi;
         private Label label1;
         private Label m_lbl_thong_bao;
+        internal SIS.Controls.Button.SiSButton siSButton1;
         private System.ComponentModel.IContainer components;
 
         public f402_tao_bao_cao_danh_muc_tru_so_lam_viec()
@@ -150,7 +151,7 @@ namespace QltsForm
             this.m_grb_thong_tin_nha_dat = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_pnl_thong_tin_nha_dat = new System.Windows.Forms.Panel();
-            this.m_fg_excel_dat = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_fg_excel_nha = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.label6 = new System.Windows.Forms.Label();
             this.m_lbl_dia_chi = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -175,13 +176,14 @@ namespace QltsForm
             this.m_lbl_su_dung_vao_muc_dich_khac = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.m_openDiaglog = new System.Windows.Forms.OpenFileDialog();
+            this.siSButton1 = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nha)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.m_grb_thong_tin_nha_dat.SuspendLayout();
             this.panel2.SuspendLayout();
             this.m_pnl_thong_tin_nha_dat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_dat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_nha)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -316,6 +318,7 @@ namespace QltsForm
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.siSButton1);
             this.groupBox1.Controls.Add(this.m_cmd_browser);
             this.groupBox1.Controls.Add(this.m_lbl_thong_bao);
             this.groupBox1.Controls.Add(this.label7);
@@ -517,7 +520,7 @@ namespace QltsForm
             // 
             // m_pnl_thong_tin_nha_dat
             // 
-            this.m_pnl_thong_tin_nha_dat.Controls.Add(this.m_fg_excel_dat);
+            this.m_pnl_thong_tin_nha_dat.Controls.Add(this.m_fg_excel_nha);
             this.m_pnl_thong_tin_nha_dat.Controls.Add(this.label6);
             this.m_pnl_thong_tin_nha_dat.Controls.Add(this.m_lbl_dia_chi);
             this.m_pnl_thong_tin_nha_dat.Controls.Add(this.label2);
@@ -547,15 +550,14 @@ namespace QltsForm
             this.m_pnl_thong_tin_nha_dat.Size = new System.Drawing.Size(971, 186);
             this.m_pnl_thong_tin_nha_dat.TabIndex = 2;
             // 
-            // m_fg_excel_dat
+            // m_fg_excel_nha
             // 
-            this.m_fg_excel_dat.ColumnInfo = resources.GetString("m_fg_excel_dat.ColumnInfo");
-            this.m_fg_excel_dat.Enabled = false;
-            this.m_fg_excel_dat.Location = new System.Drawing.Point(16, 14);
-            this.m_fg_excel_dat.Name = "m_fg_excel_dat";
-            this.m_fg_excel_dat.Size = new System.Drawing.Size(971, 149);
-            this.m_fg_excel_dat.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel_dat.Styles"));
-            this.m_fg_excel_dat.TabIndex = 1;
+            this.m_fg_excel_nha.ColumnInfo = resources.GetString("m_fg_excel_nha.ColumnInfo");
+            this.m_fg_excel_nha.Location = new System.Drawing.Point(16, 14);
+            this.m_fg_excel_nha.Name = "m_fg_excel_nha";
+            this.m_fg_excel_nha.Size = new System.Drawing.Size(971, 149);
+            this.m_fg_excel_nha.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel_nha.Styles"));
+            this.m_fg_excel_nha.TabIndex = 1;
             // 
             // label6
             // 
@@ -778,6 +780,19 @@ namespace QltsForm
             // 
             this.m_openDiaglog.FileName = "openFileDialog1";
             // 
+            // siSButton1
+            // 
+            this.siSButton1.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.siSButton1.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.siSButton1.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.siSButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.siSButton1.ImageIndex = 5;
+            this.siSButton1.Location = new System.Drawing.Point(533, 149);
+            this.siSButton1.Name = "siSButton1";
+            this.siSButton1.Size = new System.Drawing.Size(33, 28);
+            this.siSButton1.TabIndex = 0;
+            this.siSButton1.Click += new System.EventHandler(this.siSButton1_Click);
+            // 
             // f402_tao_bao_cao_danh_muc_tru_so_lam_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -786,7 +801,7 @@ namespace QltsForm
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f402_tao_bao_cao_danh_muc_tru_so_lam_viec";
-            this.Text = "f402_bao_cao_danh_muc_tru_so_lam_viec";
+            this.Text = "f402_tao_bao_cao_danh_muc_tru_so_lam_viec";
             this.Load += new System.EventHandler(this.f402_bao_cao_danh_muc_tru_so_lam_viec_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nha)).EndInit();
@@ -796,7 +811,7 @@ namespace QltsForm
             this.panel2.ResumeLayout(false);
             this.m_pnl_thong_tin_nha_dat.ResumeLayout(false);
             this.m_pnl_thong_tin_nha_dat.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_dat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel_nha)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1017,8 +1032,8 @@ namespace QltsForm
             v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", m_cbo_bo_tinh.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_cbo_don_vi_chu_quan.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_cbo_don_vi_su_dung.Text);
-            if (m_fg_excel_dat[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG] != null)
-                v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", m_fg_excel_dat[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG]);
+            if (m_fg_excel_nha[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG] != null)
+                v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", m_fg_excel_nha[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG]);
             else v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", "");
             v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", m_cbo_loai_hinh_don_vi.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<TRU_SO_LAM_VIEC>", m_lbl_lam_tru_so_lam_viec.Text);
@@ -1134,7 +1149,7 @@ namespace QltsForm
             CControlFormat.setC1FlexFormat(m_fg_nha);
             set_define_events();
             this.KeyPreview = true;
-            m_fg_excel_dat.Visible = false;
+
         }
 
         private void load_report_name()
@@ -1154,6 +1169,7 @@ namespace QltsForm
             format_controls_in_form();
             xoa_trang_control();
             load_report_name();
+            format_grid();
             //m_obj_trans = get_trans_object(m_fg);
             //load_data_to_cbo_bo_tinh();
             //load_data_to_cbo_don_vi_chu_quan();
@@ -1403,40 +1419,42 @@ namespace QltsForm
         {
             xoa_trang_control();
             //1. Dua du lieu tu file excel len grid excel
-            m_lbl_thong_bao.Text = "Chương trình đang xử lý, vui lòng chờ đợi!";
-            load_excel_2_grid_excel(ip_str_file_name);
+            m_lbl_thong_bao.Text = "Chương trình đang xử lý, vui lòng chờ đợi!"; 
+            m_txt_file_path.Text = ip_str_file_name;
+            load_excel_2_grid_excel();
             //2. Dua du lieu tu grid excel len form (grid + controls khac)
             load_grid_excel_2_form();
+            
             m_lbl_thong_bao.Text = "Chương trình đã Tạo xong Báo Cáo!";
         }
 
-        private void load_excel_2_grid_excel(string ip_str_file_name)
+        private void load_excel_2_grid_excel()
         {
 
             IP.Core.IPExcelReport.CExcelReport v_obj_excel_report
-               = new IP.Core.IPExcelReport.CExcelReport(ip_str_file_name);
+               = new IP.Core.IPExcelReport.CExcelReport(m_txt_file_path.Text);
             int v_int_excel_row_cout = v_obj_excel_report.GetCountRow();
             m_fg_nha.Rows.Count = v_int_excel_row_cout;
-            m_fg_excel_dat.Rows.Count = v_int_excel_row_cout;
+            m_fg_excel_nha.Rows.Count = v_int_excel_row_cout;
 
-            for (int v_i_grid_col = 1; v_i_grid_col < m_fg_excel_dat.Cols.Count; v_i_grid_col++)
+            for (int v_i_grid_col = 1; v_i_grid_col < m_fg_excel_nha.Cols.Count; v_i_grid_col++)
             {
                 v_obj_excel_report.Export2Grid(
-                m_fg_excel_dat
+                m_fg_excel_nha
                 , 5
                 , v_i_grid_col
                 , v_i_grid_col);
             }
-            for (int v_i_cur_row = m_fg_excel_dat.Rows.Count - 1; v_i_cur_row > m_fg_excel_dat.Rows.Fixed; v_i_cur_row--)
+            for (int v_i_cur_row = m_fg_excel_nha.Rows.Count - 1; v_i_cur_row > m_fg_excel_nha.Rows.Fixed; v_i_cur_row--)
             {
-                if (m_fg_excel_dat[v_i_cur_row, 1] == null)
+                if (m_fg_excel_nha[v_i_cur_row, 1] == null)
                 {
-                    m_fg_excel_dat.Rows.Remove(v_i_cur_row);
+                    m_fg_excel_nha.Rows.Remove(v_i_cur_row);
                 }
                 else
-                    if (m_fg_excel_dat[v_i_cur_row, 1].ToString().Trim().Length == 0)
+                    if (m_fg_excel_nha[v_i_cur_row, 1].ToString().Trim().Length == 0)
                     {
-                        m_fg_excel_dat.Rows.Remove(v_i_cur_row);
+                        m_fg_excel_nha.Rows.Remove(v_i_cur_row);
                     }
             }
 
@@ -1447,26 +1465,28 @@ namespace QltsForm
         {
 
             // load data to combobox
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_excel_dat)) return;
-            m_cbo_don_vi_su_dung.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DON_VI_SU_DUNG]);
-            m_cbo_don_vi_chu_quan.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DON_VI_CHU_QUAN]);
-            m_cbo_bo_tinh.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DON_VI_BO_TINH]);
-            m_cbo_trang_thai.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.TRANG_THAI]);
-            m_cbo_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
-            m_cbo_dia_chi.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DIA_CHI]);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_excel_nha)) return;
+            m_cbo_don_vi_su_dung.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DON_VI_SU_DUNG]);
+            m_cbo_don_vi_chu_quan.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DON_VI_CHU_QUAN]);
+            m_cbo_bo_tinh.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DON_VI_BO_TINH]);
+            m_cbo_trang_thai.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.TRANG_THAI]);
+            m_cbo_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
+            m_cbo_dia_chi.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DIA_CHI]);
             //load data to thong_tin_nha_dat
-            m_lbl_dia_chi.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DIA_CHI]);
-            m_lbl_bi_lan_chiem.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_BI_LAN_CHIEM]);
-            m_lbl_bo_trong.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_BO_TRONG]);
-            m_lbl_cho_thue.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_CHO_THUE]);
-            m_lbl_lam_co_so_hd_su_nghiep.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_LAM_CO_SO_HDSN]);
-            m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_LAM_TRU_SO_LAM_VIEC]);
-            m_lbl_lam_nha_o.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_LAM_NHA_O]);
-            m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_KHUON_VIEN_DAT]);
-            m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.GT_DAT_THEO_SO_KE_TOAN]);
-            m_lbl_su_dung_vao_muc_dich_khac.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_SU_DUNG_VAO_MUC_DICH_KHAC]);
+            m_lbl_dia_chi.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DIA_CHI]);
+            m_lbl_bi_lan_chiem.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_DAT_BI_LAN_CHIEM]);
+            m_lbl_bo_trong.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_DAT_BO_TRONG]);
+            m_lbl_cho_thue.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_DAT_CHO_THUE]);
+            m_lbl_lam_co_so_hd_su_nghiep.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_DAT_LAM_CO_SO_HDSN]);
+            m_lbl_lam_tru_so_lam_viec.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_DAT_LAM_TRU_SO_LAM_VIEC]);
+            m_lbl_lam_nha_o.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_DAT_LAM_NHA_O]);
+            m_lbl_dien_tich_khuon_vien_dat.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_KHUON_VIEN_DAT]);
+            m_lbl_gia_tri_theo_so_ke_toan.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.GT_DAT_THEO_SO_KE_TOAN]);
+            m_lbl_su_dung_vao_muc_dich_khac.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DT_DAT_SU_DUNG_VAO_MUC_DICH_KHAC]);
             //load data 2 grid
             load_data_from_data_table_to_grid(get_data_table_from_excel_grid(), m_fg_nha);
+            //siSButton1_Click(siSButton1,EventArgs.Empty);
+
         }
         decimal sum(C1FlexGrid ip_fg, e_col_Excel_number ip_e_col_Excel_number)
         {
@@ -1506,7 +1526,7 @@ namespace QltsForm
             m_lbl_su_dung_vao_muc_dich_khac.Text = "";
             m_lbl_gia_tri_theo_so_ke_toan.Text = "";
             m_fg_nha.DataSource = null ;
-            m_fg_excel_dat.DataSource = null;
+            m_fg_excel_nha.DataSource = null;
         }
         //load data from c1flexgrid to datatable
         private DataTable get_data_table_from_excel_grid()
@@ -1531,32 +1551,36 @@ namespace QltsForm
             v_dtb.Columns.Add("BỊ LẤN CHIẾM", typeof(object));
             v_dtb.Columns.Add("KHÁC", typeof(object));
             int v_stt = 1;
-            for (int row = m_fg_excel_dat.Rows.Fixed; row < m_fg_excel_dat.Rows.Count; row++)
+            for (int row = m_fg_excel_nha.Rows.Fixed; row < m_fg_excel_nha.Rows.Count; row++)
             {
                 DataRow v_dtr = v_dtb.NewRow();
                 v_dtr[0] = v_stt++;
-                v_dtr[1] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.TAI_SAN);
-                v_dtr[2] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.CAP_HANG);
-                v_dtr[3] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.NAM_XAY_DUNG);
-                v_dtr[4] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.NGAY_THANG_NAM_SU_DUNG);
-                v_dtr[5] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.NGUON_NS);
-                v_dtr[6] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.NGUON_KHAC);
-                v_dtr[7] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.GIA_TRI_CON_LAI);
-                v_dtr[8] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.SO_TANG);
-                v_dtr[9] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.DT_XAY_DUNG);
-                v_dtr[10] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.TONG_DIEN_TICH_SAN_XD);
-                v_dtr[11] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.TRU_SO_LAM_VIEC);
-                v_dtr[12] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.CO_SO_HDSN);
-                v_dtr[13] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.LAM_NHA_O);
-                v_dtr[14] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.CHO_THUE);
-                v_dtr[15] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.BO_TRONG);
-                v_dtr[16] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.BI_LAN_CHIEM);
-                v_dtr[17] = m_fg_excel_dat.GetData(row, (int)e_col_Excel_number.KHAC);
+                v_dtr[1] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.TAI_SAN);
+                v_dtr[2] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.CAP_HANG);
+                v_dtr[3] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.NAM_XAY_DUNG);
+                v_dtr[4] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.NGAY_THANG_NAM_SU_DUNG);
+                v_dtr[5] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.NGUON_NS);
+                v_dtr[6] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.NGUON_KHAC);
+                v_dtr[7] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.GIA_TRI_CON_LAI);
+                v_dtr[8] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.SO_TANG);
+                v_dtr[9] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.DT_XAY_DUNG);
+                v_dtr[10] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.TONG_DIEN_TICH_SAN_XD);
+                v_dtr[11] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.TRU_SO_LAM_VIEC);
+                v_dtr[12] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.CO_SO_HDSN);
+                v_dtr[13] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.LAM_NHA_O);
+                v_dtr[14] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.CHO_THUE);
+                v_dtr[15] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.BO_TRONG);
+                v_dtr[16] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.BI_LAN_CHIEM);
+                v_dtr[17] = m_fg_excel_nha.GetData(row, (int)e_col_Excel_number.KHAC);
                 v_dtb.Rows.Add(v_dtr);
             }
             return v_dtb;
         }
-
+        private void format_grid()
+        {
+            m_fg_nha.Visible = true;
+            m_fg_excel_nha.Visible = false;
+        }
         private void load_data_from_data_table_to_grid(DataTable i_dtb, C1FlexGrid i_fg)
         {
             i_fg.DataSource = i_dtb.DefaultView;
@@ -1674,6 +1698,19 @@ namespace QltsForm
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void siSButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_from_data_table_to_grid(get_data_table_from_excel_grid(), m_fg_nha);
+            }
+            catch (System.Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            
         }
 
         //private void m_cbo_bo_tinh_SelectedValueChanged(object sender, EventArgs e)
