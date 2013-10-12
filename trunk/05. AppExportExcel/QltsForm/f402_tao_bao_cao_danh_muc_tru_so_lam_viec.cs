@@ -82,7 +82,6 @@ namespace QltsForm
         private ComboBox m_cbo_loai_hinh_don_vi;
         private Label label1;
         private Label m_lbl_thong_bao;
-        internal SIS.Controls.Button.SiSButton siSButton1;
         private System.ComponentModel.IContainer components;
 
         public f402_tao_bao_cao_danh_muc_tru_so_lam_viec()
@@ -176,7 +175,6 @@ namespace QltsForm
             this.m_lbl_su_dung_vao_muc_dich_khac = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.m_openDiaglog = new System.Windows.Forms.OpenFileDialog();
-            this.siSButton1 = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nha)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -318,7 +316,6 @@ namespace QltsForm
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.siSButton1);
             this.groupBox1.Controls.Add(this.m_cmd_browser);
             this.groupBox1.Controls.Add(this.m_lbl_thong_bao);
             this.groupBox1.Controls.Add(this.label7);
@@ -780,19 +777,6 @@ namespace QltsForm
             // 
             this.m_openDiaglog.FileName = "openFileDialog1";
             // 
-            // siSButton1
-            // 
-            this.siSButton1.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.siSButton1.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.siSButton1.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.siSButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.siSButton1.ImageIndex = 5;
-            this.siSButton1.Location = new System.Drawing.Point(533, 149);
-            this.siSButton1.Name = "siSButton1";
-            this.siSButton1.Size = new System.Drawing.Size(33, 28);
-            this.siSButton1.TabIndex = 0;
-            this.siSButton1.Click += new System.EventHandler(this.siSButton1_Click);
-            // 
             // f402_tao_bao_cao_danh_muc_tru_so_lam_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -802,7 +786,6 @@ namespace QltsForm
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f402_tao_bao_cao_danh_muc_tru_so_lam_viec";
             this.Text = "f402_tao_bao_cao_danh_muc_tru_so_lam_viec";
-            this.Load += new System.EventHandler(this.f402_bao_cao_danh_muc_tru_so_lam_viec_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nha)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -1601,6 +1584,7 @@ namespace QltsForm
             //m_cbo_don_vi_su_dung.SelectedValueChanged += new EventHandler(m_cbo_don_vi_su_dung_SelectedValueChanged);
             //m_cbo_trang_thai.SelectedValueChanged += new EventHandler(m_cbo_trang_thai_SelectedValueChanged);
             m_cmd_browser.Click += new EventHandler(m_cmd_browser_Click);
+            this.Load += new System.EventHandler(this.f402_bao_cao_danh_muc_tru_so_lam_viec_Load);
         }
         void m_cmd_browser_Click(object sender, EventArgs e)
         {
@@ -1700,18 +1684,7 @@ namespace QltsForm
             }
         }
 
-        private void siSButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_from_data_table_to_grid(get_data_table_from_excel_grid(), m_fg_nha);
-            }
-            catch (System.Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-            
-        }
+        
 
         //private void m_cbo_bo_tinh_SelectedValueChanged(object sender, EventArgs e)
         //{

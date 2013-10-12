@@ -57,6 +57,7 @@ namespace QltsForm
             {
                 case eLOAI_TAI_SAN_INDEX.TRU_SO_LAM_VIEC:
                     f402_tao_bao_cao_danh_muc_tru_so_lam_viec v_frm_tru_so_lam_viec = new f402_tao_bao_cao_danh_muc_tru_so_lam_viec();
+                    
                     v_frm_tru_so_lam_viec.load_data_from_file_excel(m_txt_file_path.Text);
                     if (m_cbo_loai_bao_cao.SelectedValue.Equals(eLOAI_BAO_CAO_INDEX.KE_KHAI))
                         v_frm_tru_so_lam_viec.set_form_mode(f402_tao_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.KE_KHAI);
