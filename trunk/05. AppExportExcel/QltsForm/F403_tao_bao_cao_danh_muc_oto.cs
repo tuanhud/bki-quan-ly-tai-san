@@ -552,11 +552,11 @@ namespace QltsForm
             v_obj_exe_report.FindAndReplace(false);
             v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg_oto, 2, m_fg_oto.Cols.Count - 1, true);
         }
-        private void load_excel_2_grid_excel()
+        private void load_excel_2_grid_excel(string ip_str_file_name)
         {
 
             IP.Core.IPExcelReport.CExcelReport v_obj_excel_report
-               = new IP.Core.IPExcelReport.CExcelReport(m_txt_file_path.Text);
+               = new IP.Core.IPExcelReport.CExcelReport(ip_str_file_name);
             int v_int_row_count = v_obj_excel_report.GetCountRow();
             m_fg_oto.Rows.Count = v_int_row_count;
             m_fg_oto_excel.Rows.Count = v_int_row_count;
@@ -622,9 +622,18 @@ namespace QltsForm
                 m_txt_file_path.Text = m_openDiaglog.FileName;
             }
 
+            load_data_from_file_excel(m_txt_file_path.Text);
+        }
+        public void set_form_mode(eFormMode ip_e_form_mode)
+        {
+            m_e_form_mode = ip_e_form_mode;
+        }
+        public void load_data_from_file_excel(string ip_str_file_name)
+        {
+            xoa_trang_control();
             //1. Dua du lieu tu file excel len grid excel
             m_lbl_thong_bao.Text = "Chương trình đang xử lý, vui lòng chờ đợi!";
-            load_excel_2_grid_excel();
+            load_excel_2_grid_excel(ip_str_file_name);
             //2. Dua du lieu tu grid excel len form (grid + controls khac)
             load_grid_excel_2_form();
             m_lbl_thong_bao.Text = "Chương trình đã Tạo xong Báo Cáo!";
@@ -708,10 +717,23 @@ namespace QltsForm
             set_define_events();
             this.KeyPreview = true;
         }
+        private void load_report_name()
+        {
+            switch (m_e_form_mode)
+            {
+                case eFormMode.KE_KHAI:
+                    m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI Ô TÔ";
+                    break;
+                case eFormMode.DE_NGHI_XU_LY:
+                    m_lbl_ten_bao_cao.Text = "BÁO CÁO ĐỀ NGHỊ XỬ LÝ Ô TÔ";
+                    break;
+            }
+        }
         private void set_initial_form_load()
         {
             format_controls_in_form();
             format_grid();
+            load_report_name();
             //m_obj_trans = get_trans_object(m_fg);
             //load_data_2_grid();
         }

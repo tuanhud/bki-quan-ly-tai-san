@@ -1137,10 +1137,23 @@ namespace QltsForm
             m_fg_excel_dat.Visible = false;
         }
 
+        private void load_report_name()
+        {
+            switch (m_e_form_mode)
+            {
+                case eFormMode.KE_KHAI:
+                    m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI TRỤ SỞ LÀM VIỆC - CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP";
+                    break;
+                case eFormMode.DE_NGHI_XU_LY:
+                    m_lbl_ten_bao_cao.Text = "BÁO CÁO ĐỀ NGHỊ XỬ LÝ TRỤ SỞ LÀM VIỆC - CƠ SỞ HOẠT ĐỘNG SỰ NGHIỆP";
+                    break;
+            }
+        }
         private void set_initial_form_load()
         {
             format_controls_in_form();
             xoa_trang_control();
+            load_report_name();
             //m_obj_trans = get_trans_object(m_fg);
             //load_data_to_cbo_bo_tinh();
             //load_data_to_cbo_don_vi_chu_quan();
@@ -1380,19 +1393,28 @@ namespace QltsForm
                 m_txt_file_path.Text = m_openDiaglog.FileName;
             }
 
+            load_data_from_file_excel(m_txt_file_path.Text);
+        }
+        public void set_form_mode(eFormMode ip_e_form_mode)
+        {
+            m_e_form_mode = ip_e_form_mode;
+        }
+        public void load_data_from_file_excel(string ip_str_file_name)
+        {
+            xoa_trang_control();
             //1. Dua du lieu tu file excel len grid excel
             m_lbl_thong_bao.Text = "Chương trình đang xử lý, vui lòng chờ đợi!";
-            load_excel_2_grid_excel();
+            load_excel_2_grid_excel(ip_str_file_name);
             //2. Dua du lieu tu grid excel len form (grid + controls khac)
             load_grid_excel_2_form();
             m_lbl_thong_bao.Text = "Chương trình đã Tạo xong Báo Cáo!";
         }
 
-        private void load_excel_2_grid_excel()
+        private void load_excel_2_grid_excel(string ip_str_file_name)
         {
 
             IP.Core.IPExcelReport.CExcelReport v_obj_excel_report
-               = new IP.Core.IPExcelReport.CExcelReport(m_txt_file_path.Text);
+               = new IP.Core.IPExcelReport.CExcelReport(ip_str_file_name);
             int v_int_excel_row_cout = v_obj_excel_report.GetCountRow();
             m_fg_nha.Rows.Count = v_int_excel_row_cout;
             m_fg_excel_dat.Rows.Count = v_int_excel_row_cout;
@@ -1431,7 +1453,7 @@ namespace QltsForm
             m_cbo_bo_tinh.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DON_VI_BO_TINH]);
             m_cbo_trang_thai.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.TRANG_THAI]);
             m_cbo_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
-
+            m_cbo_dia_chi.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DIA_CHI]);
             //load data to thong_tin_nha_dat
             m_lbl_dia_chi.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DIA_CHI]);
             m_lbl_bi_lan_chiem.Text = CIPConvert.ToStr(m_fg_excel_dat[1, (int)e_col_Excel_number.DT_DAT_BI_LAN_CHIEM]);
@@ -1560,7 +1582,7 @@ namespace QltsForm
         {
             try
             {
-                xoa_trang_control();
+
                 open_excel_file_and_load_2_form();
             }
             catch (Exception v_e)
