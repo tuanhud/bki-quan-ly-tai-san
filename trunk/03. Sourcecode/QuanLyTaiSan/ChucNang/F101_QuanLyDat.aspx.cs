@@ -614,6 +614,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
                 return;
             }
             them_moi_tang_giam();
+            hidden_panel_tang_giam();
+
         }
         catch (Exception v_e)
         {
