@@ -148,10 +148,10 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 25%; text-align: center; color: white; font-height: bold">
+                                                    <td style="width: 25%; ; text-align: center; color: white; font-height: bold">
                                                         Kinh doanh
                                                     </td>
-                                                    <td style="width: 25%; text-align: center; color: white; font-height: bold">
+                                                    <td style="width: 25%; ; text-align: center; color: white; font-height: bold">
                                                         Không kinh doanh
                                                     </td>
                                                 </tr>
