@@ -88,23 +88,23 @@
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;
                                                 height: 100%">
                                                 <tr>
-                                                    <td colspan="3" style="height: 35px">
+                                                    <td colspan="3" style="height: 35px; text-align: center; color: white; font-height: bold">
                                                         Giá trị theo sổ kế toán (VNĐ)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2" style="width: 66%">
+                                                    <td colspan="2" style="width: 66%; text-align: center; color: white; font-height: bold">
                                                         Nguyên giá
                                                     </td>
-                                                    <td rowspan="2" style="width: 33%">
+                                                    <td rowspan="2" style="width: 33%; text-align: center; color: white; font-height: bold">
                                                         Giá trị còn lại
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 33%">
+                                                    <td style="width: 33%; text-align: center; color: white; font-height: bold">
                                                         Nguồn NS
                                                     </td>
-                                                    <td style="width: 33%">
+                                                    <td style="width: 33%; text-align: center; color: white; font-height: bold">
                                                         Nguồn khác
                                                     </td>
                                                 </tr>
@@ -133,26 +133,26 @@
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                                 height: 100%">
                                                 <tr>
-                                                    <td colspan="4" style="height: 39px">
+                                                    <td colspan="4" style="height: 39px; text-align: center; color: white; font-height: bold">
                                                         Hiện trạng sử dụng (cái, chiếc)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td rowspan="2" style="width: 25%">
+                                                    <td rowspan="2" style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Quản lý nhà nước
                                                     </td>
-                                                    <td colspan="2" style="width: 50%">
+                                                    <td colspan="2" style="width: 50%; text-align: center; color: white; font-height: bold">
                                                         Hoạt đông sự nghiệp
                                                     </td>
-                                                    <td rowspan="2" style="width: 25%">
+                                                    <td rowspan="2" style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Khác
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 25%">
+                                                    <td style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Kinh doanh
                                                     </td>
-                                                    <td style="width: 25%">
+                                                    <td style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Không kinh doanh
                                                     </td>
                                                 </tr>
@@ -176,6 +176,21 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TÊN ĐƠN VỊ BỘ TỈNH">
+                                        <ItemTemplate>
+                                            <%#get_ten_bo_tinh()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TÊN ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ten_don_vi_chu_quan()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="MÃ ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ma_don_vi_chu_quan()%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
