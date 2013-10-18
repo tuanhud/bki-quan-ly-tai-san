@@ -169,5 +169,33 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
+
+        private void chiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f404_tao_bao_cao_hien_trang_su_dung_dat v_frm = new f404_tao_bao_cao_hien_trang_su_dung_dat();
+                v_frm.set_form_mode(f404_tao_bao_cao_hien_trang_su_dung_dat.eFormMode.CHI_TIET_THEO_LOAI_HINH);
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
+
+        private void chiTiếtTheoTừngĐơnVịToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f404_tao_bao_cao_hien_trang_su_dung_dat v_frm = new f404_tao_bao_cao_hien_trang_su_dung_dat();
+                v_frm.set_form_mode(f404_tao_bao_cao_hien_trang_su_dung_dat.eFormMode.CHI_TIET_THEO_TUNG_DON_VI);
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
     }
 }
