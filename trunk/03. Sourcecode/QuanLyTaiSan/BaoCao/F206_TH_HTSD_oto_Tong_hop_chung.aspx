@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    EnableEventValidation="false" CodeFile="F206_TH_HTSD_oto_Tong_hop_chung.aspx.cs" Inherits="BaoCao_F206_TH_HTSD_oto_Tong_hop_chung" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
+    CodeFile="F206_TH_HTSD_oto_Tong_hop_chung.aspx.cs" Inherits="BaoCao_F206_TH_HTSD_oto_Tong_hop_chung" %>
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
@@ -14,8 +14,8 @@
                 <table border="0" cellspacing="0" cellpadding="0" width="100%" class="cssTable">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
-                            <span class="cssPageTitle">TỔNG HỢP HIỆN TRẠNG SỬ DỤNG Ô TÔ</span> <span
-                                class="expand-collapse-text"></span>
+                            <span class="cssPageTitle">TỔNG HỢP HIỆN TRẠNG SỬ DỤNG Ô TÔ</span> <span class="expand-collapse-text">
+                            </span>
                             <br />
                             <span class="cssPageTitle">Phần 1: Tổng hợp chung</span><span class="expand-collapse-text initial-expand"></span>
                         </td>
@@ -87,23 +87,23 @@
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;
                                                 height: 100%">
                                                 <tr>
-                                                    <td colspan="3" style="height: 35px">
+                                                    <td colspan="3" style="height: 35px; text-align: center; color: white; font-height: bold">
                                                         Giá trị theo sổ kế toán (VNĐ)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2" style="width: 66%">
+                                                    <td colspan="2" style="width: 66%; text-align: center; color: white; font-height: bold">
                                                         Nguyên giá
                                                     </td>
-                                                    <td rowspan="2" style="width: 33%">
+                                                    <td rowspan="2" style="width: 33%; text-align: center; color: white; font-height: bold">
                                                         Giá trị còn lại
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 33%">
+                                                    <td style="width: 33%; text-align: center; color: white; font-height: bold">
                                                         Nguồn NS
                                                     </td>
-                                                    <td style="width: 33%">
+                                                    <td style="width: 33%; text-align: center; color: white; font-height: bold">
                                                         Nguồn khác
                                                     </td>
                                                 </tr>
@@ -132,26 +132,26 @@
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                                 height: 100%">
                                                 <tr>
-                                                    <td colspan="4" style="height: 39px">
+                                                    <td colspan="4" style="height: 39px; text-align: center; color: white; font-height: bold">
                                                         Hiện trạng sử dụng (cái, chiếc)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td rowspan="2" style="width: 25%">
+                                                    <td rowspan="2" style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Quản lý nhà nước
                                                     </td>
-                                                    <td colspan="2" style="width: 50%">
+                                                    <td colspan="2" style="width: 50%; text-align: center; color: white; font-height: bold">
                                                         Hoạt đông sự nghiệp
                                                     </td>
-                                                    <td rowspan="2" style="width: 25%">
+                                                    <td rowspan="2" style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Khác
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 25%">
+                                                    <td style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Kinh doanh
                                                     </td>
-                                                    <td style="width: 25%">
+                                                    <td style="width: 25%; text-align: center; color: white; font-height: bold">
                                                         Không kinh doanh
                                                     </td>
                                                 </tr>
@@ -175,6 +175,21 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TÊN ĐƠN VỊ BỘ TỈNH">
+                                        <ItemTemplate>
+                                            <%#get_ten_bo_tinh()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TÊN ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ten_don_vi_chu_quan()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="MÃ ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ma_don_vi_chu_quan()%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
@@ -209,4 +224,3 @@
         </ProgressTemplate>
     </asp:UpdateProgress>
 </asp:Content>
-
