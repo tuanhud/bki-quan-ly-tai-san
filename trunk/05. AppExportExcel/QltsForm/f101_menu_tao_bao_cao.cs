@@ -30,23 +30,47 @@ namespace QltsForm
         {
             public const string KE_KHAI = "1";
             public const string DE_NGHI_XU_LY = "2";
+            public const string HIEN_TRANG_SU_DUNG_NHA_DAT = "3";
+            public const string HIEN_TRANG_SU_DUNG_OTO = "4";
+            public const string HIEN_TRANG_SU_DUNG_TAI_SAN_KHAC = "5";
+            public const string TANG_GIAM_TAI_SAN = "6";
+            public const string THAY_DOI_THONG_TIN = "7";
         }
         class eLOAI_BAO_CAO_VALUE
         {
             public const string KE_KHAI = "Kê khai";
             public const string DE_NGHI_XU_LY = "Đề nghị xử lý";
+            public const string HIEN_TRANG_SU_DUNG_NHA_DAT = "Hiện trạng sử dụng nhà đất";
+            public const string HIEN_TRANG_SU_DUNG_OTO = "Hiện trạng sử dụng ô tô";
+            public const string HIEN_TRANG_SU_DUNG_TAI_SAN_KHAC = "Hiện trạng sử dụng tài sản khác";
+            public const string TANG_GIAM_TAI_SAN = "Tăng giảm tài sản";
+            public const string THAY_DOI_THONG_TIN = "Thay đổi thông tin";
         }
         class eLOAI_TAI_SAN_INDEX
         {
             public const string TRU_SO_LAM_VIEC = "1";
             public const string OTO = "2";
             public const string TAI_SAN_KHAC = "3";
+            public const string TONG_HOP_CHUNG = "4";
+            public const string CHI_TIET_THEO_LOAI_HINH = "5";
+            public const string CHI_TIET_THEO_DON_VI = "6";
+            public const string THONG_TIN_DAT = "7";
+            public const string THONG_TIN_NHA = "8";
+            public const string THONG_TIN_OTO = "9";
+            public const string THONG_TIN_TAI_SAN_KHAC = "10";
         }
         class eLOAI_TAI_SAN_VALUE
         {
             public const string TRU_SO_LAM_VIEC = "Trụ sở làm việc";
             public const string OTO = "Ô tô";
             public const string TAI_SAN_KHAC = "Tải sản khác";
+            public const string TONG_HOP_CHUNG = "Tổng hợp chung";
+            public const string CHI_TIET_THEO_LOAI_HINH = "Chi tiết theo loại hình";
+            public const string CHI_TIET_THEO_DON_VI = "Chi tiết theo từng đơn vị";
+            public const string THONG_TIN_DAT = "Thông tin đất";
+            public const string THONG_TIN_NHA = "Thông tin nhà";
+            public const string THONG_TIN_OTO = "Thông tin ô tô";
+            public const string THONG_TIN_TAI_SAN_KHAC = "Thông tin tài sản khác";
         }
         #endregion
 
@@ -57,7 +81,7 @@ namespace QltsForm
             {
                 case eLOAI_TAI_SAN_INDEX.TRU_SO_LAM_VIEC:
                     f402_tao_bao_cao_danh_muc_tru_so_lam_viec v_frm_tru_so_lam_viec = new f402_tao_bao_cao_danh_muc_tru_so_lam_viec();
-                    
+
                     v_frm_tru_so_lam_viec.load_data_from_file_excel(m_txt_file_path.Text);
                     if (m_cbo_loai_bao_cao.SelectedValue.Equals(eLOAI_BAO_CAO_INDEX.KE_KHAI))
                         v_frm_tru_so_lam_viec.set_form_mode(f402_tao_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.KE_KHAI);
