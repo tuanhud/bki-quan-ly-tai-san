@@ -100,37 +100,37 @@
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="7" style="height: 50px">
+                                                <td colspan="7" style="height: 50px;text-align:center;color:white;font-weight:bold">
                                                     HIỆN TRẠNG SỬ DỤNG
                                                     <br />
                                                     (m2)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="2" style="width: 14.2857%; height: 60px">
+                                                <td rowspan="2" style="width: 14.2857%; height: 60px;text-align:center;color:white;font-weight:bold"">
                                                     Trụ sở làm việc
                                                 </td>
-                                                <td rowspan="2" style="width: 14.2857%">
+                                                <td rowspan="2" style="width: 14.2857%;text-align:center;color:white;font-weight:bold"">
                                                     Cơ sở HĐSN
                                                 </td>
-                                                <td rowspan="1" colspan="5" style="height:30px">
+                                                <td rowspan="1" colspan="5" style="height:30px;text-align:center;color:white;font-weight:bold"">
                                                     Sử dụng khác
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 14.2857%;height:30px" >
+                                                <td style="width: 14.2857%;height:30px;text-align:center;color:white;font-weight:bold"" >
                                                     Làm nhà ở
                                                 </td>
-                                                <td style="width: 14.2857%">
+                                                <td style="width: 14.2857%;text-align:center;color:white;font-weight:bold"">
                                                     Cho thuê
                                                 </td>
-                                                <td style="width: 14.2857%">
+                                                <td style="width: 14.2857%;text-align:center;color:white;font-weight:bold"">
                                                     Bỏ trống
                                                 </td>
-                                                <td style="width: 14.2857%">
+                                                <td style="width: 14.2857%;text-align:center;color:white;font-weight:bold"">
                                                     Bị lấn chiếm
                                                 </td>
-                                                <td style="width: 14.2857%">
+                                                <td style="width: 14.2857%;text-align:center;color:white;font-weight:bold"">
                                                     Khác
                                                 </td>
                                             </tr>
@@ -164,6 +164,21 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="TÊN ĐƠN VỊ BỘ TỈNH">
+                                        <ItemTemplate>
+                                            <%#get_ten_bo_tinh()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TÊN ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ten_don_vi_chu_quan()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="MÃ ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ma_don_vi_chu_quan()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
