@@ -105,15 +105,15 @@ namespace QltsForm
             this.m_lbl_don_vi_chu_quan = new System.Windows.Forms.Label();
             this.m_lbl_don_vi_bo_tinh = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_cmd_browser = new SIS.Controls.Button.SiSButton();
             this.label7 = new System.Windows.Forms.Label();
             this.m_txt_file_path = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.m_openDiaglog = new System.Windows.Forms.OpenFileDialog();
             this.m_lbl_thong_bao = new System.Windows.Forms.Label();
-            this.m_fg_nha_dat_excel = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.label3 = new System.Windows.Forms.Label();
             this.m_lbl_ma_don_vi = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.m_fg_nha_dat_excel = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_openDiaglog = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_htsd_nha_dat)).BeginInit();
             this.panel1.SuspendLayout();
@@ -290,6 +290,15 @@ namespace QltsForm
             this.panel2.Size = new System.Drawing.Size(800, 144);
             this.panel2.TabIndex = 26;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(98, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Mã đơn vị:";
+            // 
             // m_cmd_browser
             // 
             this.m_cmd_browser.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -319,20 +328,6 @@ namespace QltsForm
             this.m_txt_file_path.Size = new System.Drawing.Size(190, 20);
             this.m_txt_file_path.TabIndex = 27;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.m_fg_nha_dat_excel);
-            this.panel3.Controls.Add(this.m_fg_htsd_nha_dat);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 226);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 220);
-            this.panel3.TabIndex = 27;
-            // 
-            // m_openDiaglog
-            // 
-            this.m_openDiaglog.FileName = "openFileDialog1";
-            // 
             // m_lbl_thong_bao
             // 
             this.m_lbl_thong_bao.AutoSize = true;
@@ -344,25 +339,6 @@ namespace QltsForm
             this.m_lbl_thong_bao.TabIndex = 24;
             this.m_lbl_thong_bao.Text = " ";
             // 
-            // m_fg_nha_dat_excel
-            // 
-            this.m_fg_nha_dat_excel.ColumnInfo = resources.GetString("m_fg_nha_dat_excel.ColumnInfo");
-            this.m_fg_nha_dat_excel.Location = new System.Drawing.Point(0, -3);
-            this.m_fg_nha_dat_excel.Name = "m_fg_nha_dat_excel";
-            this.m_fg_nha_dat_excel.Size = new System.Drawing.Size(800, 221);
-            this.m_fg_nha_dat_excel.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nha_dat_excel.Styles"));
-            this.m_fg_nha_dat_excel.TabIndex = 21;
-            this.m_fg_nha_dat_excel.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(98, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Mã đơn vị:";
-            // 
             // m_lbl_ma_don_vi
             // 
             this.m_lbl_ma_don_vi.AutoSize = true;
@@ -373,6 +349,30 @@ namespace QltsForm
             this.m_lbl_ma_don_vi.Size = new System.Drawing.Size(11, 13);
             this.m_lbl_ma_don_vi.TabIndex = 24;
             this.m_lbl_ma_don_vi.Text = " ";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.m_fg_nha_dat_excel);
+            this.panel3.Controls.Add(this.m_fg_htsd_nha_dat);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 226);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(800, 220);
+            this.panel3.TabIndex = 27;
+            // 
+            // m_fg_nha_dat_excel
+            // 
+            this.m_fg_nha_dat_excel.ColumnInfo = resources.GetString("m_fg_nha_dat_excel.ColumnInfo");
+            this.m_fg_nha_dat_excel.Location = new System.Drawing.Point(7, 23);
+            this.m_fg_nha_dat_excel.Name = "m_fg_nha_dat_excel";
+            this.m_fg_nha_dat_excel.Size = new System.Drawing.Size(800, 221);
+            this.m_fg_nha_dat_excel.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nha_dat_excel.Styles"));
+            this.m_fg_nha_dat_excel.TabIndex = 21;
+            this.m_fg_nha_dat_excel.Visible = false;
+            // 
+            // m_openDiaglog
+            // 
+            this.m_openDiaglog.FileName = "openFileDialog1";
             // 
             // f404_tao_bao_cao_hien_trang_su_dung_dat
             // 
@@ -429,6 +429,7 @@ namespace QltsForm
         }
         public enum e_col_Excel_number
         {
+            STT=0,
             TAI_SAN = 1,
             SO_LUONG = 2,
             DIEN_TICH = 3,
@@ -589,7 +590,15 @@ namespace QltsForm
 
             m_lbl_don_vi_bo_tinh.Text = CIPConvert.ToStr(m_fg_nha_dat_excel[1, (int)e_col_Excel_number.TEN_DON_VI_BO_TINH]);
             m_lbl_don_vi_chu_quan.Text = CIPConvert.ToStr(m_fg_nha_dat_excel[1, (int)e_col_Excel_number.TEN_DON_VI_CHU_QUAN]);
-            m_lbl_ma_don_vi.Text = CIPConvert.ToStr(m_fg_nha_dat_excel[1, (int)e_col_Excel_number.MA_DON_VI_CHU_QUAN]);
+
+            if (m_fg_nha_dat_excel[1, (int)e_col_Excel_number.MA_DON_VI_CHU_QUAN]==null)
+            {
+                m_lbl_ma_don_vi.Text = "";
+            }
+            else
+            {
+                m_lbl_ma_don_vi.Text = CIPConvert.ToStr(m_fg_nha_dat_excel[1, (int)e_col_Excel_number.MA_DON_VI_CHU_QUAN]);
+            }
             //load data 2 grid
             load_data_from_data_table_to_grid(get_data_table_from_excel_grid(), m_fg_htsd_nha_dat);
             //siSButton1_Click(siSButton1,EventArgs.Empty);
@@ -598,12 +607,12 @@ namespace QltsForm
         private DataTable get_data_table_from_excel_grid()
         {
             DataTable v_dtb = new DataTable("BangTam");
+            v_dtb.Columns.Add("STT", typeof(object));
             v_dtb.Columns.Add("TÊN TÀI SẢN", typeof(object));
             v_dtb.Columns.Add("SỐ LƯỢNG", typeof(object));
             v_dtb.Columns.Add("DIỆN TÍCH", typeof(object));
             v_dtb.Columns.Add("TRỤ SỞ LÀM VIỆC", typeof(object));
             v_dtb.Columns.Add("CƠ SỞ HĐSN", typeof(object));
-            v_dtb.Columns.Add("NGUỒN KHÁC", typeof(object));
             v_dtb.Columns.Add("LÀM NHÀ Ở", typeof(object));
             v_dtb.Columns.Add("CHO THUÊ", typeof(object));
             v_dtb.Columns.Add("BỎ TRỐNG", typeof(object));
