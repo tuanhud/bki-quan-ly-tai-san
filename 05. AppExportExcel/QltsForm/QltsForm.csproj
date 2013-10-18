@@ -141,6 +141,9 @@
     <Compile Include="F403_tao_bao_cao_danh_muc_oto.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="f404_tao_bao_cao_thsd_nha_dat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QltsFormControls.cs" />
     <EmbeddedResource Include="f100_menu.resx">
@@ -180,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F403_tao_bao_cao_danh_muc_oto.resx">
       <DependentUpon>F403_tao_bao_cao_danh_muc_oto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f404_tao_bao_cao_thsd_nha_dat.resx">
+      <DependentUpon>f404_tao_bao_cao_thsd_nha_dat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

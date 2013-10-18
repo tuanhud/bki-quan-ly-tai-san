@@ -29,12 +29,12 @@ namespace QltsForm
 
             try
             {
-                //f100_menu v_frm_main = new f100_menu();
-                //v_frm_main.display();
-                //v_frm_main.Dispose();
-                f101_menu_tao_bao_cao v_frm = new f101_menu_tao_bao_cao();
-                v_frm.display();
-                v_frm.Dispose();
+                f100_menu v_frm_main = new f100_menu();
+                v_frm_main.display();
+                v_frm_main.Dispose();
+                //f101_menu_tao_bao_cao v_frm = new f101_menu_tao_bao_cao();
+                //v_frm.display();
+                //v_frm.Dispose();
                 /*
                 IP.Core.IPSystemAdmin.f101_Dang_Nhap v_frm_login_form = new f101_Dang_Nhap();
                 US_HT_NGUOI_SU_DUNG v_us_user = new US_HT_NGUOI_SU_DUNG();

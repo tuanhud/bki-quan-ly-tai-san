@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
 using System.Configuration;
 
 
@@ -123,6 +122,39 @@ namespace QltsForm
         {
             F403_tao_bao_cao_danh_muc_oto v_frm = new F403_tao_bao_cao_danh_muc_oto();
             v_frm.display();
+        }
+
+        private void đềNghịXửLýTàiSảnKhácToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đềNghịXửLýTrụSởLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f402_tao_bao_cao_danh_muc_tru_so_lam_viec v_frm = new f402_tao_bao_cao_danh_muc_tru_so_lam_viec();
+                v_frm.set_form_mode(f402_tao_bao_cao_danh_muc_tru_so_lam_viec.eFormMode.DE_NGHI_XU_LY);
+                v_frm.display();
+            }
+            catch (Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
+
+        private void đềNghịXửLýÔTôToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F403_tao_bao_cao_danh_muc_oto v_frm = new F403_tao_bao_cao_danh_muc_oto();
+                v_frm.set_form_mode(F403_tao_bao_cao_danh_muc_oto.eFormMode.DE_NGHI_XU_LY);
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
         }
     }
 }
