@@ -110,6 +110,7 @@ public partial class BaoCao_F308_TH_HTSD_nha_dat_Chi_tiet_theo_loai_hinh_don_vi 
         //Response.Clear();
         //v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
         //Response.Redirect(v_str_output_file, false);
+        m_grv_tai_san_nha_dat.AllowPaging = false;
         load_data_to_grid(m_cbo_bo_tinh.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue);
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san_nha_dat

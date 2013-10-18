@@ -69,8 +69,7 @@
             <td style="width: 10%">
                 <asp:GridView ID="m_grv_tai_san_nha_dat" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                     EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
-                    ForeColor="#333333" AllowSorting="True" PageSize="12" ShowHeader="true" 
-                    onpageindexchanging="m_grv_tai_san_nha_dat_PageIndexChanging">
+                    ForeColor="#333333" AllowSorting="True" PageSize="12" ShowHeader="true" OnPageIndexChanging="m_grv_tai_san_nha_dat_PageIndexChanging">
                     <Columns>
                         <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="31.25%" DataTextField="TEN_TAI_SAN"
                             HeaderStyle-HorizontalAlign="Center" />
@@ -82,37 +81,37 @@
                             <HeaderTemplate>
                                 <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                     <tr>
-                                        <td colspan="7" style="height: 50px">
+                                        <td colspan="7" style="height: 50px;text-align:center;color:white;font-weight:bold"">
                                             HIỆN TRẠNG SỬ DỤNG
                                             <br />
                                             (m2)
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td rowspan="2" style="width: 6.25%; height: 60px">
+                                        <td rowspan="2" style="width: 6.25%; height: 60px;text-align:center;color:white;font-weight:bold"">
                                             Trụ sở làm việc
                                         </td>
-                                        <td rowspan="2" style="width: 6.25%">
+                                        <td rowspan="2" style="width: 6.25%;text-align:center;color:white;font-weight:bold"">
                                             Cơ sở HĐSN
                                         </td>
-                                        <td rowspan="1" colspan="5">
+                                        <td rowspan="1" colspan="5" style="text-align:center;color:white;font-weight:bold">
                                             Sử dụng khác
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 6.25%;text-align:center;color:white;font-weight:bold"">
                                             Làm nhà ở
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 6.25%;text-align:center;color:white;font-weight:bold"">
                                             Cho thuê
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 6.25%;text-align:center;color:white;font-weight:bold"">
                                             Bỏ trống
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 6.25%;text-align:center;color:white;font-weight:bold"">
                                             Bị lấn chiếm
                                         </td>
-                                        <td style="width: 6.25%">
+                                        <td style="width: 6.25%;text-align:center;color:white;font-weight:bold"">
                                             Khác
                                         </td>
                                     </tr>
@@ -144,6 +143,21 @@
                                         </td>
                                     </tr>
                                 </table>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="TÊN ĐƠN VỊ BỘ TỈNH">
+                            <ItemTemplate>
+                                <%#get_ten_bo_tinh()%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="TÊN ĐƠN VỊ CHỦ QUẢN">
+                            <ItemTemplate>
+                                <%#get_ten_don_vi_chu_quan()%>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="MÃ ĐƠN VỊ CHỦ QUẢN">
+                            <ItemTemplate>
+                                <%#get_ma_don_vi_chu_quan()%>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

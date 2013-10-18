@@ -113,10 +113,11 @@ public partial class BaoCao_F307_TH_HTSD_nha_dat_Tong_hop_chung : System.Web.UI.
         //Response.Clear();
         //v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
         //Response.Redirect(v_str_output_file, false);
+        m_grv_tai_san_nha_dat.AllowPaging = false;
         load_data_to_grid();
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san_nha_dat
-                        , "DS THSD Nha Dat.xls"
+                        , "DS THSD Nha Dat Tong Hop Chung.xls"
                         );
     }
     #endregion
