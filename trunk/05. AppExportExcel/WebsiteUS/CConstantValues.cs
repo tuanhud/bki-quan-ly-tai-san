@@ -21,6 +21,10 @@ namespace WebUS
         public const string BCDM_TSK_DE_NGHI_XU_LY = "BC-24 BCDM-TSK-DNXL.xls";
         public const string BCDM_TST_TREN500TRIEU_KK = "BC-25 BCDM-TSKTREN500TRIEU-KK.xls";
         public const string BCDM_TSK_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-28 BCDM-TSK-DVTCTC.xls";
+        //Bao cao tong hop
+        public const string BCTH_HTSD_THC = "BC-319 BCTH-THSDND-THC.xls";
+        public const string BCTH_HTSD_LH = "BC-320 BCTH-THSDND-LH.xls";
+        public const string BCTH_HTSD_DV = "BC-321 BCTH-THSDND-CT.xls";
     }
     public class LOAI_BAO_CAO
     {

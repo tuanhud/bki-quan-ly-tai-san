@@ -161,7 +161,7 @@ namespace QltsForm
         {
             try
             {
-                f404_tao_bao_cao_thsd_nha_dat v_frm = new f404_tao_bao_cao_thsd_nha_dat();
+                f404_tao_bao_cao_hien_trang_su_dung_dat v_frm = new f404_tao_bao_cao_hien_trang_su_dung_dat();
                 v_frm.display();
             }
             catch (System.Exception ex)
