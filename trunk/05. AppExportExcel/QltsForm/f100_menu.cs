@@ -156,5 +156,18 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
+
+        private void tổngHợpChungToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f404_tao_bao_cao_thsd_nha_dat v_frm = new f404_tao_bao_cao_thsd_nha_dat();
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
     }
 }

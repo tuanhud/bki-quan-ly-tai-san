@@ -298,6 +298,7 @@
             this.tổngHợpChungToolStripMenuItem.Name = "tổngHợpChungToolStripMenuItem";
             this.tổngHợpChungToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.tổngHợpChungToolStripMenuItem.Text = "Tổng hợp chung";
+            this.tổngHợpChungToolStripMenuItem.Click += new System.EventHandler(this.tổngHợpChungToolStripMenuItem_Click);
             // 
             // chiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem
             // 
