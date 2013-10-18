@@ -361,7 +361,7 @@ namespace QltsForm
             this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao.Location = new System.Drawing.Point(488, 187);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(13, 16);
             this.m_lbl_thong_bao.TabIndex = 10;
             this.m_lbl_thong_bao.Text = " ";
             // 
@@ -550,7 +550,7 @@ namespace QltsForm
             // m_fg_excel_nha
             // 
             this.m_fg_excel_nha.ColumnInfo = resources.GetString("m_fg_excel_nha.ColumnInfo");
-            this.m_fg_excel_nha.Location = new System.Drawing.Point(16, 14);
+            this.m_fg_excel_nha.Location = new System.Drawing.Point(27, 14);
             this.m_fg_excel_nha.Name = "m_fg_excel_nha";
             this.m_fg_excel_nha.Size = new System.Drawing.Size(971, 149);
             this.m_fg_excel_nha.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel_nha.Styles"));
