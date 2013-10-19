@@ -20,7 +20,67 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
 
     #endregion
 
+    #region Data Structure
+    public enum e_cols_name_grid
+    {
+        TAI_SAN = 0,
+        SO_DAU_KY = 1,
+        SO_TANG_TRONG_KY = 2,
+        SO_GIAM_TRONG_KY = 3,
+        SO_CUOI_KY = 4,
+        TEN_BO_TINH = 5,
+        TEN_DON_VI_CHU_QUAN = 6,
+        MA_DON_VI_CHU_QUAN = 7,
+        TU_NGAY = 8,
+        DEN_NGAY = 9
+
+    }
+    #endregion
+
     #region private methods
+    private void format_grid(bool ip_bl_hide)
+    {
+        m_grv_tai_san.Columns[(int)e_cols_name_grid.TEN_BO_TINH].Visible = ip_bl_hide;
+        m_grv_tai_san.Columns[(int)e_cols_name_grid.TEN_DON_VI_CHU_QUAN].Visible = ip_bl_hide;
+        m_grv_tai_san.Columns[(int)e_cols_name_grid.MA_DON_VI_CHU_QUAN].Visible = ip_bl_hide;
+        m_grv_tai_san.Columns[(int)e_cols_name_grid.TU_NGAY].Visible = ip_bl_hide;
+        m_grv_tai_san.Columns[(int)e_cols_name_grid.DEN_NGAY].Visible = ip_bl_hide;
+    }
+    public string get_ma_don_vi_chu_quan()
+    {
+        string v_str_ma_don_vi = "";
+        if (m_cbo_don_vi_chu_quan.SelectedValue == null) return v_str_ma_don_vi;
+        if (m_cbo_don_vi_chu_quan.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_ma_don_vi;
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue));
+        return v_us_dm_don_vi.strMA_DON_VI;
+    }
+
+    public string get_ten_bo_tinh()
+    {
+        string v_str_ten_bo_tinh = "";
+        if (m_cbo_bo_tinh.SelectedValue == null) return v_str_ten_bo_tinh;
+        if (m_cbo_bo_tinh.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return CONST_QLDB.TAT_CA;
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue));
+        return v_us_dm_don_vi.strTEN_DON_VI;
+    }
+
+    public string get_date_tu_ngay()
+    {
+        return m_txt_tu_ngay.Text;
+    }
+
+    public string get_date_den_ngay()
+    {
+        return m_txt_den_ngay.Text;
+    }
+    public string get_ten_don_vi_chu_quan()
+    {
+        string v_str_ten_don_vi_chu_quan = "";
+        if (m_cbo_don_vi_chu_quan.SelectedValue == null) return v_str_ten_don_vi_chu_quan;
+        if (m_cbo_don_vi_chu_quan.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return CONST_QLDB.TAT_CA;
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue));
+        return v_us_dm_don_vi.strTEN_DON_VI;
+    }
     private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter)
     {
         op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
@@ -42,18 +102,24 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
     }
     private void export_excel()
     {
-        if (!check_validate_data_is_ok()) return;
-        string v_str_output_file = "";
-        F330_RPT_TANG_GIAM_TAI_SAN v_f330_tang_giam_tai_san = new F330_RPT_TANG_GIAM_TAI_SAN();
-        CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
-        form_2_objExcelAssetParameters(v_obj_parameter);
-        v_f330_tang_giam_tai_san.export_excel(
-           F330_RPT_TANG_GIAM_TAI_SAN.TANG_GIAM_TAI_SAN.CHI_TIET_THEO_LOAI_HINH
-                                 , ref v_obj_parameter
-                               );
-        Response.Clear();
-        v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-        Response.Redirect(v_str_output_file, false);
+        //if (!check_validate_data_is_ok()) return;
+        //string v_str_output_file = "";
+        //F330_RPT_TANG_GIAM_TAI_SAN v_f330_tang_giam_tai_san = new F330_RPT_TANG_GIAM_TAI_SAN();
+        //CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
+        //form_2_objExcelAssetParameters(v_obj_parameter);
+        //v_f330_tang_giam_tai_san.export_excel(
+        //   F330_RPT_TANG_GIAM_TAI_SAN.TANG_GIAM_TAI_SAN.CHI_TIET_THEO_LOAI_HINH
+        //                         , ref v_obj_parameter
+        //                       );
+        //Response.Clear();
+        //v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+        //Response.Redirect(v_str_output_file, false);
+        m_grv_tai_san.AllowPaging = false;
+        load_data_to_grid_tai_san();
+        WinformReport.export_gridview_2_excel(
+                       m_grv_tai_san
+                        , "DS Tăng Giảm Tài Sản Chi Tiết Theo Loại Hinh.xls"
+                        );
     }
     private void thongbao(string ip_str_thong_bao)
     {
@@ -114,7 +180,11 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
     #endregion
 
     #region Events
-
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        /* Confirms that an HtmlForm control is rendered for the specified ASP.NET
+           server control at run time. */
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -130,6 +200,7 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
                     , WinFormControls.eTAT_CA.YES
                     , m_cbo_don_vi_chu_quan
                     );
+                format_grid(false);
                 load_data_to_grid_tai_san();
             }
         }
@@ -160,8 +231,10 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
     {
         try
         {
+            format_grid(false);
             load_data_to_grid_tai_san();
             m_grv_tai_san.Visible = true;
+            
         }
         catch (System.Exception ex)
         {
@@ -173,7 +246,9 @@ public partial class BaoCao_F305_TH_tang_giam_tai_san_Chi_tiet_theo_loai_hinh_do
         try
         {
             Thread.Sleep(1000);
+            format_grid(true);
             export_excel();
+            format_grid(false);
         }
         catch (System.Exception ex)
         {
