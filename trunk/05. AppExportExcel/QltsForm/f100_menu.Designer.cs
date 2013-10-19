@@ -91,6 +91,7 @@
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
             this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.báoCáoToolStripMenuItem.Text = "Kê khai";
+            this.báoCáoToolStripMenuItem.Visible = false;
             // 
             // kêKhaiTrụSởLàmViệcToolStripMenuItem
             // 
@@ -122,6 +123,7 @@
             this.đềNghịXửLýToolStripMenuItem.Name = "đềNghịXửLýToolStripMenuItem";
             this.đềNghịXửLýToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.đềNghịXửLýToolStripMenuItem.Text = "Đề nghị xử lý";
+            this.đềNghịXửLýToolStripMenuItem.Visible = false;
             // 
             // trụSởLàmViệcToolStripMenuItem
             // 
