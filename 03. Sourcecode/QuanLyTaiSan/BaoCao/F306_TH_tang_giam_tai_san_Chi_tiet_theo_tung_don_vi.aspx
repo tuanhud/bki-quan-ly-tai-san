@@ -106,25 +106,25 @@
                             <asp:GridView ID="m_grv_tai_san" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                                 EmptyDataText="Không có dữ liệu phù hợp!" Width="100%" DataKeyNames="ID" CellPadding="0"
                                 ForeColor="#333333" AllowSorting="True" PageSize="10">
-                                <Columns>
+                                 <Columns>
                                     <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="20%" DataTextField="TAI_SAN"
                                         NavigateUrl="" />
                                     <asp:TemplateField HeaderStyle-Width="20%" HeaderStyle-Height="75px">
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                                 <tr>
-                                                    <td colspan="3" style="height: 45px">
+                                                    <td colspan="3" style="height: 45px; text-align: center; color: white; font-weight:bold">
                                                         SỐ ĐẦU KỲ
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px; text-align: center; color: white; font-weight:bold">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 30%;">
+                                                    <td colspan="1" rowspan="1" style="width: 30%;; text-align: center; color: white; font-weight:bold">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 40%;">
+                                                    <td colspan="1" rowspan="1" style="width: 40%;; text-align: center; color: white; font-weight:bold">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -150,18 +150,18 @@
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                                 <tr>
-                                                    <td colspan="3" style="height: 45px">
+                                                    <td colspan="3" style="height: 45px; text-align: center; color: white; font-weight:bold">
                                                         SỐ TĂNG TRONG KỲ
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px; text-align: center; color: white; font-weight:bold">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 30%;">
+                                                    <td colspan="1" rowspan="1" style="width: 30%;; text-align: center; color: white; font-weight:bold">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 40%;">
+                                                    <td colspan="1" rowspan="1" style="width: 40%;; text-align: center; color: white; font-weight:bold">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -187,18 +187,18 @@
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                                 <tr>
-                                                    <td colspan="3" style="height: 45px">
+                                                    <td colspan="3" style="height: 45px; text-align: center; color: white; font-weight:bold">
                                                         SỐ GIẢM TRONG KỲ
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px; text-align: center; color: white; font-weight:bold">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 30%">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; text-align: center; color: white; font-weight:bold">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 40%">
+                                                    <td colspan="1" rowspan="1" style="width: 40%; text-align: center; color: white; font-weight:bold">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -224,18 +224,18 @@
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                                 <tr>
-                                                    <td colspan="3" style="height: 45px">
+                                                    <td colspan="3" style="height: 45px; text-align: center; color: white; font-weight:bold">
                                                         SỐ CUỐI KỲ
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px">
+                                                    <td colspan="1" rowspan="1" style="width: 30%; height: 30px; text-align: center; color: white; font-weight:bold">
                                                         Số lượng
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 30%;">
+                                                    <td colspan="1" rowspan="1" style="width: 30%;; text-align: center; color: white; font-weight:bold">
                                                         Diện tích
                                                     </td>
-                                                    <td colspan="1" rowspan="1" style="width: 40%;">
+                                                    <td colspan="1" rowspan="1" style="width: 40%;; text-align: center; color: white; font-weight:bold">
                                                         Nguyên giá
                                                     </td>
                                                 </tr>
@@ -255,6 +255,31 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TÊN ĐƠN VỊ BỘ TỈNH">
+                                        <ItemTemplate>
+                                            <%#get_ten_bo_tinh()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TÊN ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ten_don_vi_chu_quan()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="MÃ ĐƠN VỊ CHỦ QUẢN">
+                                        <ItemTemplate>
+                                            <%#get_ma_don_vi_chu_quan()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="TỪ NGÀY">
+                                        <ItemTemplate>
+                                            <%#get_date_tu_ngay()%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="ĐẾN NGÀY">
+                                        <ItemTemplate>
+                                            <%#get_date_den_ngay()%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
