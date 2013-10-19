@@ -253,5 +253,47 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
+
+        private void tổngHợpChungToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f407_tao_bao_cao_tang_giam_tai_san v_frm = new f407_tao_bao_cao_tang_giam_tai_san();
+                v_frm.set_form_mode(f407_tao_bao_cao_tang_giam_tai_san.eFormMode.TONG_HOP_CHUNG);
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void chiTiếtTheoLoạiHìnhĐơnVịToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f407_tao_bao_cao_tang_giam_tai_san v_frm = new f407_tao_bao_cao_tang_giam_tai_san();
+                v_frm.set_form_mode(f407_tao_bao_cao_tang_giam_tai_san.eFormMode.CHI_TIET_THEO_LOAI_HINH);
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void chiTiếtTheoTừngĐơnVịToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f407_tao_bao_cao_tang_giam_tai_san v_frm = new f407_tao_bao_cao_tang_giam_tai_san();
+                v_frm.set_form_mode(f407_tao_bao_cao_tang_giam_tai_san.eFormMode.CHI_TIET_THEO_TUNG_DON_VI);
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
