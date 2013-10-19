@@ -289,12 +289,14 @@
             this.tổngHợpChungToolStripMenuItem1.Name = "tổngHợpChungToolStripMenuItem1";
             this.tổngHợpChungToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
             this.tổngHợpChungToolStripMenuItem1.Text = "Tổng hợp chung";
+            this.tổngHợpChungToolStripMenuItem1.Click += new System.EventHandler(this.tổngHợpChungToolStripMenuItem1_Click);
             // 
             // chiTiếtTheoTừngĐơnVịToolStripMenuItem1
             // 
             this.chiTiếtTheoTừngĐơnVịToolStripMenuItem1.Name = "chiTiếtTheoTừngĐơnVịToolStripMenuItem1";
             this.chiTiếtTheoTừngĐơnVịToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
             this.chiTiếtTheoTừngĐơnVịToolStripMenuItem1.Text = "Chi tiết theo từng đơn vị";
+            this.chiTiếtTheoTừngĐơnVịToolStripMenuItem1.Click += new System.EventHandler(this.chiTiếtTheoTừngĐơnVịToolStripMenuItem1_Click);
             // 
             // hiệnTrạngSửDụngTàiSảnKhácToolStripMenuItem
             // 
@@ -310,12 +312,14 @@
             this.tổngHợpChungToolStripMenuItem2.Name = "tổngHợpChungToolStripMenuItem2";
             this.tổngHợpChungToolStripMenuItem2.Size = new System.Drawing.Size(203, 22);
             this.tổngHợpChungToolStripMenuItem2.Text = "Tổng hợp chung";
+            this.tổngHợpChungToolStripMenuItem2.Click += new System.EventHandler(this.tổngHợpChungToolStripMenuItem2_Click);
             // 
             // chiTiếtTheoTừngĐơnVịToolStripMenuItem2
             // 
             this.chiTiếtTheoTừngĐơnVịToolStripMenuItem2.Name = "chiTiếtTheoTừngĐơnVịToolStripMenuItem2";
             this.chiTiếtTheoTừngĐơnVịToolStripMenuItem2.Size = new System.Drawing.Size(203, 22);
             this.chiTiếtTheoTừngĐơnVịToolStripMenuItem2.Text = "Chi tiết theo từng đơn vị";
+            this.chiTiếtTheoTừngĐơnVịToolStripMenuItem2.Click += new System.EventHandler(this.chiTiếtTheoTừngĐơnVịToolStripMenuItem2_Click);
             // 
             // tăngGiảmTàiSảnToolStripMenuItem
             // 
