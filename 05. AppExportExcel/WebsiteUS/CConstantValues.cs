@@ -33,6 +33,8 @@ namespace WebUS
         public const string BCTH_THSD_TSK_THC = "BC-410 BCTH-THSDTSK-THC.xls";
         public const string BCTH_THSD_TSK_LH = "";
         public const string BCTH_THSD_TSK_DV = "BC-410 BCTH-THSDTSK-CT.xls";
+        //Bao cao tang giam tai san
+        public const string BCTH_TGTS = "BC-330 BCTH-TGTS.xls";
     }
     public class LOAI_BAO_CAO
     {
