@@ -197,5 +197,61 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(ex);
             }
         }
+
+        private void tổngHợpChungToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f405_tao_bao_cao_hien_trang_su_dung_oto v_frm = new f405_tao_bao_cao_hien_trang_su_dung_oto();
+                v_frm.set_form_mode(f405_tao_bao_cao_hien_trang_su_dung_oto.eFormMode.TONG_HOP_CHUNG);
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
+
+        private void chiTiếtTheoTừngĐơnVịToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f405_tao_bao_cao_hien_trang_su_dung_oto v_frm = new f405_tao_bao_cao_hien_trang_su_dung_oto();
+                v_frm.set_form_mode(f405_tao_bao_cao_hien_trang_su_dung_oto.eFormMode.CHI_TIET_THEO_TUNG_DON_VI);
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
+
+        private void tổngHợpChungToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f406_tao_bao_cao_hien_trang_su_dung_tai_san_khac v_frm = new f406_tao_bao_cao_hien_trang_su_dung_tai_san_khac();
+                v_frm.set_form_mode(f406_tao_bao_cao_hien_trang_su_dung_tai_san_khac.eFormMode.TONG_HOP_CHUNG);
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
+
+        private void chiTiếtTheoTừngĐơnVịToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f406_tao_bao_cao_hien_trang_su_dung_tai_san_khac v_frm = new f406_tao_bao_cao_hien_trang_su_dung_tai_san_khac();
+                v_frm.set_form_mode(f406_tao_bao_cao_hien_trang_su_dung_tai_san_khac.eFormMode.CHI_TIET_THEO_TUNG_DON_VI);
+                v_frm.display();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
     }
 }
