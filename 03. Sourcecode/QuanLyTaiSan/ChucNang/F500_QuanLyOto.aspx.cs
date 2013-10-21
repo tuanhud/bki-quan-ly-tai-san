@@ -434,9 +434,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private void clear_panel_data()
     {
-        m_txt_ngay_duyet.Text = "";
         m_txt_ma_phieu.Text = "";
-        m_txt_ngay_tang_giam.Text = "";
     }
     private void lua_chon_loai_tang_giam()
     {
@@ -666,16 +664,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         try
         {
-            if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
-            {
-                m_lbl_mess_tg.Text = "Lỗi: Ngày duyệt không đúng định dạng";
-                return;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_ngay_tang_giam, DataType.DateType, allowNull.NO))
-            {
-                m_lbl_mess_tg.Text = "Lỗi: Ngày tính tăng giảm không đúng định dạng";
-                return;
-            }
             them_moi_tang_giam();
             hidden_panel_tang_giam();
         }
