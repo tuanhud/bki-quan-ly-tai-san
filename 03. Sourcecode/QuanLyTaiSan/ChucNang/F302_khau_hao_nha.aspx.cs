@@ -193,8 +193,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         v_us_gd_khau_hao.dcID_DON_VI = v_us_dm_nha.dcID_DON_VI_SU_DUNG;
         v_us_gd_khau_hao.dcGIA_TRI_KHAU_HAO = v_dc_gia_tri_khau_hao;
         v_us_gd_khau_hao.strMA_PHIEU = m_txt_ma_phieu.Text;
-        v_us_gd_khau_hao.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
-        v_us_gd_khau_hao.datNGAY_LAP = CIPConvert.ToDatetime(m_txt_ngay_lap.Text);
+        v_us_gd_khau_hao.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
+        v_us_gd_khau_hao.datNGAY_LAP = m_dat_ngay_lap.SelectedDate;
         v_us_gd_khau_hao.dcID_NGUOI_LAP = Person.get_user_id();
         v_us_gd_khau_hao.dcID_NGUOI_DUYET = Person.get_user_id();
 
@@ -220,8 +220,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     {
         m_hdf_id.Value = "";
         m_txt_ma_phieu.Text = "";
-        m_txt_ngay_duyet.Text = "";
-        m_txt_ngay_lap.Text = "";
         m_txt_gia_tri_khau_hao.Text = "";
     }
 
@@ -250,18 +248,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         if (!m_us_gd_khau_hao.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
         {
             m_lbl_mess.Text = "Mã phiếu này đã tồn tại";
-            return false;
-        }
-
-        if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Lỗi: Ngày duyệt không đúng định dạng";
-            return false;
-        }
-
-        if (!CValidateTextBox.IsValid(m_txt_ngay_lap, DataType.DateType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Lỗi: Ngày lập không đúng định dạng";
             return false;
         }
 
