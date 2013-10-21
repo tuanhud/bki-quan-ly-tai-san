@@ -3,6 +3,7 @@
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
+<%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         $(function () {
@@ -250,7 +251,8 @@
                                     <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
                                         ValidationGroup="m_vlg_oto"> </asp:TextBox>
                                     <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
-                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_oto" ForeColor="Red"> </asp:RequiredFieldValidator>
+                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_oto"
+                                        ForeColor="Red"> </asp:RequiredFieldValidator>
                                 </td>
                                 <td colspan="1" style="width: 20%" align="right" class="cssManField">
                                     <span>Giá trị khấu hao (VNĐ) </span>
@@ -268,21 +270,59 @@
                                     <span>Ngày lập </span>
                                 </td>
                                 <td style="width: 29%" align="left">
-                                    <asp:TextBox ID="m_txt_ngay_lap" runat="server" CssClass="cssTextBox" Width="85%"
-                                        ValidationGroup="m_vlg_oto"> </asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
-                                        ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="(*)" ValidationGroup="m_vlg_oto"
-                                        ForeColor="Red"> </asp:RequiredFieldValidator>
+                                    <ew:CalendarPopup ID="m_dat_ngay_lap" runat="server" ControlDisplay="TextBoxImage"
+                                        Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                        ShowGoToToday="true">
+                                        <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Gray" />
+                                        <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                    </ew:CalendarPopup>
                                 </td>
                                 <td align="right" class="cssManField">
                                     <span>Ngày duyệt </span>
                                 </td>
                                 <td style="width: 29%" align="left">
-                                    <asp:TextBox ID="m_txt_ngay_duyet" runat="Server" CssClass=" cssTextBox" Width="85%"
-                                        ValidationGroup="m_vlg_oto"> </asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ControlToValidate="m_txt_ngay_duyet"
-                                        ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="(*)" ValidationGroup="m_vlg_oto"
-                                        ForeColor="Red"> </asp:RequiredFieldValidator>
+                                    <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
+                                        Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                                        ImageUrl="~/Images/cal.gif">
+                                        <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Gray" />
+                                        <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                    </ew:CalendarPopup>
                                 </td>
                             </tr>
                             <tr>
@@ -292,9 +332,9 @@
                                 <td colspan="4" align="left">
                                     <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
                                         Height="24px" Width="98px" Text="Tạo mới(c)" ValidationGroup="m_vlg_oto" OnClick="m_cmd_tao_moi_Click" />
-                                    <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
-                                        Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
-                                    <asp:HiddenField ID="m_hdf_id" runat="server" Value=""/>
+                                    <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
+                                        CausesValidation="false" Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
+                                    <asp:HiddenField ID="m_hdf_id" runat="server" Value="" />
                                 </td>
                             </tr>
                         </table>
@@ -335,8 +375,7 @@
                     </td>
                     <td style="width: 30%" align="left" colspan="1">
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_down" runat="server" Width="85%"
-                            ValidationGroup="m_vlg_oto" AutoPostBack="true"
-                            onselectedindexchanged="m_cbo_don_vi_su_dung_tai_san_down_SelectedIndexChanged">
+                            ValidationGroup="m_vlg_oto" AutoPostBack="true" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_tai_san_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td colspan="1" align="right" style="width: 20%">
@@ -344,7 +383,7 @@
                     </td>
                     <td align="left" colspan="1" style="width: 30%;">
                         <asp:DropDownList ID="m_cbo_trang_thai_o_to_down" runat="server" Width="85%" AutoPostBack="true"
-                            onselectedindexchanged="m_cbo_trang_thai_o_to_down_SelectedIndexChanged">
+                            OnSelectedIndexChanged="m_cbo_trang_thai_o_to_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -354,7 +393,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" AutoPostBack="true"
-                            Width="85%" ontextchanged="m_txt_tu_khoa_TextChanged"> </asp:TextBox>
+                            Width="85%" OnTextChanged="m_txt_tu_khoa_TextChanged"> </asp:TextBox>
                     </td>
                     <td>
                     </td>
@@ -378,9 +417,10 @@
                 </tr>
                 <tr>
                     <td align="center" colspan="4" style="height: 450px;" valign="top">
-                        <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="cssGrid"
-                            Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                            PageSize="15" ShowHeader="true" OnRowCommand="m_grv_dm_oto_RowCommand" EmptyDataText="Không có dữ liệu phù hợp">
+                        <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                            CssClass="cssGrid" Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333"
+                            AllowSorting="True" PageSize="15" ShowHeader="true" OnRowCommand="m_grv_dm_oto_RowCommand"
+                            EmptyDataText="Không có dữ liệu phù hợp">
                             <Columns>
                                 <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                                     <ItemTemplate>
@@ -409,24 +449,25 @@
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
-                                                <td colspan="3" style="height: 45px; text-align:center">
-                                                    Giá trị theo sổ kế toán 
-                                                    <br />(VNĐ)
+                                                <td colspan="3" style="height: 45px; text-align: center">
+                                                    Giá trị theo sổ kế toán
+                                                    <br />
+                                                    (VNĐ)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" style="width: 66%; height: 20px; text-align:center">
+                                                <td colspan="2" style="width: 66%; height: 20px; text-align: center">
                                                     Nguyên giá
                                                 </td>
-                                                <td rowspan="2" style="width: 33%; height: 80px; text-align:center">
+                                                <td rowspan="2" style="width: 33%; height: 80px; text-align: center">
                                                     Giá trị còn lại
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 33%; text-align:center">
+                                                <td style="width: 33%; text-align: center">
                                                     Nguồn NS
                                                 </td>
-                                                <td style="width: 33%; text-align:center">
+                                                <td style="width: 33%; text-align: center">
                                                     Nguồn khác
                                                 </td>
                                             </tr>

@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
-    CodeFile="F105_KhauHaoDat.aspx.cs" Inherits="ChucNang_F105_KhauHaoDat" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    EnableEventValidation="false" CodeFile="F105_KhauHaoDat.aspx.cs" Inherits="ChucNang_F105_KhauHaoDat" %>
 
+<%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -186,7 +187,8 @@
                     </td>
                     <td align="left" style="width: 1%;">
                         <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
-                            ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_dat" ForeColor="Red"> </asp:RequiredFieldValidator>
+                            ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_dat"
+                            ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                     <td colspan="1" style="width: 20%" align="right" class="cssManField">
                         <span>Giá trị khấu hao </span>
@@ -206,24 +208,65 @@
                         <span>Ngày lập </span>
                     </td>
                     <td style="width: 29%" align="left">
-                        <asp:TextBox ID="m_txt_ngay_lap" runat="server" CssClass="cssTextBox" Width="85%"
-                            ValidationGroup="m_vlg_dat"> </asp:TextBox>
+                        <ew:CalendarPopup ID="m_dat_ngay_lap" runat="server" ControlDisplay="TextBoxImage"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            ImageUrl="~/Images/cal.gif">
+                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Gray" />
+                            <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                        </ew:CalendarPopup>
                     </td>
                     <td align="left" style="width: 1%" class="cssManField">
-                        <asp:RequiredFieldValidator ID="m_rfv_ngay_lap" runat="Server" ControlToValidate="m_txt_ngay_lap"
-                            ErrorMessage="Bạn phải nhập đúng Ngày Lập" Text="(*)" ValidationGroup="m_vlg_dat"> </asp:RequiredFieldValidator>
                     </td>
                     <td align="right" class="cssManField">
                         <span>Ngày duyệt </span>
                     </td>
                     <td style="width: 29%" align="left">
-                        <asp:TextBox ID="m_txt_ngay_duyet" runat="Server" CssClass="cssTextBox" Width="85%"
-                            ValidationGroup="m_vlg_dat"> </asp:TextBox>
+                        <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" 
+                            ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
+                            GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
+                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Gray" />
+                            <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <DayHeaderStyle BackColor="AliceBlue" 
+                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                ForeColor="Black" />
+                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <TodayDayStyle BackColor="CadetBlue" 
+                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                ForeColor="Black" />
+                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                        </ew:CalendarPopup>
                     </td>
                     <td align="left" style="width: 1%;">
-                        <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ControlToValidate="m_txt_ngay_duyet"
-                            ErrorMessage="Bạn phải nhập Ngày Duyệt" Text="(*)" ValidationGroup="m_vlg_dat"
-                            ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -273,8 +316,7 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung_down" Width="85%" runat="Server" AutoPostBack="True"
-                            TabIndex="3" 
-                            onselectedindexchanged="m_cbo_don_vi_su_dung_down_SelectedIndexChanged">
+                            TabIndex="3" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_down_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="right">
@@ -282,7 +324,7 @@
                     </td>
                     <td style="width: 30%" colspan="1">
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" AutoPostBack="true"
-                            Width="85%" ontextchanged="m_txt_tu_khoa_TextChanged"> </asp:TextBox>
+                            Width="85%" OnTextChanged="m_txt_tu_khoa_TextChanged"> </asp:TextBox>
                     </td>
                     <td>
                     </td>
