@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" EnableEventValidation="false"
-    CodeFile="F106_DuyetGhiTangNha.aspx.cs" Inherits="ChucNang_F106_DuyetGhiTangNha" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    EnableEventValidation="false" CodeFile="F106_DuyetGhiTangNha.aspx.cs" Inherits="ChucNang_F106_DuyetGhiTangNha" %>
 
+<%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -26,7 +27,7 @@
                 <tr>
                     <td colspan="4">
                         <asp:Label ID="m_lbl_message" runat="server" Text="" CssClass="cssManField"></asp:Label>
-                        <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true"/>
+                        <asp:ValidationSummary ID="vdsCategory" runat="server" CssClass="cssManField" Font-Bold="true" />
                     </td>
                 </tr>
                 <tr>
@@ -177,15 +178,15 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_ly_do_thay_doi" Width="85%" runat="server" AutoPostBack="true"
-                            onselectedindexchanged="m_cbo_ly_do_thay_doi_SelectedIndexChanged">
+                            OnSelectedIndexChanged="m_cbo_ly_do_thay_doi_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="right">
                         <span class="cssManField">Loại đề nghị</span>
                     </td>
                     <td>
-                        <asp:RadioButtonList ID="m_rbl_loai" runat="server" 
-                            RepeatDirection="Horizontal" CssClass="cssManField" Enabled="False">
+                        <asp:RadioButtonList ID="m_rbl_loai" runat="server" RepeatDirection="Horizontal"
+                            CssClass="cssManField" Enabled="False">
                             <asp:ListItem Value="Y" Selected="True">Duyệt ghi tăng</asp:ListItem>
                             <asp:ListItem Value="N">Duyệt ghi giảm</asp:ListItem>
                         </asp:RadioButtonList>
@@ -196,20 +197,38 @@
                         <span class="cssManField">Mã phiếu</span>
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" 
-                            Width="85%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" 
-                            ErrorMessage="Bạn phải nhập Mã phiếu" Text="(*)" 
-                            ControlToValidate="m_txt_ma_phieu"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ErrorMessage="Bạn phải nhập Mã phiếu"
+                            Text="(*)" ControlToValidate="m_txt_ma_phieu"></asp:RequiredFieldValidator>
                     </td>
                     <td align="right" style="width: 15%">
                         <span class="cssManField">Ngày tăng giảm tài sản</span>
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:TextBox ID="m_txt_ngay_tang_giam" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="m_rfv_ngay_tang_giam" runat="server" 
-                            ErrorMessage="Bạn phải nhập Ngày lập" Text="(*)" 
-                            ControlToValidate="m_txt_ngay_tang_giam"></asp:RequiredFieldValidator>
+                        <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            ImageUrl="~/Images/cal.gif">
+                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Gray" />
+                            <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                        </ew:CalendarPopup>
                     </td>
                 </tr>
                 <tr>
@@ -217,23 +236,47 @@
                         <span class="cssManField">Ngày duyệt</span>
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:TextBox ID="m_txt_ngay_duyet" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" 
-                            ErrorMessage="Bạn phải nhập ngày duyệt" Text="(*)" 
-                            ControlToValidate="m_txt_ngay_duyet"></asp:RequiredFieldValidator>
+                        <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
+                            Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                            ShowGoToToday="true">
+                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Gray" />
+                            <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                        </ew:CalendarPopup>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
                 </tr>
                 <tr>
-                    <td colspan="4"><br /></td>
+                    <td colspan="4">
+                        <br />
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="4" align="center">
-                        <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server" 
+                        <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
                             Height="24px" Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" />
-                        <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
-                            Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
+                        <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
+                            CausesValidation="false" Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
                         <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
                     </td>
                 </tr>
@@ -241,9 +284,10 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="Danh sách duyệt ghi tăng giảm tài sản" CssClass="cssPageTitle"></asp:Label>
-                        <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="Danh sách duyệt ghi tăng giảm tài sản"
+                            CssClass="cssPageTitle"></asp:Label>
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
@@ -278,7 +322,7 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4" AutoPostBack="true"
-                            onselectedindexchanged="m_cbo_dia_chi_SelectedIndexChanged">
+                            OnSelectedIndexChanged="m_cbo_dia_chi_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -288,7 +332,7 @@
                     </td>
                     <td style="width: 30%" colspan="1">
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" AutoPostBack="true"
-                            Width="85%" CausesValidation="false" ontextchanged="m_txt_tu_khoa_TextChanged">
+                            Width="85%" CausesValidation="false" OnTextChanged="m_txt_tu_khoa_TextChanged">
                         </asp:TextBox>
                     </td>
                     <td align="right" colspan="1" class="style1">
@@ -300,8 +344,8 @@
                     <td align="right">
                     </td>
                     <td align="left">
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton" CausesValidation="false"
-                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
+                            CausesValidation="false" Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" />
                     </td>
                     <td align="left" class="style1">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
@@ -320,23 +364,23 @@
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
                             EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" CssClass="cssGrid"
-                            onpageindexchanging="m_grv_danh_sach_nha_PageIndexChanging" 
-                            onrowcommand="m_grv_danh_sach_nha_RowCommand">
+                            OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging" OnRowCommand="m_grv_danh_sach_nha_RowCommand">
                             <Columns>
-                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center" 
-                                    HeaderStyle-Height="30px" ItemStyle-Height="30px">
+                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center" HeaderStyle-Height="30px"
+                                    ItemStyle-Height="30px">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU"/>
+                                <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
                                 <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="Diện tích" DataField="DIEN_TICH" ItemStyle-HorizontalAlign="Right" 
-                                    DataFormatString="{0:#,##0}"/>
-                                <asp:BoundField HeaderText="Lý do tăng giảm" DataField="LY_DO_TANG_GIAM_TAI_SAN" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="Giá trị nguyên giá tăng giảm" DataField="GIA_TRI_NGUYEN_GIA_TANG_GIAM" 
-                                    DataFormatString="{0:#,##0}" ItemStyle-HorizontalAlign="Right"/>
+                                <asp:BoundField HeaderText="Diện tích" DataField="DIEN_TICH" ItemStyle-HorizontalAlign="Right"
+                                    DataFormatString="{0:#,##0}" />
+                                <asp:BoundField HeaderText="Lý do tăng giảm" DataField="LY_DO_TANG_GIAM_TAI_SAN"
+                                    ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="Giá trị nguyên giá tăng giảm" DataField="GIA_TRI_NGUYEN_GIA_TANG_GIAM"
+                                    DataFormatString="{0:#,##0}" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Ngày tăng giảm tài sản" DataField="NGAY_TANG_GIAM_TAI_SAN" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                             </Columns>
