@@ -156,8 +156,6 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     private void clear_form_data()
     {
         m_txt_ma_phieu.Text = "";
-        m_txt_ngay_duyet.Text = "";
-        m_txt_ngay_tang_giam.Text = "";
     }
 
     private bool check_validate_data_is_ok()
@@ -173,18 +171,6 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
             m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
             return false;
         }
-
-        if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
-        {
-            m_lbl_message.Text = "Lỗi: Ngày duyệt không đúng định dạng";
-            return false;
-        }
-
-        if (!CValidateTextBox.IsValid(m_txt_ngay_tang_giam, DataType.DateType, allowNull.NO))
-        {
-            m_lbl_message.Text = "Lỗi: Ngày tính tăng giảm không đúng định dạng";
-            return false;
-        }
         return true;
     }
 
@@ -192,8 +178,8 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
         m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
-        m_us_gd_tang_giam_tai_san.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
-        m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = CIPConvert.ToDatetime(m_txt_ngay_tang_giam.Text);
+        m_us_gd_tang_giam_tai_san.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
+        m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = m_dat_ngay_tang_giam.SelectedDate;
         m_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
         m_us_gd_tang_giam_tai_san.strTANG_GIA_TRI_TAI_SAN_YN = m_rbl_loai.SelectedValue;
 
