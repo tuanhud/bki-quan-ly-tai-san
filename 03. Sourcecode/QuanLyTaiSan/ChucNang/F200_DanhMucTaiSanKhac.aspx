@@ -3,6 +3,7 @@
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
+<%@ Register assembly="eWorld.UI" namespace="eWorld.UI" tagprefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -91,10 +92,40 @@
                                                 <span class="cssManField">Ngày tăng giảm tài sản</span>
                                             </td>
                                             <td align="left" style="width: 30%">
-                                                <asp:TextBox ID="m_txt_ngay_tang_giam" runat="server" CssClass="cssTextBox" Width="85%"
-                                                    ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="m_rfv_ngay_tang_giam" runat="server" ErrorMessage="Bạn phải nhập Ngày lập"
-                                                    Text="(*)" ControlToValidate="m_txt_ngay_tang_giam" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                                
+                                                <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" 
+                                                    ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
+                                                    GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
+                                                    <weekdaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
+                                                    font-size="XX-Small" forecolor="Black" />
+                                                    <weekendstyle backcolor="LightGray" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <offmonthstyle backcolor="AntiqueWhite" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Gray" />
+                                                    <selecteddatestyle backcolor="#007ccf" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <monthheaderstyle backcolor="#007ccf" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <DayHeaderStyle BackColor="AliceBlue" 
+                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                                    ForeColor="Black" />
+                                                    <cleardatestyle backcolor="White" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <gototodaystyle backcolor="White" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <TodayDayStyle BackColor="CadetBlue" 
+                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                                    ForeColor="Black" />
+                                                    <holidaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
+                                                    font-size="XX-Small" forecolor="Black" />
+                                                </ew:CalendarPopup>
+                                                
                                             </td>
                                         </tr>
                                         <tr>
@@ -102,10 +133,40 @@
                                                 <span class="cssManField">Ngày duyệt</span>
                                             </td>
                                             <td align="left" style="width: 30%">
-                                                <asp:TextBox ID="m_txt_ngay_duyet" runat="server" CssClass="cssTextBox" Width="85%"
-                                                    ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="m_rfv_ngay_duyet" runat="server" ErrorMessage="Bạn phải nhập ngày duyệt"
-                                                    Text="(*)" ControlToValidate="m_txt_ngay_duyet" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                                
+                                                <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" 
+                                                    ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
+                                                    GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
+                                                    <weekdaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
+                                                    font-size="XX-Small" forecolor="Black" />
+                                                    <weekendstyle backcolor="LightGray" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <offmonthstyle backcolor="AntiqueWhite" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Gray" />
+                                                    <selecteddatestyle backcolor="#007ccf" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <monthheaderstyle backcolor="#007ccf" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <DayHeaderStyle BackColor="AliceBlue" 
+                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                                    ForeColor="Black" />
+                                                    <cleardatestyle backcolor="White" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <gototodaystyle backcolor="White" 
+                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
+                                                    forecolor="Black" />
+                                                    <TodayDayStyle BackColor="CadetBlue" 
+                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                                    ForeColor="Black" />
+                                                    <holidaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
+                                                    font-size="XX-Small" forecolor="Black" />
+                                                </ew:CalendarPopup>
+                                                
                                             </td>
                                             <td>
                                             </td>

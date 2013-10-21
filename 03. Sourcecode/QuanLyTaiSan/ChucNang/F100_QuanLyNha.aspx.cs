@@ -427,7 +427,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             load_data_2_form();
             m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
             m_lbl_mess.Text = "Đã thêm mới dữ liệu nhà thành công!";
-            display_panel_tang_giam();
         }
     }
     private void load_data_to_ly_do()
@@ -454,8 +453,8 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
 
         US_GD_TANG_GIAM_TAI_SAN v_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
         m_us_dm_nha = new US_DM_NHA(CIPConvert.ToDecimal(m_hdf_id.Value));
-        v_us_gd_tang_giam_tai_san.datNGAY_DUYET = CIPConvert.ToDatetime(m_txt_ngay_duyet.Text);
-        v_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = CIPConvert.ToDatetime(m_txt_ngay_tang_giam.Text);
+        v_us_gd_tang_giam_tai_san.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
+        v_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = m_dat_ngay_tang_giam.SelectedDate;
         v_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
         v_us_gd_tang_giam_tai_san.strTANG_GIA_TRI_TAI_SAN_YN = m_rbl_loai.SelectedValue;
 
@@ -476,9 +475,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     }
     private void clear_panel_data()
     {
-        m_txt_ngay_duyet.Text = "";
         m_txt_ma_phieu.Text = "";
-        m_txt_ngay_tang_giam.Text = "";
     }
     private void lua_chon_loai_tang_giam()
     {
@@ -537,6 +534,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         try {
             clear_message();
             insert_nha();
+            display_panel_tang_giam();
         }
         catch (Exception v_e) {
             CSystemLog_301.ExceptionHandle(this, v_e);
@@ -654,16 +652,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     {
         try
         {
-            if (!CValidateTextBox.IsValid(m_txt_ngay_duyet, DataType.DateType, allowNull.NO))
-            {
-                m_lbl_mess_tg.Text = "Lỗi: Ngày duyệt không đúng định dạng";
-                return;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_ngay_tang_giam, DataType.DateType, allowNull.NO))
-            {
-                m_lbl_mess_tg.Text = "Lỗi: Ngày tính tăng giảm không đúng định dạng";
-                return;
-            }
             them_moi_tang_giam();
             hidden_panel_tang_giam();
         }
