@@ -117,7 +117,7 @@
                 <tr>
                     <td align="center">
                         <asp:GridView ID="m_grv_dm_don_vi" runat="server" AutoGenerateColumns="False" Width="80%"
-                            DataKeyNames="ID" AllowPaging="True" PageSize="15" CellPadding="4" ForeColor="#333333"
+                            DataKeyNames="ID" AllowPaging="True" PageSize="50" CellPadding="4" ForeColor="#333333"
                             CssClass="cssGrid" OnRowDeleting="m_grv_dm_don_vi_RowDeleting" OnPageIndexChanging="m_grv_dm_don_vi_PageIndexChanging"
                             OnRowUpdating="m_grv_dm_don_vi_RowUpdating">
                             <PagerSettings Position="TopAndBottom" />
