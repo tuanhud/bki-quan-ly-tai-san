@@ -173,9 +173,9 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="3" style="height: 450px;" valign="top">
-                            <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True"
+                            <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True" CssClass="cssGrid"
                                 AutoGenerateColumns="False" Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333"
-                                AllowSorting="True" PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp"
+                                AllowSorting="True" PageSize="30" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp"
                                 OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
@@ -203,6 +203,7 @@
                                         HeaderStyle-Width="20%" />
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                     <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
+                                    <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                     <asp:BoundField HeaderText="Năm sản xuất" ItemStyle-HorizontalAlign="Center" DataField="NAM_SAN_XUAT"
                                         HeaderStyle-Width="3.5%">
                                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
@@ -221,7 +222,7 @@
                                                     <td colspan="2" style="width: 66%">
                                                         Nguyên giá
                                                     </td>
-                                                    <td rowspan="2" style="width: 33%">
+                                                    <td rowspan="2" style="width: 33%; height: 75px">
                                                         Giá trị còn lại
                                                     </td>
                                                 </tr>
@@ -257,12 +258,12 @@
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                                 <tr>
-                                                    <td colspan="7" style="height: 39px">
+                                                    <td colspan="7" style="height: 50px">
                                                         Hiện trạng sử dụng (cái, chiếc)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td rowspan="2" style="width: 25%">
+                                                    <td rowspan="2" style="width: 25%; height: 75px">
                                                         Quản lý nhà nước
                                                     </td>
                                                     <td colspan="2" style="width: 50%">

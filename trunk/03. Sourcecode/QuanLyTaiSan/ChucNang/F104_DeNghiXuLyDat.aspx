@@ -126,7 +126,7 @@
                     <td align="center" colspan="4" style="height: 450px;" valign="top">
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
+                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="30" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging">
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
                             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -156,6 +156,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                 <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
+                                <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="DT Trụ sở làm việc (m2)" DataField="DT_TRU_SO_LAM_VIEC"

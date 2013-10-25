@@ -3,7 +3,7 @@
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-<%@ Register assembly="eWorld.UI" namespace="eWorld.UI" tagprefix="ew" %>
+<%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -80,52 +80,42 @@
                                         </tr>
                                         <tr>
                                             <td align="right" style="width: 15%">
-                                                <span class="cssManField">Mã phiếu</span>
+                                                <span class="cssManField">Mã phiếu *</span>
                                             </td>
                                             <td align="left" style="width: 30%">
                                                 <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
                                                     ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ErrorMessage="Bạn phải nhập Mã phiếu"
-                                                    Text="(*)" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                                    Text="*" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
                                             </td>
                                             <td align="right" style="width: 15%">
                                                 <span class="cssManField">Ngày tăng giảm tài sản</span>
                                             </td>
                                             <td align="left" style="width: 30%">
-                                                
-                                                <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" 
-                                                    ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
-                                                    GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
-                                                    <weekdaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
-                                                    font-size="XX-Small" forecolor="Black" />
-                                                    <weekendstyle backcolor="LightGray" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <offmonthstyle backcolor="AntiqueWhite" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Gray" />
-                                                    <selecteddatestyle backcolor="#007ccf" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <monthheaderstyle backcolor="#007ccf" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <DayHeaderStyle BackColor="AliceBlue" 
-                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                                    ForeColor="Black" />
-                                                    <cleardatestyle backcolor="White" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <gototodaystyle backcolor="White" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <TodayDayStyle BackColor="CadetBlue" 
-                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                                    ForeColor="Black" />
-                                                    <holidaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
-                                                    font-size="XX-Small" forecolor="Black" />
+                                                <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
+                                                    Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                                    ShowGoToToday="true">
+                                                    <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Gray" />
+                                                    <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
                                                 </ew:CalendarPopup>
-                                                
                                             </td>
                                         </tr>
                                         <tr>
@@ -133,40 +123,30 @@
                                                 <span class="cssManField">Ngày duyệt</span>
                                             </td>
                                             <td align="left" style="width: 30%">
-                                                
-                                                <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" 
-                                                    ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
-                                                    GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
-                                                    <weekdaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
-                                                    font-size="XX-Small" forecolor="Black" />
-                                                    <weekendstyle backcolor="LightGray" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <offmonthstyle backcolor="AntiqueWhite" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Gray" />
-                                                    <selecteddatestyle backcolor="#007ccf" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <monthheaderstyle backcolor="#007ccf" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <DayHeaderStyle BackColor="AliceBlue" 
-                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                                    ForeColor="Black" />
-                                                    <cleardatestyle backcolor="White" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <gototodaystyle backcolor="White" 
-                                                    font-names="Verdana,Helvetica,Tahoma,Arial" font-size="XX-Small" 
-                                                    forecolor="Black" />
-                                                    <TodayDayStyle BackColor="CadetBlue" 
-                                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                                    ForeColor="Black" />
-                                                    <holidaystyle backcolor="White" font-names="Verdana,Helvetica,Tahoma,Arial" 
-                                                    font-size="XX-Small" forecolor="Black" />
+                                                <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
+                                                    Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                                    ShowGoToToday="true">
+                                                    <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Gray" />
+                                                    <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
+                                                    <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                                        Font-Size="XX-Small" ForeColor="Black" />
+                                                    <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                                        ForeColor="Black" />
                                                 </ew:CalendarPopup>
-                                                
                                             </td>
                                             <td>
                                             </td>
@@ -249,78 +229,72 @@
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Tên tài sản</span>
+                                        <span class="cssManField">Tên tài sản *</span>
                                     </td>
                                     <td style="width: 30%" align="left">
                                         <asp:TextBox ID="m_txt_ten_tai_san" runat="server" CssClass="cssTextBox" Width="85%"
                                             ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_ten_tai_San" runat="server" ControlToValidate="m_txt_ten_tai_san"
                                             ErrorMessage="Bạn phải nhập Tên tài sản" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Mã tài sản</span>
+                                        <span class="cssManField">Mã tài sản *</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
                                         <asp:TextBox ID="m_txt_ma_tai_san" runat="server" CssClass="cssTextBox" Width="85%"
                                             ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_ma_tai_san" runat="server" ControlToValidate="m_txt_ma_tai_san"
                                             ErrorMessage="Bạn phải nhập Mã Tài sản" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Ký hiệu</span>
+                                        <span class="cssManField">Ký hiệu *</span>
                                     </td>
                                     <td style="width: 30%" align="left">
                                         <asp:TextBox ID="m_txt_ky_hieu" runat="server" CssClass="cssTextBox" Width="85%"
                                             ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_ky_hieu" runat="server" ControlToValidate="m_txt_ky_hieu"
                                             ErrorMessage="Bạn phải nhập Ký hiệu" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Nước sản xuất</span>
+                                        <span class="cssManField">Nước sản xuất *</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
                                         <asp:TextBox ID="m_txt_nuoc_sx" runat="server" CssClass="cssTextBox" Width="85%"
                                             ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_nuoc_sx" runat="server" ControlToValidate="m_txt_nuoc_sx"
                                             ErrorMessage="Bạn phải nhập Nước sản xuất" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Năm sản xuất</span>
+                                        <span class="cssManField">Năm sản xuất *</span>
                                     </td>
                                     <td style="width: 30%" align="left">
                                         <asp:TextBox ID="m_txt_nam_sx" runat="server" CssClass="cssTextBox cssNumber" Width="85%"
                                             ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_nam_sx" runat="server" ControlToValidate="m_txt_nam_sx"
                                             ErrorMessage="Bạn phải nhập Mã Tài sản" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Năm sử dụng</span>
+                                        <span class="cssManField">Năm sử dụng *</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
                                         <asp:TextBox ID="m_txt_ngay_su_dung" runat="server" CssClass="cssTextBox cssNumber"
                                             Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_ngay_su_dung" runat="server" ControlToValidate="m_txt_ngay_su_dung"
                                             ErrorMessage="Bạn phải nhập Ngày sử dụng" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
@@ -328,7 +302,7 @@
                                 <tr>
                                     <td>
                                     </td>
-                                    <td>
+                                    <td class="cssManField">
                                         GIÁ TRỊ THEO SỔ KẾ TOÁN (VNĐ)
                                     </td>
                                     <td>
@@ -342,14 +316,13 @@
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Nguyên giá nguồn NS</span>
+                                        <span class="cssManField">Nguyên giá nguồn NS *</span>
                                     </td>
                                     <td style="width: 30%" align="left">
                                         <asp:TextBox ID="m_txt_nguyen_gia_nguon_ns" runat="server" CssClass="cssTextBox csscurrency"
                                             Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
                                             ErrorMessage="Bạn phải nhập Nguồn ngân sách" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
@@ -357,14 +330,13 @@
                                             ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                                     </td>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Nguyên giá nguồn khác</span>
+                                        <span class="cssManField">Nguyên giá nguồn khác *</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
                                         <asp:TextBox ID="m_txt_nguyen_gia_nguon_khac" runat="server" CssClass="cssTextBox csscurrency"
                                             Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
                                             ErrorMessage="Bạn phải nhập Nguồn khác" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
@@ -374,14 +346,13 @@
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Giá trị còn lại</span>
+                                        <span class="cssManField">Giá trị còn lại *</span>
                                     </td>
                                     <td style="width: 30%" align="left">
                                         <asp:TextBox ID="m_txt_gia_tri_con_lai" runat="server" CssClass="cssTextBox csscurrency"
                                             Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_gia_tri_con_lai" runat="server" ControlToValidate="m_txt_gia_tri_con_lai"
                                             ErrorMessage="Bạn phải nhập Giá trị còn lại" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_gia_tri_con_lai" runat="server" ControlToValidate="m_txt_gia_tri_con_lai"
@@ -413,12 +384,8 @@
                                 <tr>
                                     <td>
                                     </td>
-                                    <td>
-                                        HIỆN TRẠNG SỬ DỤNG
-                                    </td>
-                                    <td>
-                                    </td>
-                                    <td>
+                                    <td colspan="3" class="cssManField">
+                                        HIỆN TRẠNG SỬ DỤNG (Nhập số lượng tài sản được sử dụng cho mục đích)
                                     </td>
                                     <td>
                                     </td>
@@ -427,14 +394,13 @@
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Quản lý nhà nước</span>
+                                        <span class="cssManField">Quản lý nhà nước *</span>
                                     </td>
                                     <td style="width: 30%" align="left">
                                         <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox csscurrency"
                                             align="left" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_quan_ly_nha_nuoc" runat="server" ControlToValidate="m_txt_quan_ly_nha_nuoc"
                                             ErrorMessage="Bạn phải nhập Quản lý nhà nước" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_quan_ly_nha_nuoc" runat="server" ControlToValidate="m_txt_quan_ly_nha_nuoc"
@@ -442,24 +408,29 @@
                                             ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                                     </td>
                                     <td align="right" style="width: 15%">
+                                        <span class="cssManField">HĐSN(Không kinh doanh) *</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
-                                        &nbsp;
+                                        <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" align="left" CssClass="cssTextBox csscurrency"
+                                            ValidationGroup="m_vlg_tsk" Width="85%"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        &nbsp;
+                                        &nbsp;<asp:RequiredFieldValidator ID="m_rfv_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
+                                            ErrorMessage="Bạn phải nhập Không kinh doanh" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                        <asp:CompareValidator ID="m_cp_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
+                                            ErrorMessage="Bạn không được nhập số âm vào Không kinh doanh" Operator="GreaterThanEqual"
+                                            Text="*" ValidationGroup="m_vlg_tsk" ValueToCompare="0"></asp:CompareValidator>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">HĐSN (Kinh doanh)</span>
+                                        <span class="cssManField">HĐSN (Kinh doanh) *</span>
                                     </td>
                                     <td style="width: 30%" align="left">
                                         <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency"
                                             align="left" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_kinh_doanh" runat="server" ControlToValidate="m_txt_kinh_doanh"
                                             ErrorMessage="Bạn phải nhập Kinh doanh" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_kinh_doanh" runat="server" ControlToValidate="m_txt_kinh_doanh"
@@ -467,42 +438,18 @@
                                             ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                                     </td>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">HĐSN(Không kinh doanh)</span>
+                                        <span class="cssManField">Hoạt động khác *</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
-                                        <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency"
-                                            align="left" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
+                                        <asp:TextBox ID="m_txt_khac" runat="server" align="left" CssClass="cssTextBox csscurrency"
+                                            ValidationGroup="m_vlg_tsk" Width="85%"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
-                                        (*)
-                                        <asp:RequiredFieldValidator ID="m_rfv_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
-                                            ErrorMessage="Bạn phải nhập Không kinh doanh" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator ID="m_cp_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
-                                            ErrorMessage="Bạn không được nhập số âm vào Không kinh doanh" Text="*" Operator="GreaterThanEqual"
-                                            ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right" style="width: 15%">
-                                        <span class="cssManField">Khác</span>
-                                    </td>
-                                    <td style="width: 30%" align="left">
-                                        <asp:TextBox ID="m_txt_khac" runat="server" CssClass="cssTextBox csscurrency" Width="85%"
-                                            align="left" ValidationGroup="m_vlg_tsk"></asp:TextBox>
-                                    </td>
-                                    <td align="left" style="width: 1%;">
-                                        (*)
                                         <asp:RequiredFieldValidator ID="m_rfv_khac" runat="server" ControlToValidate="m_txt_khac"
                                             ErrorMessage="Bạn phải nhập Khác" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_khac" runat="server" ControlToValidate="m_txt_khac"
-                                            ErrorMessage="Bạn không được nhập số âm vào Khác" Text="*" Operator="GreaterThanEqual"
-                                            ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
-                                    </td>
-                                    <td align="right">
-                                    </td>
-                                    <td align="left" style="width: 30%;">
-                                    </td>
-                                    <td align="left" style="width: 1%;">
+                                            ErrorMessage="Bạn không được nhập số âm vào Khác" Operator="GreaterThanEqual"
+                                            Text="*" ValidationGroup="m_vlg_tsk" ValueToCompare="0"></asp:CompareValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -591,7 +538,7 @@
                         <td align="center" colspan="4" style="height: 450px;" valign="top">
                             <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                                 Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                                PageSize="15" ShowHeader="true" OnRowUpdating="m_grv_tai_san_khac_RowUpdating"
+                                PageSize="30" ShowHeader="true" OnRowUpdating="m_grv_tai_san_khac_RowUpdating"
                                 OnRowDeleting="m_grv_tai_san_khac_RowDeleting" EmptyDataText="Không có dữ liệu."
                                 OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging">
                                 <Columns>
