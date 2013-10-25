@@ -221,7 +221,7 @@
                             </tr>
                             <tr>
                                 <td class="cssManField" align="right" colspan="1" style="width: 20%">
-                                    <span>Mã phiếu</span>
+                                    <span>Mã phiếu *</span>
                                 </td>
                                 <td colspan="1" style="width: 29%">
                                     <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
@@ -230,12 +230,12 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
-                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_tai_san_khac"
+                                        ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_tai_san_khac"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
                                 <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                                    <span>Giá trị khấu hao </span>
+                                    <span>Giá trị khấu hao * </span>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
@@ -244,7 +244,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="(*)" ValidationGroup="m_vlg_tai_san_khac"
+                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_tai_san_khac"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
@@ -340,7 +340,7 @@
                 </tr>
                 <tr>
                     <td align="right" colspan="1" style="width: 20%">
-                        <span class="cssManField">Bộ, tỉnh:</span>
+                        <span class="cssManField">Bộ, tỉnh </span>
                     </td>
                     <td style="width: 30%" colspan="1">
                         <asp:DropDownList ID="m_cbo_bo_tinh_down" Width="85%" runat="Server" AutoPostBack="True"
@@ -348,7 +348,7 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right" style="width: 20%" colspan="1">
-                        <span class="cssManField">Đơn vị chủ quản:</span>
+                        <span class="cssManField">Đơn vị chủ quản </span>
                     </td>
                     <td style="width: 30%" colspan="1">
                         <asp:DropDownList ID="m_cbo_don_vi_chu_quan_down" Width="85%" runat="Server" AutoPostBack="True"
@@ -358,7 +358,7 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <span class="cssManField">Đơn vị sử dụng tài sản:</span>
+                        <span class="cssManField">Đơn vị sử dụng tài sản </span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san_down" Width="85%" runat="Server"
@@ -366,7 +366,7 @@
                         </asp:DropDownList>
                     </td>
                     <td align="right">
-                        <span class="cssManField">Trạng thái tài sản: </span>
+                        <span class="cssManField">Trạng thái tài sản </span>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_trang_thai_tai_san_down" runat="Server" Width="85%" TabIndex="4"
@@ -411,7 +411,7 @@
                     <td align="center" colspan="4" style="height: 450px;" valign="top">
                         <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                            PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu." OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging"
+                            PageSize="30" ShowHeader="true" EmptyDataText="Không có dữ liệu." OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging"
                             OnRowCommand="m_grv_tai_san_khac_RowCommand">
                             <Columns>
                                 <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
@@ -429,6 +429,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
+                                <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                 <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
                                 <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />

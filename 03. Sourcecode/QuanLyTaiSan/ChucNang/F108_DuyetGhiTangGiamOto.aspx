@@ -222,7 +222,7 @@
                     <td align="left" style="width: 30%">
                         <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ErrorMessage="Bạn phải nhập Mã phiếu"
-                            Text="(*)" ControlToValidate="m_txt_ma_phieu"></asp:RequiredFieldValidator>
+                            Text="*" ControlToValidate="m_txt_ma_phieu"></asp:RequiredFieldValidator>
                     </td>
                     <td align="right" style="width: 15%">
                         <span class="cssManField">Ngày tăng giảm tài sản</span>
@@ -381,8 +381,8 @@
                     <td colspan="4">
                         <asp:GridView ID="m_grv_danh_sach_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_oto_PageIndexChanging"
-                            OnRowCommand="m_grv_danh_sach_oto_RowCommand">
+                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="30" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_oto_PageIndexChanging"
+                            OnRowCommand="m_grv_danh_sach_oto_RowCommand" CssClass="cssGrid">
                             <Columns>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center" HeaderStyle-Height="30px"
                                     ItemStyle-Height="30px">
@@ -392,6 +392,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
+                                <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="Số lượng" DataField="DIEN_TICH" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Lý do tăng giảm" DataField="LY_DO_TANG_GIAM_TAI_SAN"
                                     ItemStyle-HorizontalAlign="Center" />

@@ -79,13 +79,13 @@
                                     </tr>
                                     <tr>
                                         <td align="right" style="width: 15%">
-                                            <span class="cssManField">Mã phiếu</span>
+                                            <span class="cssManField">Mã phiếu *</span>
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
                                                 ValidationGroup="m_vlg_tang_giam"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ErrorMessage="Bạn phải nhập Mã phiếu"
-                                                Text="(*)" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
+                                                Text="*" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
                                         </td>
                                         <td align="right" style="width: 15%">
                                             <span class="cssManField">Ngày tăng giảm tài sản</span>
@@ -229,7 +229,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Địa chỉ</span>
+                                    <span class="cssManField">Địa chỉ * </span>
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_dia_chi" runat="server" CssClass="cssTextBox" Width="85%"
@@ -237,16 +237,16 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_dia_chi" runat="server" ControlToValidate="m_txt_dia_chi"
-                                        ErrorMessage="Bạn phải nhập Địa chỉ" Text="(*)" ValidationGroup="m_vlg_dat" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        ErrorMessage="Bạn phải nhập Địa chỉ" Text="*" ValidationGroup="m_vlg_dat" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Mã tài sản</span><td align="left" style="width: 30%;">
+                                    <span class="cssManField">Mã tài sản *</span><td align="left" style="width: 30%;">
                                         <asp:TextBox ID="m_txt_ma_tai_san" runat="server" CssClass="cssTextBox" Width="85%"
                                             ValidationGroup="m_vlg_dat"></asp:TextBox>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         <asp:RequiredFieldValidator ID="m_rfv_ma_tai_san" runat="server" ControlToValidate="m_txt_ma_tai_san"
-                                            ErrorMessage="Bạn phải nhập Mã tài sản" Text="(*)" ValidationGroup="m_vlg_dat"
+                                            ErrorMessage="Bạn phải nhập Mã tài sản" Text="*" ValidationGroup="m_vlg_dat"
                                             ForeColor="Red"></asp:RequiredFieldValidator>
                                     </td>
                             </tr>
@@ -467,7 +467,7 @@
                     <td align="center" colspan="3" style="height: 450px;" valign="top">
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID" CellPadding="4" ForeColor="#333333" AllowSorting="True"
-                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="15" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging"
+                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="30" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging"
                             OnRowCommand="m_grv_danh_sach_nha_RowCommand">
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />
@@ -505,6 +505,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                 <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
+                                <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="DT Trụ sở làm việc (m2)" DataField="DT_TRU_SO_LAM_VIEC"

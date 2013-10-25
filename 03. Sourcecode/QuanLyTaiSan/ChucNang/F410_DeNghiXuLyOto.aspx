@@ -205,7 +205,7 @@
                         &nbsp;
                         <asp:GridView ID="m_grv_dm_oto" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333" AllowSorting="True"
-                            PageSize="15" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp" OnPageIndexChanging="m_grv_dm_oto_PageIndexChanging">
+                            PageSize="30" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp" OnPageIndexChanging="m_grv_dm_oto_PageIndexChanging">
                             <Columns>
                                 <asp:TemplateField ItemStyle-Width="2%">
                                     <HeaderTemplate>
@@ -227,6 +227,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
                                 <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="Nhãn hiệu" DataField="NHAN_HIEU" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Biển kiểm soát" DataField="BIEN_KIEM_SOAT" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Số chỗ ngồi" DataField="SO_CHO_NGOI" ItemStyle-HorizontalAlign="Center" />

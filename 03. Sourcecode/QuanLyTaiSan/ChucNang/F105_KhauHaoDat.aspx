@@ -179,7 +179,7 @@
                 </tr>
                 <tr>
                     <td class="cssManField" align="right" colspan="1" style="width: 20%">
-                        <span>Mã phiếu</span>
+                        <span>Mã phiếu *</span>
                     </td>
                     <td colspan="1" style="width: 29%">
                         <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
@@ -187,11 +187,11 @@
                     </td>
                     <td align="left" style="width: 1%;">
                         <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_ma_phieu"
-                            ErrorMessage="Bạn phải nhập Mã Phiếu" Text="(*)" ValidationGroup="m_vlg_dat"
+                            ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_dat"
                             ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                     <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                        <span>Giá trị khấu hao </span>
+                        <span>Giá trị khấu hao *</span>
                     </td>
                     <td>
                         <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
@@ -199,7 +199,7 @@
                     </td>
                     <td align="left" style="width: 1%;">
                         <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                            ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="(*)" ValidationGroup="m_vlg_dat"
+                            ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_dat"
                             ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -375,6 +375,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
                                 <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
+                                <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="DT Khuôn viên (m2)" DataField="DT_KHUON_VIEN" ItemStyle-HorizontalAlign="Right"
                                     DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
