@@ -83,7 +83,7 @@
                                     </tr>
                                     <tr>
                                         <td align="right" style="width: 15%">
-                                            <span class="cssManField">Mã phiếu</span>
+                                            <span class="cssManField">Mã phiếu *</span>
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"
