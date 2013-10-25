@@ -385,7 +385,7 @@
                                     <td>
                                     </td>
                                     <td colspan="3" class="cssManField">
-                                        HIỆN TRẠNG SỬ DỤNG (Nhập số lượng tài sản được sử dụng cho mục đích)
+                                        HIỆN TRẠNG SỬ DỤNG (Lựa chọn mục đích sử dụng)
                                     </td>
                                     <td>
                                     </td>
@@ -394,69 +394,16 @@
                                 </tr>
                                 <tr>
                                     <td align="right" style="width: 15%">
-                                        <span class="cssManField">Quản lý nhà nước *</span>
+                                        <span class="cssManField">Mục đích sử dụng</span>
                                     </td>
                                     <td style="width: 30%" align="left">
-                                        <asp:TextBox ID="m_txt_quan_ly_nha_nuoc" runat="server" CssClass="cssTextBox csscurrency"
-                                            align="left" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
-                                    </td>
-                                    <td align="left" style="width: 1%;">
-                                        <asp:RequiredFieldValidator ID="m_rfv_quan_ly_nha_nuoc" runat="server" ControlToValidate="m_txt_quan_ly_nha_nuoc"
-                                            ErrorMessage="Bạn phải nhập Quản lý nhà nước" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator ID="m_cp_quan_ly_nha_nuoc" runat="server" ControlToValidate="m_txt_quan_ly_nha_nuoc"
-                                            ErrorMessage="Bạn không được nhập số âm vào Quản lý nhà nước" Text="*" Operator="GreaterThanEqual"
-                                            ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
-                                    </td>
-                                    <td align="right" style="width: 15%">
-                                        <span class="cssManField">HĐSN(Không kinh doanh) *</span>
-                                    </td>
-                                    <td align="left" style="width: 30%;">
-                                        <asp:TextBox ID="m_txt_khong_kinh_doanh" runat="server" align="left" CssClass="cssTextBox csscurrency"
-                                            ValidationGroup="m_vlg_tsk" Width="85%"></asp:TextBox>
-                                    </td>
-                                    <td align="left" style="width: 1%;">
-                                        &nbsp;<asp:RequiredFieldValidator ID="m_rfv_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
-                                            ErrorMessage="Bạn phải nhập Không kinh doanh" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator ID="m_cp_khong_kinh_doanh" runat="server" ControlToValidate="m_txt_khong_kinh_doanh"
-                                            ErrorMessage="Bạn không được nhập số âm vào Không kinh doanh" Operator="GreaterThanEqual"
-                                            Text="*" ValidationGroup="m_vlg_tsk" ValueToCompare="0"></asp:CompareValidator>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right" style="width: 15%">
-                                        <span class="cssManField">HĐSN (Kinh doanh) *</span>
-                                    </td>
-                                    <td style="width: 30%" align="left">
-                                        <asp:TextBox ID="m_txt_kinh_doanh" runat="server" CssClass="cssTextBox csscurrency"
-                                            align="left" Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
-                                    </td>
-                                    <td align="left" style="width: 1%;">
-                                        <asp:RequiredFieldValidator ID="m_rfv_kinh_doanh" runat="server" ControlToValidate="m_txt_kinh_doanh"
-                                            ErrorMessage="Bạn phải nhập Kinh doanh" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator ID="m_cp_kinh_doanh" runat="server" ControlToValidate="m_txt_kinh_doanh"
-                                            ErrorMessage="Bạn không được nhập số âm vào Kinh doanh" Text="*" Operator="GreaterThanEqual"
-                                            ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
-                                    </td>
-                                    <td align="right" style="width: 15%">
-                                        <span class="cssManField">Hoạt động khác *</span>
-                                    </td>
-                                    <td align="left" style="width: 30%;">
-                                        <asp:TextBox ID="m_txt_khac" runat="server" align="left" CssClass="cssTextBox csscurrency"
-                                            ValidationGroup="m_vlg_tsk" Width="85%"></asp:TextBox>
-                                    </td>
-                                    <td align="left" style="width: 1%;">
-                                        <asp:RequiredFieldValidator ID="m_rfv_khac" runat="server" ControlToValidate="m_txt_khac"
-                                            ErrorMessage="Bạn phải nhập Khác" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator ID="m_cp_khac" runat="server" ControlToValidate="m_txt_khac"
-                                            ErrorMessage="Bạn không được nhập số âm vào Khác" Operator="GreaterThanEqual"
-                                            Text="*" ValidationGroup="m_vlg_tsk" ValueToCompare="0"></asp:CompareValidator>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right" style="width: 15%">
-                                        <br />
-                                    </td>
-                                    <td style="width: 30%" align="left">
+                                        <asp:RadioButtonList ID="m_rbl_muc_dich_su_dung" runat="server" Font-Bold="True" 
+                                            ForeColor="Blue" RepeatColumns="2" RepeatDirection="Horizontal">
+                                            <asp:ListItem Selected="True" Value="QLNN">Quản lý nhà nước</asp:ListItem>
+                                            <asp:ListItem Value="KD">Kinh doanh</asp:ListItem>
+                                            <asp:ListItem Value="KKD">Không kinh doanh</asp:ListItem>
+                                            <asp:ListItem Value="MDK">Sử dụng mục đích khác</asp:ListItem>
+                                        </asp:RadioButtonList>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                     </td>
@@ -469,7 +416,6 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        &nbsp;
                                     </td>
                                     <td colspan="4" align="left">
                                         <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
