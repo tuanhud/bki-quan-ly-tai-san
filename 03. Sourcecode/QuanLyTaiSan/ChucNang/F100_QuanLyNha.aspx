@@ -4,7 +4,41 @@
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#<%=m_txt_nguyen_gia.ClientID%>").bind({
+                blur: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
+                    var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                },
+                focus: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
+                    var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                }
+            });
+            $("#<%=m_txt_nguyen_gia_nguon_khac.ClientID%>").bind({
+                blur: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
+                    var v_dc_nguyen_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                },
+                focus: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
+                    var v_dc_nguyen_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                }
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -357,9 +391,9 @@
                                 <td align="left" style="width: 1%;">
                                 </td>
                                 <td align="right">
-                                </td>
+                                    <span class="cssManField">Tổng nguyên giá</span></td>
                                 <td align="left" style="width: 30%;">
-                                </td>
+                                    <span id="m_sp_tong_nguyen_gia">0 VNĐ</span></td>
                                 <td align="left" style="width: 1%;">
                                 </td>
                             </tr>

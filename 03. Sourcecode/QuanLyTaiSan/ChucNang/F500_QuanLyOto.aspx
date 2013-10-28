@@ -6,9 +6,39 @@
     TagPrefix="asp" %>
 <%@ Import Namespace="IP.Core.IPCommon" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <style type="text/css">
-        
-    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#<%=m_txt_nguon_ns.ClientID%>").bind({
+                blur: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguon_ns.ClientID%>').value;
+                    var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                },
+                focus: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguon_ns.ClientID%>').value;
+                    var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                }
+            });
+            $("#<%=m_txt_nguon_khac.ClientID%>").bind({
+                blur: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguon_ns.ClientID%>').value;
+                    var v_dc_nguyen_nguon_khac = document.getElementById('<%=m_txt_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                },
+                focus: function () {
+                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguon_ns.ClientID%>').value;
+                    var v_dc_nguyen_nguon_khac = document.getElementById('<%=m_txt_nguon_khac.ClientID%>').value;
+                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_nguon_khac));
+                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                }
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -367,10 +397,10 @@
                                         ErrorMessage="Bạn phải nhập Giá trị còn lại" Text="*" ValidationGroup="m_vlg_nha"></asp:RequiredFieldValidator>
                                 </td>
                                 <td align="right" colspan="1" style="width: 15%">
-                                    &nbsp;
+                                    <span class="cssManField">Tổng nguyên giá</span>
                                 </td>
                                 <td align="left" class="style1" style="width: 30%">
-                                    &nbsp;
+                                    <span id="m_sp_tong_nguyen_gia">0 VNĐ</span>
                                 </td>
                             </tr>
                             <tr>
