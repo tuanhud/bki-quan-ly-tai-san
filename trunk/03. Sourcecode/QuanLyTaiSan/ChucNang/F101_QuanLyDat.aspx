@@ -291,7 +291,7 @@
                             <tr>
                                 <td>
                                 </td>
-                                <td>
+                                <td class="cssManField">
                                     HIỆN TRẠNG SỬ DỤNG
                                 </td>
                                 <td>
