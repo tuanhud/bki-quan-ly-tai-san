@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeFile="F310_BCDVCQ_Thay_doi_thong_tin_Dat.aspx.cs" Inherits="BaoCao_F310_BCDVCQ_Thay_doi_thong_tin_Dat" %>
 
+<%@ Register assembly="eWorld.UI" namespace="eWorld.UI" tagprefix="ew" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -75,24 +77,76 @@
                 <span>Từ ngày:</span>
             </td>
             <td>
-                <asp:TextBox ID="m_txt_tu_ngay" runat="Server" Width="89%"></asp:TextBox>
+                            <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" 
+                                ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
+                                GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" 
+                    ShowGoToToday="true">
+                                <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <OffMonthStyle BackColor="AntiqueWhite" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Gray" />
+                                <SelectedDateStyle BackColor="#007ccf" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <MonthHeaderStyle BackColor="#007ccf" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <DayHeaderStyle BackColor="AliceBlue" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <TodayDayStyle BackColor="CadetBlue" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                            </ew:CalendarPopup>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="m_rfv_ma_phieu" runat="server" ControlToValidate="m_txt_tu_ngay"
-                    ErrorMessage="Bạn phải nhập Từ Ngày" Text="*" ValidationGroup="m_vlg_tai_san"
-                    ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
             <td class="cssManField" align="right">
                 <span>Đến ngày:</span>
             </td>
             <td>
-                <asp:TextBox ID="m_txt_den_ngay" runat="Server" Width="89%"></asp:TextBox>
+                            <ew:CalendarPopup ID="m_dat_den_ngay" runat="server" 
+                                ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
+                                GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" 
+                    ShowGoToToday="true">
+                                <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <OffMonthStyle BackColor="AntiqueWhite" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Gray" />
+                                <SelectedDateStyle BackColor="#007ccf" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <MonthHeaderStyle BackColor="#007ccf" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <DayHeaderStyle BackColor="AliceBlue" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                                <TodayDayStyle BackColor="CadetBlue" 
+                                    Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                                    ForeColor="Black" />
+                                <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                                    Font-Size="XX-Small" ForeColor="Black" />
+                            </ew:CalendarPopup>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="m_txt_den_ngay"
-                    ErrorMessage="Bạn phải nhập Đến Ngày" Text="*" ValidationGroup="m_vlg_tai_san"
-                    ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td align="right">

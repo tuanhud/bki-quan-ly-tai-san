@@ -67,12 +67,12 @@ public partial class BaoCao_F304_TH_tang_giam_tai_san_Tong_hop_chung : System.We
 
     public string get_date_tu_ngay()
     {
-        return m_txt_tu_ngay.Text;
+        return m_dat_tu_ngay.Text;
     }
 
     public string get_date_den_ngay()
     {
-        return m_txt_den_ngay.Text;
+        return m_dat_den_ngay.Text;
     }
     public string get_ten_don_vi_chu_quan()
     {
@@ -98,8 +98,8 @@ public partial class BaoCao_F304_TH_tang_giam_tai_san_Tong_hop_chung : System.We
         op_obj_parameter.strLOAI_HINH_DON_VI = CONST_QLDB.TAT_CA;
         op_obj_parameter.strMA_LOAI_HINH_DON_VI = CONST_QLDB.TAT_CA;
         op_obj_parameter.strUSER_NAME = Person.get_user_name();
-        op_obj_parameter.datDEN_NGAY = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-        op_obj_parameter.datTU_NGAY = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+        op_obj_parameter.datDEN_NGAY = m_dat_den_ngay.SelectedDate;
+        op_obj_parameter.datTU_NGAY = m_dat_tu_ngay.SelectedDate;
     }
     private void export_excel()
     {
@@ -132,29 +132,9 @@ public partial class BaoCao_F304_TH_tang_giam_tai_san_Tong_hop_chung : System.We
     }
     private bool check_validate_data_is_ok()
     {
-        if (m_txt_tu_ngay.Text.Equals(""))
+        if (m_dat_den_ngay.SelectedDate.CompareTo(m_dat_tu_ngay.SelectedDate) < 0)
         {
-            m_txt_tu_ngay.Text = CIPConvert.ToStr("01/01/1900");
-        }
-        if (m_txt_den_ngay.Text.Equals(""))
-        {
-            m_txt_den_ngay.Text = CIPConvert.ToStr("01/01/3000");
-        }
-        if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES))
-        {
-            thongbao("Bạn chưa nhập đúng Từ Ngày!");
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_den_ngay, DataType.DateType, allowNull.YES))
-        {
-            thongbao("Bạn chưa nhập đúng Đến Ngày!");
-            return false;
-        }
-        DateTime v_dat_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-        DateTime v_dat_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-        if (v_dat_den_ngay.CompareTo(v_dat_tu_ngay) < 0)
-        {
-            thongbao("Bạn nhập chưa đúng Từ Ngày, Đến Ngày!");
+            thongbao("Thời gian từ ngày phải trước thời gian đến ngày!");
             return false;
         }
 
@@ -171,8 +151,8 @@ public partial class BaoCao_F304_TH_tang_giam_tai_san_Tong_hop_chung : System.We
             v_str_user_name
             , CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-            , CIPConvert.ToDatetime(m_txt_tu_ngay.Text)
-            , CIPConvert.ToDatetime(m_txt_den_ngay.Text)
+            , m_dat_tu_ngay.SelectedDate
+            , m_dat_den_ngay.SelectedDate
             , v_ds_rpt_tang_giam_tai_san
             );
         m_grv_tai_san.DataSource = v_ds_rpt_tang_giam_tai_san.RPT_TANG_GIAM_TAI_SAN;

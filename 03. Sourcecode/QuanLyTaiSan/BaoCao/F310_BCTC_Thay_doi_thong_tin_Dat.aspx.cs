@@ -30,43 +30,8 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
             m_lbl_mess.Text = "Bạn phải chọn Địa Chỉ Đất!";
             return false;
         }
-        DateTime m_dat_tu_ngay = new DateTime();
-        DateTime m_dat_den_ngay = new DateTime();
-        if (m_txt_tu_ngay.Text.Equals(""))
-        {
-            m_txt_tu_ngay.Text = "01/01/1900";
-        }
-        else
-        {
-            try
-            {
-                m_dat_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-            }
-            catch (System.Exception ex)
-            {
-                m_lbl_mess.Text = "Bạn nhập sai Từ Ngày!";
-                return false;
-            }
-        }
 
-        if (m_txt_den_ngay.Text.Equals(""))
-        {
-            m_txt_den_ngay.Text = "01/01/3000";
-        }
-        else
-        {
-            try
-            {
-                m_dat_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-            }
-            catch (System.Exception ex)
-            {
-                m_lbl_mess.Text = "Bạn nhập sai Đến Ngày!";
-                return false;
-            }
-        }
-
-        if (m_dat_den_ngay.CompareTo(m_dat_tu_ngay) < 0)
+        if (m_dat_den_ngay.SelectedDate.CompareTo(m_dat_tu_ngay.SelectedDate) < 0)
         {
             m_lbl_mess.Text = "Phải nhập Từ Ngày nhỏ hơn Đến Ngày!";
             return false;
@@ -225,8 +190,8 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
                 , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
                 , m_cbo_loai_hinh_don_vi.SelectedValue
                 , v_str_user_name
-                , CIPConvert.ToDatetime(m_txt_tu_ngay.Text)
-                , CIPConvert.ToDatetime(m_txt_den_ngay.Text)
+                , m_dat_tu_ngay.SelectedDate
+                , m_dat_den_ngay.SelectedDate
                 , m_txt_tim_kiem.Text
                 , v_ds_v_dm_dat_history
                 );
@@ -258,8 +223,8 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
                 , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
                 , m_cbo_loai_hinh_don_vi.SelectedValue
                 , v_str_user_name
-                , CIPConvert.ToDatetime(m_txt_tu_ngay.Text)
-                , CIPConvert.ToDatetime(m_txt_den_ngay.Text)
+                , m_dat_tu_ngay.SelectedDate
+                , m_dat_den_ngay.SelectedDate
                 , m_txt_tim_kiem.Text
                 , v_ds_v_dm_dat_history
                 );

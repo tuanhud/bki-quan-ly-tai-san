@@ -26,28 +26,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     #region Private Methods
     private bool check_validate_data_is_ok()
     {
-        if (m_txt_tu_ngay.Text.Trim().Length == 0)
-        {
-            m_txt_tu_ngay.Text = CIPConvert.ToStr("01/01/1900");
-        }
-
-        if (m_txt_den_ngay.Text.Trim().Length == 0)
-        {
-            m_txt_den_ngay.Text = CIPConvert.ToStr("01/01/3000");
-        }
-        if (!CValidateTextBox.IsValid(m_txt_den_ngay, DataType.DateType, allowNull.YES))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng ngày kết thúc";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_tu_ngay, DataType.DateType, allowNull.YES))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng ngày bắt đầu";
-            return false;
-        }
-        DateTime m_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-        DateTime m_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
-        if (m_den_ngay.CompareTo(m_tu_ngay) < 0)
+        if (m_dat_den_ngay.SelectedDate.CompareTo(m_dat_den_ngay.SelectedDate) < 0)
         {
             return false;
         }
@@ -57,10 +36,6 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     {
         if (!check_validate_data_is_ok()) return;
         string v_id_trang_thai = m_cbo_trang_thai.SelectedValue;
-        DateTime v_tsk_tu_ngay;
-        DateTime v_tsk_den_ngay;
-        v_tsk_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
-        v_tsk_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
         DS_V_DM_TAI_SAN_KHAC_HISTORY v_ds_v_dm_tai_san_khac_history = new DS_V_DM_TAI_SAN_KHAC_HISTORY();
         US_V_DM_TAI_SAN_KHAC_HISTORY v_us_v_dm_tai_san_khac_history = new US_V_DM_TAI_SAN_KHAC_HISTORY();
         v_us_v_dm_tai_san_khac_history.FillDataset(
@@ -69,8 +44,8 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
             , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
             , CIPConvert.ToStr(m_cbo_loai_hinh_don_vi.SelectedValue)
-            , v_tsk_tu_ngay
-            , v_tsk_den_ngay
+            , m_dat_tu_ngay.SelectedDate
+            , m_dat_den_ngay.SelectedDate
             , Person.get_user_name()
             , m_txt_tim_kiem.Text
             , v_ds_v_dm_tai_san_khac_history);
