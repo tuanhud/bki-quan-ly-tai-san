@@ -112,15 +112,11 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_txt_chuc_danh_sd_xe.Text = "";
         m_txt_cong_suat_xe.Text = "";
         m_txt_gia_tri_con_lai.Text = "";
-        m_txt_hd_khac.Text = "";
-        m_txt_kinh_doanh.Text = "";
-        m_txt_khong_kinh_doanh.Text = "";
         m_txt_nam_san_xuat.Text = "";
         m_txt_nguon_goc_xe.Text = "";
         m_txt_nguon_khac.Text = "";
         m_txt_nguon_ns.Text = "";
         m_txt_nuoc_san_xuat.Text = "";
-        m_txt_qlnn.Text = "";
         m_txt_tai_trong.Text = "";
         m_txt_ten_nhan_hieu.Text = "";
         m_txt_ten_ts.Text = "";
@@ -144,12 +140,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         ip_us_oto.dcNAM_SU_DUNG = CIPConvert.ToDecimal(m_txt_nam_su_dung.Text);
         ip_us_oto.dcNAM_SAN_XUAT = CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text);
         ip_us_oto.dcGIA_TRI_CON_LAI = CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text);
-        ip_us_oto.dcHD_KHAC = CIPConvert.ToDecimal(m_txt_hd_khac.Text);
-        ip_us_oto.dcKHONG_KINH_DOANH = CIPConvert.ToDecimal(m_txt_khong_kinh_doanh.Text);
-        ip_us_oto.dcKINH_DOANH = CIPConvert.ToDecimal(m_txt_kinh_doanh.Text);
         ip_us_oto.dcNGUON_KHAC = CIPConvert.ToDecimal(m_txt_nguon_khac.Text);
         ip_us_oto.dcNGUON_NS = CIPConvert.ToDecimal(m_txt_nguon_ns.Text);
-        ip_us_oto.dcQLNN = CIPConvert.ToDecimal(m_txt_qlnn.Text);
         ip_us_oto.strBIEN_KIEM_SOAT = m_txt_bien_kiem_soat.Text;
         ip_us_oto.strCHUC_DANH_SU_DUNG = m_txt_chuc_danh_sd_xe.Text;
         ip_us_oto.strNGUON_GOC_XE = m_txt_nguon_goc_xe.Text;
@@ -162,6 +154,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         ip_us_oto.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal(m_ddl_loai_xe.SelectedValue);
         ip_us_oto.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_ddl_dv_sd_ts.SelectedValue);
         ip_us_oto.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_ddl_dv_chu_quan.SelectedValue);
+        set_gia_tri_hien_trang(ip_us_oto);
     }
     /// <summary>
     /// Load dữ liệu từ US đổ vào form
@@ -181,14 +174,12 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_txt_chuc_danh_sd_xe.Text = ip_us_oto.strCHUC_DANH_SU_DUNG;
         m_txt_nguon_goc_xe.Text = ip_us_oto.strNGUON_GOC_XE;
         m_txt_cong_suat_xe.Text = ip_us_oto.dcCONG_SUAT_XE.ToString();
-        m_txt_hd_khac.Text = ip_us_oto.dcHD_KHAC.ToString();
-        m_txt_khong_kinh_doanh.Text = ip_us_oto.dcKHONG_KINH_DOANH.ToString();
-        m_txt_kinh_doanh.Text = ip_us_oto.dcKINH_DOANH.ToString();
         m_txt_nguon_khac.Text = ip_us_oto.dcNGUON_KHAC.ToString("#,##0.##");
         m_txt_nguon_ns.Text = ip_us_oto.dcNGUON_NS.ToString("#,##0.##");
-        m_txt_qlnn.Text = ip_us_oto.dcQLNN.ToString();
         m_txt_ten_ts.Text = ip_us_oto.strTEN_TAI_SAN;
         m_ddl_loai_xe.SelectedValue = ip_us_oto.dcID_LOAI_TAI_SAN.ToString();
+
+        load_gia_tri_hien_trang(ip_us_oto);
 
         US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI(ip_us_oto.dcID_DON_VI_CHU_QUAN);
         m_ddl_bo_tinh.SelectedValue = v_us_don_vi.dcID_DON_VI_CAP_TREN.ToString();
@@ -273,21 +264,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         if (!CValidateTextBox.IsValid(m_txt_nam_san_xuat, DataType.NumberType, allowNull.YES))
         {
             m_lbl_mess.Text = "Chưa nhập đúng năm sản xuất";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_qlnn, DataType.NumberType, allowNull.YES))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng quản lý nhà nước";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_kinh_doanh, DataType.NumberType, allowNull.YES))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng kinh doanh";
-            return false;
-        }
-        if (!CValidateTextBox.IsValid(m_txt_khong_kinh_doanh, DataType.NumberType, allowNull.YES))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng không kinh doanh";
             return false;
         }
         if ((m_txt_nam_su_dung.Text.Trim().Length > 0) && (m_txt_nam_san_xuat.Text.Trim().Length > 0))
@@ -453,6 +429,53 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     {
         m_lbl_mess.Text = "";
     }
+    private void set_gia_tri_hien_trang(US_DM_OTO ip_us_dm_oto)
+    {
+        string v_str_hien_trang = m_rbl_muc_dich_su_dung.SelectedValue;
+        ip_us_dm_oto.dcQLNN = 0;
+        ip_us_dm_oto.dcKINH_DOANH = 0;
+        ip_us_dm_oto.dcKHONG_KINH_DOANH = 0;
+        ip_us_dm_oto.dcHD_KHAC = 0;
+
+        switch (v_str_hien_trang)
+        {
+            case "QLNN":
+                ip_us_dm_oto.dcQLNN = 1;
+                break;
+            case "KD":
+                ip_us_dm_oto.dcKINH_DOANH = 1;
+                break;
+            case "KKD":
+                ip_us_dm_oto.dcKHONG_KINH_DOANH = 1;
+                break;
+            case "MDK":
+                ip_us_dm_oto.dcHD_KHAC = 1;
+                break;
+        }
+    }
+    private void load_gia_tri_hien_trang(US_DM_OTO ip_us_dm_oto)
+    {
+        if ( ip_us_dm_oto.dcQLNN == 1)
+        {
+            m_rbl_muc_dich_su_dung.SelectedValue = "QLNN";
+            return;
+        }
+        if ( ip_us_dm_oto.dcKINH_DOANH == 1)
+        {
+            m_rbl_muc_dich_su_dung.SelectedValue = "KD";
+            return;
+        }
+        if ( ip_us_dm_oto.dcKHONG_KINH_DOANH == 1)
+        {
+            m_rbl_muc_dich_su_dung.SelectedValue = "KKD";
+            return;
+        }
+        if ( ip_us_dm_oto.dcHD_KHAC == 1)
+        {
+            m_rbl_muc_dich_su_dung.SelectedValue = "MDK";
+            return;
+        }
+    }
     #endregion
 
     #region Events
@@ -506,7 +529,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         catch (Exception v_e)
         {
 
-            CSystemLog_301.ExceptionHandle(v_e);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
 
     }
