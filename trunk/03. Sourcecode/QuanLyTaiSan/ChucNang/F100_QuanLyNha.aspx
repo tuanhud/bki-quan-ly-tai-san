@@ -7,34 +7,34 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
+        function calSumPrice() {
+            var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
+            var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
+            var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
+            document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+        }
         $(document).ready(function () {
 
             $("#<%=m_txt_nguyen_gia.ClientID%>").bind({
                 blur: function () {
-                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
-                    var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
-                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
-                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                    calSumPrice();
                 },
                 focus: function () {
-                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
-                    var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
-                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
-                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                    calSumPrice();
+                },
+                keydown: function () {
+                    calSumPrice();
                 }
             });
             $("#<%=m_txt_nguyen_gia_nguon_khac.ClientID%>").bind({
                 blur: function () {
-                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
-                    var v_dc_nguyen_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
-                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_nguon_khac));
-                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                    calSumPrice();
                 },
                 focus: function () {
-                    var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
-                    var v_dc_nguyen_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
-                    var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_nguon_khac));
-                    document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+                    calSumPrice();
+                },
+                keydown: function () {
+                    calSumPrice();
                 }
             });
         });
