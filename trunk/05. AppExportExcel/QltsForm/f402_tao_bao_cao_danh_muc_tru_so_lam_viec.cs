@@ -1387,6 +1387,7 @@ namespace QltsForm
             m_openDiaglog.Title = "Hãy chọn file excel";
             m_openDiaglog.FileName = "Chọn file excel";
             DialogResult result = m_openDiaglog.ShowDialog();
+            if (result == DialogResult.Cancel) return;
             if (result == DialogResult.OK) // Test result.
             {
                 m_txt_file_path.Text = m_openDiaglog.FileName;
@@ -1590,7 +1591,6 @@ namespace QltsForm
         {
             try
             {
-
                 open_excel_file_and_load_2_form();
             }
             catch (Exception v_e)
@@ -1624,54 +1624,6 @@ namespace QltsForm
             }
         }
 
-        //private void m_cmd_insert_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        insert_v_dm_nha();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //private void m_cmd_update_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        update_v_dm_nha();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //private void m_cmd_delete_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        delete_v_dm_nha();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //private void m_cmd_view_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        view_v_dm_nha();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
         private void m_cmd_export_excel_Click(object sender, EventArgs e)
         {
             try
@@ -1684,75 +1636,6 @@ namespace QltsForm
             }
         }
 
-        
-
-        //private void m_cbo_bo_tinh_SelectedValueChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        load_data_to_cbo_don_vi_chu_quan();
-        //        load_data_to_cbo_don_vi_su_dung();
-        //        if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(ex);
-        //    }
-
-        //}
-
-        //private void m_cbo_don_vi_chu_quan_SelectedValueChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        load_data_to_cbo_don_vi_su_dung();
-        //        if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(ex);
-        //    }
-        //}
-
-        //private void m_cbo_don_vi_su_dung_SelectedValueChanged(object sender, EventArgs e)
-        //{
-
-        //    try
-        //    {
-        //        load_data_to_cbo_dia_chi();
-        //        if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(ex);
-        //    }
-
-        //}
-
-        //private void m_cbo_dia_chi_SelectedValueChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(ex);
-        //    }
-        //}
-
-        //private void m_cbo_trang_thai_SelectedValueChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (m_cbo_don_vi_su_dung.SelectedValue == null) return;
-
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(ex);
-        //    }
-
-        //}
         #endregion
 
     }

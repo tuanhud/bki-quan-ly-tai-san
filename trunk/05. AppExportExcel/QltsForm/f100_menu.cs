@@ -124,10 +124,7 @@ namespace QltsForm
             v_frm.display();
         }
 
-        private void đềNghịXửLýTàiSảnKhácToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void đềNghịXửLýTrụSởLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -291,6 +288,33 @@ namespace QltsForm
                 v_frm.display();
             }
             catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void kêKhaiTàiSảnKhácToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f408_tao_bao_cao_tai_san_khac v_frm = new f408_tao_bao_cao_tai_san_khac();
+                v_frm.set_form_mode(f408_tao_bao_cao_tai_san_khac.eFormMode.KE_KHAI);
+                v_frm.display();
+            }   
+            catch (System.Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void đềNghịXửLýTàiSảnKhácToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f408_tao_bao_cao_tai_san_khac v_frm = new f408_tao_bao_cao_tai_san_khac();
+                v_frm.set_form_mode(f408_tao_bao_cao_tai_san_khac.eFormMode.DE_NGHI_XU_LY);
+                v_frm.display();
+            }
+            catch (System.Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

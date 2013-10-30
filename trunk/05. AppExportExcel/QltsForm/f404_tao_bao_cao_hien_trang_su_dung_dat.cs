@@ -518,6 +518,7 @@ namespace QltsForm
             m_openDiaglog.Title = "Hãy chọn file excel";
             m_openDiaglog.FileName = "Chọn file excel";
             DialogResult result = m_openDiaglog.ShowDialog();
+            if (result == DialogResult.Cancel) return;
             if (result == DialogResult.OK) // Test result.
             {
                 m_txt_file_path.Text = m_openDiaglog.FileName;
