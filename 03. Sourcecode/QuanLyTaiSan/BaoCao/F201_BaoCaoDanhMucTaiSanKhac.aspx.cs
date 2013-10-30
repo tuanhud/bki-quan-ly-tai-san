@@ -37,7 +37,8 @@ public partial class Default2 : System.Web.UI.Page
         GIA_TRI_THEO_SO_KE_TOAN = 12,
         HIEN_TRANG_SU_DUNG = 13,
         MA_DON_VI = 14,
-        LOAI_HINH_DON_VI = 15
+        LOAI_HINH_DON_VI = 15,
+        NUOC_SAN_XUAT=16
     }
     #endregion
 
@@ -57,6 +58,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.LOAI_HINH_DON_VI].Visible = ip_hide;
         m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.MA_DON_VI].Visible = ip_hide;
+        m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.NUOC_SAN_XUAT].Visible = ip_hide;
     }
     public string get_ma_don_vi_su_dung()
     {
