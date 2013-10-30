@@ -617,6 +617,7 @@ namespace QltsForm
             m_openDiaglog.Title = "Hãy chọn file excel";
             m_openDiaglog.FileName = "Chọn file excel";
             DialogResult result = m_openDiaglog.ShowDialog();
+            if (result == DialogResult.Cancel) return;
             if (result == DialogResult.OK) // Test result.
             {
                 m_txt_file_path.Text = m_openDiaglog.FileName;
@@ -895,59 +896,8 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        //private void m_cmd_insert_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        insert_dm_oto();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //private void m_cmd_update_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        update_dm_oto();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //private void m_cmd_delete_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        delete_dm_oto();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //private void m_cmd_view_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        view_dm_oto();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
+        
         #endregion
-
-
-
-
-
 
     }
 }

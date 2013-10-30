@@ -186,22 +186,23 @@
             // kêKhaiTrụSởLàmViệcToolStripMenuItem1
             // 
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Name = "kêKhaiTrụSởLàmViệcToolStripMenuItem1";
-            this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Size = new System.Drawing.Size(327, 22);
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Text = "Kê khai trụ sở làm việc";
             this.kêKhaiTrụSởLàmViệcToolStripMenuItem1.Click += new System.EventHandler(this.kêKhaiTrụSởLàmViệcToolStripMenuItem1_Click);
             // 
             // kêKhaiÔTôToolStripMenuItem1
             // 
             this.kêKhaiÔTôToolStripMenuItem1.Name = "kêKhaiÔTôToolStripMenuItem1";
-            this.kêKhaiÔTôToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.kêKhaiÔTôToolStripMenuItem1.Size = new System.Drawing.Size(327, 22);
             this.kêKhaiÔTôToolStripMenuItem1.Text = "Kê khai ô tô";
             this.kêKhaiÔTôToolStripMenuItem1.Click += new System.EventHandler(this.kêKhaiÔTôToolStripMenuItem1_Click);
             // 
             // kêKhaiTàiSảnKhácToolStripMenuItem1
             // 
             this.kêKhaiTàiSảnKhácToolStripMenuItem1.Name = "kêKhaiTàiSảnKhácToolStripMenuItem1";
-            this.kêKhaiTàiSảnKhácToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
-            this.kêKhaiTàiSảnKhácToolStripMenuItem1.Text = "Kê khai tài sản khác";
+            this.kêKhaiTàiSảnKhácToolStripMenuItem1.Size = new System.Drawing.Size(327, 22);
+            this.kêKhaiTàiSảnKhácToolStripMenuItem1.Text = "Kê khai tài sản khác có nguyên giá trên 500 triệu";
+            this.kêKhaiTàiSảnKhácToolStripMenuItem1.Click += new System.EventHandler(this.kêKhaiTàiSảnKhácToolStripMenuItem1_Click);
             // 
             // tạoBáoCáoĐềNghịXửLýToolStripMenuItem
             // 
@@ -216,22 +217,22 @@
             // đềNghịXửLýTrụSởLàmViệcToolStripMenuItem
             // 
             this.đềNghịXửLýTrụSởLàmViệcToolStripMenuItem.Name = "đềNghịXửLýTrụSởLàmViệcToolStripMenuItem";
-            this.đềNghịXửLýTrụSởLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.đềNghịXửLýTrụSởLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(357, 22);
             this.đềNghịXửLýTrụSởLàmViệcToolStripMenuItem.Text = "Đề nghị xử lý trụ sở làm việc";
             this.đềNghịXửLýTrụSởLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.đềNghịXửLýTrụSởLàmViệcToolStripMenuItem_Click);
             // 
             // đềNghịXửLýÔTôToolStripMenuItem
             // 
             this.đềNghịXửLýÔTôToolStripMenuItem.Name = "đềNghịXửLýÔTôToolStripMenuItem";
-            this.đềNghịXửLýÔTôToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.đềNghịXửLýÔTôToolStripMenuItem.Size = new System.Drawing.Size(357, 22);
             this.đềNghịXửLýÔTôToolStripMenuItem.Text = "Đề nghị xử lý ô tô";
             this.đềNghịXửLýÔTôToolStripMenuItem.Click += new System.EventHandler(this.đềNghịXửLýÔTôToolStripMenuItem_Click);
             // 
             // đềNghịXửLýTàiSảnKhácToolStripMenuItem
             // 
             this.đềNghịXửLýTàiSảnKhácToolStripMenuItem.Name = "đềNghịXửLýTàiSảnKhácToolStripMenuItem";
-            this.đềNghịXửLýTàiSảnKhácToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.đềNghịXửLýTàiSảnKhácToolStripMenuItem.Text = "Đề nghị xử lý tài sản khác";
+            this.đềNghịXửLýTàiSảnKhácToolStripMenuItem.Size = new System.Drawing.Size(357, 22);
+            this.đềNghịXửLýTàiSảnKhácToolStripMenuItem.Text = "Đề nghị xử lý tài sản khác có nguyên giá trên 500 triệu";
             this.đềNghịXửLýTàiSảnKhácToolStripMenuItem.Click += new System.EventHandler(this.đềNghịXửLýTàiSảnKhácToolStripMenuItem_Click);
             // 
             // tạoBáoCáoTổngCụcToolStripMenuItem
