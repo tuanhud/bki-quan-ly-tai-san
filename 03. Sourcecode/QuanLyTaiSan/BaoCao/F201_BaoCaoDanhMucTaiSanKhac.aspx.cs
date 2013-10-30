@@ -16,7 +16,31 @@ using IP.Core.QltsFormControls;
 
 
 public partial class Default2 : System.Web.UI.Page
-{ 
+{
+    #region Public Interface
+    #endregion
+
+    #region DataStructure
+    public enum e_cols_name_grid
+    {
+        STT = 1,
+        CHI_TIET = 2,
+        DON_VI_BO_TINH = 3,
+        DON_VI_CHU_QUAN = 4,
+        DON_VI_SU_DUNG = 5,
+        TRANG_THAI = 6,
+        TINH_TRANG = 7,
+        TEN_TAI_SAN = 8,
+        KY_HIEU = 9,
+        NAM_SAN_XUAT = 10,
+        NAM_SU_DUNG = 11,
+        GIA_TRI_THEO_SO_KE_TOAN = 12,
+        HIEN_TRANG_SU_DUNG = 13,
+        MA_DON_VI = 14,
+        LOAI_HINH_DON_VI = 15
+    }
+    #endregion
+
     #region Member
     US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();
     DS_DM_DON_VI m_ds_don_vi = new DS_DM_DON_VI();
@@ -27,7 +51,27 @@ public partial class Default2 : System.Web.UI.Page
     WinFormControls.eTAT_CA ip_e_tat_ca;
     f401_bao_cao_danh_muc_tai_san_khac.eFormMode ip_e_formmode;
     #endregion
+
     #region Private Methods
+    private void format_grid(bool ip_hide)
+    {
+        m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.LOAI_HINH_DON_VI].Visible = ip_hide;
+        m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.MA_DON_VI].Visible = ip_hide;
+    }
+    public string get_ma_don_vi_su_dung()
+    {
+        string v_str_ma_don_vi = "";
+        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue == null) return v_str_ma_don_vi;
+        if (m_cbo_don_vi_su_dung_tai_san.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_ma_don_vi;
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue));
+        return v_us_dm_don_vi.strMA_DON_VI;
+    }
+    public string get_ten_loai_hinh_don_vi()
+    {
+        if (m_cbo_loai_hinh_don_vi.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return "Tất cả";
+        US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(MA_LOAI_TU_DIEN.LOAI_HINH_DON_VI, m_cbo_loai_hinh_don_vi.SelectedValue);
+        return v_us_cm_dm_tu_dien.strTEN;
+    }
     private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter)
     {
         op_obj_parameter.dcID_BO_TINH = CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue);
@@ -50,72 +94,86 @@ public partial class Default2 : System.Web.UI.Page
         string v_str_output_file = "";
         string v_str_loai_bao_cao = "";
         string v_str_id_trang_thai = "";
-        f401_bao_cao_danh_muc_tai_san_khac v_f401_bc_dm_tai_san_khac = new f401_bao_cao_danh_muc_tai_san_khac();
-        CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
-        form_2_objExcelAssetParameters(v_obj_parameter);
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null) {
+        //f401_bao_cao_danh_muc_tai_san_khac v_f401_bc_dm_tai_san_khac = new f401_bao_cao_danh_muc_tai_san_khac();
+        //CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
+        //form_2_objExcelAssetParameters(v_obj_parameter);
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
+        {
             v_str_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         }
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null) {
-            v_str_id_trang_thai = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
-        }
-        switch (v_str_id_trang_thai) {
-            case CONST_QLDB.TRANG_THAI.KE_KHAI:
-                ip_e_formmode = f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC;
-                break;
-            case CONST_QLDB.TRANG_THAI.DE_NGHI_XU_LY:
-                ip_e_formmode = f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY;
-                break;
-        }
+        //if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
+        //{
+        //    v_str_id_trang_thai = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
+        //}
+        //switch (v_str_id_trang_thai)
+        //{
+        //    case CONST_QLDB.TRANG_THAI.KE_KHAI:
+        //        ip_e_formmode = f401_bao_cao_danh_muc_tai_san_khac.eFormMode.KE_KHAI_TAI_SAN_KHAC;
+        //        break;
+        //    case CONST_QLDB.TRANG_THAI.DE_NGHI_XU_LY:
+        //        ip_e_formmode = f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY;
+        //        break;
+        //}
         switch (v_str_loai_bao_cao)
-            {
+        {
             case CONST_QLDB.LOAI_BAO_CAO.DVSD:
-                    /*v_f401_bc_dm_tai_san_khac.export_excel(ip_e_formmode
-                        , ref v_obj_parameter);
-                    Response.Clear();
-                    v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-                    Response.Redirect(v_str_output_file, false);*/
-                    m_grv_danh_sach_tai_san_khac.AllowPaging = false;
-                    load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                    // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                    WinformReport.export_gridview_2_excel(
-                                m_grv_danh_sach_tai_san_khac
-                                , "DS tai san khac.xls"
-                                ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
-                    break;
+                /*v_f401_bc_dm_tai_san_khac.export_excel(ip_e_formmode
+                    , ref v_obj_parameter);
+                Response.Clear();
+                v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+                Response.Redirect(v_str_output_file, false);*/
+                m_grv_danh_sach_tai_san_khac.AllowPaging = false;
+                format_grid(true);
+                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                WinformReport.export_gridview_2_excel(
+                            m_grv_danh_sach_tai_san_khac
+                            , "DS tai san khac.xls"
+                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+                format_grid(false);
+                break;
             case CONST_QLDB.LOAI_BAO_CAO.DVCQ:
-                    m_grv_danh_sach_tai_san_khac.AllowPaging = false;
-                    load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                    // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                    WinformReport.export_gridview_2_excel(
-                                m_grv_danh_sach_tai_san_khac
-                                , "DS tai san khac.xls"
-                                ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
-                    break;
+                m_grv_danh_sach_tai_san_khac.AllowPaging = false;
+                format_grid(true);
+                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                WinformReport.export_gridview_2_excel(
+                            m_grv_danh_sach_tai_san_khac
+                            , "DS tai san khac.xls"
+                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+                format_grid(false);
+                break;
             case CONST_QLDB.LOAI_BAO_CAO.BLD:
-                    m_grv_danh_sach_tai_san_khac.AllowPaging = false;
-                    load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                    // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                    WinformReport.export_gridview_2_excel(
-                                m_grv_danh_sach_tai_san_khac
-                                , "DS tai san khac.xls"
-                                ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
-                    break;
-            }
+                m_grv_danh_sach_tai_san_khac.AllowPaging = false;
+                format_grid(true);
+                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+                WinformReport.export_gridview_2_excel(
+                            m_grv_danh_sach_tai_san_khac
+                            , "DS tai san khac.xls"
+                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+                format_grid(false);
+                break;
+        }
     }
-    private void set_inital_value_of_combox() {
+    private void set_inital_value_of_combox()
+    {
         string v_str_id_trang_thai = "";
         string v_str_id_don_vi_su_dung = "";
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD] != null) {
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD] != null)
+        {
             v_str_id_don_vi_su_dung = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_DVSD];
             m_cbo_don_vi_su_dung_tai_san.SelectedValue = v_str_id_don_vi_su_dung;
         }
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null) {
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
+        {
             v_str_id_trang_thai = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
             m_cbo_trang_thai.SelectedValue = v_str_id_trang_thai;
         }
     }
-    private void set_form_title_and_cbo() {
+    private void set_form_title_and_cbo()
+    {
+        format_grid(false);
         string v_str_kieu_bc = "";
         string v_str_id_trang_thai = "";
         string v_str = "";
@@ -135,18 +193,21 @@ public partial class Default2 : System.Web.UI.Page
         }
         string v_str_loai_bao_cao = "";
         string v_str_loai_tai_san_khac = "";
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null) {
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
+        {
             v_str_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
         }
-       
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_TAI_SAN_KHAC] != null) {
+
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_TAI_SAN_KHAC] != null)
+        {
             v_str_loai_tai_san_khac = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_TAI_SAN_KHAC];
         }
-        switch (v_str_loai_bao_cao) {
+        switch (v_str_loai_bao_cao)
+        {
             case CONST_QLDB.LOAI_BAO_CAO.DVSD:
                 // KÊ KHAI ĐƠN VỊ SỬ DỤNG
-                m_lbl_tieu_de.Text = "BÁO CÁO "+ v_str + v_str_kieu_bc;
-                m_cbo_trang_thai.Enabled = false;                
+                m_lbl_tieu_de.Text = "BÁO CÁO " + v_str + v_str_kieu_bc;
+                m_cbo_trang_thai.Enabled = false;
                 m_cbo_loai_tai_san.Enabled = false;
                 ip_e_tat_ca = WinFormControls.eTAT_CA.NO;
                 m_txt_tim_kiem.Visible = false;
@@ -171,7 +232,8 @@ public partial class Default2 : System.Web.UI.Page
             default:
                 throw new Exception("Chưa cấu hình loại báo cáo có mã:" + v_str_loai_bao_cao);
         }
-        switch (v_str_loai_tai_san_khac) {
+        switch (v_str_loai_tai_san_khac)
+        {
             case CONST_QLDB.LOAI_TAI_SAN.TREN_500:
                 m_lbl_tieu_de.Text += " TÀI SẢN KHÁC TRÊN 500 TRIỆU ĐỒNG";
                 m_cbo_loai_tai_san.SelectedValue = CIPConvert.ToStr(ID_LOAI_TAI_SAN.TAI_SAN_KHAC_LON_HON_500);
@@ -240,6 +302,7 @@ public partial class Default2 : System.Web.UI.Page
         load_data_to_grid();
     }
     #endregion
+
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -272,6 +335,7 @@ public partial class Default2 : System.Web.UI.Page
                     , m_cbo_trang_thai);
                 load_data_to_cbo_loai_tai_san();
                 set_inital_value_of_combox();
+                format_grid(false);
                 search_tai_san_khac();
             }
         }
@@ -341,6 +405,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         try
         {
+            format_grid(false);
             search_tai_san_khac();
         }
         catch (System.Exception ex)
@@ -356,7 +421,7 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
-        Thread.Sleep(2000);
+        Thread.Sleep(1000);
         export_excel();
     }
     public override void VerifyRenderingInServerForm(Control control)

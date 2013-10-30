@@ -275,6 +275,16 @@
                                             </table>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="MÃ ĐƠN VỊ">
+                                    <ItemTemplate>
+                                    <%# get_ma_don_vi_su_dung() %>
+                                    </ItemTemplate>
+                                    </asp:TemplateField>
+                                     <asp:TemplateField HeaderText="LOẠI HÌNH ĐƠN VỊ">
+                                    <ItemTemplate>
+                                    <%# get_ten_loai_hinh_don_vi() %>
+                                    </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                                 <AlternatingRowStyle BackColor="White" />
                                 <EditRowStyle BackColor="#7C6F57" />
