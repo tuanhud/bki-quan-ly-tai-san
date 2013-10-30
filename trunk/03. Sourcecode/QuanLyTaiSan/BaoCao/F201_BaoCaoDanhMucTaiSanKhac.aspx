@@ -285,6 +285,7 @@
                                     <%# get_ten_loai_hinh_don_vi() %>
                                     </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:BoundField HeaderText="NƯỚC SẢN XUẤT" DataField="NUOC_SAN_XUAT"/>
                                 </Columns>
                                 <AlternatingRowStyle BackColor="White" />
                                 <EditRowStyle BackColor="#7C6F57" />
