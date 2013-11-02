@@ -113,7 +113,7 @@ public partial class BaoCao_204_TH_HTSD_tai_san_khac_Tong_hop_chung : System.Web
         load_data_to_grid();
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san_khac
-                        , "DS THSD Tài Sản Khác Tổng Hợp Chung.xls"
+                        , "Báo cáo HTSD tài sản khác - tổng hợp chung.xls"
                         );
     }
     #endregion
