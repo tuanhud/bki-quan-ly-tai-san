@@ -4,7 +4,7 @@
 
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
-<%@ Register assembly="eWorld.UI" namespace="eWorld.UI" tagprefix="ew" %>
+<%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -95,74 +95,66 @@
                         <span>Từ ngày:</span>
                     </td>
                     <td>
-                        <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" 
-                            ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
-                            GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
-                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <OffMonthStyle BackColor="AntiqueWhite" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                ForeColor="Gray" />
-                            <SelectedDateStyle BackColor="#007ccf" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                        <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" ControlDisplay="TextBoxImage"
+                            Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                            ShowGoToToday="true">
+                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <MonthHeaderStyle BackColor="#007ccf" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <DayHeaderStyle BackColor="AliceBlue" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Gray" />
+                            <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <TodayDayStyle BackColor="CadetBlue" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                 Font-Size="XX-Small" ForeColor="Black" />
+                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
                         </ew:CalendarPopup>
                     </td>
                     <td>
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                     <td class="cssManField" align="right">
                         <span>Đến ngày:</span>
                     </td>
                     <td>
-                        <ew:CalendarPopup ID="m_dat_den_ngay" runat="server" 
-                            ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
-                            GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
-                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <OffMonthStyle BackColor="AntiqueWhite" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                ForeColor="Gray" />
-                            <SelectedDateStyle BackColor="#007ccf" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                        <ew:CalendarPopup ID="m_dat_den_ngay" runat="server" ControlDisplay="TextBoxImage"
+                            Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                            ShowGoToToday="true">
+                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <MonthHeaderStyle BackColor="#007ccf" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <DayHeaderStyle BackColor="AliceBlue" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Gray" />
+                            <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <TodayDayStyle BackColor="CadetBlue" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                 Font-Size="XX-Small" ForeColor="Black" />
+                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
                         </ew:CalendarPopup>
                     </td>
                     <td>
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                 </tr>
                 <tr>
                     <td align="right">
@@ -202,8 +194,9 @@
             <table cellspacing="0" cellpadding="2" style="width: 100%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <span class="cssPageTitle">THÔNG TIN THAY ĐỔI</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_title" runat="server" Text="THÔNG TIN THAY ĐỔI " CssClass="cssPageTitle"></asp:Label><span></span>
+                        <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
+                        </span>
                     </td>
                 </tr>
                 <tr>
