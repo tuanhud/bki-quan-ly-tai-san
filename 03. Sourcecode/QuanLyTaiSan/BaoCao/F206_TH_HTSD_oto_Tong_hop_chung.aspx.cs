@@ -114,7 +114,7 @@ public partial class BaoCao_F206_TH_HTSD_oto_Tong_hop_chung : System.Web.UI.Page
         load_data_to_grid();
         WinformReport.export_gridview_2_excel(
                        m_grv_oto
-                        , "DS THSD Ô Tô Tổng Hợp Chung.xls"
+                        , "Báo cáo HTSD ô tô - tổng hợp chung.xls"
                         );
     }
     #endregion
