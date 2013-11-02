@@ -100,6 +100,7 @@ namespace QltsForm
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg_tai_san_khac = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_lbl_ten_bao_cao = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.m_lbl_don_vi_su_dung = new System.Windows.Forms.Label();
@@ -117,7 +118,6 @@ namespace QltsForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_fg_tai_san_khac_excel = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_openDiaglog = new System.Windows.Forms.OpenFileDialog();
-            this.m_lbl_ten_bao_cao = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_tai_san_khac)).BeginInit();
             this.panel2.SuspendLayout();
@@ -226,6 +226,17 @@ namespace QltsForm
             this.panel2.Size = new System.Drawing.Size(867, 227);
             this.panel2.TabIndex = 28;
             // 
+            // m_lbl_ten_bao_cao
+            // 
+            this.m_lbl_ten_bao_cao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_ten_bao_cao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_bao_cao.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_ten_bao_cao.Name = "m_lbl_ten_bao_cao";
+            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(867, 55);
+            this.m_lbl_ten_bao_cao.TabIndex = 30;
+            this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI XE Ô TÔ";
+            this.m_lbl_ten_bao_cao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -298,7 +309,7 @@ namespace QltsForm
             this.m_lbl_thong_bao.AutoSize = true;
             this.m_lbl_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(150, 192);
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(150, 195);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
             this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
             this.m_lbl_thong_bao.TabIndex = 24;
@@ -389,17 +400,6 @@ namespace QltsForm
             // m_openDiaglog
             // 
             this.m_openDiaglog.FileName = "openFileDialog1";
-            // 
-            // m_lbl_ten_bao_cao
-            // 
-            this.m_lbl_ten_bao_cao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_ten_bao_cao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ten_bao_cao.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_ten_bao_cao.Name = "m_lbl_ten_bao_cao";
-            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(867, 55);
-            this.m_lbl_ten_bao_cao.TabIndex = 30;
-            this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI XE Ô TÔ";
-            this.m_lbl_ten_bao_cao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // f408_tao_bao_cao_tai_san_khac
             // 

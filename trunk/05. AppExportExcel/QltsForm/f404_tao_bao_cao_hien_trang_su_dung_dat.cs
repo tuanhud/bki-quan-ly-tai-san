@@ -255,7 +255,7 @@ namespace QltsForm
             this.m_lbl_don_vi_chu_quan.AutoSize = true;
             this.m_lbl_don_vi_chu_quan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_don_vi_chu_quan.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_don_vi_chu_quan.Location = new System.Drawing.Point(600, 28);
+            this.m_lbl_don_vi_chu_quan.Location = new System.Drawing.Point(528, 28);
             this.m_lbl_don_vi_chu_quan.Name = "m_lbl_don_vi_chu_quan";
             this.m_lbl_don_vi_chu_quan.Size = new System.Drawing.Size(11, 13);
             this.m_lbl_don_vi_chu_quan.TabIndex = 24;
@@ -335,7 +335,7 @@ namespace QltsForm
             this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao.Location = new System.Drawing.Point(136, 110);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(13, 16);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
             this.m_lbl_thong_bao.TabIndex = 24;
             this.m_lbl_thong_bao.Text = " ";
             // 

@@ -31,9 +31,6 @@ namespace QltsForm
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg_nha;
-        internal SIS.Controls.Button.SiSButton m_cmd_delete;
-        internal SIS.Controls.Button.SiSButton m_cmd_update;
-        internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private GroupBox groupBox1;
         private Label m_lbl_trang_thai;
@@ -124,9 +121,6 @@ namespace QltsForm
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg_nha = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -214,12 +208,9 @@ namespace QltsForm
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 552);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 569);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(977, 36);
@@ -239,54 +230,6 @@ namespace QltsForm
             this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_export_excel.TabIndex = 0;
             this.m_cmd_export_excel.Text = "Xuất Excel";
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(621, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(709, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
-            this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(797, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
-            this.m_cmd_delete.Text = "&Xoá";
-            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_exit
             // 
@@ -310,7 +253,7 @@ namespace QltsForm
             this.m_fg_nha.Location = new System.Drawing.Point(0, 0);
             this.m_fg_nha.Name = "m_fg_nha";
             this.m_fg_nha.Rows.Count = 20;
-            this.m_fg_nha.Size = new System.Drawing.Size(971, 134);
+            this.m_fg_nha.Size = new System.Drawing.Size(971, 129);
             this.m_fg_nha.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nha.Styles"));
             this.m_fg_nha.TabIndex = 20;
             // 
@@ -336,7 +279,7 @@ namespace QltsForm
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(977, 213);
+            this.groupBox1.Size = new System.Drawing.Size(977, 235);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tìm kiếm";
@@ -359,9 +302,9 @@ namespace QltsForm
             this.m_lbl_thong_bao.AutoSize = true;
             this.m_lbl_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(488, 187);
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(181, 194);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(13, 16);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
             this.m_lbl_thong_bao.TabIndex = 10;
             this.m_lbl_thong_bao.Text = " ";
             // 
@@ -499,9 +442,9 @@ namespace QltsForm
             this.m_grb_thong_tin_nha_dat.Controls.Add(this.panel2);
             this.m_grb_thong_tin_nha_dat.Controls.Add(this.m_pnl_thong_tin_nha_dat);
             this.m_grb_thong_tin_nha_dat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grb_thong_tin_nha_dat.Location = new System.Drawing.Point(0, 213);
+            this.m_grb_thong_tin_nha_dat.Location = new System.Drawing.Point(0, 235);
             this.m_grb_thong_tin_nha_dat.Name = "m_grb_thong_tin_nha_dat";
-            this.m_grb_thong_tin_nha_dat.Size = new System.Drawing.Size(977, 339);
+            this.m_grb_thong_tin_nha_dat.Size = new System.Drawing.Size(977, 334);
             this.m_grb_thong_tin_nha_dat.TabIndex = 22;
             this.m_grb_thong_tin_nha_dat.TabStop = false;
             this.m_grb_thong_tin_nha_dat.Text = "Thông tin nhà đất";
@@ -512,7 +455,7 @@ namespace QltsForm
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 202);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(971, 134);
+            this.panel2.Size = new System.Drawing.Size(971, 129);
             this.panel2.TabIndex = 25;
             // 
             // m_pnl_thong_tin_nha_dat
@@ -780,7 +723,7 @@ namespace QltsForm
             // f402_tao_bao_cao_danh_muc_tru_so_lam_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(977, 588);
+            this.ClientSize = new System.Drawing.Size(977, 605);
             this.Controls.Add(this.m_grb_thong_tin_nha_dat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);

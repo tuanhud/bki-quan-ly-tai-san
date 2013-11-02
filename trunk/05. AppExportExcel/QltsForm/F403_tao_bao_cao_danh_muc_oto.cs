@@ -250,7 +250,7 @@ namespace QltsForm
             this.m_lbl_thong_bao.AutoSize = true;
             this.m_lbl_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(383, 185);
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(126, 189);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
             this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
             this.m_lbl_thong_bao.TabIndex = 27;
