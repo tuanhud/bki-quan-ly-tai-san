@@ -319,5 +319,26 @@ namespace QltsForm
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f1001_About v_frm = new f1001_About();
+                v_frm.display();
+
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
+
+        private void tạoBáoCáoKêKhaiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
