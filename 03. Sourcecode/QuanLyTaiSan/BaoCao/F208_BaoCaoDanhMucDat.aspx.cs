@@ -24,7 +24,8 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
     US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
     DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
     WinFormControls.eTAT_CA ip_e_tat_ca;
-    #endregion
+    #endregion 
+
     #region Private Methods
     private void form_2_objExcelAssetParameters(CObjExcelAssetParameters op_obj_parameter)
     {
@@ -47,40 +48,31 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         string v_str_loai_bao_cao = "";
         CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         form_2_objExcelAssetParameters(v_obj_parameter);
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
         {
-            v_str_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+            v_str_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
         }
+        string v_str_excel_name = "";
         switch (v_str_loai_bao_cao)
         {
-            case CONST_QLDB.LOAI_BAO_CAO.DVCQ:
-                m_grv_danh_sach_dat.AllowPaging = false;
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_danh_sach_dat
-                            , "DS đất.xls"
-                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+            case "597":
+                v_str_excel_name = "Báo cáo kê khai đất.xls";
                 break;
-            case CONST_QLDB.LOAI_BAO_CAO.BLD:
-                m_grv_danh_sach_dat.AllowPaging = false;
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_danh_sach_dat
-                            , "DS đất.xls"
-                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+            case "59":
+                v_str_excel_name = "Báo cáo đề nghị xử lý đất.xls";
                 break;
-            case CONST_QLDB.LOAI_BAO_CAO.DVSD:
-                m_grv_danh_sach_dat.AllowPaging = false;
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_danh_sach_dat
-                            , "DS đất.xls"
-                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+            case "-1":
+                v_str_excel_name = "Báo cáo thống kê đất.xls";
                 break;
+           
         }
+        m_grv_danh_sach_dat.AllowPaging = false;
+        load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+        // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+        WinformReport.export_gridview_2_excel(
+                    m_grv_danh_sach_dat
+                    , v_str_excel_name
+                    ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
     }
     private void set_inital_value_of_combox()
     {
@@ -195,6 +187,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         load_data_to_grid();
     }
     #endregion
+
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
