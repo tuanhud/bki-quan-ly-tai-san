@@ -34,7 +34,7 @@
          </div>
          <div>
             <div class="header">
-            <asp:Image runat="server"  Height='88px' Width = '526px' 
+            <asp:Image runat="server"  Height='88px' Width = '330px' 
             ImageUrl="~/Images/MenuTop/tcdb.jpg"/>
             </div>
          </div>
@@ -78,7 +78,7 @@
                         <li><a href='http://www.drvn.gov.vn'>02. Website tổng cục đường bộ</a></li>
                         <li><a href='http://www.mediafire.com/download/hnqwg15dq333zpx/Ho_so_giay_to.rar' target="_blank">03. Hồ sơ, giấy tờ</a></li>
                         <li><a href='https://docs.google.com/document/d/1IgSSBhkwsrHq5-GOhyY9clyogZ-fKX3MwuLzTF0VE_8/edit' target="_blank">04. Hướng dẫn sử dụng</a></li>
-                       
+                        <li><a href='<%=ResolveClientUrl("~/ExportExcel/BKI_QLTS_setup.rar")%>' target="_blank">05. Phần mềm tạo báo cáo excel</a></li>
                     </ul>
                 </li>
              </ul>
