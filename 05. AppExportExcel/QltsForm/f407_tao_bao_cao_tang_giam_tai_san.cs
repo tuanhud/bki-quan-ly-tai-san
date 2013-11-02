@@ -236,7 +236,7 @@ namespace QltsForm
             this.m_lbl.Name = "m_lbl";
             this.m_lbl.Size = new System.Drawing.Size(896, 50);
             this.m_lbl.TabIndex = 21;
-            this.m_lbl.Text = "BÁO CÁO TĂNG GIẢM TÀI SẢN";
+            this.m_lbl.Text = "Tạo báo cáo tăng giảm tài sản";
             this.m_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -306,7 +306,7 @@ namespace QltsForm
             this.m_lbl_thong_bao.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao.Location = new System.Drawing.Point(143, 147);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(13, 16);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(12, 16);
             this.m_lbl_thong_bao.TabIndex = 24;
             this.m_lbl_thong_bao.Text = " ";
             // 
@@ -434,7 +434,7 @@ namespace QltsForm
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f407_tao_bao_cao_tang_giam_tai_san";
-            this.Text = "f407_tao_bao_cao_tang_giam_tai_san";
+            this.Text = "Tạo báo cáo tăng giảm tài sản";
             this.Load += new System.EventHandler(this.f407_tao_bao_cao_tang_giam_tai_san_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_tai_san)).EndInit();
