@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QltsForm", "QltsForm\QltsFo
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPExcelWebReport", "IPExcelWebReport\IPExcelWebReport.vbproj", "{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BKI_QLTS_setup", "BKI_QLTS_setup\BKI_QLTS_setup.vdproj", "{B3C687CE-8DA6-43A3-8FCB-23870F233232}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		BondDebug|.NET = BondDebug|.NET
@@ -523,6 +525,30 @@ Global
 		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|Mixed Platforms.ActiveCfg = SIPDebug|Any CPU
 		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|Mixed Platforms.Build.0 = SIPDebug|Any CPU
 		{AB5E4EFF-2002-4309-AE0B-EE58A1C28DF1}.SIPDebug|x86.ActiveCfg = SIPDebug|Any CPU
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.BondDebug|.NET.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.BondDebug|Any CPU.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.BondDebug|Mixed Platforms.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.BondDebug|x86.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Debug|.NET.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Debug|Any CPU.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Debug|x86.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.iFASDebug|.NET.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.iFASDebug|Any CPU.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.iFASDebug|Mixed Platforms.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.iFASDebug|x86.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.PersonalBuild|.NET.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.PersonalBuild|Any CPU.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.PersonalBuild|Mixed Platforms.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.PersonalBuild|x86.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Release|.NET.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Release|Any CPU.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Release|Mixed Platforms.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.Release|x86.ActiveCfg = Release
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.SIPDebug|.NET.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.SIPDebug|Any CPU.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.SIPDebug|Mixed Platforms.ActiveCfg = Debug
+		{B3C687CE-8DA6-43A3-8FCB-23870F233232}.SIPDebug|x86.ActiveCfg = Debug
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

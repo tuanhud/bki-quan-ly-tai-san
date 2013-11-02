@@ -232,41 +232,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Report\Output\0238A100" />
-    <None Include="Report\Output\BC-002 Bao cao ke khai xe o to-585720266752.xls" />
-    <None Include="Report\Output\BC-002 Bao cao ke khai xe o to-613109792768.xls" />
-    <None Include="Report\Output\BC-01 BCDM-OTO-TK-369854152704.xls" />
-    <None Include="Report\Output\BC-01 BCDM-OTO-TK-370998575104.xls" />
-    <None Include="Report\Output\BC-02 BCDM-OTO-KK-822200958976.xls" />
-    <None Include="Report\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-67043483648.xls" />
-    <None Include="Report\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-677807063040.xls" />
-    <None Include="Report\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-733974626304.xls" />
-    <None Include="Report\Output\BC-19 BCDM-TSLM-TK-26088892416.xls" />
-    <None Include="Report\Output\BC-321 Bao cao tong hop tinh hinh su dung nha dat - chi tiet theo tung don vi-863781126144.xls" />
-    <None Include="Report\Templates\BC-01 BCDM-OTO-TK.xls" />
-    <None Include="Report\Templates\BC-02 BCDM-OTO-KK.xls" />
-    <None Include="Report\Templates\BC-04 BCDM-TSLM-DVTCTC.xls" />
-    <None Include="Report\Templates\BC-05 BCDM-OTO-DNXL.xls" />
-    <None Include="Report\Templates\BC-17 BCDM-TSLM-DNXL.xls" />
-    <None Include="Report\Templates\BC-18 BCDM-TSLM-KK.xls" />
-    <None Include="Report\Templates\BC-19 BCDM-TSLM-TK.xls" />
-    <None Include="Report\Templates\BC-23 BCDM-OTO-DVTCTC.xls" />
-    <None Include="Report\Templates\BC-24 BCDM-TSK-DNXL.xls" />
-    <None Include="Report\Templates\BC-25 BCDM-TSKTREN500TRIEU-KK.xls" />
-    <None Include="Report\Templates\BC-26 BCDM-TSK.xls" />
-    <None Include="Report\Templates\BC-28 BCDM-TSK-DVTCTC.xls" />
-    <None Include="Report\Templates\BC-319 BCTH-THSDND-THC.xls" />
-    <None Include="Report\Templates\BC-320 BCTH-THSDND-LH.xls" />
-    <None Include="Report\Templates\BC-321 BCTH-THSDND-CT.xls" />
-    <None Include="Report\Templates\BC-330 BCTH-TGTS.xls" />
-    <None Include="Report\Templates\BC-400 BCTH-THSDTSK-CT.xls" />
-    <None Include="Report\Templates\BC-400 BCTH-THSDTSK-THC.xls" />
-    <None Include="Report\Templates\BC-410 BCTH-THSDOTO-CT.xls" />
-    <None Include="Report\Templates\BC-410 BCTH-THSDOTO-THC.xls" />
-    <None Include="Report\Templates\BC-410 BCTH-THSDTSK-CT.xls" />
-    <None Include="Report\Templates\BC-410 BCTH-THSDTSK-THC.xls" />
-    <None Include="Report\Templates\F260_file_template_import.xls" />
-    <None Include="Report\Templates\F706_BaoCaoTongHopCVGV.xls" />
+    <None Include="Reports\Output\0238A100" />
+    <None Include="Reports\Output\BC-002 Bao cao ke khai xe o to-585720266752.xls" />
+    <None Include="Reports\Output\BC-002 Bao cao ke khai xe o to-613109792768.xls" />
+    <None Include="Reports\Output\BC-01 BCDM-OTO-TK-369854152704.xls" />
+    <None Include="Reports\Output\BC-01 BCDM-OTO-TK-370998575104.xls" />
+    <None Include="Reports\Output\BC-02 BCDM-OTO-KK-822200958976.xls" />
+    <None Include="Reports\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-67043483648.xls" />
+    <None Include="Reports\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-677807063040.xls" />
+    <None Include="Reports\Output\BC-18 Bao cao danh muc tru so lam viec co so hoat dong su nghiep-733974626304.xls" />
+    <None Include="Reports\Output\BC-19 BCDM-TSLM-TK-26088892416.xls" />
+    <None Include="Reports\Output\BC-321 Bao cao tong hop tinh hinh su dung nha dat - chi tiet theo tung don vi-863781126144.xls" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IPBusinessService\IPBusinessService.vbproj">
@@ -311,12 +287,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Report\Templates\Readme.txt" />
     <None Include="Resources\bkindex_excel.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Reports\Output\" />
     <Folder Include="bin\Debug\Reports\Templates\" />
+    <Folder Include="Reports\Templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
