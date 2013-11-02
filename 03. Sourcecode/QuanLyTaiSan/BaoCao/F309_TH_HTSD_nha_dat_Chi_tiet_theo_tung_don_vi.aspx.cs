@@ -118,7 +118,7 @@ public partial class BaoCao_F309_TH_HTSD_nha_dat_Chi_tiet_theo_tung_don_vi : Sys
         load_data_to_grid(m_cbo_bo_tinh.SelectedValue, m_cbo_don_vi_chu_quan.SelectedValue);
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san_nha_dat
-                        , "DS THSD Nha Dat Chi Tiet Theo Loai Hinh.xls"
+                        , "Báo cáo THSD nhà đất - chi tiết theo đơn vị.xls"
                         );
     }
     #endregion
