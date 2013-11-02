@@ -114,7 +114,7 @@ public partial class BaoCao_F303_TH_tang_giam_tai_san_Chi__tiet_theo_tung_don_vi
         load_data_to_grid_tai_san();
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san
-                        , "DS Tăng Giảm Tài Sản Chi Tiết Từng Đơn Vị.xls"
+                        , "Báo cáo tăng giảm tài sản - chi tiết theo đơn vị.xls"
                         );
     }
     private void thongbao(string ip_str_thong_bao)

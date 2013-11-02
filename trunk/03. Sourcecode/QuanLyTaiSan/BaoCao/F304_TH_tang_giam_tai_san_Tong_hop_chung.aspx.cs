@@ -119,7 +119,7 @@ public partial class BaoCao_F304_TH_tang_giam_tai_san_Tong_hop_chung : System.We
         load_data_to_grid_tai_san();
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san
-                        , "DS Tăng Giảm Tài Sản Tong Hop Chung.xls"
+                        , "Báo cáo tăng giảm tài sản - tổng hợp chung.xls"
                         );
     }
     private void thongbao(string ip_str_thong_bao)
