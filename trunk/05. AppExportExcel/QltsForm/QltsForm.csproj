@@ -312,6 +312,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Report\Templates\Readme.txt" />
+    <None Include="Resources\bkindex_excel.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Reports\Output\" />
