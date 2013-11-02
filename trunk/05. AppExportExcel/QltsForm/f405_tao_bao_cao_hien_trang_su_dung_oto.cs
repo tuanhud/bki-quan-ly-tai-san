@@ -382,8 +382,9 @@ namespace QltsForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f405_tao_bao_cao_hien_trang_su_dung_oto";
-            this.Text = "f405_tao_bao_cao_hien_trang_su_dung_oto";
+            this.Text = "Tạo báo cáo hiện trạng sử dụng ô tô";
             this.Load += new System.EventHandler(this.f405_tao_bao_cao_hien_trang_su_dung_oto_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_oto)).EndInit();

@@ -234,7 +234,7 @@ namespace QltsForm
             this.m_lbl_ten_bao_cao.Name = "m_lbl_ten_bao_cao";
             this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(867, 55);
             this.m_lbl_ten_bao_cao.TabIndex = 30;
-            this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI XE Ô TÔ";
+            this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI TÀI SẢN KHÁC";
             this.m_lbl_ten_bao_cao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -408,8 +408,9 @@ namespace QltsForm
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f408_tao_bao_cao_tai_san_khac";
-            this.Text = "f408_tao_bao_cao_tai_san_khac";
+            this.Text = "Tạo báo cáo danh mục tài sản khác";
             this.Load += new System.EventHandler(this.f408_tao_bao_cao_tai_san_khac_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_tai_san_khac)).EndInit();
