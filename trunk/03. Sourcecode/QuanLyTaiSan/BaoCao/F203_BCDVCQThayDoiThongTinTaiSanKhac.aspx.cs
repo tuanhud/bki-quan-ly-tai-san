@@ -23,6 +23,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
     US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
     DS_CM_DM_TU_DIEN m_ds_tu_dien = new DS_CM_DM_TU_DIEN();
     #endregion
+
     #region Private Methods
     private bool check_validate_data_is_ok()
     {
@@ -64,7 +65,19 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
             m_cbo_don_vi_su_dung_tai_san.SelectedValue = v_str_id_don_vi_su_dung;
         }
     }
+    public void export_excel()
+    {
+        m_grv_tai_san_khac_history.AllowPaging = false;
+        load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+        // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+        WinformReport.export_gridview_2_excel(
+                    m_grv_tai_san_khac_history
+                    , "Báo cáo thay đổi thông tin tài sản khác.xls"
+                    , 0
+                    , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+    }
     #endregion
+
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -192,14 +205,7 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
         {
             Thread.Sleep(2000);
             // vì có phân trang, nên nếu muốn xuất all dữ liệu trên lưới (tất cả các trang) thì thê 2 dòng sau:
-            m_grv_tai_san_khac_history.AllowPaging = false;
-            load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-            // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-            WinformReport.export_gridview_2_excel(
-                        m_grv_tai_san_khac_history
-                        , "DS tai san khac thay doi thong tin.xls"
-                        , 0
-                        , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+            export_excel();
         }
         catch (Exception ex)
         {
