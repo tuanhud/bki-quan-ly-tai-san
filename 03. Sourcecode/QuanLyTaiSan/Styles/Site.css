@@ -152,11 +152,11 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
   padding: 7px 6px 0;
   background: #007ccf url(../Images/overlay.png) repeat-x 0 -110px;
   line-height: 100%;
-  border-radius: 1em;
+  /*border-radius: 1em;*/
   font: normal 0.533333em Arial, Helvetica, sans-serif;
-  -webkit-border-radius: 5px;
+  /*-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  border-radius: 5px;
+  border-radius: 5px;*/
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   width: auto;
@@ -190,7 +190,7 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
   background: #039aff url(../Images/overlay.png) repeat-x 0 -40px;
   background: #666666 url(../Images/overlay.png) repeat-x 0 -40px;
   color: #444;
-  border-top: solid 1px  #f8f8f8;
+  /*border-top: solid 1px  #f8f8f8;*/
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
