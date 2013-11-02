@@ -197,6 +197,9 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
                 );
             m_grv_dat_history.DataSource = v_ds_v_dm_dat_history.V_DM_DAT_HISTORY;
             Thread.Sleep(1000);
+            m_lbl_title.Text = "THÔNG TIN THAY ĐỔI";
+            string v_str_thong_tin = " (Có " + v_ds_v_dm_dat_history.V_DM_DAT_HISTORY.Rows.Count + " bản ghi)";
+            m_lbl_title.Text += v_str_thong_tin;
             m_grv_dat_history.DataBind();
         }
         catch (System.Exception v_e)
@@ -234,7 +237,7 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
             
             WinformReport.export_gridview_2_excel(
                 m_grv_dat_history
-                , "BaoCaoThayDoiThongTinDat.xls"
+                , "Báo cáo thay đổi thông tin đất.xls"
                 );
         }
 
@@ -243,8 +246,6 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
-
     protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -295,5 +296,5 @@ public partial class BaoCao_F310_BCTC_Thay_doi_thong_tin_Dat : System.Web.UI.Pag
     {
         //base.VerifyRenderingInServerForm(control);
     }
-
+    #endregion
 }
