@@ -96,12 +96,17 @@ public partial class Default2 : System.Web.UI.Page
         string v_str_output_file = "";
         string v_str_loai_bao_cao = "";
         string v_str_id_trang_thai = "";
+        string v_str_loai_tai_san = "";
         //f401_bao_cao_danh_muc_tai_san_khac v_f401_bc_dm_tai_san_khac = new f401_bao_cao_danh_muc_tai_san_khac();
         //CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
         //form_2_objExcelAssetParameters(v_obj_parameter);
-        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
         {
-            v_str_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+            v_str_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI];
+        }
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_TAI_SAN_KHAC] != null)
+        {
+            v_str_loai_tai_san = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_TAI_SAN_KHAC];
         }
         //if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.TRANG_THAI] != null)
         //{
@@ -116,47 +121,41 @@ public partial class Default2 : System.Web.UI.Page
         //        ip_e_formmode = f401_bao_cao_danh_muc_tai_san_khac.eFormMode.TAI_SAN_KHAC_DE_NGHI_XU_LY;
         //        break;
         //}
+        string v_str_excel_name = "";
         switch (v_str_loai_bao_cao)
         {
-            case CONST_QLDB.LOAI_BAO_CAO.DVSD:
+            case TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG:
                 /*v_f401_bc_dm_tai_san_khac.export_excel(ip_e_formmode
                     , ref v_obj_parameter);
                 Response.Clear();
                 v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
                 Response.Redirect(v_str_output_file, false);*/
-                m_grv_danh_sach_tai_san_khac.AllowPaging = false;
-                format_grid(true);
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_danh_sach_tai_san_khac
-                            , "DS tai san khac.xls"
-                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
-                format_grid(false);
+                v_str_excel_name = "Báo cáo kê khai tài sản khác.xls";
                 break;
-            case CONST_QLDB.LOAI_BAO_CAO.DVCQ:
-                m_grv_danh_sach_tai_san_khac.AllowPaging = false;
-                format_grid(true);
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_danh_sach_tai_san_khac
-                            , "DS tai san khac.xls"
-                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
-                format_grid(false);
+            case TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY:
+                v_str_excel_name = "Báo cáo đề nghị xử lý tài sản khác.xls";
                 break;
-            case CONST_QLDB.LOAI_BAO_CAO.BLD:
-                m_grv_danh_sach_tai_san_khac.AllowPaging = false;
-                format_grid(true);
-                load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
-                // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                WinformReport.export_gridview_2_excel(
-                            m_grv_danh_sach_tai_san_khac
-                            , "DS tai san khac.xls"
-                            ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
-                format_grid(false);
+            case TRANG_THAI_TAI_SAN_KHAC.TAT_CA:
+                switch (v_str_loai_tai_san)
+                {
+                    case CONST_QLDB.LOAI_TAI_SAN.TREN_500:
+                        v_str_excel_name = "Báo cáo thống kê tài sản khác có nguyên giá trên 500 triệu.xls";
+                        break;
+                    case CONST_QLDB.LOAI_TAI_SAN.DUOI_500:
+                        v_str_excel_name = "Báo cáo thống kê tài sản khác có nguyên giá dưới 500 triệu.xls";
+                        break;
+                }
                 break;
         }
+        m_grv_danh_sach_tai_san_khac.AllowPaging = false;
+        format_grid(true);
+        load_data_to_grid();  // đây là hàm load lại dữ liệu lên lưới
+        // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+        WinformReport.export_gridview_2_excel(
+                    m_grv_danh_sach_tai_san_khac
+                    , v_str_excel_name
+                    ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+        format_grid(false);
     }
     private void set_inital_value_of_combox()
     {
