@@ -166,13 +166,13 @@ namespace QltsForm
             this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 18;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
             this.m_cmd_xuat_excel.ImageList = this.ImageList;
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xuat_excel.TabIndex = 21;
-            this.m_cmd_xuat_excel.Text = "Xem";
+            this.m_cmd_xuat_excel.Text = "Xuất exel";
             // 
             // m_cmd_exit
             // 
