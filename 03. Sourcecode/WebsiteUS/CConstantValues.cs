@@ -119,6 +119,15 @@ namespace WebUS
         public const decimal DE_NGHI_TRANG_CAP = 596;
         public const decimal DANG_SU_DUNG = 597;
     }
+
+    public class TRANG_THAI_DAT
+    {
+        public const string DE_NGHI_XU_LY = "594";
+        public const string DA_THANH_LY = "595";
+        public const string DE_NGHI_TRANG_CAP = "596";
+        public const string DANG_SU_DUNG = "597";
+        public const string TAT_CA = "-1";
+    }
     public class TRANG_THAI_TAI_SAN_KHAC
     {
         public const string DE_NGHI_XU_LY = "585";
