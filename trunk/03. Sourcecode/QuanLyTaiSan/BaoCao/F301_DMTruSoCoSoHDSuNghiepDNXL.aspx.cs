@@ -30,17 +30,17 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     {
         LOAI_HINH_DON_VI = 17,
         MA_DON_VI = 18,
-        DT_KHUON_VIEN_DAT=19,
-        HTSD_LAM_TRU_SO_LAM_VIEC=20,
-        HTSD_CO_SO_HDSN=21,
-        HTSD_LAM_NHA_O=22,
-        HTSD_CHO_THUE=23,
-        HTSD_BO_TRONG=24,
-        HTSD_BI_LAN_CHIEM=25,
-        HTSD_SU_DUNG_VAO_MUC_DICH_KHAC=26,
-        GIA_TRI_THEO_SO_KE_TOAN=27
+        DT_KHUON_VIEN_DAT = 19,
+        HTSD_LAM_TRU_SO_LAM_VIEC = 20,
+        HTSD_CO_SO_HDSN = 21,
+        HTSD_LAM_NHA_O = 22,
+        HTSD_CHO_THUE = 23,
+        HTSD_BO_TRONG = 24,
+        HTSD_BI_LAN_CHIEM = 25,
+        HTSD_SU_DUNG_VAO_MUC_DICH_KHAC = 26,
+        GIA_TRI_THEO_SO_KE_TOAN = 27
     }
-  
+
     // loai_hinh_don_vi =24
     #endregion
 
@@ -75,11 +75,11 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     }
     public string get_thong_tin_dat(THONG_TIN_DAT e_thong_tin_dat)
     {
-        string v_str_thong_tin="";
-        if (m_cbo_dia_chi.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_thong_tin; 
+        string v_str_thong_tin = "";
+        if (m_cbo_dia_chi.SelectedValue.Equals(CONST_QLDB.MA_TAT_CA)) return v_str_thong_tin;
         decimal v_dc_id_dat = CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue);
         US_V_DM_DAT v_us_v_dm_dat = new US_V_DM_DAT(v_dc_id_dat);
-        switch(e_thong_tin_dat)
+        switch (e_thong_tin_dat)
         {
             case THONG_TIN_DAT.DT_KHUON_VIEN_DAT:
                 v_str_thong_tin = CIPConvert.ToStr(v_us_v_dm_dat.dcDT_KHUON_VIEN);
@@ -110,7 +110,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                 break;
 
         }
-                return v_str_thong_tin;
+        return v_str_thong_tin;
     }
     private void thong_bao(string ip_str_thong_bao)
     {
@@ -168,13 +168,30 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
             v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
             Response.Redirect(v_str_output_file, false);
         }*/
-            m_grv_nha.AllowPaging = false;
-                    load_data_to_grid_nha();  // đây là hàm load lại dữ liệu lên lưới
-                    // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
-                    WinformReport.export_gridview_2_excel(
-                                m_grv_nha
-                                , "DS nha.xls"
-                                ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
+        m_grv_nha.AllowPaging = false;
+        string v_str_excel_name = "";
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] != null)
+        {
+            string v_id = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+            switch (v_id)
+            {
+                case "1": 
+                    v_str_excel_name = "Báo cáo kê khai nhà.xls";
+                    break;
+                case "2":
+                    v_str_excel_name = "Báo cáo đề nghị xử lý nhà.xls";
+                    break;
+                case "3":
+                    v_str_excel_name = "Báo cáo thống kê nhà.xls";
+                    break;
+            }
+        }
+        load_data_to_grid_nha();  // đây là hàm load lại dữ liệu lên lưới
+        // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
+        WinformReport.export_gridview_2_excel(
+                    m_grv_nha
+                    , v_str_excel_name
+                    ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
     }
     private void load_data_to_thong_tin_nha_dat()
     {
@@ -620,7 +637,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
           );
         m_cmd_loc_du_lieu_Click(m_cmd_loc_du_lieu, EventArgs.Empty);
     }
-   
+
 
     #endregion
 
