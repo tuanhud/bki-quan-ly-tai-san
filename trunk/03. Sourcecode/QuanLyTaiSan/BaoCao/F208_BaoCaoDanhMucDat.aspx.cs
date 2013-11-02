@@ -55,13 +55,13 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         string v_str_excel_name = "";
         switch (v_str_loai_bao_cao)
         {
-            case "597":
+            case TRANG_THAI_DAT.DANG_SU_DUNG:
                 v_str_excel_name = "Báo cáo kê khai đất.xls";
                 break;
-            case "59":
+            case TRANG_THAI_DAT.DE_NGHI_XU_LY:
                 v_str_excel_name = "Báo cáo đề nghị xử lý đất.xls";
                 break;
-            case "-1":
+            case TRANG_THAI_DAT.TAT_CA:
                 v_str_excel_name = "Báo cáo thống kê đất.xls";
                 break;
            
