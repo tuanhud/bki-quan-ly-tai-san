@@ -197,7 +197,7 @@ public partial class BaoCao_F312_BCDVCQ_Thay_doi_thong_tin_Oto : System.Web.UI.P
             // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
             WinformReport.export_gridview_2_excel(
                         m_grv_oto_history
-                        , "DS oto thay doi thong tin.xls"
+                        , "Báo cáo thay đổi thông tin ô tô.xls"
                         , 0
                         , 1); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
         }
