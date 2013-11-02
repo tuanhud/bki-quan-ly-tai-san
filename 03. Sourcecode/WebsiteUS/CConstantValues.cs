@@ -42,10 +42,11 @@ namespace WebUS
         public const decimal ID_TAT_CA = -1;
         public const string MA_TAT_CA = "-1";
         public const string TAT_CA = "--------------------Tất cả--------------------";
-        
-        
-      
-        public class MA_THAM_SO_URL {
+
+
+
+        public class MA_THAM_SO_URL
+        {
             public const string LOAI_BAO_CAO = "ip_str_loai_bao_cao";
             public const string LOAI_TAI_SAN_KHAC = "ip_str_loai_ts_khac";
             public const string TRANG_THAI = "ip_id_trang_thai";
@@ -55,23 +56,27 @@ namespace WebUS
             public const string ID_DAT = "ip_id_dat";
             public const string ID_OTO = "ip_id_oto";
         }
-        public class LOAI_BAO_CAO {
+        public class LOAI_BAO_CAO
+        {
             public const string DVSD = "DVSD";
             public const string DVCQ = "DVCQ";
             public const string BLD = "BLD";
         }
-        public class LOAI_TAI_SAN {
+        public class LOAI_TAI_SAN
+        {
             public const string TREN_500 = "TSK_TREN_500";
             public const string DUOI_500 = "TSK_DUOI_500";
             public const string TAI_SAN_KHAC = "TAI_SAN_KHAC";
         }
-        public class TRANG_THAI {
+        public class TRANG_THAI
+        {
             public const string KE_KHAI = "KE_KHAI";
             public const string DE_NGHI_XU_LY = "DE_NGHI_XU_LY";
         }
     }
 
-    public class ID_USER_GROUP {
+    public class ID_USER_GROUP
+    {
         public const decimal TESTER = 1;
         public const decimal TONG_CUC = 2;
         public const decimal ADMIN = 5;
@@ -114,7 +119,14 @@ namespace WebUS
         public const decimal DE_NGHI_TRANG_CAP = 596;
         public const decimal DANG_SU_DUNG = 597;
     }
-
+    public class TRANG_THAI_TAI_SAN_KHAC
+    {
+        public const string DE_NGHI_XU_LY = "585";
+        public const string DA_THANH_LY = "586";
+        public const string DE_NGHI_TRANG_CAP = "587";
+        public const string DANG_SU_DUNG = "588";
+        public const string TAT_CA = "-1";
+    }
     public class ID_TRANG_THAI_NHA
     {
         public const decimal DE_NGHI_XU_LY = 577;
@@ -187,7 +199,7 @@ namespace WebUS
         public const decimal TO_CHUC_CTXH = 607;
         public const decimal TO_CHUC_CTXHNN = 608;
         public const decimal TO_CHUC_XH = 609;
-        public  const decimal TO_CHUC_XH_NN = 610;
+        public const decimal TO_CHUC_XH_NN = 610;
     }
 
     public class TEN_LOAI_HINH_DON_VI
