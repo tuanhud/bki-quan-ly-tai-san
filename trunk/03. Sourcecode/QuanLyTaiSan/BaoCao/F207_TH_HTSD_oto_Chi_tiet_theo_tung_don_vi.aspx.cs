@@ -118,7 +118,7 @@ public partial class BaoCao_F207_TH_HTSD_oto_Chi_tiet_theo_tung_don_vi : System.
         load_data_to_grid(m_cbo_bo_tinh.SelectedValue,m_cbo_don_vi_chu_quan.SelectedValue);
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san_khac
-                        , "DS THSD Ô Tô Chi Tiết Từng Đơn Vị.xls"
+                        , "Báo cáo HTSD ô tô - chi tiết từng đơn vị.xls"
                         );
     }
     #endregion
