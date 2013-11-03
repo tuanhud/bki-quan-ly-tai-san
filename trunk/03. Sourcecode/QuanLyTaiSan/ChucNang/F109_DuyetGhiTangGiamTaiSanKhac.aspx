@@ -245,8 +245,6 @@
                                 ForeColor="Black" />
                             <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                 Font-Size="XX-Small" ForeColor="Black" />
-                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
                         </ew:CalendarPopup>
                     </td>
                     <td align="left" style="width: 1%;">
@@ -278,8 +276,6 @@
                                 ForeColor="Black" />
                             <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                 Font-Size="XX-Small" ForeColor="Black" />
-                            <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
                         </ew:CalendarPopup>
                     </td>
                     <td align="left" style="width: 1%;">
