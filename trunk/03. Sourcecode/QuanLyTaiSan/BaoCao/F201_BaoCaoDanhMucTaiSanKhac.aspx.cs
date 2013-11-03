@@ -130,10 +130,10 @@ public partial class Default2 : System.Web.UI.Page
                 Response.Clear();
                 v_str_output_file = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
                 Response.Redirect(v_str_output_file, false);*/
-                v_str_excel_name = "Báo cáo kê khai tài sản khác.xls";
+                v_str_excel_name = "Báo cáo kê khai tài sản khác có nguyên giá trên 500 triệu.xls";
                 break;
             case TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY:
-                v_str_excel_name = "Báo cáo đề nghị xử lý tài sản khác.xls";
+                v_str_excel_name = "Báo cáo đề nghị xử lý tài sản khác có nguyên giá trên 500 triệu.xls";
                 break;
             case TRANG_THAI_TAI_SAN_KHAC.TAT_CA:
                 switch (v_str_loai_tai_san)
