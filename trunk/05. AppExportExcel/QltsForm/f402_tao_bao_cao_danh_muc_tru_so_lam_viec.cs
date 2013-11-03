@@ -210,10 +210,10 @@ namespace QltsForm
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 569);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 538);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(977, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(796, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_export_excel
@@ -240,7 +240,7 @@ namespace QltsForm
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(885, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(704, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -253,7 +253,7 @@ namespace QltsForm
             this.m_fg_nha.Location = new System.Drawing.Point(0, 0);
             this.m_fg_nha.Name = "m_fg_nha";
             this.m_fg_nha.Rows.Count = 20;
-            this.m_fg_nha.Size = new System.Drawing.Size(971, 129);
+            this.m_fg_nha.Size = new System.Drawing.Size(790, 98);
             this.m_fg_nha.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nha.Styles"));
             this.m_fg_nha.TabIndex = 20;
             // 
@@ -279,7 +279,7 @@ namespace QltsForm
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(977, 235);
+            this.groupBox1.Size = new System.Drawing.Size(796, 235);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tìm kiếm";
@@ -378,7 +378,7 @@ namespace QltsForm
             this.m_lbl_ten_bao_cao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_bao_cao.Location = new System.Drawing.Point(3, 16);
             this.m_lbl_ten_bao_cao.Name = "m_lbl_ten_bao_cao";
-            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(971, 39);
+            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(790, 39);
             this.m_lbl_ten_bao_cao.TabIndex = 7;
             this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI NHÀ - TRỤ SỞ LÀM  VIỆC";
             this.m_lbl_ten_bao_cao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -444,7 +444,7 @@ namespace QltsForm
             this.m_grb_thong_tin_nha_dat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grb_thong_tin_nha_dat.Location = new System.Drawing.Point(0, 235);
             this.m_grb_thong_tin_nha_dat.Name = "m_grb_thong_tin_nha_dat";
-            this.m_grb_thong_tin_nha_dat.Size = new System.Drawing.Size(977, 334);
+            this.m_grb_thong_tin_nha_dat.Size = new System.Drawing.Size(796, 303);
             this.m_grb_thong_tin_nha_dat.TabIndex = 22;
             this.m_grb_thong_tin_nha_dat.TabStop = false;
             this.m_grb_thong_tin_nha_dat.Text = "Thông tin nhà đất";
@@ -455,7 +455,7 @@ namespace QltsForm
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 202);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(971, 129);
+            this.panel2.Size = new System.Drawing.Size(790, 98);
             this.panel2.TabIndex = 25;
             // 
             // m_pnl_thong_tin_nha_dat
@@ -487,7 +487,7 @@ namespace QltsForm
             this.m_pnl_thong_tin_nha_dat.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_thong_tin_nha_dat.Location = new System.Drawing.Point(3, 16);
             this.m_pnl_thong_tin_nha_dat.Name = "m_pnl_thong_tin_nha_dat";
-            this.m_pnl_thong_tin_nha_dat.Size = new System.Drawing.Size(971, 186);
+            this.m_pnl_thong_tin_nha_dat.Size = new System.Drawing.Size(790, 186);
             this.m_pnl_thong_tin_nha_dat.TabIndex = 2;
             // 
             // m_fg_excel_nha
@@ -723,7 +723,7 @@ namespace QltsForm
             // f402_tao_bao_cao_danh_muc_tru_so_lam_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(977, 605);
+            this.ClientSize = new System.Drawing.Size(796, 574);
             this.Controls.Add(this.m_grb_thong_tin_nha_dat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -882,41 +882,39 @@ namespace QltsForm
         {
             STT = 1,
             CHI_TIET = 2,
-            DON_VI_BO_TINH = 3,
-            DON_VI_CHU_QUAN = 4,
-            DON_VI_SU_DUNG = 5,
-            DIA_CHI = 6,
-            TAI_SAN = 7,
-            CAP_HANG = 8,
-            NAM_XAY_DUNG = 9,
-            NGAY_THANG_NAM_SU_DUNG = 10,
-            NGUON_NS = 11,
-            NGUON_KHAC = 12,
-            GIA_TRI_CON_LAI = 13,
-            SO_TANG = 14,
-            DT_XAY_DUNG = 15,
-            TONG_DIEN_TICH_SAN_XD = 16,
-            TRU_SO_LAM_VIEC = 17,
-            CO_SO_HDSN = 18,
-            LAM_NHA_O = 19,
-            CHO_THUE = 20,
-            BO_TRONG = 21,
-            BI_LAN_CHIEM = 22,
-            KHAC = 23,
-            TRANG_THAI = 24,
-            TINH_TRANG = 25,
+            DON_VI_SU_DUNG = 3,
+            DIA_CHI = 4,
+            TAI_SAN = 5,
+            CAP_HANG = 6,
+            NAM_XAY_DUNG = 7,
+            NGAY_THANG_NAM_SU_DUNG = 8,
+            NGUON_NS = 9,
+            NGUON_KHAC = 10,
+            GIA_TRI_CON_LAI = 11,
+            SO_TANG = 12,
+            DT_XAY_DUNG = 13,
+            TONG_DIEN_TICH_SAN_XD = 14,
+            TRU_SO_LAM_VIEC = 15,
+            CO_SO_HDSN = 16,
+            LAM_NHA_O = 17,
+            CHO_THUE = 18,
+            BO_TRONG = 19,
+            BI_LAN_CHIEM = 20,
+            KHAC = 21,
+            TRANG_THAI = 22,
+            TINH_TRANG = 23,
             //THEM VAO DE LOAD DATA TO FORM
-            LOAI_HINH_DON_VI=26,
-            MA_DON_VI_SU_DUNG=27,
-            DT_KHUON_VIEN_DAT=28,
-            DT_DAT_LAM_TRU_SO_LAM_VIEC=29,
-            DT_DAT_LAM_CO_SO_HDSN=30,
-            DT_DAT_LAM_NHA_O=31,
-            DT_DAT_CHO_THUE=32,
-            DT_DAT_BO_TRONG=33,
-            DT_DAT_BI_LAN_CHIEM=34,
-            DT_DAT_SU_DUNG_VAO_MUC_DICH_KHAC=35,
-            GT_DAT_THEO_SO_KE_TOAN=36,
+            LOAI_HINH_DON_VI=24,
+            MA_DON_VI_SU_DUNG=25,
+            DT_KHUON_VIEN_DAT=26,
+            DT_DAT_LAM_TRU_SO_LAM_VIEC=27,
+            DT_DAT_LAM_CO_SO_HDSN=28,
+            DT_DAT_LAM_NHA_O=29,
+            DT_DAT_CHO_THUE=30,
+            DT_DAT_BO_TRONG=31,
+            DT_DAT_BI_LAN_CHIEM=32,
+            DT_DAT_SU_DUNG_VAO_MUC_DICH_KHAC=33,
+            GT_DAT_THEO_SO_KE_TOAN=34,
 
         }
 
@@ -1395,8 +1393,6 @@ namespace QltsForm
             // load data to combobox
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_excel_nha)) return;
             m_cbo_don_vi_su_dung.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DON_VI_SU_DUNG]);
-            m_cbo_don_vi_chu_quan.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DON_VI_CHU_QUAN]);
-            m_cbo_bo_tinh.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DON_VI_BO_TINH]);
             m_cbo_trang_thai.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.TRANG_THAI]);
             m_cbo_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
             m_cbo_dia_chi.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DIA_CHI]);
