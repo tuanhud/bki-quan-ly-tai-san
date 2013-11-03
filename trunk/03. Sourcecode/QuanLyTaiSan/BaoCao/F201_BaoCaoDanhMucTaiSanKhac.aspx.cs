@@ -23,11 +23,11 @@ public partial class Default2 : System.Web.UI.Page
     #region DataStructure
     public enum e_cols_name_grid
     {
-        STT = 1,
-        CHI_TIET = 2,
-        DON_VI_BO_TINH = 3,
-        DON_VI_CHU_QUAN = 4,
-        DON_VI_SU_DUNG = 5,
+        STT = 0,
+        CHI_TIET = 1,
+        DON_VI_BO_TINH = 2,
+        DON_VI_CHU_QUAN = 3,
+        DON_VI_SU_DUNG = 4,
         TRANG_THAI = 6,
         TINH_TRANG = 7,
         TEN_TAI_SAN = 8,
@@ -59,6 +59,8 @@ public partial class Default2 : System.Web.UI.Page
         m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.LOAI_HINH_DON_VI].Visible = ip_hide;
         m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.MA_DON_VI].Visible = ip_hide;
         m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.NUOC_SAN_XUAT].Visible = ip_hide;
+        m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.DON_VI_BO_TINH].Visible = false;
+        m_grv_danh_sach_tai_san_khac.Columns[(int)e_cols_name_grid.DON_VI_CHU_QUAN].Visible = false;
     }
     public string get_ma_don_vi_su_dung()
     {
