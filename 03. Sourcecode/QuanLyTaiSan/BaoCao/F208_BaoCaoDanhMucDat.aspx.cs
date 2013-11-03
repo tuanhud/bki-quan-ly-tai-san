@@ -310,5 +310,16 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
     {
         //base.VerifyRenderingInServerForm(control);
     }
-    #endregion
+    protected void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    #endregion   
 }

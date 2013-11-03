@@ -230,5 +230,17 @@ public partial class BaoCao_F203_BCDVCQThayDoiThongTinTaiSanKhac : System.Web.UI
             CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
+    protected void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
+    
 }
