@@ -490,31 +490,29 @@ namespace QltsForm
         {
             STT = 1,
             CHI_TIET = 2,
-            DON_VI_BO_TINH = 3,
-            DON_VI_CHU_QUAN = 4,
-            DON_VI_SU_DUNG = 5,
-            TAI_SAN = 6,
-            LOAI_XE = 7,
-            NHAN_HIEU = 8,
-            BIEN_KIEM_SOAT = 9,
-            SO_CHO_NGOI_TAI_TRONG = 10,
-            NUOC_SAN_XUAT = 11,
-            NAM_SAN_XUAT = 12,
-            NAM_SU_DUNG = 13,
-            CONG_SUAT_XE = 14,
-            CHUC_DANH_SU_DUNG = 15,
-            NGUON_GOC_XE = 16,
-            NGUON_NS = 17,
-            NGUON_KHAC = 18,
-            GIA_TRI_CON_LAI = 19,
-            QLNN = 20,
-            KINH_DOANH = 21,
-            KHONG_KD = 22,
-            HD_KHAC = 23,
-            TRANG_THAI = 24,
-            TINH_TRANG = 25,
-            LOAI_HINH_DON_VI = 26,
-            MA_DON_VI_SU_DUNG = 27
+            DON_VI_SU_DUNG = 3,
+            TAI_SAN = 4,
+            LOAI_XE = 5,
+            NHAN_HIEU = 6,
+            BIEN_KIEM_SOAT = 7,
+            SO_CHO_NGOI_TAI_TRONG = 8,
+            NUOC_SAN_XUAT = 9,
+            NAM_SAN_XUAT = 10,
+            NAM_SU_DUNG = 11,
+            CONG_SUAT_XE = 12,
+            CHUC_DANH_SU_DUNG = 13,
+            NGUON_GOC_XE = 14,
+            NGUON_NS = 15,
+            NGUON_KHAC = 16,
+            GIA_TRI_CON_LAI = 17,
+            QLNN = 18,
+            KINH_DOANH = 19,
+            KHONG_KD = 20,
+            HD_KHAC = 21,
+            TRANG_THAI = 22,
+            TINH_TRANG = 23,
+            LOAI_HINH_DON_VI = 24,
+            MA_DON_VI_SU_DUNG = 25
         }
         #endregion
 
@@ -539,8 +537,6 @@ namespace QltsForm
                     break;
 
             }
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", m_cbo_bo_tinh.Text);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_cbo_don_vi_chu_quan.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_cbo_don_vi_su_dung.Text);
             if (m_fg_oto_excel[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG] != null)
                 v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", m_fg_oto_excel[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG]);
@@ -592,8 +588,8 @@ namespace QltsForm
             // load data to combobox
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_oto_excel)) return;
             m_cbo_don_vi_su_dung.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.DON_VI_SU_DUNG]);
-            m_cbo_don_vi_chu_quan.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.DON_VI_CHU_QUAN]);
-            m_cbo_bo_tinh.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.DON_VI_BO_TINH]);
+            m_cbo_don_vi_chu_quan.Text = "Tổng cục đường bộ Việt Nam";
+            m_cbo_bo_tinh.Text = "Bộ giao thông vận tải";
             m_cbo_trang_thai.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.TRANG_THAI]);
             m_cbo_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
             m_cbo_loai_xe.Text = CIPConvert.ToStr(m_fg_oto_excel[1, (int)e_col_Excel_number.LOAI_XE]);

@@ -389,7 +389,7 @@ namespace QltsForm
             // 
             // m_fg_tai_san_khac_excel
             // 
-            this.m_fg_tai_san_khac_excel.ColumnInfo = "22,1,0,0,0,85,Columns:0{Width:13;}\t";
+            this.m_fg_tai_san_khac_excel.ColumnInfo = "20,1,0,0,0,85,Columns:0{Width:13;}\t";
             this.m_fg_tai_san_khac_excel.Location = new System.Drawing.Point(83, 3);
             this.m_fg_tai_san_khac_excel.Name = "m_fg_tai_san_khac_excel";
             this.m_fg_tai_san_khac_excel.Size = new System.Drawing.Size(686, 198);
@@ -460,25 +460,23 @@ namespace QltsForm
         {
             STT = 1,
             CHI_TIET = 2,
-            DON_VI_BO_TINH = 3,
-            DON_VI_CHU_QUAN = 4,
-            DON_VI_SU_DUNG = 5,
-            TRANG_THAI = 6,
-            TINH_TRANG = 7,
-            TAI_SAN = 8,
-            KY_HIEU = 9,
-            NAM_SAN_XUAT = 10,
-            NAM_SU_DUNG = 11,
-            NGUON_NS = 12,
-            NGUON_KHAC = 13,
-            GIA_TRI_CON_LAI = 14,
-            QLNN = 15,
-            KINH_DOANH = 16,
-            KHONG_KD = 17,
-            KHAC = 18,
-            MA_DON_VI = 19,
-            LOAI_HINH_DON_VI = 20,
-            NUOC_SAN_XUAT = 21
+            DON_VI_SU_DUNG = 3,
+            TRANG_THAI = 4,
+            TINH_TRANG = 5,
+            TAI_SAN = 6,
+            KY_HIEU = 7,
+            NAM_SAN_XUAT = 8,
+            NAM_SU_DUNG = 9,
+            NGUON_NS = 10,
+            NGUON_KHAC = 11,
+            GIA_TRI_CON_LAI = 12,
+            QLNN = 13,
+            KINH_DOANH = 14,
+            KHONG_KD = 15,
+            KHAC = 16,
+            MA_DON_VI = 17,
+            LOAI_HINH_DON_VI = 18,
+            NUOC_SAN_XUAT = 19
         }
         public enum eFormMode
         {
@@ -513,8 +511,6 @@ namespace QltsForm
                     v_obj_exe_report = new CExcelReport();
                     break;
             }
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", m_lbl_don_vi_bo_tinh.Text);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_lbl_don_vi_chu_quan.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_lbl_ma_don_vi.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", m_lbl_ma_don_vi.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<LOAI_HINH_DON_VI>", m_lbl_loai_hinh_don_vi.Text);
@@ -627,8 +623,8 @@ namespace QltsForm
             // load data to combobox
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_tai_san_khac_excel)) return;
 
-            m_lbl_don_vi_bo_tinh.Text = CIPConvert.ToStr(m_fg_tai_san_khac_excel[1, (int)e_col_Excel_number.DON_VI_BO_TINH]);
-            m_lbl_don_vi_chu_quan.Text = CIPConvert.ToStr(m_fg_tai_san_khac_excel[1, (int)e_col_Excel_number.DON_VI_CHU_QUAN]);
+            m_lbl_don_vi_bo_tinh.Text = "Bộ giao thông vận tải";
+            m_lbl_don_vi_chu_quan.Text = "Tổng cục đường bộ Việt Nam";
             m_lbl_don_vi_su_dung.Text = CIPConvert.ToStr(m_fg_tai_san_khac_excel[1, (int)e_col_Excel_number.DON_VI_SU_DUNG]);
             m_lbl_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_tai_san_khac_excel[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
             if (m_fg_tai_san_khac_excel[1, (int)e_col_Excel_number.MA_DON_VI] == null)
