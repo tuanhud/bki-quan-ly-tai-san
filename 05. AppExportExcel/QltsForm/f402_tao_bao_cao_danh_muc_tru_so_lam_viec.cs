@@ -213,7 +213,7 @@ namespace QltsForm
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 538);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(796, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1004, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_export_excel
@@ -240,7 +240,7 @@ namespace QltsForm
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(704, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(912, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -253,7 +253,7 @@ namespace QltsForm
             this.m_fg_nha.Location = new System.Drawing.Point(0, 0);
             this.m_fg_nha.Name = "m_fg_nha";
             this.m_fg_nha.Rows.Count = 20;
-            this.m_fg_nha.Size = new System.Drawing.Size(790, 98);
+            this.m_fg_nha.Size = new System.Drawing.Size(998, 98);
             this.m_fg_nha.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nha.Styles"));
             this.m_fg_nha.TabIndex = 20;
             // 
@@ -279,7 +279,7 @@ namespace QltsForm
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(796, 235);
+            this.groupBox1.Size = new System.Drawing.Size(1004, 235);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tìm kiếm";
@@ -378,7 +378,7 @@ namespace QltsForm
             this.m_lbl_ten_bao_cao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_bao_cao.Location = new System.Drawing.Point(3, 16);
             this.m_lbl_ten_bao_cao.Name = "m_lbl_ten_bao_cao";
-            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(790, 39);
+            this.m_lbl_ten_bao_cao.Size = new System.Drawing.Size(998, 39);
             this.m_lbl_ten_bao_cao.TabIndex = 7;
             this.m_lbl_ten_bao_cao.Text = "BÁO CÁO KÊ KHAI NHÀ - TRỤ SỞ LÀM  VIỆC";
             this.m_lbl_ten_bao_cao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -444,7 +444,7 @@ namespace QltsForm
             this.m_grb_thong_tin_nha_dat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grb_thong_tin_nha_dat.Location = new System.Drawing.Point(0, 235);
             this.m_grb_thong_tin_nha_dat.Name = "m_grb_thong_tin_nha_dat";
-            this.m_grb_thong_tin_nha_dat.Size = new System.Drawing.Size(796, 303);
+            this.m_grb_thong_tin_nha_dat.Size = new System.Drawing.Size(1004, 303);
             this.m_grb_thong_tin_nha_dat.TabIndex = 22;
             this.m_grb_thong_tin_nha_dat.TabStop = false;
             this.m_grb_thong_tin_nha_dat.Text = "Thông tin nhà đất";
@@ -455,7 +455,7 @@ namespace QltsForm
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 202);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(790, 98);
+            this.panel2.Size = new System.Drawing.Size(998, 98);
             this.panel2.TabIndex = 25;
             // 
             // m_pnl_thong_tin_nha_dat
@@ -487,7 +487,7 @@ namespace QltsForm
             this.m_pnl_thong_tin_nha_dat.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_thong_tin_nha_dat.Location = new System.Drawing.Point(3, 16);
             this.m_pnl_thong_tin_nha_dat.Name = "m_pnl_thong_tin_nha_dat";
-            this.m_pnl_thong_tin_nha_dat.Size = new System.Drawing.Size(790, 186);
+            this.m_pnl_thong_tin_nha_dat.Size = new System.Drawing.Size(998, 186);
             this.m_pnl_thong_tin_nha_dat.TabIndex = 2;
             // 
             // m_fg_excel_nha
@@ -723,7 +723,7 @@ namespace QltsForm
             // f402_tao_bao_cao_danh_muc_tru_so_lam_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(796, 574);
+            this.ClientSize = new System.Drawing.Size(1004, 574);
             this.Controls.Add(this.m_grb_thong_tin_nha_dat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -954,8 +954,6 @@ namespace QltsForm
                     break;
 
             }
-            v_obj_exe_report.AddFindAndReplaceItem("<BO_TINH>", m_cbo_bo_tinh.Text);
-            v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_CHU_QUAN>", m_cbo_don_vi_chu_quan.Text);
             v_obj_exe_report.AddFindAndReplaceItem("<DON_VI_SU_DUNG_TAI_SAN>", m_cbo_don_vi_su_dung.Text);
             if (m_fg_excel_nha[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG] != null)
                 v_obj_exe_report.AddFindAndReplaceItem("<MA_DON_VI>", m_fg_excel_nha[1, (int)e_col_Excel_number.MA_DON_VI_SU_DUNG]);
@@ -978,6 +976,7 @@ namespace QltsForm
             v_obj_exe_report.FindAndReplace(false);
             v_obj_exe_report.Export2ExcelWithoutFixedRows(m_fg_nha, 2, m_fg_nha.Cols.Count - 1, true);
         }
+
         private DataTable load_data_from_grid_to_table(C1FlexGrid i_fg_tam)
         {
             DataTable v_dt = new DataTable();
@@ -1089,6 +1088,7 @@ namespace QltsForm
                     break;
             }
         }
+
         private void set_initial_form_load()
         {
             format_controls_in_form();
@@ -1392,6 +1392,8 @@ namespace QltsForm
 
             // load data to combobox
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_excel_nha)) return;
+            m_cbo_bo_tinh.Text = "Bộ giao thông vân tải";
+            m_cbo_don_vi_chu_quan.Text = "Tổng cục đường bộ Việt Nam";
             m_cbo_don_vi_su_dung.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.DON_VI_SU_DUNG]);
             m_cbo_trang_thai.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.TRANG_THAI]);
             m_cbo_loai_hinh_don_vi.Text = CIPConvert.ToStr(m_fg_excel_nha[1, (int)e_col_Excel_number.LOAI_HINH_DON_VI]);
