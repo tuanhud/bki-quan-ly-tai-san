@@ -32,8 +32,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     #region Data Structure
     enum e_col_grid
     {
-        LOAI_HINH_DON_VI=20,
-        MA_DON_VI=21
+        LOAI_HINH_DON_VI = 20,
+        MA_DON_VI = 21
     }
     #endregion
 
@@ -114,37 +114,51 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     private void export_excel()
     {
 
-        /*f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
-        CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
-        form_2_objExcelAssetParameters(v_obj_parameter);
+        //f400_bao_cao_danh_muc_o_to v_f400_bc_dm_oto = new f400_bao_cao_danh_muc_o_to();
+        //CObjExcelAssetParameters v_obj_parameter = new CObjExcelAssetParameters();
+        //form_2_objExcelAssetParameters(v_obj_parameter);
+        if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null) return;
         string v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
+        string v_str_excel_name = "";
+        //switch (v_str_id_loai_bao_cao)
+        //{
+        //    case LOAI_BAO_CAO.KE_KHAI:
+        //        v_f400_bc_dm_oto.export_excel(
+        //                f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
+        //               , ref v_obj_parameter);
+        //        break;
+        //    case LOAI_BAO_CAO.DE_NGHI_XU_LY:
+        //        v_f400_bc_dm_oto.export_excel(
+        //               f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
+        //               , ref v_obj_parameter);
+        //        break;
+        //    case LOAI_BAO_CAO.THONG_KE:
+        //        v_f400_bc_dm_oto.export_excel(
+        //              f400_bao_cao_danh_muc_o_to.eFormMode.THONG_KE_O_TO
+        //              , ref v_obj_parameter);
+        //        break;
+        //}
         switch (v_str_id_loai_bao_cao)
         {
             case LOAI_BAO_CAO.KE_KHAI:
-                v_f400_bc_dm_oto.export_excel(
-                        f400_bao_cao_danh_muc_o_to.eFormMode.KE_KHAI_O_TO
-                       , ref v_obj_parameter);
+                v_str_excel_name = "Báo cáo kê khai xe ô tô.xls";
                 break;
             case LOAI_BAO_CAO.DE_NGHI_XU_LY:
-                v_f400_bc_dm_oto.export_excel(
-                       f400_bao_cao_danh_muc_o_to.eFormMode.O_TO_DE_NGHI_XU_LY
-                       , ref v_obj_parameter);
+                v_str_excel_name = "Báo cáo đề nghị xử lý xe ô tô.xls";
                 break;
             case LOAI_BAO_CAO.THONG_KE:
-                v_f400_bc_dm_oto.export_excel(
-                      f400_bao_cao_danh_muc_o_to.eFormMode.THONG_KE_O_TO
-                      , ref v_obj_parameter);
+                v_str_excel_name = "Báo cáo thống kê xe ô tô.xls";
                 break;
         }
-        Response.Clear();
-        v_obj_parameter.strFILE_NAME_RESULT = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
-        Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);*/
+        //Response.Clear();
+        //v_obj_parameter.strFILE_NAME_RESULT = "/QuanLyTaiSan/" + v_obj_parameter.strFILE_NAME_RESULT;
+        //Response.Redirect(v_obj_parameter.strFILE_NAME_RESULT, false);
         m_grv_bao_cao_oto.AllowPaging = false;
         load_data_to_grid_oto();  // đây là hàm load lại dữ liệu lên lưới
         // còn nếu chỉ muốn xuất dữ liệu ở Page hiện tại thì không cần 2 dòng trên
         WinformReport.export_gridview_2_excel(
                     m_grv_bao_cao_oto
-                    , "DS oto.xls"
+                    ,v_str_excel_name
                     ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
     }
 
@@ -163,7 +177,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         reset_thong_bao();
         m_lbl_thong_tin_oto.Text = "DANH SÁCH Ô TÔ";
         if (!check_validate_data_is_ok()) return;
-       
+
         string v_str_user_name = Person.get_user_name();
         if (v_str_user_name.Equals(null)) return;
         US_V_DM_OTO v_us_v_dm_oto = new US_V_DM_OTO();
@@ -326,7 +340,7 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO] == null)
         {
             Response.Clear();
-            Response.Redirect("/QuanLyTaiSan/",false);
+            Response.Redirect("/QuanLyTaiSan/", false);
             return;
         }
         v_str_id_loai_bao_cao = Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.LOAI_BAO_CAO];
@@ -474,7 +488,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
         }
         catch (Exception v_e)
         {
-            if (v_e.Message != "Thread was being aborted.") {
+            if (v_e.Message != "Thread was being aborted.")
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
