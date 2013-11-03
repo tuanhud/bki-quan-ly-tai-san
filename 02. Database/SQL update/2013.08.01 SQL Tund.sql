@@ -1,0 +1,10 @@
+UPDATE DM_DON_VI
+SET
+	
+	LEVEL_MODE = 1
+WHERE ID_DON_VI_CAP_TREN IS NULL	
+
+
+
+-------------------
+US_V_DM_OTO
