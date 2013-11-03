@@ -98,7 +98,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationControl.cs" />
+    <Compile Include="Resources\ApplicationControl.cs" />
     <Compile Include="f1001_About.cs">
       <SubType>Form</SubType>
     </Compile>
