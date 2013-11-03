@@ -7,34 +7,34 @@ namespace WebUS
     public class TEN_BAO_CAO
     {
         //BAO CAO OTO
-        public const string BCDM_OTO_KE_KHAI = "BC-02 BCDM-OTO-KK.xls";
-        public const string BCDM_OTO_DE_NGHI_XU_LY = "BC-05 BCDM-OTO-DNXL.xls";
-        public const string BCDM_OTO_THONG_KE = "BC-01 BCDM-OTO-TK.xls";
+        public const string BCDM_OTO_KE_KHAI = "BC-02 Báo cáo kê khai ô tô.xls";
+        public const string BCDM_OTO_DE_NGHI_XU_LY = "BC-05 Báo cáo đề nghị xử lý ô tô.xls";
+        public const string BCDM_OTO_THONG_KE = "BC-01 Báo cáo thống kê ô tô.xls";
         public const string BCDM_OTO_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-23 BCDM-OTO-DVTCTC.xls";
         //BAO CAO TRU SO LAM VIEC
-        public const string BCDM_TSLM_KE_KHAI = "BC-18 BCDM-TSLM-KK.xls";
-        public const string BCDM_TSLM_DE_NGHI_XU_LY = "BC-17 BCDM-TSLM-DNXL.xls";
-        public const string BCDM_TSLM_THONG_KE = "BC-19 BCDM-TSLM-TK.xls";
-        public const string BCDM_TSLM_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-04 BCDM-TSLM-DVTCTC.xls";
+        public const string BCDM_TSLM_KE_KHAI = "BC-18 Báo cáo kê khai nhà, trụ sở làm việc.xls";
+        public const string BCDM_TSLM_DE_NGHI_XU_LY = "BC-17 Báo cáo đề nghị xử lý nhà, trụ sở làm việc.xls";
+        public const string BCDM_TSLM_THONG_KE = "BC-19 Báo cáo thống kê nhà, trụ sở làm việc.xls";
+        public const string BCDM_TSLM_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-04 Báo cáo danh mục nhà giao cho đơn vị tự chủ tài chính.xls";
         //BAO CAO TAI SAN KHAC
-        public const string BCDM_TSK = "BC-26 BCDM-TSK.xls";
-        public const string BCDM_TSK_DE_NGHI_XU_LY = "BC-24 BCDM-TSK-DNXL.xls";
-        public const string BCDM_TST_TREN500TRIEU_KK = "BC-25 BCDM-TSKTREN500TRIEU-KK.xls";
-        public const string BCDM_TSK_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-28 BCDM-TSK-DVTCTC.xls";
+        public const string BCDM_TSK = "BC-26 Báo cáo danh mục tài sản khác.xls";
+        public const string BCDM_TSK_DE_NGHI_XU_LY = "BC-24 Báo cáo đề nghị xử lý tài sản khác.xls";
+        public const string BCDM_TST_TREN500TRIEU_KK = "BC-25 Báo cáo kê khai tài sản khác có nguyên giá trên 500 triệu.xls";
+        public const string BCDM_TSK_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-28 Báo cáo tài sản khác giao cho đơn vị tự chủ tài chính.xls";
         //Bao cao tong hop NHA DAT
-        public const string BCTH_HTSD_THC = "BC-319 BCTH-THSDND-THC.xls";
-        public const string BCTH_HTSD_LH = "BC-320 BCTH-THSDND-LH.xls";
-        public const string BCTH_HTSD_DV = "BC-321 BCTH-THSDND-CT.xls";
+        public const string BCTH_HTSD_THC = "BC-319 Báo cáo hiện trạng sử dụng nhà đất - tổng hợp chung.xls";
+        public const string BCTH_HTSD_LH = "BC-320 Báo cáo hiện trạng sử dụng nhà đất - theo loại hình.xls";
+        public const string BCTH_HTSD_DV = "BC-321 Báo cáo hiện trạng sử dụng nhà đất - theo đơn vị.xls";
         //Bao cao tong hop oto
-        public const string BCTH_THSD_OTO_THC = "BC-410 BCTH-THSDOTO-THC.xls";
+        public const string BCTH_THSD_OTO_THC = "BC-410 Báo cáo hiện trạng sử dụng ô tô - tổng hợp chung.xls";
         public const string BCTH_THSD_OTO_LH = "";
-        public const string BCTH_THSD_OTO_DV = "BC-410 BCTH-THSDOTO-CT.xls";
+        public const string BCTH_THSD_OTO_DV = "BC-411 Báo cáo hiện trạng sử dụng ô tô - theo đơn vị.xls";
         //Bao cao tong hop tai san khac
-        public const string BCTH_THSD_TSK_THC = "BC-410 BCTH-THSDTSK-THC.xls";
+        public const string BCTH_THSD_TSK_THC = "BC-420 Báo cáo hiện trạng sử dụng tài sản khác - tổng hợp chung.xls";
         public const string BCTH_THSD_TSK_LH = "";
-        public const string BCTH_THSD_TSK_DV = "BC-410 BCTH-THSDTSK-CT.xls";
+        public const string BCTH_THSD_TSK_DV = "BC-421 Báo cáo hiện trạng sử dụng tài sản khác - theo đơn vị.xls";
         //Bao cao tang giam tai san
-        public const string BCTH_TGTS = "BC-330 BCTH-TGTS.xls";
+        public const string BCTH_TGTS = "BC-330 Báo cáo tăng giảm tài sản.xls";
     }
     public class LOAI_BAO_CAO
     {
