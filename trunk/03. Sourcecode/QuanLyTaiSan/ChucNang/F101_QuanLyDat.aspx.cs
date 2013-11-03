@@ -76,6 +76,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
             , WinFormControls.eTAT_CA.NO
             , m_ddl_trang_thai);
+        m_ddl_trang_thai.SelectedValue = TRANG_THAI_DAT.DANG_SU_DUNG;
     }
     private void load_data_tinh_trang_dat()
     {
@@ -373,6 +374,8 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
             , WinFormControls.eTAT_CA.NO
             , m_cbo_ly_do_thay_doi);
+        ListItem v_lsti_thanh_ly = m_cbo_ly_do_thay_doi.Items.FindByValue(ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString());
+        m_cbo_ly_do_thay_doi.Items.Remove(v_lsti_thanh_ly);
     }
     private void hidden_panel_tang_giam()
     {
@@ -627,18 +630,6 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         try
         {
             m_mtv_1.SetActiveView(m_view_them_moi_tg);
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_cmd_reject_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            hidden_panel_tang_giam();
-            load_data_2_form();
         }
         catch (Exception v_e)
         {

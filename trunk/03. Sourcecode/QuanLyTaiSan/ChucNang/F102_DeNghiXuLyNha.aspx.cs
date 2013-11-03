@@ -103,6 +103,7 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
             , WinFormControls.eTAT_CA.YES
             , m_ddl_trang_thai_nha);
+        m_ddl_trang_thai_nha.SelectedValue = ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString();
     }
 
     private void set_trang_thai_cmd()
@@ -237,7 +238,6 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             Thread.Sleep(2000);
             foreach (GridViewRow row in m_grv_danh_sach_nha.Rows)
             {
-                bool v_ch;
                 CheckBox v_checkbox = (CheckBox)row.FindControl("chkItem");
                 if (v_checkbox != null)
                 {
@@ -270,7 +270,6 @@ public partial class ChucNang_F102_DeNghiXuLyNha : System.Web.UI.Page
             Thread.Sleep(2000);
             foreach (GridViewRow row in m_grv_danh_sach_nha.Rows)
             {
-                bool v_ch;
                 CheckBox v_checkbox = (CheckBox)row.FindControl("chkItem");
                 if (v_checkbox != null)
                 {

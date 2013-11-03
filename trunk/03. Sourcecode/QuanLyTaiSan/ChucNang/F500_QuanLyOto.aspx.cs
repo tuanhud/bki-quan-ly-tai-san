@@ -71,13 +71,12 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-
-
             v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_OTO, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
             m_ddl_trang_thai_oto.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
             m_ddl_trang_thai_oto.DataTextField = CM_DM_TU_DIEN.TEN;
             m_ddl_trang_thai_oto.DataValueField = CM_DM_TU_DIEN.ID;
             m_ddl_trang_thai_oto.DataBind();
+            m_ddl_trang_thai_oto.SelectedValue = TRANG_THAI_OTO.DANG_SU_DUNG;
         }
 
         catch (Exception v_e)
@@ -357,6 +356,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
             , WinFormControls.eTAT_CA.NO
             , m_cbo_ly_do_thay_doi);
+        ListItem v_lsti_thanh_ly = m_cbo_ly_do_thay_doi.Items.FindByValue(ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString());
+        m_cbo_ly_do_thay_doi.Items.Remove(v_lsti_thanh_ly);
     }
     private void hidden_panel_tang_giam()
     {
@@ -714,17 +715,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         try
         {
             m_mtv_1.SetActiveView(m_view_them_moi_tg);
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_cmd_reject_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            hidden_panel_tang_giam();
         }
         catch (Exception v_e)
         {

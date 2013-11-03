@@ -303,6 +303,8 @@ public partial class Default2 : System.Web.UI.Page
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
             , WinFormControls.eTAT_CA.NO
             , m_cbo_ly_do_thay_doi);
+        ListItem v_lsti_thanh_ly = m_cbo_ly_do_thay_doi.Items.FindByValue(ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString());
+        m_cbo_ly_do_thay_doi.Items.Remove(v_lsti_thanh_ly);
     }
     private void hidden_panel_tang_giam()
     {
@@ -387,6 +389,7 @@ public partial class Default2 : System.Web.UI.Page
                     WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC
                     , WinFormControls.eTAT_CA.NO
                     , m_cbo_trang_thai_tai_san);
+                m_cbo_trang_thai_tai_san.SelectedValue = TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG;
                 load_data_2_grid();
                 if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_TAI_SAN_KHAC] != null)
                 {
@@ -620,18 +623,6 @@ public partial class Default2 : System.Web.UI.Page
         try
         {
             m_mtv_1.SetActiveView(m_view_them_moi_tg);
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_cmd_reject_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            hidden_panel_tang_giam();
-            load_data_2_grid();
         }
         catch (Exception v_e)
         {
