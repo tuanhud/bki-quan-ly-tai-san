@@ -32,6 +32,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     #region Data Structure
     enum e_col_grid
     {
+        DON_VI_BO_TINH=2,
+        DON_VI_CHU_QUAN=3,
         LOAI_HINH_DON_VI = 20,
         MA_DON_VI = 21
     }
@@ -42,6 +44,8 @@ public partial class BaoCao_F900_Danh_muc_xe_oto_de_nghi_xu_ly : System.Web.UI.P
     {
         m_grv_bao_cao_oto.Columns[(int)e_col_grid.LOAI_HINH_DON_VI].Visible = ip_hide;
         m_grv_bao_cao_oto.Columns[(int)e_col_grid.MA_DON_VI].Visible = ip_hide;
+        m_grv_bao_cao_oto.Columns[(int)e_col_grid.DON_VI_BO_TINH].Visible = false;
+        m_grv_bao_cao_oto.Columns[(int)e_col_grid.DON_VI_CHU_QUAN].Visible = false;
     }
     public string get_ma_don_vi_su_dung()
     {

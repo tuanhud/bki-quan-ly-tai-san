@@ -28,6 +28,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
     const string C_STR_LOAI_THONG_KE = "3";
     public enum THONG_TIN_DAT
     {
+        DON_VI_CHU_QUAN=3,
+        DON_VI_BO_TINH=2,
         LOAI_HINH_DON_VI = 17,
         MA_DON_VI = 18,
         DT_KHUON_VIEN_DAT = 19,
@@ -58,6 +60,8 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
         m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_BI_LAN_CHIEM].Visible = ip_hide;
         m_grv_nha.Columns[(int)THONG_TIN_DAT.HTSD_SU_DUNG_VAO_MUC_DICH_KHAC].Visible = ip_hide;
         m_grv_nha.Columns[(int)THONG_TIN_DAT.GIA_TRI_THEO_SO_KE_TOAN].Visible = ip_hide;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.DON_VI_BO_TINH].Visible = false;
+        m_grv_nha.Columns[(int)THONG_TIN_DAT.DON_VI_CHU_QUAN].Visible = false;
     }
     public string get_ma_don_vi_su_dung()
     {
