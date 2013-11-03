@@ -92,7 +92,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
             , CIPConvert.ToDecimal(m_cbo_bo_tinh_up.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan_up.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san_up.SelectedValue)
-            , CIPConvert.ToDecimal(m_cbo_trang_thai_tai_san_up.SelectedValue)
+            , ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG
             , v_ds_v_dm_tai_san_khac);
         m_cbo_ten_tai_san.DataSource = v_ds_v_dm_tai_san_khac.V_DM_TAI_SAN_KHAC;
         m_cbo_ten_tai_san.DataTextField = V_DM_TAI_SAN_KHAC.TEN_TAI_SAN;

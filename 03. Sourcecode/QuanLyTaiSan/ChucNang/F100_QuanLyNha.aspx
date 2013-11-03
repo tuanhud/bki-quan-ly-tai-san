@@ -58,15 +58,13 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">
-                                            <span class="cssManField">Bạn có muốn thêm dữ liệu vào duyệt ghi tăng tài sản?</span>
+                                            <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng cho tài sản này!</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">
                                             <asp:Button ID="m_cmd_confirm" AccessKey="c" CssClass="cssButton" runat="server"
-                                                Height="24px" Width="98px" Text="Đồng ý" CausesValidation="false" OnClick="m_cmd_confirm_Click" />
-                                            <asp:Button ID="m_cmd_reject" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
-                                                Height="24px" Width="98px" Text="Hủy bỏ" OnClick="m_cmd_reject_Click" />
+                                                Height="24px" Width="98px" Text="Tiếp tục" CausesValidation="false" OnClick="m_cmd_confirm_Click" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -87,7 +85,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="center">
-                                            <span class="cssManField">CHI TIẾT DUYỆT GHI TĂNG GIẢM</span>
+                                            <span class="cssManField">CHI TIẾT DUYỆT GHI</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -198,7 +196,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Quản lý nhà</span> <span class="expand-collapse-text initial-expand">
+                        <span class="cssPageTitle">NHẬP MỚI, CẬP NHẬT THÔNG TIN TÀI SẢN NHÀ</span> <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
@@ -250,7 +248,8 @@
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:DropDownList ID="m_ddl_trang_thai_nha" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
-                                        AutoPostBack="true" OnSelectedIndexChanged="m_ddl_trang_thai_nha_SelectedIndexChanged">
+                                        AutoPostBack="true" OnSelectedIndexChanged="m_ddl_trang_thai_nha_SelectedIndexChanged"
+                                        Enabled="false">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -586,7 +585,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 120%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="DANH SÁCH NHÀ" CLASS="cssPageTitle"></asp:Label>
+                        <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="DANH SÁCH NHÀ" CssClass="cssPageTitle"></asp:Label>
                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                         </span>
                     </td>

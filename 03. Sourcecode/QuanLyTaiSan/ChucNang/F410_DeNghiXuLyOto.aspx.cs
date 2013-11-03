@@ -59,6 +59,7 @@ public partial class ChucNang_F410_DeNghiXuLyOto : System.Web.UI.Page
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
             , WinFormControls.eTAT_CA.YES
             , m_ddl_trang_thai_oto);
+        m_ddl_trang_thai_oto.SelectedValue = TRANG_THAI_OTO.DANG_SU_DUNG;
     }
     private void load_data_to_grid()
     {

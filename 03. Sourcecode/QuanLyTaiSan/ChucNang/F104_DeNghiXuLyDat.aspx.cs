@@ -53,6 +53,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
             , WinFormControls.eTAT_CA.YES
             , m_ddl_trang_thai_nha);
+        m_ddl_trang_thai_nha.SelectedValue = TRANG_THAI_DAT.DANG_SU_DUNG;
     }
     private void set_trang_thai_cmd()
     {

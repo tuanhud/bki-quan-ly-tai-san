@@ -16,7 +16,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">Chi tiết duyệt ghi tăng giảm tài sản</span> <span class="expand-collapse-text initial-expand">
+                        <span class="cssPageTitle">CHI TIẾT DUYỆT GHI TĂNG GIẢM TÀI SẢN</span> <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
@@ -276,7 +276,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="Danh sách duyệt ghi tăng giảm tài sản"
+                        <asp:Label ID="m_lbl_thong_tin_nha" runat="server" Text="DANH SÁCH DUYỆT GHI TĂNG GIẢM TÀI SẢN"
                             CssClass="cssPageTitle"></asp:Label>
                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                         </span>

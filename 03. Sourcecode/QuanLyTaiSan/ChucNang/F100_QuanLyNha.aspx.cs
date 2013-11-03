@@ -229,6 +229,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
             , WinFormControls.eTAT_CA.NO
             , m_ddl_trang_thai_nha);
+        m_ddl_trang_thai_nha.SelectedValue = TRANG_THAI_NHA.DANG_SU_DUNG;
     }
     private void us_nha_2_form() {
         m_hdf_id.Value = m_us_dm_nha.dcID.ToString();
@@ -435,6 +436,8 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
             , WinFormControls.eTAT_CA.NO
             , m_cbo_ly_do_thay_doi);
+        ListItem v_lsti_thanh_ly = m_cbo_ly_do_thay_doi.Items.FindByValue(ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString());
+        m_cbo_ly_do_thay_doi.Items.Remove(v_lsti_thanh_ly);
     }
     private void hidden_panel_tang_giam()
     {
@@ -682,18 +685,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);        	
-        }
-    }
-    protected void m_cmd_reject_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            hidden_panel_tang_giam();
-            load_data_2_form();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     protected void m_cbo_ly_do_thay_doi_SelectedIndexChanged(object sender, EventArgs e)

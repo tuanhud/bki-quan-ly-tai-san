@@ -171,7 +171,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
             , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_up.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_thuoc_khu_dat.SelectedValue)
             , Person.get_user_name()
-            , CIPConvert.ToDecimal(m_cbo_trang_thai_nha_up.SelectedValue)
+            , ID_TRANG_THAI_NHA.DANG_SU_DUNG
             , v_ds_v_dm_nha);
 
         m_cbo_ten_tai_san.DataSource = v_ds_v_dm_nha.V_DM_NHA;
