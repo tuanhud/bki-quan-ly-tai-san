@@ -15,9 +15,8 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <span class="cssPageTitle">CHI TIẾT DUYỆT GHI TĂNG TÀI SẢN KHÁC</span> <span
-                            class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
-                            </span>
+                        <span class="cssPageTitle">CHI TIẾT DUYỆT GHI TĂNG TÀI SẢN KHÁC</span> <span class="expand-collapse-text initial-expand">
+                        </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
                 <tr>
@@ -63,7 +62,8 @@
                         <span class="cssManField">Trạng thái tài sản</span>
                     </td>
                     <td align="left" style="width: 30%;">
-                        <asp:DropDownList ID="m_cbo_trang_thai_tai_san_up" runat="server" Width="85%" Enabled="False">
+                        <asp:DropDownList ID="m_cbo_trang_thai_tai_san_up" runat="server" Width="85%" Enabled="true"
+                            AutoPostBack="true" OnSelectedIndexChanged="m_cbo_trang_thai_tai_san_up_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="left" style="width: 1%;">
@@ -225,7 +225,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                             ImageUrl="~/Images/cal.gif">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
@@ -256,7 +256,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                             ImageUrl="~/Images/cal.gif">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
@@ -382,10 +382,10 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True" CssClass="cssGrid"
-                            AutoGenerateColumns="False" Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333"
-                            AllowSorting="True" EmptyDataText="Không có dữ liệu phù hợp" PageSize="30" ShowHeader="true"
-                            OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
+                        <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True"
+                            CssClass="cssGrid" AutoGenerateColumns="False" Width="100%" DataKeyNames="ID"
+                            CellPadding="0" ForeColor="#333333" AllowSorting="True" EmptyDataText="Không có dữ liệu phù hợp"
+                            PageSize="30" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                             <Columns>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center" HeaderStyle-Height="60px"
                                     ItemStyle-Height="30px">

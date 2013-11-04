@@ -55,7 +55,8 @@
                         <span class="cssManField">Trạng thái đất</span>
                     </td>
                     <td align="left">
-                        <asp:DropDownList ID="m_cbo_trang_thai_dat_up" runat="server" Width="85%" Enabled="false">
+                        <asp:DropDownList ID="m_cbo_trang_thai_dat_up" runat="server" Width="85%" Enabled="true"
+                            AutoPostBack="true" OnSelectedIndexChanged="m_cbo_trang_thai_dat_up_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -143,7 +144,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                             ImageUrl="~/Images/cal.gif">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
@@ -172,7 +173,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                             ImageUrl="~/Images/cal.gif">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
@@ -289,7 +290,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
-                                <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI"/>
+                                <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" />
                                 <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="Diện tích" DataField="DIEN_TICH" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Lý do tăng giảm" DataField="LY_DO_TANG_GIAM_TAI_SAN"
