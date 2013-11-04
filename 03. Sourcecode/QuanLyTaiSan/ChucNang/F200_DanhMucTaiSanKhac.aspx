@@ -513,6 +513,7 @@
                                     </asp:TemplateField>
                                     <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
                                     <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
+                                    <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG"/>
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                     <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
                                     <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />
