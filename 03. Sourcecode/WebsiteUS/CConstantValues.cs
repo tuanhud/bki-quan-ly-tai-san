@@ -150,6 +150,7 @@ namespace WebUS
         public const string DA_THANH_LY = "578";
         public const string DA_DIEU_CHUYEN = "579";
         public const string DANG_SU_DUNG = "580";
+        public const string TAT_CA = "-1";
     }
 
     public class ID_TRANG_THAI_OTO
