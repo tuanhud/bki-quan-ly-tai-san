@@ -60,7 +60,8 @@
                     </td>
                     <td style="width: 30%" align="left">
                         <asp:DropDownList ID="m_cbo_trang_thai_nha_up" runat="server" Width="85%" ValidationGroup="m_vlg_nha"
-                            Enabled="false">
+                            Enabled="true" AutoPostBack="true" 
+                            onselectedindexchanged="m_cbo_trang_thai_nha_up_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>

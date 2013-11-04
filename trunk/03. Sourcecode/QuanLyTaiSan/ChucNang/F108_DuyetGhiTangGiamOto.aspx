@@ -70,7 +70,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <asp:DropDownList ID="m_cbo_trang_thai_o_to_up" runat="server" Width="85%" ValidationGroup="m_vlg_oto"
-                            Enabled="False">
+                            Enabled="true" AutoPostBack="true" OnSelectedIndexChanged="m_cbo_trang_thai_o_to_up_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -229,7 +229,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                             ImageUrl="~/Images/cal.gif">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
@@ -258,7 +258,7 @@
                     </td>
                     <td align="left" style="width: 30%">
                         <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                            Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                             ImageUrl="~/Images/cal.gif">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />

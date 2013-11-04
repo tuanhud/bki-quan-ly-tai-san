@@ -270,6 +270,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         try
         {
             clear_message();
+            clear_form_data();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_dia_chi();
@@ -285,6 +286,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         try
         {
             clear_message();
+            clear_form_data();
             load_data_to_dv_su_dung_up();
             load_data_to_dia_chi();
             load_data_from_us();
@@ -299,6 +301,21 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         try
         {
             clear_message();
+            clear_form_data();
+            load_data_to_dia_chi();
+            load_data_from_us();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cbo_trang_thai_dat_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+            clear_form_data();
             load_data_to_dia_chi();
             load_data_from_us();
         }

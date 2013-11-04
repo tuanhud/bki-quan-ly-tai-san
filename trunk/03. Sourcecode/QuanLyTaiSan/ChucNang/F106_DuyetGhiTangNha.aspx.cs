@@ -66,15 +66,14 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
 
     private void load_data_trang_thai()
     {
-        DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-        US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-
-        v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(MA_LOAI_TU_DIEN.TRANG_THAI_NHA, CM_DM_TU_DIEN.GHI_CHU, v_ds_cm_dm_tu_dien);
-        m_cbo_trang_thai_nha_up.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
-        m_cbo_trang_thai_nha_up.DataTextField = CM_DM_TU_DIEN.TEN;
-        m_cbo_trang_thai_nha_up.DataValueField = CM_DM_TU_DIEN.ID;
-        m_cbo_trang_thai_nha_up.DataBind();
-        m_cbo_trang_thai_nha_up.SelectedValue = ID_TRANG_THAI_NHA.DANG_SU_DUNG.ToString();
+        WinFormControls.load_data_to_cbo_tu_dien(
+            WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
+            , WinFormControls.eTAT_CA.NO
+            , m_cbo_trang_thai_nha_up);
+        //WinFormControls.load_data_to_cbo_trang_thai_tang_giam(
+        //    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
+        //    , WinFormControls.eTAT_CA.NO
+        //    , m_cbo_trang_thai_nha_up);
     }
     
     private void load_data_to_bo_tinh_up()
@@ -361,6 +360,19 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cbo_trang_thai_nha_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            clear_message();
+            load_data_to_ten_tai_san();
+            load_data_from_us();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_cbo_ten_tai_san_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -531,5 +543,6 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    
     #endregion        
 }
