@@ -33,7 +33,7 @@ namespace WebUS
     {
         public const string DE_NGHI_XU_LY = "581";
         public const string DA_THANH_LY = "582";
-        public const string DE_NGHI_TRANG_CAP = "583";
+        public const string DA_DIEU_CHUYEN = "583";
         public const string DANG_SU_DUNG = "584";
     }
     public class CONST_QLDB
@@ -116,7 +116,7 @@ namespace WebUS
     {
         public const decimal DE_NGHI_XU_LY = 594;
         public const decimal DA_THANH_LY = 595;
-        public const decimal DE_NGHI_TRANG_CAP = 596;
+        public const decimal DA_DIEU_CHUYEN = 596;
         public const decimal DANG_SU_DUNG = 597;
     }
 
@@ -124,7 +124,7 @@ namespace WebUS
     {
         public const string DE_NGHI_XU_LY = "594";
         public const string DA_THANH_LY = "595";
-        public const string DE_NGHI_TRANG_CAP = "596";
+        public const string DA_DIEU_CHUYEN = "596";
         public const string DANG_SU_DUNG = "597";
         public const string TAT_CA = "-1";
     }
@@ -132,7 +132,7 @@ namespace WebUS
     {
         public const string DE_NGHI_XU_LY = "585";
         public const string DA_THANH_LY = "586";
-        public const string DE_NGHI_TRANG_CAP = "587";
+        public const string DA_DIEU_CHUYEN = "587";
         public const string DANG_SU_DUNG = "588";
         public const string TAT_CA = "-1";
     }
@@ -140,15 +140,23 @@ namespace WebUS
     {
         public const decimal DE_NGHI_XU_LY = 577;
         public const decimal DA_THANH_LY = 578;
-        public const decimal DE_NGHI_TRANG_CAP = 579;
+        public const decimal DA_DIEU_CHUYEN = 579;
         public const decimal DANG_SU_DUNG = 580;
+    }
+
+    public class TRANG_THAI_NHA
+    {
+        public const string DE_NGHI_XU_LY = "577";
+        public const string DA_THANH_LY = "578";
+        public const string DA_DIEU_CHUYEN = "579";
+        public const string DANG_SU_DUNG = "580";
     }
 
     public class ID_TRANG_THAI_OTO
     {
         public const decimal DE_NGHI_XU_LY = 581;
         public const decimal DA_THANH_LY = 582;
-        public const decimal DE_NGHI_TRANG_CAP = 583;
+        public const decimal DA_DIEU_CHUYEN = 583;
         public const decimal DANG_SU_DUNG = 584;
     }
 
@@ -187,7 +195,7 @@ namespace WebUS
     {
         public const decimal DE_NGHI_XU_LY = 585;
         public const decimal DA_THANH_LY = 586;
-        public const decimal DE_NGHI_TRANG_CAP = 587;
+        public const decimal DA_DIEU_CHUYEN = 587;
         public const decimal DANG_SU_DUNG = 588;
     }
 
