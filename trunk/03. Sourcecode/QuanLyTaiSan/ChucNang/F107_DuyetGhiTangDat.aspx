@@ -55,7 +55,7 @@
                         <span class="cssManField">Trạng thái đất</span>
                     </td>
                     <td align="left">
-                        <asp:DropDownList ID="m_cbo_trang_thai_dat_up" runat="server" Width="85%" Enabled="true"
+                        <asp:DropDownList ID="m_cbo_trang_thai_dat_up" runat="server" Width="85%" Enabled="false"
                             AutoPostBack="true" OnSelectedIndexChanged="m_cbo_trang_thai_dat_up_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>

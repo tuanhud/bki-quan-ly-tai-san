@@ -94,6 +94,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
             WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_OTO
             , WinFormControls.eTAT_CA.NO
             , m_cbo_trang_thai_o_to_up);
+        m_cbo_trang_thai_o_to_up.SelectedValue = TRANG_THAI_OTO.DE_NGHI_XU_LY;
     }
 
     private void load_data_trang_thai_down()
@@ -161,7 +162,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
             , CIPConvert.ToDecimal(m_cbo_bo_tinh_up.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan_up.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san_up.SelectedValue)
-            , ID_TRANG_THAI_OTO.DANG_SU_DUNG
+            , CIPConvert.ToDecimal(m_cbo_trang_thai_o_to_up.SelectedValue)
             , CIPConvert.ToDecimal(m_cbo_loai_o_to_up.SelectedValue)
             , CONST_QLDB.MA_TAT_CA
             , Person.get_user_name()
