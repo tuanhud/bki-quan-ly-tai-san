@@ -159,8 +159,8 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
-                                    <asp:BoundField HeaderText="Đơn vị bộ tỉnh" DataField="TEN_DV_BO_TINH" />
-                                    <asp:BoundField HeaderText="Đơn vị chủ quản" DataField="TEN_DV_CHU_QUAN" />
+                                    <asp:BoundField HeaderText="Đơn vị bộ tỉnh" DataField="TEN_DV_BO_TINH" Visible="false"/>
+                                    <asp:BoundField HeaderText="Đơn vị chủ quản" DataField="TEN_DV_CHU_QUAN" Visible="false"/>
                                     <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                     <asp:BoundField HeaderText="Trạng thái" DataField="TEN_TRANG_THAI" />
                                     <asp:BoundField HeaderText="Tình trạng" DataField="TEN_TINH_TRANG" />
