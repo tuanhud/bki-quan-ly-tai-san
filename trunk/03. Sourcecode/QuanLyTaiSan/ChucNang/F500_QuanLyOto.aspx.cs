@@ -64,7 +64,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             throw v_e;
         }
     }
-    // Load dữ liệu vào combo trạng thái
     private void load_data_trang_thai()
     {
         try
@@ -92,12 +91,14 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             case DataEntryFormMode.InsertDataState:
                 m_cmd_tao_moi.Visible = true;
                 m_cmd_cap_nhat.Visible = false;
+                m_lbl_caption.Text = "NHẬP MỚI TÀI SẢN Ô TÔ";
                 break;
             case DataEntryFormMode.SelectDataState:
                 break;
             case DataEntryFormMode.UpdateDataState:
                 m_cmd_tao_moi.Visible = false;
                 m_cmd_cap_nhat.Visible = true;
+                m_lbl_caption.Text = "CẬP NHẬT THÔNG TIN TÀI SẢN Ô TÔ";
                 break;
             case DataEntryFormMode.ViewDataState:
                 break;
@@ -155,10 +156,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         ip_us_oto.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_ddl_dv_chu_quan.SelectedValue);
         set_gia_tri_hien_trang(ip_us_oto);
     }
-    /// <summary>
-    /// Load dữ liệu từ US đổ vào form
-    /// </summary>
-    /// <param name="ip_dm_noi_dung_thanh_toan"></param>
     private void us_obj_2_form(US_DM_OTO ip_us_oto)
     {
         m_hdf_id.Value = ip_us_oto.dcID.ToString();
@@ -352,12 +349,10 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     }
     private void load_data_to_ly_do()
     {
-        WinFormControls.load_data_to_cbo_tu_dien(
+        WinFormControls.load_data_to_cbo_ly_do_tang_giam(
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
-            , WinFormControls.eTAT_CA.NO
+            , WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.TANG_TAI_SAN
             , m_cbo_ly_do_thay_doi);
-        ListItem v_lsti_thanh_ly = m_cbo_ly_do_thay_doi.Items.FindByValue(ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString());
-        m_cbo_ly_do_thay_doi.Items.Remove(v_lsti_thanh_ly);
     }
     private void hidden_panel_tang_giam()
     {

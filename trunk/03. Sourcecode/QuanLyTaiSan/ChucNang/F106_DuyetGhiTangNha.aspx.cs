@@ -37,6 +37,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         load_data_from_us();
         load_data_to_ly_do();
         select_loai_tang_giam();
+        set_caption_by_loai_tang_giam();
         load_data_to_grid();
     }
 
@@ -277,6 +278,21 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         }
     }
 
+    private void set_caption_by_loai_tang_giam()
+    {
+        decimal v_dc_loai_tang_giam = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
+        if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY)
+        {
+            m_lbl_caption.Text = "CHI TIẾT THANH LÝ TÀI SẢN NHÀ";
+            return;
+        }
+        if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN)
+        {
+            m_lbl_caption.Text = "CHI TIẾT ĐIỀU CHUYỂN TÀI SẢN NHÀ";
+            return;
+        }
+    }
+
     private void export_gridview_to_excel()
     {
         m_grv_danh_sach_nha.AllowPaging = false;
@@ -440,6 +456,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         {
             clear_message();
             select_loai_tang_giam();
+            set_caption_by_loai_tang_giam();
         }
         catch (Exception v_e)
         {

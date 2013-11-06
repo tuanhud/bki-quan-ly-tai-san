@@ -15,8 +15,8 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <span class="cssPageTitle">CHI TIẾT DUYỆT GHI TĂNG TÀI SẢN KHÁC</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_caption" runat="server" Text="" CssClass="cssPageTitle"></asp:Label>
+                        <span class="expand-collapse-text"></span>
                     </td>
                 </tr>
                 <tr>

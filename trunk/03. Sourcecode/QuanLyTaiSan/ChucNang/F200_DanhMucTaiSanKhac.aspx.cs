@@ -253,12 +253,14 @@ public partial class Default2 : System.Web.UI.Page
             case DataEntryFormMode.InsertDataState:
                 m_cmd_tao_moi.Visible = true;
                 m_cmd_cap_nhat.Visible = false;
+                m_lbl_caption.Text = "NHẬP MỚI TÀI SẢN KHÁC";
                 break;
             case DataEntryFormMode.SelectDataState:
                 break;
             case DataEntryFormMode.UpdateDataState:
                 m_cmd_tao_moi.Visible = false;
                 m_cmd_cap_nhat.Visible = true;
+                m_lbl_caption.Text = "CẬP NHẬT THÔNG TIN TÀI SẢN KHÁC";
                 break;
             case DataEntryFormMode.ViewDataState:
                 break;
@@ -299,12 +301,10 @@ public partial class Default2 : System.Web.UI.Page
     }
     private void load_data_to_ly_do()
     {
-        WinFormControls.load_data_to_cbo_tu_dien(
+        WinFormControls.load_data_to_cbo_ly_do_tang_giam(
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
-            , WinFormControls.eTAT_CA.NO
+            , WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.TANG_TAI_SAN
             , m_cbo_ly_do_thay_doi);
-        ListItem v_lsti_thanh_ly = m_cbo_ly_do_thay_doi.Items.FindByValue(ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString());
-        m_cbo_ly_do_thay_doi.Items.Remove(v_lsti_thanh_ly);
     }
     private void hidden_panel_tang_giam()
     {
