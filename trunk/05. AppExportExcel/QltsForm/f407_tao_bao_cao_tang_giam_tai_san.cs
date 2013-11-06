@@ -434,7 +434,7 @@ namespace QltsForm
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f407_tao_bao_cao_tang_giam_tai_san";
-            this.Text = "Tạo báo cáo tăng giảm tài sản";
+            this.Text = "F407 Tạo báo cáo tăng giảm tài sản";
             this.Load += new System.EventHandler(this.f407_tao_bao_cao_tang_giam_tai_san_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_tai_san)).EndInit();
