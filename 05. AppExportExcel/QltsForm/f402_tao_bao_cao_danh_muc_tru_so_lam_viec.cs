@@ -729,7 +729,7 @@ namespace QltsForm
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f402_tao_bao_cao_danh_muc_tru_so_lam_viec";
-            this.Text = "Tạo báo cáo danh mục nhà, trụ sở làm việc";
+            this.Text = "F402 Tạo báo cáo danh mục nhà, trụ sở làm việc";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nha)).EndInit();
             this.groupBox1.ResumeLayout(false);

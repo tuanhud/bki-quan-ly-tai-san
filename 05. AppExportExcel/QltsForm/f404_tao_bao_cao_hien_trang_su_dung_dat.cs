@@ -384,7 +384,7 @@ namespace QltsForm
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f404_tao_bao_cao_hien_trang_su_dung_dat";
-            this.Text = "Tạo báo cáo hiện trạng sử dụng nhà đất";
+            this.Text = "F404 Tạo báo cáo hiện trạng sử dụng nhà đất";
             this.Load += new System.EventHandler(this.f404_tao_bao_cao_hien_trang_su_dung_dat_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_htsd_nha_dat)).EndInit();
