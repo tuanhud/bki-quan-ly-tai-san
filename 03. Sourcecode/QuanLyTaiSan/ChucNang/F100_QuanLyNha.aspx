@@ -119,7 +119,7 @@
                                                 Text="*" ControlToValidate="m_txt_ma_phieu" ValidationGroup="m_vlg_tang_giam"></asp:RequiredFieldValidator>
                                         </td>
                                         <td align="right" style="width: 15%">
-                                            <span class="cssManField">Ngày tăng giảm tài sản</span>
+                                            <span class="cssManField">Ngày tăng tài sản</span>
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
@@ -196,8 +196,8 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">NHẬP MỚI, CẬP NHẬT THÔNG TIN TÀI SẢN NHÀ</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_caption" runat="server" Text="" CssClass="cssPageTitle"></asp:Label>
+                        <span class="expand-collapse-text"></span>
                     </td>
                 </tr>
                 <tr>

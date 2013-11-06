@@ -34,15 +34,30 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         load_data_to_dia_chi();
         load_data_to_ly_do();
         select_loai_tang_giam();
+        set_caption_by_loai_tang_giam();
         load_data_from_us();
         load_data_to_grid();
     }
 
     private void load_data_to_ly_do()
     {
-        WinFormControls.load_data_to_cbo_tu_dien(
+        WinFormControls.eLOAI_TANG_GIAM_TAI_SAN v_e_loai = WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.GIAM_TAI_SAN;
+
+        string v_str_trang_thai = m_cbo_trang_thai_dat_up.SelectedValue;
+
+        switch (v_str_trang_thai)
+        {
+            case TRANG_THAI_DAT.DE_NGHI_XU_LY:
+                v_e_loai = WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.GIAM_TAI_SAN;
+                break;
+            case TRANG_THAI_DAT.DA_DIEU_CHUYEN:
+                v_e_loai = WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.TANG_TAI_SAN;
+                break;
+        }
+
+        WinFormControls.load_data_to_cbo_ly_do_tang_giam(
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
-            , WinFormControls.eTAT_CA.NO
+            , v_e_loai
             , m_cbo_ly_do_thay_doi);
     }
 
@@ -61,11 +76,10 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
 
     private void load_data_trang_thai()
     {
-        WinFormControls.load_data_to_cbo_tu_dien(
+        WinFormControls.load_data_to_cbo_trang_thai_tang_giam(
             WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DAT
             , WinFormControls.eTAT_CA.NO
             , m_cbo_trang_thai_dat_up);
-        m_cbo_trang_thai_dat_up.SelectedValue = TRANG_THAI_DAT.DE_NGHI_XU_LY;
     }
 
     private void load_data_to_bo_tinh_up()
@@ -240,6 +254,21 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     {
         m_lbl_message.Text = "";
     }
+
+    private void set_caption_by_loai_tang_giam()
+    {
+        decimal v_dc_loai_tang_giam = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
+        if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY)
+        {
+            m_lbl_caption.Text = "CHI TIẾT THANH LÝ TÀI SẢN ĐẤT";
+            return;
+        }
+        if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN)
+        {
+            m_lbl_caption.Text = "CHI TIẾT ĐIỀU CHUYỂN TÀI SẢN ĐẤT";
+            return;
+        }
+    }
     #endregion
 
     #region Events
@@ -363,6 +392,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         {
             clear_message();
             select_loai_tang_giam();
+            set_caption_by_loai_tang_giam();
         }
         catch (Exception v_e)
         {

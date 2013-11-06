@@ -14,8 +14,8 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <span class="cssPageTitle">CHI TIẾT DUYỆT GHI TĂNG GIẢM TÀI SẢN</span> <span class="expand-collapse-text initial-expand">
-                        </span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_caption" runat="server" Text="" CssClass="cssPageTitle"></asp:Label>
+                        <span class="expand-collapse-text"></span>
                     </td>
                 </tr>
                 <tr>
@@ -107,8 +107,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <span class="cssManField">CHI TIẾT DUYỆT GHI TĂNG GIẢM</span>
-                    </td>
+                        <span class="cssManField">CHI TIẾT DUYỆT GHI</span></td>
                 </tr>
                 <tr>
                     <td align="right">
