@@ -58,22 +58,32 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
 
     private void load_data_to_ly_do()
     {
-        WinFormControls.load_data_to_cbo_tu_dien(
+        WinFormControls.eLOAI_TANG_GIAM_TAI_SAN v_e_loai = WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.GIAM_TAI_SAN;
+
+        string v_str_trang_thai = m_cbo_trang_thai_nha_up.SelectedValue;
+
+        switch (v_str_trang_thai)
+        {
+            case TRANG_THAI_NHA.DE_NGHI_XU_LY:
+                v_e_loai = WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.GIAM_TAI_SAN;
+                break;
+            case TRANG_THAI_NHA.DA_DIEU_CHUYEN:
+                v_e_loai = WinFormControls.eLOAI_TANG_GIAM_TAI_SAN.TANG_TAI_SAN;
+                break;
+        }
+
+        WinFormControls.load_data_to_cbo_ly_do_tang_giam(
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
-            , WinFormControls.eTAT_CA.NO
+            , v_e_loai
             , m_cbo_ly_do_thay_doi);
     }
 
     private void load_data_trang_thai()
     {
-        WinFormControls.load_data_to_cbo_tu_dien(
+        WinFormControls.load_data_to_cbo_trang_thai_tang_giam(
             WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
             , WinFormControls.eTAT_CA.NO
             , m_cbo_trang_thai_nha_up);
-        //WinFormControls.load_data_to_cbo_trang_thai_tang_giam(
-        //    WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_NHA
-        //    , WinFormControls.eTAT_CA.NO
-        //    , m_cbo_trang_thai_nha_up);
     }
     
     private void load_data_to_bo_tinh_up()

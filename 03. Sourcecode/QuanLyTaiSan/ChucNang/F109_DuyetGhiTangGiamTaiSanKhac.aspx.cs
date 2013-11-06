@@ -71,6 +71,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
             WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC
             , WinFormControls.eTAT_CA.NO
             , m_cbo_trang_thai_tai_san_up);
+        m_cbo_trang_thai_tai_san_up.SelectedValue = TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY;
     }
 
     private void load_data_trang_thai_down()
