@@ -293,7 +293,7 @@ public partial class ChucNang_F110_DieuChuyenNoiBoNha : System.Web.UI.Page
     private void cap_nhat_thong_tin_tai_san()
     {
         US_DM_NHA v_us_dm_nha = new US_DM_NHA(CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue));
-        v_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DA_THANH_LY;
+        v_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DANG_SU_DUNG;
         v_us_dm_nha.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
         v_us_dm_nha.Update();
         m_lbl_message.Text = "Cập nhật thành công";
