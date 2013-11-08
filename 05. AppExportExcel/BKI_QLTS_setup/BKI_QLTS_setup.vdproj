@@ -15,19 +15,31 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_092A28D655974F21A8123CF069CDFD2D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_105FD900784E42408EF328A3D7B09194"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1C07CEEB98164E1784CD1F32FFDB6C66"
+        "MsmKey" = "8:_10A243E5310543F199AA60C4D3AC86C0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_10BECBA2B9D14762B754DE0B2EE14737"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1A791530A6824AA9831D353D014A5F49"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1A82A23EB0C745258E159BB14E89C3D8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -52,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_2A47F5F7C17CCF2D95F6A969FC9AA071"
-        "OwnerKey" = "8:_7C8945004108E4C0798A03C08495D0F0"
+        "OwnerKey" = "8:_3851C96F70F3183B6511599C1D3C97D7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,26 +75,38 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_35F020F101F5475A886572A405DBAA72"
+        "MsmKey" = "8:_37FDFAA17E04477097F3B5CA4BE6147B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_439F9F87061E4A7ABFEE97EE929C1309"
+        "MsmKey" = "8:_3851C96F70F3183B6511599C1D3C97D7"
+        "OwnerKey" = "8:_CD25A564E6FD4BA3BA6777581E483A13"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3A2857EE2B9A4461A4300129F25DDDF1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4665B8994F3B4CE3B2AAA67D72EA8146"
+        "MsmKey" = "8:_3EB9ECB225B748F2A34213B73B0B520F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4AE4F3566BA345259C63E0B0D2524509"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_3F4EDF7CF9D518439AB445E788FE9733"
+        "OwnerKey" = "8:_CD25A564E6FD4BA3BA6777581E483A13"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3F4EDF7CF9D518439AB445E788FE9733"
+        "OwnerKey" = "8:_3851C96F70F3183B6511599C1D3C97D7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -99,7 +123,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_51D208813D914036AB977539DE4F5FEB"
+        "MsmKey" = "8:_50DD6930C2524F998B875D2262F2DDB5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -129,13 +153,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5E843D55A9C1402CB47A1F38305186A1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_64DC52504C314C3DA0A6A768A648539E"
+        "MsmKey" = "8:_618F1EE743AE40E582239D218122F44C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -165,6 +183,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6CA35F4F77404D2E8628FC8C5B450403"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6CC38585CD5712499216059837E69459"
         "OwnerKey" = "8:_CD25A564E6FD4BA3BA6777581E483A13"
         "MsmSig" = "8:_UNDEFINED"
@@ -172,7 +196,7 @@
         "Entry"
         {
         "MsmKey" = "8:_6CC38585CD5712499216059837E69459"
-        "OwnerKey" = "8:_7C8945004108E4C0798A03C08495D0F0"
+        "OwnerKey" = "8:_3851C96F70F3183B6511599C1D3C97D7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -189,25 +213,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6FA1D4E2D3384BF0A970FBF9B763B574"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7363F1B62D8E453386E8F96844F858C1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_74CA3E3A0DC47D0C56AE679019D13B04"
-        "OwnerKey" = "8:_CD25A564E6FD4BA3BA6777581E483A13"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_798D685AD58D4BBFA60DCF4E0A8D8CD6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_79BA92549C5A40A5A836487393971BFC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7C8945004108E4C0798A03C08495D0F0"
         "OwnerKey" = "8:_CD25A564E6FD4BA3BA6777581E483A13"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -215,12 +233,6 @@
         {
         "MsmKey" = "8:_88A0025C907976E434AF647F56A9C0EA"
         "OwnerKey" = "8:_CD25A564E6FD4BA3BA6777581E483A13"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8A43A5B15AC94FE3A61E974E13C7D605"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -297,20 +309,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_96CA763FE1E84180A3C8A5EA614C73D1"
+        "MsmKey" = "8:_941E5AAB24964B65B9DE078F8E00EA6E"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_986D81AA9669595D39084D8E2F9FE96B"
-        "OwnerKey" = "8:_CD25A564E6FD4BA3BA6777581E483A13"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_986D81AA9669595D39084D8E2F9FE96B"
-        "OwnerKey" = "8:_7C8945004108E4C0798A03C08495D0F0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -357,19 +357,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A81B0C81715C467DA34D968F83EBD7A7"
+        "MsmKey" = "8:_A40B2BB912F74AE8BF6990748AD7D645"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AE41811A4A994A7EB4F4CCD70DDCE831"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AEDC453323A74B5381D18A951E1ACEDA"
+        "MsmKey" = "8:_AA9DA70CBAD94BCFB843F2C6183C2EED"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -383,6 +377,12 @@
         {
         "MsmKey" = "8:_AF67B48B207AFABFE6AD4BEE8461775B"
         "OwnerKey" = "8:_6CC38585CD5712499216059837E69459"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B06EE890306C452DB4FDEFB5A11A64E1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -405,31 +405,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B4411DD71C61443BB28AC9891C916C5F"
+        "MsmKey" = "8:_B795B0593979428CBE519C3437586488"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B73D56EE3C154E53A2E51A8ECCB1962C"
+        "MsmKey" = "8:_BD67EB1E1AD84F13B17BD898848DEABA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C22088C7CBC94B9C91ADDC5D0899AEBA"
+        "MsmKey" = "8:_C7A6B5789AF0484E8CE0D4B456FE2932"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C6A9318B05F540728D7CABC53EC99F63"
+        "MsmKey" = "8:_CA9D71050B414AB5A56A9C8DDC87A764"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C7B8A366B1F547F3B276C32DB7D27475"
+        "MsmKey" = "8:_CB7F2D7189BA4F6AA6D7D31E4FF53AD6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -441,19 +441,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CF36E8524AB540BAB49A8A1D75DAE393"
+        "MsmKey" = "8:_CFBFBFC51B2440C19216B9BECF6B3E04"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D219BBE171FC42C6AC06F64DDB006678"
+        "MsmKey" = "8:_D1D0316E6FC541EBAFFA6A38A2936EBD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E9A00201F70B424197C526E62F983F21"
+        "MsmKey" = "8:_D53733529AC0460CB6CE41EBFBCC6DBB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D86AC64DFE2E4E63A20DEA07904A7F21"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -466,7 +472,7 @@
         "Entry"
         {
         "MsmKey" = "8:_EA48BEFAB8C23A3DCDB7EE029C9D3410"
-        "OwnerKey" = "8:_7C8945004108E4C0798A03C08495D0F0"
+        "OwnerKey" = "8:_3851C96F70F3183B6511599C1D3C97D7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -483,13 +489,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EA8173C50F7642F5B5DE8E326F35AE1C"
+        "MsmKey" = "8:_EC49349FD1EB44BDBF2E923E6FDE3CFC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F727150DFA234C81869DC6A2FE33364A"
+        "MsmKey" = "8:_F7F42EB7DEA8493B9273A67F4515CD7A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -550,13 +556,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7C8945004108E4C0798A03C08495D0F0"
+        "OwnerKey" = "8:_3851C96F70F3183B6511599C1D3C97D7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_986D81AA9669595D39084D8E2F9FE96B"
+        "OwnerKey" = "8:_3F4EDF7CF9D518439AB445E788FE9733"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -704,6 +710,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -771,26 +790,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_092A28D655974F21A8123CF069CDFD2D"
-            {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-01 Báo cáo thống kê ô tô.xls"
-            "TargetName" = "8:BC-01 Báo cáo thống kê ô tô.xls"
-            "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_105FD900784E42408EF328A3D7B09194"
             {
             "SourcePath" = "8:C:\\Users\\TuDM\\Desktop\\icon\\excel-icon (5).ico"
@@ -811,10 +810,70 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1C07CEEB98164E1784CD1F32FFDB6C66"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_10A243E5310543F199AA60C4D3AC86C0"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-330 Báo cáo tăng giảm tài sản.xls"
-            "TargetName" = "8:BC-330 Báo cáo tăng giảm tài sản.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-01 Bao cao thong ke o to.xls"
+            "TargetName" = "8:BC-01 Bao cao thong ke o to.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_10BECBA2B9D14762B754DE0B2EE14737"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-19 Bao cao thong ke nha, tru so lam viec.xls"
+            "TargetName" = "8:BC-19 Bao cao thong ke nha, tru so lam viec.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1A791530A6824AA9831D353D014A5F49"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\Readme.txt"
+            "TargetName" = "8:Readme.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1A82A23EB0C745258E159BB14E89C3D8"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-410 Bao cao hien trang su dung o to - tong hop chung.xls"
+            "TargetName" = "8:BC-410 Bao cao hien trang su dung o to - tong hop chung.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -893,10 +952,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_35F020F101F5475A886572A405DBAA72"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_37FDFAA17E04477097F3B5CA4BE6147B"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-04 Báo cáo danh mục nhà giao cho đơn vị tự chủ tài chính.xls"
-            "TargetName" = "8:BC-04 Báo cáo danh mục nhà giao cho đơn vị tự chủ tài chính.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-331 Bao cao tang giam tai san - chi tiet theo loai hinh don vi.xls"
+            "TargetName" = "8:BC-331 Bao cao tang giam tai san - chi tiet theo loai hinh don vi.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -913,7 +972,58 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_439F9F87061E4A7ABFEE97EE929C1309"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3851C96F70F3183B6511599C1D3C97D7"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:WebUS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3851C96F70F3183B6511599C1D3C97D7"
+                    {
+                    "Name" = "8:WebUS.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:WebUS.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D76805D4698D4EF3BF20E80A2B743594"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3A2857EE2B9A4461A4300129F25DDDF1"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-28 Bao cao tai san khac giao cho don vi tu chu tai chinh.xls"
+            "TargetName" = "8:BC-28 Bao cao tai san khac giao cho don vi tu chu tai chinh.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3EB9ECB225B748F2A34213B73B0B520F"
             {
             "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\F260_file_template_import.xls"
             "TargetName" = "8:F260_file_template_import.xls"
@@ -933,12 +1043,23 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4665B8994F3B4CE3B2AAA67D72EA8146"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3F4EDF7CF9D518439AB445E788FE9733"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-24 Báo cáo đề nghị xử lý tài sản khác.xls"
-            "TargetName" = "8:BC-24 Báo cáo đề nghị xử lý tài sản khác.xls"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:WebDS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3F4EDF7CF9D518439AB445E788FE9733"
+                    {
+                    "Name" = "8:WebDS.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:WebDS.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Folder" = "8:_D76805D4698D4EF3BF20E80A2B743594"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -950,27 +1071,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4AE4F3566BA345259C63E0B0D2524509"
-            {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-23 Báo cáo ô tô giao cho đơn vị tự chủ tài chính.xls"
-            "TargetName" = "8:BC-23 Báo cáo ô tô giao cho đơn vị tự chủ tài chính.xls"
-            "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4F5DAC8786B8ECEE863276C87BF3FB8F"
@@ -1004,10 +1105,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_51D208813D914036AB977539DE4F5FEB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_50DD6930C2524F998B875D2262F2DDB5"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-420 Báo cáo hiện trạng sử dụng tài sản khác - tổng hợp chung.xls"
-            "TargetName" = "8:BC-420 Báo cáo hiện trạng sử dụng tài sản khác - tổng hợp chung.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-420 Bao cao hien trang su dung tai san khac - tong hop chung.xls"
+            "TargetName" = "8:BC-420 Bao cao hien trang su dung tai san khac - tong hop chung.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1095,30 +1196,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5E843D55A9C1402CB47A1F38305186A1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_618F1EE743AE40E582239D218122F44C"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-401 Báo cáo hiện trạng sử dụng tài sản khác - theo đơn vị.xls"
-            "TargetName" = "8:BC-401 Báo cáo hiện trạng sử dụng tài sản khác - theo đơn vị.xls"
-            "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_64DC52504C314C3DA0A6A768A648539E"
-            {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\Readme.txt"
-            "TargetName" = "8:Readme.txt"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-411 Bao cao hien trang su dung o to - theo don vi.xls"
+            "TargetName" = "8:BC-411 Bao cao hien trang su dung o to - theo don vi.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1197,6 +1278,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6CA35F4F77404D2E8628FC8C5B450403"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-332 Bao cao tang giam tai san - chi tiet theo tung don vi.xls"
+            "TargetName" = "8:BC-332 Bao cao tang giam tai san - chi tiet theo tung don vi.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6CC38585CD5712499216059837E69459"
             {
             "AssemblyRegister" = "3:1"
@@ -1228,6 +1329,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6FA1D4E2D3384BF0A970FBF9B763B574"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-04 Bao cao danh muc nha giao cho don vi tu chu tai chinh.xls"
+            "TargetName" = "8:BC-04 Bao cao danh muc nha giao cho don vi tu chu tai chinh.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7363F1B62D8E453386E8F96844F858C1"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-319 Bao cao hien trang su dung nha dat - tong hop chung.xls"
+            "TargetName" = "8:BC-319 Bao cao hien trang su dung nha dat - tong hop chung.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_74CA3E3A0DC47D0C56AE679019D13B04"
             {
             "AssemblyRegister" = "3:1"
@@ -1242,77 +1383,6 @@
                     }
                 }
             "SourcePath" = "8:C1.Win.C1Input.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D76805D4698D4EF3BF20E80A2B743594"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_798D685AD58D4BBFA60DCF4E0A8D8CD6"
-            {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-411 Báo cáo hiện trạng sử dụng ô tô - theo đơn vị.xls"
-            "TargetName" = "8:BC-411 Báo cáo hiện trạng sử dụng ô tô - theo đơn vị.xls"
-            "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_79BA92549C5A40A5A836487393971BFC"
-            {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-18 Báo cáo kê khai nhà, trụ sở làm việc.xls"
-            "TargetName" = "8:BC-18 Báo cáo kê khai nhà, trụ sở làm việc.xls"
-            "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7C8945004108E4C0798A03C08495D0F0"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:WebUS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_7C8945004108E4C0798A03C08495D0F0"
-                    {
-                    "Name" = "8:WebUS.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:WebUS.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D76805D4698D4EF3BF20E80A2B743594"
@@ -1359,26 +1429,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A43A5B15AC94FE3A61E974E13C7D605"
-            {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-25 Báo cáo kê khai tài sản khác có nguyên giá trên 500 triệu.xls"
-            "TargetName" = "8:BC-25 Báo cáo kê khai tài sản khác có nguyên giá trên 500 triệu.xls"
-            "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8D4251AB3555D242886034872C2A552F"
@@ -1505,10 +1555,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_96CA763FE1E84180A3C8A5EA614C73D1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_941E5AAB24964B65B9DE078F8E00EA6E"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\Readme.txt"
-            "TargetName" = "8:Readme.txt"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-02 Bao cao ke khai o to.xls"
+            "TargetName" = "8:BC-02 Bao cao ke khai o to.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1523,37 +1573,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_986D81AA9669595D39084D8E2F9FE96B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:WebDS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_986D81AA9669595D39084D8E2F9FE96B"
-                    {
-                    "Name" = "8:WebDS.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:WebDS.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D76805D4698D4EF3BF20E80A2B743594"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_996E19B361750BD168B43198738F4367"
@@ -1618,10 +1637,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A81B0C81715C467DA34D968F83EBD7A7"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A40B2BB912F74AE8BF6990748AD7D645"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-02 Báo cáo kê khai ô tô.xls"
-            "TargetName" = "8:BC-02 Báo cáo kê khai ô tô.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-421 Bao cao hien trang su dung tai san khac - theo don vi.xls"
+            "TargetName" = "8:BC-421 Bao cao hien trang su dung tai san khac - theo don vi.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1638,30 +1657,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AE41811A4A994A7EB4F4CCD70DDCE831"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AA9DA70CBAD94BCFB843F2C6183C2EED"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-28 Báo cáo tài sản khác giao cho đơn vị tự chủ tài chính.xls"
-            "TargetName" = "8:BC-28 Báo cáo tài sản khác giao cho đơn vị tự chủ tài chính.xls"
-            "Tag" = "8:"
-            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AEDC453323A74B5381D18A951E1ACEDA"
-            {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-321 Báo cáo hiện trạng sử dụng nhà đất - theo đơn vị.xls"
-            "TargetName" = "8:BC-321 Báo cáo hiện trạng sử dụng nhà đất - theo đơn vị.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-05 Bao cao de nghi xu ly o to.xls"
+            "TargetName" = "8:BC-05 Bao cao de nghi xu ly o to.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1709,6 +1708,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B06EE890306C452DB4FDEFB5A11A64E1"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-320 Bao cao hien trang su dung nha dat - theo loai hinh.xls"
+            "TargetName" = "8:BC-320 Bao cao hien trang su dung nha dat - theo loai hinh.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B0713059AB57E6360C7BEF94E6AC8280"
             {
             "AssemblyRegister" = "3:1"
@@ -1740,10 +1759,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B4411DD71C61443BB28AC9891C916C5F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B795B0593979428CBE519C3437586488"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-26 Báo cáo danh mục tài sản khác.xls"
-            "TargetName" = "8:BC-26 Báo cáo danh mục tài sản khác.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-26 Bao cao danh muc tai san khac.xls"
+            "TargetName" = "8:BC-26 Bao cao danh muc tai san khac.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1760,10 +1779,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B73D56EE3C154E53A2E51A8ECCB1962C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD67EB1E1AD84F13B17BD898848DEABA"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-19 Báo cáo thống kê nhà, trụ sở làm việc.xls"
-            "TargetName" = "8:BC-19 Báo cáo thống kê nhà, trụ sở làm việc.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-330 Bao cao tang giam tai san - tong hop chung.xls"
+            "TargetName" = "8:BC-330 Bao cao tang giam tai san - tong hop chung.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1780,10 +1799,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C22088C7CBC94B9C91ADDC5D0899AEBA"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C7A6B5789AF0484E8CE0D4B456FE2932"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-400 Báo cáo hiện trạng sử dụng tài sản khác - tổng hợp chung.xls"
-            "TargetName" = "8:BC-400 Báo cáo hiện trạng sử dụng tài sản khác - tổng hợp chung.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\F706_BaoCaoTongHopCVGV.xls"
+            "TargetName" = "8:F706_BaoCaoTongHopCVGV.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1800,10 +1819,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C6A9318B05F540728D7CABC53EC99F63"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CA9D71050B414AB5A56A9C8DDC87A764"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-421 Báo cáo hiện trạng sử dụng tài sản khác - theo đơn vị.xls"
-            "TargetName" = "8:BC-421 Báo cáo hiện trạng sử dụng tài sản khác - theo đơn vị.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-23 Bao cao o to giao cho don vi tu chu tai chinh.xls"
+            "TargetName" = "8:BC-23 Bao cao o to giao cho don vi tu chu tai chinh.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1820,10 +1839,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C7B8A366B1F547F3B276C32DB7D27475"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CB7F2D7189BA4F6AA6D7D31E4FF53AD6"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-17 Báo cáo đề nghị xử lý nhà, trụ sở làm việc.xls"
-            "TargetName" = "8:BC-17 Báo cáo đề nghị xử lý nhà, trụ sở làm việc.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-401 Bao cao hien trang su dung tai san khac - theo don vi.xls"
+            "TargetName" = "8:BC-401 Bao cao hien trang su dung tai san khac - theo don vi.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1840,10 +1859,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CF36E8524AB540BAB49A8A1D75DAE393"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CFBFBFC51B2440C19216B9BECF6B3E04"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-410 Báo cáo hiện trạng sử dụng ô tô - tổng hợp chung.xls"
-            "TargetName" = "8:BC-410 Báo cáo hiện trạng sử dụng ô tô - tổng hợp chung.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-18 Bao cao ke khai nha, tru so lam viec.xls"
+            "TargetName" = "8:BC-18 Bao cao ke khai nha, tru so lam viec.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1860,10 +1879,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D219BBE171FC42C6AC06F64DDB006678"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D1D0316E6FC541EBAFFA6A38A2936EBD"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-05 Báo cáo đề nghị xử lý ô tô.xls"
-            "TargetName" = "8:BC-05 Báo cáo đề nghị xử lý ô tô.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-321 Bao cao hien trang su dung nha dat - theo don vi.xls"
+            "TargetName" = "8:BC-321 Bao cao hien trang su dung nha dat - theo don vi.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1880,10 +1899,30 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E9A00201F70B424197C526E62F983F21"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D53733529AC0460CB6CE41EBFBCC6DBB"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-320 Báo cáo hiện trạng sử dụng nhà đất - theo loại hình.xls"
-            "TargetName" = "8:BC-320 Báo cáo hiện trạng sử dụng nhà đất - theo loại hình.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-400 Bao cao hien trang su dung tai san khac - tong hop chung.xls"
+            "TargetName" = "8:BC-400 Bao cao hien trang su dung tai san khac - tong hop chung.xls"
+            "Tag" = "8:"
+            "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D86AC64DFE2E4E63A20DEA07904A7F21"
+            {
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-24 Bao cao de nghi xu ly tai san khac.xls"
+            "TargetName" = "8:BC-24 Bao cao de nghi xu ly tai san khac.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1931,10 +1970,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EA8173C50F7642F5B5DE8E326F35AE1C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC49349FD1EB44BDBF2E923E6FDE3CFC"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\F706_BaoCaoTongHopCVGV.xls"
-            "TargetName" = "8:F706_BaoCaoTongHopCVGV.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-17 Bao cao de nghi xu ly nha, tru so lam viec.xls"
+            "TargetName" = "8:BC-17 Bao cao de nghi xu ly nha, tru so lam viec.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -1951,10 +1990,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F727150DFA234C81869DC6A2FE33364A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F7F42EB7DEA8493B9273A67F4515CD7A"
             {
-            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-319 Báo cáo hiện trạng sử dụng nhà đất - tổng hợp chung.xls"
-            "TargetName" = "8:BC-319 Báo cáo hiện trạng sử dụng nhà đất - tổng hợp chung.xls"
+            "SourcePath" = "8:..\\QltsForm\\Reports\\Templates\\BC-25 Bao cao ke khai tai san khac co nguyen gia tren 500 trieu.xls"
+            "TargetName" = "8:BC-25 Bao cao ke khai tai san khac co nguyen gia tren 500 trieu.xls"
             "Tag" = "8:"
             "Folder" = "8:_D25969B5391544BABBB60B173EA7D12A"
             "Condition" = "8:"
@@ -2062,7 +2101,7 @@
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_0800737C705F4781BCED16FBC010AAAB"
                     {
-                    "Name" = "8:QuanLyTaiSan"
+                    "Name" = "8:Reports"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
@@ -2123,7 +2162,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BKI_QLTS_setup"
         "ProductCode" = "8:{858AE58A-73F4-433B-9D0D-E0DBB3B5652B}"
-        "PackageCode" = "8:{6DE94228-427D-433E-AB48-69F6659B32DF}"
+        "PackageCode" = "8:{11637D45-37C4-4305-8A88-E1D616794E4E}"
         "UpgradeCode" = "8:{D7B446BF-6C83-4798-979B-83758E874A20}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -2440,7 +2479,7 @@
                             "ContextData" = "8:1;True=1;False=0"
                             "Attributes" = "3:0"
                             "Setting" = "3:0"
-                            "Value" = "3:1"
+                            "Value" = "3:0"
                             "DefaultValue" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -2780,7 +2819,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CD25A564E6FD4BA3BA6777581E483A13"
             {
-            "SourcePath" = "8:..\\QltsForm\\obj\\x86\\Release\\QltsForm.exe"
+            "SourcePath" = "8:..\\QltsForm\\obj\\Debug\\QltsForm.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D76805D4698D4EF3BF20E80A2B743594"
