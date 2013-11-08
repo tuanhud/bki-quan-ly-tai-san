@@ -7,36 +7,36 @@ namespace WebUS
     public class TEN_BAO_CAO
     {
         //BAO CAO OTO
-        public const string BCDM_OTO_KE_KHAI = "BC-02 Báo cáo kê khai ô tô.xls";
-        public const string BCDM_OTO_DE_NGHI_XU_LY = "BC-05 Báo cáo đề nghị xử lý ô tô.xls";
-        public const string BCDM_OTO_THONG_KE = "BC-01 Báo cáo thống kê ô tô.xls";
-        public const string BCDM_OTO_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-23 BCDM-OTO-DVTCTC.xls";
+        public const string BCDM_OTO_KE_KHAI = "BC-02 Bao cao ke khai o to.xls";
+        public const string BCDM_OTO_DE_NGHI_XU_LY = "BC-05 Bao cao de nghi xu ly o to.xls";
+        public const string BCDM_OTO_THONG_KE = "BC-01 Bao cao thong ke o to.xls";
+        public const string BCDM_OTO_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-23 Bao cao o to giao cho don vi tu chu tai chinh.xls";
         //BAO CAO TRU SO LAM VIEC
-        public const string BCDM_TSLM_KE_KHAI = "BC-18 Báo cáo kê khai nhà, trụ sở làm việc.xls";
-        public const string BCDM_TSLM_DE_NGHI_XU_LY = "BC-17 Báo cáo đề nghị xử lý nhà, trụ sở làm việc.xls";
-        public const string BCDM_TSLM_THONG_KE = "BC-19 Báo cáo thống kê nhà, trụ sở làm việc.xls";
-        public const string BCDM_TSLM_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-04 Báo cáo danh mục nhà giao cho đơn vị tự chủ tài chính.xls";
+        public const string BCDM_TSLM_KE_KHAI = "BC-18 Bao cao ke khai nha, tru so lam viec.xls";
+        public const string BCDM_TSLM_DE_NGHI_XU_LY = "BC-17 Bao cao de nghi xu ly nha, tru so lam viec.xls";
+        public const string BCDM_TSLM_THONG_KE = "BC-19 Bao cao thong ke nha, tru so lam viec.xls";
+        public const string BCDM_TSLM_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-04 Bao cao danh muc nha giao cho don vi tu chu tai chinh.xls";
         //BAO CAO TAI SAN KHAC
-        public const string BCDM_TSK = "BC-26 Báo cáo danh mục tài sản khác.xls";
-        public const string BCDM_TSK_DE_NGHI_XU_LY = "BC-24 Báo cáo đề nghị xử lý tài sản khác.xls";
-        public const string BCDM_TST_TREN500TRIEU_KK = "BC-25 Báo cáo kê khai tài sản khác có nguyên giá trên 500 triệu.xls";
-        public const string BCDM_TSK_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-28 Báo cáo tài sản khác giao cho đơn vị tự chủ tài chính.xls";
+        public const string BCDM_TSK = "BC-26 Bao cao danh muc tai san khac.xls";
+        public const string BCDM_TSK_DE_NGHI_XU_LY = "BC-24 Bao cao de nghi xu ly tai san khac.xls";
+        public const string BCDM_TST_TREN500TRIEU_KK = "BC-25 Bao cao ke khai tai san khac co nguyen gia tren 500 trieu.xls";
+        public const string BCDM_TSK_GIAO_CHO_DON_VI_CONG_LAP_TU_CHU_TAI_CHINH = "BC-28 Bao cao tai san khac giao cho don vi tu chu tai chinh.xls";
         //Bao cao tong hop NHA DAT
-        public const string BCTH_HTSD_THC = "BC-319 Báo cáo hiện trạng sử dụng nhà đất - tổng hợp chung.xls";
-        public const string BCTH_HTSD_LH = "BC-320 Báo cáo hiện trạng sử dụng nhà đất - theo loại hình.xls";
-        public const string BCTH_HTSD_DV = "BC-321 Báo cáo hiện trạng sử dụng nhà đất - theo đơn vị.xls";
+        public const string BCTH_HTSD_THC = "BC-319 Bao cao hien trang su dung nha dat - tong hop chung.xls";
+        public const string BCTH_HTSD_LH = "BC-320 Bao cao hien trang su dung nha dat - theo loai hinh.xls";
+        public const string BCTH_HTSD_DV = "BC-321 Bao cao hien trang su dung nha dat - theo don vi.xls";
         //Bao cao tong hop oto
-        public const string BCTH_THSD_OTO_THC = "BC-410 Báo cáo hiện trạng sử dụng ô tô - tổng hợp chung.xls";
+        public const string BCTH_THSD_OTO_THC = "BC-410 Bao cao hien trang su dung o to - tong hop chung.xls";
         public const string BCTH_THSD_OTO_LH = "";
-        public const string BCTH_THSD_OTO_DV = "BC-411 Báo cáo hiện trạng sử dụng ô tô - theo đơn vị.xls";
+        public const string BCTH_THSD_OTO_DV = "BC-411 Bao cao hien trang su dung o to - theo don vi.xls";
         //Bao cao tong hop tai san khac
-        public const string BCTH_THSD_TSK_THC = "BC-420 Báo cáo hiện trạng sử dụng tài sản khác - tổng hợp chung.xls";
+        public const string BCTH_THSD_TSK_THC = "BC-420 Bao cao hien trang su dung tai san khac - tong hop chung.xls";
         public const string BCTH_THSD_TSK_LH = "";
-        public const string BCTH_THSD_TSK_DV = "BC-421 Báo cáo hiện trạng sử dụng tài sản khác - theo đơn vị.xls";
+        public const string BCTH_THSD_TSK_DV = "BC-421 Bao cao hien trang su dung tai san khac - theo don vi.xls";
         //Bao cao tang giam tai san
-        public const string BCTH_TGTS_THC = "BC-330 Báo cáo tăng giảm tài sản - tổng hợp chung.xls";
-        public const string BCTH_TGTS_LH = "BC-331 Báo cáo tăng giảm tài sản - chi tiết theo loại hình đơn vị.xls";
-        public const string BCTH_TGTS_DV = "BC-332 Báo cáo tăng giảm tài sản - chi tiết theo từng đơn vị.xls";
+        public const string BCTH_TGTS_THC = "BC-330 Bao cao tang giam tai san - tong hop chung.xls";
+        public const string BCTH_TGTS_LH = "BC-331 Bao cao tang giam tai san - chi tiet theo loai hinh don vi.xls";
+        public const string BCTH_TGTS_DV = "BC-332 Bao cao tang giam tai san - chi tiet theo tung don vi.xls";
     }
     public class LOAI_BAO_CAO
     {
