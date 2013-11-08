@@ -192,9 +192,9 @@ public partial class BaoCao_F206_TH_HTSD_oto_Tong_hop_chung : System.Web.UI.Page
                         , "DS tong hop chung nha dat.xls"
                         ); // 0 và 1 là số thứ tự 2 cột: Sửa, Xóa
              */
-            format_grid(false);
-            export_excel();
             format_grid(true);
+            export_excel();
+            format_grid(false);
         }
         catch (Exception ex)
         {
