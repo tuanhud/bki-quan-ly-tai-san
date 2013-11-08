@@ -209,19 +209,16 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         {
             v_us_dm_dat.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DA_THANH_LY;
             v_us_dm_dat.Update();
-            return;
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
         {
             v_us_dm_dat.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DA_DIEU_CHUYEN;
             v_us_dm_dat.Update();
-            return;
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.TRANG_CAP_MUA_MOI.ToString())
         {
             v_us_dm_dat.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DANG_SU_DUNG;
             v_us_dm_dat.Update();
-            return;
         }
 
         m_lbl_message.Text = "Cập nhật thành công";

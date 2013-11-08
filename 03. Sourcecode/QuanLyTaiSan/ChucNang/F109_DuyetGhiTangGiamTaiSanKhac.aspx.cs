@@ -216,7 +216,8 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         m_us_gd_tang_giam_tai_san.dcID_TAI_SAN = v_us_dm_tai_san_khac.dcID;
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_tai_san_khac.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
-        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_tai_san_khac.dcKINH_DOANH + v_us_dm_tai_san_khac.dcKHONG_KINH_DOANH;
+        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = 
+            v_us_dm_tai_san_khac.dcKINH_DOANH + v_us_dm_tai_san_khac.dcKHONG_KINH_DOANH + v_us_dm_tai_san_khac.dcQLNN + v_us_dm_tai_san_khac.dcHD_KHAC;
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_tai_san_khac.dcNGUON_NS + v_us_dm_tai_san_khac.dcNGUON_KHAC;
 
         m_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
@@ -225,24 +226,20 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         m_us_gd_tang_giam_tai_san.Insert();
 
         // Phần cập nhật thông tin cho DM
-        // Phần cập nhật thông tin cho DM
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString())
         {
             v_us_dm_tai_san_khac.dcID_TRANG_THAI = ID_TRANG_THAI_TAI_SAN_KHAC.DA_THANH_LY;
             v_us_dm_tai_san_khac.Update();
-            return;
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
         {
             v_us_dm_tai_san_khac.dcID_TRANG_THAI = ID_TRANG_THAI_TAI_SAN_KHAC.DA_DIEU_CHUYEN;
             v_us_dm_tai_san_khac.Update();
-            return;
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.TRANG_CAP_MUA_MOI.ToString())
         {
             v_us_dm_tai_san_khac.dcID_TRANG_THAI = ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG;
             v_us_dm_tai_san_khac.Update();
-            return;
         }
 
         m_lbl_mess.Text = "Cập nhật thành công";
