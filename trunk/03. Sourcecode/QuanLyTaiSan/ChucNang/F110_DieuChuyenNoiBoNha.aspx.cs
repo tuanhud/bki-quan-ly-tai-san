@@ -296,7 +296,10 @@ public partial class ChucNang_F110_DieuChuyenNoiBoNha : System.Web.UI.Page
         v_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DANG_SU_DUNG;
         v_us_dm_nha.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
         v_us_dm_nha.Update();
-        m_lbl_message.Text = "Cập nhật thành công";
+        string v_str_dv_cu = m_cbo_don_vi_su_dung_tai_san_up.Text;
+        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.Text;
+        m_lbl_message.Text = "Đã điều chuyển tài sản " + v_us_dm_nha.strTEN_TAI_SAN
+            + " từ đơn vị " + v_str_dv_cu + " đến đơn vị " + v_str_dv_moi;
     }
 
     //private void select_loai_tang_giam()
