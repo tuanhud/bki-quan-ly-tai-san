@@ -235,7 +235,7 @@
                         <span class="cssManField">Ngày giảm tài sản</span>
                     </td>
                     <td>
-                        <ew:CalendarPopup ID="m_dat_ngay_tang_giam0" runat="server" 
+                        <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" 
                             ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
                             GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
