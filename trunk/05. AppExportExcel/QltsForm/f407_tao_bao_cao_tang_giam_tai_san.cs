@@ -525,17 +525,17 @@ namespace QltsForm
         #region Private Methods
         private void export_excel()
         {
-            CExcelReport v_obj_exe_report = new CExcelReport(TEN_BAO_CAO.BCTH_TGTS, 16, 1);
+            CExcelReport v_obj_exe_report = new CExcelReport();
             switch (m_e_form_mode)
             {
                 case eFormMode.TONG_HOP_CHUNG:
-                    v_obj_exe_report.AddFindAndReplaceItem("<LOAI_BAO_CAO>", "Phần 1: Tổng hợp chung");
+                    v_obj_exe_report = new CExcelReport(TEN_BAO_CAO.BCTH_TGTS_THC, 16, 1);
                     break;
                 case eFormMode.CHI_TIET_THEO_LOAI_HINH:
-                    v_obj_exe_report.AddFindAndReplaceItem("<LOAI_BAO_CAO>", "Phần 2: Chi tiết theo loại hình đơn vị");
+                    v_obj_exe_report = new CExcelReport(TEN_BAO_CAO.BCTH_TGTS_LH, 16, 1);
                     break;
                 case eFormMode.CHI_TIET_THEO_TUNG_DON_VI:
-                    v_obj_exe_report.AddFindAndReplaceItem("<LOAI_BAO_CAO>", "Phần 3: Chi tiết theo từng đơn vị");
+                    v_obj_exe_report = new CExcelReport(TEN_BAO_CAO.BCTH_TGTS_DV, 16, 1);
                     break;
 
             }
