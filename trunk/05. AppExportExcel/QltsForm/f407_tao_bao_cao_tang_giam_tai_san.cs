@@ -236,7 +236,7 @@ namespace QltsForm
             this.m_lbl.Name = "m_lbl";
             this.m_lbl.Size = new System.Drawing.Size(896, 50);
             this.m_lbl.TabIndex = 21;
-            this.m_lbl.Text = "Tạo báo cáo tăng giảm tài sản";
+            this.m_lbl.Text = "BÁO CÁO TĂNG GIẢM TẢI SẢN";
             this.m_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
