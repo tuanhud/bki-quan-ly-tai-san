@@ -258,6 +258,18 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     {
         m_lbl_mess.Text = "";
     }
+
+    private void clear_thong_tin_tai_san()
+    {
+        m_lbl_ten_tai_san.Text = "";
+        m_lbl_ma_tai_san.Text = "";
+        m_lbl_cap_hang.Text = "";
+        m_lbl_nam_xay_dung.Text = "";
+        m_lbl_ngay_thang_nam_du_dung.Text = "";
+        m_lbl_nguyen_gia_nguon_ns.Text = "";
+        m_lbl_nguyen_gia_nguon_khac.Text = "";
+        m_lbl_gia_tri_con_lai.Text = "";
+    }
     #endregion
 
     #region Events
@@ -328,6 +340,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e) {
         try {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_khu_dat_up();
@@ -341,6 +354,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     protected void m_cbo_don_vi_chu_quan_up_SelectedIndexChanged(object sender, EventArgs e) {
         try {
             clear_message();
+            clear_thong_tin_tai_san();  
             load_data_to_dv_su_dung_up();
             load_data_to_khu_dat_up();
             load_data_to_ten_tai_san();
@@ -353,6 +367,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     protected void m_cbo_don_vi_su_dung_up_SelectedIndexChanged(object sender, EventArgs e) {
         try {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_khu_dat_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
@@ -366,6 +381,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -379,6 +395,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_from_us();
         }
         catch (Exception v_e)
