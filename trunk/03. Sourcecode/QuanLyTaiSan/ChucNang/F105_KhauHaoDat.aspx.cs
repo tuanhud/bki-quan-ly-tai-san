@@ -163,12 +163,16 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 
     private void clear_form_data()
     {
+        m_txt_ma_phieu.Text = "";
+        m_txt_gia_tri_khau_hao.Text = "";
+    }
+
+    private void clear_thong_tin_tai_san()
+    {
         m_lbl_ma_tai_san.Text = "";
         m_lbl_dt_khuon_vien.Text = "";
         m_lbl_gt_theo_so_ke_toan.Text = "";
         m_lbl_so_nam_su_dung.Text = "";
-        m_txt_ma_phieu.Text = "";
-        m_txt_gia_tri_khau_hao.Text = "";
     }
 
     private bool check_validate_data_is_valid()
@@ -251,6 +255,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_dia_chi();
@@ -266,6 +271,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_dv_su_dung_up();
             load_data_to_dia_chi();
             load_data_from_us();
@@ -281,6 +287,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_dia_chi();
             load_data_from_us();
         }
@@ -319,6 +326,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_from_us();
         }
         catch (Exception v_e)

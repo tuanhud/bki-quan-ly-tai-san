@@ -287,6 +287,18 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
             return;
         }
     }
+
+    private void clear_thong_tin_tai_san()
+    {
+        m_lbl_ma_tai_san.Text = "";
+        m_lbl_ky_hieu.Text = "";
+        m_lbl_nuoc_san_xuat.Text = "";
+        m_lbl_nam_san_xuat.Text = "";
+        m_lbl_ngay_thang_nam_su_dung.Text = "";
+        m_lbl_nguyen_gia_nguon_ns.Text = "";
+        m_lbl_nguyen_gia_nguon_khac.Text = "";
+        m_lbl_gia_tri_con_lai.Text = "";
+    }
     #endregion
 
     #region Events
@@ -313,6 +325,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_dv_chu_quan_up();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
@@ -328,6 +341,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_dv_su_dung_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
@@ -342,6 +356,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
@@ -355,6 +370,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_from_us();
         }
         catch (Exception v_e)
@@ -367,6 +383,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         try
         {
             clear_message();
+            clear_thong_tin_tai_san();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
