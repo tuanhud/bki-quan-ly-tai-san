@@ -244,7 +244,8 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcID_TAI_SAN = v_us_dm_oto.dcID;
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_oto.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
-        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_oto.dcKINH_DOANH + v_us_dm_oto.dcKHONG_KINH_DOANH;
+        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = 
+            v_us_dm_oto.dcKINH_DOANH + v_us_dm_oto.dcKHONG_KINH_DOANH + v_us_dm_oto.dcKINH_DOANH + v_us_dm_oto.dcKHONG_KINH_DOANH + v_us_dm_oto.dcHD_KHAC + v_us_dm_oto.dcQLNN;
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_oto.dcNGUON_NS + v_us_dm_oto.dcNGUON_KHAC;
 
         m_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
@@ -257,19 +258,16 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
         {
             v_us_dm_oto.dcID_TRANG_THAI = ID_TRANG_THAI_OTO.DA_THANH_LY;
             v_us_dm_oto.Update();
-            return;
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
         {
             v_us_dm_oto.dcID_TRANG_THAI = ID_TRANG_THAI_OTO.DA_DIEU_CHUYEN;
             v_us_dm_oto.Update();
-            return;
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.TRANG_CAP_MUA_MOI.ToString())
         {
             v_us_dm_oto.dcID_TRANG_THAI = ID_TRANG_THAI_OTO.DANG_SU_DUNG;
             v_us_dm_oto.Update();
-            return;
         }
         m_lbl_message.Text = "Cập nhật thành công";
     }
