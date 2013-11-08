@@ -2162,7 +2162,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BKI_QLTS_setup"
         "ProductCode" = "8:{858AE58A-73F4-433B-9D0D-E0DBB3B5652B}"
-        "PackageCode" = "8:{11637D45-37C4-4305-8A88-E1D616794E4E}"
+        "PackageCode" = "8:{E8CA03A4-EF13-4037-B7F2-74E907C1418B}"
         "UpgradeCode" = "8:{D7B446BF-6C83-4798-979B-83758E874A20}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -2479,7 +2479,7 @@
                             "ContextData" = "8:1;True=1;False=0"
                             "Attributes" = "3:0"
                             "Setting" = "3:0"
-                            "Value" = "3:0"
+                            "Value" = "3:1"
                             "DefaultValue" = "3:0"
                             "UsePlugInResources" = "11:TRUE"
                             }
