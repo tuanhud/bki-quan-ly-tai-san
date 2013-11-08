@@ -117,7 +117,7 @@ public partial class BaoCao_F307_TH_HTSD_nha_dat_Tong_hop_chung : System.Web.UI.
         load_data_to_grid();
         WinformReport.export_gridview_2_excel(
                        m_grv_tai_san_nha_dat
-                        , "Báo cáo THSD nhà đất - tổng hợp chung.xls"
+                        , "Báo cáo HTSD nhà đất - tổng hợp chung.xls"
                         );
     }
     #endregion
