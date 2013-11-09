@@ -135,12 +135,12 @@ public partial class BaoCao_F205_TH_HTSD_tai_san_khac_Chi_tiet_theo_tung_don_vi 
             if (!IsPostBack)
             {
                 WinFormControls.load_data_to_cbo_bo_tinh(
-                    WinFormControls.eTAT_CA.YES
+                    WinFormControls.eTAT_CA.NO
                     , m_cbo_bo_tinh
                     );
                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_chu_quan
                     );
                 format_grid(false);

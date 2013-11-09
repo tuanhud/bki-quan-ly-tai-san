@@ -268,21 +268,25 @@ public partial class BaoCao_F310_BCDVCQ_Thay_doi_thong_tin_Dat : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
-
-    protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
-             WinFormControls.load_data_to_cbo_dia_chi(
-                     CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
-                   , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
-                   , WinFormControls.eTAT_CA.YES
-                   , m_cbo_dia_chi);
+    protected void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            WinFormControls.load_data_to_cbo_dia_chi(
+                    CIPConvert.ToDecimal(m_cbo_bo_tinh.SelectedValue)
+                  , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan.SelectedValue)
+                  , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_tai_san.SelectedValue)
+                  , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue)
+                  , WinFormControls.eTAT_CA.YES
+                  , m_cbo_dia_chi);
         }
-        catch (Exception v_e) {
-            
+        catch (Exception v_e)
+        {
+
             CSystemLog_301.ExceptionHandle(v_e);
         }
     }
+    #endregion
+
+    
 }
