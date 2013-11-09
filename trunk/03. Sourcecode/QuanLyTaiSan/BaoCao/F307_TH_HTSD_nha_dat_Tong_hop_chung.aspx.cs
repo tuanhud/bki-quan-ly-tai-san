@@ -131,13 +131,13 @@ public partial class BaoCao_F307_TH_HTSD_nha_dat_Tong_hop_chung : System.Web.UI.
             {
                 //1. load data to combobox bộ, tỉnh 
                 WinFormControls.load_data_to_cbo_bo_tinh(
-                         WinFormControls.eTAT_CA.YES
+                         WinFormControls.eTAT_CA.NO
                          , m_cbo_bo_tinh);
 
                 //2. load data to combobox đơn vị chủ quản
                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_chu_quan);
                 format_grid(false);
                 load_data_to_grid();

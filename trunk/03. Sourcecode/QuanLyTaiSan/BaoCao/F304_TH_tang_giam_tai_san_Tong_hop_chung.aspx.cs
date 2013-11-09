@@ -173,12 +173,12 @@ public partial class BaoCao_F304_TH_tang_giam_tai_san_Tong_hop_chung : System.We
             if (!IsPostBack)
             {
                 WinFormControls.load_data_to_cbo_bo_tinh(
-                    WinFormControls.eTAT_CA.YES
+                    WinFormControls.eTAT_CA.NO
                     , m_cbo_bo_tinh
                     );
                 WinFormControls.load_data_to_cbo_don_vi_chu_quan(
                     m_cbo_bo_tinh.SelectedValue
-                    , WinFormControls.eTAT_CA.YES
+                    , WinFormControls.eTAT_CA.NO
                     , m_cbo_don_vi_chu_quan
                     );
                 format_grid(false);
