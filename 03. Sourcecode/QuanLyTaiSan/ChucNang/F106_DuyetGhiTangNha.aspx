@@ -199,9 +199,12 @@
                             Text="*" ControlToValidate="m_txt_ma_phieu"></asp:RequiredFieldValidator>
                     </td>
                     <td align="right" style="width: 15%">
+                        <asp:Label ID="m_lbl_ten_don_vi_nhan_dieu_chuyen" runat="server" 
+                        Text="Đơn vị nhận điều chuyển" CssClass="cssManField"></asp:Label>
                     </td>
                     <td align="left" style="width: 30%">
-                        &nbsp;</td>
+                        <asp:TextBox ID="m_txt_don_vi_nhan_dieu_chuyen" runat="server" Width="85%"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 15%">
