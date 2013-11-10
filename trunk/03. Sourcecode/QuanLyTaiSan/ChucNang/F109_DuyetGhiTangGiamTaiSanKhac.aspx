@@ -222,9 +222,13 @@
                     </td>
                     <td align="right" style="width: 15%">
                         
+                        <asp:Label ID="m_lbl_ten_don_vi_nhan_dieu_chuyen" runat="server" 
+                            CssClass="cssManField" Text="Đơn vị nhận điều chuyển"></asp:Label>
+                        
                     </td>
                     <td align="left" style="width: 30%">
-                        &nbsp;</td>
+                        <asp:TextBox ID="m_txt_don_vi_nhan_dieu_chuyen" runat="server" Width="85%"></asp:TextBox>
+                    </td>
                     <td align="left" style="width: 1%;">
                     </td>
                 </tr>
