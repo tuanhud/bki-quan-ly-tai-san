@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using IP.Core.IPCommon;
 
 namespace QltsForm
 {
@@ -21,6 +22,18 @@ namespace QltsForm
             this.ShowDialog();
         }
         #endregion
+
+        private void m_cmd_tro_ve_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
     }
 }
