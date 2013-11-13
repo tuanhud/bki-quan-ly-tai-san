@@ -54,9 +54,9 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(168, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(452, 24);
+            this.label3.Size = new System.Drawing.Size(342, 24);
             this.label3.TabIndex = 66;
-            this.label3.Text = "Version 1.0";
+            this.label3.Text = "   Version 1.0";
             // 
             // label2
             // 
@@ -65,9 +65,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(168, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(452, 24);
+            this.label2.Size = new System.Drawing.Size(342, 24);
             this.label2.TabIndex = 65;
-            this.label2.Text = "QuanLyTaiSan";
+            this.label2.Text = " QuanLyTaiSan";
             // 
             // ImageList
             // 
@@ -81,7 +81,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(168, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(452, 48);
+            this.label1.Size = new System.Drawing.Size(342, 48);
             this.label1.TabIndex = 64;
             this.label1.Text = "BKIndex Group";
             // 
@@ -110,7 +110,7 @@
             // 
             this.groupBox2.Location = new System.Drawing.Point(-69, 259);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(480, 8);
+            this.groupBox2.Size = new System.Drawing.Size(575, 8);
             this.groupBox2.TabIndex = 70;
             this.groupBox2.TabStop = false;
             // 
@@ -129,7 +129,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(328, 24);
             this.label7.TabIndex = 68;
-            this.label7.Text = "Di động: 09";
+            this.label7.Text = "Di động: 0168 994 3283";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_cmd_tro_ve
@@ -142,11 +142,12 @@
             this.m_cmd_tro_ve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tro_ve.ImageIndex = 0;
             this.m_cmd_tro_ve.ImageList = this.ImageList;
-            this.m_cmd_tro_ve.Location = new System.Drawing.Point(524, 4);
+            this.m_cmd_tro_ve.Location = new System.Drawing.Point(414, 4);
             this.m_cmd_tro_ve.Name = "m_cmd_tro_ve";
             this.m_cmd_tro_ve.Size = new System.Drawing.Size(92, 54);
             this.m_cmd_tro_ve.TabIndex = 5;
             this.m_cmd_tro_ve.Text = "OK [Esc]";
+            this.m_cmd_tro_ve.Click += new System.EventHandler(this.m_cmd_tro_ve_Click);
             // 
             // label5
             // 
@@ -155,7 +156,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(4, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(520, 19);
+            this.label5.Size = new System.Drawing.Size(410, 19);
             this.label5.TabIndex = 7;
             this.label5.Text = "Bản quyền của BKIndex Group.";
             // 
@@ -178,7 +179,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 271);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(620, 62);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(510, 62);
             this.m_pnl_out_place_dm.TabIndex = 63;
             // 
             // label4
@@ -187,7 +188,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(520, 35);
+            this.label4.Size = new System.Drawing.Size(410, 35);
             this.label4.TabIndex = 6;
             this.label4.Text = "Sản phẩm này nằm trong bộ sản phẩm dành cho ...";
             // 
@@ -195,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 333);
+            this.ClientSize = new System.Drawing.Size(510, 333);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -206,7 +207,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "f1001_About";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giới thiệu";
