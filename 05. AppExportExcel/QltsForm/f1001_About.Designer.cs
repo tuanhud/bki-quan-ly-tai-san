@@ -104,7 +104,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(328, 24);
             this.linkLabel1.TabIndex = 71;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Email: ";
+            this.linkLabel1.Text = "Email: anzvanie1510@gmail.com";
             // 
             // groupBox2
             // 
@@ -190,7 +190,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(410, 35);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Sản phẩm này nằm trong bộ sản phẩm dành cho ...";
+            this.label4.Text = "Sản phẩm này nằm trong bộ sản phẩm Quản Lý Tài Sản dành cho Tổng cục đường bộ";
             // 
             // f1001_About
             // 
