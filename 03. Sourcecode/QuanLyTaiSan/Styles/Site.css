@@ -177,9 +177,9 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
   display: block;
   padding: 8px 20px;
   margin: 0;
-  border-radius: 5px;
+  /*border-radius: 5px;
   -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  -moz-border-radius: 5px;*/
 }
 #wapper a:hover {
   background: #000;
@@ -197,12 +197,12 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
 }
 #wapper ul ul li a:link 
 {
+    border-bottom: 1px dashed Gray;
     font-weight: bold;
 }
 #wapper ul ul li:hover a,
 #wapper li:hover li a {
   background: none;
-  border: none;
   color: #666;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -218,9 +218,9 @@ font-family:Verdana, Arial, Helvetica, sans-serif;
 #wapper ul ul a:hover {
   background: #007ccf url(../Images/overlay.png) repeat-x 0 -100px !important;
   color: #fff !important;
-  -webkit-border-radius: 5px;
+  /*-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  border-radius: 5px;
+  border-radius: 5px;*/
 }
 #wapper li:hover > ul, #wapper li li:hover > ul, #wapper li li li:hover > ul{
 display:block;
@@ -255,7 +255,9 @@ margin:-40px 0px 0px -5px;
   padding: 3px;
 }
 #wapper ul ul a,
-#wapper ul ul a:link {
+#wapper ul ul a:link 
+{
+    border-bottom: 1px dashed Gray; 
   font-weight: normal;
   font-size: 12px;
 }
