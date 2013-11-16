@@ -316,6 +316,20 @@ namespace WebUS
             cstored.addNVarcharInputParam("@ip_str_user_name", v_str_user_name);
             cstored.fillDataSetByCommand(this, op_ds_don_vi);
         }
+
+        public void FillDataSet_Load_data_to_grid_danh_muc_don_vi_by_key_word(
+            DS_DM_DON_VI op_ds_don_vi
+            , decimal v_dc_id_loai_don_vi
+            , string v_str_user_name
+            , string v_str_key_word)
+        {
+            CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_Load_to_grid_danh_muc_by_key_word");
+            cstored.addDecimalInputParam("@ip_dc_loai_don_vi", v_dc_id_loai_don_vi);
+            cstored.addNVarcharInputParam("@ip_str_user_name", v_str_user_name);
+            cstored.addNVarcharInputParam("@ip_str_key_word", v_str_key_word);
+            cstored.fillDataSetByCommand(this, op_ds_don_vi);
+        }
+
         public void FillDataset(
             decimal ip_id_user_group
             , bool is_user_group_using_data
