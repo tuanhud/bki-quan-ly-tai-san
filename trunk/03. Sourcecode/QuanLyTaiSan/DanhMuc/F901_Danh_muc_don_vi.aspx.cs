@@ -175,10 +175,11 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
                     break;
             }
             m_ds_don_vi.Clear();
-            m_us_don_vi.FillDataset_Load_data_to_grid_danh_muc_don_vi(
+            m_us_don_vi.FillDataSet_Load_data_to_grid_danh_muc_don_vi_by_key_word(
                 m_ds_don_vi
                 , CIPConvert.ToDecimal(v_str_dc_id_loai_don_vi)
                 , v_str_user_name
+                , m_txt_tim_kiem.Text.Trim()
                 );
             m_grv_dm_don_vi.DataSource = m_ds_don_vi.DM_DON_VI;
             load_title(v_str_loai_don_vi);
@@ -516,5 +517,17 @@ public partial class DanhMuc_F901_danh_muc_don_vi : System.Web.UI.Page
         }
 
     }
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_2_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
+    
 }

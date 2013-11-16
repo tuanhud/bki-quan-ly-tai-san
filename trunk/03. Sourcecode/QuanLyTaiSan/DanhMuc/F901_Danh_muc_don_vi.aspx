@@ -109,6 +109,14 @@
                     </td>
                 </tr>
                 <tr>
+                    <td align="center">
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="200px" CssClass="cssTextBox"></asp:TextBox>
+                        &nbsp;
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssButton"
+                            Height="24px" Width="98px" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2" align="center">
                         <asp:HiddenField ID="m_hdf_id_don_vi" runat="server" Visible="False" />
                         <asp:HiddenField ID="m_hdf_form_mode" runat="server" Visible="False" />
@@ -123,19 +131,19 @@
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                            <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
-                                                OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
+                                <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
 
 
 
                      <img src="../Images/Button/deletered.png" alt="Delete" />
                                 
 
-                                            </asp:LinkButton>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center"
                                     Visible="False">
                                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
