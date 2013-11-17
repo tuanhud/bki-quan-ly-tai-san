@@ -211,7 +211,7 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 15%">
-                        <span class="cssManField">Mã phiếu</span>
+                        <span class="cssManField">Mã phiếu *</span>
                     </td>
                     <td align="left" style="width: 30%">
                         <asp:TextBox ID="m_txt_ma_phieu" runat="server" CssClass="cssTextBox" Width="85%"></asp:TextBox>
@@ -223,11 +223,14 @@
                     <td align="right" style="width: 15%">
                         
                         <asp:Label ID="m_lbl_ten_don_vi_nhan_dieu_chuyen" runat="server" 
-                            CssClass="cssManField" Text="Đơn vị nhận điều chuyển"></asp:Label>
+                            CssClass="cssManField" Text="Đơn vị nhận điều chuyển *"></asp:Label>
                         
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:TextBox ID="m_txt_don_vi_nhan_dieu_chuyen" runat="server" Width="85%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_don_vi_nhan_dieu_chuyen" runat="server" Width="85%" CssClass="cssTextBox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="m_rfv_don_vi_nhan" runat="server" 
+                            ControlToValidate="m_txt_don_vi_nhan_dieu_chuyen" 
+                            ErrorMessage="Bạn phải nhập Đơn vị nhận điều chuyển" Text="*"></asp:RequiredFieldValidator>
                     </td>
                     <td align="left" style="width: 1%;">
                     </td>

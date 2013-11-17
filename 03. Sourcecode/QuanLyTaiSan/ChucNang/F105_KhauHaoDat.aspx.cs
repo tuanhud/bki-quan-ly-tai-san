@@ -25,6 +25,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
     private void load_form_data()
     {
         clear_form_data();
+        clear_thong_tin_tai_san();
         load_data_trang_thai();
         load_data_to_bo_tinh_up();
         load_data_to_bo_tinh_down();

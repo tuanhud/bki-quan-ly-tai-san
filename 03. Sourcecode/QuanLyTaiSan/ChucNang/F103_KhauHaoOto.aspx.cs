@@ -133,6 +133,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
     {
         m_grv_dm_oto.Columns[0].Visible = Person.Allow2DeleteData();
         clear_form_data();
+        clear_thong_tin_tai_san();
         load_data_to_bo_tinh_up();
         load_data_to_bo_tinh_down();
         load_data_to_cbo_trang_thai_up();
