@@ -243,7 +243,10 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.Insert();
 
         // Phần cập nhật thông tin cho DM
-        update_thong_tin_tai_san(v_us_dm_nha);
+        if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
+        {
+            update_thong_tin_tai_san(v_us_dm_nha);
+        }
 
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString())
         {
