@@ -242,4 +242,10 @@ namespace WebUS
         public const decimal THANH_LY = 633;
         public const decimal TRANG_CAP_MUA_MOI = 637;
     }
+
+    public class ID_DON_VI
+    {
+        public const decimal BO_TINH_KHAC = 238;
+        public const decimal DON_VI_CHU_QUAN_KHAC = 239;
+    }
 }
