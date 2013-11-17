@@ -102,6 +102,8 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
 
     private void load_from_data()
     {
+        clear_form_data();
+        clear_thong_tin_tai_san();
         load_data_to_bo_tinh_up();
         load_data_to_bo_tinh_down();
         load_data_to_dv_chu_quan_up();

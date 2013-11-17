@@ -200,10 +200,13 @@
                     </td>
                     <td align="right" style="width: 15%">
                         <asp:Label ID="m_lbl_ten_don_vi_nhan_dieu_chuyen" runat="server" 
-                        Text="Đơn vị nhận điều chuyển" CssClass="cssManField"></asp:Label>
+                        Text="Đơn vị nhận điều chuyển *" CssClass="cssManField"></asp:Label>
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:TextBox ID="m_txt_don_vi_nhan_dieu_chuyen" runat="server" Width="85%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_don_vi_nhan_dieu_chuyen" runat="server" Width="85%" CssClass="cssTextBox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="m_rfv_don_vi_nhan" runat="server" 
+                            ControlToValidate="m_txt_don_vi_nhan_dieu_chuyen" ErrorMessage="Bạn phải nhập Đơn vị nhận điều chuyển" 
+                            Text="*"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

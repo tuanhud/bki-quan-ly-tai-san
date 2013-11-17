@@ -25,6 +25,7 @@ public partial class ChucNang_F113_DieuChuyenNoiBoTsk : System.Web.UI.Page
     private void load_data_2_form()
     {
         clear_form_data();
+        clear_thong_tin_tai_san();
         load_data_to_bo_tinh_up();
         load_data_to_bo_tinh_down();
         load_data_to_dv_chu_quan_up();

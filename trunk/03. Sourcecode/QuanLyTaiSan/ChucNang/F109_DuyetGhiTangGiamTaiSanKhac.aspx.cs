@@ -25,6 +25,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
     private void load_data_2_form()
     {
         clear_form_data();
+        clear_thong_tin_tai_san();
         load_data_to_bo_tinh_up();
         load_data_to_bo_tinh_down();
         load_data_to_dv_chu_quan_up();
@@ -226,6 +227,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         m_us_gd_tang_giam_tai_san.Insert();
 
         // Phần cập nhật thông tin cho DM
+        update_thong_tin_tai_san(v_us_dm_tai_san_khac);
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString())
         {
             v_us_dm_tai_san_khac.dcID_TRANG_THAI = ID_TRANG_THAI_TAI_SAN_KHAC.DA_THANH_LY;
@@ -279,11 +281,18 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY)
         {
             m_lbl_caption.Text = "CHI TIẾT THANH LÝ TÀI SẢN ĐẤT";
+            m_lbl_ten_don_vi_nhan_dieu_chuyen.Visible = false;
+            m_txt_don_vi_nhan_dieu_chuyen.Visible = false;
+            m_rfv_don_vi_nhan.EnableClientScript = false;
             return;
         }
         if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN)
         {
             m_lbl_caption.Text = "CHI TIẾT ĐIỀU CHUYỂN TÀI SẢN ĐẤT";
+            m_lbl_ten_don_vi_nhan_dieu_chuyen.Visible = true;
+            m_txt_don_vi_nhan_dieu_chuyen.Visible = true;
+            m_txt_don_vi_nhan_dieu_chuyen.Enabled = true;
+            m_rfv_don_vi_nhan.EnableClientScript = true;
             return;
         }
     }
@@ -298,6 +307,37 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         m_lbl_nguyen_gia_nguon_ns.Text = "";
         m_lbl_nguyen_gia_nguon_khac.Text = "";
         m_lbl_gia_tri_con_lai.Text = "";
+    }
+
+    private void update_thong_tin_tai_san(US_DM_TAI_SAN_KHAC op_us_dm_tsk)
+    {
+        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
+        string v_str_ma_don_vi = new Random().Next(1000).ToString();
+        v_us_dm_don_vi.strMA_DON_VI = v_str_ma_don_vi;
+        v_us_dm_don_vi.dcID_DON_VI_CAP_TREN = ID_DON_VI.DON_VI_CHU_QUAN_KHAC;
+        v_us_dm_don_vi.dcID_LOAI_DON_VI = ID_LOAI_DON_VI.DV_SU_DUNG;
+        v_us_dm_don_vi.dcLEVEL_MODE = 3;
+        v_us_dm_don_vi.strTEN_DON_VI = m_txt_don_vi_nhan_dieu_chuyen.Text.Trim();
+        v_us_dm_don_vi.strLOAI_HINH_DON_VI = TEN_LOAI_HINH_DON_VI.DON_VI_SU_NGHIEP_CTCTC;
+
+        v_us_dm_don_vi.Insert();
+
+        decimal v_id_don_vi_moi = v_us_dm_don_vi.dcID;
+        v_us_dm_don_vi.strMA_DON_VI = "DVK" + v_id_don_vi_moi.ToString();
+        v_us_dm_don_vi.Update();
+
+        US_HT_QUAN_HE_SU_DUNG_DU_LIEU v_us_ht_qhsddl = new US_HT_QUAN_HE_SU_DUNG_DU_LIEU();
+        v_us_ht_qhsddl.dcID_DON_VI = v_us_dm_don_vi.dcID;
+        v_us_ht_qhsddl.dcID_USER_GROUP = 2;
+        v_us_ht_qhsddl.Insert();
+
+        v_us_ht_qhsddl = new US_HT_QUAN_HE_SU_DUNG_DU_LIEU();
+        v_us_ht_qhsddl.dcID_DON_VI = v_us_dm_don_vi.dcID;
+        v_us_ht_qhsddl.dcID_USER_GROUP = 5;
+        v_us_ht_qhsddl.Insert();
+
+        op_us_dm_tsk.dcID_DON_VI_SU_DUNG = v_us_dm_don_vi.dcID;
+        op_us_dm_tsk.dcID_DON_VI_CHU_QUAN = ID_DON_VI.DON_VI_CHU_QUAN_KHAC;
     }
     #endregion
 
