@@ -227,7 +227,11 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         m_us_gd_tang_giam_tai_san.Insert();
 
         // Phần cập nhật thông tin cho DM
-        update_thong_tin_tai_san(v_us_dm_tai_san_khac);
+        if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
+        {
+            update_thong_tin_tai_san(v_us_dm_tai_san_khac);
+        }
+
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString())
         {
             v_us_dm_tai_san_khac.dcID_TRANG_THAI = ID_TRANG_THAI_TAI_SAN_KHAC.DA_THANH_LY;
@@ -280,7 +284,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         decimal v_dc_loai_tang_giam = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
         if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY)
         {
-            m_lbl_caption.Text = "CHI TIẾT THANH LÝ TÀI SẢN ĐẤT";
+            m_lbl_caption.Text = "CHI TIẾT THANH LÝ TÀI SẢN KHÁC";
             m_lbl_ten_don_vi_nhan_dieu_chuyen.Visible = false;
             m_txt_don_vi_nhan_dieu_chuyen.Visible = false;
             m_rfv_don_vi_nhan.EnableClientScript = false;
@@ -288,7 +292,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         }
         if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN)
         {
-            m_lbl_caption.Text = "CHI TIẾT ĐIỀU CHUYỂN TÀI SẢN ĐẤT";
+            m_lbl_caption.Text = "CHI TIẾT ĐIỀU CHUYỂN TÀI SẢN KHÁC";
             m_lbl_ten_don_vi_nhan_dieu_chuyen.Visible = true;
             m_txt_don_vi_nhan_dieu_chuyen.Visible = true;
             m_txt_don_vi_nhan_dieu_chuyen.Enabled = true;
