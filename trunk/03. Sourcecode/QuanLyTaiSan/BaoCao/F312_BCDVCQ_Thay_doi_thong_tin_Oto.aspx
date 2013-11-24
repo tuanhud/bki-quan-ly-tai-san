@@ -159,7 +159,7 @@
                 <span class="cssManField">Tìm kiếm:</span>
             </td>
             <td valign="top" colspan="2">
-                <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%"></asp:TextBox>
+                <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%" CssClass="cssTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
