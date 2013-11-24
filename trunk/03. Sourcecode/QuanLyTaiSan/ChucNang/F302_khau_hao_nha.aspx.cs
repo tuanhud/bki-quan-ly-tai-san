@@ -71,7 +71,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
 
     private void load_data_to_grid()
     {
-        m_lbl_danh_sach_khau_hao_nha.Text = "DANH SÁCH CÁC LẦN KHẤU HAO";
+        m_lbl_danh_sach_khau_hao_nha.Text = "DANH SÁCH CÁC LẦN HAO MÒN TÀI SẢN NHÀ";
         US_V_GD_KHAU_HAO_DM_NHA v_us_v_gd_kh_dm_nha = new US_V_GD_KHAU_HAO_DM_NHA();
         DS_V_GD_KHAU_HAO_DM_NHA v_ds_v_gd_kh_dm_nha = new DS_V_GD_KHAU_HAO_DM_NHA();
 

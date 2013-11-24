@@ -347,7 +347,7 @@
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
                         <asp:Label ID="m_lbl_danh_sach_khau_hao_nha" runat="Server" class="cssPageTitle"
-                            Text="DANH SÁCH CÁC LẦN KHẤU HAO"></asp:Label>
+                            Text="DANH SÁCH CÁC LẦN HAO MÒN TÀI SẢN NHÀ"></asp:Label>
                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                         </span>
                     </td>

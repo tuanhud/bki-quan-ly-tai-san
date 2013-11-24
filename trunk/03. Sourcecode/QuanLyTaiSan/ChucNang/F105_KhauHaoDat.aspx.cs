@@ -47,7 +47,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
-        m_lbl_thong_tin_khau_hao_dat.Text = "DANH SÁCH KHẤU HAO ĐẤT";
+        m_lbl_thong_tin_khau_hao_dat.Text = "DANH SÁCH CÁC LẦN HAO MÒN TÀI SẢN ĐẤT";
         US_V_GD_KHAU_HAO_DM_DAT v_us_v_gd_khau_hao_dm_dat = new US_V_GD_KHAU_HAO_DM_DAT();
         DS_V_GD_KHAU_HAO_DM_DAT v_ds_v_gd_khau_hao_dm_dat = new DS_V_GD_KHAU_HAO_DM_DAT();
 
