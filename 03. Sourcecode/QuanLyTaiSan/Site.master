@@ -75,9 +75,9 @@
                     <ul>
              
                         <li><a href='https://docs.google.com/a/bkindex.com/spreadsheet/ccc?key=0Au4XXPI0St3hdFRhR085TWVnT1ltbnhGYUg0d2JTTUE#gid=0'>01. Comment, yêu cầu phát sinh</a></li>
-                        <li><a href='http://www.drvn.gov.vn'>02. Website tổng cục đường bộ</a></li>
+                        <li><a href='http://www.drvn.gov.vn'>02. Website Tổng cục đường bộ</a></li>
                         <li><a href='http://www.mediafire.com/download/hnqwg15dq333zpx/Ho_so_giay_to.rar' target="_blank">03. Hồ sơ, giấy tờ</a></li>
-                        <li><a href='https://docs.google.com/document/d/1IgSSBhkwsrHq5-GOhyY9clyogZ-fKX3MwuLzTF0VE_8/edit' target="_blank">04. Hướng dẫn sử dụng</a></li>
+                        <li><a href='https://skydrive.live.com/view.aspx?resid=5EBA1B0A5CB2D9FE!107&app=Word&authkey=!AIo0LfgJ1TE4lhg' target="_blank">04. Hướng dẫn sử dụng</a></li>
                         <li><a href='<%=ResolveClientUrl("~/ExportExcel/BKI_QLTS_setup.rar")%>' target="_blank">05. Phần mềm tạo báo cáo excel</a></li>
                     </ul>
                 </li>
