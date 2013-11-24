@@ -164,7 +164,7 @@ public partial class ChucNang_F110_DieuChuyenNoiBoNha : System.Web.UI.Page
                  , CIPConvert.ToDecimal(m_cbo_don_vi_chu_quan_down.SelectedValue)
                  , CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_down.SelectedValue)
                  , ID_TRANG_THAI_DAT.DANG_SU_DUNG
-                 , WinFormControls.eTAT_CA.NO
+                 , WinFormControls.eTAT_CA.YES
                  , m_cbo_dia_chi);
     }
 

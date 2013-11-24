@@ -329,7 +329,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_khau_hao_tai_san_khac" runat="Server" class="cssPageTitle" Text="DANH SÁCH CÁC LẦN KHẤU HAO"></asp:Label>
+                        <asp:Label ID="m_lbl_khau_hao_tai_san_khac" runat="Server" class="cssPageTitle" Text="DANH SÁCH CÁC LẦN KHẤU HAO TÀI SẢN KHÁC"></asp:Label>
                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                         </span>
                     </td>

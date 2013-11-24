@@ -238,7 +238,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
     private void load_data_to_grid()
     {
-        m_lbl_thong_tin_khau_hao.Text = "DANH SÁCH CÁC LẦN KHẤU HAO";
+        m_lbl_thong_tin_khau_hao.Text = "DANH SÁCH CÁC LẦN HAO MÒN TÀI SẢN Ô TÔ";
         US_V_GD_KHAU_HAO_DM_OTO v_us_v_gd_khau_hao_oto = new US_V_GD_KHAU_HAO_DM_OTO();
         DS_V_GD_KHAU_HAO_DM_OTO v_ds_v_gd_khau_hao_oto = new DS_V_GD_KHAU_HAO_DM_OTO();
 
