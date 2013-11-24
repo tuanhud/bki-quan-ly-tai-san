@@ -582,7 +582,7 @@ public partial class BaoCao_F301_DMTruSoCoSoHDSuNghiepDNXL : System.Web.UI.Page
                   , m_cbo_bo_tinh);
         WinFormControls.load_data_to_cbo_don_vi_chu_quan(
             m_cbo_bo_tinh.SelectedValue
-            , WinFormControls.eTAT_CA.NO
+            , WinFormControls.eTAT_CA.YES
             , m_cbo_don_vi_chu_quan);
         WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
             m_cbo_loai_hinh_don_vi.SelectedValue

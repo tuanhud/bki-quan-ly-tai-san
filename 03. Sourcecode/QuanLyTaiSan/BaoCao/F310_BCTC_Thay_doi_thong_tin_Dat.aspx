@@ -157,7 +157,7 @@
                         <span class="cssManField">Tìm kiếm:</span>
                     </td>
                     <td colspan="4">
-                        <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="95%" CssClass="cssTextBox"></asp:TextBox>
                     </td>
                 </tr>
                 <tr style="height: 10px">

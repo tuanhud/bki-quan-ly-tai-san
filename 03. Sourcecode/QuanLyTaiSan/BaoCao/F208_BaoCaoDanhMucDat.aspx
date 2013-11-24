@@ -83,7 +83,7 @@
                                 Visible="False">Tìm kiếm:</asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="90%"></asp:TextBox>
+                            <asp:TextBox ID="m_txt_tim_kiem" runat="Server" Width="90%" CssClass="cssTextBox"></asp:TextBox>
                         </td>
                         <td align="right">
                             <span class="cssManField">Trạng thái:</span>
