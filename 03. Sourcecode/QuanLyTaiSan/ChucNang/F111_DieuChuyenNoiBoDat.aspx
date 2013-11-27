@@ -151,6 +151,26 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 15%">
+                        <span class="cssManField">Loại điều chuyển</span>
+                    </td>
+                    <td align="left" style="width: 30%">
+                        <asp:DropDownList ID="m_cbo_loai_dieu_chuyen" runat="server" AutoPostBack="true" 
+                            Width="85%">
+                        </asp:DropDownList>
+                    </td>
+                    <td align="right" style="width: 15%">
+                        <asp:Label ID="Label1" runat="server" 
+                            CssClass="cssManField" Text="Diện tích điều chuyển *"></asp:Label>
+                    </td>
+                    <td align="left" style="width: 30%">
+                        <asp:TextBox ID="TextBox2" runat="server" Width="85%" CssClass="cssTextBox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="m_rfv_dien_tich_dieu_chuyen" runat="server" 
+                            ControlToValidate="m_txt_dien_tich_dieu_chuyen" 
+                            ErrorMessage="Bạn phải nhập Đơn vị nhận điều chuyển" Text="*"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="width: 15%">
                         <span class="cssManField">Ngày duyệt điều chuyển</span>
                     </td>
                     <td align="left" style="width: 30%">
