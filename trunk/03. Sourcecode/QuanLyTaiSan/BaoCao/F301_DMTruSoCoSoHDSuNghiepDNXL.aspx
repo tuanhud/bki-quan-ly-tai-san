@@ -352,7 +352,7 @@
                                                 <td colspan="3" style="height: 50px; text-align: center; color: White; font-weight: bold">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (đồng)
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>

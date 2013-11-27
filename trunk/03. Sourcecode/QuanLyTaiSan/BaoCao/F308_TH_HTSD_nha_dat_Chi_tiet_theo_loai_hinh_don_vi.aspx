@@ -90,7 +90,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderStyle-Width="8.75%" ItemStyle-Width="10.75%" ItemStyle-HorizontalAlign="Right">
                                     <HeaderTemplate>
-                                        DIỆN TÍCH
+                                        DIỆN TÍCH (m2)
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <%#Eval("TONG_DIEN_TICH", "{0:#,##0.00}")%>

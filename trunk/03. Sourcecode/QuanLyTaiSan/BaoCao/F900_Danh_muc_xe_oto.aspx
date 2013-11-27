@@ -172,7 +172,7 @@
                                                 <td colspan="3" style="height: 60px">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (đồng)
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
