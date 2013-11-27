@@ -91,7 +91,7 @@
             <HeaderTemplate>
             <table border="1" cellspacing="0" cellpadding="3" width="100%">
             <tr>
-                <td colspan="3">GIÁ TRỊ THEO SỔ KẾ TOÁN <br />(NGÀN ĐỒNG)</td>
+                <td colspan="3">GIÁ TRỊ THEO SỔ KẾ TOÁN <br />(ngàn đồng)</td>
             </tr>
             <tr>
                 <td colspan="2">Nguyên giá</td>

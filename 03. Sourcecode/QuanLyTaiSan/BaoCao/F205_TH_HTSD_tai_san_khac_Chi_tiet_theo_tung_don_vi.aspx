@@ -88,7 +88,7 @@
                                                 height: 100%">
                                                 <tr>
                                                     <td colspan="3" style="height: 35px; text-align: center; color: white; font-height: bold">
-                                                        Giá trị theo sổ kế toán (VNĐ)
+                                                        Giá trị theo sổ kế toán (ngàn đồng)
                                                     </td>
                                                 </tr>
                                                 <tr>
