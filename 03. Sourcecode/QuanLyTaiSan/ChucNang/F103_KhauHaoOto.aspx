@@ -486,7 +486,7 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}" />
+                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                             </Columns>
