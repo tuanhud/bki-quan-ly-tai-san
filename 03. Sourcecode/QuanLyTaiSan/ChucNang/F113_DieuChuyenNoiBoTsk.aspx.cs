@@ -287,8 +287,8 @@ public partial class ChucNang_F113_DieuChuyenNoiBoTsk : System.Web.UI.Page
         v_us_dm_tai_san_khac.dcID_TRANG_THAI = ID_TRANG_THAI_TAI_SAN_KHAC.DA_THANH_LY;
         v_us_dm_tai_san_khac.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
         v_us_dm_tai_san_khac.Update();
-        string v_str_dv_cu = m_cbo_don_vi_su_dung_tai_san_up.Text;
-        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.Text;
+        string v_str_dv_cu = m_cbo_don_vi_su_dung_tai_san_up.SelectedItem.Text;
+        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.SelectedItem.Text;
         m_lbl_mess.Text = "Đã điều chuyển tài sản " + v_us_dm_tai_san_khac.strTEN_TAI_SAN
             + " từ đơn vị " + v_str_dv_cu + " đến đơn vị " + v_str_dv_moi;
     }
