@@ -357,7 +357,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Nguyên giá nguồn NS (VNĐ)</span>
+                                    <span class="cssManField">Nguyên giá nguồn NS (ngàn đồng)</span>
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_nguyen_gia" runat="server" CssClass="cssTextBox csscurrency"
@@ -366,7 +366,7 @@
                                 <td align="left" style="width: 1%;">
                                 </td>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Nguyên giá nguồn khác (VNĐ)</span>
+                                    <span class="cssManField">Nguyên giá nguồn khác (ngàn đồng)</span>
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:TextBox ID="m_txt_nguyen_gia_nguon_khac" runat="server" CssClass="cssTextBox csscurrency"
@@ -377,7 +377,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Giá trị còn lại (VNĐ)</span>
+                                    <span class="cssManField">Giá trị còn lại (ngàn đồng)</span>
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_gia_tri_con_lai" runat="server" CssClass="cssTextBox csscurrency"
@@ -388,7 +388,7 @@
                                 <td align="right">
                                     <span class="cssManField">Tổng nguyên giá</span></td>
                                 <td align="left" style="width: 30%;">
-                                    <span id="m_sp_tong_nguyen_gia">0 VNĐ</span></td>
+                                    <span id="m_sp_tong_nguyen_gia">0 (ngàn đồng)</span></td>
                                 <td align="left" style="width: 1%;">
                                 </td>
                             </tr>
@@ -670,7 +670,7 @@
                                                 <td colspan="3" style="height: 50px; text-align: center">
                                                     GIÁ TRỊ THEO SỔ KẾ TOÁN
                                                     <br />
-                                                    (VNĐ)
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
@@ -707,8 +707,8 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Số tầng" DataField="SO_TANG" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="DT xây dựng" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right" />
-                                <asp:BoundField HeaderText="Tổng DT xây dựng" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" />
+                                <asp:BoundField HeaderText="DT xây dựng <br/> (m2)" HtmlEncode="false" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right" />
+                                <asp:BoundField HeaderText="Tổng DT xây dựng <br/> (m2)" HtmlEncode="false" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" />
                                 <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;

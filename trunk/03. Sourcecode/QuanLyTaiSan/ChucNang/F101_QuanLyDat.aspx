@@ -254,7 +254,7 @@
                                 <td align="left" style="width: 1%;">
                                 </td>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Giá trị theo sổ kế toán (VNĐ)</span>
+                                    <span class="cssManField">Giá trị theo sổ kế toán (ngàn đồng)</span>
                                 </td>
                                 <td style="width: 30%" align="left">
                                     <asp:TextBox ID="m_txt_nguyen_gia" runat="server" CssClass="cssTextBox csscurrency"
@@ -515,7 +515,7 @@
                                     DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
                                     ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0}" />
-                                <asp:BoundField HeaderText="Giá trị theo số kế toán (VNĐ)" DataField="GT_THEO_SO_KE_TOAN"
+                                <asp:BoundField HeaderText="Giá trị theo số kế toán (ngàn đồng)" DataField="GT_THEO_SO_KE_TOAN"
                                     ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Tình trạng đất" DataField="TEN_TINH_TRANG" />
