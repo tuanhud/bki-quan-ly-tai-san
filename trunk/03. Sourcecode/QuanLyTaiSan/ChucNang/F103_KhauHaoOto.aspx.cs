@@ -107,6 +107,8 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         v_us_gd_khau_hao.Insert();
         v_us_dm_oto.Update();
         m_lbl_message.Text = "Cập nhật thành công";
+        //lay ma phieu bo xuong o Tu Khoa
+        m_txt_tu_khoa.Text = v_us_gd_khau_hao.strMA_PHIEU;
     }
 
     private void load_cbo_loai_xe()

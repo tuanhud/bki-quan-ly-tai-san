@@ -160,6 +160,8 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         v_us_gd_khau_hao.Insert();
         v_us_dm_dat.Update();
         m_lbl_mess.Text = "Cập nhật thành công";
+        // lay Ma Phieu bo xuong o Tu Khoa
+        m_txt_tu_khoa.Text = v_us_gd_khau_hao.strMA_PHIEU;
     }
 
     private void clear_form_data()
@@ -334,7 +336,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-    }  
+    }
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
@@ -450,5 +452,5 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
         }
 
     }
-    #endregion  
+    #endregion
 }

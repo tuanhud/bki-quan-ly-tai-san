@@ -14,8 +14,8 @@ using WebDS.CDBNames;
 using IP.Core.WinFormControls;
 using System.Threading;
 
-public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
-
+public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
+{
     #region Members
     private US_GD_KHAU_HAO m_us_gd_khau_hao = new US_GD_KHAU_HAO();
     #endregion
@@ -206,6 +206,8 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         v_us_gd_khau_hao.Insert();
         v_us_dm_nha.Update();
         m_lbl_mess.Text = "Cập nhật thành công";
+        // lay Ma Phieu bo xuong o Tu Khoa
+        m_txt_tu_khoa.Text = v_us_gd_khau_hao.strMA_PHIEU;
     }
 
     private void xoa_khau_hao(decimal ip_dc_id_kh, decimal ip_dc_id_nha, decimal ip_dc_gia_tri_kh)
@@ -274,58 +276,76 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     #endregion
 
     #region Events
-    protected void Page_Load(object sender, EventArgs e) {
-        try {
-            if (!IsPostBack) {
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!IsPostBack)
+            {
                 load_form_data();
             }
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
 
     }
-    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e) {
-        try {
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             load_data_to_grid();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e) {
-        try {
+    protected void m_grv_danh_sach_nha_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
             clear_message();
             m_grv_danh_sach_nha.PageIndex = e.NewPageIndex;
             load_data_to_grid();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cmd_tao_moi_Click(object sender, EventArgs e) {
-        try {
+    protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
+    {
+        try
+        {
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
             load_form_data();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
 
     }
-    protected void m_cmd_xoa_trang_Click(object sender, EventArgs e) {
-        try {
+    protected void m_cmd_xoa_trang_Click(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             clear_form_data();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
-        try {
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             m_grv_danh_sach_nha.AllowPaging = false;
             load_data_to_grid();
@@ -333,12 +353,15 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
                 , "DS khau hao nha.xls"
                 , 0);
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_bo_tinh_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             clear_thong_tin_tai_san();
             load_data_to_dv_chu_quan_up();
@@ -347,32 +370,39 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_don_vi_chu_quan_up_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_don_vi_chu_quan_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
-            clear_thong_tin_tai_san();  
+            clear_thong_tin_tai_san();
             load_data_to_dv_su_dung_up();
             load_data_to_khu_dat_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_don_vi_su_dung_up_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_don_vi_su_dung_up_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             clear_thong_tin_tai_san();
             load_data_to_khu_dat_up();
             load_data_to_ten_tai_san();
             load_data_from_us();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
@@ -403,40 +433,51 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_bo_tinh_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             load_data_to_dv_chu_quan_down();
             load_data_to_dv_su_dung_down();
             load_data_to_khu_dat_down();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_don_vi_chu_quan_down_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_don_vi_chu_quan_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             load_data_to_dv_su_dung_down();
             load_data_to_khu_dat_down();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cbo_don_vi_su_dung_down_SelectedIndexChanged(object sender, EventArgs e) {
-        try {
+    protected void m_cbo_don_vi_su_dung_down_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
             clear_message();
             load_data_to_khu_dat_down();
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e) {
-        try {
+    protected void m_grv_danh_sach_nha_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        try
+        {
             clear_message();
-            if (!e.CommandName.Equals(String.Empty) && !e.CommandName.Equals("Page")) 
+            if (!e.CommandName.Equals(String.Empty) && !e.CommandName.Equals("Page"))
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 decimal v_dc_id_kh = CIPConvert.ToDecimal(m_grv_danh_sach_nha.DataKeys[rowIndex].Value);
@@ -444,7 +485,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
                 decimal v_dc_id_nha = m_us_gd_khau_hao.dcID_TAI_SAN;
                 decimal v_dc_gia_tri_kh = m_us_gd_khau_hao.dcGIA_TRI_KHAU_HAO;
 
-                switch (e.CommandName) 
+                switch (e.CommandName)
                 {
                     case "DeleteComp":
                         xoa_khau_hao(v_dc_id_kh, v_dc_id_nha, v_dc_gia_tri_kh);
@@ -453,11 +494,13 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
                 }
             }
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    public override void VerifyRenderingInServerForm(Control control) {
+    public override void VerifyRenderingInServerForm(Control control)
+    {
         //base.VerifyRenderingInServerForm(control);
     }
     protected void m_txt_tu_khoa_TextChanged(object sender, EventArgs e)
@@ -483,7 +526,5 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
         }
 
     }
-    #endregion 
-    
-    
+    #endregion
 }
