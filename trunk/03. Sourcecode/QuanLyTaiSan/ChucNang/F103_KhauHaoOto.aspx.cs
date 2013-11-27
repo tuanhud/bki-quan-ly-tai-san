@@ -421,6 +421,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
                         m_lbl_message.Text = "Đã xóa bản ghi thành công";
                         break;
                 }
+                m_cbo_bo_tinh_down.Focus();
             }
         }
         catch (Exception v_e)
@@ -472,6 +473,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
             them_moi_khau_hao();
             load_form_data();
             Thread.Sleep(1000);
+            m_cbo_bo_tinh_up.Focus();
         }
         catch (Exception v_e)
         {

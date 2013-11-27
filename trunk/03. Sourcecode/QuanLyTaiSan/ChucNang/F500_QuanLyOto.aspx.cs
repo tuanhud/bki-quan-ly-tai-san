@@ -543,6 +543,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             clear_message();
             insert_data();
             display_panel_tang_giam();
+            m_ddl_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
@@ -556,6 +557,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             clear_message();
             m_init_mode = DataEntryFormMode.UpdateDataState;
             update_data();
+            m_ddl_bo_tinh.Focus();
         }
         catch (System.Exception v_e)
         {
@@ -692,6 +694,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             them_moi_tang_giam();
             hidden_panel_tang_giam();
+            m_ddl_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
@@ -705,6 +708,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             clear_panel_data();
             hidden_panel_tang_giam();
             reset_control();
+            m_ddl_bo_tinh.Focus();
 
         }
         catch (Exception v_e)

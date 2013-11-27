@@ -515,6 +515,7 @@ public partial class ChucNang_F112_DieuChuyenNoiBoOto : System.Web.UI.Page
             them_moi_ghi_giam();
             cap_nhat_thong_tin_tai_san();
             load_data_2_form();
+            m_cbo_bo_tinh_up.Focus();
         }
         catch (Exception v_e)
         {
