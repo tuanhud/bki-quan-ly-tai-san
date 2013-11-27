@@ -154,16 +154,18 @@
                         <span class="cssManField">Loại điều chuyển</span>
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:DropDownList ID="m_cbo_loai_dieu_chuyen" runat="server" AutoPostBack="true" 
-                            Width="85%">
-                        </asp:DropDownList>
+                        <asp:RadioButtonList ID="m_rbl_loai0" runat="server" CssClass="cssManField" 
+                            RepeatDirection="Horizontal">
+                            <asp:ListItem Selected="True" Value="Y">Toàn bộ diện tích</asp:ListItem>
+                            <asp:ListItem Value="N">Một phần diện tích</asp:ListItem>
+                        </asp:RadioButtonList>
                     </td>
                     <td align="right" style="width: 15%">
                         <asp:Label ID="Label1" runat="server" 
                             CssClass="cssManField" Text="Diện tích điều chuyển *"></asp:Label>
                     </td>
                     <td align="left" style="width: 30%">
-                        <asp:TextBox ID="TextBox2" runat="server" Width="85%" CssClass="cssTextBox"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_dien_tich_dieu_chuyen" runat="server" Width="85%" CssClass="cssTextBox"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="m_rfv_dien_tich_dieu_chuyen" runat="server" 
                             ControlToValidate="m_txt_dien_tich_dieu_chuyen" 
                             ErrorMessage="Bạn phải nhập Đơn vị nhận điều chuyển" Text="*"></asp:RequiredFieldValidator>
