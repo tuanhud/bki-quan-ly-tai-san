@@ -244,7 +244,7 @@
                                                 <td colspan="3" style="height: 45px">
                                                     Giá trị theo sổ kế toán
                                                     <br />
-                                                    (VND)
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
