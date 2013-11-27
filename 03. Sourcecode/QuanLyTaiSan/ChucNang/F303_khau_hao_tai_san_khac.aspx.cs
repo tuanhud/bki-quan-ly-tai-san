@@ -181,6 +181,8 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         v_us_gd_khau_hao.Insert();
         v_us_dm_tai_san_khac.Update();
         m_lbl_mess.Text = "Cập nhật thành công";
+        // Lay Ma Phieu bo xuong o Tu Khoa
+        m_txt_tu_khoa.Text = v_us_gd_khau_hao.strMA_PHIEU;
     }
 
     private void xoa_khau_hao(decimal ip_dc_id_kh, decimal ip_dc_id_ts, decimal ip_dc_gia_tri_kh)
@@ -503,5 +505,5 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
         }
     }
     #endregion
-    
+
 }
