@@ -266,6 +266,7 @@ public partial class ChucNang_F110_DieuChuyenNoiBoNha : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.Insert();
 
         m_lbl_message.Text = "Cập nhật thành công";
+        m_txt_tu_khoa.Text = m_us_gd_tang_giam_tai_san.strMA_PHIEU;
     }
 
     private void them_moi_ghi_tang()
@@ -527,7 +528,7 @@ public partial class ChucNang_F110_DieuChuyenNoiBoNha : System.Web.UI.Page
             clear_message();
             if (!check_validate_data_is_ok()) return;
             them_moi_ghi_giam();
-            them_moi_ghi_giam();
+            them_moi_ghi_tang();
             cap_nhat_thong_tin_tai_san();
             load_data_2_form();
         }

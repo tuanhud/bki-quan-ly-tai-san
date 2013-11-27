@@ -21,8 +21,10 @@ public partial class Default2 : System.Web.UI.Page
     DS_DM_TAI_SAN_KHAC m_ds_tai_san_khac = new DS_DM_TAI_SAN_KHAC();
     DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
     #endregion
+
     #region Data Structures
     #endregion
+
     #region Private Methods
     private void load_data_2_grid()
     {
@@ -347,6 +349,7 @@ public partial class Default2 : System.Web.UI.Page
         // Phần cập nhật thông tin cho DM
         reset_control();
         m_lbl_mess.Text = "Đã cập nhật thông tin tăng giảm thành công";
+        m_txt_tim_kiem.Text = v_us_gd_tang_giam_tai_san.strMA_PHIEU;
     }
     private void clear_panel_data()
     {
@@ -370,6 +373,7 @@ public partial class Default2 : System.Web.UI.Page
         m_lbl_mess.Text = "";
     }
     #endregion
+
     #region Events
     protected void Page_Load(object sender, EventArgs e)
     {

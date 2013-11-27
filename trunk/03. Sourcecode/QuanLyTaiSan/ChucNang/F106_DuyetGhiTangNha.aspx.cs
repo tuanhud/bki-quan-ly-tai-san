@@ -46,7 +46,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
     {
         if (m_cbo_ten_tai_san.Items.Count == 0) return;
         decimal v_dc_id_nha = CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue);
-        if (v_dc_id_nha < 1) return;  
+        if (v_dc_id_nha < 1) return;
         US_DM_NHA v_us_dm_nha = new US_DM_NHA(CIPConvert.ToDecimal(v_dc_id_nha));
         m_lbl_ten_tai_san.Text = v_us_dm_nha.strTEN_TAI_SAN;
         m_lbl_ma_tai_san.Text = v_us_dm_nha.strMA_TAI_SAN;
@@ -87,7 +87,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             , WinFormControls.eTAT_CA.NO
             , m_cbo_trang_thai_nha_up);
     }
-    
+
     private void load_data_to_bo_tinh_up()
     {
         WinFormControls.load_data_to_cbo_bo_tinh(
@@ -256,7 +256,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
         {
             v_us_dm_nha.dcID_TRANG_THAI = ID_TRANG_THAI_NHA.DA_DIEU_CHUYEN;
-            v_us_dm_nha.Update(); 
+            v_us_dm_nha.Update();
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.TRANG_CAP_MUA_MOI.ToString())
         {
@@ -265,6 +265,8 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         }
 
         m_lbl_message.Text = "Cập nhật thành công";
+        //Lay Ma Phieu bo xuong o Tu Khoa
+        m_txt_tu_khoa.Text = m_us_gd_tang_giam_tai_san.strMA_PHIEU;
     }
 
     private void select_loai_tang_giam()
@@ -281,7 +283,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         }
     }
 
-    private void set_caption_by_loai_tang_giam() 
+    private void set_caption_by_loai_tang_giam()
     {
         decimal v_dc_loai_tang_giam = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
         if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY)
@@ -629,6 +631,6 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    
-    #endregion        
+
+    #endregion
 }
