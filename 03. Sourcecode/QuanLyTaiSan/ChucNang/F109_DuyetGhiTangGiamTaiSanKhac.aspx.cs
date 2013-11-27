@@ -494,6 +494,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
             if (!check_validate_data_is_ok()) return;
             them_moi_tang_giam();
             load_data_2_form();
+            m_cbo_bo_tinh_up.Focus();
         }
         catch (Exception v_e)
         {

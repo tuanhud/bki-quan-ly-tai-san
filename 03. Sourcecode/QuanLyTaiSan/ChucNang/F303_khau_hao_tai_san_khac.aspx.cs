@@ -320,6 +320,7 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
             them_moi_khau_hao();
             clear_form_data();
             load_data_to_grid();
+            m_cbo_bo_tinh_up.Focus();
         }
         catch (Exception v_e)
         {

@@ -210,6 +210,7 @@ public partial class Default2 : System.Web.UI.Page
             load_data_to_grid();
             set_trang_thai_cmd();
             m_lbl_mess.Text = "Đã cập nhập thành công";
+            m_cbo_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
@@ -243,6 +244,7 @@ public partial class Default2 : System.Web.UI.Page
             load_data_to_grid();
             set_trang_thai_cmd();
             m_lbl_mess.Text = "Đã cập nhập thành công";
+            m_cbo_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {

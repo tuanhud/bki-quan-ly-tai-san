@@ -323,6 +323,7 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
             load_form_data();
+            m_cbo_bo_tinh_up.Focus();
         }
         catch (Exception v_e)
         {

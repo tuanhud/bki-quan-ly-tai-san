@@ -442,6 +442,7 @@ public partial class Default2 : System.Web.UI.Page
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             set_form_mode();
             us_object_2_form(m_us_tai_san_khac);
+            m_cbo_bo_tinh.Focus();
 
         }
         catch (Exception v_e)
@@ -456,6 +457,7 @@ public partial class Default2 : System.Web.UI.Page
             clear_message();
             Thread.Sleep(2000);
             insert_data();
+            m_cbo_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
@@ -514,6 +516,7 @@ public partial class Default2 : System.Web.UI.Page
             m_us_tai_san_khac.DeleteByID(dc_id_tai_san_khac);
             load_data_2_grid();
             m_lbl_mess.Text = "Xóa thành công!";
+            m_cbo_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
@@ -608,6 +611,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             them_moi_tang_giam();
             hidden_panel_tang_giam();
+            m_cbo_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
@@ -622,6 +626,7 @@ public partial class Default2 : System.Web.UI.Page
             hidden_panel_tang_giam();
             reset_control();
             load_data_2_grid();
+            m_cbo_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {

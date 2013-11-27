@@ -183,6 +183,7 @@ public partial class ChucNang_F104_DeNghiXuLyDat : System.Web.UI.Page
             load_data_to_grid();
             set_trang_thai_cmd();
             m_lbl_message.Text = "Đã cập nhật thành công";
+            m_ddl_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {

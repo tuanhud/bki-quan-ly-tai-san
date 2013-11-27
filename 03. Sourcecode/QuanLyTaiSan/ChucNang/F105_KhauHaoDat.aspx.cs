@@ -345,6 +345,7 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
             if (!check_validate_data_is_valid()) return;
             them_moi_khau_hao();
             load_form_data();
+            m_cbo_bo_tinh_up.Focus();
         }
         catch (Exception v_e)
         {
@@ -421,7 +422,9 @@ public partial class ChucNang_F105_KhauHaoDat : System.Web.UI.Page
                         m_lbl_mess.Text = "Đã xóa bản ghi thành công";
                         break;
                 }
+                m_cbo_bo_tinh_up.Focus();
             }
+
         }
         catch (Exception v_e)
         {
