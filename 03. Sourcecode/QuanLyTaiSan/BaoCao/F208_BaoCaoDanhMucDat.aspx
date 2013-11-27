@@ -172,13 +172,13 @@
                                     <asp:BoundField HeaderText="DT Cơ sở hoạt động sự nghiệp (m2)" DataField="DT_CO_SO_HOAT_DONG_SU_NGHIEP"
                                         ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="DT Làm nhà ở (m2)" DataField="DT_LAM_NHA_O" ItemStyle-HorizontalAlign="Right"
-                                        DataFormatString="{0:#,##0.00}" />
+                                        DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="DT Cho thuê (m2)" DataField="DT_CHO_THUE" ItemStyle-HorizontalAlign="Right"
-                                        DataFormatString="{0:#,##0.00}" />
+                                        DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="DT Bỏ trống (m2)" DataField="DT_BO_TRONG" ItemStyle-HorizontalAlign="Right"
-                                        DataFormatString="{0:#,##0.00}" />
+                                        DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="DT Bị lấn chiếm (m2)" DataField="DT_BI_LAN_CHIEM" ItemStyle-HorizontalAlign="Right"
-                                        DataFormatString="{0:#,##0.00}" />
+                                        DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="DT Sử dụng mục đích khác (m2)" DataField="DT_SU_DUNG_MUC_DICH_KHAC"
                                         ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,###}" />
                                     <asp:BoundField HeaderText="Giá trị theo số kế toán (ngàn đồng)" DataField="GT_THEO_SO_KE_TOAN"
