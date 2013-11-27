@@ -257,7 +257,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_nha"
+                                        ErrorMessage="Bạn phải nhập Giá Trị hao mòn" Text="*" ValidationGroup="m_vlg_nha"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
@@ -486,7 +486,7 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
+                                <asp:BoundField HeaderText="Giá trị hao mòn" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
                                     ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
