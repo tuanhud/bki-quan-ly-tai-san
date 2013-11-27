@@ -206,13 +206,13 @@
                             </tr>
                             <tr>
                                 <td align="right" class="cssManField" style="width: 20%;">
-                                    <span>Nguyên giá Nguồn NS (VNĐ)</span>
+                                    <span>Nguyên giá Nguồn NS (ngàn đồng)</span>
                                 </td>
                                 <td colspan="1" style="width: 30%" class="cssManField" style="color: blue">
                                     <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" ForeColor="Blue"></asp:Label>
                                 </td>
                                 <td align="right" colspan="1" class="cssManField" style="width: 20%">
-                                    <span>Nguyên giá Nguồn khác (VNĐ)</span>
+                                    <span>Nguyên giá Nguồn khác (ngàn đồng)</span>
                                 </td>
                                 <td>
                                     <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -220,7 +220,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 20%;" class="cssManField">
-                                    <span>Giá trị còn lại (VNĐ)</span>
+                                    <span>Giá trị còn lại (ngàn đồng)</span>
                                 </td>
                                 <td colspan="1" style="width: 30%">
                                     <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -255,7 +255,7 @@
                                         ForeColor="Red"> </asp:RequiredFieldValidator>
                                 </td>
                                 <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                                    <span>Giá trị khấu hao (VNĐ) *</span>
+                                    <span>Giá trị khấu hao (ngàn đồng) *</span>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
@@ -486,7 +486,7 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" />
+                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                             </Columns>
