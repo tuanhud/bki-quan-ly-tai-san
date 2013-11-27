@@ -179,7 +179,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Nguyên giá nguồn NS (VNĐ)</span>
+                                    <span class="cssManField">Nguyên giá nguồn NS (ngàn đồng)</span>
                                 </td>
                                 <td style="width: 30%" align="right">
                                     <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" CssClass="cssManField" Style="color: blue">
@@ -188,7 +188,7 @@
                                 <td align="left" style="width: 1%;">
                                 </td>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Nguyên giá nguồn khác (VNĐ)</span>
+                                    <span class="cssManField">Nguyên giá nguồn khác (ngàn đồng)</span>
                                 </td>
                                 <td align="right" style="width: 30%;">
                                     <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" CssClass="cssManField"
@@ -199,7 +199,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Giá trị còn lại (VNĐ)</span>
+                                    <span class="cssManField">Giá trị còn lại (ngàn đồng)</span>
                                 </td>
                                 <td style="width: 30%" align="right">
                                     <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" CssClass="cssManField" Style="color: blue">
@@ -255,7 +255,7 @@
                                 </td>
                                 <td style="width: 29%" align="left">
                                     <ew:CalendarPopup ID="m_dat_ngay_lap" runat="server" ControlDisplay="TextBoxImage"
-                                        Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                                        Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                                         ImageUrl="~/Images/cal.gif">
                                         <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                             ForeColor="Black" />
@@ -284,7 +284,7 @@
                                 </td>
                                 <td style="width: 29%" align="left">
                                     <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                                        Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                                        Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                                         ImageUrl="~/Images/cal.gif">
                                         <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                             ForeColor="Black" />
@@ -390,8 +390,6 @@
                     <td align="left">
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
                             Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" CausesValidation="false" />
-                    </td>
-                    <td align="left">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
                             Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
                     </td>
@@ -408,7 +406,7 @@
                         <asp:GridView ID="m_grv_tai_san_khac" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                             Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True"
                             PageSize="30" ShowHeader="true" EmptyDataText="Không có dữ liệu." OnPageIndexChanging="m_grv_tai_san_khac_PageIndexChanging"
-                            OnRowCommand="m_grv_tai_san_khac_RowCommand">
+                            OnRowCommand="m_grv_tai_san_khac_RowCommand" CellSpacing="2">
                             <Columns>
                                 <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                                     <ItemTemplate>
@@ -417,19 +415,25 @@
                      <img src="../Images/Button/deletered.png" alt="Delete" />
                                         </asp:LinkButton>
                                     </ItemTemplate>
+                                    <ItemStyle Width="2%" />
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %>
                                     </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Center" />
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Mã phiếu" DataField="MA_PHIEU" />
                                 <asp:BoundField HeaderText="Tên tài sản" DataField="TEN_TAI_SAN" />
                                 <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                 <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                 <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
-                                <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="Năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center">
+                                    <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField HeaderText="Năm sử dụng" DataField="NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center">
+                                    <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
                                 <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse">
@@ -437,7 +441,7 @@
                                                 <td colspan="3" style="height: 35px">
                                                     Giá trị theo sổ kế toán
                                                     <br />
-                                                    (đồng)
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
@@ -476,9 +480,12 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}" />
-                                <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
-                                <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
+                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
+                                    ItemStyle-HorizontalAlign="right">
+                                    <ItemStyle HorizontalAlign="Right" />
+                                </asp:BoundField>
+                                <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" ItemStyle-HorizontalAlign="right" />
+                                <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" ItemStyle-HorizontalAlign="right" />
                             </Columns>
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#7C6F57" />

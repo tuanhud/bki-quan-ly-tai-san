@@ -405,10 +405,8 @@
                     <td align="left">
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
                             Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" CausesValidation="false" />
-                    </td>
-                    <td align="left">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
-                            Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click" />
+                            Height="25px" Text="Xuất Excel" Width="98px" OnClick="m_cmd_xuat_excel_Click"  />
                     </td>
                     <td align="left">
                     </td>
@@ -479,10 +477,10 @@
                                             <td style="width: 33%; height: 60px; border-right: 1px solid gray; text-align: right">
                                                 <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                             </td>
-                                            <td style="width: 33%; height: 60px; border-right: 1px solid gray;text-align: right">
+                                            <td style="width: 33%; height: 60px; border-right: 1px solid gray; text-align: right">
                                                 <%# Eval("NGUON_KHAC", "{0:#,##0}")%>
                                             </td>
-                                            <td style="width: 33%; height: 60px;text-align: right">
+                                            <td style="width: 33%; height: 60px; text-align: right">
                                                 <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0}")%>
                                             </td>
                                         </table>
