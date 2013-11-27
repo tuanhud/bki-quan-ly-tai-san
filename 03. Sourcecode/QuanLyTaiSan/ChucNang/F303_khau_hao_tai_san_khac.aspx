@@ -244,7 +244,7 @@
                                 </td>
                                 <td align="left" style="width: 1%;">
                                     <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                                        ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_tai_san_khac"
+                                        ErrorMessage="Bạn phải nhập Giá Trị hao mòn" Text="*" ValidationGroup="m_vlg_tai_san_khac"
                                         ForeColor="Red">
                                     </asp:RequiredFieldValidator>
                                 </td>
@@ -329,7 +329,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 99%;" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_khau_hao_tai_san_khac" runat="Server" class="cssPageTitle" Text="DANH SÁCH CÁC LẦN KHẤU HAO TÀI SẢN KHÁC"></asp:Label>
+                        <asp:Label ID="m_lbl_khau_hao_tai_san_khac" runat="Server" class="cssPageTitle" Text="DANH SÁCH CÁC LẦN hao mòn TÀI SẢN KHÁC"></asp:Label>
                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                         </span>
                     </td>
@@ -480,7 +480,7 @@
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
+                                <asp:BoundField HeaderText="Giá trị hao mòn" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
                                     ItemStyle-HorizontalAlign="right">
                                     <ItemStyle HorizontalAlign="Right" />
                                 </asp:BoundField>

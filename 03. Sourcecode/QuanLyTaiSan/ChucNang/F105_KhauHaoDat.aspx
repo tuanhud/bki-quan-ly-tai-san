@@ -174,7 +174,7 @@
                 </tr>
                 <tr>
                     <td class="cssManField" colspan="2" align="center">
-                        <span>CHI TIẾT KHẤU HAO TÀI SẢN</span>
+                        <span>CHI TIẾT hao mòn TÀI SẢN</span>
                     </td>
                 </tr>
                 <tr>
@@ -190,7 +190,7 @@
                             ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_dat" ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                     <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                        <span>Giá trị khấu hao (ngàn đồng) *</span>
+                        <span>Giá trị hao mòn (ngàn đồng) *</span>
                     </td>
                     <td>
                         <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
@@ -198,7 +198,7 @@
                     </td>
                     <td align="left" style="width: 1%;">
                         <asp:RequiredFieldValidator ID="m_rfv_gia_tri_khau_hao" runat="server" ControlToValidate="m_txt_gia_tri_khau_hao"
-                            ErrorMessage="Bạn phải nhập Giá Trị Khấu Hao" Text="*" ValidationGroup="m_vlg_dat"
+                            ErrorMessage="Bạn phải nhập Giá Trị hao mòn" Text="*" ValidationGroup="m_vlg_dat"
                             ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -375,7 +375,7 @@
                                 <asp:BoundField HeaderText="Giá trị theo số kế toán (ngàn đồng)" DataField="GT_THEO_SO_KE_TOAN"
                                     ItemStyle-HorizontalAlign="Right" DataFormatString="{0:#,##0}" />
                                 <asp:BoundField HeaderText="Số năm đã sử dụng" DataField="SO_NAM_DA_SU_DUNG" ItemStyle-HorizontalAlign="Right" />
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
+                                <asp:BoundField HeaderText="Giá trị hao mòn" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
                                     ItemStyle-HorizontalAlign="right" />
                                 <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />

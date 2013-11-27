@@ -32,14 +32,14 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
 
         if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
         {
-            m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị khấu hao lớn hơn giá trị còn lại";
+            m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị hao mòn lớn hơn giá trị còn lại";
             return false;
         }
 
         decimal v_dc_gia_tri_kh = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
         if (v_dc_gia_tri_kh <= 0)
         {
-            m_lbl_message.Text = "Giá trị khấu hao phải lớn hơn 0";
+            m_lbl_message.Text = "Giá trị hao mòn phải lớn hơn 0";
             return false;
         }
 
@@ -91,7 +91,7 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         US_GD_KHAU_HAO v_us_gd_khau_hao = new US_GD_KHAU_HAO();
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(v_dc_id_tai_san);
         decimal v_dc_gia_tri_khau_hao = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
-        // Lấy thông tin mới cho giao dịch khấu hao
+        // Lấy thông tin mới cho giao dịch hao mòn
         v_us_gd_khau_hao.dcID_TAI_SAN = v_dc_id_tai_san;
         v_us_gd_khau_hao.dcID_LOAI_TAI_SAN = v_us_dm_oto.dcID_LOAI_TAI_SAN;
         v_us_gd_khau_hao.dcID_DON_VI = v_us_dm_oto.dcID_DON_VI_SU_DUNG;
