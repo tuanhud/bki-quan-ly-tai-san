@@ -87,8 +87,7 @@
                         </td>
                         <td>
                             <asp:DropDownList ID="m_cbo_don_vi_su_dung_tai_san" runat="Server" AutoPostBack="True"
-                                TabIndex="3" Width="90%" 
-                                onselectedindexchanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged">
+                                TabIndex="3" Width="90%" OnSelectedIndexChanged="m_cbo_don_vi_su_dung_tai_san_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -98,7 +97,7 @@
                         </td>
                         <td>
                             <asp:DropDownList ID="m_cbo_trang_thai" runat="Server" TabIndex="4" Width="90%" AutoPostBack="true"
-                                onselectedindexchanged="m_cbo_trang_thai_SelectedIndexChanged">
+                                OnSelectedIndexChanged="m_cbo_trang_thai_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
                         <td align="left" colspan="2" rowspan="2">
@@ -173,10 +172,10 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="3" style="height: 450px;" valign="top">
-                            <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True" CssClass="cssGrid"
-                                AutoGenerateColumns="False" Width="100%" DataKeyNames="ID" CellPadding="0" ForeColor="#333333"
-                                AllowSorting="True" PageSize="30" ShowHeader="true" EmptyDataText="Không có dữ liệu phù hợp"
-                                OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
+                            <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True"
+                                CssClass="cssGrid" AutoGenerateColumns="False" Width="100%" DataKeyNames="ID"
+                                CellPadding="0" ForeColor="#333333" AllowSorting="True" PageSize="30" ShowHeader="true"
+                                EmptyDataText="Không có dữ liệu phù hợp" OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
                                         <ItemTemplate>
@@ -215,7 +214,7 @@
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;">
                                                 <tr>
                                                     <td colspan="3" style="height: 50px">
-                                                        Giá trị theo sổ kế toán (VNĐ)
+                                                        Giá trị theo sổ kế toán (ngàn đồng)
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -241,13 +240,13 @@
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                                 text-align: right">
                                                 <tr>
-                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px" height="40px">
+                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px; text-align:right" height="40px;">
                                                         <%# Eval("NGUON_NS", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px">
+                                                    <td style="width: 33%; border-right: solid; border-right-width: 1px; text-align:right">
                                                         <%# Eval("NGUON_KHAC", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 33%">
+                                                    <td style="width: 33%; text-align:right">
                                                         <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
@@ -287,16 +286,16 @@
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="text-align: right;
                                                 border-collapse: collapse;">
                                                 <tr>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px" height="40px">
+                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px; text-align:right" height="40px">
                                                         <%# Eval("QLNN", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px">
+                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px; text-align:right">
                                                         <%# Eval("KINH_DOANH", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px">
+                                                    <td style="width: 25%; border-right: solid; border-right-width: 1px; text-align:right">
                                                         <%# Eval("KHONG_KINH_DOANH", "{0:#,###}")%>
                                                     </td>
-                                                    <td style="width: 25%">
+                                                    <td style="width: 25%; text-align:right">
                                                         <%# Eval("HD_KHAC", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
