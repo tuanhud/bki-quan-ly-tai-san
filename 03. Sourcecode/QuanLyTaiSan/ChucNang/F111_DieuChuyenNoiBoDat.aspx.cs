@@ -365,11 +365,13 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
     private void cap_nhat_thong_tin_tai_san_dieu_chuyen_mot_phan()
     {
         US_DM_DAT v_us_dm_dat_dc = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
-        v_us_dm_dat_dc.strMA_TAI_SAN = v_us_dm_dat_dc.strMA_TAI_SAN + " -DC";
+        v_us_dm_dat_dc.strMA_TAI_SAN = v_us_dm_dat_dc.strMA_TAI_SAN + "-DC";
         v_us_dm_dat_dc.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DANG_SU_DUNG;
         v_us_dm_dat_dc.dcDT_KHUON_VIEN = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
         v_us_dm_dat_dc.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
         v_us_dm_dat_dc.Insert();
+        v_us_dm_dat_dc.strMA_TAI_SAN = v_us_dm_dat_dc.strMA_TAI_SAN + "-" + v_us_dm_dat_dc.dcID;
+        v_us_dm_dat_dc.Update();
 
         US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
         v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
