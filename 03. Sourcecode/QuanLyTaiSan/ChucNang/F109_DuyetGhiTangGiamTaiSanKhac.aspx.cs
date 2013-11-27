@@ -217,7 +217,7 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         m_us_gd_tang_giam_tai_san.dcID_TAI_SAN = v_us_dm_tai_san_khac.dcID;
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_tai_san_khac.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
-        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = 
+        m_us_gd_tang_giam_tai_san.dcDIEN_TICH =
             v_us_dm_tai_san_khac.dcKINH_DOANH + v_us_dm_tai_san_khac.dcKHONG_KINH_DOANH + v_us_dm_tai_san_khac.dcQLNN + v_us_dm_tai_san_khac.dcHD_KHAC;
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_tai_san_khac.dcNGUON_NS + v_us_dm_tai_san_khac.dcNGUON_KHAC;
 
@@ -249,6 +249,8 @@ public partial class ChucNang_F109_DuyetGhiTangGiamTaiSanKhac : System.Web.UI.Pa
         }
 
         m_lbl_mess.Text = "Cập nhật thành công";
+        // lay Ma Phieu bo xuong o Tu Khoa
+        m_txt_tu_khoa.Text = m_us_gd_tang_giam_tai_san.strMA_PHIEU;
     }
 
     private void select_loai_tang_giam()

@@ -83,7 +83,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
         WinFormControls.load_data_to_cbo_ly_do_tang_giam(
             WinFormControls.eLOAI_TU_DIEN.LY_DO_TANG_GIAM_TS
             , v_e_loai
-            , m_cbo_ly_do_thay_doi);    
+            , m_cbo_ly_do_thay_doi);
     }
 
     private void load_data_from_us()
@@ -246,7 +246,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcID_TAI_SAN = v_us_dm_oto.dcID;
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_oto.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
-        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = 
+        m_us_gd_tang_giam_tai_san.dcDIEN_TICH =
             v_us_dm_oto.dcKINH_DOANH + v_us_dm_oto.dcKHONG_KINH_DOANH + v_us_dm_oto.dcKINH_DOANH + v_us_dm_oto.dcKHONG_KINH_DOANH + v_us_dm_oto.dcHD_KHAC + v_us_dm_oto.dcQLNN;
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_oto.dcNGUON_NS + v_us_dm_oto.dcNGUON_KHAC;
 
@@ -260,7 +260,7 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
         {
             update_thong_tin_tai_san(v_us_dm_oto);
         }
-        
+
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString())
         {
             v_us_dm_oto.dcID_TRANG_THAI = ID_TRANG_THAI_OTO.DA_THANH_LY;
@@ -277,6 +277,8 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
             v_us_dm_oto.Update();
         }
         m_lbl_message.Text = "Cập nhật thành công";
+        //lay Ma Phieu bo xuong o Tu Khoa
+        m_txt_tu_khoa.Text = m_us_gd_tang_giam_tai_san.strMA_PHIEU;
     }
 
     private void select_loai_tang_giam()
@@ -625,6 +627,6 @@ public partial class ChucNang_F108_DuyetGhiTangGiamOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion 
-    
+    #endregion
+
 }
