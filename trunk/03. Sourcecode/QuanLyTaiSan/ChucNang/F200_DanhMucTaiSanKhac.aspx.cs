@@ -47,16 +47,17 @@ public partial class Default2 : System.Web.UI.Page
     }
     private bool check_validate_data_is_ok()
     {
-        if (!CValidateTextBox.IsValid(m_txt_ma_tai_san, DataType.StringType, allowNull.NO))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng mã tài sản";
-            return false;
-        }
         if (!CValidateTextBox.IsValid(m_txt_ten_tai_san, DataType.StringType, allowNull.NO))
         {
             m_lbl_mess.Text = "Chưa nhập đúng tên tài sản";
             return false;
         }
+        if (!CValidateTextBox.IsValid(m_txt_ma_tai_san, DataType.StringType, allowNull.NO))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng mã tài sản";
+            return false;
+        }
+
         if (!CValidateTextBox.IsValid(m_txt_nguyen_gia_nguon_ns, DataType.NumberType, allowNull.NO))
         {
             m_lbl_mess.Text = "Chưa nhập đúng nguyên giá nguồn ngân sách";
@@ -67,16 +68,17 @@ public partial class Default2 : System.Web.UI.Page
             m_lbl_mess.Text = "Chưa nhập đúng nguyên giá nguồn khác";
             return false;
         }
-        if (!CValidateTextBox.IsValid(m_txt_ngay_su_dung, DataType.NumberType, allowNull.YES))
-        {
-            m_lbl_mess.Text = "Chưa nhập đúng ngày sử dụng";
-            return false;
-        }
         if (!CValidateTextBox.IsValid(m_txt_nam_sx, DataType.NumberType, allowNull.YES))
         {
             m_lbl_mess.Text = "Chưa nhập đúng năm sản xuất";
             return false;
         }
+        if (!CValidateTextBox.IsValid(m_txt_ngay_su_dung, DataType.NumberType, allowNull.YES))
+        {
+            m_lbl_mess.Text = "Chưa nhập đúng năm sử dụng";
+            return false;
+        }
+
         if (!CValidateTextBox.IsValid(m_txt_gia_tri_con_lai, DataType.NumberType, allowNull.NO))
         {
             m_lbl_mess.Text = "Chưa nhập đúng giá trị còn lại";

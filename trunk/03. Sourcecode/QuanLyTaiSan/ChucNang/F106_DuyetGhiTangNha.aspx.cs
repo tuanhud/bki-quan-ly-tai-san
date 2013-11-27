@@ -211,12 +211,14 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         if (m_cbo_ten_tai_san.Items.Count == 0)
         {
             m_lbl_message.Text = "Bạn chưa lựa chọn tài sản";
+            m_cbo_ten_tai_san.Focus();
             return false;
         }
 
         if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
         {
             m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
+            m_txt_ma_phieu.Focus();
             return false;
         }
         return true;

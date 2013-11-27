@@ -233,24 +233,28 @@ public partial class ChucNang_F112_DieuChuyenNoiBoOto : System.Web.UI.Page
         if (m_cbo_ten_tai_san.Items.Count == 0)
         {
             m_lbl_message.Text = "Bạn chưa lựa chọn tài sản";
-            return false;
-        }
-
-        if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu_tang.Text))
-        {
-            m_lbl_message.Text = "Lỗi: Mã phiểu tăng này đã tồn tại";
+            m_cbo_ten_tai_san.Focus();
             return false;
         }
 
         if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu_giam.Text))
         {
             m_lbl_message.Text = "Lỗi: Mã phiểu giảm đã tồn tại";
+            m_txt_ma_phieu_giam.Focus();
             return false;
         }
+        if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu_tang.Text))
+        {
+            m_lbl_message.Text = "Lỗi: Mã phiểu tăng này đã tồn tại";
+            m_txt_ma_phieu_tang.Focus();
+            return false;
+        }
+
 
         if (m_cbo_don_vi_su_dung_moi.SelectedValue == m_cbo_don_vi_su_dung_tai_san_up.SelectedValue)
         {
             m_lbl_message.Text = "Đơn vị sử dụng của tài sản chưa được thay đổi. Hãy lựa chọn một đơn vị khác.";
+            m_cbo_don_vi_su_dung_moi.Focus();
             return false;
         }
         return true;
