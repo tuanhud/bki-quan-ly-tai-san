@@ -409,6 +409,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         load_2_cbo_loaits();
         load_data_trang_thai();
         load_data_to_grid();
+        m_txt_tim_kiem.Text = v_us_gd_tang_giam_tai_san.strMA_PHIEU;
     }
     private void clear_panel_data()
     {
