@@ -288,7 +288,6 @@ public partial class ChucNang_F302_khau_hao_nha : System.Web.UI.Page {
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e) {
         try {
             clear_message();
-            Thread.Sleep(1000);
             load_data_to_grid();
         }
         catch (Exception v_e) {

@@ -230,7 +230,7 @@
                             </tr>
                             <tr>
                                 <td class="cssManField" colspan="2" align="center">
-                                    <span>KHẤU HAO TÀI SẢN</span>
+                                    <span>CHI TIẾT HAO MÒN TÀI SẢN</span>
                                 </td>
                             </tr>
                             <tr>
@@ -248,7 +248,7 @@
                                     </asp:RequiredFieldValidator>
                                 </td>
                                 <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                                    <span>Giá trị khấu hao *</span>
+                                    <span>Giá trị hao mòn *</span>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
