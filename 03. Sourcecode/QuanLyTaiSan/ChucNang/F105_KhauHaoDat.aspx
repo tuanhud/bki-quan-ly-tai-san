@@ -47,7 +47,7 @@
             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <span class="cssPageTitle">KHẤU HAO TÀI SẢN ĐẤT</span> <span class="expand-collapse-text initial-expand">
+                        <span class="cssPageTitle">HAO MÒN TÀI SẢN ĐẤT</span> <span class="expand-collapse-text initial-expand">
                         </span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>

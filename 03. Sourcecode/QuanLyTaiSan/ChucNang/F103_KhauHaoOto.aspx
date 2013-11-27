@@ -51,7 +51,7 @@
                 <!--  Quan ly oto  -->
                 <tr>
                     <td class="cssPageTitleBG" colspan="4">
-                        <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="KHẤU HAO Ô TÔ" />
+                        <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="HAO MÒN TÀI SẢN Ô TÔ" />
                         <span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text">
                         </span>
                     </td>
