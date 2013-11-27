@@ -3,7 +3,7 @@
 
 <%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI" TagPrefix="asp" %>
-<%@ Register assembly="eWorld.UI" namespace="eWorld.UI" tagprefix="ew" %>
+<%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         $(function () {
@@ -197,7 +197,7 @@
                             </tr>
                             <tr>
                                 <td align="right" style="width: 15%">
-                                    <span class="cssManField">Nguyên giá nguồn NS (VNĐ)</span>
+                                    <span class="cssManField">Nguyên giá nguồn NS (ngàn đồng)</span>
                                 </td>
                                 <td align="left">
                                     <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" class="cssManField" Style="color: blue">
@@ -206,7 +206,7 @@
                                 <td>
                                 </td>
                                 <td align="right">
-                                    <span class="cssManField">Nguyên giá nguồn khác (VNĐ)</span>
+                                    <span class="cssManField">Nguyên giá nguồn khác (ngàn đồng)</span>
                                 </td>
                                 <td align="left">
                                     <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" class="cssManField" Style="color: blue">
@@ -217,7 +217,7 @@
                             </tr>
                             <tr>
                                 <td align="right">
-                                    <span class="cssManField">Giá trị còn lại (VNĐ)</span>
+                                    <span class="cssManField">Giá trị còn lại (ngàn đồng)</span>
                                 </td>
                                 <td align="left">
                                     <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" class="cssManField" Style="color: blue">
@@ -267,29 +267,27 @@
                                     <span>Ngày lập </span>
                                 </td>
                                 <td style="width: 29%" align="left">
-                                    <ew:CalendarPopup ID="m_dat_ngay_lap" runat="server" 
-                                        ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
-                                        GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
+                                    <ew:CalendarPopup ID="m_dat_ngay_lap" runat="server" ControlDisplay="TextBoxImage"
+                                        Culture="vi-VN" DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                        ShowGoToToday="true">
                                         <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
+                                            ForeColor="Black" />
                                         <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
+                                            ForeColor="Black" />
                                         <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Gray" />
+                                            Font-Size="XX-Small" ForeColor="Gray" />
                                         <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
+                                            Font-Size="XX-Small" ForeColor="Black" />
                                         <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                                        <DayHeaderStyle BackColor="AliceBlue" 
-                                            Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                            ForeColor="Black" />
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
                                         <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                                        <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                                        <TodayDayStyle BackColor="CadetBlue" 
-                                            Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
                                             ForeColor="Black" />
+                                        <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
                                     </ew:CalendarPopup>
                                 </td>
                                 <td align="left" style="width: 1%">
@@ -298,33 +296,32 @@
                                     <span>Ngày duyệt </span>
                                 </td>
                                 <td style="width: 29%" align="left">
-                                    <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" 
-                                        ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextboxEntry="true" 
-                                        GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
+                                    <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
+                                        Culture="vi-VN" DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                        ShowGoToToday="true">
                                         <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
+                                            ForeColor="Black" />
                                         <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
+                                            ForeColor="Black" />
                                         <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Gray" />
+                                            Font-Size="XX-Small" ForeColor="Gray" />
                                         <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
+                                            Font-Size="XX-Small" ForeColor="Black" />
                                         <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                                        <DayHeaderStyle BackColor="AliceBlue" 
-                                            Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                            ForeColor="Black" />
+                                            Font-Size="XX-Small" ForeColor="Black" />
+                                        <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
                                         <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                                        <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                                        <TodayDayStyle BackColor="CadetBlue" 
-                                            Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
                                             ForeColor="Black" />
+                                        <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                            ForeColor="Black" />
+                                        <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                            Font-Size="XX-Small" ForeColor="Black" />
                                     </ew:CalendarPopup>
                                 </td>
                                 <td align="left" style="width: 1%;">
-                                    &nbsp;</td>
+                                    &nbsp;
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="4" align="center">
@@ -384,7 +381,7 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_dia_chi" runat="Server" Width="85%" TabIndex="4" AutoPostBack="true"
-                            onselectedindexchanged="m_cbo_dia_chi_SelectedIndexChanged">
+                            OnSelectedIndexChanged="m_cbo_dia_chi_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -394,7 +391,7 @@
                     </td>
                     <td style="width: 30%" colspan="1">
                         <asp:TextBox ID="m_txt_tu_khoa" runat="server" CssClass="cssTextBox" AutoPostBack="true"
-                            Width="85%" ontextchanged="m_txt_tu_khoa_TextChanged">
+                            Width="85%" OnTextChanged="m_txt_tu_khoa_TextChanged">
                         </asp:TextBox>
                     </td>
                     <td align="right" style="width: 20%" colspan="1">
@@ -407,7 +404,7 @@
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" AccessKey="s" CssClass="cssButton"
-                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" CausesValidation="false"/>
+                            Height="24px" Text="Tìm kiếm" Width="98px" OnClick="m_cmd_tim_kiem_Click" CausesValidation="false" />
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_xuat_excel" runat="server" CausesValidation="False" CssClass="cssButton"
@@ -424,9 +421,9 @@
                 <tr>
                     <td align="center" colspan="4" style="height: 450px;" valign="top">
                         <asp:GridView ID="m_grv_danh_sach_nha" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True" CssClass="cssGrid"
-                            EmptyDataText="Không có dữ liệu phù hợp" PageSize="30" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging"
-                            OnRowCommand="m_grv_danh_sach_nha_RowCommand">
+                            Width="100%" DataKeyNames="ID_KH" CellPadding="0" ForeColor="#333333" AllowSorting="True"
+                            CssClass="cssGrid" EmptyDataText="Không có dữ liệu phù hợp" PageSize="30" ShowHeader="true"
+                            OnPageIndexChanging="m_grv_danh_sach_nha_PageIndexChanging" OnRowCommand="m_grv_danh_sach_nha_RowCommand">
                             <Columns>
                                 <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="2%">
                                     <ItemTemplate>
@@ -447,8 +444,7 @@
                                 <asp:BoundField HeaderText="Địa chỉ" DataField="DIA_CHI" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Cấp hạng" DataField="CAP_HANG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Năm xây dựng" DataField="NAM_XAY_DUNG" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="Năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG"
-                                    ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField HeaderText="Năm sử dụng" DataField="NGAY_THANG_NAM_SU_DUNG" ItemStyle-HorizontalAlign="Center" />
                                 <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
@@ -480,19 +476,20 @@
                                     <ItemTemplate>
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
                                             text-align: right">
-                                            <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                                <%# Eval("NGUON_NS", "{0:#,##0.00}")%>
+                                            <td style="width: 33%; height: 60px; border-right: 1px solid gray; text-align: right">
+                                                <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                             </td>
-                                            <td style="width: 33%; height: 60px; border-right: 1px solid gray;">
-                                                <%# Eval("NGUON_KHAC", "{0:#,##0.00}")%>
+                                            <td style="width: 33%; height: 60px; border-right: 1px solid gray;text-align: right">
+                                                <%# Eval("NGUON_KHAC", "{0:#,##0}")%>
                                             </td>
-                                            <td style="width: 33%; height: 60px;">
-                                                <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0.00}")%>
+                                            <td style="width: 33%; height: 60px;text-align: right">
+                                                <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0}")%>
                                             </td>
                                         </table>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" />
+                                <asp:BoundField HeaderText="Giá trị khấu hao" DataField="GIA_TRI_KHAU_HAO" DataFormatString="{0:#,##0}"
+                                    ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Ngày lập" DataField="NGAY_LAP" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                             </Columns>
