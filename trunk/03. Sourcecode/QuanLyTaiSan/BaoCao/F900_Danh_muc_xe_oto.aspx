@@ -159,7 +159,7 @@
                                     HeaderStyle-Width="4%"></asp:BoundField>
                                 <asp:BoundField HeaderText="NGÀY, THÁNG, NĂM SỬ DỤNG" ItemStyle-HorizontalAlign="Center"
                                     DataField="NAM_SU_DUNG" HeaderStyle-Width="3%"></asp:BoundField>
-                                <asp:BoundField HeaderText="CÔNG SUẤT XE" ItemStyle-HorizontalAlign="Center" DataField="CONG_SUAT_XE"
+                                <asp:BoundField HeaderText="CÔNG SUẤT XE" ItemStyle-HorizontalAlign="Center" DataFormatString="{0:#,###}" DataField="CONG_SUAT_XE"
                                     HeaderStyle-Width="3%"></asp:BoundField>
                                 <asp:BoundField HeaderText="CHỨC DANH SỬ DỤNG XE" ItemStyle-HorizontalAlign="Center"
                                     DataField="CHUC_DANH_SU_DUNG" HeaderStyle-Width="4%"></asp:BoundField>

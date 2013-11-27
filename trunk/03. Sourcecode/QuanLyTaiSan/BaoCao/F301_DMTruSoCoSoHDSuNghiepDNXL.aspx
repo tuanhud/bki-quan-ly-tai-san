@@ -393,11 +393,11 @@
                                 <asp:BoundField HeaderText="SỐ TẦNG" DataField="SO_TANG" HeaderStyle-Width="2%">
                                     <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="DIỆN TÍCH XÂY DỰNG <br/> (m2)" HtmlEncode="false" DataField="DT_XAY_DUNG"
+                                <asp:BoundField HeaderText="DIỆN TÍCH XÂY DỰNG <br/> (m2)" DataFormatString="{0:#,###}" HtmlEncode="false" DataField="DT_XAY_DUNG"
                                     HeaderStyle-Width="3.25%">
                                     <ItemStyle HorizontalAlign="right" />
                                 </asp:BoundField>
-                                <asp:BoundField HeaderText="TỔNG DT SÀN XÂY DỰNG <br/> (m2)" HtmlEncode="false" DataField="TONG_DT_SAN_XD"
+                                <asp:BoundField HeaderText="TỔNG DT SÀN XÂY DỰNG <br/> (m2)" DataFormatString="{0:#,###}" HtmlEncode="false" DataField="TONG_DT_SAN_XD"
                                     HeaderStyle-Width="3.25%">
                                     <ItemStyle HorizontalAlign="right" />
                                 </asp:BoundField>
@@ -446,25 +446,25 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                             <tr>
                                                 <td style="width: 14.28%; height: 40px; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("TRU_SO_LAM_VIEC") %>
+                                                    <%# Eval("TRU_SO_LAM_VIEC", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("CO_SO_HDSN") %>
+                                                    <%# Eval("CO_SO_HDSN", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("LAM_NHA_O") %>
+                                                    <%# Eval("LAM_NHA_O", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("CHO_THUE") %>
+                                                    <%# Eval("CHO_THUE", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("BO_TRONG") %>
+                                                    <%# Eval("BO_TRONG", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.28%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("BI_LAN_CHIEM") %>
+                                                    <%# Eval("BI_LAN_CHIEM", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.28%;" align="right">
-                                                    <%# Eval("KHAC") %>
+                                                    <%# Eval("KHAC", "{0:#,###}")%>
                                                 </td>
                                             </tr>
                                         </table>
