@@ -211,26 +211,30 @@ public partial class ChucNang_F303_khau_hao_tai_san_khac : System.Web.UI.Page
 
     private bool check_validate_data_is_valid()
     {
-        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
-        {
-            m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị hao mòn lớn hơn giá trị còn lại";
-            return false;
-        }
         string v_str_id_ts = m_cbo_ten_tai_san.SelectedValue;
         if (v_str_id_ts.Equals(String.Empty) || v_str_id_ts.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_mess.Text = "Bạn chưa chọn tài sản";
+            m_cbo_ten_tai_san.Focus();
+            return false;
+        }
+        if (!m_us_gd_khau_hao.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
+        {
+            m_lbl_mess.Text = "Mã phiếu này đã tồn tại";
+            m_txt_ma_phieu.Focus();
             return false;
         }
         decimal v_dc_gia_tri_kh = CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text);
         if (v_dc_gia_tri_kh <= 0)
         {
             m_lbl_mess.Text = "Giá trị hao mòn phải lớn hơn 0";
+            m_txt_gia_tri_khau_hao.Focus();
             return false;
         }
-        if (!m_us_gd_khau_hao.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
+        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
         {
-            m_lbl_mess.Text = "Mã phiếu này đã tồn tại";
+            m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Giá trị hao mòn lớn hơn giá trị còn lại";
+            m_txt_gia_tri_khau_hao.Focus();
             return false;
         }
         return true;
