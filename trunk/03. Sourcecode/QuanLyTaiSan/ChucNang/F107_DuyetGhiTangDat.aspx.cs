@@ -175,12 +175,14 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         if (m_cbo_dia_chi.Items.Count == 0)
         {
             m_lbl_message.Text = "Bạn chưa lựa chọn tài sản";
+            m_cbo_dia_chi.Focus();
             return false;
         }
 
         if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
         {
             m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
+            m_txt_ma_phieu.Focus();
             return false;
         }
         return true;
@@ -232,6 +234,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         }
 
         m_lbl_message.Text = "Cập nhật thành công";
+        m_txt_tu_khoa.Text = m_us_gd_tang_giam_tai_san.strMA_PHIEU;
     }
 
     private void select_loai_tang_giam()
