@@ -130,25 +130,25 @@
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
                                                     <td style="width: 14%; height: 40px; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("DT_TRU_SO_LAM_VIEC", "{0:#,##0.00}")%>
+                                                        <%# Eval("DT_TRU_SO_LAM_VIEC", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("DT_CO_SO_HDSN", "{0:#,##0.00}")%>
+                                                        <%# Eval("DT_CO_SO_HDSN", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("DT_LAM_NHA_O", "{0:#,##0.00}")%>
+                                                        <%# Eval("DT_LAM_NHA_O", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("DT_CHO_THUE", "{0:#,##0.00}")%>
+                                                        <%# Eval("DT_CHO_THUE", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("DT_BO_TRONG", "{0:#,##0.00}")%>
+                                                        <%# Eval("DT_BO_TRONG", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 14%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("DT_BI_LAN_CHIEM", "{0:#,##0.00}")%>
+                                                        <%# Eval("DT_BI_LAN_CHIEM", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 14%" align="right">
-                                                        <%# Eval("DT_KHAC", "{0:#,##0.00}")%>
+                                                        <%# Eval("DT_KHAC", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
                                             </table>

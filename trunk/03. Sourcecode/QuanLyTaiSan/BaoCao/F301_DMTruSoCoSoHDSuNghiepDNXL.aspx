@@ -378,13 +378,13 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                             <tr>
                                                 <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("NGUON_NS", "{0:0,000}")%>
+                                                    <%# Eval("NGUON_NS", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 33.33%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("NGUON_KHAC", "{0:0,000}")%>
+                                                    <%# Eval("NGUON_KHAC", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 33.33%; height: 40px;" align="right">
-                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:0,000}")%>
+                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
                                                 </td>
                                             </tr>
                                         </table>

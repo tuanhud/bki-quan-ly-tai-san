@@ -85,7 +85,7 @@
                                         SỐ LƯỢNG
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <%#Eval("SO_LUONG", "{0:#,##0.00}")%>
+                                        <%#Eval("SO_LUONG", "{0:#,###}")%>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderStyle-Width="8.75%" ItemStyle-Width="10.75%" ItemStyle-HorizontalAlign="Right">
@@ -93,7 +93,7 @@
                                         DIỆN TÍCH (m2)
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <%#Eval("TONG_DIEN_TICH", "{0:#,##0.00}")%>
+                                        <%#Eval("TONG_DIEN_TICH", "{0:#,###}")%>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderStyle-Width="49%" HeaderStyle-Height="110px">
@@ -140,25 +140,25 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                             <tr>
                                                 <td style="width: 14.2857%; height: 40px; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("DT_TRU_SO_LAM_VIEC", "{0:#,##0.00}")%>
+                                                    <%# Eval("DT_TRU_SO_LAM_VIEC", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.2857%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("DT_CO_SO_HDSN", "{0:#,##0.00}")%>
+                                                    <%# Eval("DT_CO_SO_HDSN", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.2857%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("DT_LAM_NHA_O ", "{0:#,##0.00}")%>
+                                                    <%# Eval("DT_LAM_NHA_O ", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.2857%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("DT_CHO_THUE", "{0:#,##0.00}")%>
+                                                    <%# Eval("DT_CHO_THUE", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.2857%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("DT_BO_TRONG","{0:#,##0.00}")%>
+                                                    <%# Eval("DT_BO_TRONG","{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.2857%; border-right: 1px solid gray;" align="right">
-                                                    <%# Eval("DT_BI_LAN_CHIEM", "{0:#,##0.00}")%>
+                                                    <%# Eval("DT_BI_LAN_CHIEM", "{0:#,###}")%>
                                                 </td>
                                                 <td style="width: 14.2857%" align="right">
-                                                    <%# Eval("DT_KHAC", "{0:#,##0.00}")%>
+                                                    <%# Eval("DT_KHAC", "{0:#,###}")%>
                                                 </td>
                                             </tr>
                                         </table>

@@ -184,10 +184,10 @@
                                                         <%# Eval("SO_DAU_KY_SO_LUONG")%>
                                                     </td>
                                                     <td style="width: 30%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_DAU_KY_DIEN_TICH", "{0:0,000}")%>
+                                                        <%# Eval("SO_DAU_KY_DIEN_TICH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 40%;" align="right">
-                                                        <%# Eval("SO_DAU_KY_NGUYEN_GIA", "{0:0,000}")%>
+                                                        <%# Eval("SO_DAU_KY_NGUYEN_GIA", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -221,10 +221,10 @@
                                                         <%# Eval("SO_TANG_TRONG_KY_SO_LUONG")%>
                                                     </td>
                                                     <td style="width: 30%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_TANG_TRONG_KY_DIEN_TICH", "{0:0,000}")%>
+                                                        <%# Eval("SO_TANG_TRONG_KY_DIEN_TICH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 40%;" align="right">
-                                                        <%# Eval("SO_TANG_TRONG_KY_NGUYEN_GIA", "{0:0,000}")%>
+                                                        <%# Eval("SO_TANG_TRONG_KY_NGUYEN_GIA", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -258,10 +258,10 @@
                                                         <%# Eval("SO_GIAM_TRONG_KY_SO_LUONG")%>
                                                     </td>
                                                     <td style="width: 30%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_GIAM_TRONG_KY_DIEN_TICH", "{0:0,000}")%>
+                                                        <%# Eval("SO_GIAM_TRONG_KY_DIEN_TICH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 40%;" align="right">
-                                                        <%# Eval("SO_GIAM_TRONG_KY_NGUYEN_GIA", "{0:0,000}")%>
+                                                        <%# Eval("SO_GIAM_TRONG_KY_NGUYEN_GIA", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -295,10 +295,10 @@
                                                         <%# Eval("SO_CUOI_KY_SO_LUONG")%>
                                                     </td>
                                                     <td style="width: 30%; border-right: 1px solid gray" align="right">
-                                                        <%# Eval("SO_CUOI_KY_DIEN_TICH", "{0:0,000}")%>
+                                                        <%# Eval("SO_CUOI_KY_DIEN_TICH", "{0:#,###}")%>
                                                     </td>
                                                     <td style="width: 40%;" align="right">
-                                                        <%# Eval("SO_CUOI_KY_NGUYEN_GIA", "{0:0,000}")%>
+                                                        <%# Eval("SO_CUOI_KY_NGUYEN_GIA", "{0:#,###}")%>
                                                     </td>
                                                 </tr>
                                             </table>

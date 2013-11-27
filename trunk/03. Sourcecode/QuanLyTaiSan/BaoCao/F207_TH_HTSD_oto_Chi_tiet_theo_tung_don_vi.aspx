@@ -81,7 +81,7 @@
                                     <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="20%" DataTextField="TEN_TAI_SAN"
                                         HeaderStyle-HorizontalAlign="Center" />
                                     <asp:BoundField HeaderText="SỐ LƯỢNG" HeaderStyle-Width="6.25%" DataField="SO_LUONG"
-                                        ItemStyle-HorizontalAlign="right" DataFormatString="{0:#,###.##}"></asp:BoundField>
+                                        ItemStyle-HorizontalAlign="right" DataFormatString="{0:#,###}"></asp:BoundField>
                                     <asp:TemplateField HeaderStyle-Width="25%" HeaderStyle-Height="75px">
                                         <HeaderTemplate>
                                             <table border="1" cellspacing="0" cellpadding="3" width="100%" style="border-collapse: collapse;
