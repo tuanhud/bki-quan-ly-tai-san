@@ -40,6 +40,7 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         //set_caption_by_loai_tang_giam();
         load_data_from_us();
         load_data_to_grid();
+        set_visible_dien_tich_dieu_chuyen();
     }
 
     //private void load_data_to_ly_do()
@@ -186,27 +187,44 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         if (m_cbo_dia_chi.Items.Count == 0)
         {
             m_lbl_message.Text = "Bạn chưa lựa chọn tài sản";
+            m_cbo_dia_chi.Focus();
             return false;
         }
 
         if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu_tang.Text))
         {
             m_lbl_message.Text = "Lỗi: Mã phiểu tăng này đã tồn tại";
+            m_txt_ma_phieu_tang.Focus();
             return false;
         }
 
         if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu_giam.Text))
         {
             m_lbl_message.Text = "Lỗi: Mã phiểu giảm đã tồn tại";
+            m_txt_ma_phieu_giam.Focus();
             return false;
         }
 
         if (m_cbo_don_vi_su_dung_moi.SelectedValue == m_cbo_don_vi_su_dung_up.SelectedValue)
         {
             m_lbl_message.Text = "Đơn vị sử dụng của tài sản chưa được thay đổi. Hãy lựa chọn một đơn vị khác.";
+            m_cbo_don_vi_su_dung_moi.Focus();
             return false;
         }
-        return true;
+
+        if (!CValidateTextBox.IsValid(m_txt_dien_tich_dieu_chuyen, DataType.NumberType, allowNull.YES))
+        {
+            m_lbl_message.Text = "Lỗi: Diện tích điều chuyển không đúng định dạng số";
+            m_txt_dien_tich_dieu_chuyen.Focus();
+            return false;
+        }
+
+        if (Convert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text) >= Convert.ToDecimal(m_lbl_dt_khuon_vien.Text))
+        {
+            m_lbl_message.Text = "Lỗi: Diện tích điều chuyển lớn hơn diện tích hiện tại của khu đất";
+            m_txt_dien_tich_dieu_chuyen.Focus();
+            return false;
+        }
         return true;
     }
 
@@ -223,6 +241,10 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_dat.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu_giam.Text;
         m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_dat.dcDT_KHUON_VIEN;
+        if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
+        {
+            m_us_gd_tang_giam_tai_san.dcDIEN_TICH = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+        }
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN;
 
         m_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
@@ -246,6 +268,10 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_dat.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu_tang.Text;
         m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_dat.dcDT_KHUON_VIEN;
+        if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
+        {
+            m_us_gd_tang_giam_tai_san.dcDIEN_TICH = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+        }
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN;
 
         m_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
@@ -262,9 +288,9 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         v_us_dm_dat.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DANG_SU_DUNG;
         v_us_dm_dat.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
         v_us_dm_dat.Update();
-        string v_str_dv_cu = m_cbo_don_vi_su_dung_up.Text;
-        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.Text;
-        m_lbl_message.Text = "Đã điều chuyển tài sản " + v_us_dm_dat.strDIA_CHI 
+        string v_str_dv_cu = m_cbo_don_vi_su_dung_up.SelectedItem.Text;
+        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.SelectedItem.Text;
+        m_lbl_message.Text = "Đã điều chuyển tài sản " + v_us_dm_dat.strDIA_CHI
             + " từ đơn vị " + v_str_dv_cu + " đến đơn vị " + v_str_dv_moi;
     }
 
@@ -311,12 +337,48 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
     //    }
     //}
 
+    private void set_visible_dien_tich_dieu_chuyen()
+    {
+        if (m_rbl_loai_dieu_chuyen.SelectedValue == "Y")
+        {
+            m_lbl_dien_tich_dc.Visible = false;
+            m_txt_dien_tich_dieu_chuyen.Visible = false;
+            m_rfv_dien_tich_dieu_chuyen.EnableClientScript = false;
+        }
+        else
+        {
+            m_lbl_dien_tich_dc.Visible = true;
+            m_txt_dien_tich_dieu_chuyen.Visible = true;
+            m_txt_dien_tich_dieu_chuyen.Enabled = true;
+            m_rfv_dien_tich_dieu_chuyen.EnableClientScript = true;
+        }
+    }
+
     private void clear_thong_tin_tai_san()
     {
         m_lbl_ma_tai_san.Text = "";
         m_lbl_dt_khuon_vien.Text = "";
         m_lbl_gt_theo_so_ke_toan.Text = "";
         m_lbl_so_nam_su_dung.Text = "";
+    }
+
+    private void cap_nhat_thong_tin_tai_san_dieu_chuyen_mot_phan()
+    {
+        US_DM_DAT v_us_dm_dat_dc = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
+        v_us_dm_dat_dc.strMA_TAI_SAN = v_us_dm_dat_dc.strMA_TAI_SAN + " -DC";
+        v_us_dm_dat_dc.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DANG_SU_DUNG;
+        v_us_dm_dat_dc.dcDT_KHUON_VIEN = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+        v_us_dm_dat_dc.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
+        v_us_dm_dat_dc.Insert();
+
+        US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
+        v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+        v_us_dm_dat.Update();
+
+        string v_str_dv_cu = m_cbo_don_vi_su_dung_up.Text;
+        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.Text;
+        m_lbl_message.Text = "Đã điều chuyển tài sản " + v_us_dm_dat.strDIA_CHI
+            + " từ đơn vị " + v_str_dv_cu + " đến đơn vị " + v_str_dv_moi;
     }
     #endregion
 
@@ -453,10 +515,18 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
     {
         try
         {
+            clear_message();
             if (!check_validate_data_is_ok()) return;
             them_moi_ghi_giam();
             them_moi_ghi_tang();
-            cap_nhat_thong_tin_tai_san();
+            if (m_rbl_loai_dieu_chuyen.SelectedValue == "Y")
+            {
+                cap_nhat_thong_tin_tai_san();
+            }
+            else
+            {
+                cap_nhat_thong_tin_tai_san_dieu_chuyen_mot_phan();
+            }
             load_data_2_form();
         }
         catch (Exception v_e)
@@ -560,6 +630,16 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
     {
 
     }
-    #endregion  
-    
+    protected void m_rbl_loai_dieu_chuyen_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            set_visible_dien_tich_dieu_chuyen();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    #endregion
 }
