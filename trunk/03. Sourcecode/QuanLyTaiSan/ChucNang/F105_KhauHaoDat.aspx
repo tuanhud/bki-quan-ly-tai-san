@@ -174,7 +174,7 @@
                 </tr>
                 <tr>
                     <td class="cssManField" colspan="2" align="center">
-                        <span>KHẤU HAO TÀI SẢN</span>
+                        <span>CHI TIẾT KHẤU HAO TÀI SẢN</span>
                     </td>
                 </tr>
                 <tr>
@@ -190,7 +190,7 @@
                             ErrorMessage="Bạn phải nhập Mã Phiếu" Text="*" ValidationGroup="m_vlg_dat" ForeColor="Red"> </asp:RequiredFieldValidator>
                     </td>
                     <td colspan="1" style="width: 20%" align="right" class="cssManField">
-                        <span>Giá trị khấu hao *</span>
+                        <span>Giá trị khấu hao (ngàn đồng) *</span>
                     </td>
                     <td>
                         <asp:TextBox ID="m_txt_gia_tri_khau_hao" runat="server" CssClass="cssTextBox csscurrency"
