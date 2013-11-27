@@ -199,6 +199,13 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_dat.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
         m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_dat.dcDT_KHUON_VIEN;
+        if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
+        {
+            decimal v_dc_dt_dieu_chuyen = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+            m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_dc_dt_dieu_chuyen;
+            v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - v_dc_dt_dieu_chuyen;
+            v_us_dm_dat.Update();
+        }
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN;
 
         m_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
@@ -207,10 +214,6 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.Insert();
 
         // Phần cập nhật thông tin cho DM
-        if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
-        {
-            update_thong_tin_tai_san(v_us_dm_dat);
-        }
         
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY.ToString())
         {
@@ -219,8 +222,8 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN.ToString())
         {
+            update_thong_tin_tai_san(v_us_dm_dat);
             v_us_dm_dat.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DA_DIEU_CHUYEN;
-            v_us_dm_dat.Update();
         }
         if (m_cbo_ly_do_thay_doi.SelectedValue == ID_LY_DO_TANG_GIAM_TAI_SAN.TRANG_CAP_MUA_MOI.ToString())
         {
@@ -262,12 +265,18 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
     private void set_caption_by_loai_tang_giam()
     {
         decimal v_dc_loai_tang_giam = CIPConvert.ToDecimal(m_cbo_ly_do_thay_doi.SelectedValue);
+        set_visible_dien_tich_dieu_chuyen();
         if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.THANH_LY)
         {
             m_lbl_caption.Text = "CHI TIẾT THANH LÝ TÀI SẢN ĐẤT";
             m_lbl_ten_don_vi_nhan_dieu_chuyen.Visible = false;
             m_txt_don_vi_nhan_dieu_chuyen.Visible = false;
             m_rfv_don_vi_nhan.EnableClientScript = false;
+            m_lbl_loai_dieu_chuyen.Visible = false;
+            m_rbl_loai_dieu_chuyen.Visible = false;
+            m_lbl_dien_tich_dc.Visible = false;
+            m_txt_dien_tich_dieu_chuyen.Visible = false;
+            m_rfv_dien_tich_dieu_chuyen.EnableClientScript = false;
             return;
         }
         if (v_dc_loai_tang_giam == ID_LY_DO_TANG_GIAM_TAI_SAN.DIEU_CHUYEN)
@@ -277,7 +286,26 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
             m_txt_don_vi_nhan_dieu_chuyen.Visible = true;
             m_txt_don_vi_nhan_dieu_chuyen.Enabled = true;
             m_rfv_don_vi_nhan.EnableClientScript = true;
+            m_lbl_loai_dieu_chuyen.Visible = true;
+            m_rbl_loai_dieu_chuyen.Visible = true;
             return;
+        }
+    }
+
+    private void set_visible_dien_tich_dieu_chuyen()
+    {
+        if (m_rbl_loai_dieu_chuyen.SelectedValue == "Y")
+        {
+            m_lbl_dien_tich_dc.Visible = false;
+            m_txt_dien_tich_dieu_chuyen.Visible = false;
+            m_rfv_dien_tich_dieu_chuyen.EnableClientScript = false;
+        }
+        else
+        {
+            m_lbl_dien_tich_dc.Visible = true;
+            m_txt_dien_tich_dieu_chuyen.Visible = true;
+            m_txt_dien_tich_dieu_chuyen.Enabled = true;
+            m_rfv_dien_tich_dieu_chuyen.EnableClientScript = true;
         }
     }
 
@@ -289,7 +317,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         m_lbl_so_nam_su_dung.Text = "";
     }
 
-    private void update_thong_tin_tai_san(US_DM_DAT op_us_dm_dat)
+    private void update_thong_tin_tai_san(US_DM_DAT ip_us_dm_dat)
     {
         US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI();
         string v_str_ma_don_vi = new Random().Next(1000).ToString();
@@ -315,9 +343,22 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         v_us_ht_qhsddl.dcID_DON_VI = v_us_dm_don_vi.dcID;
         v_us_ht_qhsddl.dcID_USER_GROUP = 5;
         v_us_ht_qhsddl.Insert();
-
-        op_us_dm_dat.dcID_DON_VI_SU_DUNG = v_us_dm_don_vi.dcID;
-        op_us_dm_dat.dcID_DON_VI_CHU_QUAN = ID_DON_VI.DON_VI_CHU_QUAN_KHAC;
+        if (m_rbl_loai.SelectedValue == "Y")
+        {
+            ip_us_dm_dat.dcID_DON_VI_SU_DUNG = v_us_dm_don_vi.dcID;
+            ip_us_dm_dat.dcID_DON_VI_CHU_QUAN = ID_DON_VI.DON_VI_CHU_QUAN_KHAC;
+            ip_us_dm_dat.Update();
+        }
+        else
+        {
+            ip_us_dm_dat.dcID_DON_VI_SU_DUNG = v_us_dm_don_vi.dcID;
+            ip_us_dm_dat.dcID_DON_VI_CHU_QUAN = ID_DON_VI.DON_VI_CHU_QUAN_KHAC;
+            ip_us_dm_dat.dcDT_KHUON_VIEN = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+            ip_us_dm_dat.strMA_TAI_SAN = ip_us_dm_dat.strMA_TAI_SAN + "-DC";
+            ip_us_dm_dat.Insert();
+            ip_us_dm_dat.strMA_TAI_SAN = ip_us_dm_dat.strMA_TAI_SAN + "-" + ip_us_dm_dat.dcID;
+            ip_us_dm_dat.Update();
+        }
     }
     #endregion
 
@@ -549,6 +590,17 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         try
         {
             clear_message();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_rbl_loai_dieu_chuyen_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            set_visible_dien_tich_dieu_chuyen();
         }
         catch (Exception v_e)
         {
