@@ -295,7 +295,7 @@
                                     <td>
                                     </td>
                                     <td class="cssManField">
-                                        GIÁ TRỊ THEO SỔ KẾ TOÁN (VNĐ)
+                                        GIÁ TRỊ THEO SỔ KẾ TOÁN (ngàn đồng)
                                     </td>
                                     <td>
                                     </td>
@@ -484,24 +484,14 @@
                                         <ItemTemplate>
                                             <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
                                                 OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
-
-
-
                      <img src="../Images/Button/deletered.png" alt="Delete" />
-                                
-
                                             </asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Sửa">
                                         <ItemTemplate>
                                             <asp:LinkButton ToolTip="Sửa" ID="m_lbt_edit" CommandName="Update" runat="server">
-
-
-
                                 <img src="../Images/Button/edit.png" alt="Update" />
-
-
                                             </asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
@@ -524,7 +514,7 @@
                                                 height: 100%">
                                                 <tr style="height: 30%">
                                                     <td colspan="3" style="height: 100%">
-                                                        Giá trị theo sổ kế toán (VNĐ)
+                                                        Giá trị theo sổ kế toán (ngàn đồng)
                                                     </td>
                                                 </tr>
                                                 <tr style="height: 30%">
@@ -550,13 +540,13 @@
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                                 <tr>
                                                     <td style="width: 33%; border-right: 1px solid gray;" height="40px" align="right">
-                                                        <%# Eval("NGUON_NS", "{0:#,###}")%>
+                                                        <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                                     </td>
                                                     <td style="width: 33%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("NGUON_KHAC", "{0:#,###}")%>
+                                                        <%# Eval("NGUON_KHAC", "{0:#,##0}")%>
                                                     </td>
                                                     <td style="width: 33%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
+                                                        <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0}")%>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -596,16 +586,16 @@
                                             <table border="0" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse">
                                                 <tr>
                                                     <td style="width: 25%; border-right: 1px solid gray;" height="40px" align="right">
-                                                        <%# Eval("QLNN", "{0:#,###}")%>
+                                                        <%# Eval("QLNN", "{0:#,##0}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("KINH_DOANH", "{0:#,###}")%>
+                                                        <%# Eval("KINH_DOANH", "{0:#,##0}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("KHONG_KINH_DOANH", "{0:#,###}")%>
+                                                        <%# Eval("KHONG_KINH_DOANH", "{0:#,##0}")%>
                                                     </td>
                                                     <td style="width: 25%; border-right: 1px solid gray;" align="right">
-                                                        <%# Eval("HD_KHAC", "{0:#,###}")%>
+                                                        <%# Eval("HD_KHAC", "{0:#,##0}")%>
                                                     </td>
                                                 </tr>
                                             </table>

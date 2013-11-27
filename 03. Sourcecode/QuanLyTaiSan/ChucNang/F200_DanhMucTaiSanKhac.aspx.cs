@@ -85,6 +85,7 @@ public partial class Default2 : System.Web.UI.Page
             if (CIPConvert.ToDecimal(m_txt_ngay_su_dung.Text) < CIPConvert.ToDecimal(m_txt_nam_sx.Text))
             {
                 m_lbl_mess.Text = "Năm sử dụng phải lớn hơn hoặc bằng năm sản xuất!";
+                m_txt_nam_sx.Focus();
                 return false;
             }
         }
@@ -93,6 +94,7 @@ public partial class Default2 : System.Web.UI.Page
             if (CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_ns.Text) + CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_khac.Text) < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text))
             {
                 m_lbl_mess.Text = "Nguyên giá (nguồn ngân sách + nguồn khác) phải lớn hơn giá trị còn lại!";
+                m_txt_gia_tri_con_lai.Focus();
                 return false;
             }
         }
@@ -104,6 +106,7 @@ public partial class Default2 : System.Web.UI.Page
                 if (!m_us_tai_san_khac.check_ma_valid(m_txt_ma_tai_san.Text))
                 {
                     m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
+                    m_txt_ma_tai_san.Focus();
                     return false;
                 }
             }
@@ -113,6 +116,7 @@ public partial class Default2 : System.Web.UI.Page
             if (!m_us_tai_san_khac.check_ma_valid(m_txt_ma_tai_san.Text.Trim()))
             {
                 m_lbl_mess.Text = "Mã tài sản này đã tồn tại";
+                m_txt_ma_tai_san.Focus();
                 return false;
             };
         }
@@ -178,6 +182,7 @@ public partial class Default2 : System.Web.UI.Page
         m_txt_nguyen_gia_nguon_khac.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_KHAC, "#,##0.00");
         m_txt_gia_tri_con_lai.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcGIA_TRI_CON_LAI, "#,##0.00");
         load_gia_tri_hien_trang(ip_us_m_dm_tai_san_khac);
+        m_txt_ten_tai_san.Focus();
     }
     private void set_gia_tri_hien_trang(US_DM_TAI_SAN_KHAC ip_us_m_dm_tai_san_khac)
     {
@@ -245,6 +250,7 @@ public partial class Default2 : System.Web.UI.Page
         m_txt_nguyen_gia_nguon_khac.Text = "";
         m_txt_gia_tri_con_lai.Text = "";
         m_e_form_mode = DataEntryFormMode.InsertDataState;
+        m_txt_ten_tai_san.Focus();
     }
     private void set_form_mode()
     {
