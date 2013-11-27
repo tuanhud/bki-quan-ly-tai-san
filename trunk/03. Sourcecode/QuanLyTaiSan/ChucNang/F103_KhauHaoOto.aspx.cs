@@ -27,12 +27,14 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         if (v_str_id_oto.Equals(String.Empty) || v_str_id_oto.Equals(CONST_QLDB.MA_TAT_CA))
         {
             m_lbl_message.Text = "Bạn chưa chọn tài sản";
+            m_cbo_ten_tai_san.Focus();
             return false;
         }
 
-        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
+        if (!m_us_gd_kh.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
         {
-            m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị hao mòn lớn hơn giá trị còn lại";
+            m_lbl_message.Text = "Mã phiếu này đã tồn tại";
+            m_txt_ma_phieu.Focus();
             return false;
         }
 
@@ -40,14 +42,17 @@ public partial class ChucNang_F103_KhauHaoOto : System.Web.UI.Page
         if (v_dc_gia_tri_kh <= 0)
         {
             m_lbl_message.Text = "Giá trị hao mòn phải lớn hơn 0";
+            m_txt_gia_tri_khau_hao.Focus();
             return false;
         }
 
-        if (!m_us_gd_kh.check_ma_khau_hao_is_valid(m_txt_ma_phieu.Text.Trim()))
+        if (CIPConvert.ToDecimal(m_txt_gia_tri_khau_hao.Text) > CIPConvert.ToDecimal(m_lbl_gia_tri_con_lai.Text))
         {
-            m_lbl_message.Text = "Mã phiếu này đã tồn tại";
+            m_lbl_message.Text = "Không thể cập nhật. Lỗi: Giá trị hao mòn lớn hơn giá trị còn lại";
+            m_txt_gia_tri_khau_hao.Focus();
             return false;
         }
+
         return true;
     }
 
