@@ -635,13 +635,13 @@
                                         <table border="0" cellspacing="0" cellpadding="2" width="100%">
                                             <tr>
                                                 <td style="width: 33%; height: 40px; border-right: 1px solid gray; text-align: right;">
-                                                    <%# Eval("NGUON_NS", "{0:#,###}")%>
+                                                    <%# Eval("NGUON_NS", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 33%; border-right: 1px solid gray; text-align: right;">
-                                                    <%# Eval("NGUON_KHAC", "{0:#,###}")%>
+                                                    <%# Eval("NGUON_KHAC", "{0:#,##0}")%>
                                                 </td>
                                                 <td style="width: 33%; text-align: right;">
-                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:#,###}")%>
+                                                    <%# Eval("GIA_TRI_CON_LAI", "{0:#,##0}")%>
                                                 </td>
                                             </tr>
                                         </table>
