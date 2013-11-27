@@ -125,6 +125,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_txt_tim_kiem.Text = "";
         m_lbl_mess.Text = "";
         m_lbl_thong_bao.Text = "";
+        m_txt_ten_ts.Focus();
     }
     private void form_2_us_object(US_DM_OTO ip_us_oto)
     {
@@ -163,15 +164,15 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_txt_ma_ts.Text = ip_us_oto.strMA_TAI_SAN;
         m_txt_nam_su_dung.Text = ip_us_oto.dcNAM_SU_DUNG.ToString();
         m_txt_nam_san_xuat.Text = ip_us_oto.dcNAM_SAN_XUAT.ToString();
-        m_txt_gia_tri_con_lai.Text = ip_us_oto.dcGIA_TRI_CON_LAI.ToString("#,##0.##");
+        m_txt_gia_tri_con_lai.Text = ip_us_oto.dcGIA_TRI_CON_LAI.ToString("#,##0");
         m_txt_ten_nhan_hieu.Text = ip_us_oto.strNHAN_HIEU;
         m_txt_nuoc_san_xuat.Text = ip_us_oto.strNUOC_SAN_XUAT;
         m_txt_bien_kiem_soat.Text = ip_us_oto.strBIEN_KIEM_SOAT;
         m_txt_chuc_danh_sd_xe.Text = ip_us_oto.strCHUC_DANH_SU_DUNG;
         m_txt_nguon_goc_xe.Text = ip_us_oto.strNGUON_GOC_XE;
         m_txt_cong_suat_xe.Text = ip_us_oto.dcCONG_SUAT_XE.ToString();
-        m_txt_nguon_khac.Text = ip_us_oto.dcNGUON_KHAC.ToString("#,##0.##");
-        m_txt_nguon_ns.Text = ip_us_oto.dcNGUON_NS.ToString("#,##0.##");
+        m_txt_nguon_khac.Text = ip_us_oto.dcNGUON_KHAC.ToString("#,##0");
+        m_txt_nguon_ns.Text = ip_us_oto.dcNGUON_NS.ToString("#,##0");
         m_txt_ten_ts.Text = ip_us_oto.strTEN_TAI_SAN;
         m_ddl_loai_xe.SelectedValue = ip_us_oto.dcID_LOAI_TAI_SAN.ToString();
 
@@ -195,6 +196,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_ddl_dv_sd_ts.SelectedValue = ip_us_oto.dcID_DON_VI_SU_DUNG.ToString();
 
         m_ddl_trang_thai_oto.SelectedValue = ip_us_oto.dcID_TRANG_THAI.ToString();
+        m_txt_ten_ts.Focus();
     }
     private void load_data_to_grid()
     {
@@ -267,6 +269,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             if (CIPConvert.ToDecimal(m_txt_nam_su_dung.Text) < CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text))
             {
                 m_lbl_mess.Text = "Năm sử dụng phải lớn hơn hoặc bằng năm sản xuất!";
+                m_txt_nam_su_dung.Focus();
                 return false;
             }
         }
@@ -275,6 +278,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             if (CIPConvert.ToDecimal(m_txt_nguon_ns.Text) + CIPConvert.ToDecimal(m_txt_nguon_khac.Text) < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text))
             {
                 m_lbl_mess.Text = "Nguyên giá (nguồn ngân sách + nguồn khác) phải lớn hơn giá trị còn lại!";
+                m_txt_gia_tri_con_lai.Focus();
                 return false;
             }
         }
@@ -287,6 +291,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 if (!m_us_dm_oto.check_ma_valid(m_txt_ma_ts.Text))
                 {
                     m_lbl_mess.Text = "Không thể cập nhật. Lỗi: Mã tài sản này đã tồn tại";
+                    m_txt_ma_ts.Focus();
                     return false;
                 }
             }
@@ -296,6 +301,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             if (!m_us_dm_oto.check_ma_valid(m_txt_ma_ts.Text.Trim()))
             {
                 m_lbl_mess.Text = "Mã tài sản này đã tồn tại";
+                m_txt_ma_ts.Focus();
                 return false;
             };
         }
