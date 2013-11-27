@@ -146,12 +146,14 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
     {
         if (m_ddl_thuoc_khu_dat.SelectedValue == "") {
             m_lbl_mess.Text = "Lỗi: Bạn chưa chọn khu đất!";
+            m_txt_ten_tai_san.Focus();
             return false;
         }
 
         if (m_e_form_mode == DataEntryFormMode.InsertDataState) {
             if (!m_us_dm_nha.check_ma_tai_san_is_valid(m_txt_ma_tai_san.Text)) {
                 m_lbl_mess.Text = "Lỗi: Mã tài sản nhà này đã tồn tại!";
+                m_txt_ma_tai_san.Focus();
                 return false;
             }
         }
@@ -161,7 +163,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             if (m_us_dm_nha.strMA_TAI_SAN != m_txt_ma_tai_san.Text) {
                 if (!m_us_dm_nha.check_ma_tai_san_is_valid(m_txt_ma_tai_san.Text)) {
                     m_lbl_mess.Text = "Lỗi: Mã tài sản nhà này đã tồn tại!";
-
+                    m_txt_ma_tai_san.Focus();
                     return false;
                 }
             }
@@ -172,16 +174,19 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         if (!CValidateTextBox.IsValid(m_txt_cap_hang, DataType.NumberType, allowNull.YES)) 
         {
             m_lbl_mess.Text = "Lỗi: Cấp hạng không đúng định dạng số";
+            m_txt_cap_hang.Focus();
             return false; 
         }
         if (!CValidateTextBox.IsValid(m_txt_nam_xd, DataType.NumberType, allowNull.YES)) 
         {
             m_lbl_mess.Text = "Lỗi: Năm xây dựng không đúng định dạng số";
+            m_txt_nam_xd.Focus();
             return false; 
         }
         if (!CValidateTextBox.IsValid(m_txt_ngay_su_dung, DataType.NumberType, allowNull.YES)) 
         {
             m_lbl_mess.Text = "Lỗi: Năm sử dụng không đúng định dạng số";
+            m_txt_ngay_su_dung.Focus();
             return false; 
         }
         if (!CValidateTextBox.IsValid(m_txt_nguyen_gia, DataType.NumberType, allowNull.YES)) { return false; }
@@ -202,11 +207,13 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
             < CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text))
         {
             m_lbl_mess.Text = "Lỗi: Giá trị còn lại lớn hơn tổng nguyên giá!";
+            m_txt_nguyen_gia.Focus();
             return false;
         }
         if ((m_hdf_id.Value == C_STR_NEW_ID_NHA) && (m_e_form_mode == DataEntryFormMode.UpdateDataState))
         {
             m_lbl_mess.Text = "Lỗi: Bạn chưa chọn dữ liệu để cập nhật!";
+            m_txt_ten_tai_san.Focus();
             return false;
         }
 
@@ -215,6 +222,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         if (v_dc_dt_san_xd < v_dc_dt_xd)
         {
             m_lbl_mess.Text = "Lỗi: Tổng diện tích sàn xây dựng phải lớn hơn hoặc bằng diện tích xây dựng";
+            m_txt_dien_tich_xay_dung.Focus();
             return false;
         }
 
@@ -223,6 +231,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         if (v_dc_nam_su_dung < v_dc_nam_xd)
         {
             m_lbl_mess.Text = "Lỗi: Năm sử dụng phải lớn hơn hoặc bằng năm xây dựng";
+            m_txt_nam_xd.Focus();
             return false;
         }
         return true;
@@ -246,19 +255,20 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         m_txt_nam_xd.Text = m_us_dm_nha.dcNAM_XAY_DUNG.ToString();
         m_txt_ngay_su_dung.Text = m_us_dm_nha.dcNGAY_THANG_NAM_SU_DUNG.ToString();
         m_txt_nguyen_gia.Text = m_us_dm_nha.dcNGUON_NS.ToString("#,##0.00");
-        m_txt_nguyen_gia_nguon_khac.Text = m_us_dm_nha.dcNGUON_KHAC.ToString("#,##0.00");
-        m_txt_gia_tri_con_lai.Text = m_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0.00");
+        m_txt_nguyen_gia_nguon_khac.Text = m_us_dm_nha.dcNGUON_KHAC.ToString("#,##0");
+        m_txt_gia_tri_con_lai.Text = m_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0");
         m_txt_so_tang.Text = m_us_dm_nha.dcSO_TANG.ToString();
-        m_txt_dien_tich_xay_dung.Text = m_us_dm_nha.dcDT_XAY_DUNG.ToString("#,##0.00");
-        m_txt_tong_dien_tich_xay_dung.Text = m_us_dm_nha.dcTONG_DT_SAN_XD.ToString("#,##0.00");
-        m_txt_tru_so_lam_viec.Text = m_us_dm_nha.dcTRU_SO_LAM_VIEC.ToString("#,##0.00");
-        m_txt_co_so_hdsn.Text = m_us_dm_nha.dcCO_SO_HDSN.ToString("#,##0.00");
-        m_txt_lam_nha_o.Text = m_us_dm_nha.dcLAM_NHA_O.ToString("#,##0.00");
-        m_txt_cho_thue.Text = m_us_dm_nha.dcCHO_THUE.ToString("#,##0.00");
-        m_txt_bo_trong.Text = m_us_dm_nha.dcBO_TRONG.ToString("#,##0.00");
-        m_txt_bi_lan_chiem.Text = m_us_dm_nha.dcBI_LAN_CHIEM.ToString("#,##0.00");
-        m_txt_khac.Text = m_us_dm_nha.dcKHAC.ToString("#,##0.00");
+        m_txt_dien_tich_xay_dung.Text = m_us_dm_nha.dcDT_XAY_DUNG.ToString("#,##0");
+        m_txt_tong_dien_tich_xay_dung.Text = m_us_dm_nha.dcTONG_DT_SAN_XD.ToString("#,##0");
+        m_txt_tru_so_lam_viec.Text = m_us_dm_nha.dcTRU_SO_LAM_VIEC.ToString("#,##0");
+        m_txt_co_so_hdsn.Text = m_us_dm_nha.dcCO_SO_HDSN.ToString("#,##0");
+        m_txt_lam_nha_o.Text = m_us_dm_nha.dcLAM_NHA_O.ToString("#,##0");
+        m_txt_cho_thue.Text = m_us_dm_nha.dcCHO_THUE.ToString("#,##0");
+        m_txt_bo_trong.Text = m_us_dm_nha.dcBO_TRONG.ToString("#,##0");
+        m_txt_bi_lan_chiem.Text = m_us_dm_nha.dcBI_LAN_CHIEM.ToString("#,##0");
+        m_txt_khac.Text = m_us_dm_nha.dcKHAC.ToString("#,##0");
         m_ddl_trang_thai_nha.SelectedValue = m_us_dm_nha.dcID_TRANG_THAI.ToString();
+        m_txt_ten_tai_san.Focus();
     }
     private void form_2_us_nha() {
         if (!m_hdf_id.Value.Equals(C_STR_NEW_ID_NHA)) {
@@ -404,7 +414,9 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         m_txt_ma_tai_san.Text = "";
         m_lbl_mess.Text = "";
         m_lbl_thong_bao.Text = "";
+        m_e_form_mode = DataEntryFormMode.InsertDataState;
         set_form_mode();
+        m_txt_ten_tai_san.Focus();
     }
     private void update_nha() {
         m_lbl_mess.Text = "";
