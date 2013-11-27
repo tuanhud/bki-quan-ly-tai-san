@@ -82,9 +82,9 @@
                                     <asp:HyperLinkField HeaderText="TÀI SẢN" HeaderStyle-Width="20%" DataTextField="TEN_TAI_SAN"
                                         HeaderStyle-HorizontalAlign="Center" />
                                     <asp:BoundField HeaderText="SỐ LƯỢNG" HeaderStyle-Width="6.25%" DataField="SO_LUONG"
-                                        ItemStyle-HorizontalAlign="right" DataFormatString="{0:#,###.##}"></asp:BoundField>
+                                        ItemStyle-HorizontalAlign="right" DataFormatString="{0:#,###}"></asp:BoundField>
                                     <asp:BoundField HeaderText="DIỆN TÍCH <br/> (m2)" HtmlEncode="false" HeaderStyle-Width="10%" DataField="TONG_DIEN_TICH"
-                                        ItemStyle-HorizontalAlign="right" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:#,##0.00}">
+                                        ItemStyle-HorizontalAlign="right" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:#,###}">
                                     </asp:BoundField>
                                     <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
                                         <HeaderTemplate>
