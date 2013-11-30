@@ -64,14 +64,7 @@ INSERT INTO HT_QUYEN_GROUP
 
 SELECT ID, 173
 FROM HT_USER_GROUP hug
-/*Đổi loại hình đơn vị sở thành cơ quan hành chính nhà nước*/
-UPDATE DM_DON_VI
-SET
-	-- ID = ? -- this column value is auto-generated,
-	
-	LOAI_HINH_DON_VI = 'CO_QUAN_NHA_NUOC_HC'
-	
-WHERE TEN_DON_VI LIKE N'%Sở%'
+
 
 /* ẩn menu danh mục trạng thái*/	
 update HT_CHUC_NANG 
