@@ -47,7 +47,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         }
     }
     private void load_data_2_form() {
-        reset_controls_in_form();
         load_data_bo_tinh();
         load_data_don_vi_chu_quan();
         load_data_don_vi_su_dung();
@@ -426,8 +425,8 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         Thread.Sleep(2000);
         m_us_dm_nha.Update();
         m_txt_tu_khoa.Text = m_txt_ma_tai_san.Text;
-        reset_controls_in_form();
         load_data_2_form();
+        reset_controls_in_form();
         m_lbl_mess.Text = "Đã cập nhật dữ liệu nhà thành công!";
     }
     private void insert_nha() {
