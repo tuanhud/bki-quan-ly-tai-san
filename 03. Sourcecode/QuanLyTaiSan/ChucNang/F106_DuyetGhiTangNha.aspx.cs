@@ -238,7 +238,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
 
     private bool check_validate_data_is_ok()
     {
-        if (m_cbo_ten_tai_san.Items.Count == 0)
+        if (m_cbo_ten_tai_san.Items.Count == 0 && m_e_form_mode == DataEntryFormMode.InsertDataState)
         {
             m_lbl_message.Text = "Bạn chưa lựa chọn tài sản";
             m_cbo_ten_tai_san.Focus();
@@ -428,7 +428,6 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_nha.dcNGUON_NS.ToString("#,##0");
         m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_nha.dcNGUON_KHAC.ToString("#,##0");
         m_lbl_gia_tri_con_lai.Text = v_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0");
-        m_cbo_ly_do_thay_doi.SelectedValue = m_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM.ToString();
         m_txt_ma_phieu.Text = m_us_gd_tang_giam_tai_san.strMA_PHIEU;
         m_dat_ngay_duyet.SelectedDate = m_us_gd_tang_giam_tai_san.datNGAY_DUYET;
         m_dat_ngay_tang_giam.SelectedDate = m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN;
@@ -443,6 +442,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
         m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = m_dat_ngay_tang_giam.SelectedDate;
         m_lbl_message.Text = "Đã cập nhật thành công";
+        m_e_form_mode = DataEntryFormMode.InsertDataState;
     }
 
     #endregion
@@ -735,7 +735,8 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
     {
         try
         {
-            
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            if(!check_validate_data_is_ok()) return;
             clear_message();
             update_thong_tin_tang_giam();
             load_data_2_form();
