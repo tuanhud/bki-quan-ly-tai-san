@@ -254,7 +254,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page {
         m_txt_cap_hang.Text = m_us_dm_nha.dcCAP_HANG.ToString();
         m_txt_nam_xd.Text = m_us_dm_nha.dcNAM_XAY_DUNG.ToString();
         m_txt_ngay_su_dung.Text = m_us_dm_nha.dcNGAY_THANG_NAM_SU_DUNG.ToString();
-        m_txt_nguyen_gia.Text = m_us_dm_nha.dcNGUON_NS.ToString("#,##0.00");
+        m_txt_nguyen_gia.Text = m_us_dm_nha.dcNGUON_NS.ToString("#,##0");
         m_txt_nguyen_gia_nguon_khac.Text = m_us_dm_nha.dcNGUON_KHAC.ToString("#,##0");
         m_txt_gia_tri_con_lai.Text = m_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0");
         m_txt_so_tang.Text = m_us_dm_nha.dcSO_TANG.ToString();

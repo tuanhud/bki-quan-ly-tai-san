@@ -413,7 +413,7 @@
                                 <asp:BoundField HeaderText="Lý do tăng giảm" DataField="LY_DO_TANG_GIAM_TAI_SAN"
                                     ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderText="Giá trị nguyên giá tăng giảm" DataField="GIA_TRI_NGUYEN_GIA_TANG_GIAM"
-                                    DataFormatString="{0:#,##0.00}" ItemStyle-HorizontalAlign="Right" />
+                                    DataFormatString="{0:#,##0}" ItemStyle-HorizontalAlign="Right" />
                                 <asp:BoundField HeaderText="Ngày tăng giảm tài sản" DataField="NGAY_TANG_GIAM_TAI_SAN" />
                                 <asp:BoundField HeaderText="Ngày duyệt" DataField="NGAY_DUYET" />
                             </Columns>

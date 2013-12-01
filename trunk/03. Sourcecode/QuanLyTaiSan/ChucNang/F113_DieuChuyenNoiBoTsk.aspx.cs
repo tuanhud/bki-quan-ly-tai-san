@@ -77,9 +77,9 @@ public partial class ChucNang_F113_DieuChuyenNoiBoTsk : System.Web.UI.Page
         m_lbl_nuoc_san_xuat.Text = v_us_dm_tai_san_khac.strNUOC_SAN_XUAT;
         m_lbl_nam_san_xuat.Text = v_us_dm_tai_san_khac.dcNAM_SAN_XUAT.ToString();
         m_lbl_ngay_thang_nam_su_dung.Text = v_us_dm_tai_san_khac.dcNAM_SU_DUNG.ToString();
-        m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_tai_san_khac.dcNGUON_NS.ToString("#,##0.00");
-        m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_tai_san_khac.dcNGUON_KHAC.ToString("#,##0.00");
-        m_lbl_gia_tri_con_lai.Text = v_us_dm_tai_san_khac.dcGIA_TRI_CON_LAI.ToString("#,##0.00");
+        m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_tai_san_khac.dcNGUON_NS.ToString("#,##0");
+        m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_tai_san_khac.dcNGUON_KHAC.ToString("#,##0");
+        m_lbl_gia_tri_con_lai.Text = v_us_dm_tai_san_khac.dcGIA_TRI_CON_LAI.ToString("#,##0");
     }
 
     private void load_data_trang_thai_up()

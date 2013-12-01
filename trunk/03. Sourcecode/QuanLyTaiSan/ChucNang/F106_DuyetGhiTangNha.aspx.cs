@@ -18,6 +18,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
 {
     #region Members
     private US_GD_TANG_GIAM_TAI_SAN m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
+    private DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
     #endregion
 
     #region Private Methods
@@ -25,6 +26,7 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
     {
         clear_form_data();
         clear_thong_tin_tai_san();
+        set_form_mode();
         load_data_to_bo_tinh_up();
         load_data_to_bo_tinh_down();
         load_data_to_dv_chu_quan_up();
@@ -42,6 +44,28 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         load_data_to_grid();
     }
 
+    private void set_form_mode()
+    {
+        switch (m_e_form_mode)
+        {
+            case DataEntryFormMode.InsertDataState:
+                m_cmd_tao_moi.Visible = true;
+                m_cmd_cap_nhat.Visible = false;
+                break;
+            case DataEntryFormMode.SelectDataState:
+                break;
+            case DataEntryFormMode.UpdateDataState:
+                m_cmd_tao_moi.Visible = false;
+                m_cmd_cap_nhat.Visible = true;
+                m_lbl_caption.Text = "CẬP NHẬT THÔNG TIN TĂNG GIẢM TÀI SẢN NHÀ";
+                break;
+            case DataEntryFormMode.ViewDataState:
+                break;
+            default:
+                break;
+        }
+    }
+
     private void load_data_from_us()
     {
         if (m_cbo_ten_tai_san.Items.Count == 0) return;
@@ -53,9 +77,9 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
         m_lbl_cap_hang.Text = v_us_dm_nha.dcCAP_HANG.ToString();
         m_lbl_nam_xay_dung.Text = v_us_dm_nha.dcNAM_XAY_DUNG.ToString();
         m_lbl_ngay_thang_nam_du_dung.Text = v_us_dm_nha.dcNGAY_THANG_NAM_SU_DUNG.ToString();
-        m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_nha.dcNGUON_NS.ToString("#,##0.00");
-        m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_nha.dcNGUON_KHAC.ToString("#,##0.00");
-        m_lbl_gia_tri_con_lai.Text = v_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0.00");
+        m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_nha.dcNGUON_NS.ToString("#,##0");
+        m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_nha.dcNGUON_KHAC.ToString("#,##0");
+        m_lbl_gia_tri_con_lai.Text = v_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0");
     }
 
     private void load_data_to_ly_do()
@@ -204,6 +228,12 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
     private void clear_form_data()
     {
         m_txt_ma_phieu.Text = "";
+        m_cbo_bo_tinh_up.Enabled = true;
+        m_cbo_don_vi_chu_quan_up.Enabled = true;
+        m_cbo_don_vi_su_dung_tai_san_up.Enabled = true;
+        m_cbo_thuoc_khu_dat.Enabled = true;
+        m_cbo_ten_tai_san.Enabled = true;
+        m_cbo_ly_do_thay_doi.Enabled = true;
     }
 
     private bool check_validate_data_is_ok()
@@ -215,11 +245,28 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             return false;
         }
 
-        if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
+        if (m_e_form_mode == DataEntryFormMode.InsertDataState)
         {
-            m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
-            m_txt_ma_phieu.Focus();
-            return false;
+            if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
+            {
+                m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
+                m_txt_ma_phieu.Focus();
+                return false;
+            }
+        }
+        if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+        {
+            m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN(CIPConvert.ToDecimal(m_hdf_id.Value));
+
+            if (m_us_gd_tang_giam_tai_san.strMA_PHIEU != m_txt_ma_phieu.Text)
+            {
+                if (!m_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
+                {
+                    m_lbl_message.Text = "Lỗi: Mã phiểu này đã tồn tại";
+                    m_txt_ma_phieu.Focus();
+                    return false;
+                }
+            }
         }
         return true;
     }
@@ -362,6 +409,40 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
 
         op_us_dm_nha.dcID_DON_VI_SU_DUNG = v_us_dm_don_vi.dcID;
         op_us_dm_nha.dcID_DON_VI_CHU_QUAN = ID_DON_VI.DON_VI_CHU_QUAN_KHAC;
+    }
+
+    private void us_2_form_for_update()
+    {
+        m_cbo_bo_tinh_up.Enabled = false;
+        m_cbo_don_vi_chu_quan_up.Enabled = false;
+        m_cbo_don_vi_su_dung_tai_san_up.Enabled = false;
+        m_cbo_thuoc_khu_dat.Enabled = false;
+        m_cbo_ten_tai_san.Enabled = false;
+        m_cbo_ly_do_thay_doi.Enabled = false;
+        US_DM_NHA v_us_dm_nha = new US_DM_NHA(CIPConvert.ToDecimal(m_us_gd_tang_giam_tai_san.dcID_TAI_SAN));
+        m_lbl_ten_tai_san.Text = v_us_dm_nha.strTEN_TAI_SAN;
+        m_lbl_ma_tai_san.Text = v_us_dm_nha.strMA_TAI_SAN;
+        m_lbl_cap_hang.Text = v_us_dm_nha.dcCAP_HANG.ToString();
+        m_lbl_nam_xay_dung.Text = v_us_dm_nha.dcNAM_XAY_DUNG.ToString();
+        m_lbl_ngay_thang_nam_du_dung.Text = v_us_dm_nha.dcNGAY_THANG_NAM_SU_DUNG.ToString();
+        m_lbl_nguyen_gia_nguon_ns.Text = v_us_dm_nha.dcNGUON_NS.ToString("#,##0");
+        m_lbl_nguyen_gia_nguon_khac.Text = v_us_dm_nha.dcNGUON_KHAC.ToString("#,##0");
+        m_lbl_gia_tri_con_lai.Text = v_us_dm_nha.dcGIA_TRI_CON_LAI.ToString("#,##0");
+        m_cbo_ly_do_thay_doi.SelectedValue = m_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM.ToString();
+        m_txt_ma_phieu.Text = m_us_gd_tang_giam_tai_san.strMA_PHIEU;
+        m_dat_ngay_duyet.SelectedDate = m_us_gd_tang_giam_tai_san.datNGAY_DUYET;
+        m_dat_ngay_tang_giam.SelectedDate = m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN;
+        m_hdf_id.Value = m_us_gd_tang_giam_tai_san.dcID.ToString();
+        m_txt_ma_phieu.Focus();
+    }
+
+    private void update_thong_tin_tang_giam()
+    {
+        m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN(CIPConvert.ToDecimal(m_hdf_id.Value));
+        m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu.Text;
+        m_us_gd_tang_giam_tai_san.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
+        m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = m_dat_ngay_tang_giam.SelectedDate;
+        m_lbl_message.Text = "Đã cập nhật thành công";
     }
 
     #endregion
@@ -605,6 +686,22 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
     {
         try
         {
+            clear_message();
+            if (!e.CommandName.Equals(String.Empty) && !e.CommandName.Equals("Page"))
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                decimal v_dc_id_tg = CIPConvert.ToDecimal(m_grv_danh_sach_nha.DataKeys[rowIndex].Value);
+                m_lbl_message.Text = "";
+                switch (e.CommandName)
+                {
+                    case "EditComp":
+                        m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN(v_dc_id_tg);
+                        m_e_form_mode = DataEntryFormMode.UpdateDataState;
+                        load_data_2_form();
+                        us_2_form_for_update();
+                        break;
+                }
+            }
         }
         catch (Exception v_e)
         {
@@ -634,6 +731,21 @@ public partial class ChucNang_F106_DuyetGhiTangNha : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
+    protected void m_cmd_cap_nhat_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            
+            clear_message();
+            update_thong_tin_tang_giam();
+            load_data_2_form();
+            m_cbo_bo_tinh_up.Focus();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
+    
 }
