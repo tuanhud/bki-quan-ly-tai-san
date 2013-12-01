@@ -221,15 +221,12 @@
                     <td align="left" style="width: 1%;">
                     </td>
                     <td align="right" style="width: 15%">
-                        
-                        <asp:Label ID="m_lbl_ten_don_vi_nhan_dieu_chuyen" runat="server" 
-                            CssClass="cssManField" Text="Đơn vị nhận điều chuyển *"></asp:Label>
-                        
+                        <asp:Label ID="m_lbl_ten_don_vi_nhan_dieu_chuyen" runat="server" CssClass="cssManField"
+                            Text="Đơn vị nhận điều chuyển *"></asp:Label>
                     </td>
                     <td align="left" style="width: 30%">
                         <asp:TextBox ID="m_txt_don_vi_nhan_dieu_chuyen" runat="server" Width="85%" CssClass="cssTextBox"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="m_rfv_don_vi_nhan" runat="server" 
-                            ControlToValidate="m_txt_don_vi_nhan_dieu_chuyen" 
+                        <asp:RequiredFieldValidator ID="m_rfv_don_vi_nhan" runat="server" ControlToValidate="m_txt_don_vi_nhan_dieu_chuyen"
                             ErrorMessage="Bạn phải nhập Đơn vị nhận điều chuyển" Text="*"></asp:RequiredFieldValidator>
                     </td>
                     <td align="left" style="width: 1%;">
@@ -269,32 +266,27 @@
                         <span class="cssManField">Ngày tăng giảm tài sản</span>
                     </td>
                     <td>
-                        <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" 
-                            ControlDisplay="TextBoxImage" Culture="vi-VN" DisableTextBoxEntry="true" 
-                            GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" ShowGoToToday="true">
-                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <OffMonthStyle BackColor="AntiqueWhite" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                ForeColor="Gray" />
-                            <SelectedDateStyle BackColor="#007ccf" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                        <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
+                            Culture="vi-VN" DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                            ShowGoToToday="true">
+                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <MonthHeaderStyle BackColor="#007ccf" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
-                            <DayHeaderStyle BackColor="AliceBlue" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
-                                ForeColor="Black" />
-                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Gray" />
+                            <SelectedDateStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                 Font-Size="XX-Small" ForeColor="Black" />
-                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" 
+                            <MonthHeaderStyle BackColor="#007ccf" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                 Font-Size="XX-Small" ForeColor="Black" />
-                            <TodayDayStyle BackColor="CadetBlue" 
-                                Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small" 
+                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
+                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                 ForeColor="Black" />
+                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                                ForeColor="Black" />
+                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                                Font-Size="XX-Small" ForeColor="Black" />
                         </ew:CalendarPopup>
                     </td>
                     <td align="left" style="width: 1%;">
@@ -309,6 +301,9 @@
                     <td colspan="6" align="center">
                         <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
                             Height="24px" Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" />
+                        <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
+                            Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_nha"
+                            Height="24px" Visible="False" />
                         <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                             CausesValidation="false" Height="24px" Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" />
                         <asp:HiddenField ID="m_hdf_id" runat="server" Value="" OnValueChanged="m_hdf_id_ValueChanged" />
@@ -398,8 +393,18 @@
                         <asp:GridView ID="m_grv_danh_sach_tai_san_khac" runat="server" AllowPaging="True"
                             CssClass="cssGrid" AutoGenerateColumns="False" Width="100%" DataKeyNames="ID"
                             CellPadding="0" ForeColor="#333333" AllowSorting="True" EmptyDataText="Không có dữ liệu phù hợp"
-                            PageSize="30" ShowHeader="true" OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging">
+                            PageSize="30" ShowHeader="true" 
+                            OnPageIndexChanging="m_grv_danh_sach_tai_san_khac_PageIndexChanging" 
+                            onrowcommand="m_grv_danh_sach_tai_san_khac_RowCommand">
                             <Columns>
+                                <asp:TemplateField HeaderText="Sửa" ItemStyle-Width="2%">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_edit" runat="server" CommandName="EditComp" ToolTip="Sửa"
+                                            CausesValidation="false" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'>
+                                    <img src="../Images/Button/edit.png" alt="Edit" />
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center" HeaderStyle-Height="60px"
                                     ItemStyle-Height="30px">
                                     <ItemTemplate>
