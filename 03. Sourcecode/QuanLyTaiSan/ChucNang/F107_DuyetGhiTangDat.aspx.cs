@@ -71,9 +71,9 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         if (v_dc_id_dat < 1) return;
         US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(v_dc_id_dat));
         m_lbl_ma_tai_san.Text = v_us_dm_dat.strMA_TAI_SAN;
-        m_lbl_dt_khuon_vien.Text = v_us_dm_dat.dcDT_KHUON_VIEN.ToString("#,##0.00");
-        m_lbl_gt_theo_so_ke_toan.Text = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString("#,##0.00");
-        m_lbl_so_nam_su_dung.Text = v_us_dm_dat.dcSO_NAM_DA_SU_DUNG.ToString("#,##0.00");
+        m_lbl_dt_khuon_vien.Text = v_us_dm_dat.dcDT_KHUON_VIEN.ToString("#,##0");
+        m_lbl_gt_theo_so_ke_toan.Text = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN.ToString("#,##0");
+        m_lbl_so_nam_su_dung.Text = v_us_dm_dat.dcSO_NAM_DA_SU_DUNG.ToString("#,##0");
     }
 
     private void load_data_trang_thai()

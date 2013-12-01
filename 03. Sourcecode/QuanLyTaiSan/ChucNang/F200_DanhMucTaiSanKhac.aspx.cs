@@ -182,9 +182,9 @@ public partial class Default2 : System.Web.UI.Page
         m_txt_nuoc_sx.Text = ip_us_m_dm_tai_san_khac.strNUOC_SAN_XUAT;
         m_txt_nam_sx.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNAM_SAN_XUAT);
         m_txt_ngay_su_dung.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNAM_SU_DUNG);
-        m_txt_nguyen_gia_nguon_ns.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_NS, "#,##0.00");
-        m_txt_nguyen_gia_nguon_khac.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_KHAC, "#,##0.00");
-        m_txt_gia_tri_con_lai.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcGIA_TRI_CON_LAI, "#,##0.00");
+        m_txt_nguyen_gia_nguon_ns.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_NS, "#,##0");
+        m_txt_nguyen_gia_nguon_khac.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_KHAC, "#,##0");
+        m_txt_gia_tri_con_lai.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcGIA_TRI_CON_LAI, "#,##0");
         load_gia_tri_hien_trang(ip_us_m_dm_tai_san_khac);
         m_txt_ten_tai_san.Focus();
     }
