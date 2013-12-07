@@ -11,7 +11,7 @@
             var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia.ClientID%>').value;
             var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
             var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
-            document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+            document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " (ngàn đồng)";
         }
         $(document).ready(function () {
 
@@ -183,8 +183,6 @@
                                         <td colspan="4" align="center">
                                             <asp:Button ID="m_cmd_tao_tang_giam" AccessKey="c" CssClass="cssButton" runat="server"
                                                 Height="24px" Width="98px" Text="Tạo mới" ValidationGroup="m_vlg_tang_giam" OnClick="m_cmd_tao_tang_giam_Click" />
-                                            <asp:Button ID="m_cmd_huy_bo" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
-                                                Height="24px" Width="98px" Text="Hủy bỏ" OnClick="m_cmd_huy_bo_Click" />
                                         </td>
                                     </tr>
                                 </table>

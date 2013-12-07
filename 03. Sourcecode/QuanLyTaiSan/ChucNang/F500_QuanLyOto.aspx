@@ -11,7 +11,7 @@
             var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguon_ns.ClientID%>').value;
             var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguon_khac.ClientID%>').value;
             var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
-            document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " VNĐ";
+            document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " (ngàn đồng)";
         }
 
         $(document).ready(function () {
@@ -185,8 +185,6 @@
                                         <td colspan="4" align="center">
                                             <asp:Button ID="m_cmd_tao_tang_giam" AccessKey="c" CssClass="cssButton" runat="server"
                                                 Height="24px" Width="98px" Text="Tạo mới" ValidationGroup="m_vlg_tang_giam" OnClick="m_cmd_tao_tang_giam_Click" />
-                                            <asp:Button ID="m_cmd_huy_bo" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
-                                                Height="24px" Width="98px" Text="Hủy bỏ" OnClick="m_cmd_huy_bo_Click" />
                                         </td>
                                     </tr>
                                 </table>
@@ -378,7 +376,7 @@
                                     &nbsp;
                                 </td>
                                 <td align="left" colspan="1" style="width: 30%" class="cssManField">
-                                    GIÁ TRỊ THEO SỔ KẾ TOÁN (VNĐ)
+                                    GIÁ TRỊ THEO SỔ KẾ TOÁN (ngàn đồng)
                                 </td>
                                 <td align="right" colspan="1" style="width: 15%">
                                     &nbsp;
@@ -421,7 +419,7 @@
                                     <span class="cssManField">Tổng nguyên giá</span>
                                 </td>
                                 <td align="left" class="style1" style="width: 30%">
-                                    <span id="m_sp_tong_nguyen_gia">0 VNĐ</span>
+                                    <span id="m_sp_tong_nguyen_gia">0 (ngàn đồng)</span>
                                 </td>
                             </tr>
                             <tr>
@@ -613,7 +611,7 @@
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;">
                                             <tr>
                                                 <td colspan="3" style="height: 15px">
-                                                    Giá trị theo sổ kế toán (VNĐ)
+                                                    Giá trị theo sổ kế toán (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>
