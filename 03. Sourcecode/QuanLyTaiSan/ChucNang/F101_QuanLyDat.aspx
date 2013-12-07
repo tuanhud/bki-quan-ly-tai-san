@@ -24,14 +24,15 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">
-                                            <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng cho tài sản này!</span>
+                                            <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng
+                                                cho tài sản này!</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">
                                             <asp:Button ID="m_cmd_confirm" AccessKey="c" CssClass="cssButton" runat="server"
                                                 Height="24px" Width="98px" Text="Tiếp tục" CausesValidation="false" OnClick="m_cmd_confirm_Click" />
-                                            </td>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -89,7 +90,7 @@
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                                                 ImageUrl="~/Images/cal.gif">
                                                 <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                     ForeColor="Black" />
@@ -118,7 +119,7 @@
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                                                 ImageUrl="~/Images/cal.gif">
                                                 <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                     ForeColor="Black" />
@@ -212,7 +213,8 @@
                                 </td>
                                 <td align="left" style="width: 30%;">
                                     <asp:DropDownList ID="m_ddl_trang_thai" runat="server" Width="85%" ValidationGroup="m_vlg_dat"
-                                        AutoPostBack="true" OnSelectedIndexChanged="m_ddl_trang_thai_SelectedIndexChanged" Enabled="false">
+                                        AutoPostBack="true" OnSelectedIndexChanged="m_ddl_trang_thai_SelectedIndexChanged"
+                                        Enabled="false">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left" style="width: 1%;">
@@ -396,9 +398,14 @@
                                     <asp:Button ID="m_cmd_tao_moi" AccessKey="c" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Tạo mới(c)" OnClick="m_cmd_tao_moi_Click" ValidationGroup="m_vlg_dat"
                                         Height="24px" />
+                                    &nbsp;
                                     <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_dat"
                                         Height="24px" />
+                                    &nbsp;
+                                    <asp:Button ID="m_cmd_bo_sung_tg" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
+                                        Width="98px" Text="Tạo ghi tăng(b)" Height="24px" OnClick="m_cmd_bo_sung_tg_Click" />
+                                    &nbsp;
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" Height="24px" />
                                     <asp:HiddenField ID="m_hdf_id" runat="server" Value="-1" />

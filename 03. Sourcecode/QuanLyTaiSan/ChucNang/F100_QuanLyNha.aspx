@@ -4,7 +4,6 @@
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script type="text/javascript">
         function calSumPrice() {
@@ -58,7 +57,8 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">
-                                            <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng cho tài sản này!</span>
+                                            <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng
+                                                cho tài sản này!</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -123,7 +123,7 @@
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                                                 ImageUrl="~/Images/cal.gif">
                                                 <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                     ForeColor="Black" />
@@ -152,7 +152,7 @@
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextboxEntry="true"
+                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
                                                 ImageUrl="~/Images/cal.gif">
                                                 <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                     ForeColor="Black" />
@@ -384,9 +384,11 @@
                                 <td align="left" style="width: 1%;">
                                 </td>
                                 <td align="right">
-                                    <span class="cssManField">Tổng nguyên giá</span></td>
+                                    <span class="cssManField">Tổng nguyên giá</span>
+                                </td>
                                 <td align="left" style="width: 30%;">
-                                    <span id="m_sp_tong_nguyen_gia">0 (ngàn đồng)</span></td>
+                                    <span id="m_sp_tong_nguyen_gia">0 (ngàn đồng)</span>
+                                </td>
                                 <td align="left" style="width: 1%;">
                                 </td>
                             </tr>
@@ -571,6 +573,9 @@
                                     <asp:Button ID="m_cmd_cap_nhat" AccessKey="u" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_nha"
                                         Height="24px" Visible="False" />&nbsp;
+                                    <asp:Button ID="m_cmd_bo_sung_tg" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
+                                        Width="98px" Text="Tạo ghi tăng(b)" Height="24px" OnClick="m_cmd_bo_sung_tg_Click" />
+                                        &nbsp;
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" Height="24px" />
                                     <asp:HiddenField ID="m_hdf_id" runat="server" Value="-1" />
@@ -705,8 +710,10 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderText="Số tầng" DataField="SO_TANG" ItemStyle-HorizontalAlign="Center" />
-                                <asp:BoundField HeaderText="DT xây dựng <br/> (m2)" HtmlEncode="false" DataField="DT_XAY_DUNG" ItemStyle-HorizontalAlign="Right" />
-                                <asp:BoundField HeaderText="Tổng DT xây dựng <br/> (m2)" HtmlEncode="false" DataField="TONG_DT_SAN_XD" ItemStyle-HorizontalAlign="Right" />
+                                <asp:BoundField HeaderText="DT xây dựng <br/> (m2)" HtmlEncode="false" DataField="DT_XAY_DUNG"
+                                    ItemStyle-HorizontalAlign="Right" />
+                                <asp:BoundField HeaderText="Tổng DT xây dựng <br/> (m2)" HtmlEncode="false" DataField="TONG_DT_SAN_XD"
+                                    ItemStyle-HorizontalAlign="Right" />
                                 <asp:TemplateField HeaderStyle-Width="30%" HeaderStyle-Height="110px">
                                     <HeaderTemplate>
                                         <table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse;
