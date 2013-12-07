@@ -91,6 +91,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             case DataEntryFormMode.InsertDataState:
                 m_cmd_tao_moi.Visible = true;
                 m_cmd_cap_nhat.Visible = false;
+                m_cmd_bo_sung_tg.Visible = false;
                 m_lbl_caption.Text = "NHẬP MỚI TÀI SẢN Ô TÔ";
                 break;
             case DataEntryFormMode.SelectDataState:
@@ -98,6 +99,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             case DataEntryFormMode.UpdateDataState:
                 m_cmd_tao_moi.Visible = false;
                 m_cmd_cap_nhat.Visible = true;
+                m_cmd_bo_sung_tg.Visible = true;
                 m_lbl_caption.Text = "CẬP NHẬT THÔNG TIN TÀI SẢN Ô TÔ";
                 break;
             case DataEntryFormMode.ViewDataState:
@@ -497,6 +499,13 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             , WinFormControls.eTAT_CA.NO
             , m_ddl_tinh_trang_oto);
     }
+    private void display_panel_tang_giam_for_bo_sung()
+    {
+        if (CIPConvert.ToDecimal(m_hdf_id.Value) < 0) return;
+        load_data_to_ly_do();
+        m_pnl_confirm_tg.Visible = true;
+        m_mtv_1.SetActiveView(m_view_them_moi_tg);
+    }
     #endregion
 
     #region Events
@@ -800,6 +809,17 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
 
+    }
+    protected void m_cmd_bo_sung_tg_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            display_panel_tang_giam_for_bo_sung();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     #endregion
 }

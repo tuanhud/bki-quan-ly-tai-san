@@ -59,7 +59,8 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">
-                                            <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng cho tài sản này!</span>
+                                            <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng
+                                                cho tài sản này!</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -67,7 +68,7 @@
                                             <asp:Button ID="m_cmd_confirm" AccessKey="c" CssClass="cssButton" runat="server"
                                                 Height="24px" Width="98px" Text="Tiếp tục" CausesValidation="false" OnClick="m_cmd_confirm_Click" />
                                             &nbsp;
-                                            </td>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -208,7 +209,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                         <asp:Label ID="Label2" runat="server" CssClass="cssManField" Style="color: Blue" />
+                        <asp:Label ID="Label2" runat="server" CssClass="cssManField" Style="color: Blue" />
                     </td>
                 </tr>
                 <tr>
@@ -260,8 +261,8 @@
                                     <asp:Label ID="lblFullName19" CssClass="cssManField" runat="server" Text="Trạng thái ô tô" />
                                 </td>
                                 <td align="left" class="style1" style="width: 30%">
-                                    <asp:DropDownList ID="m_ddl_trang_thai_oto" runat="server" Width="85%" AutoPostBack="True" Enabled="false"
-                                        OnSelectedIndexChanged="m_ddl_trang_thai_oto_SelectedIndexChanged">
+                                    <asp:DropDownList ID="m_ddl_trang_thai_oto" runat="server" Width="85%" AutoPostBack="True"
+                                        Enabled="false" OnSelectedIndexChanged="m_ddl_trang_thai_oto_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                             </tr>
@@ -493,9 +494,14 @@
                                 <td align="left" style="width: 35%" colspan="1">
                                     <asp:Button ID="m_cmd_tao_moi" runat="server" AccessKey="c" CssClass="cssButton"
                                         OnClick="m_cmd_tao_moi_Click" Text="Tạo mới(c)" Width="98px" Height="24px" ValidationGroup="m_vlg_nha" />
+                                    &nbsp;
                                     <asp:Button ID="m_cmd_cap_nhat" runat="server" AccessKey="u" CssClass="cssButton"
                                         OnClick="m_cmd_cap_nhat_Click" Text="Cập nhật(u)" Width="98px" Height="24px"
                                         ValidationGroup="m_vlg_nha" />
+                                    &nbsp;
+                                    <asp:Button ID="m_cmd_bo_sung_tg" AccessKey="r" CssClass="cssButton" runat="server"
+                                        CausesValidation="false" Width="98px" Text="Tạo ghi tăng(b)" Height="24px" OnClick="m_cmd_bo_sung_tg_Click" />
+                                    &nbsp;
                                     <asp:Button ID="btnCancel" runat="server" AccessKey="r" CssClass="cssButton" OnClick="btnCancel_Click"
                                         Text="Xóa trắng(r)" Width="98px" Height="24px" TabIndex="25" />
                                 </td>
