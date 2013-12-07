@@ -151,6 +151,7 @@ public partial class Default2 : System.Web.UI.Page
         m_us_tai_san_khac.dcNGUON_NS = CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_ns.Text.Trim());
         m_us_tai_san_khac.dcNGUON_KHAC = CIPConvert.ToDecimal(m_txt_nguyen_gia_nguon_khac.Text.Trim());
         m_us_tai_san_khac.dcGIA_TRI_CON_LAI = CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text.Trim());
+        m_us_tai_san_khac.dcID_TINH_TRANG = CIPConvert.ToDecimal(m_ddl_tinh_trang_tsk.SelectedValue);
         set_gia_tri_hien_trang(m_us_tai_san_khac);
         if (hdf_id.Value.Equals(String.Empty))
         {
@@ -185,6 +186,7 @@ public partial class Default2 : System.Web.UI.Page
         m_txt_nguyen_gia_nguon_ns.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_NS, "#,##0");
         m_txt_nguyen_gia_nguon_khac.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcNGUON_KHAC, "#,##0");
         m_txt_gia_tri_con_lai.Text = CIPConvert.ToStr(ip_us_m_dm_tai_san_khac.dcGIA_TRI_CON_LAI, "#,##0");
+        m_ddl_tinh_trang_tsk.SelectedValue = ip_us_m_dm_tai_san_khac.dcID_TINH_TRANG.ToString();
         load_gia_tri_hien_trang(ip_us_m_dm_tai_san_khac);
         m_txt_ten_tai_san.Focus();
     }
@@ -303,11 +305,12 @@ public partial class Default2 : System.Web.UI.Page
         if (!check_validate_data_is_ok()) return;
         form_2_us_object();
         m_us_tai_san_khac.Insert();
-        load_data_2_grid();
         reset_control();
         hdf_id.Value = m_us_tai_san_khac.dcID.ToString();
         m_lbl_mess.Text = "Tạo mới thành công!";
         display_panel_tang_giam();
+        m_txt_tim_kiem.Text = m_us_tai_san_khac.strMA_TAI_SAN;
+        load_data_2_grid();
     }
     private void load_data_to_ly_do()
     {
@@ -374,6 +377,13 @@ public partial class Default2 : System.Web.UI.Page
     {
         m_lbl_mess.Text = "";
     }
+    private void load_data_tinh_trang_tsk()
+    {
+        WinFormControls.load_data_to_cbo_tu_dien(
+            WinFormControls.eLOAI_TU_DIEN.TINH_TRANG_TAI_SAN
+            , WinFormControls.eTAT_CA.NO
+            , m_ddl_tinh_trang_tsk);
+    }
     #endregion
 
     #region Events
@@ -410,6 +420,7 @@ public partial class Default2 : System.Web.UI.Page
                     us_object_2_form(m_us_tai_san_khac);
                 }
                 hidden_panel_tang_giam();
+                load_data_tinh_trang_tsk();
             }
         }
         catch (Exception v_e)

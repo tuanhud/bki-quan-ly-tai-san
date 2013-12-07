@@ -364,11 +364,12 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         m_e_form_mode = DataEntryFormMode.InsertDataState;
         m_lbl_mess.Text = "";
         if (!check_validate_data_is_ok()) return;
-        if (m_hdf_id.Value != C_STR_NEW_ID_DAT) return;
         form_2_us_dm_dat();
         m_us_dm_dat.Insert();
         Thread.Sleep(2000);
+        reset_controls_in_form();
         load_data_2_form();
+        reset_controls_in_form();
         m_hdf_id.Value = m_us_dm_dat.dcID.ToString();
         m_txt_tu_khoa.Text = m_us_dm_dat.strMA_TAI_SAN;
         m_lbl_mess.Text = "Đã thêm mới dữ liệu đất thành công!";

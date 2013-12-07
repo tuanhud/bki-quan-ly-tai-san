@@ -466,9 +466,12 @@
                                         <asp:ListItem Value="MDK">Sử dụng mục đích khác</asp:ListItem>
                                     </asp:RadioButtonList>
                                 </td>
-                                <td align="left" style="width: 1%;">
-                                </td>
                                 <td align="right">
+                                    <span class="cssManField">Tình trạng ô tô</span>
+                                </td>
+                                <td align="left" style="width: 30%;">
+                                    <asp:DropDownList ID="m_ddl_tinh_trang_oto" runat="server" Width="85%">
+                                    </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
