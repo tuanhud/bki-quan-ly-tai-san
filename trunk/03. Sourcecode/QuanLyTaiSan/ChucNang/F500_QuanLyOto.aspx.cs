@@ -380,6 +380,11 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
     private void them_moi_tang_giam()
     {
         US_GD_TANG_GIAM_TAI_SAN v_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
+        if (!v_us_gd_tang_giam_tai_san.check_valid_ma_phieu(m_txt_ma_phieu.Text))
+        {
+            m_lbl_mess_tg.Text = "Mã phiểu tăng giảm này đã tồn tại";
+            return;
+        }
         m_us_dm_oto = new US_DM_OTO(CIPConvert.ToDecimal(m_hdf_id.Value));
         v_us_gd_tang_giam_tai_san.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
         v_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = m_dat_ngay_tang_giam.SelectedDate;
@@ -414,7 +419,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         load_2_cbo_loaits();
         load_data_trang_thai();
         load_data_to_grid();
-        m_txt_tim_kiem.Text = v_us_gd_tang_giam_tai_san.strMA_PHIEU;
+        m_txt_ma_phieu.Text = "";
+        hidden_panel_tang_giam();
     }
     private void clear_panel_data()
     {
@@ -704,8 +710,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         try
         {
             them_moi_tang_giam();
-            hidden_panel_tang_giam();
-            m_ddl_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
@@ -798,5 +802,4 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
 
     }
     #endregion
-    
 }

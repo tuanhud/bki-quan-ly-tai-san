@@ -164,13 +164,13 @@
                 </tr>
                 <tr>
                     <td align="right" class="cssManField" style="width: 20%;">
-                        <span>Nguyên giá Nguồn NS (VNĐ)</span>
+                        <span>Nguyên giá Nguồn NS (ngàn đồng)</span>
                     </td>
                     <td colspan="1" style="width: 30%" class="cssManField" style="color: blue">
                         <asp:Label ID="m_lbl_nguyen_gia_nguon_ns" runat="Server" ForeColor="Blue"></asp:Label>
                     </td>
                     <td align="right" colspan="1" class="cssManField" style="width: 20%">
-                        <span>Nguyên giá Nguồn khác (VNĐ)</span>
+                        <span>Nguyên giá Nguồn khác (ngàn đồng)</span>
                     </td>
                     <td>
                         <asp:Label ID="m_lbl_nguyen_gia_nguon_khac" runat="Server" class="cssManField" Style="color: blue"></asp:Label>
@@ -178,7 +178,7 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 20%;" class="cssManField">
-                        <span>Giá trị còn lại (VNĐ)</span>
+                        <span>Giá trị còn lại (ngàn đồng)</span>
                     </td>
                     <td colspan="1" style="width: 30%">
                         <asp:Label ID="m_lbl_gia_tri_con_lai" runat="Server" class="cssManField" Style="color: blue"></asp:Label>

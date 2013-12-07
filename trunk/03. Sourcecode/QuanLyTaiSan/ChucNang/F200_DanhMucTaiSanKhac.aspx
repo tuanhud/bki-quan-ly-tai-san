@@ -5,6 +5,57 @@
     TagPrefix="asp" %>
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <script type="text/javascript">
+        function calSumPrice() {
+            var v_dc_nguyen_gia = document.getElementById('<%=m_txt_nguyen_gia_nguon_ns.ClientID%>').value;
+            var v_dc_nguyen_gia_nguon_khac = document.getElementById('<%=m_txt_nguyen_gia_nguon_khac.ClientID%>').value;
+            var v_dc_tong = Number(getNumber(v_dc_nguyen_gia)) + Number(getNumber(v_dc_nguyen_gia_nguon_khac));
+            document.getElementById('m_sp_tong_nguyen_gia').innerHTML = getFormatedNumberString(v_dc_tong) + " (ngàn đồng)";
+        }
+
+        $(document).ready(function () {
+
+            $("#<%=m_txt_nguyen_gia_nguon_ns.ClientID%>").bind({
+                blur: function () {
+                    calSumPrice();
+                },
+                focus: function () {
+                    calSumPrice();
+                },
+                keydown: function () {
+                    calSumPrice();
+                }
+            });
+            $("#<%=m_txt_nguyen_gia_nguon_khac.ClientID%>").bind({
+                blur: function () {
+                    calSumPrice();
+                },
+                focus: function () {
+                    calSumPrice();
+                },
+                keydown: function () {
+                    calSumPrice();
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 15%;
+            height: 33px;
+        }
+        .style2
+        {
+            width: 30%;
+            height: 33px;
+        }
+        .style3
+        {
+            width: 1%;
+            height: 33px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div>
@@ -151,8 +202,6 @@
                                             <td colspan="4" align="center">
                                                 <asp:Button ID="m_cmd_tao_tang_giam" AccessKey="c" CssClass="cssButton" runat="server"
                                                     Height="24px" Width="98px" Text="Tạo mới" ValidationGroup="m_vlg_tang_giam" OnClick="m_cmd_tao_tang_giam_Click" />
-                                                <asp:Button ID="m_cmd_huy_bo" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
-                                                    Height="24px" Width="98px" Text="Hủy bỏ" OnClick="m_cmd_huy_bo_Click" />
                                             </td>
                                         </tr>
                                     </table>
@@ -309,28 +358,28 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right" style="width: 15%">
+                                    <td align="right" class="style1">
                                         <span class="cssManField">Nguyên giá nguồn NS *</span>
                                     </td>
-                                    <td style="width: 30%" align="left">
+                                    <td align="left" class="style2">
                                         <asp:TextBox ID="m_txt_nguyen_gia_nguon_ns" runat="server" CssClass="cssTextBox csscurrency"
                                             Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
-                                    <td align="left" style="width: 1%;">
+                                    <td align="left" class="style3">
                                         <asp:RequiredFieldValidator ID="m_rfv_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
                                             ErrorMessage="Bạn phải nhập Nguyên giá Nguồn ngân sách" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
                                             ErrorMessage="Bạn không được nhập số âm vào Nguồn ngân sách" Text="*" Operator="GreaterThanEqual"
                                             ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                                     </td>
-                                    <td align="right" style="width: 15%">
+                                    <td align="right" class="style1">
                                         <span class="cssManField">Nguyên giá nguồn khác *</span>
                                     </td>
-                                    <td align="left" style="width: 30%;">
+                                    <td align="left" class="style2">
                                         <asp:TextBox ID="m_txt_nguyen_gia_nguon_khac" runat="server" CssClass="cssTextBox csscurrency"
                                             Width="85%" ValidationGroup="m_vlg_tsk"></asp:TextBox>
                                     </td>
-                                    <td align="left" style="width: 1%;">
+                                    <td align="left" class="style3">
                                         <asp:RequiredFieldValidator ID="m_rfv_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
                                             ErrorMessage="Bạn phải nhập Nguyên giá Nguồn khác" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
@@ -353,9 +402,11 @@
                                             ErrorMessage="Bạn không được nhập số âm vào Giá trị còn lại" Text="*" Operator="GreaterThanEqual"
                                             ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
                                     </td>
-                                    <td align="right">
+                                    <td align="right" colspan="1" style="width: 15%">
+                                        <span class="cssManField">Tổng nguyên giá</span>
                                     </td>
-                                    <td align="left" style="width: 30%;">
+                                    <td align="left" class="style1" style="width: 30%">
+                                        <span id="m_sp_tong_nguyen_gia">0 (ngàn đồng)</span>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                     </td>

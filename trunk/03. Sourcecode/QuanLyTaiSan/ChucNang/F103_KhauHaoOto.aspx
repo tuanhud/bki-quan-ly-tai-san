@@ -449,7 +449,7 @@
                                                 <td colspan="3" style="height: 45px; text-align: center">
                                                     Giá trị theo sổ kế toán
                                                     <br />
-                                                    (VNĐ)
+                                                    (ngàn đồng)
                                                 </td>
                                             </tr>
                                             <tr>

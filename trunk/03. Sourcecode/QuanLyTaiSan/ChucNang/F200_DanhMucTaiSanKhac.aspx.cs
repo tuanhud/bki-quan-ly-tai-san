@@ -623,8 +623,6 @@ public partial class Default2 : System.Web.UI.Page
         try
         {
             them_moi_tang_giam();
-            hidden_panel_tang_giam();
-            m_cbo_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
