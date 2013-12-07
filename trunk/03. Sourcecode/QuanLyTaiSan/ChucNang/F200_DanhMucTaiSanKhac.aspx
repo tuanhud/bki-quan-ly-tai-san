@@ -25,14 +25,15 @@
                                         </tr>
                                         <tr>
                                             <td style="text-align: center">
-                                                <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng cho tài sản này!</span>
+                                                <span class="cssManField">Đã tạo mới một tài sản, bạn cần cập nhật thông tin ghi tăng
+                                                    cho tài sản này!</span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: center">
                                                 <asp:Button ID="m_cmd_confirm" AccessKey="c" CssClass="cssButton" runat="server"
                                                     Height="24px" Width="98px" Text="Tiếp tục" CausesValidation="false" OnClick="m_cmd_confirm_Click" />
-                                                </td>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -52,7 +53,8 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2" align="center">
-                                                <span class="cssManField">CHI TIẾT DUYỆT GHI</span></td>
+                                                <span class="cssManField">CHI TIẾT DUYỆT GHI</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td align="right">
@@ -89,7 +91,7 @@
                                             </td>
                                             <td align="left" style="width: 30%">
                                                 <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                                                    Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                                    Culture="vi-VN" DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                                                     ShowGoToToday="true">
                                                     <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                         ForeColor="Black" />
@@ -118,7 +120,7 @@
                                             </td>
                                             <td align="left" style="width: 30%">
                                                 <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                                                    Culture="vi-VN" DisableTextboxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                                    Culture="vi-VN" DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                                                     ShowGoToToday="true">
                                                     <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                         ForeColor="Black" />
@@ -146,7 +148,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="4" align="center"> 
+                                            <td colspan="4" align="center">
                                                 <asp:Button ID="m_cmd_tao_tang_giam" AccessKey="c" CssClass="cssButton" runat="server"
                                                     Height="24px" Width="98px" Text="Tạo mới" ValidationGroup="m_vlg_tang_giam" OnClick="m_cmd_tao_tang_giam_Click" />
                                                 <asp:Button ID="m_cmd_huy_bo" AccessKey="r" CssClass="cssButton" runat="server" CausesValidation="false"
@@ -277,7 +279,7 @@
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         <asp:RequiredFieldValidator ID="m_rfv_nam_sx" runat="server" ControlToValidate="m_txt_nam_sx"
-                                            ErrorMessage="Bạn phải nhập Mã Tài sản" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                            ErrorMessage="Bạn phải nhập Năm sản xuất" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
                                     <td align="right" style="width: 15%">
                                         <span class="cssManField">Năm sử dụng *</span>
@@ -288,7 +290,7 @@
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         <asp:RequiredFieldValidator ID="m_rfv_ngay_su_dung" runat="server" ControlToValidate="m_txt_ngay_su_dung"
-                                            ErrorMessage="Bạn phải nhập Ngày sử dụng" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                            ErrorMessage="Bạn phải nhập Năm sử dụng" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -316,7 +318,7 @@
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         <asp:RequiredFieldValidator ID="m_rfv_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
-                                            ErrorMessage="Bạn phải nhập Nguồn ngân sách" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                            ErrorMessage="Bạn phải nhập Nguyên giá Nguồn ngân sách" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_nguon_ngan_sach" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_ns"
                                             ErrorMessage="Bạn không được nhập số âm vào Nguồn ngân sách" Text="*" Operator="GreaterThanEqual"
                                             ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
@@ -330,7 +332,7 @@
                                     </td>
                                     <td align="left" style="width: 1%;">
                                         <asp:RequiredFieldValidator ID="m_rfv_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
-                                            ErrorMessage="Bạn phải nhập Nguồn khác" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
+                                            ErrorMessage="Bạn phải nhập Nguyên giá Nguồn khác" Text="*" ValidationGroup="m_vlg_tsk"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="m_cp_nguon_khac" runat="server" ControlToValidate="m_txt_nguyen_gia_nguon_khac"
                                             ErrorMessage="Bạn không được nhập số âm vào Nguồn khác" Text="*" Operator="GreaterThanEqual"
                                             ValueToCompare="0" ValidationGroup="m_vlg_tsk"></asp:CompareValidator>
@@ -389,7 +391,7 @@
                                         <span class="cssManField">Mục đích sử dụng</span>
                                     </td>
                                     <td style="width: 30%" align="left">
-                                        <asp:RadioButtonList ID="m_rbl_muc_dich_su_dung" runat="server" Font-Bold="True" 
+                                        <asp:RadioButtonList ID="m_rbl_muc_dich_su_dung" runat="server" Font-Bold="True"
                                             ForeColor="Blue" RepeatColumns="2" RepeatDirection="Horizontal">
                                             <asp:ListItem Selected="True" Value="QLNN">Quản lý nhà nước</asp:ListItem>
                                             <asp:ListItem Value="KD">Kinh doanh</asp:ListItem>
@@ -400,8 +402,11 @@
                                     <td align="left" style="width: 1%;">
                                     </td>
                                     <td align="right">
+                                        <span class="cssManField">Tình trạng tài sản khác</span>
                                     </td>
                                     <td align="left" style="width: 30%;">
+                                        <asp:DropDownList ID="m_ddl_tinh_trang_tsk" runat="server" Width="85%">
+                                        </asp:DropDownList>
                                     </td>
                                     <td align="left" style="width: 1%;">
                                     </td>
@@ -495,6 +500,11 @@
                                             </asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:TemplateField HeaderStyle-Width="3%" ItemStyle-HorizontalAlign="center" HeaderText="STT">
+                                        <ItemTemplate>
+                                            <%# Container.DataItemIndex + 1 %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Chi tiết tài sản" Visible="false">
                                         <ItemTemplate>
                                             <asp:HyperLink ToolTip="Chi tiết tài sản" ImageUrl="../Images/Button/detail.png"
@@ -503,7 +513,7 @@
                                     </asp:TemplateField>
                                     <asp:HyperLinkField HeaderText="Tên tài sản" DataTextField="TEN_TAI_SAN" NavigateUrl="" />
                                     <asp:BoundField HeaderText="Mã tài sản" DataField="MA_TAI_SAN" />
-                                    <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG"/>
+                                    <asp:BoundField HeaderText="Đơn vị sử dụng" DataField="TEN_DV_SU_DUNG" />
                                     <asp:BoundField HeaderText="Ký hiệu" DataField="KY_HIEU" />
                                     <asp:BoundField HeaderText="Nước sản xuất" DataField="NUOC_SAN_XUAT" />
                                     <asp:BoundField HeaderText="Năm sản xuất" DataField="NAM_SAN_XUAT" ItemStyle-HorizontalAlign="Center" />

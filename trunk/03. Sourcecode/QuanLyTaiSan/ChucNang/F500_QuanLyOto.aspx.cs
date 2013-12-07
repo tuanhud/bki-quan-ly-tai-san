@@ -155,6 +155,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         ip_us_oto.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal(m_ddl_loai_xe.SelectedValue);
         ip_us_oto.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_ddl_dv_sd_ts.SelectedValue);
         ip_us_oto.dcID_DON_VI_CHU_QUAN = CIPConvert.ToDecimal(m_ddl_dv_chu_quan.SelectedValue);
+        ip_us_oto.dcID_TINH_TRANG = CIPConvert.ToDecimal(m_ddl_tinh_trang_oto.SelectedValue);
         set_gia_tri_hien_trang(ip_us_oto);
     }
     private void us_obj_2_form(US_DM_OTO ip_us_oto)
@@ -175,6 +176,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_txt_nguon_ns.Text = ip_us_oto.dcNGUON_NS.ToString("#,##0");
         m_txt_ten_ts.Text = ip_us_oto.strTEN_TAI_SAN;
         m_ddl_loai_xe.SelectedValue = ip_us_oto.dcID_LOAI_TAI_SAN.ToString();
+        m_ddl_tinh_trang_oto.SelectedValue = ip_us_oto.dcID_TINH_TRANG.ToString();
 
         load_gia_tri_hien_trang(ip_us_oto);
 
@@ -189,10 +191,10 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         m_ddl_dv_chu_quan.SelectedValue = ip_us_oto.dcID_DON_VI_CHU_QUAN.ToString();
 
         WinFormControls.load_data_to_cbo_don_vi_su_dung(
-    m_ddl_dv_chu_quan.SelectedValue
-    , m_ddl_bo_tinh.SelectedValue
-    , WinFormControls.eTAT_CA.NO
-    , m_ddl_dv_sd_ts);
+            m_ddl_dv_chu_quan.SelectedValue
+            , m_ddl_bo_tinh.SelectedValue
+            , WinFormControls.eTAT_CA.NO
+            , m_ddl_dv_sd_ts);
         m_ddl_dv_sd_ts.SelectedValue = ip_us_oto.dcID_DON_VI_SU_DUNG.ToString();
 
         m_ddl_trang_thai_oto.SelectedValue = ip_us_oto.dcID_TRANG_THAI.ToString();
@@ -314,9 +316,12 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         form_2_us_object(m_us_dm_oto);
         m_us_dm_oto.Insert();
         reset_control();
+        m_txt_tim_kiem.Text = m_us_dm_oto.strMA_TAI_SAN;
         load_data_to_grid();
         m_hdf_id.Value = m_us_dm_oto.dcID.ToString();
         m_lbl_mess.Text = "Thêm bản ghi thành công!";
+        display_panel_tang_giam();
+        m_ddl_bo_tinh.Focus();
     }
     private void update_data()
     {
@@ -479,6 +484,13 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             return;
         }
     }
+    private void load_data_tinh_trang_oto()
+    {
+        WinFormControls.load_data_to_cbo_tu_dien(
+            WinFormControls.eLOAI_TU_DIEN.TINH_TRANG_TAI_SAN
+            , WinFormControls.eTAT_CA.NO
+            , m_ddl_tinh_trang_oto);
+    }
     #endregion
 
     #region Events
@@ -520,6 +532,7 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
                 load_data_trang_thai();
                 load_data_to_grid();
                 hidden_panel_tang_giam();
+                load_data_tinh_trang_oto();
                 //Code này là chức năng liên quan đến from F1000
                 if (Request.QueryString[CONST_QLDB.MA_THAM_SO_URL.ID_OTO] != null)
                 {
@@ -542,8 +555,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             clear_message();
             insert_data();
-            display_panel_tang_giam();
-            m_ddl_bo_tinh.Focus();
         }
         catch (Exception v_e)
         {
