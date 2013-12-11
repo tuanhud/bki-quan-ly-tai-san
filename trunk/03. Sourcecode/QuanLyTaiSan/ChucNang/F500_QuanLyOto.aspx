@@ -186,6 +186,9 @@
                                         <td colspan="4" align="center">
                                             <asp:Button ID="m_cmd_tao_tang_giam" AccessKey="c" CssClass="cssButton" runat="server"
                                                 Height="24px" Width="98px" Text="Tạo mới" ValidationGroup="m_vlg_tang_giam" OnClick="m_cmd_tao_tang_giam_Click" />
+                                            &nbsp;
+                                            <asp:Button ID="m_cmd_huy_bo" AccessKey="c" CssClass="cssButton" runat="server" Height="24px"
+                                                CausesValidation="false" Width="98px" Text="Hủy bỏ" OnClick="m_cmd_huy_bo_Click" />
                                         </td>
                                     </tr>
                                 </table>
