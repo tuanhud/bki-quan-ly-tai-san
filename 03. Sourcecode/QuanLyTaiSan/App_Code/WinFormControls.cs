@@ -13,6 +13,7 @@ using IP.Core.IPData;
 using IP.Core.IPData.DBNames;
 
 using System.Web.UI.WebControls;
+using System.Data;
 
 
 namespace IP.Core.WinFormControls
@@ -79,7 +80,11 @@ namespace IP.Core.WinFormControls
                 , ip_dc_id_trang_thai_dat
                 , v_str_user_name
                 , v_ds_dm_dat);
-            op_obj_cbo_dia_chi_dat.DataSource = v_ds_dm_dat.DM_DAT;
+
+            DataView v_dv_dia_chi = v_ds_dm_dat.DM_DAT.DefaultView;
+            v_dv_dia_chi.Sort = DM_DAT.DIA_CHI + " ASC";
+
+            op_obj_cbo_dia_chi_dat.DataSource = v_dv_dia_chi.ToTable();
             op_obj_cbo_dia_chi_dat.DataTextField = DM_DAT.DIA_CHI;
             op_obj_cbo_dia_chi_dat.DataValueField = DM_DAT.ID;
             op_obj_cbo_dia_chi_dat.DataBind();
@@ -110,7 +115,11 @@ namespace IP.Core.WinFormControls
                 , ip_str_loai_hinh_don_vi
                 , v_str_user_name
                 , v_ds_dm_dat);
-            op_obj_cbo_dia_chi_dat.DataSource = v_ds_dm_dat.DM_DAT;
+
+            DataView v_dv_dia_chi = v_ds_dm_dat.DM_DAT.DefaultView;
+            v_dv_dia_chi.Sort = DM_DAT.DIA_CHI + " ASC";
+
+            op_obj_cbo_dia_chi_dat.DataSource = v_dv_dia_chi.ToTable();
             op_obj_cbo_dia_chi_dat.DataTextField = DM_DAT.DIA_CHI;
             op_obj_cbo_dia_chi_dat.DataValueField = DM_DAT.ID;
             op_obj_cbo_dia_chi_dat.DataBind();
@@ -366,7 +375,10 @@ namespace IP.Core.WinFormControls
                 , v_dc_id_bo_tinh
                 , ip_str_loai_hinh_don_vi
                 , v_str_user_name);
-            ip_obj_cbo_dv_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+            DataView v_dv_don_vi_su_dung = v_ds_dm_don_vi.DM_DON_VI.DefaultView;
+            v_dv_don_vi_su_dung.Sort = DM_DON_VI.TEN_DON_VI + " ASC";
+
+            ip_obj_cbo_dv_su_dung.DataSource = v_dv_don_vi_su_dung.ToTable();
             ip_obj_cbo_dv_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
             ip_obj_cbo_dv_su_dung.DataValueField = DM_DON_VI.ID;
             ip_obj_cbo_dv_su_dung.DataBind();
@@ -411,7 +423,10 @@ namespace IP.Core.WinFormControls
                 , v_dc_id_bo_tinh
                 , v_str_user_name);
 
-            ip_obj_cbo_dv_su_dung.DataSource = v_ds_dm_don_vi.DM_DON_VI;
+            DataView v_dv_don_vi_su_dung = v_ds_dm_don_vi.DM_DON_VI.DefaultView;
+            v_dv_don_vi_su_dung.Sort = DM_DON_VI.TEN_DON_VI + " ASC";
+
+            ip_obj_cbo_dv_su_dung.DataSource = v_dv_don_vi_su_dung.ToTable();
             ip_obj_cbo_dv_su_dung.DataTextField = DM_DON_VI.TEN_DON_VI;
             ip_obj_cbo_dv_su_dung.DataValueField = DM_DON_VI.ID;
             ip_obj_cbo_dv_su_dung.DataBind();
