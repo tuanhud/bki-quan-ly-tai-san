@@ -1,0 +1,6 @@
+20130902 20:17:02 Violation of UNIQUE KEY constraint 'IX_GD_KHAU_HAO'. Cannot insert duplicate key in object 'dbo.GD_KHAU_HAO'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+20130902 20:17:20 'm_cbo_trang_thai_dat_up' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+System.Web

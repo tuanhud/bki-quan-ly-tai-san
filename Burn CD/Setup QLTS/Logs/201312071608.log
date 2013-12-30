@@ -1,0 +1,6 @@
+20131207 16:08:41 Violation of UNIQUE KEY constraint 'IX_GD_TANG_GIAM_TAI_SAN'. Cannot insert duplicate key in object 'dbo.GD_TANG_GIAM_TAI_SAN'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+20131207 16:08:44 Violation of UNIQUE KEY constraint 'IX_GD_TANG_GIAM_TAI_SAN'. Cannot insert duplicate key in object 'dbo.GD_TANG_GIAM_TAI_SAN'.
+The statement has been terminated.
+.Net SqlClient Data Provider

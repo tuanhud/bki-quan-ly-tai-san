@@ -1,0 +1,6 @@
+20130818 10:06:42 Violation of UNIQUE KEY constraint 'IX_DM_NHA_HISTORY'. Cannot insert duplicate key in object 'dbo.DM_NHA_HISTORY'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+20130818 10:06:44 Violation of UNIQUE KEY constraint 'IX_DM_NHA_HISTORY'. Cannot insert duplicate key in object 'dbo.DM_NHA_HISTORY'.
+The statement has been terminated.
+.Net SqlClient Data Provider

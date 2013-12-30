@@ -1,0 +1,4 @@
+20130916 22:08:27 Object reference not set to an instance of an object.
+App_Code.twe-fvz4
+20130916 22:08:55 Control 'ctl00_MainContent_m_grv_danh_sach_nha' of type 'GridView' must be placed inside a form tag with runat=server.
+System.Web

@@ -1,0 +1,2 @@
+20130902 15:40:47 Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=0; handshake=0; [Login] initialization=0; authentication=0; [Post-Login] complete=16412; 
+.Net SqlClient Data Provider

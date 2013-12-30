@@ -1,0 +1,3 @@
+20130902 16:56:46 Violation of UNIQUE KEY constraint 'IX_GD_KHAU_HAO'. Cannot insert duplicate key in object 'dbo.GD_KHAU_HAO'.
+The statement has been terminated.
+.Net SqlClient Data Provider
