@@ -1,0 +1,5 @@
+20131127 16:58:50 Violation of UNIQUE KEY constraint 'IX_DM_DAT'. Cannot insert duplicate key in object 'dbo.DM_DAT'.
+Cannot insert the value NULL into column 'ID_DAT', table 'BKI_QLTS.dbo.DM_DAT_HISTORY'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The statement has been terminated.
+.Net SqlClient Data Provider

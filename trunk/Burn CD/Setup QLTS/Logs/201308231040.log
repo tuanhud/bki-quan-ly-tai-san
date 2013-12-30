@@ -1,0 +1,2 @@
+20130823 10:40:04 Procedure or function 'pr_V_DM_NHA_Load_data_to_grid_nha' expects parameter '@ip_str_user_name', which was not supplied.
+.Net SqlClient Data Provider

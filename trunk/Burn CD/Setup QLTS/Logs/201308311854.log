@@ -1,0 +1,2 @@
+20130831 18:54:06 Procedure or function 'pr_V_GD_KHAU_HAO_DM_DAT_Load_data_to_grid_by_tu_khoa' expects parameter '@ip_dc_id_bo_tinh', which was not supplied.
+.Net SqlClient Data Provider

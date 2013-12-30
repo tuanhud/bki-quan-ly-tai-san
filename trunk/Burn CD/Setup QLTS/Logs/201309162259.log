@@ -1,0 +1,6 @@
+20130916 22:59:12 The INSERT statement conflicted with the FOREIGN KEY constraint "FK_GD_TANG_GIAM_TAI_SAN_DM_LOAI_TAI_SAN". The conflict occurred in database "BKI_QLTS", table "dbo.DM_LOAI_TAI_SAN", column 'ID'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+20130916 22:59:14 The INSERT statement conflicted with the FOREIGN KEY constraint "FK_GD_TANG_GIAM_TAI_SAN_DM_LOAI_TAI_SAN". The conflict occurred in database "BKI_QLTS", table "dbo.DM_LOAI_TAI_SAN", column 'ID'.
+The statement has been terminated.
+.Net SqlClient Data Provider
