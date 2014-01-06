@@ -245,7 +245,7 @@ namespace WebUS
 
     public class ID_DON_VI
     {
-        public const decimal BO_TINH_KHAC = 238;
-        public const decimal DON_VI_CHU_QUAN_KHAC = 239;
+        public const decimal BO_TINH_KHAC = 245;
+        public const decimal DON_VI_CHU_QUAN_KHAC = 248;
     }
 }
