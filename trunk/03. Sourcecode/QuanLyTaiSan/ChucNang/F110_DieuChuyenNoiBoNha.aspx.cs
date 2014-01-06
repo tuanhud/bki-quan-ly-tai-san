@@ -170,6 +170,11 @@ public partial class ChucNang_F110_DieuChuyenNoiBoNha : System.Web.UI.Page
 
     private void load_data_to_ten_tai_san()
     {
+        if (m_cbo_thuoc_khu_dat.Items.Count == 0)
+        {
+            return;
+        }
+
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         DS_V_DM_NHA v_ds_v_dm_nha = new DS_V_DM_NHA();
 
