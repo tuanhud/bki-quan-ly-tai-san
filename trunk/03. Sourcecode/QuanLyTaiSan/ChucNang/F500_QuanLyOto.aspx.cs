@@ -136,22 +136,22 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
         {
             ip_us_oto.dcID = CIPConvert.ToDecimal(m_hdf_id.Value);
         }
-        ip_us_oto.strNGUON_GOC_XE = m_txt_nguon_goc_xe.Text;
-        ip_us_oto.dcSO_CHO_NGOI = CIPConvert.ToDecimal(m_txt_tai_trong.Text);
-        ip_us_oto.dcCONG_SUAT_XE = CIPConvert.ToDecimal(m_txt_cong_suat_xe.Text);
+        ip_us_oto.strNGUON_GOC_XE = m_txt_nguon_goc_xe.Text.Trim();
+        ip_us_oto.dcSO_CHO_NGOI = CIPConvert.ToDecimal(m_txt_tai_trong.Text.Trim());
+        ip_us_oto.dcCONG_SUAT_XE = CIPConvert.ToDecimal(m_txt_cong_suat_xe.Text.Trim());
         ip_us_oto.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
-        ip_us_oto.dcNAM_SU_DUNG = CIPConvert.ToDecimal(m_txt_nam_su_dung.Text);
-        ip_us_oto.dcNAM_SAN_XUAT = CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text);
-        ip_us_oto.dcGIA_TRI_CON_LAI = CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text);
-        ip_us_oto.dcNGUON_KHAC = CIPConvert.ToDecimal(m_txt_nguon_khac.Text);
-        ip_us_oto.dcNGUON_NS = CIPConvert.ToDecimal(m_txt_nguon_ns.Text);
-        ip_us_oto.strBIEN_KIEM_SOAT = m_txt_bien_kiem_soat.Text;
-        ip_us_oto.strCHUC_DANH_SU_DUNG = m_txt_chuc_danh_sd_xe.Text;
-        ip_us_oto.strNGUON_GOC_XE = m_txt_nguon_goc_xe.Text;
-        ip_us_oto.strNHAN_HIEU = m_txt_ten_nhan_hieu.Text;
-        ip_us_oto.strNUOC_SAN_XUAT = m_txt_nuoc_san_xuat.Text;
-        ip_us_oto.strMA_TAI_SAN = m_txt_ma_ts.Text;
-        ip_us_oto.strTEN_TAI_SAN = m_txt_ten_ts.Text;
+        ip_us_oto.dcNAM_SU_DUNG = CIPConvert.ToDecimal(m_txt_nam_su_dung.Text.Trim());
+        ip_us_oto.dcNAM_SAN_XUAT = CIPConvert.ToDecimal(m_txt_nam_san_xuat.Text.Trim());
+        ip_us_oto.dcGIA_TRI_CON_LAI = CIPConvert.ToDecimal(m_txt_gia_tri_con_lai.Text.Trim());
+        ip_us_oto.dcNGUON_KHAC = CIPConvert.ToDecimal(m_txt_nguon_khac.Text.Trim());
+        ip_us_oto.dcNGUON_NS = CIPConvert.ToDecimal(m_txt_nguon_ns.Text.Trim());
+        ip_us_oto.strBIEN_KIEM_SOAT = m_txt_bien_kiem_soat.Text.Trim();
+        ip_us_oto.strCHUC_DANH_SU_DUNG = m_txt_chuc_danh_sd_xe.Text.Trim();
+        ip_us_oto.strNGUON_GOC_XE = m_txt_nguon_goc_xe.Text.Trim();
+        ip_us_oto.strNHAN_HIEU = m_txt_ten_nhan_hieu.Text.Trim();
+        ip_us_oto.strNUOC_SAN_XUAT = m_txt_nuoc_san_xuat.Text.Trim();
+        ip_us_oto.strMA_TAI_SAN = m_txt_ma_ts.Text.Trim();
+        ip_us_oto.strTEN_TAI_SAN = m_txt_ten_ts.Text.Trim();
         ip_us_oto.datNGAY_CAP_NHAT_CUOI = DateTime.Now;
         ip_us_oto.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_ddl_trang_thai_oto.SelectedValue);
         ip_us_oto.dcID_LOAI_TAI_SAN = CIPConvert.ToDecimal(m_ddl_loai_xe.SelectedValue);

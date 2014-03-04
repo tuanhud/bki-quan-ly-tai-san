@@ -137,15 +137,15 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         m_us_dm_dat.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_ddl_don_vi_su_dung.SelectedValue);
         m_us_dm_dat.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_ddl_trang_thai.SelectedValue);
         m_us_dm_dat.dcID_TINH_TRANG = CIPConvert.ToDecimal(m_ddl_tinh_trang_dat.SelectedValue);
-        m_us_dm_dat.strDIA_CHI = m_txt_dia_chi.Text;
-        m_us_dm_dat.strMA_TAI_SAN = m_txt_ma_tai_san.Text;
+        m_us_dm_dat.strDIA_CHI = m_txt_dia_chi.Text.Trim();
+        m_us_dm_dat.strMA_TAI_SAN = m_txt_ma_tai_san.Text.Trim();
         if (m_txt_nam_xd.Text.Length == 0)
         {
             m_us_dm_dat.SetSO_NAM_DA_SU_DUNGNull();
         }
         else
         {
-            m_us_dm_dat.dcSO_NAM_DA_SU_DUNG = CIPConvert.ToDecimal(m_txt_nam_xd.Text);
+            m_us_dm_dat.dcSO_NAM_DA_SU_DUNG = CIPConvert.ToDecimal(m_txt_nam_xd.Text.Trim());
         }
         if (m_txt_nguyen_gia.Text.Length == 0)
         {
@@ -153,7 +153,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            m_us_dm_dat.dcGT_THEO_SO_KE_TOAN = CIPConvert.ToDecimal(m_txt_nguyen_gia.Text);
+            m_us_dm_dat.dcGT_THEO_SO_KE_TOAN = CIPConvert.ToDecimal(m_txt_nguyen_gia.Text.Trim());
         }
         if (m_txt_dien_tich_khuon_vien.Text.Length == 0)
         {
@@ -162,7 +162,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            m_us_dm_dat.dcDT_KHUON_VIEN = CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text);
+            m_us_dm_dat.dcDT_KHUON_VIEN = CIPConvert.ToDecimal(m_txt_dien_tich_khuon_vien.Text.Trim());
         }
         if (m_txt_tru_so_lam_viec.Text.Length == 0)
         {
@@ -170,7 +170,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            m_us_dm_dat.dcDT_TRU_SO_LAM_VIEC = CIPConvert.ToDecimal(m_txt_tru_so_lam_viec.Text);
+            m_us_dm_dat.dcDT_TRU_SO_LAM_VIEC = CIPConvert.ToDecimal(m_txt_tru_so_lam_viec.Text.Trim());
         }
         if (m_txt_lam_nha_o.Text.Length == 0)
         {
@@ -178,7 +178,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            m_us_dm_dat.dcDT_LAM_NHA_O = CIPConvert.ToDecimal(m_txt_lam_nha_o.Text);
+            m_us_dm_dat.dcDT_LAM_NHA_O = CIPConvert.ToDecimal(m_txt_lam_nha_o.Text.Trim());
         }
         if (m_txt_co_so_hdsn.Text.Length == 0)
         {
@@ -186,7 +186,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            m_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP = CIPConvert.ToDecimal(m_txt_co_so_hdsn.Text);
+            m_us_dm_dat.dcDT_CO_SO_HOAT_DONG_SU_NGHIEP = CIPConvert.ToDecimal(m_txt_co_so_hdsn.Text.Trim());
         }
         if (m_txt_cho_thue.Text.Length == 0)
         {
@@ -194,7 +194,7 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            m_us_dm_dat.dcDT_CHO_THUE = CIPConvert.ToDecimal(m_txt_cho_thue.Text);
+            m_us_dm_dat.dcDT_CHO_THUE = CIPConvert.ToDecimal(m_txt_cho_thue.Text.Trim());
         }
         if (m_txt_bo_trong.Text.Length == 0)
         {
@@ -202,11 +202,11 @@ public partial class ChucNang_F101_QuanLyDat : System.Web.UI.Page
         }
         else
         {
-            m_us_dm_dat.dcDT_BO_TRONG = CIPConvert.ToDecimal(m_txt_bo_trong.Text);
+            m_us_dm_dat.dcDT_BO_TRONG = CIPConvert.ToDecimal(m_txt_bo_trong.Text.Trim());
         }
 
-        m_us_dm_dat.dcDT_BI_LAN_CHIEM = CIPConvert.ToDecimal(m_txt_bi_lan_chiem.Text);
-        m_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC = CIPConvert.ToDecimal(m_txt_khac.Text);
+        m_us_dm_dat.dcDT_BI_LAN_CHIEM = CIPConvert.ToDecimal(m_txt_bi_lan_chiem.Text.Trim());
+        m_us_dm_dat.dcDT_SU_DUNG_MUC_DICH_KHAC = CIPConvert.ToDecimal(m_txt_khac.Text.Trim());
         m_us_dm_dat.dcID_LOAI_TAI_SAN = ID_LOAI_TAI_SAN.DAT;
 
         m_us_dm_dat.dcID_NGUOI_DUYET = Person.get_user_id();

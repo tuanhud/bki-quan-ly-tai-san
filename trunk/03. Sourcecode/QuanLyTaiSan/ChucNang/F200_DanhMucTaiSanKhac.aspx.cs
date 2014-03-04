@@ -537,6 +537,7 @@ public partial class Default2 : System.Web.UI.Page
             clear_message();
             decimal dc_id_tai_san_khac = CIPConvert.ToDecimal(m_grv_tai_san_khac.DataKeys[e.RowIndex].Value);
             m_us_tai_san_khac.DeleteByID(dc_id_tai_san_khac);
+            m_e_form_mode = DataEntryFormMode.InsertDataState; 
             load_data_2_grid();
             m_lbl_mess.Text = "Xóa thành công!";
             m_cbo_bo_tinh.Focus();
