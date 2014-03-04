@@ -123,7 +123,7 @@
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
+                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="false"
                                                 ImageUrl="~/Images/cal.gif">
                                                 <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                     ForeColor="Black" />
@@ -152,7 +152,7 @@
                                         </td>
                                         <td align="left" style="width: 30%">
                                             <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="true"
+                                                Culture="vi-VN" GoToTodayText="Hôm nay: " ShowGoToToday="true" DisableTextBoxEntry="false"
                                                 ImageUrl="~/Images/cal.gif">
                                                 <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                     ForeColor="Black" />

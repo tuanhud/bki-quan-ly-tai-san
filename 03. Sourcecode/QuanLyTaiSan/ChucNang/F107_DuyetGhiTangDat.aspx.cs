@@ -231,6 +231,7 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
                 }
             }
         }
+
         return true;
     }
 
@@ -250,6 +251,10 @@ public partial class ChucNang_F107_DuyetGhiTangDat : System.Web.UI.Page
         if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
         {
             decimal v_dc_dt_dieu_chuyen = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+            if (v_dc_dt_dieu_chuyen > v_us_dm_dat.dcDT_KHUON_VIEN)
+            {
+                m_lbl_message.Text = "Diện tích điều chuyển phải nhỏ hơn diện tích khuôn viên tài sản";
+            }
             m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_dc_dt_dieu_chuyen;
             v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - v_dc_dt_dieu_chuyen;
             v_us_dm_dat.Update();

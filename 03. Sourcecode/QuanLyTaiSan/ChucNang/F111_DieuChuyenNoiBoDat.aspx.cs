@@ -212,19 +212,22 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
             return false;
         }
 
-        if (!CValidateTextBox.IsValid(m_txt_dien_tich_dieu_chuyen, DataType.NumberType, allowNull.YES))
+        if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
         {
-            m_lbl_message.Text = "Lỗi: Diện tích điều chuyển không đúng định dạng số";
-            m_txt_dien_tich_dieu_chuyen.Focus();
-            return false;
+            if (!CValidateTextBox.IsValid(m_txt_dien_tich_dieu_chuyen, DataType.NumberType, allowNull.YES))
+            {
+                m_lbl_message.Text = "Lỗi: Diện tích điều chuyển không đúng định dạng số";
+                m_txt_dien_tich_dieu_chuyen.Focus();
+                return false;
+            }
+            if (Convert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text) >= Convert.ToDecimal(m_lbl_dt_khuon_vien.Text))
+            {
+                m_lbl_message.Text = "Lỗi: Diện tích điều chuyển lớn hơn diện tích hiện tại của khu đất";
+                m_txt_dien_tich_dieu_chuyen.Focus();
+                return false;
+            }
         }
 
-        if (Convert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text) >= Convert.ToDecimal(m_lbl_dt_khuon_vien.Text))
-        {
-            m_lbl_message.Text = "Lỗi: Diện tích điều chuyển lớn hơn diện tích hiện tại của khu đất";
-            m_txt_dien_tich_dieu_chuyen.Focus();
-            return false;
-        }
         return true;
     }
 
@@ -243,6 +246,8 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_dat.dcDT_KHUON_VIEN;
         if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
         {
+            v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+            v_us_dm_dat.Update();
             m_us_gd_tang_giam_tai_san.dcDIEN_TICH = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
         }
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN;
@@ -265,14 +270,22 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcID_LY_DO_TANG_GIAM = ID_LY_DO_TANG_GIAM_TAI_SAN.TRANG_CAP_MUA_MOI;
         m_us_gd_tang_giam_tai_san.strTANG_GIA_TRI_TAI_SAN_YN = "Y";
 
-        m_us_gd_tang_giam_tai_san.dcID_TAI_SAN = v_us_dm_dat.dcID;
+       
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_dat.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu_tang.Text;
-        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_dat.dcDT_KHUON_VIEN;
+        m_us_gd_tang_giam_tai_san.dcDIEN_TICH = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
         if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
         {
+            v_us_dm_dat.strMA_TAI_SAN = v_us_dm_dat.strMA_TAI_SAN + "-DC";
+            v_us_dm_dat.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DANG_SU_DUNG;
+            v_us_dm_dat.dcDT_KHUON_VIEN = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+            v_us_dm_dat.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
+            v_us_dm_dat.Insert();
+            v_us_dm_dat.strMA_TAI_SAN = v_us_dm_dat.strMA_TAI_SAN + "-" + v_us_dm_dat.dcID;
+            v_us_dm_dat.Update();
             m_us_gd_tang_giam_tai_san.dcDIEN_TICH = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
         }
+        m_us_gd_tang_giam_tai_san.dcID_TAI_SAN = v_us_dm_dat.dcID;
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN;
 
         m_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
@@ -366,20 +379,9 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
     private void cap_nhat_thong_tin_tai_san_dieu_chuyen_mot_phan()
     {
         US_DM_DAT v_us_dm_dat_dc = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
-        v_us_dm_dat_dc.strMA_TAI_SAN = v_us_dm_dat_dc.strMA_TAI_SAN + "-DC";
-        v_us_dm_dat_dc.dcID_TRANG_THAI = ID_TRANG_THAI_DAT.DANG_SU_DUNG;
-        v_us_dm_dat_dc.dcDT_KHUON_VIEN = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
-        v_us_dm_dat_dc.dcID_DON_VI_SU_DUNG = CIPConvert.ToDecimal(m_cbo_don_vi_su_dung_moi.SelectedValue);
-        v_us_dm_dat_dc.Insert();
-        v_us_dm_dat_dc.strMA_TAI_SAN = v_us_dm_dat_dc.strMA_TAI_SAN + "-" + v_us_dm_dat_dc.dcID;
-        v_us_dm_dat_dc.Update();
-
         US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
-        v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
-        v_us_dm_dat.Update();
-
-        string v_str_dv_cu = m_cbo_don_vi_su_dung_up.Text;
-        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.Text;
+        string v_str_dv_cu = m_cbo_don_vi_su_dung_up.SelectedItem.Text;
+        string v_str_dv_moi = m_cbo_don_vi_su_dung_moi.SelectedItem.Text;
         m_lbl_message.Text = "Đã điều chuyển tài sản " + v_us_dm_dat.strDIA_CHI
             + " từ đơn vị " + v_str_dv_cu + " đến đơn vị " + v_str_dv_moi;
     }

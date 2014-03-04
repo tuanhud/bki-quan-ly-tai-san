@@ -48,14 +48,13 @@ public partial class Default2 : System.Web.UI.Page
             , WinFormControls.eTAT_CA.YES
             , m_cbo_don_vi_su_dung_tai_san);
         WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_TAI_SAN_KHAC, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai);
-        m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DE_NGHI_XU_LY);
+        m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ID_TRANG_THAI_TAI_SAN_KHAC.DANG_SU_DUNG);
         load_data_to_grid();
         set_trang_thai_cmd();
     }
 
     private void load_data_to_grid()
     {
-        
         US_V_DM_TAI_SAN_KHAC m_us_v_tai_san_khac = new US_V_DM_TAI_SAN_KHAC();
         DS_V_DM_TAI_SAN_KHAC m_ds_v_tai_san_khac = new DS_V_DM_TAI_SAN_KHAC();
         US_DM_DON_VI m_us_don_vi = new US_DM_DON_VI();

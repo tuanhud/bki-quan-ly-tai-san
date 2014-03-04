@@ -142,7 +142,7 @@
                                             </td>
                                             <td align="left" style="width: 30%">
                                                 <ew:CalendarPopup ID="m_dat_ngay_tang_giam" runat="server" ControlDisplay="TextBoxImage"
-                                                    Culture="vi-VN" DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                                    Culture="vi-VN" DisableTextBoxEntry="false" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                                                     ShowGoToToday="true">
                                                     <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                         ForeColor="Black" />
@@ -171,7 +171,7 @@
                                             </td>
                                             <td align="left" style="width: 30%">
                                                 <ew:CalendarPopup ID="m_dat_ngay_duyet" runat="server" ControlDisplay="TextBoxImage"
-                                                    Culture="vi-VN" DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                                    Culture="vi-VN" DisableTextBoxEntry="false" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                                                     ShowGoToToday="true">
                                                     <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                                                         ForeColor="Black" />
