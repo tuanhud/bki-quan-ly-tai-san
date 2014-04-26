@@ -71,8 +71,6 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
         US_V_DM_NHA v_us_v_dm_nha = new US_V_DM_NHA();
         DS_V_DM_NHA v_ds_v_dm_Nha = new DS_V_DM_NHA();
 
-        v_us_v_dm_nha.FillDataset(v_ds_v_dm_Nha);
-
         v_us_v_dm_nha.FillDatasetLoadDataToGridNha_by_tu_khoa(
             m_txt_tu_khoa.Text.Trim()
             , CONST_QLDB.ID_TAT_CA
