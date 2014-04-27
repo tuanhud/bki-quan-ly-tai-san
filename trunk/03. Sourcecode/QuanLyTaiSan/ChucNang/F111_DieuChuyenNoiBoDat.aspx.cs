@@ -234,6 +234,18 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
     private void them_moi_ghi_giam()
     {
         US_DM_DAT v_us_dm_dat = new US_DM_DAT(CIPConvert.ToDecimal(m_cbo_dia_chi.SelectedValue));
+        if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
+        {
+            v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+            v_us_dm_dat.Update();
+            m_us_gd_tang_giam_tai_san.dcDIEN_TICH = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
+        }
+        else
+        {
+            v_us_dm_dat.strMA_TAI_SAN = v_us_dm_dat.strMA_TAI_SAN + "-Cũ";
+            v_us_dm_dat.Insert();
+        }
+
         m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
         m_us_gd_tang_giam_tai_san.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
         m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = m_dat_ngay_tang_giam.SelectedDate;
@@ -244,12 +256,8 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         m_us_gd_tang_giam_tai_san.dcID_LOAI_TAI_SAN = v_us_dm_dat.dcID_LOAI_TAI_SAN;
         m_us_gd_tang_giam_tai_san.strMA_PHIEU = m_txt_ma_phieu_giam.Text;
         m_us_gd_tang_giam_tai_san.dcDIEN_TICH = v_us_dm_dat.dcDT_KHUON_VIEN;
-        if (m_rbl_loai_dieu_chuyen.SelectedValue == "N")
-        {
-            v_us_dm_dat.dcDT_KHUON_VIEN = v_us_dm_dat.dcDT_KHUON_VIEN - CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
-            v_us_dm_dat.Update();
-            m_us_gd_tang_giam_tai_san.dcDIEN_TICH = CIPConvert.ToDecimal(m_txt_dien_tich_dieu_chuyen.Text);
-        }
+        
+            
         m_us_gd_tang_giam_tai_san.dcGIA_TRI_NGUYEN_GIA_TANG_GIAM = v_us_dm_dat.dcGT_THEO_SO_KE_TOAN;
 
         m_us_gd_tang_giam_tai_san.dcID_NGUOI_LAP = Person.get_user_id();
