@@ -744,6 +744,7 @@ namespace WebUS
             , DateTime ip_dat_tu_ngay
             , DateTime ip_dat_den_ngay
             , string ip_str_tu_khoa
+            ,string ip_str_user_name
             , DS_V_DM_DAT_HISTORY op_ds_dat_history)
         {
 
@@ -757,6 +758,7 @@ namespace WebUS
             v_obj_procedure.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_obj_procedure.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.fillDataSetByCommand(this, op_ds_dat_history);
         }
 

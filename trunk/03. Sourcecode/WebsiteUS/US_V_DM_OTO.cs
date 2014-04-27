@@ -818,6 +818,7 @@ namespace WebUS
             , decimal ip_dc_id_loai_tai_san
            , decimal ip_id_trang_thai
            , string ip_str_tu_khoa
+            , string ip_str_user_name
            , DS_V_DM_OTO op_ds_v_dm_oto)
         {
 
@@ -827,7 +828,7 @@ namespace WebUS
             v_obj_procedure.addDecimalInputParam("@ip_id_dvql", ip_dc_don_vi_chu_quan);
             v_obj_procedure.addDecimalInputParam("@ip_id_dvsd", ip_dc_don_vi_su_dung);
             v_obj_procedure.addDecimalInputParam("@ip_id_loai_tai_san", ip_dc_id_loai_tai_san);
-
+            v_obj_procedure.addNVarcharInputParam("@ip_str_user_name", ip_str_user_name);
             v_obj_procedure.addDecimalInputParam("@ip_id_trang_thai", ip_id_trang_thai);
 
             v_obj_procedure.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);

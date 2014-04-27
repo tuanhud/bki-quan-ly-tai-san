@@ -656,7 +656,8 @@ namespace WebUS
                                         decimal v_dc_id_trang_thai,
                                         decimal v_dc_id_dv_bo_tinh, 
                                         decimal v_dc_id_dv_quan_ly, 
-                                        decimal v_dc_id_dv_su_dung)
+                                        decimal v_dc_id_dv_su_dung,
+                                        string v_str_user_name)
         {
             CStoredProc cstored = new CStoredProc("pr_DM_OTO_Search");
             cstored.addNVarcharInputParam("@TU_KHOA", v_str_tu_khoa);
@@ -664,6 +665,7 @@ namespace WebUS
             cstored.addDecimalInputParam("@ID_DV_SU_DUNG", v_dc_id_dv_su_dung);
             cstored.addDecimalInputParam("@ID_DV_QUAN_LY",v_dc_id_dv_quan_ly);
             cstored.addDecimalInputParam("@ID_DV_BO_TINH", v_dc_id_dv_bo_tinh);
+            cstored.addNVarcharInputParam("@ip_str_user_name", v_str_user_name);
             cstored.fillDataSetByCommand(this, m_ds_dm_oto);
         }
 
