@@ -406,9 +406,6 @@
                                         Width="98px" Text="Cập nhật(u)" OnClick="m_cmd_cap_nhat_Click" ValidationGroup="m_vlg_dat"
                                         Height="24px" />
                                     &nbsp;
-                                    <asp:Button ID="m_cmd_bo_sung_tg" AccessKey="r" CssClass="cssButton" runat="server"
-                                        CausesValidation="false" Width="98px" Text="Tạo ghi tăng(b)" Height="24px" OnClick="m_cmd_bo_sung_tg_Click" />
-                                    &nbsp;
                                     <asp:Button ID="m_cmd_xoa_trang" AccessKey="r" CssClass="cssButton" runat="server"
                                         Width="98px" Text="Xóa trắng(r)" OnClick="m_cmd_xoa_trang_Click" Height="24px" />
                                     <asp:HiddenField ID="m_hdf_id" runat="server" Value="-1" />
