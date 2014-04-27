@@ -101,8 +101,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
-            m_lbl_mess.Text = "Lỗi trong quá trình xóa bản ghi.";
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     private void load_update_user(int i_int_row_index)

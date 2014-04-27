@@ -136,7 +136,7 @@
             <td align="center" colspan="3" style="height: 450px;" valign="top">
                 <asp:GridView ID="m_grv_dm_tu_dien" runat="server" AutoGenerateColumns="False" Width="80%"
                     DataKeyNames="ID" OnRowDeleting="m_grv_dm_tu_dien_RowDeleting" OnSelectedIndexChanging="m_grv_dm_tu_dien_SelectedIndexChanging"
-                    CellPadding="4" ForeColor="#333333" CssClass="cssGrid">
+                    CellPadding="4" ForeColor="#333333" CssClass="cssGrid" EmptyDataText="Không có dữ liệu phù hợp!">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
@@ -156,10 +156,12 @@
                         <asp:BoundField DataField="TRANG_THAI" ItemStyle-HorizontalAlign="Center" HeaderText="Trạng thái tài khoản (O: Bình thường, 1: Bị khóa)">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
-                        <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center" ButtonType="Image" DeleteImageUrl="../Images/Button/deletered.png" HeaderText="Xóa">
+                        <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
+                            ButtonType="Image" DeleteImageUrl="../Images/Button/deletered.png" HeaderText="Xóa">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>
                         </asp:CommandField>
-                        <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center" ButtonType="Image" SelectImageUrl="../Images/Button/edit.png" HeaderText="Sửa">
+                        <asp:CommandField SelectText="Sửa" ShowSelectButton="True" ItemStyle-HorizontalAlign="Center"
+                            ButtonType="Image" SelectImageUrl="../Images/Button/edit.png" HeaderText="Sửa">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>
                         </asp:CommandField>
                     </Columns>
