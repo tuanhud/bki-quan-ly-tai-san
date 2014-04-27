@@ -90,7 +90,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             case DataEntryFormMode.InsertDataState:
                 m_cmd_tao_moi.Visible = true;
                 m_cmd_cap_nhat.Visible = false;
-                m_cmd_bo_sung_tg.Visible = false;
                 m_lbl_caption.Text = "NHẬP MỚI TÀI SẢN Ô TÔ";
                 break;
             case DataEntryFormMode.SelectDataState:
@@ -98,7 +97,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             case DataEntryFormMode.UpdateDataState:
                 m_cmd_tao_moi.Visible = false;
                 m_cmd_cap_nhat.Visible = true;
-                m_cmd_bo_sung_tg.Visible = true;
                 m_lbl_caption.Text = "CẬP NHẬT THÔNG TIN TÀI SẢN Ô TÔ";
                 break;
             case DataEntryFormMode.ViewDataState:
