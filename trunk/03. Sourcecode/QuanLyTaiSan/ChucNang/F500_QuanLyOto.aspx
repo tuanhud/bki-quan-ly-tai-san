@@ -502,9 +502,6 @@
                                         OnClick="m_cmd_cap_nhat_Click" Text="Cập nhật(u)" Width="98px" Height="24px"
                                         ValidationGroup="m_vlg_nha" />
                                     &nbsp;
-                                    <asp:Button ID="m_cmd_bo_sung_tg" AccessKey="r" CssClass="cssButton" runat="server"
-                                        CausesValidation="false" Width="98px" Text="Tạo ghi tăng(b)" Height="24px" OnClick="m_cmd_bo_sung_tg_Click" />
-                                    &nbsp;
                                     <asp:Button ID="btnCancel" runat="server" AccessKey="r" CssClass="cssButton" OnClick="btnCancel_Click"
                                         Text="Xóa trắng(r)" Width="98px" Height="24px" TabIndex="25" />
                                 </td>

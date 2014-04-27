@@ -58,7 +58,6 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             m_ddl_loai_xe.DataValueField = "ID";
             m_ddl_loai_xe.DataBind();
         }
-
         catch (Exception v_e)
         {
             throw v_e;
