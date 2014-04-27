@@ -141,7 +141,8 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
                 m_lbl_tim_kiem.Visible = true;
                 break;
             default:
-                throw new Exception("Chưa cấu hình loại báo cáo có mã:" + v_str_loai_bao_cao);
+                CSystemLog_301.ExceptionHandle(this, new Exception("Chưa cấu hình loại báo cáo có mã:" + v_str_loai_bao_cao));
+                break;
         }
     }
     private void load_data_to_grid()
@@ -224,7 +225,7 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         }
         catch (System.Exception ex)
         {
-            CSystemLog_301.ExceptionHandle(ex);
+            CSystemLog_301.ExceptionHandle(this, ex);
         }
     }
     protected void m_cbo_bo_tinh_SelectedIndexChanged(object sender, EventArgs e)
@@ -272,12 +273,12 @@ public partial class BaoCao_F208_BaoCaoDanhMucDat : System.Web.UI.Page
         try
         {
             WinFormControls.load_data_to_cbo_don_vi_su_dung_theo_loai_hinh(
-    m_cbo_loai_hinh_don_vi.SelectedValue
-    , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
-    , m_cbo_bo_tinh.SelectedValue.ToString()
-    , ip_e_tat_ca
-    , m_cbo_don_vi_su_dung_tai_san
-    );
+                m_cbo_loai_hinh_don_vi.SelectedValue
+                , m_cbo_don_vi_chu_quan.SelectedValue.ToString()
+                , m_cbo_bo_tinh.SelectedValue.ToString()
+                , ip_e_tat_ca
+                , m_cbo_don_vi_su_dung_tai_san
+                );
         }
         catch (System.Exception ex)
         {
