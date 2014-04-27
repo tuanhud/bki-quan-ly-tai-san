@@ -349,7 +349,8 @@ public partial class ChucNang_F500_QuanLyOto : System.Web.UI.Page
             , CONST_QLDB.ID_TAT_CA
             , CONST_QLDB.ID_TAT_CA
             , CONST_QLDB.ID_TAT_CA
-            , CONST_QLDB.ID_TAT_CA);
+            , CONST_QLDB.ID_TAT_CA
+            ,Person.get_user_name());
         m_grv_dm_oto.DataSource = m_ds_dm_oto.DM_OTO;
         string v_str_thong_tin = " (Có " + m_ds_dm_oto.DM_OTO.Rows.Count + " bản ghi)";
         m_lbl_ket_qua_loc_du_lieu.Text += v_str_thong_tin;
