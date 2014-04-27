@@ -35,6 +35,7 @@ namespace WebUS
         public const string DA_THANH_LY = "582";
         public const string DA_DIEU_CHUYEN = "583";
         public const string DANG_SU_DUNG = "584";
+        public const string DIEU_CHUYEN_NOI_BO = "641";
     }
     public class CONST_QLDB
     {
@@ -118,6 +119,7 @@ namespace WebUS
         public const decimal DA_THANH_LY = 595;
         public const decimal DA_DIEU_CHUYEN = 596;
         public const decimal DANG_SU_DUNG = 597;
+        public const decimal DIEU_CHUYEN_NOI_BO = 640;
     }
 
     public class TRANG_THAI_DAT
@@ -126,6 +128,7 @@ namespace WebUS
         public const string DA_THANH_LY = "595";
         public const string DA_DIEU_CHUYEN = "596";
         public const string DANG_SU_DUNG = "597";
+        public const string DIEU_CHUYEN_NOI_BO = "640";
         public const string TAT_CA = "-1";
     }
     public class TRANG_THAI_TAI_SAN_KHAC
@@ -134,6 +137,7 @@ namespace WebUS
         public const string DA_THANH_LY = "586";
         public const string DA_DIEU_CHUYEN = "587";
         public const string DANG_SU_DUNG = "588";
+        public const string DIEU_CHUYEN_NOI_BO = "642";
         public const string TAT_CA = "-1";
     }
     public class ID_TRANG_THAI_NHA
@@ -142,6 +146,7 @@ namespace WebUS
         public const decimal DA_THANH_LY = 578;
         public const decimal DA_DIEU_CHUYEN = 579;
         public const decimal DANG_SU_DUNG = 580;
+        public const decimal DIEU_CHUYEN_NOI_BO = 640;
     }
 
     public class TRANG_THAI_NHA
@@ -150,6 +155,7 @@ namespace WebUS
         public const string DA_THANH_LY = "578";
         public const string DA_DIEU_CHUYEN = "579";
         public const string DANG_SU_DUNG = "580";
+        public const string DIEU_CHUYEN_NOI_BO = "641";
         public const string TAT_CA = "-1";
     }
 
@@ -159,6 +165,7 @@ namespace WebUS
         public const decimal DA_THANH_LY = 582;
         public const decimal DA_DIEU_CHUYEN = 583;
         public const decimal DANG_SU_DUNG = 584;
+        public const decimal DIEU_CHUYEN_NOI_BO = 641;
     }
 
     public class ID_LOAI_DON_VI
@@ -198,6 +205,7 @@ namespace WebUS
         public const decimal DA_THANH_LY = 586;
         public const decimal DA_DIEU_CHUYEN = 587;
         public const decimal DANG_SU_DUNG = 588;
+        public const decimal DIEU_CHUYEN_NOI_BO = 642;
     }
 
     public class ID_TINH_TRANG
