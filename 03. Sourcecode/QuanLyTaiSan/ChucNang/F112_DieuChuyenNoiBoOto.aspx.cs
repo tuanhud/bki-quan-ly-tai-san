@@ -263,6 +263,9 @@ public partial class ChucNang_F112_DieuChuyenNoiBoOto : System.Web.UI.Page
     private void them_moi_ghi_giam()
     {
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue));
+        v_us_dm_oto.strMA_TAI_SAN = v_us_dm_oto.strMA_TAI_SAN + "-Cũ";
+        v_us_dm_oto.Insert();
+
         m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
         m_us_gd_tang_giam_tai_san.datNGAY_DUYET = m_dat_ngay_duyet.SelectedDate;
         m_us_gd_tang_giam_tai_san.datNGAY_TANG_GIAM_TAI_SAN = m_dat_ngay_tang_giam.SelectedDate;
