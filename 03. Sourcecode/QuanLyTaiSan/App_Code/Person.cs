@@ -60,12 +60,6 @@ public class Person
 
             if (CIPConvert.ToDecimal(v_obj_id_user_login) == -1)
             {
-                //US_HT_USER_GROUP v_us_ht_user_group = new US_HT_USER_GROUP(ID_USER_GROUP.NHAN_DAN);
-                //US_HT_QUYEN_GROUP v_us_ht_quyen_group = new US_HT_QUYEN_GROUP();
-                //DS_HT_QUYEN_GROUP v_ds_ht_quyen_group = new DS_HT_QUYEN_GROUP();
-                //v_us_ht_quyen_group.FillDataset(v_ds_ht_quyen_group, "where id_user_group = " + v_us_ht_user_group.dcID +
-                //    " and id_quyen in (select id from ht_chuc_nang where url_form like N'%" + get_chuc_nang() + "%' and trang_thai_yn ='Y' and hien_thi_yn='Y')");
-                //if (v_ds_ht_quyen_group.HT_QUYEN_GROUP.Count < 1) return false;
                 return false;
             }
             else
