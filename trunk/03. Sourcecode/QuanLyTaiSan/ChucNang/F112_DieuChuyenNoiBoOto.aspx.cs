@@ -264,6 +264,7 @@ public partial class ChucNang_F112_DieuChuyenNoiBoOto : System.Web.UI.Page
     {
         US_DM_OTO v_us_dm_oto = new US_DM_OTO(CIPConvert.ToDecimal(m_cbo_ten_tai_san.SelectedValue));
         v_us_dm_oto.strMA_TAI_SAN = v_us_dm_oto.strMA_TAI_SAN + "-Cũ";
+        v_us_dm_oto.dcID_TRANG_THAI = ID_KHAC.DIEU_CHUYEN_NOI_BO;
         v_us_dm_oto.Insert();
 
         m_us_gd_tang_giam_tai_san = new US_GD_TANG_GIAM_TAI_SAN();
