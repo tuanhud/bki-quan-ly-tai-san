@@ -243,6 +243,7 @@ public partial class ChucNang_F111_DieuChuyenNoiBoDat : System.Web.UI.Page
         else
         {
             v_us_dm_dat.strMA_TAI_SAN = v_us_dm_dat.strMA_TAI_SAN + "-Cũ";
+            v_us_dm_dat.dcID_TRANG_THAI = ID_KHAC.DIEU_CHUYEN_NOI_BO;
             v_us_dm_dat.Insert();
         }
 
