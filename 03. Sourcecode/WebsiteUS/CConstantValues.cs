@@ -84,6 +84,11 @@ namespace WebUS
 
     }
 
+    public class ID_KHAC
+    {
+        public const decimal DIEU_CHUYEN_NOI_BO = 640;
+    }
+
     public class SESSION
     {
         public const string UserFullName = "UserFullName";
