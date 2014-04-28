@@ -163,7 +163,7 @@ body
 }
 #wapper li
 {
-    margin: 0 5px;
+    margin: -4px 5px;
     padding: 0 0 8px;
     float: left;
     position: relative;
@@ -176,7 +176,7 @@ body
     color: #e7e5e5;
     text-decoration: none;
     display: block;
-    padding: 7px 12px;
+    padding: 5px 12px;
     margin: 0; /*border-radius: 5px;   -webkit-border-radius: 5px;   -moz-border-radius: 5px;*/
 }
 #wapper a:hover
@@ -197,6 +197,7 @@ body
 {
     border-bottom: 1px dashed Gray;
     font-weight: bold;
+    margin: -6px -4px -3px -3px;
 }
 #wapper ul ul li:hover a, #wapper li:hover li a
 {
@@ -233,7 +234,7 @@ body
     padding: 0;
     width: 180px;
     position: absolute;
-    top: 40px;
+    top: 32px;
     left: 0;
     background: url(../Images/overlay.png) repeat-x 0 0;
     border: none;
@@ -244,6 +245,11 @@ body
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
+#wapper ul ul li ul
+{
+    top: 46px;
+}
+
 #wapper li ul ul
 {
     left: 185px;
