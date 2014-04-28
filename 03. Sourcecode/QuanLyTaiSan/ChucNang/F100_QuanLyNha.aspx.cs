@@ -140,7 +140,7 @@ public partial class ChucNang_F100_QuanLyNha : System.Web.UI.Page
     }
     private void load_data_dat()
     {
-        if (m_ddl_don_vi_chu_quan.Items.Count == 0)
+        if (m_ddl_don_vi_su_dung.Items.Count == 0)
             return;
         WinFormControls.load_data_to_cbo_dia_chi(
             CIPConvert.ToDecimal(m_ddl_bo_tinh.SelectedValue)
