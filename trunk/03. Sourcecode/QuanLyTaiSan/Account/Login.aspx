@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
     <head>
-		<title>Đăng nhập PRM</title>
+		<title>Đăng nhập DRVN-QLTS</title>
         <link href="../Styles/Login.css" rel="stylesheet" type="text/css" />
 	    <style type="text/css">
             .style1
