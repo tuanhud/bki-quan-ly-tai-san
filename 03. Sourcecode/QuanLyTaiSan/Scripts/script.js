@@ -65,7 +65,7 @@ function getFormatedNumberString(ip_str_number) {
 }
 
 function getNumber(ip_str_number) {
-    ip_str_number = ip_str_number.toString().replace(/\$|\,/g\., '');
+    ip_str_number = ip_str_number.toString().replace(/\$|\,/g, '');
     if (isNaN(ip_str_number))
         ip_str_number = "0";
     return ip_str_number;
